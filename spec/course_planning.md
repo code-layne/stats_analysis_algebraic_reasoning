@@ -32,8 +32,8 @@ the raw skeletons.
 
 ## Next steps
 
-1. **Commit the scaffold** (and open a PR) — the user hasn't said to yet; ask or
-   wait for their direction.
+1. Scaffold PR open: https://github.com/code-layne/stats_analysis_algebraic_reasoning/pull/2
+   (branch `claude/stats-data-analysis-structure-dc9531`) — awaiting merge.
 2. **Author Unit 1 Lesson 0 and Lesson 1** as the model lessons for the course
    (greenfield: these set the tone every later lesson mirrors). Read the
    PS.DC/AFDA.DA.2 "Understanding the Standards" pages first.
