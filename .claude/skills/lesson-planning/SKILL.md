@@ -45,7 +45,8 @@ and cite the standard codes the lesson covers.
 - **Every lesson cites its standards.** This is a standards-driven course; the lesson plan's
   Priority Ideas box and the Connections line both carry the lettered codes covered.
 - **Style prefix is `saar`** — `shared/saar-{colors,article,boxes,key,beamer}.sty`. The palette
-  is **royal blue with gold accents**; `burgundy`, `navy`, `skyblue` and friends are undefined
+  is **cerulean with gold accents** (the third blue across the stats-family courses; see
+  `references/conventions.md`); `royal`, `mist`, `burgundy`, `navy` and friends are undefined
   here. A teacher **slide deck** (`slides`) is supported — `shared/saar-beamer.sty` is in place.
 
 ## What a lesson is
@@ -238,7 +239,7 @@ structure and a worked skeleton for every component and its key. Hold to these i
 - Use the project's box vocabulary (`skillbox`, `objectivebox`, `learningtargetbox`,
   `vocabbox`, `hookbox`, `notesbox`, `practicebox`, `scenariobox`, `tocbox`, etc.) and
   fill-in helpers (`\blank`, `\writeline`, `\termblanklong`) rather than reinventing layout.
-  The full catalog — and the **royal/gold palette**, the only colors defined — is in
+  The full catalog — and the **cerulean/gold palette**, the only colors defined — is in
   `references/conventions.md`.
 - **Match the course pedagogy.** Start from a context, then extract the mathematics; compute
   *then* interpret and justify. **Cite the standard codes.**
@@ -437,7 +438,7 @@ forms' Part C spines, so a later run can reproduce or revise it.
 ## Reference files
 
 - `references/conventions.md` — the style packages, every box environment, the fill-in and
-  answer-key macros, the royal/gold color palette, per-document-type preambles, and **the five
+  answer-key macros, the cerulean/gold color palette, per-document-type preambles, and **the five
   conventions** (vocabpar, teachernote, namestrip, work rule, boxguard). Read before authoring.
 - `references/components.md` — section-by-section spec and a skeleton for the lesson plan and
   each component + key.
@@ -477,6 +478,6 @@ forms' Part C spines, so a later run can reproduce or revise it.
 - This is a modeling and applications course: context first, compute *then* interpret and
   justify. **No "sketch from a blank page" questions** — pre-draw and pre-scale the axes, even
   where the standard says "sketch."
-- Only the royal/gold palette colors are defined. `burgundy`, `navy`, `sky`, `skyblue`, and
-  `royalblue` are **not** — translate any material pasted in from another course.
+- Only the cerulean/gold palette colors are defined. `royal`, `mist`, `burgundy`, `navy`, and
+  `sky` are **not** — translate any material pasted in from another course.
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.

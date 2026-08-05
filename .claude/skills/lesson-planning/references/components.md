@@ -33,22 +33,22 @@ order:
 
 1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. **No school year**
    — see "No year on any document" in `conventions.md`.
-2. **Primary Objective** — a `tcolorbox` (mist/royal). One or two sentences in student terms
+2. **Primary Objective** — a `tcolorbox` (frost/cerulean). One or two sentences in student terms
    stating what students will be able to do, interpret, and justify with the topic.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
    ideas/skills for this topic. Right: "Key Understandings" — the *why*, drawn from the matching
    "Understanding the Standards" pages. Tag the lettered standard codes here.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `fixedskillbox{mist}`; left lists the
+5. **Activate Prior Knowledge & Spiral Review** — `fixedskillbox{frost}`; left lists the
    reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`
    **only if the warm-up is a prefab PDF** (authored warm-ups stay text-only).
-6. **Hook** — `skillbox{mist}`: an entry question/scenario from the course's application
+6. **Hook** — `skillbox{frost}`: an entry question/scenario from the course's application
    domains.
-7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{mist}` with `\begin{multicols}{2}`;
+7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{frost}` with `\begin{multicols}{2}`;
    the worked instructional progression, bolding the questions you'll pose. Context and
    numbers first, then the general statement.
-8. **Explicit Instruction: <technique>** — one `skillbox{mist}` per technique, two columns:
+8. **Explicit Instruction: <technique>** — one `skillbox{frost}` per technique, two columns:
    numbered steps on the left, a worked example (often a Desmos/calculator screenshot for
    transformation or regression work) on the right.
 9. **Active Monitoring** — `skillbox{redbox}`: what to circulate and check; cold-call prompts.
@@ -64,7 +64,7 @@ order:
 ## Cover
 
 `cover/main.tex` — student-facing front page of the packet. No key. Structure:
-- Full-bleed royal banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
+- Full-bleed cerulean banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, one target per priority idea/skill.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score blank)
@@ -128,8 +128,8 @@ harder items.
 
 `slides/` — optional teacher Beamer deck. No key. Requires `shared/saar-beamer.sty`.
 Preamble: `\documentclass[aspectratio=169,11pt]{beamer}` + `\usepackage{saar-beamer}`.
-The title slide is hand-built (royal background canvas + minipage); content slides use
-`\royalheader{Title}` and `\sectionlabel[color]{LABEL}`. Note `\CourseName` is **not** defined
+The title slide is hand-built (cerulean background canvas + minipage); content slides use
+`\ceruleanheader{Title}` and `\sectionlabel[color]{LABEL}`. Note `\CourseName` is **not** defined
 in beamer (`saar-beamer` does not load `saar-article`) — write "Statistical Analysis \& Algebraic
 Reasoning" literally. `saar-beamer` also does **not** load `tcolorbox`: use beamer's native
 `\begin{block}{}` for a highlighted box inside a frame, and note `\begin{itemize}` in beamer
@@ -190,7 +190,7 @@ drift between them. Edit the cover there, never in a wrapper.
 \begin{document}
 \input{../unit_cover/body.tex}
 \newpage
-\begin{headlinebox}{royal}{\color{white}\bfseries Unit X --- Exam Scoring Notes (Teacher Copy)}\end{headlinebox}
+\begin{headlinebox}{cerulean}{\color{white}\bfseries Unit X --- Exam Scoring Notes (Teacher Copy)}\end{headlinebox}
 \begin{teachernote}[Practice Test --- Part B] ... \end{teachernote}
 \end{document}
 ```

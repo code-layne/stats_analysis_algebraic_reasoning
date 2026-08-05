@@ -17,14 +17,14 @@
     \textcolor{linegray}{\dotfill}\vspace{3pt}}
 
 % Filled-in vocabulary entry: the answer-key counterpart of \termblanklong.
-% \vocabans{Term}{definition} → royal bold "Term:" followed by the keyed answer.
+% \vocabans{Term}{definition} → cerulean bold "Term:" followed by the keyed answer.
 %
 % VOCABPAR is enforced here, mirroring \termblanklong in saar-article.sty: the
 % leading \par means a vocabbox opening with an intro sentence can never run that
 % sentence into the first term, in the blank or the key. No per-lesson fix needed.
 \newcommand{\vocabans}[2]{%
     \par\addvspace{2pt}%
-    \noindent\textbf{\textcolor{royal}{#1:}}\ \ans{#2}\par\addvspace{3pt}}
+    \noindent\textbf{\textcolor{cerulean}{#1:}}\ \ans{#2}\par\addvspace{3pt}}
 
 % ── Teacher note box ──────────────────────────────────────────────────────────
 % MOVED to saar-boxes: teacher notes now live in the lesson plan, which loads
