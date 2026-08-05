@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed royal banner
+% Full-bleed cerulean banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[royal] (current page.north west)
+  \fill[cerulean] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{mistmid}\large\textbf{Unit 1}}\\[6pt]
+  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
   {\color{white}\textbf{\large Lesson 1.0 \quad Unit Launch: Study Design}}
 \end{center}
 
@@ -27,8 +27,16 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item \ldots{} explain why a number is not data until I know \emph{who} was
+        measured, \emph{what} was measured, and in \emph{what units}.
+  \item \ldots{} read a data table and name its \textbf{individuals} and its
+        \textbf{variables}.
+  \item \ldots{} classify a variable as \textbf{categorical} or
+        \textbf{quantitative}, and justify my choice.
+  \item \ldots{} recognize a variable written with digits that is really a label,
+        and explain how I know.
+  \item \ldots{} tell a \textbf{statistical question} from a question that is not
+        statistical, and rewrite one so that it becomes statistical.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -38,16 +46,27 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{mist}
+\rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & TODO & \blank{1.2cm} \\
-2 & Group Activity & TODO & \blank{1.2cm} \\
-3 & Exit Ticket  & TODO & \blank{1.2cm} \\
-4 & Homework     & TODO & \blank{1.2cm} \\
+1 & Warm-Up        & Percents, scaling a sample up, and the mean of a small data set & \blank{1.2cm} \\
+2 & Guided Notes   & Individuals, variables, the two variable types, and statistical questions & \blank{1.2cm} \\
+3 & Group Activity & Data Detectives: classify, scale, and critique a claim & \blank{1.2cm} \\
+4 & Exit Ticket    & Three checks, including one that cannot be computed & \blank{1.2cm} \\
+5 & Homework       & Northgate Recreation Center: classify, compute, interpret & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+A \textbf{quantitative} variable is a measured amount with units --- you may
+average it. A \textbf{categorical} variable is a label --- you may only count it
+and turn the counts into percents. When a variable is written with digits, do not
+guess: ask whether \emph{averaging these would mean anything}.
+\end{remindbox}
 
 \end{document}

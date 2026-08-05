@@ -14,58 +14,300 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=mist, colframe=royal, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will explain that data are numbers
+    \emph{with a context}, identify the individuals and variables in a data set,
+    classify each variable as categorical or quantitative, and decide whether a
+    question is a statistical question --- justifying every choice by the context
+    it came from.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Read a data table and name the \textbf{individuals} (the rows) and the
+            \textbf{variables} (the columns). \hfill \textit{PS.DC.1c; AFDA.DA.2a}
+      \item Classify a variable as \textbf{categorical} or \textbf{quantitative},
+            and justify the call. \hfill \textit{PS.DC.1c; AFDA.DA.2a}
+      \item Explain why a number means nothing without its context ---
+            who was measured, what was measured, and in what units.
+            \hfill \textit{PS.DC.1a--b}
+      \item Recognize and write a \textbf{statistical question} --- one whose
+            answers are expected to vary. \hfill \textit{PS.DC.1b; AFDA.DA.2a}
+      \item Preview the four stages of the \textbf{data cycle} that organize the
+            whole unit. \hfill \textit{PS.DC.1a}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item \emph{Data are collected for a purpose and have meaning in a context.}
+            ``18'' answers nothing; ``the mean commute was 18 minutes for the six
+            students surveyed'' answers something.
+      \item The \textbf{type} of a variable decides what you are allowed to do with
+            it. You may average a quantitative variable; a categorical variable can
+            only be counted and turned into a percent.
+      \item \textbf{Numbers can be labels.} Grade level, jersey number, and ZIP code
+            are categorical even though they are digits. The test is not ``does it
+            look like a number?'' but ``does arithmetic on it mean anything?''
+      \item A \textbf{statistical question anticipates variability}. ``How tall am
+            I?'' has one answer; ``How tall are students at this school?'' has many.
+      \item Every stage of the cycle can go wrong. The rest of Unit 1 is about
+            doing each stage well enough to trust the conclusion.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Data & Numbers or labels collected about individuals, together with the context
+       that gives them meaning. \\
+Individual & One person, animal, or object that data are collected about ---
+       one \emph{row} of a data table. \\
+Variable & A characteristic recorded for each individual --- one \emph{column}
+       of a data table. \\
+Categorical variable & A variable that records a \emph{label} or group name
+       (lunch choice, grade level, yes/no). Summarize with counts and percents. \\
+Quantitative variable & A variable that records a \emph{measured amount} with
+       units (minutes, siblings, dollars). Summarize with a mean or median. \\
+Statistical question & A question whose answers are expected to \emph{vary} from
+       individual to individual, so it takes data to answer. \\
+Population & The entire group you want to know about. \\
+Sample & The part of the population you actually collect data from. \\
+Data cycle & The four repeating stages of a study: \emph{formulate questions
+       $\rightarrow$ collect data $\rightarrow$ organize and represent
+       $\rightarrow$ analyze and communicate}. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{mist}
+\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It rehearses the Algebra 1 fluency
+            this unit leans on constantly:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Writing a part-to-whole comparison as a percent.
+              \item Scaling a sample proportion up to a whole population.
+              \item Computing the mean of a small data set.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            Every one of these returns this unit as a \emph{statistic}: a number
+            computed from a sample and used to say something about a population.
+            Listen for students who can compute the percent but cannot say what
+            group it describes --- that gap is the whole point of Unit 1.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
-\begin{skillbox}[Hook]{mist}
-    % TODO: the engaging entry question / scenario.
+\boxguard
+\begin{skillbox}[Hook]{frost}
+    Put this on the board before anyone sits down:
+    \begin{center}
+      \textit{``Four out of five students at Riverbend High School
+      say the lunch line is too slow.''}
+    \end{center}
+    \textbf{Ask:} ``Do you believe it?'' Take votes both ways, then push:
+    \textbf{Who did they ask? How many? What exactly did they ask?} Students will
+    generate the objections themselves --- \emph{maybe they only asked people
+    standing in the line}; \emph{maybe five people}; \emph{maybe they asked ``Isn't
+    the lunch line too slow?''} Name what just happened: they did not argue about
+    arithmetic, they argued about \textbf{where the number came from}. That is
+    Unit 1. Close the hook by writing the four stages of the data cycle on the
+    board and telling them each of their objections attacks a different stage.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{mist}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\boxguard
+\begin{skillbox}[Lesson]{frost}
+\begin{multicols}{2}
+\textbf{1. Data are numbers with a context.} Write a bare ``18'' on the board and
+ask what it tells them. Nothing. Now write \emph{``18 minutes --- the mean
+one-way commute for the six Riverbend students we surveyed.''} \textbf{Ask: what
+three things did I have to add?} \emph{Who} was measured, \emph{what} was
+measured, and the \emph{units}. Give the rule: a number without a context is not
+data.
+
+\textbf{2. Rows and columns have names.} Project the Riverbend Student Life
+Survey table (six students; grade level, commute time, lunch choice, siblings,
+club member). \textbf{Ask: what is one row? what is one column?} Name them:
+each row is an \textbf{individual}, each column is a \textbf{variable}. Have
+students count both --- six individuals, five variables --- before any
+classification starts.
+
+\textbf{3. Two types of variables.} Take the commute column and the lunch column.
+\textbf{Ask: which one could I find an average of?} Commute, yes; lunch choice,
+no --- there is no such thing as an average of ``cafeteria, home, off campus.''
+That contrast \emph{is} the definition. Quantitative variables record measured
+amounts with units and get a mean; categorical variables record labels and get
+counts and percents.
+
+\textbf{4. The trap: numbers that are really labels.} Point at the grade-level
+column: 10, 11, 9, 12, 10, 11. \textbf{Ask: it is made of numbers --- is it
+quantitative?} Let them argue, then settle it by computing the ``mean grade
+level'' aloud: $10.5$. \textbf{Ask: who is in grade 10.5?} Nobody. Grade level is
+a \textbf{label written with digits}, so it is categorical. Give them the test to
+write down: \emph{does arithmetic on this variable mean anything?} Add jersey
+numbers and ZIP codes as the other classic cases.
+
+\textbf{5. Statistical questions.} Ask ``How tall am I?'' --- one answer, measure
+once, done. Ask ``How tall are students at Riverbend?'' --- the answers vary from
+student to student, so it takes data. Give the definition: a \textbf{statistical
+question anticipates variability} in the answers. Run four quick questions and
+have the class thumbs-up/thumbs-down each one.
+
+\textbf{6. The road map.} Return to the lunch-line claim from the hook and lay the
+four stages of the data cycle over it. Formulate the question; collect the data;
+organize and represent it; analyze and communicate. Tell them where the unit
+goes: Lessons 1.1--1.2 sharpen the question and the group it describes,
+1.3--1.4 attack \emph{how} the data get collected, 1.5--1.7 handle studies and
+experiments, and 1.8 has them run the whole cycle themselves.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Classifying a Variable]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Say the variable out loud in a sentence about \emph{one} individual:
+        ``This student's \underline{\hspace{1.6cm}} is \underline{\hspace{1.6cm}}.''
+  \item Ask: is the answer a \textbf{label} or a \textbf{measured amount with
+        units}?
+  \item If it is an amount, ask the check question: \textbf{would averaging these
+        mean anything?}
+  \item Label: only if the answer is a real amount and averaging makes sense is
+        it \textbf{quantitative}. Otherwise it is \textbf{categorical}.
+  \item Say how you would summarize it --- mean for quantitative, counts and
+        percents for categorical.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- ``Grade level''}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] ``This student's grade level is 10.''
+  \item[2.] It \emph{looks} like an amount --- 10 is a number.
+  \item[3.] Mean of $10, 11, 9, 12, 10, 11$ is $10.5$. There is no grade 10.5,
+        and nobody is ``half a grade taller.''
+  \item[4.] Averaging is meaningless $\Rightarrow$ \textbf{categorical}.
+  \item[5.] Summarize by counting: 2 sophomores, 2 juniors, 1 freshman,
+        1 senior.
+\end{itemize}
+\textit{Contrast with ``commute time'': ``this student's commute is 20 minutes,''
+a real amount in real units, and 18 minutes is a meaningful average.
+$\Rightarrow$ quantitative.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for the digit reflex.} The single most common error today is
+        classifying anything written with digits as quantitative. Circulate
+        specifically to the grade-level and jersey-number items and ask,
+        \emph{``what would the average of these be, and who would that describe?''}
+  \item \textbf{Watch for context-free answers.} A student who writes ``18'' and
+        stops has not finished. Require units and the group: ``18 minutes, for
+        the six students surveyed.''
+  \item \textbf{Watch for ``statistical means it uses numbers.''} Students will
+        call ``How many students go to Riverbend?'' statistical because it has a
+        number in it. Redirect to variability: \emph{do different people give
+        different answers?}
+  \item \textbf{Cold-call prompts:} ``Name one individual in this table.''
+        ``Name one variable.'' ``Give me a variable made of digits that is
+        \emph{not} quantitative.'' ``Change this question so it becomes
+        statistical.''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Athletics table given; count and name individuals and variables.
+  \item Classify three variables with the label/amount question supplied as a
+        prompt.
+  \item Every answer is read directly from the table --- no scaling, no percents.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Three short scenarios; for each, name the population, the variable, and
+        its type.
+  \item One percent computation from a sample, then scaled to the population.
+  \item First ``is this question statistical?'' item with a written reason.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Critique a claim built on a categorical variable that was averaged.
+  \item Write an original statistical question, name the variable and its type,
+        and say what data would answer it.
+  \item Justify why the same recorded value can be categorical in one study and
+        quantitative in another.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Classify two variables from a short context and justify each with the
+        averaging test.
+  \item Decide which of two questions is statistical, and say why.
+  \item \textbf{Conceptual / justification check:} ``The mean of the numbers on
+        the team's jerseys is 42.'' What does that tell you about the team?
+        Correct answer: \emph{nothing} --- jersey number is a label, so its mean
+        describes no real quantity. This is the item to grade first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) classified correctly
+\emph{and} justified, (b) classified correctly but justified by ``it's a number,''
+(c) missed the classification. Pile (b) is the biggest and the most fixable;
+open Lesson 1.1 with two of their own item-3 responses read aloud, unattributed.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Northgate Community Recreation Center.} A fresh context with
+the same spine: identify individuals and variables in a members table, classify
+four variables, compute and \emph{interpret} a mean of a quantitative variable,
+turn a categorical variable into a percent, scale a sample percent up to the
+full membership, and sort four questions into statistical and not. Closes with an
+interpretation item that cannot be answered by computing anything.
+
+\textbf{Extension (optional).} Students bring in one real claim --- a headline,
+an ad, a social-media poll --- and name the population it claims to describe, the
+variable behind it, and that variable's type. Collect these; they seed the bias
+discussion in Lesson 1.4.
+
+\textbf{Preview of Lesson 1.1.} We name the four stages of the data cycle
+formally, write questions that a data set can actually answer, and sort variables
+by type at speed. Today's vocabulary --- individual, variable, categorical,
+quantitative --- is assumed from here on.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only
+as trustworthy as the study that produced it. \textit{Standards covered:}
+PS.DC.1a, PS.DC.1b, PS.DC.1c; AFDA.DA.2a. \textit{Spirals forward to:} population
+vs.\ sample and parameter vs.\ statistic (1.2, PS.DC.1d--e), sampling technique
+(1.3), and bias (1.4). \textit{Reaches back to:} Algebra 1 percent and
+proportional reasoning.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +315,57 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. All three items are Algebra 1 review and should
+    be quick; the point is diagnostic, not instructional. Item 2 (scaling
+    $18/50$ up to 900 students) is the one that separates the class --- students
+    who multiply $18 \times 18$ or add rather than scale the \emph{proportion}
+    need a five-minute pull-aside during the activity. Item 3 asks for the mean
+    \emph{and} a sentence naming what it describes; do not accept the bare
+    number, because the whole lesson turns on that sentence.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: vocabulary and sections 1--2 in the first 12 minutes, section 3 (the
+    two types) in 8, section 4 (numbers that are really labels) in 8. Do
+    \emph{not} shortchange section 4 --- it is the misconception that survives
+    the whole unit if it is not confronted here, and the ``mean grade level is
+    $10.5$'' computation done aloud is what breaks it. Section 5 is fast.
+    Section 6 (the road map) is a two-minute preview, not a lesson; resist
+    teaching the cycle today, since Lesson 1.1 does it properly.
+
+    In Guided Practice part (b), students will want to answer ``because it's
+    words.'' Push once for the real reason: there is no order and no unit, so
+    addition is undefined --- and a mean is built from addition.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    Groups of three, 15 minutes, tiers assigned rather than chosen. Tier R is a
+    reading task and should finish early --- have those groups then attempt Tier
+    A's item 1. Tier E item 3 (the same value being categorical in one study and
+    quantitative in another) is genuinely hard; accept any defended answer that
+    turns on \emph{what was asked}, e.g.\ recording ``how many siblings'' (an
+    amount) versus recording ``only child / has siblings'' (a label).
+
+    Circulate to Tier A item 2 first --- it is the only place in the packet where
+    the warm-up's scaling skill is reused, and it is where you will find out
+    whether the warm-up stuck.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Grade item 3 first and
+    only item 3 if time is short: it is the single item that distinguishes
+    students who learned the rule from students who learned the reason. Any
+    answer computing something about 42 is a miss, however well written.
+    Expect roughly a third of the class to miss it on day one --- that is the
+    normal starting point, not a failure of the lesson.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all seven items; they take about 20 minutes. Item 3 asks for a mean
+    and a sentence interpreting it, and item 7 cannot be answered by computing
+    anything --- flag both when assigning, because students who treat this as a
+    calculation sheet will skip exactly those. The extension (bring in a real
+    claim) is worth collecting even from students who skip it as optional;
+    those artifacts are reused in Lesson 1.4 for bias.
 \end{teachernote}
 \end{document}

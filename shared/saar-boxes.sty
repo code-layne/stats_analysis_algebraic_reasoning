@@ -138,7 +138,7 @@
 % Usage: \begin{skillbox}[Title]{background-color} ... \end{skillbox}
 \newtcolorbox{skillbox}[2][]{
     enhanced,
-    colback=#2, colframe=royal, boxrule=0.8pt, arc=2mm,
+    colback=#2, colframe=cerulean, boxrule=0.8pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
     fonttitle=\bfseries, title={#1}, halign title=center, breakable
 }
@@ -146,7 +146,7 @@
 % ── Non-breakable variant of skillbox (content that must never span a page) ──
 \newtcolorbox{fixedskillbox}[2][]{
     enhanced,
-    colback=#2, colframe=royal, boxrule=0.8pt, arc=2mm,
+    colback=#2, colframe=cerulean, boxrule=0.8pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
     fonttitle=\bfseries, title={#1}, halign title=center
 }
@@ -154,20 +154,20 @@
 % ── Objective / learning-target boxes ─────────────────────────────────────────
 \newtcolorbox{objectivebox}{
     enhanced,
-    colback=mist, colframe=royal, boxrule=1pt, arc=2mm,
+    colback=frost, colframe=cerulean, boxrule=1pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Primary Objective},
     attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=royal, colframe=royal, arc=1.5mm}
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm}
 }
 \newtcolorbox{learningtargetbox}{
     enhanced,
-    colback=mist, colframe=royal, boxrule=1pt, arc=2mm,
+    colback=frost, colframe=cerulean, boxrule=1pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white},
     title={Learning Targets --- I Can\dots},
     attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=royal, colframe=royal, arc=1.5mm}
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm}
 }
 
 % ── Vocabulary ────────────────────────────────────────────────────────────────
@@ -195,11 +195,11 @@
 % ── Generic titled notes box ──────────────────────────────────────────────────
 \newtcolorbox{notesbox}[1]{
     enhanced,
-    colback=white, colframe=royal, boxrule=0.8pt, arc=2mm,
+    colback=white, colframe=cerulean, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={#1},
     attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=royal, colframe=royal, arc=1.5mm},
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm},
     breakable
 }
 
@@ -254,11 +254,11 @@
 % ── Homework boxes ────────────────────────────────────────────────────────────
 \newtcolorbox{reflectionbox}{
     enhanced,
-    colback=mist, colframe=royal, boxrule=0.8pt, arc=2mm,
+    colback=frost, colframe=cerulean, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=4mm,
     fonttitle=\bfseries\small\color{white}, title={Reflection},
     attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=royal, colframe=royal, arc=1.5mm},
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm},
     breakable
 }
 \newtcolorbox{extensionbox}{
@@ -275,11 +275,11 @@
 % ── Cover page boxes ──────────────────────────────────────────────────────────
 \newtcolorbox{tocbox}{
     enhanced,
-    colback=white, colframe=royal, boxrule=0.8pt, arc=2mm,
+    colback=white, colframe=cerulean, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={What's in This Packet},
     attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=royal, colframe=royal, arc=1.5mm}
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm}
 }
 \newtcolorbox{remindbox}{
     enhanced,

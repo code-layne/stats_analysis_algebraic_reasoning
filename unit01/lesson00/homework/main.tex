@@ -12,9 +12,156 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[30]
+\begin{scenariobox}[Northgate Community Recreation Center]{cerulean}
+\small
+Northgate keeps a record of every member. Here are eight of them.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l c l c c c @{}}
+\toprule
+\textbf{Member} & \textbf{Member ID} & \textbf{Membership} &
+\textbf{Visits last month} & \textbf{Age} & \textbf{Group class?} \\
+\midrule
+Rosa  & 104 & Family  &  6 & 34 & Yes \\
+Ellis & 118 & Student &  2 & 17 & No  \\
+Wren  & 127 & Family  &  9 & 41 & Yes \\
+Bo    & 133 & Senior  &  4 & 68 & No  \\
+Tam   & 145 & Student & 14 & 19 & Yes \\
+Odell & 152 & Family  &  1 & 52 & No  \\
+Kira  & 166 & Student &  8 & 16 & Yes \\
+Nash  & 179 & Senior  &  4 & 71 & Yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{notesbox}{Practice}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item How many \textbf{individuals} does this table describe? \blank{1.8cm}
+
+        How many \textbf{variables} does it record? \blank{1.8cm}
+
+        (Remember: the ``Member'' column names the individuals --- it is not a
+        variable being studied.)
+
+  \item Classify each variable, and give the reason you used.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{0.96\linewidth}{@{} p{3.2cm} p{3cm} X @{}}
+        \toprule
+        \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
+        \midrule
+        Member ID          & \blank{2.4cm} & \blank{4.4cm} \\
+        Membership         & \blank{2.4cm} & \blank{4.4cm} \\
+        Visits last month  & \blank{2.4cm} & \blank{4.4cm} \\
+        Age                & \blank{2.4cm} & \blank{4.4cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Find the mean number of visits last month.
+
+        \begin{work}
+          \bar{x} &= \dfrac{6+2+9+4+14+1+8+4}{8} \\
+                  &= \dfrac{48}{8} \\
+                  &= 6 \text{ visits}
+        \end{work}
+
+        Now write one sentence interpreting that number. Name the group and the
+        units.
+        \writeline
+
+  \item ``Group class?'' is categorical, so a mean is not available. Find the
+        \textbf{percent} of these eight members who take a group class.
+
+        \begin{work}
+          \dfrac{5}{8} &= 0.625 \\
+                       &= 62.5\%
+        \end{work}
+
+        Explain why a percent, and not a mean, is the right summary here.
+        \writeline
+
+  \item Northgate has $2000$ members in all. A survey of $300$ of them found that
+        $45$ use the swimming pool.
+
+        \textbf{(a)} What percent of the members surveyed use the pool?
+
+        \begin{work}
+          \dfrac{45}{300} &= 0.15 \\
+                          &= 15\%
+        \end{work}
+
+        \textbf{(b)} Based on the survey, predict how many of the $2000$ members
+        use the pool.
+
+        \begin{work}
+          0.15 \times 2000 &= 300 \text{ members}
+        \end{work}
+
+        \textbf{(c)} Write the result as one sentence the recreation center could
+        put in a report.
+        \writeline
+
+  \item Mark each question \textbf{S} (statistical) or \textbf{N} (not
+        statistical).
+
+        \begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt, label=(\alph*)]
+          \item What time does Northgate open on Saturday? \hfill \blank{1.2cm}
+          \item How old are Northgate's members? \hfill \blank{1.2cm}
+          \item How many visits did Tam make last month? \hfill \blank{1.2cm}
+          \item How many visits do Northgate members make in a month?
+                \hfill \blank{1.2cm}
+        \end{enumerate}
+
+        Rewrite part (c) so that it becomes a statistical question.
+        \writeline
+
+  \item A staff member computes the mean of the Member ID column and gets
+        $140.5$. She writes: \textit{``The average Northgate member is number
+        $140.5$.''}
+
+        What does that number actually tell you about Northgate's members?
+        Explain.
+        \writeline
+        \writeline
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+Find one real claim about a group of people --- a headline, an advertisement, a
+poll on social media. Write it down, then answer three questions about it:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item What group does the claim say it describes?
+  \item What variable was recorded to produce it?
+  \item Is that variable categorical or quantitative?
+\end{enumerate}
+
+Bring the claim to class --- we will come back to these when we study bias.
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{remindbox}
+\small
+\textbf{Next class (Lesson 1.1):} we name the four stages of the data cycle
+formally, write questions a data set can actually answer, and sort variables by
+type at speed. Today's words --- \emph{individual}, \emph{variable},
+\emph{categorical}, \emph{quantitative} --- are assumed from here on.
+\end{remindbox}
 
 \end{document}

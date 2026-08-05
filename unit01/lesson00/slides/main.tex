@@ -1,26 +1,258 @@
 %! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{saar-beamer}   % provides \royalheader{} and \sectionlabel[color]{}
+\usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
 % TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
-\setbeamercolor{background canvas}{bg=royal}
+\setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.0}\\[0.5cm]
     {\color{white}\bfseries\LARGE Unit Launch: Study Design}\\[1.2cm]
-    {\color{mistmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 1}
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 1}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \royalheader{TODO: section title}
-  % TODO: slide content
+  \ceruleanheader{Do you believe it?}
+  \sectionlabel[goldacc]{hook}
+
+  \begin{center}
+    \vspace{0.3cm}
+    {\Large\itshape ``Four out of five students at Riverbend High School\\[4pt]
+     say the lunch line is too slow.''}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    \begin{minipage}{0.75\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item Who did they ask?
+        \item How many people?
+        \item What exactly did they ask?
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries You did not argue about the arithmetic.\\
+     You argued about where the number came from.}
+  \end{center}
+\end{frame}
+
+% ── CONTEXT ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{A number is not data}
+  \sectionlabel{context}
+
+  \begin{center}
+    \vspace{0.2cm}
+    {\Huge\bfseries 18}\\[0.3cm]
+    {\large What does that tell you?}\\[0.5cm]
+    {\color{goldacc}\bfseries\large Nothing.}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{block}{Now with its context}
+    ``18 \textbf{minutes} --- the mean one-way \textbf{commute} for the
+    \textbf{six Riverbend students we surveyed}.''
+  \end{block}
+
+  \vspace{0.3cm}
+  \begin{center}
+    Three things had to be added: \textbf{who}, \textbf{what}, and the
+    \textbf{units}.
+  \end{center}
+\end{frame}
+
+% ── THE TABLE ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Rows and columns have names}
+  \sectionlabel{riverbend student life survey}
+
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{@{} l c c l c c @{}}
+    \hline
+    \textbf{Student} & \textbf{Grade} & \textbf{Commute (min)} & \textbf{Lunch} &
+    \textbf{Siblings} & \textbf{Club} \\
+    \hline
+    Alina   & 10 & 20 & Home       & 2 & Yes \\
+    Devon   & 11 &  8 & Cafeteria  & 0 & No  \\
+    Marisol &  9 & 35 & Home       & 3 & Yes \\
+    Theo    & 12 & 15 & Cafeteria  & 1 & Yes \\
+    Priya   & 10 &  5 & Off campus & 2 & No  \\
+    Jamal   & 11 & 25 & Cafeteria  & 4 & Yes \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+  \begin{minipage}{0.8\textwidth}
+    \begin{itemize}
+      \setlength{\itemsep}{5pt}
+      \item Each \textbf{row} is an \textbf{individual} --- 6 of them.
+      \item Each \textbf{column} is a \textbf{variable} --- 5 of them.
+    \end{itemize}
+  \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── TWO TYPES ────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two types of variables}
+  \sectionlabel{one question decides it}
+
+  \begin{center}
+    {\large\bfseries Could I find an average of this column?}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Commute (min)}
+        $20,\; 8,\; 35,\; 15,\; 5,\; 25$\\[4pt]
+        Mean $= 18$ minutes. That is a real commute length.\\[4pt]
+        {\color{cerulean}\bfseries Quantitative} --- a measured amount with units.
+        Summarize with a \textbf{mean}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Lunch}
+        Home, Cafeteria, Home, Cafeteria, Off campus, Cafeteria\\[4pt]
+        There is no average of three place names.\\[4pt]
+        {\color{cerulean}\bfseries Categorical} --- a label.
+        Summarize with \textbf{counts and percents}.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── THE TRAP ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The trap: numbers that are really labels}
+  \sectionlabel[goldacc]{grade level}
+
+  \begin{center}
+    $10, \quad 11, \quad 9, \quad 12, \quad 10, \quad 11$
+  \end{center}
+
+  \vspace{0.3cm}
+  \begin{center}
+    It is made of digits. Does that make it quantitative?
+  \end{center}
+
+  \vspace{0.3cm}
+  \begin{center}
+    $\dfrac{10+11+9+12+10+11}{6} \; = \; \dfrac{63}{6} \; = \; 10.5$
+  \end{center}
+
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{goldacc}\bfseries\large Who is in grade 10.5?}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{block}{The test --- write this down}
+    Not ``does it look like a number?'' but
+    \textbf{does arithmetic on this variable mean anything?}\\[3pt]
+    Jersey numbers and ZIP codes fail the same test.
+  \end{block}
+\end{frame}
+
+% ── STATISTICAL QUESTIONS ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Statistical questions}
+  \sectionlabel{variability is the point}
+
+  \vspace{0.2cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Not statistical}
+        ``How tall am I?''\\[4pt]
+        Measure once. One answer. Done.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Statistical}
+        ``How tall are students at Riverbend?''\\[4pt]
+        The answers \textbf{vary} from student to student, so it takes data.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \textbf{S or N?}
+      \begin{itemize}
+        \setlength{\itemsep}{4pt}
+        \item How many students are enrolled at Riverbend?
+        \item How long is the commute for students at Riverbend?
+        \item What did Devon eat for lunch today?
+        \item Where do Riverbend students eat lunch?
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── ROAD MAP ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Road map --- the data cycle}
+  \sectionlabel{where unit 1 is going}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} c l l @{}}
+    \hline
+    \textbf{Stage} & \textbf{What you do} & \textbf{What can go wrong} \\
+    \hline
+    1 & Formulate the question  & Nobody says who it is about \\
+    2 & Collect or acquire data & You ask the wrong people, or too few \\
+    3 & Organize and represent  & The display hides the pattern \\
+    4 & Analyze and communicate & The conclusion claims too much \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    Go back to the lunch-line poster.\\[4pt]
+    {\color{cerulean}\bfseries Which stage was your objection attacking?}
+  \end{center}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Today in one line}
+  \sectionlabel[goldacc]{exit ticket next}
+
+  \vspace{0.6cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item Data are numbers \textbf{with a context}: who, what, units.
+        \item Rows are \textbf{individuals}; columns are \textbf{variables}.
+        \item \textbf{Quantitative} $\rightarrow$ mean.
+              \textbf{Categorical} $\rightarrow$ counts and percents.
+        \item Digits do not make a variable quantitative ---
+              \textbf{averaging has to mean something}.
+        \item A \textbf{statistical question} expects the answers to vary.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}

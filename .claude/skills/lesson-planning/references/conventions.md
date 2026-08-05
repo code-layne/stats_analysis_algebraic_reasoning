@@ -5,9 +5,13 @@ truth — if the styles diverge from this, follow the package.
 
 The style packages, the box vocabulary, and the five conventions below were ported from the
 Algebra, Trigonometry, and Data Analysis course (2026-08-05) with the prefix changed to `saar`
-and the course title changed; the royal-blue / gold palette carried over unchanged. That course
-had in turn taken them from Linear Algebra and, before that, Algebra 2. The conventions are
-battle-tested; adopt them from lesson 1.1 onward rather than rediscovering them.
+and the course title changed. That course had in turn taken them from Linear Algebra and, before
+that, Algebra 2. The conventions are battle-tested; adopt them from lesson 1.0 onward rather than
+rediscovering them.
+
+**The palette did not carry over.** The port copied Algebra/Trig/Data Analysis's royal blue
+verbatim, which left the two courses visually identical. It was replaced with **cerulean** on
+2026-08-05 and the color names were renamed across the whole tree — see "Color palette" below.
 
 ## Style packages
 
@@ -17,7 +21,7 @@ battle-tested; adopt them from lesson 1.1 onward rather than rediscovering them.
 | `saar-article` | Article preamble: geometry, lists, fill-in helpers, page header, name rows, **course macros** | student components |
 | `saar-boxes` | All `tcolorbox` environments, plus `\boxguard`, the `work` environment and `teachernote` | components + lesson plan |
 | `saar-key` | Answer macros (`\ans`, `\ansline`, `\vocabans`) + makes `work` blocks visible; requires `-boxes` | answer keys |
-| `saar-beamer` | Slide theme (`\royalheader{}`, `\sectionlabel[color]{}`) | `slides/` |
+| `saar-beamer` | Slide theme (`\ceruleanheader{}`, `\sectionlabel[color]{}`) | `slides/` |
 
 The `slides` component requires `shared/saar-beamer.sty`, which is already in place. If any
 style file is ever copied in from another course, change its internal
@@ -62,11 +66,11 @@ scaffolder includes it):
 | `\blank{width}` | Underlined gap of the given width (e.g. `\blank{4.8cm}`) |
 | `\writeline` | A full-width gray rule to write on |
 | `\writelines{n}` | `n` stacked write-lines |
-| `\termblank{Term}` | Bold royal term + inline blank, then a write-line |
-| `\termblanklong{Term}` | Bold royal term on its own line + two write-lines (vocab style) |
+| `\termblank{Term}` | Bold cerulean term + inline blank, then a write-line |
+| `\termblanklong{Term}` | Bold cerulean term on its own line + two write-lines (vocab style) |
 | `\namedateperiod` | Name / Date / Period row — **cover and unit tests only** (Namestrip) |
 | `\namepartnerperiod` | Name / Partner / Period row — **not used on components**; superseded by Namestrip |
-| `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width royal-blue banner header (prints `\CourseHeaderName`, "Stat Analysis & Algebraic Reasoning") |
+| `\pageheader{Unit X, Lesson Y.Z}{Document Type}` | Full-width cerulean banner header (prints `\CourseHeaderName`, "Stat Analysis & Algebraic Reasoning") |
 
 **Course macros** (`-article`): `\CourseName` is the full title, *Statistical Analysis & Algebraic
 Reasoning* — use it on covers and title slides. `\CourseHeaderName` is the short form the page
@@ -91,10 +95,10 @@ properly is quieter and correct.
 ## Box environments (from `-boxes`)
 
 Lesson-plan boxes take a background color as the last argument (use the aliases `goldbox`,
-`greenbox`, `redbox`, or palette colors like `mist`); the frame/header is royal by default:
+`greenbox`, `redbox`, or palette colors like `frost`); the frame/header is cerulean by default:
 ```latex
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox} ... \end{skillbox}   % breakable
-\begin{fixedskillbox}[Spiral Review]{mist} ... \end{fixedskillbox}      % no page break
+\begin{fixedskillbox}[Spiral Review]{frost} ... \end{fixedskillbox}      % no page break
 ```
 
 Titled student boxes (title is fixed by the environment unless it takes an argument):
@@ -392,28 +396,39 @@ identical so they paginate the same way.
 
 ## Color palette (from `-colors`)
 
-**Royal blue is the dominant color; gold is the secondary accent.** This is the *only* set of
+**Cerulean is the dominant color; gold is the secondary accent.** This is the *only* set of
 defined colors — using any other name is a compile error:
 
-- **Royal family (primary):** `royal` (#1D3F94), `royallight` (#3A62C4) — box frames/headers,
-  the `\pageheader` banner, and term labels.
-- **Mist tints (paired backgrounds):** `mist` (#EEF3FC), `mistmid` (#BFD3EF) — light backgrounds
-  under royal frames (objective / learning-target / reflection boxes) and the banner subtitle.
-- **Gold:** `goldacc` (#C8860D), `goldbg`, `hookbg` (#FDF4E3) — Hook, Extension, Keep-in-Mind.
+- **Cerulean family (primary):** `cerulean` (#0B6FA4), `ceruleanlight` (#2A8CC0) — box
+  frames/headers, the `\pageheader` banner, and term labels.
+- **Frost tints (paired backgrounds):** `frost` (#E7F2F9), `frostmid` (#BBD9EC) — light
+  backgrounds under cerulean frames (objective / learning-target / reflection boxes) and the
+  banner subtitle.
+- **Gold:** `goldacc` (#D4820A), `goldbg`, `hookbg` (#FEF3E2) — Hook, Extension, Keep-in-Mind.
 - **Plum:** `plumacc` (#6B3FA0) on `plumbg` (#F3EEFA) — `practicebox` ("Guided Practice"). It is
-  deliberately *not* blue, so guided practice reads as distinct from the royal notes boxes.
+  deliberately *not* blue, so guided practice reads as distinct from the cerulean notes boxes.
 - **Green:** `greenbg`/`greenacc` — Vocabulary.
 - **Red:** `redbg`/`redacc` — available as a `scenariobox`/`blurbbox` color.
 - **Neutrals:** `charcoal`, `slate`, `graybg` (#F1F4F8, the `teachernote` background),
   `linegray`. **Answer red:** `keyred` (#CC0000).
-- **Lesson-plan background aliases:** `bluebox`, `goldbox`, `greenbox`, `redbox`, `plumbox`.
+- **Lesson-plan background aliases:** `frostbox`, `goldbox`, `greenbox`, `redbox`, `plumbox`.
 
-There are **no deprecated aliases** — `burgundy`, `blush`, `navy`, `sky`, `royalblue`, and
-`skyblue` are all undefined here. If you paste material in from another course, translate its
-colors first.
+**Why cerulean.** It is the *third* blue across the statistics-family courses, so a packet is
+identifiable at a glance on a stack: AP Statistics is navy (#1F3A5F), Algebra/Trig/Data Analysis
+is royal (#1D3F94), and this course is cerulean (#0B6FA4). The separation is one of **hue**, not
+just lightness, so it survives a photocopy. (Elsewhere in the department: Algebra 2 forest
+#1E5631, Precalculus plum #4B2A6C, Linear Algebra burgundy #6B2137.) White on cerulean measures
+5.49:1 — WCAG AA for normal text.
 
-The **Beamer theme overrides three colors** for dark slide backgrounds: a brighter `royal`
-(#27509F), `goldacc` (#F5A623), and `hookbg` (#D4820A). That is intentional — do not sync them
+There are **no deprecated aliases.** This course was scaffolded against a royal/mist palette
+that duplicated Algebra/Trig/Data Analysis exactly; the palette was replaced and the names
+renamed across the whole tree on 2026-08-05, so `royal`, `royallight`, `mist`, `mistmid`, and
+`bluebox` are now **undefined** — a stale reference fails loudly rather than silently rendering
+in the old scheme. `navy`, `sky`, `burgundy`, `blush`, and `forest` belong to other courses and
+are likewise undefined. If you paste material in from another course, translate its colors first.
+
+The **Beamer theme overrides three colors** for dark slide backgrounds: a brighter `cerulean`
+(#1785BF), `goldacc` (#F5A623), and `hookbg` (#D4820A). That is intentional — do not sync them
 back to `-colors`.
 
 ## Lesson-plan section order (canonical)

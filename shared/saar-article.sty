@@ -44,11 +44,11 @@
 % halves of the same vocabulary row.
 \newcommand{\termblank}[1]{%
   \par\addvspace{2pt}%
-  \noindent\textbf{\textcolor{royal}{#1:}}\quad\blank{6.5cm}\\[1pt]%
+  \noindent\textbf{\textcolor{cerulean}{#1:}}\quad\blank{6.5cm}\\[1pt]%
   \writeline\par\addvspace{2pt}}
 \newcommand{\termblanklong}[1]{%
   \par\addvspace{2pt}%
-  \noindent\textbf{\textcolor{royal}{#1:}}\\[1pt]%
+  \noindent\textbf{\textcolor{cerulean}{#1:}}\\[1pt]%
   \writeline\\[1pt]\writeline\par\addvspace{3pt}}
 
 % ── Course metadata ───────────────────────────────────────────────────────────
@@ -66,11 +66,11 @@
 % ── Page header: \pageheader{Unit X, Lesson Y.Z}{Document Type} ───────────────
 \newcommand{\pageheader}[2]{%
     \noindent
-    \colorbox{royal}{%
+    \colorbox{cerulean}{%
         \parbox{\dimexpr\linewidth}{%
             \vspace{6pt}%
             \color{white}\textbf{\large \CourseHeaderName \hfill #1}\\[2pt]%
-            {\color{mistmid}\small\textbf{#2}}%
+            {\color{frostmid}\small\textbf{#2}}%
             \vspace{6pt}%
         }%
     }%

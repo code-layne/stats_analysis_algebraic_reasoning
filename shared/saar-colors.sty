@@ -4,16 +4,29 @@
 \RequirePackage{xcolor}
 
 % ── Primary palette ───────────────────────────────────────────────────────────
-% Royal blue is the dominant color: deep frame/header tone plus a lighter
-% companion, with pale blue tints used for paired box backgrounds. Gold is the
-% secondary accent (hooks, extensions, reminders).
-\definecolor{royal}{HTML}{1D3F94}
-\definecolor{royallight}{HTML}{3A62C4}
-\definecolor{mist}{HTML}{EEF3FC}
-\definecolor{mistmid}{HTML}{BFD3EF}
-\definecolor{goldacc}{HTML}{C8860D}
-\definecolor{goldbg}{HTML}{FDF4E3}
-\definecolor{hookbg}{HTML}{FDF4E3}
+% CERULEAN is the dominant color: a bright, cyan-leaning blue, deliberately
+% chosen as the THIRD blue across the statistics-family courses so a packet is
+% identifiable at a glance on a stack:
+%
+%     AP Statistics                       navy      #1F3A5F
+%     Algebra, Trig & Data Analysis       royal     #1D3F94
+%     Statistical Analysis & Alg. Reas.   cerulean  #0B6FA4   <- this course
+%
+% (For the rest of the department: Algebra 2 forest #1E5631, Precalculus plum
+% #4B2A6C, Linear Algebra burgundy #6B2137.) The distinction is one of HUE, not
+% just lightness, so it survives a photocopy. White on cerulean measures
+% 5.49:1 contrast — WCAG AA for normal text.
+%
+% Frost tints are the paired pale backgrounds. Gold is the secondary accent
+% (hooks, extensions, reminders), shared department-wide. Plum is the deliberate
+% off-tone for guided practice, so that box never reads as another cerulean one.
+\definecolor{cerulean}{HTML}{0B6FA4}
+\definecolor{ceruleanlight}{HTML}{2A8CC0}
+\definecolor{frost}{HTML}{E7F2F9}
+\definecolor{frostmid}{HTML}{BBD9EC}
+\definecolor{goldacc}{HTML}{D4820A}
+\definecolor{goldbg}{HTML}{FEF3E2}
+\definecolor{hookbg}{HTML}{FEF3E2}
 \definecolor{greenbg}{HTML}{EDF8F0}
 \definecolor{greenacc}{HTML}{2D7A4F}
 \definecolor{redbg}{HTML}{FCECEC}
@@ -28,7 +41,15 @@
 
 % ── Lesson-plan background aliases ────────────────────────────────────────────
 \definecolor{goldbox}{HTML}{FFF7E6}
-\colorlet{bluebox}{mist}
+\colorlet{frostbox}{frost}
 \colorlet{greenbox}{greenbg}
 \colorlet{redbox}{redbg}
 \colorlet{plumbox}{plumbg}
+
+% ── No deprecated aliases ─────────────────────────────────────────────────────
+% The pre-port names (`royal`, `royallight`, `mist`, `mistmid`, `bluebox`) were
+% renamed across the whole tree when this palette landed, so they are
+% deliberately UNDEFINED — one name per color, and a stale reference fails
+% loudly instead of silently rendering in the old scheme. Likewise `navy`,
+% `sky`, `burgundy`, `blush`, and `forest` belong to other courses; material
+% pasted in from one of them must have its colors translated first.
