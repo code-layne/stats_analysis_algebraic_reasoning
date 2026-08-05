@@ -12,9 +12,186 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{headlinebox}{frost}
+\small
+\textbf{Data Detectives.} Work in your group. Every answer needs a
+\emph{reason} --- ``because it's a number'' is never a reason in this course.
+\end{headlinebox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+The Riverbend Athletics Department keeps this table on its basketball team.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l c l c c c @{}}
+\toprule
+\textbf{Player} & \textbf{Jersey \#} & \textbf{Position} & \textbf{Points} &
+\textbf{Height (in)} & \textbf{Captain} \\
+\midrule
+Nia    & 12 & Guard   & 14 & 66 & Yes \\
+Ruben  &  7 & Forward &  9 & 71 & No  \\
+Sasha  & 23 & Center  &  6 & 75 & No  \\
+Marcus &  4 & Guard   & 19 & 68 & Yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+  \item How many \textbf{individuals} are in this table? \ans{4}
+  \item How many \textbf{variables} are in this table? \ans{5}
+  \item For each variable below, first say the sentence out loud ---
+        ``This player's \underline{\hspace{1.4cm}} is
+        \underline{\hspace{1.4cm}}'' --- then decide whether the answer is a
+        \textbf{label} or a \textbf{measured amount}, and classify it.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{0.95\linewidth}{@{} p{2.6cm} p{3.2cm} X @{}}
+        \toprule
+        \textbf{Variable} & \textbf{Label or amount?} & \textbf{Type} \\
+        \midrule
+        Position      & \ans{label}  & \ans{categorical} \\
+        Points        & \ans{amount} & \ans{quantitative} \\
+        Height (in)   & \ans{amount} & \ans{quantitative} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Find the mean number of points scored.
+
+        \begin{work}
+          \bar{x} &= \dfrac{14+9+6+19}{4} \\
+                  &= \dfrac{48}{4} \\
+                  &= 12 \text{ points}
+        \end{work}
+
+  \item Write one sentence saying what your answer to \#4 describes. Name the
+        group and the units.
+        \ansline{The four players on this team scored a mean of 12 points each.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item Riverbend's principal wants to know how much sleep Riverbend students get
+        on a school night. There are $900$ students at Riverbend. She surveys
+        $80$ of them, and $32$ report getting fewer than $7$ hours.
+
+        \textbf{(a)} What group does she want to know about (the population)?
+        \ans{all 900 Riverbend students}
+
+        \textbf{(b)} What variable is being recorded? \ans{hours of sleep on a school night}
+
+        \textbf{(c)} Is that variable categorical or quantitative?
+        \ans{quantitative} \; Why? \ans{hours are an amount}
+
+        \textbf{(d)} What percent of the students surveyed got fewer than
+        $7$ hours?
+
+        \begin{work}
+          \dfrac{32}{80} &= 0.40 \\
+                         &= 40\%
+        \end{work}
+
+        \textbf{(e)} Based on the survey, predict how many of the $900$ Riverbend
+        students get fewer than $7$ hours.
+
+        \begin{work}
+          0.40 \times 900 &= 360 \text{ students}
+        \end{work}
+
+        \textbf{(f)} Write the conclusion as one sentence a principal could
+        actually use. Name the group, the number, and the units.
+        \ansline{About 360 of Riverbend's 900 students get fewer than 7 hours of sleep.}
+
+  \item For each study, name the population, the variable, and its type.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{0.97\linewidth}{@{} X p{2.9cm} p{2.5cm} @{}}
+        \toprule
+        \textbf{Study} & \textbf{Variable recorded} & \textbf{Type} \\
+        \midrule
+        A town council asks residents who work how they get to work each day.
+          & \ans{how they travel} & \ans{categorical} \\
+        A pediatrician records the birth weight of every baby delivered at one
+        hospital last year.
+          & \ans{birth weight} & \ans{quantitative} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Population for the town council study: \ans{all residents of the town who work}
+
+  \item Is ``How many minutes long is the Riverbend lunch period?'' a statistical
+        question? \ans{No}
+
+        Explain your reasoning.
+        \ansline{The period has one fixed length, so every student gives the same answer.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item A sports blog writes about the Riverbend team in the Tier R table:
+
+        \begin{center}
+        \textit{``Their mean jersey number is $11.5$, which shows this is a young,
+        rebuilding team.''}
+        \end{center}
+
+        The arithmetic is correct --- check it if you like. Explain what is wrong
+        with the claim anyway.
+        \ansline{Jersey number is a label written with digits, so its mean measures nothing real.}
+        \ansline{The number 11.5 describes no player and says nothing about the team's age.}
+
+  \item Write a \textbf{statistical question} of your own about students at your
+        school. Then complete the rest of the row.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.35}
+        \begin{tabularx}{0.97\linewidth}{@{} p{2.9cm} X @{}}
+        \toprule
+        My question & \ans{Answers vary --- e.g.\ ``How many hours a week do students here work?''} \\
+        Variable recorded & \ans{hours worked per week at a paid job} \\
+        Type & \ans{quantitative} \\
+        Why it is statistical & \ans{different students give different answers, so it takes data} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Two studies both ask students about brothers and sisters. Study 1 records
+        \emph{how many} siblings each student has. Study 2 records only whether
+        each student is an \emph{only child} --- yes or no.
+
+        Classify the variable in each study, then explain how the same fact about
+        the same student can produce two different variable types.
+
+        Study 1: \ans{quantitative} \hfill Study 2: \ans{categorical}
+
+        \ansline{The type comes from what was recorded, not from the student. Study 1 records a count,}
+        \ansline{which can be averaged; Study 2 records a Yes/No label, which can only be counted.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
