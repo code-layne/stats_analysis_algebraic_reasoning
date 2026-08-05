@@ -1,0 +1,33 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saar-key}[2026/08/05 Statistical Analysis and Algebraic Reasoning answer-key additions]
+
+\RequirePackage{saar-boxes}
+
+% ── The work rule ─────────────────────────────────────────────────────────────
+% \begin{work} is defined in saar-boxes and is authored identically in the
+% blank and the key. The blank reserves the block's exact height and ships
+% nothing; loading this package is what makes the same block visible. See the
+% comment above the environment in saar-boxes.sty.
+\saar@workvisibletrue
+
+% ── Answer macros ─────────────────────────────────────────────────────────────
+\newcommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
+\newcommand{\ansline}[1]{%
+    \vspace{1pt}\noindent\textcolor{keyred}{\textbf{#1}}%
+    \textcolor{linegray}{\dotfill}\vspace{3pt}}
+
+% Filled-in vocabulary entry: the answer-key counterpart of \termblanklong.
+% \vocabans{Term}{definition} → royal bold "Term:" followed by the keyed answer.
+%
+% VOCABPAR is enforced here, mirroring \termblanklong in saar-article.sty: the
+% leading \par means a vocabbox opening with an intro sentence can never run that
+% sentence into the first term, in the blank or the key. No per-lesson fix needed.
+\newcommand{\vocabans}[2]{%
+    \par\addvspace{2pt}%
+    \noindent\textbf{\textcolor{royal}{#1:}}\ \ans{#2}\par\addvspace{3pt}}
+
+% ── Teacher note box ──────────────────────────────────────────────────────────
+% MOVED to saar-boxes: teacher notes now live in the lesson plan, which loads
+% -boxes and not -key. It takes an optional component title there
+% (\begin{teachernote}[Warm-Up]) and a bare \begin{teachernote} still works, so
+% keys not yet migrated keep compiling. See "Teacher notes" in saar-boxes.sty.
