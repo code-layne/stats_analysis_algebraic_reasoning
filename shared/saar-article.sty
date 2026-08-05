@@ -1,0 +1,88 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{saar-article}[2026/08/05 Statistical Analysis and Algebraic Reasoning article preamble]
+
+\RequirePackage[margin=0.75in, top=0.6in, bottom=0.75in]{geometry}
+\RequirePackage{saar-colors}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
+\RequirePackage{mathtools,amssymb}   % mathtools loads amsmath; provides bsmallmatrix etc.
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{tikz}
+\RequirePackage{colortbl}
+\RequirePackage{booktabs}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\tcbuselibrary{breakable, skins}
+
+% ── Column types ──────────────────────────────────────────────────────────────
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% ── List / paragraph settings ─────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.3em, topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.5em, itemsep=0.4em, topsep=0.3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% ── Fill-in helpers ───────────────────────────────────────────────────────────
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
+\newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
+% VOCABPAR is enforced HERE, not per-lesson. A bare \noindent is a NO-OP in the
+% middle of a paragraph, so a vocabbox that opens with an intro sentence used to
+% run that sentence into the first term, and every lesson had to insert
+% \par\vspace{2pt} by hand in the blank AND the key. Both term macros now open
+% with their own \par, so the collision cannot happen.
+%
+% Note the trailing \par\addvspace rather than the older \\[Npt]: a \\ immediately
+% followed by the next term's \par emits an underfull \hbox per term. Ending the
+% paragraph properly is both quieter and correct. Keep \termblanklong and
+% \vocabans (saar-key.sty) structurally parallel — they are the blank and the key
+% halves of the same vocabulary row.
+\newcommand{\termblank}[1]{%
+  \par\addvspace{2pt}%
+  \noindent\textbf{\textcolor{royal}{#1:}}\quad\blank{6.5cm}\\[1pt]%
+  \writeline\par\addvspace{2pt}}
+\newcommand{\termblanklong}[1]{%
+  \par\addvspace{2pt}%
+  \noindent\textbf{\textcolor{royal}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\par\addvspace{3pt}}
+
+% ── Course metadata ───────────────────────────────────────────────────────────
+% Defined before \pageheader so the banner can use \CourseHeaderName. The full
+% course title is long, so the banner carries the short form; \CourseName is the
+% full title, used on covers and title slides.
+%
+% NO SCHOOL YEAR. These documents are meant to be reused year over year, so
+% nothing printed on a lesson, packet, or test may carry one. There is
+% deliberately no \SchoolYear macro to reach for.
+\newcommand{\CourseName}{Statistical Analysis \& Algebraic Reasoning}
+\newcommand{\CourseHeaderName}{Stat Analysis \& Algebraic Reasoning}
+\newcommand{\MeetingLength}{55 minutes}
+
+% ── Page header: \pageheader{Unit X, Lesson Y.Z}{Document Type} ───────────────
+\newcommand{\pageheader}[2]{%
+    \noindent
+    \colorbox{royal}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}%
+            \color{white}\textbf{\large \CourseHeaderName \hfill #1}\\[2pt]%
+            {\color{mistmid}\small\textbf{#2}}%
+            \vspace{6pt}%
+        }%
+    }%
+    \vspace{1.5em}\par\noindent}
+
+% ── Student name rows ─────────────────────────────────────────────────────────
+\newcommand{\namedateperiod}{%
+    \begin{tabularx}{\linewidth}{X X X}
+    Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
+    \end{tabularx}}
+
+\newcommand{\namepartnerperiod}{%
+    \begin{tabularx}{\linewidth}{X X X}
+    Name:\;\blank{4.8cm} & Partner:\;\blank{4.0cm} & Period:\;\blank{1.5cm}
+    \end{tabularx}}
