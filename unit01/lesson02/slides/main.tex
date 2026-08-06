@@ -17,10 +17,224 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: section title}
-  % TODO: slide content
+  \ceruleanheader{She asked 50. She wrote about 800.}
+  \sectionlabel[goldacc]{hook}
+
+  \begin{center}
+    \vspace{0.3cm}
+    {\Large\itshape ``52\% of our Saturday shoppers\\[4pt]
+     drive to the market.''}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Is she allowed to write that sentence?}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    \begin{minipage}{0.8\textwidth}
+      \textbf{And why would she not just ask all 800 of them?}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── POPULATION AND SAMPLE ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Every study has two groups}
+  \sectionlabel{name the population first}
+
+  \vspace{0.3cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Population}
+        The \textbf{entire} group the question is about.\\[4pt]
+        All 800 Saturday shoppers.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Sample}
+        The part you actually \textbf{collected data from}.\\[4pt]
+        The 50 she asked. Sample size: 50.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      A \textbf{census} collects data from every individual in the population.
+      You will meet almost none of them.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── PARAMETER AND STATISTIC ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two kinds of numbers}
+  \sectionlabel{who does it describe?}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} l l l @{}}
+    \hline
+    \textbf{Kind} & \textbf{Describes} & \textbf{Do you know it?} \\
+    \hline
+    Parameter & the \textbf{p}opulation & almost never \\
+    Statistic & the \textbf{s}ample     & yes --- you computed it \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{cerulean}\bfseries You use the number you have to estimate the number
+    you want.}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \small A percent, a mean, or a count can be \emph{either} one. What the
+      number looks like tells you nothing --- the group it describes tells you
+      everything.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── LABEL IT ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Label each number}
+  \sectionlabel{parameter or statistic?}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{@{} l l l @{}}
+    \hline
+    \textbf{The number} & \textbf{Describes} & \textbf{Kind} \\
+    \hline
+    52\% of the 50 shoppers asked drove       & the sample     & statistic \\
+    800 shoppers came Saturday morning        & the population & parameter \\
+    The 8 asked traveled a mean of 4 miles    & the sample     & statistic \\
+    61\% of all 900 Riverbend students ride a bus & the population & parameter \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Row 4 is a percent --- and it is still a parameter.}
+  \end{center}
+\end{frame}
+
+% ── CONSTRAINTS ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Constraints --- why we sample at all}
+  \sectionlabel{the census is off the table}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item \textbf{Time} --- reaching everyone takes longer than you have.
+        \item \textbf{Cost} --- reaching everyone costs more than the budget.
+        \item \textbf{Access} --- some individuals cannot be found or reached.
+        \item \textbf{Destruction} --- measuring ruins the item you measured.
+        \item \textbf{Change} --- the population shifts while you collect.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \small A cereal plant filled 12,000 boxes Tuesday. To weigh a box you have to
+    open it.
+  \end{center}
+\end{frame}
+
+% ── SAMPLING VARIABILITY ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Three volunteers. One Saturday. Three answers.}
+  \sectionlabel[goldacc]{which one is wrong?}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c l @{}}
+    \hline
+    \textbf{Volunteer} & \textbf{Drove, of 50} & \textbf{Percent} \\
+    \hline
+    Ana  & 26 & $26/50 = 0.52 = 52\%$ \\
+    Ben  & 24 & $24/50 = 0.48 = 48\%$ \\
+    Cleo & 29 & $29/50 = 0.58 = 58\%$ \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    Three statistics. \textbf{One} parameter. Nobody miscounted.\\[6pt]
+    {\color{cerulean}\bfseries This is sampling variability --- it is what samples
+    do.}
+  \end{center}
+\end{frame}
+
+% ── WHAT YOU MAY CLAIM ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{What the sample lets you say}
+  \sectionlabel{and what it does not}
+
+  \vspace{0.3cm}
+  \begin{block}{Allowed}
+    ``About half of the shoppers \textbf{we asked} drove.''
+  \end{block}
+
+  \vspace{0.3cm}
+  \begin{block}{Not allowed}
+    ``\textbf{Exactly} 416 Saturday shoppers drove.'' --- 416 is an estimate, not
+    a count.\\[4pt]
+    ``52\% of \textbf{Lakeside residents} drive to the market.'' --- wrong
+    population.
+  \end{block}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Change the population and the same statistic
+    estimates a different parameter.}
+  \end{center}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Today in one line}
+  \sectionlabel[goldacc]{exit ticket next}
+
+  \vspace{0.6cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item The \textbf{population} is everyone the question is about; the
+              \textbf{sample} is who you measured.
+        \item A \textbf{parameter} describes the population and is almost always
+              unknown.
+        \item A \textbf{statistic} describes the sample --- it is the number you
+              can actually compute.
+        \item \textbf{Constraints} --- time, cost, access, destruction, change ---
+              are why we sample.
+        \item Two honest samples give two statistics for \textbf{one} parameter.
+              That is not an error.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}

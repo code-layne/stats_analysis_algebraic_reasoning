@@ -16,56 +16,295 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will name the population and the sample
+    in a study, label a given number as a parameter or a statistic, explain the
+    real-world constraints that make a census impractical, explain why two honest
+    samples give two different statistics for one unchanging parameter, and judge
+    what a sample does --- and does not --- allow a report to claim.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Identify the \textbf{population}, the \textbf{sample}, and the
+            \textbf{sample size} in a described study. \hfill \textit{PS.DC.1d}
+      \item Distinguish a \textbf{parameter} from a \textbf{statistic}, and say
+            which of the two is known. \hfill \textit{PS.DC.1d}
+      \item Define a \textbf{census} and explain why it is rarely available.
+            \hfill \textit{PS.DC.1d--e}
+      \item Name the \textbf{constraint} --- time, cost, access, destruction,
+            change --- that forces sampling in a given context.
+            \hfill \textit{PS.DC.1e}
+      \item Explain \textbf{sampling variability}: one parameter, many
+            statistics. \hfill \textit{PS.DC.1e}
+      \item Judge whether a written claim stays inside what the sample supports.
+            \hfill \textit{PS.DC.1b, e}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item \emph{The population is decided by the question, not by who happens
+            to be available.} Naming it is a stage-1 act; the sample is chosen
+            out of it afterwards.
+      \item The number you \textbf{want} (the parameter) is almost never the
+            number you \textbf{have} (the statistic). Everything after this
+            lesson is about closing that gap.
+      \item A statistic is not the parameter with error in it --- it is a
+            \emph{different number} that varies by design. Two honest surveys
+            disagreeing is normal, not evidence of a mistake.
+      \item Constraints are not excuses. They are why sampling exists, and they
+            are part of describing a study honestly.
+      \item A conclusion may describe only the population the sample was drawn
+            from --- change the population and the same statistic estimates a
+            different parameter.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Population & The entire group the question is about --- every individual you
+       would like the conclusion to describe. \\
+Sample & The part of the population data were actually collected from. \\
+Sample size & How many individuals are in the sample. \\
+Census & A study that collects data from every individual in the population. \\
+Parameter & A number that describes the population. Usually unknown. \\
+Statistic & A number that describes the sample; computed from collected data. \\
+Constraint & A real-world limit on how a study can be run --- time, cost,
+       access, destruction, or a changing population. \\
+Sampling variability & The fact that a statistic changes from one sample to the
+       next even when nothing about the population changes. \\
+Estimate & Using a statistic as the best available stand-in for a parameter.
+       \emph{(Made precise in Unit 7.)} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It rehearses the two computations
+            today's lesson leans on, and quietly stages the new idea:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Turning a count out of a total into a percent.
+              \item Scaling a sample percent up to a whole group.
+              \item Separating the group that was \emph{asked} from the group the
+                    report is \emph{about} (Lesson 1.1's homework).
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            The warm-up reuses the Lakeside Farmers Market numbers students left
+            with last night --- $26$ of $50$, scaled to $800$. Item 3 asks them
+            to write $50$ and $800$ in two rows without giving them the words
+            \emph{sample} and \emph{population}; the notes then name what they
+            have already separated.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
+\boxguard
 \begin{skillbox}[Hook]{frost}
-    % TODO: the engaging entry question / scenario.
+    Put the manager's sentence on the board: \textit{``$52\%$ of our Saturday
+    shoppers drive to the market.''} Under it write the two numbers from the
+    warm-up: \textbf{50} and \textbf{800}.
+    \textbf{Ask: she never asked 800 people. Is she allowed to write that
+    sentence?} Take the argument --- there will be one. Then turn it:
+    \textbf{why would she not just ask all 800?} Collect reasons on the board
+    (too slow, they leave, nobody would answer, no money) and leave them there;
+    those are the constraints you will name in section 3, and students will have
+    supplied them themselves. Close the hook by pointing at $52\%$ and asking
+    what number she \emph{actually wanted} to know. Nobody knows it. That gap is
+    today's lesson.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{frost}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Two groups.} Population, sample, sample size --- on the Lakeside study
+they already know. Run the three-row table; the cereal-plant row is the one that
+breaks the ``population $=$ people'' assumption, so do not skip it.
+\textbf{Ask: can you name the sample before you name the population?} No --- the
+sample is chosen \emph{out of} the population, so the population comes first.
+Then define \textbf{census} and ask for an example. Most classes land on the U.S.
+Census, and that is nearly the whole list.
+
+\textbf{2. Parameter and statistic.} Give the p/p and s/s memory hook, then run
+the four-row table. Row 4 (district records, $61\%$ of all $900$) is the one that
+matters: it is a percent, like row 1, and it is still a parameter --- because of
+\emph{who it describes}, not how it looks. Close with the two closing blanks:
+you know the statistic, you want the parameter. Say plainly that Units 7 and 8
+are entirely about that gap. The notation line ($\mu$, $\bar{x}$, $p$, $\hat p$)
+is a preview only --- read it aloud, do not drill it.
+
+\textbf{3. Constraints.} This is PS.DC.1e and it is easy to under-teach as a list.
+Point back at the hook board: the class already generated these. Name the five,
+then run the matching table. The cereal box (destruction) and the changing
+Saturday crowd (change) are the two students have never considered.
+
+\textbf{4. Sampling variability --- the pivot.} Ana, Ben, and Cleo asked three
+different sets of $50$ shoppers on the \emph{same} morning and got $52\%$, $48\%$,
+$58\%$. Compute Cleo's row in the work block, then ask the two counting
+questions: \textbf{three statistics, one parameter.} Ask outright: \emph{which
+one of them is wrong?} None. Let the class sit in that. This is the idea Unit 7
+is built on.
+
+\textbf{5. What a sample lets you say.} Fill the report sentence, then judge the
+three claims. ``Exactly $416$'' is the subtle one --- the arithmetic is right and
+the word \emph{exactly} is what fails. The Lakeside-residents claim changes the
+population out from under the statistic.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Labeling a Number Parameter or Statistic]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Read the number and ask: \textbf{who does it describe?} Underline that
+        group in the sentence.
+  \item Is that group \textbf{everybody the question is about}, or only
+        \textbf{the ones who were measured}?
+  \item Everybody $\Rightarrow$ \textbf{parameter}. Only the measured ones
+        $\Rightarrow$ \textbf{statistic}.
+  \item Check yourself: could you compute it from the collected data? If yes,
+        it is a statistic.
+  \item Ignore what the number \emph{looks} like. A percent, a mean, and a count
+        can each be either one.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- ``$61\%$ of Riverbend's $900$ students ride a bus.''}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] Who does it describe? \emph{Riverbend's $900$ students} --- underline
+        it.
+  \item[2.] That is everybody the question is about, not a measured subset.
+  \item[3.] Therefore a \textbf{parameter}.
+  \item[4.] Could you get it from the $45$ surveys? No --- it came from district
+        records covering all $900$.
+  \item[5.] It is a percent, exactly like the $52\%$ statistic. The shape told
+        you nothing; the group told you everything.
+\end{itemize}
+\textit{Contrast: ``the $8$ shoppers asked traveled a mean of $4$ miles'' ---
+a mean, but it describes only the measured $8$, so it is a statistic.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for ``big number $=$ parameter.''} Students decide by size:
+        $1{,}500$ must be the parameter, $75$ must be the statistic. Break it
+        with a small population (Ashford's $400$) or a large sample. Force the
+        question \emph{who does it describe?} every time.
+  \item \textbf{Watch for percent $=$ statistic.} A percent computed from
+        district records for all $900$ students is a parameter. Row 4 of the
+        notes table exists for this; check it as you circulate.
+  \item \textbf{Watch for ``one of them counted wrong.''} On the Ana/Ben/Cleo
+        item, many students will assume an error. Ask: \emph{did they survey the
+        same 50 people?} No. Then no count is wrong.
+  \item \textbf{Watch for the population drifting.} On the activity's Tier E
+        item 2, students say ``both are $35\%$, so same parameter.'' Ask them to
+        finish ``$35\%$ of \underline{\hspace{1.6cm}}'' out loud for each library.
+  \item \textbf{Cold-call prompts:} ``Who does that number describe?''
+        ``Which one do you actually know?'' ``Name the constraint.''
+        ``How many parameters are there?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Name population, sample, and sample size for one described survey.
+  \item Complete a frequency table with one row worked as a model.
+  \item Label two numbers parameter or statistic; scale a percent up and write
+        the conclusion sentence.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Match three situations to the constraint that blocks a census.
+  \item Two samples, two statistics ($35\%$ and $45\%$) --- explain the
+        difference and count the parameters.
+  \item Compute a mean and justify labeling it a statistic.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Find \emph{two} separate overclaims in one printed sentence.
+  \item Two libraries, equal statistics, different parameters --- explain why.
+  \item Plan a study for a mean: population, sample, statistic, parameter,
+        constraint.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).} One context: Westfield High School,
+$800$ students, $40$ asked in one lunch period, $65\%$ said cafeteria.
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Name the population, the sample, and the sample size.
+  \item Label three numbers parameter or statistic --- including the third,
+        \emph{the true percent for all $800$}, which no one has computed and
+        which is still a parameter.
+  \item \textbf{Conceptual / justification check:} name one constraint that
+        blocked a census, then explain whether a second survey returning $60\%$
+        means one of the two is wrong. Correct answer: \emph{neither} --- a
+        statistic varies from sample to sample, and both estimate the same single
+        parameter. Grade this one first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) said neither is wrong
+and named sampling variability, (b) said one must be wrong or that the truth is
+``somewhere in between'' without saying why, (c) recomputed something. Pile (b)
+is the teachable one and will be large; it is also exactly the intuition Unit 7
+formalizes, so name it now rather than correcting it as an error.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Harbor Point Community Pool.} A fresh context with the same
+spine: name the population and sample, complete a frequency table with relative
+frequencies, scale $36\%$ up to $1{,}500$ members, compute and label a mean,
+sort three numbers into parameter and statistic, match four situations to their
+constraints, explain why a second sample gave $40\%$, and close with a
+correct-arithmetic / wrong-conclusion item that has to be answered in words.
+
+\textbf{Extension (optional).} Students choose a group they belong to and plan a
+study for it: population, realistic sample, the statistic they would compute, the
+parameter it estimates, and the one constraint that blocks a census. Collect
+these --- they feed the Lesson 1.8 class-survey project.
+
+\textbf{Preview of Lesson 1.3.} The pool staff surveyed whoever arrived on a
+Tuesday evening, and lap swimmers keep evening hours. Today's lesson says a
+statistic estimates a parameter; next class asks \emph{which} samples are worth
+trusting, and names the four techniques --- simple random, stratified,
+systematic, cluster.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only
+as trustworthy as the study that produced it. \textit{Standards covered:}
+PS.DC.1d, PS.DC.1e (with PS.DC.1b carried forward in the conclusion items).
+\textit{Spirals forward to:} sampling techniques (1.3, PS.DC.2a--b), bias
+(1.4, PS.DC.2c), the full-cycle project (1.8), and --- directly --- sampling
+distributions and margin of error (7.1--7.2, PS.IS.1a, d).
+\textit{Reaches back to:} Lesson 1.1's data cycle and conclusion-in-context, and
+Algebra 1 percent and proportional reasoning.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +312,77 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. Items 1 and 2 are last night's homework
+    arithmetic on purpose --- say so, so nobody thinks they are being retested.
+    Item 3 is the one to read while collecting: students who write $50$ and $800$
+    in the right rows have already made today's distinction without the
+    vocabulary, and the notes can move fast. Students who put $416$ in a row have
+    confused an estimate with a group and will need section 1 slowly. Do
+    \emph{not} supply the words \emph{sample} and \emph{population} here --- the
+    warm-up is deliberately wordless about them.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: section 1 in 8 minutes, section 2 in 12, section 3 in 8, section 4 in
+    10, section 5 in 7. \textbf{Section 4 is the lesson.} Sections 1--3 are
+    vocabulary students will absorb quickly; the idea that three honest surveys
+    can disagree and none be wrong is the one that does not land on its own.
+
+    Section 2's fourth table row --- $61\%$ from district records --- is the
+    single most productive line in the notes. Every student who has decided
+    ``percent means statistic'' gets caught there. Do not fix it for them; ask
+    who the $61\%$ describes.
+
+    The notation line at the end of section 2 is exposure only. Read it, say the
+    symbols return in Units 4, 7, and 8, and move on --- do not assign or test
+    them today.
+
+    If you are short on time, compress section 3's matching table (the class
+    generated those constraints during the hook) --- never section 4.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    Groups of three, 15 minutes, tiers assigned rather than chosen. Tier R item 1
+    is where you will find out who is still guessing: circulate there first and
+    make them point at the words in the scenario.
+
+    Tier A item 2(b) is the same idea as notes section 4 in a new context; if a
+    group writes ``the second librarian was more careful,'' send them back to the
+    Ana/Ben/Cleo table rather than explaining.
+
+    Tier E item 2 (Millbrook $1{,}200$ vs.\ Ashford $400$, both $35\%$) is the
+    hardest item in the lesson and is worth pulling to the whole class if two or
+    more groups get it. The answer students need to say out loud is that
+    ``$35\%$'' is incomplete until you finish the sentence ``$35\%$ of
+    \emph{whom}.''
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Item 1 should be near
+    universal. Item 2's third row is the discriminator --- a parameter nobody has
+    computed is still a parameter; if that row is widely wrong, reopen it for two
+    minutes before Lesson 1.3.
+
+    Grade item 3(b) first and only 3(b) if time is short. ``No'' with no reason is
+    half credit; the reason --- different samples, one parameter --- is what
+    Lesson 1.3 and all of Unit 7 build on. Watch for the plausible-but-wrong
+    ``the real answer is halfway between,'' which is worth naming as an
+    interesting guess that Unit 7 will make precise rather than marking as
+    nonsense.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all eight items; about 25 minutes. Items 7(b) and 8 cannot be answered
+    by computing anything --- flag both when assigning, because students who
+    treat this as a calculation sheet will skip exactly those two.
+
+    Item 8 is the transfer item and has two distinct answers, not one said twice:
+    the $36\%$ describes only the $75$ asked, \emph{and} nobody was ever asked
+    about a second lane. Students who find one usually find the population error
+    and miss the question error.
+
+    The \textbf{remindbox} at the foot plants Lesson 1.3 deliberately --- the
+    sample was whoever turned up on a Tuesday evening, which is a lap-swimmer's
+    hour. Do not resolve that here; it is 1.3's opening and 1.4's bias work.
 \end{teachernote}
 \end{document}

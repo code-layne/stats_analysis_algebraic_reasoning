@@ -1,8 +1,16 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.1 authored, built, and gated** (all components +
-keys + slides), mirroring Lesson 1.0's structure. Previous run (2026-08-05): Lesson 1.0
+**Last updated:** 2026-08-06 — **Lesson 1.2 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lesson 1.1. Previous run (2026-08-05): Lesson 1.0
 authored and the course palette replaced royal blue → **cerulean** across the whole tree.
+
+> **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
+> → `~/Mathematics/saar`. The rename happened *mid-session* while Lesson 1.2 was being
+> authored, so a git worktree opened before it still has a `.git` file pointing at the old
+> path. Run **`git worktree repair`** from `~/Mathematics/saar` before any git operation in a
+> pre-rename worktree, and start each run from the new path. An empty
+> `~/Mathematics/stats_analysis_algebraic_reasoning/` shell may still exist holding only a
+> live `.claude/settings.local.json` — safe to delete once no session is using it.
 
 ## Current state
 
@@ -65,25 +73,50 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     Python.
   - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
     plan 5pp, slides 9 frames. `make -C unit01/lesson01 all` and `check` both exit 0.
-- **All other 64 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.2 — "Populations, Samples, Parameters, and Statistics" — is COMPLETE.** All
+  components authored, built, and passing the gate.
+  - Standards: **PS.DC.1d, PS.DC.1e** (PS.DC.1b carried forward in the conclusion items).
+  - Scope: population vs. sample vs. sample size; census; parameter vs. statistic (decided by
+    *who the number describes*, never by what it looks like — the trap row is a percent drawn
+    from district records for a whole population); the five constraints (**time, cost, access,
+    destruction, change**) that make a census impractical; **sampling variability** — three
+    honest samples, three statistics, one parameter, nobody wrong; and what a sample does and
+    does not license a report to claim.
+  - Notation (μ, x̄, p, p̂) appears **once**, pre-filled, as exposure only in notes §2 — not
+    assessed anywhere in the lesson. Flagged as such in the Guided Notes teacher note.
+  - Contexts: Lakeside Farmers Market carried over from 1.1's homework (notes; 800 Saturday
+    shoppers, 50 asked, 26 drove → 52%, scaled to 416; Ana/Ben/Cleo 26/24/29 of 50 → 52/48/58%),
+    Millbrook Public Library (activity; 1,200 card holders, 60 asked → 21/18/15/6 = 35/30/25/10%,
+    second sample 27/60 = 45%, mean 30/6 = 5 items), Westfield High School (exit ticket; 800
+    students, 40 asked, 26 = 65%), Harbor Point Community Pool (homework; 1,500 members, 75
+    asked → 27/21/18/9 = 36/28/24/12%, 0.36×1500 = 540, mean 80/8 = 10 visits, second sample
+    30/75 = 40%). All arithmetic verified in Python before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 5pp, slides 9 frames. `make -C unit01/lesson02 all` and `check` both exit 0.
+- **All other 63 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 2 of 9 authored (lesson00, lesson01)**; U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 3 of 9 authored (lesson00, lesson01, lesson02)**; U2–U8 scaffolded,
+  0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Author Unit 1 Lesson 1.2** — "Population vs. sample; parameter vs. statistic; constraints"
-   (PS.DC.1d–e). Lesson 1.1's homework sets it up deliberately: the Lakeside survey asks 50
-   shoppers and the report talks about all 800. Can assume 1.0's vocabulary (individual,
-   variable, categorical, quantitative) and 1.1's (data cycle, statistical question, variable
-   of interest, frequency table, relative frequency, conclusion in context).
-2. Then scale out through Unit 1 (1.3–1.8), building + `make check` per lesson.
-3. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
+1. **Repair the git worktree linkage** after the directory rename (see the banner at the top),
+   then commit Lesson 1.2 on `claude/lesson-1-2-generation-9509db` and open its PR. The lesson
+   is authored and gated but **not yet committed** — the rename broke git plumbing mid-run.
+2. **Author Unit 1 Lesson 1.3** — "Sampling techniques: SRS, stratified, systematic, cluster"
+   (PS.DC.2a–b; AFDA.DA.2b). Lesson 1.2's homework sets it up deliberately: the Harbor Point
+   sample was whoever showed up on a Tuesday evening, which is a lap swimmer's hour — the
+   remindbox names that without resolving it. Can assume 1.0's vocabulary (individual, variable,
+   categorical, quantitative), 1.1's (data cycle, statistical question, variable of interest,
+   frequency table, relative frequency, conclusion in context), and 1.2's (population, sample,
+   sample size, census, parameter, statistic, constraint, sampling variability).
+3. Then scale out through Unit 1 (1.4–1.8), building + `make check` per lesson.
+4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
-4. The lesson-1.0 + palette work merged to `main` as PR #3. Lesson 1.1 is committed and pushed
-   on `claude/lesson-1-1-generation-3cb6d5` with its own PR open.
+5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 merged as PR #4.
 
 ## Gotchas found this session
 
@@ -100,3 +133,16 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   worth converting whenever 1.0 is next revised.)
 - A ~6.0pt overfull `\hbox` appears once in every component log — it is the `\pageheader` banner
   (10.8pt on the cover), same as the model lesson. Not a defect.
+- **A key can fail page parity by being too SHORT, not just too long** (1.2's notes: blank 4,
+  key 3). The cause is `\termblanklong`, which reserves a fixed term line + two write lines in
+  the blank while the matching `\vocabans` collapses to however long the definition is. Two
+  fixes, in this order: (1) write the key's definitions out fully so each wraps to ~3 lines —
+  a real improvement, not padding; (2) if that is not enough, find the box where the two
+  documents first diverge and raise `\boxguard[n]` on it **in both files** so the box starts on
+  the same page in each. For 1.2, `\boxguard[30]` on notes §1 realigned everything downstream
+  and closed a whole page of drift.
+- **Do not trust a cached absolute path across a run.** The project directory was renamed
+  mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
+  of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target
+  that worked earlier suddenly reports "No rule to make target," check `ls` on the project root
+  before assuming the Makefile is at fault.
