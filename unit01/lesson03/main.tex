@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Lesson Plan
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -6,7 +6,7 @@
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
-\newcommand{\LessonNumberName}{Lesson 1.3: Sampling Techniques}
+\newcommand{\LessonNumberName}{Lesson 1.3: Choosing a Sample --- Four Sampling Techniques}
 
 \begin{document}
 \begin{center}
@@ -16,56 +16,318 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will describe and carry out the four
+    probability sampling techniques --- simple random, stratified, systematic,
+    and cluster --- computing a stratified allocation and a systematic interval,
+    distinguishing a stratum from a cluster, and choosing the technique a given
+    context calls for with a reason that names what the context allows.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Identify the \textbf{sampling frame} and say whether chance or
+            convenience chose a sample. \hfill \textit{PS.DC.2a}
+      \item Describe and execute a \textbf{simple random sample} from numbered
+            digits, skipping out-of-range and repeat values.
+            \hfill \textit{PS.DC.2a; AFDA.DA.2b}
+      \item Compute a \textbf{stratified} allocation proportional to the strata
+            sizes. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
+      \item Compute a \textbf{systematic} interval $k = N \div n$ and list the
+            selections from a random start. \hfill \textit{PS.DC.2a}
+      \item Describe a \textbf{cluster} sample and count the individuals it
+            reaches. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
+      \item \textbf{Choose} the best technique for a context and justify it from
+            what the context allows. \hfill \textit{PS.DC.2b; AFDA.DA.2b}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item \emph{The method is the study's weakest link.} Lesson 1.2 said a
+            statistic estimates a parameter; whether it estimates it \emph{well}
+            is decided here, before any data exist.
+      \item In a probability sample, \textbf{chance} does the choosing. That is
+            the single line separating all four techniques from a convenience
+            sample.
+      \item Nobody left off the \textbf{frame} can ever be sampled, however good
+            the method is. The Tuesday-evening frame was one evening's arrivals.
+      \item \textbf{Strata are alike inside; clusters are supposed to be a small
+            mix of the whole.} That one sentence is the whole stratified/cluster
+            distinction, and everything else follows from it.
+      \item ``Best'' is not a property of a technique --- it is a property of a
+            technique \emph{in a context}. What list exists, and which subgroups
+            differ, decide it.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Sampling frame & The list of individuals a study can actually choose from.
+       Anyone off the frame cannot be sampled. \\
+Probability sample & A sample in which chance does the choosing and every
+       individual on the frame has a known chance of selection. \\
+Simple random sample & Every individual --- and every group of $n$ individuals
+       --- has an equal chance of being selected. \\
+Stratified sample & The population is split into \emph{strata} whose members are
+       alike; a random sample is drawn from \emph{every} stratum, in proportion. \\
+Systematic sample & From an ordered list, take every $k$th individual after a
+       random start, where $k = N \div n$. \\
+Cluster sample & The population is split into \emph{clusters}; a few whole
+       clusters are drawn at random and everyone in them is measured. \\
+Convenience sample & A sample of whoever is easiest to reach --- the researcher,
+       not chance, does the choosing. \\
+Stratum / cluster & A stratum is alike \emph{inside} and differs from other
+       strata; a cluster is meant to be a small mix of the whole population. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It rehearses the three
+            computations today's four techniques run on:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Writing a part of a whole as a percent.
+              \item Taking that same percent of a smaller total --- the
+                    stratified allocation, without the name.
+              \item Dividing $N$ by $n$ to get an interval, then counting on by
+                    it --- the systematic interval, without the name.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            All three items sit on Riverbend's $900$ students, the same context
+            the notes use, so the arithmetic is already done when the vocabulary
+            arrives. Item 3(b) is the systematic sample in miniature: start at
+            the $7$th name, count by $15$. Students who get $22$ and $37$ here
+            will not need section 4 explained twice.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
+\boxguard
 \begin{skillbox}[Hook]{frost}
-    % TODO: the engaging entry question / scenario.
+    Put last night's homework sentence back on the board: \textit{``$36\%$ of
+    Harbor Point's members mainly swim laps''} --- and under it, \textbf{75
+    members, Tuesday evening}. \textbf{Ask: who at that pool had no chance of
+    being asked?} Collect names until somebody says \emph{morning swimmers}, and
+    then keep going --- weekend families, anyone who works evenings, seniors who
+    swim at $10$~a.m. Write them in a column headed \textbf{never had a chance}.
+    That column is the lesson: a sample is not just a size, it is a
+    \emph{procedure}, and this one's procedure quietly deleted half the
+    membership before a single question was asked. Then ask the turn:
+    \textbf{whose fault is it --- the staff member's, or the schedule's?} The
+    answer students need is that the \emph{evening} chose the sample. Today is
+    about handing that job to chance instead.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{frost}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Chance, or convenience.} Frame first, then the two ways to choose.
+The four-row table is fast; the only row that argues is the teacher surveying her
+own third period, which many students read as random because she did not pick
+favorites. Press: \emph{could a fourth-period student have been chosen?} No.
+Close with the line that organizes the whole lesson --- all four techniques are
+probability samples, and they differ only in \emph{what chance gets to choose
+from}.
+
+\textbf{2. Simple random sample.} Run the digit strip live. Read
+\texttt{714 028 951 366} across the board and stop at $951$: \textbf{ask what to
+do with it} before telling them. The skip is the whole skill. Then the
+three-digit question --- why groups of three? --- which students answer
+correctly and cannot always explain. Name the price of an SRS out loud: you need
+a complete list, and your $60$ students end up scattered across the building.
+
+\textbf{3. Stratified.} The warm-up already computed $18$; start there and ask
+what they were doing without knowing it. Run the $1/15$ table --- the arithmetic
+is one division per row and should take three minutes. Spend the time instead on
+\emph{why}: seniors drive, so seniors do not care about a late bus. Stratifying
+\textbf{guarantees} the grades are heard; an SRS only makes it likely.
+
+\textbf{4. Systematic.} $k = 900 \div 60 = 15$, random start $7$, then count on.
+Ask the sharp question: \textbf{what is actually random here?} Only the start.
+Then plant the trap the activity pays off --- a list whose order lines up with
+the interval.
+
+\textbf{5. Cluster --- and the pivot.} Homerooms. Draw three, survey all $75$.
+Then the contrast table, which is the most important block in the notes: some
+from every group versus everyone from a few groups. Make the class say the
+one-liner out loud before they write it. Close by naming cluster as the cheapest
+and riskiest of the four --- it is the only one whose failure mode students meet
+again in the activity.
+
+\textbf{Guided practice.} Three contexts, three techniques, and a written reason
+for each. This is PS.DC.2b and it is the part that will not be finished; assign
+the pool row for homework if time runs out.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Choosing a Technique for a Context]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{What list exists?} A list of individuals, a list of groups, or
+        no list at all?
+  \item \textbf{Is there a subgroup that must be heard?} If subgroups differ on
+        the variable of interest, that points to \textbf{stratified}.
+  \item \textbf{Is the population spread out, or already gathered in groups?}
+        That points to \textbf{cluster}.
+  \item \textbf{Is the population already in order --- a line, a list, a
+        conveyor?} That points to \textbf{systematic}.
+  \item \textbf{None of the above?} Take the \textbf{simple random sample}. It
+        is the default, not the fallback.
+  \item Write the reason as \emph{``\dots because the context gives me
+        \underline{\hspace{1.4cm}}.''} A technique named with no reason is not
+        an answer.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- ``A county wants opinions from $1{,}200$ households
+over $400$ square miles. There is no list of residents, only a map of blocks.''}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] What list exists? Only a list of \emph{blocks} --- groups, not
+        individuals.
+  \item[2.] Any subgroup that must be heard? None is named, so stratified is not
+        forced.
+  \item[3.] Spread out over $400$ square miles and already gathered into blocks
+        --- that is the cluster signal.
+  \item[4.] Not in any order, so systematic does not apply.
+  \item[5.] An SRS is impossible here: you cannot number households you have no
+        list of.
+  \item[6.] \textbf{Cluster}, \emph{because the context gives me a list of
+        groups and no list of individuals.}
+\end{itemize}
+\textit{Contrast: give the county a complete resident roll and the same question
+becomes an SRS --- the context changed, so the answer changed.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for ``random'' meaning ``unplanned.''} Students call the
+        cafeteria-door sample random because nobody was chosen on purpose. Ask
+        every time: \emph{who could not possibly have been picked?} If that list
+        is non-empty, chance did not choose.
+  \item \textbf{Watch for stratified and cluster swapping.} This is the error of
+        the lesson. Diagnostic question: \emph{how many of the groups did you
+        use?} All of them $\Rightarrow$ stratified. A few $\Rightarrow$ cluster.
+        Do not accept the group names as evidence.
+  \item \textbf{Watch for the interval computed as $n \div N$.} A student who
+        writes $60 \div 900$ gets $0.0\overline{6}$ and moves on. Catch it by
+        asking what the units of $k$ are --- names, not fractions.
+  \item \textbf{Watch for ``skip it'' meaning ``stop.''} On the digit strip,
+        some students discard $951$ and abandon the row. The generator keeps
+        running; only that number is discarded.
+  \item \textbf{Watch for a technique named with no reason} on the practice box
+        and on activity Tier E. Half credit at most --- PS.DC.2b is the
+        justification, not the label.
+  \item \textbf{Cold-call prompts:} ``Who chose that sample?'' ``What list do
+        they have?'' ``How many of the groups did you use?'' ``Who could never
+        have been picked?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Name the population and sample size for one described study.
+  \item Match five plans to their techniques, including one convenience plan.
+  \item Compute $k = 600 \div 60$ and list the next three picks; count a cluster
+        sample as $3 \times 20$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Complete a proportional stratified allocation to $60$ of $600$.
+  \item Explain why unit type is a good choice of strata for a parking question.
+  \item The periodicity trap: interval $20$ on a list of $20$-unit buildings
+        selects every corner unit.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Decide which techniques survive when only a list of buildings exists.
+  \item Explain why Cedar Ridge's single-type buildings break the cluster
+        assumption.
+  \item Fill a buys/costs table for all four techniques at the same $n$.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
+$750$ students in three grades, surveying $30$.
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Name the technique in three plans --- one cluster, one stratified, one
+        convenience.
+  \item Compute $k = 750 \div 30 = 25$ and list the next two selections from a
+        random start of $6$ ($31$ and $56$).
+  \item \textbf{Conceptual / justification check:} which technique
+        \emph{guarantees} all three grades appear in proportion (stratified),
+        and why does a perfectly fair SRS not guarantee it? Correct answer:
+        fairness is a statement about each student's \emph{chance}, not about
+        how the sample turns out --- a fair draw can still land mostly on one
+        grade. Grade this one first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) said the SRS is fair
+but makes no promise about the outcome, (b) said an SRS \emph{does} guarantee
+proportion because it is fair, (c) answered ``stratified'' to both parts without
+addressing chance. Pile (b) is the productive one and will be the largest; it is
+the same confusion between a procedure and its outcome that Unit 7 formalizes,
+so name it rather than marking it wrong.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Harbor Point Community Pool, done properly.} The board
+throws out the Tuesday-evening study and the student plans the replacement:
+name what the original was, run an SRS off generator output (skipping one
+out-of-range and one repeat value), allocate a stratified sample by membership
+type, compute a systematic interval, count a cluster sample of swim sessions,
+match four outside studies to their techniques, choose a plan for a stated board
+requirement and justify it, and close with a words-only item on why a random
+cluster draw can still miss.
+
+\textbf{Extension (optional).} Students pick a population they could really
+study and plan \emph{two} samples of the same size by different techniques, then
+say which they would run and why. Collect these --- with the Lesson 1.2
+extension they are most of a proposal for the Lesson 1.8 class-survey project.
+
+\textbf{Preview of Lesson 1.4.} Every technique today assumed the people chosen
+actually answer, and answer honestly, and understood the question the same way.
+Next class drops all three assumptions: undercoverage, nonresponse, response
+bias, and question wording --- PS.DC.2c and AFDA.DA.2e--g.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
+only as trustworthy as the study that produced it. \textit{Standards covered:}
+PS.DC.2a, PS.DC.2b; AFDA.DA.2b. \textit{Spirals forward to:} bias
+(1.4, PS.DC.2c), observational studies (1.5, PS.DC.2d), randomization in
+experimental design (1.6, PS.DC.3a--b), the full-cycle project (1.8), and ---
+directly --- sampling distributions and margin of error (7.1--7.2).
+\textit{Reaches back to:} Lesson 1.2's population/sample and sampling
+variability, and Algebra 1 proportional reasoning.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +335,99 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. All three items are Algebra 1 arithmetic and
+    should be near-universal --- say so when you assign it, because item 3 looks
+    unfamiliar and is not.
+
+    Item 3 is the one to read while collecting. It is a systematic sample with
+    the name removed: $900 \div 60 = 15$, start at $7$, next are $22$ and $37$.
+    Students who write $22$ and $37$ have already done section 4 of the notes.
+    Students who write $8$ and $9$ read ``next'' as ``the next name'' --- that is
+    the misread to fix at the board, in ten seconds, before the notes begin.
+
+    Do \emph{not} name any of the four techniques here. The warm-up is
+    deliberately wordless about them; the notes name what the class has already
+    computed.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: section 1 in 7 minutes, section 2 in 10, section 3 in 8, section 4 in
+    7, section 5 in 12, guided practice in 8. \textbf{Section 5 is the lesson.}
+    Sections 2--4 are procedures students execute correctly on the first try;
+    the stratified/cluster distinction is the one that does not stick without
+    the contrast table and the spoken one-liner.
+
+    Section 2's digit strip must be run live, not read. Stop at $951$ and take a
+    vote on what to do with it before saying anything. The skip is the only
+    non-obvious move in an SRS.
+
+    Section 3 is arithmetically trivial and conceptually the opposite. Budget the
+    saved minutes on the word \emph{guarantees} --- stratified guarantees each
+    grade is heard, an SRS only makes it likely. That contrast returns as exit
+    ticket item 3 and is the hardest idea in the lesson.
+
+    If you are short on time, compress section 4 (the warm-up already did the
+    arithmetic) --- never section 5 or the guided practice.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    Groups of three, 15--18 minutes, tiers assigned rather than chosen. The
+    Cedar Ridge layout in the headline box is load-bearing --- buildings $1$--$6$
+    are studios, $7$--$20$ one-bedrooms, $21$--$30$ two-bedrooms --- and Tier E
+    item 2 does not work if groups skim past it. Read it aloud when you assign.
+
+    Tier R item 2 row 4 (``every $10$th one after it'') is where groups that
+    still have systematic and simple random fused will show it. Circulate there
+    first.
+
+    Tier A item 3 is the periodicity trap and the best item on the page: with
+    $k = 20$ on a list of $20$-household buildings, a start of $1$ selects
+    household \#1 of all $30$ buildings --- every corner unit, every double
+    parking space, in a survey about parking. Groups that get it should present
+    it.
+
+    Tier E item 2 is the payoff for section 5. Cedar Ridge's buildings each hold
+    one unit type, so a building is a \emph{stratum wearing a cluster's clothes}.
+    Pull this to the whole class if two or more groups reach it --- it is worth
+    the last five minutes of the period.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Item 1 should be near
+    universal; if the cluster row is widely missed, the stratified/cluster
+    contrast did not land and needs two minutes at the start of Lesson 1.4.
+
+    Item 2(a) catches the inverted interval --- a student who writes
+    $30 \div 750$ has the ratio upside down. Item 2(b) catches the student who
+    adds $1$ instead of $k$.
+
+    Grade item 3(b) first and only 3(b) if time is short. ``Stratified'' with no
+    explanation is half credit; the reason --- a fair draw can still come out
+    lopsided, because fairness is about each student's chance, not about the
+    result --- is what Lesson 1.4 and all of Unit 7 build on. Watch for
+    ``because an SRS is not fair,'' which inverts the point entirely and is worth
+    correcting in writing rather than with a mark.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all eight items; about $30$ minutes. Items 7 and 8 cannot be answered
+    by computing anything --- flag both when assigning, because students who
+    treat this as a calculation sheet will skip exactly those two.
+
+    Item 2's table has two different reasons for discarding a number: $1587$ is
+    out of range and the second $0412$ is a repeat. Students who write ``no'' in
+    both rows without distinguishing them have missed half the skill.
+
+    Item 8 is the transfer item and closes the arc the lesson opened with. The
+    sessions were drawn \emph{at random} --- so the answer cannot be ``they
+    picked badly.'' It has to be that a swim session is not a small mix of the
+    membership: lap swimmers fill lap hours, so four clusters can all lean the
+    same way and leave families and seniors out. Students who reach for
+    ``the sample was too small'' have the wrong lever; ask them what would happen
+    if the four sessions held $500$ people.
+
+    The \textbf{remindbox} hands off to Lesson 1.4 deliberately: every technique
+    here assumed the chosen individuals answer, answer honestly, and read the
+    question the same way. Do not open that here.
 \end{teachernote}
 \end{document}

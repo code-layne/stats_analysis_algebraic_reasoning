@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Group Activity
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -12,9 +12,171 @@
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{headlinebox}{frost}
+\small
+\textbf{Four Ways In --- Cedar Ridge Apartments.} Cedar Ridge has $600$
+households in $30$ buildings of $20$. Management wants to know how residents feel
+about the parking lot. Buildings $1$--$6$ are studios, buildings $7$--$20$ are
+one-bedrooms, and buildings $21$--$30$ are two-bedrooms. Every plan below
+surveys $60$ households --- the plans differ only in \emph{who gets chosen}.
+\end{headlinebox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+  \item Name the two groups in this study.
+
+        Population: \blank{5.5cm} \hfill Sample size: \blank{1.6cm}
+
+  \item Name the sampling technique in each plan. Choose from \emph{simple
+        random}, \emph{stratified}, \emph{systematic}, \emph{cluster}, and
+        \emph{convenience}.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.96\linewidth}{@{} X p{3cm} @{}}
+        \toprule
+        \textbf{The plan} & \textbf{Technique} \\
+        \midrule
+        Number all $600$ households and let a computer draw $60$ numbers.
+          & \blank{2.6cm} \\
+        Draw $3$ building numbers at random; survey all $20$ households in each.
+          & \blank{2.6cm} \\
+        Take a random sample from the studios, another from the one-bedrooms, and
+        another from the two-bedrooms. & \blank{2.6cm} \\
+        Start at a random household near the top of the resident list, then take
+        every $10$th one after it. & \blank{2.6cm} \\
+        Stand by the mailboxes after work and ask the first $60$ people who walk
+        past. & \blank{2.6cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item For the systematic plan, find the interval $k$.
+
+        \begin{work}
+          k &= 600 \div 60 \\
+            &= 10
+        \end{work}
+
+        The random start lands on household $4$. Write the next three picks.
+
+        \blank{2cm} \qquad \blank{2cm} \qquad \blank{2cm}
+
+  \item For the cluster plan, how many households get surveyed in all?
+
+        \begin{work}
+          3 \times 20 &= 60 \text{ households}
+        \end{work}
+
+  \item One plan in item 2 did not let chance do the choosing. Which one, and who
+        chose the sample instead?
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item Management chooses the \textbf{stratified} plan, using unit type as the
+        strata. The sample is $60$ of $600$ households, so take $1/10$ of each
+        stratum.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+        \toprule
+        \textbf{Unit type} & \textbf{Households} & \textbf{Number to survey} \\
+        \midrule
+        Studio      & 120 & \blank{4cm} \\
+        One-bedroom & 280 & \blank{4cm} \\
+        Two-bedroom & 200 & \blank{4cm} \\
+        \midrule
+        \textbf{Total} & \textbf{600} & \blank{4cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Show the work for the \textbf{one-bedroom} row.
+
+        \begin{work}
+          \dfrac{60}{600} &= \dfrac{1}{10} \\
+          \dfrac{1}{10} \times 280 &= 28 \text{ households}
+        \end{work}
+
+  \item Two-bedroom households own more cars than studio households do. Explain
+        why that fact makes unit type a good choice of strata here.
+        \writelines{2}
+
+  \item In every building, household \#1 is the corner unit --- the only one with
+        two assigned parking spaces. The resident list runs building by building,
+        $20$ households at a time.
+
+        \textbf{(a)} If management ran the systematic plan with an interval of
+        $k = 20$ and a random start of $1$, which households would be picked?
+        \writeline
+
+        \textbf{(b)} Why is that a problem for a survey about parking?
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item Management keeps a list of \emph{buildings} but has never kept a list of
+        \emph{residents}. Of the four probability techniques, which ones can they
+        still run, and which become impossible? Explain.
+        \writelines{2}
+
+  \item Recall how Cedar Ridge is laid out: buildings $1$--$6$ are studios,
+        $7$--$20$ are one-bedrooms, $21$--$30$ are two-bedrooms.
+
+        \textbf{(a)} Suppose the cluster plan happens to draw buildings $2$, $5$,
+        and $6$. Whose opinions are in the sample of $60$, and whose are missing
+        entirely?
+        \writeline
+
+        \textbf{(b)} A cluster sample is supposed to work because each cluster is
+        a small mix of the whole population. Explain why Cedar Ridge's buildings
+        break that assumption.
+        \writelines{2}
+
+  \item All four probability plans survey $60$ households. Say what each one buys
+        you and what it costs you.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.97\linewidth}{@{} p{2.6cm} X X @{}}
+        \toprule
+        \textbf{Technique} & \textbf{What it buys} & \textbf{What it costs} \\
+        \midrule
+        Simple random & \blank{4.6cm} & \blank{4.6cm} \\
+        Stratified    & \blank{4.6cm} & \blank{4.6cm} \\
+        Systematic    & \blank{4.6cm} & \blank{4.6cm} \\
+        Cluster       & \blank{4.6cm} & \blank{4.6cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

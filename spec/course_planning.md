@@ -1,16 +1,15 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.2 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lesson 1.1. Previous run (2026-08-05): Lesson 1.0
-authored and the course palette replaced royal blue → **cerulean** across the whole tree.
+**Last updated:** 2026-08-06 — **Lesson 1.3 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lessons 1.1 and 1.2. Previous run (2026-08-05):
+Lesson 1.0 authored and the course palette replaced royal blue → **cerulean** across the
+whole tree.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
-> → `~/Mathematics/saar`. The rename happened *mid-session* while Lesson 1.2 was being
-> authored, so a git worktree opened before it still has a `.git` file pointing at the old
-> path. Run **`git worktree repair`** from `~/Mathematics/saar` before any git operation in a
-> pre-rename worktree, and start each run from the new path. An empty
-> `~/Mathematics/stats_analysis_algebraic_reasoning/` shell may still exist holding only a
-> live `.claude/settings.local.json` — safe to delete once no session is using it.
+> → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
+> *before* it still has a `.git` file pointing at the old path and needs
+> **`git worktree repair`** run from `~/Mathematics/saar` first. Always start a run from the
+> new path.
 
 ## Current state
 
@@ -93,30 +92,61 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     30/75 = 40%). All arithmetic verified in Python before authoring.
   - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
     plan 5pp, slides 9 frames. `make -C unit01/lesson02 all` and `check` both exit 0.
-- **All other 63 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.3 — "Choosing a Sample: Four Sampling Techniques" — is COMPLETE.** All components
+  authored, built, and passing the gate.
+  - Standards: **PS.DC.2a, PS.DC.2b; AFDA.DA.2b**.
+  - Scope: the **sampling frame**, and the one line that separates a **probability sample**
+    (chance chooses) from a **convenience sample** (the researcher / the schedule chooses);
+    then the four techniques with an executable procedure each — SRS off a random digit strip
+    (skip out-of-range, skip repeats), **stratified** allocation proportional to strata size,
+    **systematic** interval $k = N \div n$ from a random start, and **cluster** (a few whole
+    groups, everyone in them). The lesson's pivot is **stratified vs. cluster**, taught as
+    *some from every group vs. everyone from a few groups*, with a fill-in contrast table.
+    Closes on PS.DC.2b: choosing a technique from **what the context allows** (what list
+    exists; which subgroups differ) and justifying it. Bias is named only as a hand-off.
+  - Contexts: Riverbend HS carried from 1.1/1.2 (notes; 900 students → 60; strata 270/240/210/180
+    → 18/16/14/12 at 1/15; systematic $k=15$ from start 7 → 22, 37, 52; 36 homerooms × 25,
+    3 drawn → 75), Cedar Ridge Apartments (activity; 600 households in 30 buildings × 20,
+    unit-type strata 120/280/200 → 12/28/20 at 1/10, $k=10$ from start 4; buildings 1–6 studio,
+    7–20 one-bed, 21–30 two-bed, so a building is a **stratum wearing a cluster's clothes** —
+    Tier E), Bayside Middle School (exit ticket; 750 → 30, $k=25$ from start 6 → 31, 56),
+    Harbor Point Community Pool (homework; **1.2's flawed Tuesday-evening study, replanned** —
+    1,500 members → 100, generator returns 0412/1587/0973/0412/0288 → members 412, 973, 288;
+    strata 600/525/375 → 40/35/25 at 1/15; $k=15$ from start 9; 4 of 25 swim sessions × 25 ≈ 100).
+    All arithmetic verified in Python before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 5pp, slides 9 frames. `make -C unit01/lesson03 all` and `check` both exit 0; PDFs
+    eyeballed for stranded boxes (none — the homework's Practice box splits 4 items / 4 items).
+- **All other 62 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 3 of 9 authored (lesson00, lesson01, lesson02)**; U2–U8 scaffolded,
-  0 authored.
+- Per-unit progress: **U1: 4 of 9 authored (lesson00, lesson01, lesson02, lesson03)**;
+  U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Repair the git worktree linkage** after the directory rename (see the banner at the top),
-   then commit Lesson 1.2 on `claude/lesson-1-2-generation-9509db` and open its PR. The lesson
-   is authored and gated but **not yet committed** — the rename broke git plumbing mid-run.
-2. **Author Unit 1 Lesson 1.3** — "Sampling techniques: SRS, stratified, systematic, cluster"
-   (PS.DC.2a–b; AFDA.DA.2b). Lesson 1.2's homework sets it up deliberately: the Harbor Point
-   sample was whoever showed up on a Tuesday evening, which is a lap swimmer's hour — the
-   remindbox names that without resolving it. Can assume 1.0's vocabulary (individual, variable,
-   categorical, quantitative), 1.1's (data cycle, statistical question, variable of interest,
-   frequency table, relative frequency, conclusion in context), and 1.2's (population, sample,
-   sample size, census, parameter, statistic, constraint, sampling variability).
-3. Then scale out through Unit 1 (1.4–1.8), building + `make check` per lesson.
+1. **Commit Lesson 1.3** on `claude/lesson-1-3-generation-a737ce` and open its PR. The lesson is
+   authored, built, and gated but **not yet committed** — the run stopped short of committing
+   because commits/pushes are only made on request.
+2. **Author Unit 1 Lesson 1.4** — "Bias in samples and surveys" (PS.DC.2c; AFDA.DA.2e–g).
+   Lesson 1.3's homework remindbox sets it up: every technique in 1.3 assumed the chosen
+   individuals answer, answer honestly, and read the question the same way — 1.4 drops all
+   three. Scope from the standards: **sampling bias** (undercoverage / the frame), and the
+   named **response biases** (demand, social desirability, dissent, acquiescence, extreme,
+   neutral responding, question order), plus "a large sample size does not fix bias."
+   Can assume 1.0's vocabulary (individual, variable, categorical, quantitative), 1.1's (data
+   cycle, statistical question, variable of interest, frequency table, relative frequency,
+   conclusion in context), 1.2's (population, sample, sample size, census, parameter, statistic,
+   constraint, sampling variability), and 1.3's (sampling frame, probability sample, SRS,
+   stratified/strata, systematic, cluster, convenience). The Harbor Point pool and Cedar Ridge
+   Apartments are both live contexts available for reuse.
+3. Then scale out through Unit 1 (1.5–1.8), building + `make check` per lesson.
 4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
-5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 merged as PR #4.
+5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
+   PR #5.
 
 ## Gotchas found this session
 
@@ -141,6 +171,15 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   documents first diverge and raise `\boxguard[n]` on it **in both files** so the box starts on
   the same page in each. For 1.2, `\boxguard[30]` on notes §1 realigned everything downstream
   and closed a whole page of drift.
+- **A `work` block reads as a labeled gap, so give it a lead-in question.** Lesson 1.3 uses the
+  pattern "Show the work for the \textbf{10th grade} row:" / "About how many members does that
+  reach?" immediately before every `work` block. Without the lead-in the blank looks like an
+  authoring mistake rather than a place to write.
+- **Lesson 1.3 built clean on the first compile** — the only log noise was the known ~6.0pt
+  `\pageheader` overfull `\hbox` in every component and the 10.8pt one on the cover. Neither is
+  a defect. Guards used: `\boxguard[30]` on the notes' §1, §3, and §5 and on activity Tier R,
+  `\boxguard[26]` on notes §4, `\boxguard[24]` on the homework scenario box, `\boxguard[12]` on
+  the `hookbox`, bare `\boxguard` elsewhere — mirrored byte-for-byte into every `_key`.
 - **Do not trust a cached absolute path across a run.** The project directory was renamed
   mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target
