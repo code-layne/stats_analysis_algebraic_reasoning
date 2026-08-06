@@ -82,8 +82,8 @@ user redirected to a third blue. No burgundy remains in the tree.)*
 2. Then scale out through Unit 1 (1.3–1.8), building + `make check` per lesson.
 3. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
-4. Open a PR for the lesson-1.0 + palette work on branch `claude/lesson-planning-generate-3d9e93`,
-   and for lesson 1.1 on `claude/lesson-1-1-generation-3cb6d5` (uncommitted as of this run).
+4. The lesson-1.0 + palette work merged to `main` as PR #3. Lesson 1.1 is committed and pushed
+   on `claude/lesson-1-1-generation-3cb6d5` with its own PR open.
 
 ## Gotchas found this session
 
