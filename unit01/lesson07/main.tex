@@ -1,4 +1,4 @@
-%! Choosing a Data Collection Method — Unit 1, Lesson 1.7 — Lesson Plan
+%! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -6,7 +6,7 @@
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
-\newcommand{\LessonNumberName}{Lesson 1.7: Choosing a Data Collection Method}
+\newcommand{\LessonNumberName}{Lesson 1.7: Comparing Studies and Choosing a Method}
 
 \begin{document}
 \begin{center}
@@ -16,56 +16,334 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will compare a controlled experiment
+    with an observational study point by point, state and \emph{justify} the
+    strongest conclusion each design earns, decide when an experiment is
+    unethical, impossible, or impractical to run and say what to run instead,
+    plan a well-designed experiment through the four stages of the statistical
+    cycle, and select a data collection method --- survey, interview, focus
+    group, observation, or content analysis --- that fits a given context.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Compare and contrast a \textbf{controlled experiment} with an
+            \textbf{observational study}, row by row.
+            \hfill \textit{PS.DC.3c}
+      \item State the strongest conclusion each design earns, and name the
+            verb it may not use. \hfill \textit{PS.DC.3c; PS.DC.1b}
+      \item Decide whether a question can be answered by an experiment at
+            all --- \textbf{ethical, possible, practical}.
+            \hfill \textit{PS.DC.3c}
+      \item Plan a well-designed experiment through the four stages of the
+            \textbf{statistical cycle}. \hfill \textit{PS.DC.3d}
+      \item Select a \textbf{data collection method} --- survey, interview,
+            focus group, observation, content analysis --- for a context.
+            \hfill \textit{PS.DC.3e}
+      \item Separate the \emph{method} (observation) from the \emph{design}
+            (observational study). \hfill \textit{PS.DC.3c, 3e}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item \emph{In an observational study we measure or survey without
+            trying to affect anyone; in a controlled experiment we assign and
+            apply a treatment.} One row of the comparison table produces every
+            other row.
+      \item An experiment is the stronger design, so the real decision is not
+            ``which is better'' but \textbf{which one can I run}.
+      \item You cannot assign what a person already \emph{is} or \emph{has}.
+            That single test settles most of the sorting.
+      \item ``We could not run an experiment'' is a reason for a
+            \emph{weaker} verb, not an excuse for a stronger one.
+      \item The cycle does not change from 1.5 to 1.7. What an experiment adds
+            lives inside stage two, \emph{Collect}.
+      \item Study type and collection method are independent choices ---
+            an experiment can collect its data by observation.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Controlled experiment & A study in which the researcher assigns the units to
+       groups by chance and imposes a treatment on at least one group. It can
+       support a cause-and-effect conclusion. \\
+Observational study & A study in which the researcher measures or surveys
+       individuals without assigning anyone to a group. It can report an
+       association only. \\
+Statistical cycle & Formulate $\rightarrow$ collect $\rightarrow$ represent
+       $\rightarrow$ analyze \& report. The same four stages plan either study
+       type. \\
+Survey & The same fixed questions given to every individual in a chosen sample.
+       Best for counts, percents, and attitudes across many people. \\
+Interview & A one-on-one conversation built on planned questions. Best for
+       depth --- the reasons behind an answer, in the person's own words. \\
+Focus group & A small-group discussion led by a facilitator, where members
+       build on each other's answers. \\
+Observation & Recording what people actually do, using the senses. Best when
+       behavior and self-report may disagree. \\
+Content analysis & Studying records or documents that already exist ---
+       borrowing histories, transcripts, past scores. Best for change over
+       time. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It puts both of Riverbend's
+            studies on one page before the comparison starts:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Writing a part of a whole as a percent, once per group ---
+                    with \textbf{unequal} denominators ($60$ and $90$), the way
+                    Lesson 1.5's groups came out.
+              \item Subtracting two percents to get a \textbf{gap in percentage
+                    points}, then reading a second gap off given percents.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            Item 3(b) is the one that matters: the two studies' group sizes are
+            $60/90$ and $60/60$. Unequal sizes are a symptom that the
+            \emph{people} sorted themselves; equal sizes are a symptom that a
+            generator did. Leave $65\%$, $80\%$, $15$ points, $75\%$, $55\%$,
+            and $20$ points on the board --- the notes' first two tables run
+            on them.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
+\boxguard
 \begin{skillbox}[Hook]{frost}
-    % TODO: the engaging entry question / scenario.
+    Open by declaring the Study Center question \emph{closed} --- last lesson
+    settled it, and students should feel the win. Then change the question:
+    \textbf{do students who ride the bus more than $45$ minutes each way score
+    lower on the state test?} Ask for the design they just learned. Somebody
+    will start describing an experiment; let them get two sentences in before
+    you ask the one question that stops it: \emph{what would you have to assign
+    a student?} A $45$-minute bus ride --- which means assigning where their
+    family lives. Nobody can do that. \textbf{So the strongest design is off the
+    table, and the question is still a real question.} That gap is the lesson:
+    when you cannot assign, you do not give up and you do not overclaim --- you
+    run the best observational study you can and you write a weaker sentence.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{frost}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Side by side.} The four-row comparison table is the spine of
+PS.DC.3c and the first two rows are given, so this moves fast. \textbf{Ask on
+each blank: what does the researcher \emph{do} here?} The payoff is the second
+table --- the two Riverbend studies with the sentence each one earns. Insist on
+the exact verb: \emph{is associated with} in row one, \emph{caused} in row two.
+A student who writes ``the Study Center is bad'' in row one has not written a
+statistical sentence.
+
+\textbf{2. When you cannot assign.} Three reasons, then a four-row sorting
+table. \textbf{The test to give them out loud: can you hand this out to a
+person?} Smoking, retirement, and a long bus ride all fail it; a reading block
+passes. The closing pair of blanks --- \emph{association}, never a
+\emph{cause-and-effect claim} --- is the sentence to hold them to for the rest
+of the unit.
+
+\textbf{3. The cycle, for an experiment.} Deliberately the same table shape as
+Lesson 1.5's, so put the two side by side if you still have 1.5's notes. Only
+\emph{Collect} changes, and it changes by one word. \textbf{Ask what 1.5's
+Collect row said and what this one says} --- the answer is \emph{sampled}
+against \emph{assigned}.
+
+\textbf{4. Five methods.} The reference table is given; the work is the
+five-row matching table. Do the first row together and let them finish. Close
+on the trap sentence at the bottom: Bayside's experiment collected data by
+\emph{observation} and was still an \emph{experiment}. Say plainly that these
+are two different questions with two different answers.
+
+\textbf{Guided practice.} Cedar Ridge, three questions, three rows. Question one
+can be assigned, questions two and three cannot. The closing write is the exit
+ticket in miniature and asks for the honest sentence plus one competing
+variable --- the new bins, or newer tenants.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Choosing the Study and the Method]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Write the question.} What do you want to know, and about whom?
+  \item \textbf{Can you assign the treatment?} Could you hand it to a person
+        by chance?
+  \item If \textbf{no}, say which reason: unethical, impossible, or
+        impractical. Then it is an \textbf{observational study}.
+  \item If \textbf{yes}, it is an \textbf{experiment} --- plan comparison,
+        randomization, replication, control.
+  \item \textbf{Walk the cycle:} formulate, collect (this is where the
+        assigning or the sampling lives), represent, analyze \& report.
+  \item \textbf{Choose the method} from what the question needs: many people
+        $\Rightarrow$ survey; \emph{why} $\Rightarrow$ interview; a group
+        building on itself $\Rightarrow$ focus group; what people \emph{do}
+        $\Rightarrow$ observation; records already written $\Rightarrow$
+        content analysis.
+  \item \textbf{Write the conclusion before you see the data.} Experiment
+        $\Rightarrow$ a causal verb is allowed. Observational $\Rightarrow$
+        \emph{is associated with}, and nothing stronger.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- ``Harbor Point wants to know whether a weekly
+water-aerobics class reduces reported joint pain among its $1{,}500$
+members.''}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] Question: does the class reduce reported joint pain, for Harbor
+        Point members?
+  \item[2.] Can she assign a water-aerobics class? Yes --- she runs the class
+        and picks who is in it.
+  \item[4.] Experiment. $120$ volunteers, a generator sends $60$ to the class
+        and $60$ to none; six weeks; nothing else changed.
+  \item[5.] Collect: assign, then run. Represent: a two-row table of counts and
+        percents. Analyze: $42/60 = 70\%$ against $30/60 = 50\%$, a $20$-point
+        gap; pooled $72/120 = 60\%$, about $900$ of $1{,}500$ members.
+  \item[6.] Method: \emph{observation} of the class rosters plus a short
+        \emph{survey} of reported pain --- the method is not the design.
+  \item[7.] ``The weekly class caused less reported joint pain.'' Allowed:
+        chance built the groups.
+\end{itemize}
+\textit{Now change one word --- ``members who \emph{already have} arthritis''
+--- and step 2 fails. Same director, same pool, an observational study and a
+weaker sentence.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for ``experiments are better, so use an experiment.''}
+        True and useless. The question is whether one can be run at all ---
+        push back with \emph{what would you assign?}
+  \item \textbf{Watch for ``it would be unethical'' used for everything.} Only
+        one of the three reasons is about harm. Retirement, arthritis, and a
+        bus ride are \emph{impossible}, not unethical.
+  \item \textbf{Watch for the observation / observational-study collision.}
+        It is the single likeliest error in this lesson. Ask the two questions
+        separately: \emph{who built the groups?} then \emph{how did the data
+        get recorded?}
+  \item \textbf{Watch for a method chosen by convenience.} ``A survey, because
+        it is easy'' is not a justification. Make them name what the question
+        needs --- a count, a reason, a behavior, or a record.
+  \item \textbf{Watch for a causal verb smuggled into an observational
+        conclusion.} \emph{Leads to, results in, boosts} are all the banned
+        verb wearing a hat.
+  \item \textbf{Cold-call prompts:} ``What would you have to assign?'' ``Which
+        of the three reasons?'' ``What sentence does this study earn?'' ``What
+        does the question need --- a count or a reason?'' ``Method or design?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Label the 1.5 survey and the 1.6 study by type.
+  \item Say who decided the groups in each.
+  \item Compute $42 \div 60 = 70\%$ and $30 \div 60 = 50\%$.
+  \item Name the higher group and the $20$-point gap.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Pool: $72/120 = 60\%$, scaled to $900$ of $1{,}500$.
+  \item Fill the cycle table for the water-aerobics experiment.
+  \item Write the sentence each of the two studies earns.
+  \item Choose a method for ``why did they quit,'' and say why a survey fails.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Decide that arthritis cannot be assigned; name the study type.
+  \item Write the honest claim and one competing variable (age).
+  \item Match three jobs to survey / interview / observation.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
+two studies already on file plus one new question.
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Compute $90 \div 150 = 60\%$, then label Study A observational and
+        Study B an experiment, and say what earns Study B the word
+        \emph{caused}.
+  \item The long-bus-ride question: she cannot assign where a family lives, so
+        it must be observational. A student who writes ``unethical'' has the
+        right verdict from the wrong reason --- half credit.
+  \item \textbf{Conceptual / justification check:} choosing a method for
+        \emph{why} sixth-graders skip breakfast. Full credit names interviews
+        (or a focus group) \emph{and} says what a fixed survey cannot do ---
+        follow up, or ask what an answer means. Grade this one first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) matched the method to
+what the question needs, (b) picked a defensible method with no reason attached,
+(c) picked a survey because everything is a survey. Pile (c) walks into Lesson
+1.8 planning to hand out a questionnaire no matter what their class question
+turns out to be; seat those students together on day one of the project and make
+them justify the method before they write a single item.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Millbrook Public Library, the third study.} The library
+that was watched in 1.5 and assigned in 1.6 now runs a book-club experiment:
+$300$ volunteers, a generator sends $150$ to a weekly evening club and $150$ to
+none. $96$ and $60$ read at least $10$ books. Students sort the two earlier
+studies by type, compute $64\%$ and $40\%$ and the $24$-point gap, pool the
+volunteers ($156/300 = 52\%$, scaled to $624$ of $1{,}200$), fill the four
+stages of the cycle for the new study, decide for three fresh questions whether
+assignment is possible, match five jobs to the five collection methods, explain
+why the largest of the library's three gaps ($48$ points) is its
+\emph{weakest} evidence, and rewrite a newspaper headline that claims an
+observational study \emph{proves} a cause.
+
+\textbf{Extension (optional).} Students finish planning the study they proposed
+for Lesson 1.6's extension: whether it can be run as an experiment at all, the
+four stages in one line each, the collection method with a reason, and the
+conclusion sentence written \emph{before} the data. With the 1.2--1.6
+extensions this is a complete study proposal --- which is exactly what Lesson
+1.8's project opens with.
+
+\textbf{Preview of Lesson 1.8.} The class runs its own study: choose a question,
+plan the cycle, pick a sampling technique and a collection method, collect real
+data from classmates, and report a conclusion the design earns
+(AFDA.DA.2d, h--j; PS.DC.2d).
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
+only as trustworthy as the study that produced it. \textit{Standards covered:}
+PS.DC.3c, PS.DC.3d, PS.DC.3e --- with PS.DC.1b carried forward in every
+conclusion item. \textit{Spirals forward to:} the class study project (1.8),
+comparing two distributions (2.7), two-way tables and association (3.1),
+regression and the correlation-is-not-causation warning (5.4--5.6), and
+inference, where the design decided here is what a $p$-value is finally allowed
+to speak about (7.5--7.6, 8.4--8.5). \textit{Reaches back to:} Lesson 1.1's
+statistical cycle, Lesson 1.3's sampling techniques, Lesson 1.4's bias, Lesson
+1.5's observational study, and Lesson 1.6's four principles.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +351,136 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. Nothing here is new --- items 1 and 2 are the
+    same two divisions the class has run since 1.2, and item 3(a) is a
+    subtraction.
+
+    The point of the warm-up is item 3(b), which is not arithmetic at all. The
+    two studies' group sizes are $60/90$ and $60/60$, and students should be
+    able to say \emph{why}: in the first study the students sorted themselves,
+    so the sizes came out however they came out; in the second a generator split
+    an even number of volunteers. Unequal group sizes are a symptom of
+    self-selection. Say that out loud at the collection --- it is the first
+    row of the notes' comparison table, arriving thirty seconds early.
+
+    Leave all six numbers on the board: $65\%$, $80\%$, $15$ points, $75\%$,
+    $55\%$, $20$ points. Both of the notes' first two tables run on them, and
+    the hook needs them immediately.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: section 1 in 12 minutes, section 2 in 12, section 3 in 8, section 4 in
+    12, guided practice in 8. \textbf{Sections 1 and 4 carry the standards that
+    will be assessed}; section 3 is a mirror of a table students filled in
+    Lesson 1.5 and should move quickly.
+
+    Section 1's first two rows are given on purpose. The remaining blanks are
+    short --- ``chance,'' ``yes,'' ``not necessarily,'' ``an association only''
+    --- so the time goes into the \emph{second} table, where students write the
+    two Riverbend sentences. Do not accept an evaluation (``the Study Center
+    is bad'') in place of a statistical sentence. Model the wording once and
+    require it after that.
+
+    Section 2 is where the lesson earns its place after 1.6. The sorting table's
+    test is \emph{can you hand this out to a person?} Run row two aloud --- you
+    cannot assign a person to smoke, and even if you could, you would not.
+    Rows three and four are \emph{impossible}, not unethical, and students
+    routinely mislabel them; the distinction is worth insisting on because the
+    exit ticket asks for it.
+
+    Section 3 is deliberately the same table shape as Lesson 1.5's. If you still
+    have 1.5's notes, put them side by side. Only \emph{Collect} changes, and
+    the follow-up blank is the whole point: \emph{Collect --- it assigns.}
+
+    Section 4's reference table is given; the work is the matching table below
+    it. Do the first row together. Then read the ``Careful'' sentence at the
+    bottom aloud and stop --- \emph{observation} the method versus
+    \emph{observational study} the design is the most common error in this
+    lesson, and it is worth two full minutes.
+
+    If time runs short, compress section 3 to the follow-up blank alone. Never
+    compress section 4; PS.DC.3e appears nowhere else in the unit.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    Groups of three, 15--18 minutes, tiers assigned rather than chosen. Read the
+    headline box aloud --- it is dense, and it is the whole unit in one
+    paragraph: a survey, an experiment, and a new question, all on the same
+    $1{,}500$ members.
+
+    Tier R item 1 is the sorting task and item 2 is the reason for it. ``The
+    director'' is still half credit in 2(b); ``chance'' or ``the generator'' is
+    full. The two divisions have equal denominators, so the arithmetic should
+    not slow anyone down.
+
+    Tier A item 2 is the cycle table and the item most groups under-answer ---
+    a \emph{Collect} row that says ``she collected data'' has not noticed that
+    the assigning happens there. Push for the generator and the two group
+    sizes. Item 3 wants two sentences with two different verbs; if a group
+    writes ``caused'' in 3(a), that is the item to pull to the whole class.
+    Item 4 is the PS.DC.3e item: interviews, because \emph{why} needs follow-up
+    questions and only a few people quit.
+
+    Tier E item 1 is the payoff --- arthritis cannot be handed out, so the
+    strongest design is unavailable and the claim has to weaken. Item 2's
+    competing variable is age, and groups who find it have done exactly what
+    Lesson 1.5 taught. Item 3 is three quick matches; it is deliberately cheap,
+    so a group that gets there has time to finish it.
 \end{teachernote}
 
+\boxguard[22]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Item 1(a) is a gift and
+    exists to make sure nobody leaves without computing something; 1(b) should
+    be near-universal after the activity.
+
+    Item 1(c) needs the mechanism, not the label. ``Study B, because it is an
+    experiment'' is half credit; full credit says a generator decided the
+    groups, so the two groups started out alike.
+
+    Item 2(b) is the one that separates the class. The correct reason is
+    \emph{impossible} --- you cannot assign where a family lives. A student who
+    answers ``unethical'' has the right verdict from the wrong reason; write
+    the distinction on the paper rather than marking it wrong, because the
+    verdict matters more and the reason is fixable in one sentence.
+
+    Grade item 3 first and only item 3 if time is short. Full credit names
+    interviews or a focus group \emph{and} says what a fixed survey cannot do
+    here --- ask a follow-up, or find out what a student means by an answer.
+    ``Interviews'' alone is half credit. Students who choose a survey for
+    everything are the ones to catch before Lesson 1.8 opens.
 \end{teachernote}
 
+\boxguard[26]
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all eight items; about $30$ minutes. Items 1, 4, 5, 6, 7, and 8
+    cannot be answered by computing anything --- flag that when assigning,
+    because students who treat this as a calculation sheet will do items 2 and
+    3 and stop.
+
+    Items 2 and 3 are the arithmetic spine: $64\%$, $40\%$, the $24$-point gap,
+    then the pooled $52\%$ and $624$. Both denominators are $150$, so an error
+    here is a place-value slip rather than a method problem.
+
+    Item 5's three rows are the sorting task from notes section 2. Row one can
+    be assigned --- a library really can set a late fee by chance for one group
+    --- and rows two and three cannot, both for the \emph{impossible} reason
+    rather than the unethical one. Row three is the subtle one: the treatment
+    is in the past, so nobody can go back and assign it.
+
+    Item 6 covers all five methods, one each. The row students miss is the
+    self-checkout: it asks what people \emph{do}, which is observation, not a
+    survey about what they think they do.
+
+    Item 7 is the closer and the reason this homework reuses the library. The
+    $48$-point gap is the biggest number and the weakest evidence, because the
+    card holders who signed up were already the heavy readers. Item 8 asks the
+    same idea as a writing task --- students must produce the honest headline
+    \emph{and} say what would have earned the original one. A student who
+    rewrites the headline but skips the second half has done half the item.
+
+    The \textbf{remindbox} hands off to Lesson 1.8, where the class runs its own
+    study. Point out that the extension box is the project's first page in
+    miniature.
 \end{teachernote}
 \end{document}

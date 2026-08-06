@@ -1,9 +1,8 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.6 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lessons 1.1, 1.2, 1.3, 1.4, and 1.5. Previous run
-(2026-08-05): Lesson 1.0 authored and the course palette replaced royal blue → **cerulean**
-across the whole tree.
+**Last updated:** 2026-08-06 — **Lesson 1.7 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lessons 1.1–1.6. Previous run (2026-08-05): Lesson 1.0
+authored and the course palette replaced royal blue → **cerulean** across the whole tree.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -223,37 +222,75 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     plan 6pp, slides 10 frames. `make -C unit01/lesson06 all` and `check` both exit 0;
     every page of both packets was rendered and eyeballed (see "Gotchas" for the two
     layout repairs that took).
-- **All other 59 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.7 — "Comparing Studies and Choosing a Method" — is COMPLETE.** All components
+  authored, built, and passing the gate.
+  - Standards: **PS.DC.3c, PS.DC.3d, PS.DC.3e** (PS.DC.1b carried forward in the conclusion
+    items).
+  - Scope: the two study types **side by side** in one four-row table whose first row
+    (*who decides which group each individual is in*) produces every other row, and the
+    sentence each design earns (*is associated with* vs.\ *caused*); **when you cannot run
+    an experiment** --- **unethical / impossible / impractical**, with the test question
+    *can you hand this out to a person?*, and the rule that an unavailable experiment is a
+    reason for a **weaker verb**, not an excuse for a stronger one; **PS.DC.3d** --- the
+    statistical cycle used to plan a *well-designed experiment*, authored as the same table
+    shape as 1.5's so only the **Collect** row changes (from *sampled* to *assigned*); and
+    **PS.DC.3e** --- the five collection methods (survey, interview, focus group,
+    observation, content analysis) as a pre-filled reference table plus five diagnostic
+    rows. The lesson's named trap is **observation the method vs.\ observational study the
+    design** --- an experiment can collect its data by observation. The four principles are
+    assumed, not re-taught.
+  - **Built on the 1.5/1.6 pairs rather than new scenarios**, as planned: every context has
+    already been run both ways, so the comparison is between studies students themselves
+    computed. Riverbend $65/80$ watched vs.\ $75/55$ assigned; Harbor Point $25$-point gap
+    vs.\ $20$; Millbrook $48$ vs.\ $30$.
+  - Contexts: Riverbend HS carried from 1.0--1.6 (warm-up + notes; $39/60 = 65\%$ and
+    $72/90 = 80\%$, a $15$-point gap, against the assigned $75\%$/$55\%$ and $20$ points ---
+    the warm-up's real item is *why one study's groups are $60/90$ and the other's $60/60$*;
+    notes §3 plans a new weekly-check-in experiment through the cycle), Cedar Ridge
+    Apartments carried from 1.3/1.4/1.6 (guided practice; three questions --- one
+    assignable, two not --- each matched to a study type **and** a collection method),
+    Harbor Point Community Pool carried from 1.2--1.6 (activity; the two earlier studies
+    labelled, then a new water-aerobics experiment, $120$ volunteers $60/60$,
+    $42/60 = 70\%$ against $30/60 = 50\%$, gap $20$, pooled $72/120 = 60\%$ scaled to $900$
+    of $1{,}500$; Tier E is the arthritis question, which cannot be assigned), Bayside
+    Middle School carried from 1.3--1.6 (exit ticket; $90/150 = 60\%$, Study A/Study B
+    sorting, the long-bus-ride question, and a method choice), Millbrook Public Library
+    carried from 1.2/1.4/1.5/1.6 (homework; a **third** study --- $300$ volunteers
+    $150/150$, $96/150 = 64\%$ against $60/150 = 40\%$, gap $24$, pooled $156/300 = 52\%$
+    scaled to $624$ of $1{,}200$ --- plus the cycle table, three assignability rows, all
+    five methods, and the closer: the $48$-point gap is the biggest number and the weakest
+    evidence). All arithmetic verified in Python before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 6pp, slides 10 frames. `make -C unit01/lesson07 all` and `check` both exit 0;
+    every page of both packets and the plan was rendered and eyeballed (see "Gotchas" for
+    the three repairs that took).
+- **All other 58 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 7 of 9 authored (lesson00, lesson01, lesson02, lesson03,
-  lesson04, lesson05, lesson06)**; U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 8 of 9 authored (lesson00 through lesson07)**; U2–U8 scaffolded,
+  0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Commit Lesson 1.6** on `claude/lesson-1-6-generation-fdc66b` and open its PR. The lesson is
-   authored, built, and gated but **not yet committed** — the run stopped short of committing
-   because commits/pushes are only made on request.
-2. **Author Unit 1 Lesson 1.7** — "Experiments vs. observational studies; choosing a
-   collection method" (PS.DC.3c–e). Almost all the content is already standing: 1.5 and 1.6
-   ran the *same four contexts* both ways, so 1.7 should be built on those pairs rather than
-   on new scenarios — Riverbend ($65/80$ watched vs. $75/55$ assigned), Harbor Point
-   ($25$-point gap vs. $20$), Millbrook ($48$ vs. $30$). PS.DC.3c is the compare/contrast
-   and the conclusions each licenses; **PS.DC.3d is the piece 1.6 deliberately did not
-   take** — using the statistical cycle to plan and conduct a *well-designed experiment*
-   (1.5 did the cycle for an observational study, so mirror that table); PS.DC.3e is the
-   five collection methods from the Understanding-the-Standards pages (surveys, interviews,
-   focus groups, observations, content analysis) matched to a context. 1.6's homework
-   remindbox already promises the "when is an experiment impossible or unethical?" question
-   and 1.6's activity Tier E item 3 left the blinding limit open — both are the natural
-   openings. Do not re-teach the four principles; assume them.
-3. Then finish Unit 1 (1.8, the class-survey project), building + `make check` per lesson.
-4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
-   `unit_cover_key/` (the test rationale/scoring page).
-5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
-   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7; Lesson 1.5 as PR #8.
+1. **Commit Lesson 1.7** on `claude/lesson-1-7-generation-b049e4` and open its PR. The lesson
+   is authored, built, and gated but **not yet committed** — the run stopped short of
+   committing because commits/pushes are only made on request.
+2. **Author Unit 1 Lesson 1.8** — the class-survey project (AFDA.DA.2d, h–j; PS.DC.2d) — and
+   Unit 1 is done. Everything it needs is already promised in writing: 1.7's homework
+   remindbox tells students they will *run* the study, and 1.7's extension box is explicitly
+   "the project's first page in miniature" (can it be an experiment at all → the four cycle
+   stages → the collection method with a reason → the conclusion sentence written *before*
+   the data). The project should therefore open by collecting that extension, not by
+   starting from scratch. It is the one lesson in the unit whose deliverable is student-
+   generated data, so budget the packet differently: a planning page, a data-collection
+   instrument the class actually builds, and a reporting page.
+3. Author the Unit 1 practice/actual tests once 1.8 exists, plus `unit01/unit_cover/` and
+   `unit_cover_key/` (the test rationale/scoring page). The unit's arithmetic spine is
+   already hand-verified across 1.0–1.7 — reuse those numbers rather than inventing new ones.
+4. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
+   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7; Lesson 1.5 as PR #8; Lesson 1.6 as PR #9.
 
 ## Gotchas found this session
 
@@ -350,6 +387,31 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   `\tcbbreak` on its own line before the `\item`, mirrored byte-for-byte into the key, moved
   the whole item to page 2 with no page-count change. Blank and key had chosen the same break
   point, which is what made the unconditional break safe — check that first, as always.
+- **A key that is one page long can be a `\boxguard` problem, not a content problem.** 1.7's
+  notes came out blank 4 / key 5, and shortening the key's `\ans` cells did not move it. The
+  real cause was `\boxguard[30]` on notes §3: the key's §2 is a few lines taller (bold `\ans`
+  wraps wider than the rule it replaces), so §3 no longer cleared a $30$-line guard on page 3
+  and jumped to page 4, dragging the guided-practice box onto page 5. Lowering that one guard
+  to `\boxguard[22]` **in both files** closed the whole page of drift. **Compare where each
+  page starts** (`pdftotext -f N -l N | head -3` per page, blank against key) before editing
+  any content — if pages 1–k start identically and diverge at k+1, a guard is the suspect,
+  not the prose.
+- **Check whether the blank and the key break at the *same* place before reaching for
+  `\tcbbreak`.** In 1.7 they did not: the homework blank orphaned item 5's prompt at the foot
+  of its page while the key had already moved the whole item down, and the activity did the
+  same in reverse. The unconditional break is still the right fix in that case — it is a
+  no-op on the side that already breaks there and a repair on the side that does not — but
+  verify both page counts afterwards, because it is only free when one side is already
+  breaking at that point.
+- **The lesson plan strands a teacher-note tail almost every lesson.** 1.5 needed
+  `\boxguard[26]` on the Homework note; 1.7 needed `\boxguard[22]` on the **Exit Ticket**
+  note, which had left a three-line tail alone at the top of page 6. Same rule as before:
+  guard only the note that strands, never all of them.
+- **Two `\ansline`s in a row flow together and wrap** — the second one starts on the same
+  visual line as the first one's dotted trail, so a pair of ~80-character answers renders as
+  three lines with a trail through the middle. This is house-standard (1.6 does it too) and
+  does not break parity, since `\writelines{2}` reserves the height either way. It is only
+  worth trimming if the wrapped answer reads badly.
 - **Do not trust a cached absolute path across a run.** The project directory was renamed
   mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target

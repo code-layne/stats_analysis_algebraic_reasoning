@@ -1,4 +1,4 @@
-%! Choosing a Data Collection Method — Unit 1, Lesson 1.7 — Guided Notes (Answer Key)
+%! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
@@ -12,9 +12,301 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item compare an \textbf{observational study} with a \textbf{controlled
+        experiment}, point by point;
+  \item state the strongest conclusion each one earns, and \emph{justify} the
+        difference;
+  \item decide when an experiment is \textbf{impossible or unethical} to run,
+        and say what to run instead;
+  \item use the \textbf{statistical cycle} to plan a well-designed experiment;
+  \item choose a \textbf{data collection method} --- survey, interview, focus
+        group, observation, or content analysis --- that fits a given context.
+\end{enumerate}
+\end{objectivebox}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\vocabans{Controlled experiment}{A study in which the researcher assigns the
+units to groups by chance and imposes a treatment on at least one group, holding
+everything else the same. It can support a cause-and-effect conclusion.}
+\vocabans{Observational study}{A study in which the researcher measures or
+surveys individuals without assigning anyone to a group. The groups already
+exist, so the study can report an association only.}
+\vocabans{Survey}{The same fixed set of questions given to every individual in a
+chosen sample. Best for collecting counts, percents, and attitudes from many
+people at once.}
+\vocabans{Interview}{A one-on-one conversation built on planned questions,
+usually recorded. Best when you need depth --- the reasons behind an answer, in
+the person's own words.}
+\vocabans{Focus group}{A small-group discussion led by a facilitator, where
+members hear and build on each other's answers. Best when the group's shared
+experience says more than any one person's.}
+\vocabans{Content analysis}{A study of records or documents that already exist
+--- borrowing histories, minutes, transcripts, past test scores. Best for
+tracking change over time.}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+Riverbend's counselor now has both studies in front of her. Watching $150$
+records said $65\%$ against $80\%$ --- the Study Center looked harmful.
+Assigning $120$ volunteers said $75\%$ against $55\%$ --- it looked helpful. You
+already know which one she should believe.
+
+\vspace{2pt}
+Now the principal brings a different question: \emph{do students who ride the
+bus more than $45$ minutes each way score lower on the state test?}
+
+\vspace{2pt}
+\textbf{Could the counselor settle this one with an experiment the way she
+settled the Study Center? What exactly would she have to assign?}
+\ansline{No. She would have to assign students a $45$-minute bus ride --- which means}
+\ansline{assigning where their families live. Nobody can do that, so she must watch instead.}
+\end{hookbox}
+
+\boxguard[30]
+\begin{notesbox}{1. The Two Study Types, Side by Side}
+\small
+Both study types compare groups. They differ in exactly one place --- and that
+one place decides everything you are allowed to say at the end.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} p{3.1cm} p{4.5cm} X @{}}
+\toprule
+\textbf{Ask this} & \textbf{Observational study}
+  & \textbf{Controlled experiment} \\
+\midrule
+Who decides which group each individual is in?
+  & The individuals themselves, or something that already happened to them.
+  & \ans{Chance does --- the researcher runs a generator and assigns each unit.} \\
+Does the researcher impose a treatment?
+  & No --- the researcher only measures or asks.
+  & \ans{Yes --- at least one group is given the treatment.} \\
+Are the two groups alike before the study starts?
+  & \ans{Not necessarily. They built themselves, so they may differ in many ways.}
+  & \ans{Yes --- random assignment spreads every other variable evenly.} \\
+Strongest conclusion it earns
+  & \ans{An association only.}
+  & \ans{Cause and effect --- the treatment caused the difference.} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Now put Riverbend's two studies in that frame.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} p{4.1cm} p{3.6cm} X @{}}
+\toprule
+\textbf{The study} & \textbf{What it found}
+  & \textbf{The strongest sentence it earns} \\
+\midrule
+Watched $150$ records (1.5) & $65\%$ of users vs.\ $80\%$ of non-users
+  & \ans{Using the Study Center is associated with a lower pass rate.} \\
+Assigned $120$ volunteers (1.6) & $75\%$ treated vs.\ $55\%$ control
+  & \ans{Attending the Study Center caused a higher pass rate.} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{2pt}
+\textit{An experiment is the stronger design. The next section is about why you
+cannot always have one.}
 \end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{2. When You Cannot Run an Experiment}
+\small
+To run an experiment you must be able to \textbf{assign} the treatment. Three
+things can stop you:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt, topsep=3pt]
+  \item \textbf{Unethical} --- assigning the treatment would harm someone.
+  \item \textbf{Impossible} --- the ``treatment'' is something a person already
+        \emph{is} or \emph{has}. You cannot hand it out.
+  \item \textbf{Impractical} --- it would cost too much, take too long, or
+        nobody would agree to be assigned.
+\end{enumerate}
+
+\vspace{3pt}
+For each question, decide whether the researcher could assign the groups.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} X c p{4.5cm} @{}}
+\toprule
+\textbf{The question} & \textbf{Can you assign?}
+  & \textbf{If not, why --- and what do you run instead?} \\
+\midrule
+Does a $10$-minute silent reading block raise reading scores?
+  & \ans{Yes} & \ans{Nothing stops her --- run the experiment.} \\
+Do students who smoke have worse lung function at $30$?
+  & \ans{No} & \ans{Unethical --- nobody may be assigned to smoke.
+    Observational.} \\
+Do retired pool members sleep more than members who work full time?
+  & \ans{No} & \ans{Impossible --- retirement cannot be handed out.
+    Observational.} \\
+Do students who ride the bus over $45$ minutes score lower?
+  & \ans{No} & \ans{Impossible --- you cannot assign where a family lives.
+    Observational.} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+When you cannot assign, you run the best observational study you can --- and you
+change the \emph{verb}, not the data. A study like that may report
+a(n) \ans{association} but never a \ans{cause-and-effect claim}.
+
+\vspace{2pt}
+\textit{``We could not run an experiment'' is not an excuse for a stronger
+claim. It is the reason for a weaker one.}
+\end{notesbox}
+
+\boxguard[22]
+\begin{notesbox}{3. Planning an Experiment with the Statistical Cycle}
+\small
+Lesson 1.5 walked the four stages for an observational study. Here is the same
+cycle for an \emph{experiment}. The counselor's new question: does a weekly
+one-on-one check-in raise the share of students who turn in every assignment?
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} p{2.6cm} p{4.6cm} X @{}}
+\toprule
+\textbf{Stage} & \textbf{What the stage asks} & \textbf{Our check-in experiment} \\
+\midrule
+Formulate & What do we want to know, and about whom?
+  & Does a weekly check-in raise the share of students who turn in every
+    assignment? \\
+Collect & Who are the units, and how does \emph{chance} put them in groups?
+  & \ans{A generator sends half the volunteers to a weekly check-in and half
+    to none.} \\
+Represent & How will we organize what comes back?
+  & \ans{A two-row table --- each group's count and percent turning in every
+    assignment.} \\
+Analyze \& report & What do the numbers say, \emph{in context}?
+  & \ans{Compare the two percents, find the gap, and say it in context.} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+One stage does something Lesson 1.5's plan never did. Which stage is it, and
+what does it do? \ans{Collect --- it \emph{assigns} the units by chance.}
+
+\vspace{3pt}
+That stage is also where the four principles get checked: two groups
+(\textbf{comparison}), a generator (\textbf{randomization}), plenty of students
+in each group (\textbf{replication}), and everything else held the same
+(\textbf{control}).
+
+\vspace{2pt}
+\textit{Same four stages every time. What an experiment adds is one word inside
+stage two: \emph{assign}.}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{4. Five Ways to Collect the Data}
+\small
+Once you know which study you are running, you still have to decide \emph{how}
+the data arrive. These five are the standard menu.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{0.98\linewidth}{@{} p{2.7cm} X @{}}
+\toprule
+\textbf{Method} & \textbf{Best when you want\dots} \\
+\midrule
+Survey & the same fixed questions answered by \emph{many} people --- counts,
+  percents, attitudes across a whole sample. \\
+Interview & \emph{depth} from one person at a time --- the reasons behind an
+  answer, in that person's own words. \\
+Focus group & a small group talking \emph{together}, where one person's answer
+  reminds the next person of theirs. \\
+Observation & to record what people actually \emph{do}, when what they do may
+  not match what they say. \\
+Content analysis & to study records or documents that \emph{already exist} ---
+  useful for change over time. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Match each context to the method that fits it best.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} X p{4cm} @{}}
+\toprule
+\textbf{What the researcher needs} & \textbf{Best method} \\
+\midrule
+The library wants five years of borrowing records summarized.
+  & \ans{Content analysis} \\
+The pool wants to know how many of its $1{,}500$ members would use a
+$6$~a.m.\ lane. & \ans{Survey} \\
+The counselor wants to understand \emph{why} four students stopped coming to
+the Study Center. & \ans{Interviews} \\
+The cafeteria wants to know whether students actually take the fruit --- not
+whether they say they do. & \ans{Observation} \\
+The library wants eight teens to react to three new logos and build on each
+other's comments. & \ans{Focus group} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+\textbf{Careful:} \emph{observation} is a way to \emph{collect} data;
+an \emph{observational study} is a kind of \emph{study}. In Bayside's reading
+experiment a teacher watched and recorded how many minutes each student actually
+read, so the method was \ans{observation} --- and the study was still
+a(n) \ans{experiment}, because chance assigned the groups.
+
+\vspace{2pt}
+\textit{The study type is decided by who built the groups. The method is decided
+by what the question needs.}
+\end{notesbox}
+
+\boxguard
+\begin{practicebox}
+\small
+\textbf{Cedar Ridge Apartments.} The manager of a $600$-household complex has
+three questions this month. For each one, decide which study she can run and how
+she should collect the data.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} X p{2.6cm} p{3.1cm} @{}}
+\toprule
+\textbf{Her question} & \textbf{Experiment or observational?}
+  & \textbf{Best collection method} \\
+\midrule
+Does a weekly recycling reminder increase how much a household recycles?
+  & \ans{Experiment} & \ans{Observation --- weigh each bin} \\
+Do households in the renovated building recycle more than households in the old
+building? & \ans{Observational} & \ans{Content analysis of the collection
+  records} \\
+Why do some households never use the recycling bins at all?
+  & \ans{Observational} & \ans{Interviews} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+She finds that the renovated building does recycle more. Write the strongest
+sentence she may publish about that result, and name one other variable that
+could explain the difference instead.
+\ansline{Living in the renovated building is associated with recycling more --- nothing stronger.}
+\ansline{The renovated building also got new bins, and its households may be newer tenants.}
+\end{practicebox}
 
 \end{document}
