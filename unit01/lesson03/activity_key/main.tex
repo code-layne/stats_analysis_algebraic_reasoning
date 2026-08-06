@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Group Activity (Answer Key)
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
@@ -12,9 +12,174 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{headlinebox}{frost}
+\small
+\textbf{Four Ways In --- Cedar Ridge Apartments.} Cedar Ridge has $600$
+households in $30$ buildings of $20$. Management wants to know how residents feel
+about the parking lot. Buildings $1$--$6$ are studios, buildings $7$--$20$ are
+one-bedrooms, and buildings $21$--$30$ are two-bedrooms. Every plan below
+surveys $60$ households --- the plans differ only in \emph{who gets chosen}.
+\end{headlinebox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+  \item Name the two groups in this study.
+
+        Population: \ans{all 600 Cedar Ridge households} \hfill Sample size: \ans{60}
+
+  \item Name the sampling technique in each plan. Choose from \emph{simple
+        random}, \emph{stratified}, \emph{systematic}, \emph{cluster}, and
+        \emph{convenience}.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.96\linewidth}{@{} X p{3cm} @{}}
+        \toprule
+        \textbf{The plan} & \textbf{Technique} \\
+        \midrule
+        Number all $600$ households and let a computer draw $60$ numbers.
+          & \ans{simple random} \\
+        Draw $3$ building numbers at random; survey all $20$ households in each.
+          & \ans{cluster} \\
+        Take a random sample from the studios, another from the one-bedrooms, and
+        another from the two-bedrooms. & \ans{stratified} \\
+        Start at a random household near the top of the resident list, then take
+        every $10$th one after it. & \ans{systematic} \\
+        Stand by the mailboxes after work and ask the first $60$ people who walk
+        past. & \ans{convenience} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item For the systematic plan, find the interval $k$.
+
+        \begin{work}
+          k &= 600 \div 60 \\
+            &= 10
+        \end{work}
+
+        The random start lands on household $4$. Write the next three picks.
+
+        \ans{14} \qquad \ans{24} \qquad \ans{34}
+
+  \item For the cluster plan, how many households get surveyed in all?
+
+        \begin{work}
+          3 \times 20 &= 60 \text{ households}
+        \end{work}
+
+  \item One plan in item 2 did not let chance do the choosing. Which one, and who
+        chose the sample instead?
+        \ansline{The mailbox plan --- the residents who happen to walk past chose themselves.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item Management chooses the \textbf{stratified} plan, using unit type as the
+        strata. The sample is $60$ of $600$ households, so take $1/10$ of each
+        stratum.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+        \toprule
+        \textbf{Unit type} & \textbf{Households} & \textbf{Number to survey} \\
+        \midrule
+        Studio      & 120 & \ans{$120 \div 10 = 12$} \\
+        One-bedroom & 280 & \ans{$280 \div 10 = 28$} \\
+        Two-bedroom & 200 & \ans{$200 \div 10 = 20$} \\
+        \midrule
+        \textbf{Total} & \textbf{600} & \ans{$12+28+20 = 60$} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Show the work for the \textbf{one-bedroom} row.
+
+        \begin{work}
+          \dfrac{60}{600} &= \dfrac{1}{10} \\
+          \dfrac{1}{10} \times 280 &= 28 \text{ households}
+        \end{work}
+
+  \item Two-bedroom households own more cars than studio households do. Explain
+        why that fact makes unit type a good choice of strata here.
+        \ansline{Unit type is tied to the very thing being asked about, so the three groups will}
+        \ansline{answer differently --- stratifying guarantees all three are heard in proportion.}
+
+  \item In every building, household \#1 is the corner unit --- the only one with
+        two assigned parking spaces. The resident list runs building by building,
+        $20$ households at a time.
+
+        \textbf{(a)} If management ran the systematic plan with an interval of
+        $k = 20$ and a random start of $1$, which households would be picked?
+        \ansline{Household \#1 of every building --- 1, 21, 41, 61, \dots{} --- all 30 corner units.}
+
+        \textbf{(b)} Why is that a problem for a survey about parking?
+        \ansline{Every household sampled has two parking spaces, so nobody short of parking answers.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=3pt]
+
+  \item Management keeps a list of \emph{buildings} but has never kept a list of
+        \emph{residents}. Of the four probability techniques, which ones can they
+        still run, and which become impossible? Explain.
+        \ansline{Only cluster works --- it needs a list of groups, not of individuals. Simple random,}
+        \ansline{stratified, and systematic all require numbering every household first.}
+
+  \item Recall how Cedar Ridge is laid out: buildings $1$--$6$ are studios,
+        $7$--$20$ are one-bedrooms, $21$--$30$ are two-bedrooms.
+
+        \textbf{(a)} Suppose the cluster plan happens to draw buildings $2$, $5$,
+        and $6$. Whose opinions are in the sample of $60$, and whose are missing
+        entirely?
+        \ansline{Only studio residents are in it; every one- and two-bedroom household is missing.}
+
+        \textbf{(b)} A cluster sample is supposed to work because each cluster is
+        a small mix of the whole population. Explain why Cedar Ridge's buildings
+        break that assumption.
+        \ansline{Each building holds exactly one unit type, so a building is not a mix of the}
+        \ansline{complex --- it is one stratum. The clusters differ from each other, not inside.}
+
+  \item All four probability plans survey $60$ households. Say what each one buys
+        you and what it costs you.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.97\linewidth}{@{} p{2.6cm} X X @{}}
+        \toprule
+        \textbf{Technique} & \textbf{What it buys} & \textbf{What it costs} \\
+        \midrule
+        Simple random & \ans{the fairest possible draw} & \ans{needs a full list; picks are scattered} \\
+        Stratified    & \ans{every subgroup is heard in proportion} & \ans{you must know the strata in advance} \\
+        Systematic    & \ans{easy to run from a list} & \ans{fails if the list repeats on the interval} \\
+        Cluster       & \ans{cheap; needs no list of individuals} & \ans{a few odd clusters can miss badly} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

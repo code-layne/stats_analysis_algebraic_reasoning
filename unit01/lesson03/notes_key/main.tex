@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
@@ -12,9 +12,314 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item say whether \textbf{chance} or \textbf{convenience} chose a sample;
+  \item describe and carry out a \textbf{simple random}, \textbf{stratified},
+        \textbf{systematic}, and \textbf{cluster} sample;
+  \item compute a stratified allocation and a systematic interval;
+  \item tell a \textbf{stratum} from a \textbf{cluster} and explain the
+        difference;
+  \item choose the best technique for a given context and \emph{justify} the
+        choice.
+\end{enumerate}
+\end{objectivebox}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\vocabans{Sampling frame}{The list of individuals you can actually choose from.
+Ideally it is every member of the population, but in practice it is only the ones
+the study can reach --- and anybody left off the frame can never be sampled.}
+\vocabans{Simple random sample (SRS)}{A sample of size $n$ in which every
+individual has an equal chance of being chosen, and so does every possible group
+of $n$ individuals. Number the frame, then let a random generator pick.}
+\vocabans{Stratified sample}{Split the population into strata whose members are
+alike inside the group, then take a separate random sample from every stratum,
+sized so each stratum keeps its share of the population.}
+\vocabans{Systematic sample}{Put the population in a list, compute the interval
+$k = N \div n$, pick a random start between 1 and $k$, then take every $k$th
+individual. Only the starting point is random.}
+\vocabans{Cluster sample}{Split the population into clusters that each mix the
+whole population, randomly choose a few whole clusters, and collect data from
+everyone in them. Cheapest to run, and the riskiest of the four.}
+\vocabans{Convenience sample}{A sample of whoever is easiest to reach, so the
+researcher's convenience --- not chance --- does the choosing. It is not a
+technique you may defend; it is what the other four exist to replace.}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+Last night's pool study asked $75$ members who arrived on a \emph{Tuesday
+evening} --- and $36\%$ of them said they mainly swim laps. The board is about to
+reserve a lane for all $1{,}500$ members based on that number.
+
+\vspace{2pt}
+\textbf{Who at Harbor Point had no chance of being asked at all?} Name two
+kinds of members.
+\ansline{Answers vary. Members who swim in the morning or on weekends were never at the pool}
+\ansline{that evening, and neither were members who work evenings or take a daytime class.}
+\end{hookbox}
+
+\boxguard[30]
+\begin{notesbox}{1. Who Chose the Sample --- Chance, or Convenience?}
+\small
+Every study you have seen so far had a sample. None of them said \emph{how} the
+sample was picked. That decision is what this lesson is about.
+
+\vspace{2pt}
+The \textbf{sampling frame} is the list of individuals you can actually choose
+from. Once you have a frame, there are two very different ways to choose:
+
+\vspace{2pt}
+In a \textbf{probability sample}, \textbf{chance} does the choosing --- every
+individual on the frame has a known chance of being picked. In a
+\textbf{convenience sample}, the researcher simply takes whoever is easiest to
+reach.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} X p{3.1cm} @{}}
+\toprule
+\textbf{How the sample was taken} & \textbf{Who chose it?} \\
+\midrule
+A staff member asks the members who arrive Tuesday evening.
+  & \ans{convenience} \\
+All $900$ students are numbered, and a computer picks $60$ numbers.
+  & \ans{chance} \\
+A teacher surveys her own third-period class.
+  & \ans{convenience} \\
+The $36$ homeroom numbers go in a hat and $3$ are drawn.
+  & \ans{chance} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+All four techniques in today's lesson are \textbf{probability samples} --- chance
+does the choosing in every one of them. What makes them different is \emph{what}
+chance gets to choose from.
+
+\vspace{2pt}
+\textit{A convenience sample is not a technique you may use and defend. It is the
+thing the other four exist to replace.}
 \end{notesbox}
+
+\boxguard
+\begin{notesbox}{2. Simple Random Sample (SRS)}
+\small
+In a \textbf{simple random sample} of size $n$, every individual has an equal
+chance of being chosen --- and so does every possible group of $n$ individuals.
+
+\vspace{2pt}
+\textbf{How to take one:} number the frame $1$ to $N$; run a random number
+generator; read numbers off, \emph{skipping} any that are out of range or already
+used; stop when you have $n$ different individuals.
+
+\vspace{3pt}
+Riverbend's $900$ students are numbered $001$ through $900$. A random digit
+generator returns this run of digits:
+
+\begin{center}
+\ttfamily\large 7 1 4 0 2 8 9 5 1 3 6 6
+\end{center}
+
+\vspace{2pt}
+Read them in groups of three, then decide each group.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.95\linewidth}{@{} c p{3.6cm} X @{}}
+\toprule
+\textbf{Digits} & \textbf{In range $001$--$900$?} & \textbf{Student chosen} \\
+\midrule
+714 & yes & student 714 \\
+028 & \ans{yes} & \ans{student 28} \\
+951 & \ans{no} & \ans{none --- skip it} \\
+366 & \ans{yes} & \ans{student 366} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Why read the digits three at a time? Because the largest number on the frame,
+$900$, has \ans{3} digits.
+
+\vspace{2pt}
+\textit{An SRS is the fairest of the four, and the one the others are measured
+against. Its price: you need a complete list of the population, and the
+individuals it picks may be scattered anywhere.}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{3. Stratified Sample --- Some From Every Group}
+\small
+Some populations split into groups whose members are \emph{alike inside} the
+group and \emph{different between} groups. Those groups are called
+\textbf{strata} (just one is a \emph{stratum}).
+
+\vspace{2pt}
+In a \textbf{stratified sample} you take a separate random sample from
+\textbf{every} stratum, sized so each stratum keeps its share of the population.
+
+\vspace{3pt}
+The council wants $60$ of Riverbend's $900$ students, stratified by grade. The
+sample is $60/900 = 1/15$ of the school, so take $1/15$ of each grade.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+\toprule
+\textbf{Grade} & \textbf{Students} & \textbf{Number to survey} \\
+\midrule
+9th   & 270 & $270 \div 15 = 18$ \\
+10th  & 240 & \ans{$240 \div 15 = 16$} \\
+11th  & 210 & \ans{$210 \div 15 = 14$} \\
+12th  & 180 & \ans{$180 \div 15 = 12$} \\
+\midrule
+\textbf{Total} & \textbf{900} & \ans{$18+16+14+12 = 60$} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Show the work for the \textbf{10th grade} row:
+
+\begin{work}
+  \dfrac{60}{900} &= \dfrac{1}{15} \\
+  \dfrac{1}{15} \times 240 &= 16 \text{ students}
+\end{work}
+
+\vspace{2pt}
+\textbf{Why go to the trouble?} Ninth graders and twelfth graders do not feel the
+same way about a late bus --- most seniors drive. Stratifying
+\emph{guarantees} every grade is heard, in the right proportion. An SRS might, by
+bad luck, pick hardly any seniors at all.
+\end{notesbox}
+
+\boxguard[26]
+\begin{notesbox}{4. Systematic Sample --- Every $k$th One Down the List}
+\small
+If the population is already in a list, you can skip the $60$ random draws and
+take every $k$th individual instead.
+
+\vspace{2pt}
+\textbf{How to take one:} put the population in a list of $N$; compute the
+interval $k = N \div n$; randomly choose a starting point between $1$ and $k$;
+then take every $k$th individual from there.
+
+\vspace{3pt}
+Riverbend's list has $N = 900$ names and the council wants $n = 60$.
+
+\begin{work}
+  k &= 900 \div 60 \\
+    &= 15
+\end{work}
+
+\vspace{2pt}
+The random start comes out at the $7$th name. Fill in the rest of the picks:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.9\linewidth}{@{} l X @{}}
+\toprule
+\textbf{Pick} & \textbf{Position on the list} \\
+\midrule
+1st & 7 \\
+2nd & \ans{22} \\
+3rd & \ans{37} \\
+4th & \ans{52} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Notice that only the \textbf{start} is random --- after that, the list decides.
+That is still enough to make it a probability sample, \emph{as long as} the order
+of the list has nothing to do with the interval.
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{5. Cluster Sample --- Everyone From a Few Groups}
+\small
+Sometimes there is no list of individuals at all, but the population already
+comes in natural groups: homerooms, apartment buildings, city blocks, flights.
+Those groups are called \textbf{clusters}, and each one is meant to be a small
+mixed version of the whole population.
+
+\vspace{2pt}
+In a \textbf{cluster sample} you randomly choose a few whole clusters and collect
+data from \textbf{everyone} in them.
+
+\vspace{3pt}
+Riverbend's $900$ students sit in $36$ homerooms of $25$. The council draws
+$3$ homeroom numbers at random and surveys every student in those three rooms.
+How many students is that?
+
+\begin{work}
+  3 \times 25 &= 75 \text{ students}
+\end{work}
+
+\vspace{3pt}
+\textbf{Stratified and cluster are the two everybody mixes up.} Fill in the
+contrast:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} p{3.5cm} X X @{}}
+\toprule
+ & \textbf{Stratified} & \textbf{Cluster} \\
+\midrule
+The groups are\dots & alike inside, different from each other
+                    & each a small mix of the whole \\
+You use\dots        & \ans{all} of the groups & \ans{a few} of the groups \\
+From each group you take\dots & \ans{a random sample} & \ans{everyone} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+\textit{Say it this way:} \textbf{stratified is some from every group; cluster is
+everyone from a few groups.}
+
+\vspace{2pt}
+Cluster sampling is the cheapest of the four and the riskiest. If the clusters
+really do differ from one another, three of them can miss the population badly.
+\end{notesbox}
+
+\boxguard
+\begin{practicebox}
+\small
+Name the technique that fits each context best, and give the reason. Choose from
+\emph{simple random}, \emph{stratified}, \emph{systematic}, and \emph{cluster}.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.98\linewidth}{@{} X p{2.5cm} p{4cm} @{}}
+\toprule
+\textbf{Context} & \textbf{Technique} & \textbf{Why} \\
+\midrule
+A factory checks quality by pulling every $50$th cereal box off the line all day.
+  & \ans{systematic} & \ans{the boxes already come in order, so an interval samples all day} \\
+A county wants opinions from $1{,}200$ households spread over $400$ square miles,
+and has no list of residents --- only a map of blocks.
+  & \ans{cluster} & \ans{no list of individuals exists, and whole blocks are cheap to reach} \\
+A district must be certain that elementary, middle, and high school teachers are
+each represented in proportion.
+  & \ans{stratified} & \ans{sampling every level separately guarantees each one is heard} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+The pool board is redoing last night's study. Which technique would you tell them
+to use, and what does it fix about asking whoever showed up Tuesday evening?
+\ansline{Stratified by membership type (or an SRS of the member list). Either one lets chance,}
+\ansline{not the evening schedule, choose --- so morning and weekend members can be picked too.}
+\end{practicebox}
 
 \end{document}

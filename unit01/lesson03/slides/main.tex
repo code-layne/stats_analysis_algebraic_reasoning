@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
@@ -11,16 +11,224 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Sampling Techniques}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Choosing a Sample: Four Sampling Techniques}\\[1.2cm]
     {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 1}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: section title}
-  % TODO: slide content
+  \ceruleanheader{Tuesday evening at the pool}
+  \sectionlabel[goldacc]{hook}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      A staff member asked the \textbf{75 members who arrived Tuesday evening}.
+      36\% said they mainly swim laps. The board is about to reserve a lane for
+      all \textbf{1,500} members.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.8cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Who had no chance of being asked at all?}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \small Morning swimmers. Weekend families. Anyone who works evenings.
+  \end{center}
+\end{frame}
+
+% ── CHANCE VS CONVENIENCE ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Who chose the sample?}
+  \sectionlabel{chance, or convenience}
+
+  \vspace{0.3cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Probability sample}
+        \textbf{Chance} chooses. Every individual on the frame has a known
+        chance of being picked.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Convenience sample}
+        The \textbf{researcher} takes whoever is easiest to reach. Tuesday
+        evening chose that sample.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      The \textbf{sampling frame} is the list you can actually choose from.
+      Anybody left off it can never be sampled --- no matter how good your
+      method is.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── SRS ──────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Simple random sample}
+  \sectionlabel{number the frame, then draw}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Every individual has an equal chance --- and so does every possible group
+      of $n$ individuals.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    Riverbend's 900 students, numbered 001--900:\\[6pt]
+    {\ttfamily\large 7 1 4 \quad 0 2 8 \quad 9 5 1 \quad 3 6 6}\\[8pt]
+    student 714 \quad$\cdot$\quad student 28 \quad$\cdot$\quad
+    {\color{goldacc}\bfseries 951 --- skip, out of range} \quad$\cdot$\quad
+    student 366
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \small Skip anything out of range, and anything you have already used.
+  \end{center}
+\end{frame}
+
+% ── STRATIFIED ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Stratified sample}
+  \sectionlabel{some from every group}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c @{}}
+    \hline
+    \textbf{Grade} & \textbf{Students} & \textbf{Survey $1/15$ of each} \\
+    \hline
+    9th  & 270 & 18 \\
+    10th & 240 & 16 \\
+    11th & 210 & 14 \\
+    12th & 180 & 12 \\
+    \hline
+    \textbf{Total} & \textbf{900} & \textbf{60} \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Strata are alike inside and different from each
+    other.}\\[6pt]
+    \small Most seniors drive. Stratifying \emph{guarantees} they are heard.
+  \end{center}
+\end{frame}
+
+% ── SYSTEMATIC ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Systematic sample}
+  \sectionlabel{a random start, then every $k$th}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.8\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{7pt}
+        \item Put the population in a list of $N$.
+        \item Interval: $k = N \div n = 900 \div 60 = \mathbf{15}$.
+        \item Random start between 1 and 15 --- it lands on \textbf{7}.
+        \item Take 7, 22, 37, 52, \dots
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Only the start is random. After that, the list
+    decides.}
+  \end{center}
+\end{frame}
+
+% ── CLUSTER ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Cluster sample}
+  \sectionlabel{everyone from a few groups}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Riverbend's 900 students sit in \textbf{36 homerooms of 25}. Draw 3
+      homeroom numbers at random and survey \textbf{every} student in them.
+      \\[6pt]
+      $3 \times 25 = 75$ students --- and you never needed a list of students,
+      only a list of homerooms.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \small Cheapest of the four. Also the riskiest: if the clusters really differ
+    from each other, three of them can miss the population badly.
+  \end{center}
+\end{frame}
+
+% ── STRATIFIED VS CLUSTER ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The two everybody mixes up}
+  \sectionlabel[goldacc]{stratified vs.\ cluster}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{@{} l l l @{}}
+    \hline
+     & \textbf{Stratified} & \textbf{Cluster} \\
+    \hline
+    The groups are   & alike inside, different from each other & each a small mix of the whole \\
+    You use          & \textbf{all} of the groups & \textbf{a few} of the groups \\
+    From each you take & a random sample & \textbf{everyone} \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Stratified is some from every group.\\[4pt]
+     Cluster is everyone from a few groups.}
+  \end{center}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Today in one line}
+  \sectionlabel[goldacc]{exit ticket next}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item In a probability sample, \textbf{chance} chooses --- not you, and
+              not whoever happens to be standing there.
+        \item \textbf{Simple random}: number the frame and draw.
+        \item \textbf{Stratified}: some from every group, in proportion.
+        \item \textbf{Systematic}: random start, then every $k$th,
+              $k = N \div n$.
+        \item \textbf{Cluster}: everyone from a few randomly chosen groups.
+        \item The best technique is the one the \textbf{context} allows --- and
+              you have to say why.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}

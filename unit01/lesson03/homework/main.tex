@@ -1,4 +1,4 @@
-%! Sampling Techniques — Unit 1, Lesson 1.3 — Homework
+%! Choosing a Sample — Unit 1, Lesson 1.3 — Homework
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -12,9 +12,166 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[24]
+\begin{scenariobox}[Harbor Point Community Pool --- Do It Again, Properly]{cerulean}
+\small
+Last time, a staff member asked the $75$ members who arrived on a Tuesday
+evening. The board has thrown that study out and hired you to plan a new one:
+$100$ of the pool's $1{,}500$ members.
+
+\vspace{2pt}
+What the office knows: the membership list is complete and numbered $0001$ to
+$1500$. There are $600$ individual memberships, $525$ family memberships, and
+$375$ senior memberships. The week is divided into $25$ scheduled swim sessions,
+and about $25$ members attend each one.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{notesbox}{Practice}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item The Tuesday-evening study was a \blank{4cm} sample.
+
+        Name two kinds of members who had \emph{no chance} of being chosen by it.
+        \writeline
+
+  \item \textbf{Plan A --- simple random sample.} You number the members $0001$
+        to $1500$ and run a random number generator. It returns:
+
+        \begin{center}
+        \ttfamily\large 0412 \quad 1587 \quad 0973 \quad 0412 \quad 0288
+        \end{center}
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.92\linewidth}{@{} c X X @{}}
+        \toprule
+        \textbf{Returned} & \textbf{Use it? Why or why not} & \textbf{Member chosen} \\
+        \midrule
+        0412 & yes --- it is in range and new & member 412 \\
+        1587 & \blank{4.2cm} & \blank{2.6cm} \\
+        0973 & \blank{4.2cm} & \blank{2.6cm} \\
+        0412 & \blank{4.2cm} & \blank{2.6cm} \\
+        0288 & \blank{4.2cm} & \blank{2.6cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item \textbf{Plan B --- stratified sample} by membership type. The sample is
+        $100$ of $1{,}500$ members, so take $1/15$ of each stratum.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+        \toprule
+        \textbf{Membership} & \textbf{Members} & \textbf{Number to survey} \\
+        \midrule
+        Individual & 600 & \blank{4cm} \\
+        Family     & 525 & \blank{4cm} \\
+        Senior     & 375 & \blank{4cm} \\
+        \midrule
+        \textbf{Total} & \textbf{1,500} & \blank{4cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Show the work for the \textbf{senior} row.
+
+        \begin{work}
+          \dfrac{100}{1500} &= \dfrac{1}{15} \\
+          \dfrac{1}{15} \times 375 &= 25 \text{ members}
+        \end{work}
+
+  \item \textbf{Plan C --- systematic sample} from the numbered membership list.
+
+        \textbf{(a)} Find the interval $k$.
+
+        \begin{work}
+          k &= 1500 \div 100 \\
+            &= 15
+        \end{work}
+
+        \textbf{(b)} The random start lands on member $9$. Write the next three
+        members chosen.
+
+        \blank{2cm} \qquad \blank{2cm} \qquad \blank{2cm}
+
+  \item \textbf{Plan D --- cluster sample.} You draw $4$ of the $25$ swim
+        sessions at random and survey everyone who attends them.
+
+        \textbf{(a)} About how many members does that reach?
+
+        \begin{work}
+          4 \times 25 &= 100 \text{ members}
+        \end{work}
+
+        \textbf{(b)} What are the clusters in this plan? \blank{5.5cm}
+
+  \item Name the technique each study used.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.45}
+        \begin{tabularx}{0.97\linewidth}{@{} X p{2.9cm} @{}}
+        \toprule
+        \textbf{The study} & \textbf{Technique} \\
+        \midrule
+        An airline randomly picks $5$ flights and surveys everyone on board.
+          & \blank{2.5cm} \\
+        A pollster has a complete voter list and draws $500$ numbers at random.
+          & \blank{2.5cm} \\
+        A bakery tests every $40$th loaf coming out of the oven.
+          & \blank{2.5cm} \\
+        A hospital surveys day-, evening-, and night-shift nurses in proportion.
+          & \blank{2.5cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item The board says: ``Whatever we do, we have to be sure seniors are heard
+        --- they pay dues too, and they swim at different hours.''
+
+        Which of your four plans should they run, and why does it deliver what
+        the board asked for?
+        \writelines{2}
+
+  \item Suppose the board runs \textbf{Plan D} and the four sessions drawn turn
+        out to be three lap-swim hours and one adult fitness hour. The draw was
+        completely random and every count is correct.
+
+        Explain why the results still might not describe all $1{,}500$ members.
+        \writelines{2}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+Pick a population you could actually study --- your school, your team, your
+neighborhood. Write the question you would ask, then plan two different samples
+of the same size:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item The frame you would use, and how you would number it.
+  \item Plan 1: which technique, and exactly how chance chooses.
+  \item Plan 2: a different technique, same sample size.
+  \item Which plan you would actually run, and the one reason why.
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{remindbox}
+\small
+\textbf{Next class (Lesson 1.4):} you can pick a sample perfectly and still get a
+misleading answer --- because of who is missing from the frame, who refuses to
+answer, and how the question itself is worded. Next class is about
+\textbf{bias}: where it enters a study, and what a researcher can do about it.
+\end{remindbox}
 
 \end{document}
