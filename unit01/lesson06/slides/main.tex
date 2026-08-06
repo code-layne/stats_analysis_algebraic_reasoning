@@ -17,10 +17,252 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: section title}
-  % TODO: slide content
+  \ceruleanheader{Same school. Opposite answers.}
+  \sectionlabel[goldacc]{hook}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \textbf{Last class she watched.} Of 60 students who used the Study
+      Center, \textbf{65\%} passed every class --- against \textbf{80\%} of the
+      90 who never went. The Study Center looked harmful.
+
+      \vspace{0.35cm}
+      \textbf{This class she assigned.} 120 volunteers, split by a random
+      generator: \textbf{75\%} passed in the Study Center group,
+      \textbf{55\%} in the group kept out. Now it looks helpful.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Which one should she believe --- and why?}
+  \end{center}
+\end{frame}
+
+% ── WATCHING VS ASSIGNING ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Assigning, not watching}
+  \sectionlabel{what makes it an experiment}
+
+  \vspace{0.3cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Observational study (1.5)}
+        You measure or survey without affecting anyone. The groups already
+        exist because \textbf{people chose}. You may report an association.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Experiment (today)}
+        The researcher \textbf{assigns} units to groups and \textbf{imposes a
+        treatment}. Chance builds the groups, so the groups start out alike.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \small The word is still \textbf{assign}. Last lesson it was missing ---
+      today it is the whole design.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── THE PIECES ───────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Three words name the pieces}
+  \sectionlabel{PS.DC.3a}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Experimental units} & who or what gets treated --- the 120
+      volunteers \\
+    \textbf{(subjects)} & the name for units when they are people \\
+    \textbf{Treatment} & what is applied --- attending twice a week \\
+    \textbf{Control group} & the group with no treatment --- the baseline \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    {\color{cerulean}\bfseries The control group is not wasted. It is what the
+    treatment gets compared to.}
+  \end{center}
+\end{frame}
+
+% ── THE FOUR PRINCIPLES ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Four principles}
+  \sectionlabel[goldacc]{PS.DC.3b}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Comparison} & at least two groups, one of them a control \\
+    \textbf{Randomization} & chance decides the groups, not people \\
+    \textbf{Replication} & many units per group, so luck cannot decide \\
+    \textbf{Control} & every other condition held the same \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \small A variable that differs between groups \emph{and} moves the
+      response is a \textbf{confounding variable}. Control is what keeps it
+      out.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── BLINDING ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Blinding and the placebo effect}
+  \sectionlabel{being chosen is a treatment too}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item \textbf{Placebo effect:} a subject responds to the \emph{idea} of
+              a treatment --- students try harder because they were picked.
+        \item \textbf{Placebo:} a fake treatment built to look real --- a quiet
+              study hall for the control group.
+        \item \textbf{Single-blind:} the subjects, or the people measuring,
+              do not know the groups.
+        \item \textbf{Double-blind:} neither of them does.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Blinding removes the part of the response that
+    comes from knowing.}
+  \end{center}
+\end{frame}
+
+% ── THREE DESIGNS ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Three ways to assign the units}
+  \sectionlabel{completely randomized $\cdot$ blocks $\cdot$ pairs}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Completely randomized} & chance alone assigns every unit \\
+    \textbf{Randomized block} & sort into similar blocks, randomize inside \\
+    \textbf{Matched pairs} & the block is a pair, one unit to each treatment \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \small Riverbend blocks on last quarter's grades: 80 who passed
+      everything split \textbf{40/40}, and 40 who did not split
+      \textbf{20/20}.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Block on the variable you fear. Randomize the
+    rest.}
+  \end{center}
+\end{frame}
+
+% ── WHAT IT MAY CLAIM ────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{What each study may claim}
+  \sectionlabel{the payoff}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.45}
+    \begin{tabular}{@{} l l l @{}}
+    \hline
+    \textbf{Study} & \textbf{Found} & \textbf{May claim} \\
+    \hline
+    1.5 --- watched 150 records & 65\% vs.\ 80\% & an association only \\
+    1.6 --- assigned 120 people & 75\% vs.\ 55\% & the Study Center caused it \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Chance made the two groups alike at the start, so the treatment is the
+      only thing left that can explain the 20-point gap.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── THE ACTIVITY SETUP ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Your turn: settle the swim-time question}
+  \sectionlabel{group activity}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      Harbor Point takes 90 volunteers and lets a generator assign 45 to a
+      6~a.m.\ slot and 45 to a 7~p.m.\ slot for four weeks. Result:
+      \textbf{60\%} of the morning group slept 7+ hours, against
+      \textbf{40\%} of the evening group.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.8cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Watching said 25 points. Assigning says 20. Why
+    is the smaller number the honest one?}
+  \end{center}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Today in one line}
+  \sectionlabel[goldacc]{exit ticket next}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item An \textbf{experiment} assigns the units and imposes a
+              \textbf{treatment}.
+        \item Name the pieces: \textbf{units}, \textbf{treatment},
+              \textbf{control group}.
+        \item Four principles: \textbf{comparison, randomization, replication,
+              control}.
+        \item \textbf{Blinding} removes the placebo effect; blocks and pairs
+              tame a feared variable.
+        \item Because \textbf{chance} built the groups, an experiment can say
+              \emph{caused}.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}

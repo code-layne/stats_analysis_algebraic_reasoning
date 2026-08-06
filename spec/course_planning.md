@@ -1,7 +1,7 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.5 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lessons 1.1, 1.2, 1.3, and 1.4. Previous run
+**Last updated:** 2026-08-06 — **Lesson 1.6 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lessons 1.1, 1.2, 1.3, 1.4, and 1.5. Previous run
 (2026-08-05): Lesson 1.0 authored and the course palette replaced royal blue → **cerulean**
 across the whole tree.
 
@@ -183,37 +183,77 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     plan 6pp, slides 9 frames. `make -C unit01/lesson05 all` and `check` both exit 0; every
     page of both packets was rendered and eyeballed (see "Gotchas" for the two boxguard
     repairs that took).
-- **All other 60 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.6 — "Principles of Experimental Design" — is COMPLETE.** All components authored,
+  built, and passing the gate.
+  - Standards: **PS.DC.3a (i–iv), PS.DC.3b; AFDA.DA.2c** (PS.DC.1b carried forward in the
+    conclusion items).
+  - Scope: the same one-word pivot as 1.5, from the other side — the researcher
+    **assigns** and **imposes a treatment**; naming **experimental units / subjects**,
+    **treatment**, and **control group** (the baseline, not a wasted group); the four
+    principles **comparison, randomization, replication, control** evaluated *in context*
+    (PS.DC.3b), with **confounding variable** taught as 1.5's lurking variable that got
+    *inside* the experiment because the groups were not treated alike; the **placebo
+    effect** in a school setting (*being chosen* is itself a treatment) and single- vs.
+    **double-blind**; and **completely randomized / randomized block / matched pairs**,
+    with block allocation done as arithmetic. Closes on the payoff the unit has been
+    building since 1.5 — random assignment is what buys the verb *caused*.
+  - **The lesson is 1.5's answer, deliberately on the same contexts.** Riverbend's
+    observational study made the Study Center look *harmful* ($65\%$ users vs. $80\%$
+    non-users, arrow reversed); the experiment makes it look *helpful* ($75\%$ vs. $55\%$).
+    Same school, same Study Center, opposite conclusions — that pair is the hook, and every
+    other component repeats the shape: a self-selected gap that was too big, replaced by an
+    assigned gap that is smaller and true. Harbor Point $25 \to 20$ points; Millbrook
+    $48 \to 30$ points. **A smaller gap as the stronger evidence** is the closing item of
+    both the activity and the homework.
+  - Contexts: Riverbend HS carried from 1.0–1.5 (warm-up + notes; $120$ volunteers split
+    $60/60$ by generator, $45/60 = 75\%$ against $33/60 = 55\%$, gap $20$ points, pooled
+    $78/120 = 65\%$; block on last quarter's grades $80 \to 40/40$ and $40 \to 20/20$),
+    Cedar Ridge Apartments carried from 1.3/1.4 (guided practice; $100$ households,
+    $50/50$, four altered plans mapping one-to-one onto the four principles), Harbor Point
+    Community Pool carried from 1.2–1.5 (activity; $90$ volunteers, $45/45$, $27/45 = 60\%$
+    against $18/45 = 40\%$, pooled $45/90 = 50\%$ scaled to $750$ of $1{,}500$; block on
+    retirement $30 \to 15/15$, $60 \to 30/30$; the double-blind item is the honest limit —
+    subjects cannot be blinded, the sleep-log scorers can), Bayside Middle School carried
+    from 1.3–1.5 (exit ticket; $80$ volunteers, $40/40$, $28/40 = 70\%$ against
+    $16/40 = 40\%$, gap $30$), Millbrook Public Library carried from 1.2/1.4/1.5 (homework;
+    $200$ volunteers, $100/100$, $65\%$ against $35\%$, pooled $100/200 = 50\%$ scaled to
+    $600$ of $1{,}200$; block on age $120 \to 60/60$, $80 \to 40/40$). All arithmetic
+    verified in Python before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 6pp, slides 10 frames. `make -C unit01/lesson06 all` and `check` both exit 0;
+    every page of both packets was rendered and eyeballed (see "Gotchas" for the two
+    layout repairs that took).
+- **All other 59 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 6 of 9 authored (lesson00, lesson01, lesson02, lesson03,
-  lesson04, lesson05)**; U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 7 of 9 authored (lesson00, lesson01, lesson02, lesson03,
+  lesson04, lesson05, lesson06)**; U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Commit Lesson 1.5** on `claude/lesson-1-5-generation-ffc6b9` and open its PR. The lesson is
+1. **Commit Lesson 1.6** on `claude/lesson-1-6-generation-fdc66b` and open its PR. The lesson is
    authored, built, and gated but **not yet committed** — the run stopped short of committing
    because commits/pushes are only made on request.
-2. **Author Unit 1 Lesson 1.6** — "Principles of experimental design" (PS.DC.3a–b;
-   AFDA.DA.2c). Lesson 1.5's homework remindbox sets it up and already names all four
-   principles, so do not re-introduce them from scratch: an observational study cannot reach
-   causation because the groups build themselves, so build them instead. Scope from PS.DC.3a:
-   treatment/control groups, blinding and the placebo effect, experimental units/subjects,
-   and blocking / matched pairs / completely randomized designs; then PS.DC.3b's four
-   principles — **comparison, randomization, replication, control** — evaluated in context.
-   Can assume all of 1.0–1.5's vocabulary, and specifically 1.5's association/causation,
-   lurking variable, and explanatory/response pair. The activity's Tier E item 3(b) already
-   floated a randomized design for the Riverbend Study Center *and* the ethical objection
-   (you must deny half the students help) — that is the natural opening context. Live
-   contexts for reuse: Harbor Point pool, Riverbend HS Study Center, Millbrook Library
-   Summer Reading Program, Cedar Ridge Apartments, Bayside Middle School.
-3. Then finish Unit 1 (1.7–1.8), building + `make check` per lesson.
+2. **Author Unit 1 Lesson 1.7** — "Experiments vs. observational studies; choosing a
+   collection method" (PS.DC.3c–e). Almost all the content is already standing: 1.5 and 1.6
+   ran the *same four contexts* both ways, so 1.7 should be built on those pairs rather than
+   on new scenarios — Riverbend ($65/80$ watched vs. $75/55$ assigned), Harbor Point
+   ($25$-point gap vs. $20$), Millbrook ($48$ vs. $30$). PS.DC.3c is the compare/contrast
+   and the conclusions each licenses; **PS.DC.3d is the piece 1.6 deliberately did not
+   take** — using the statistical cycle to plan and conduct a *well-designed experiment*
+   (1.5 did the cycle for an observational study, so mirror that table); PS.DC.3e is the
+   five collection methods from the Understanding-the-Standards pages (surveys, interviews,
+   focus groups, observations, content analysis) matched to a context. 1.6's homework
+   remindbox already promises the "when is an experiment impossible or unethical?" question
+   and 1.6's activity Tier E item 3 left the blinding limit open — both are the natural
+   openings. Do not re-teach the four principles; assume them.
+3. Then finish Unit 1 (1.8, the class-survey project), building + `make check` per lesson.
 4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
 5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
-   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7.
+   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7; Lesson 1.5 as PR #8.
 
 ## Gotchas found this session
 
@@ -290,6 +330,26 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   number points nowhere useful. The offending row was ~77 characters at `\small`; ~70 fits.
   Trim the longest row and the label ("Analyze \& communicate" → "Analyze \& report") rather
   than shrinking the font.
+- **`label: \blank \hfill label: \blank` silently drops the second blank.** Three-across
+  (`units / treatment / control`) and even two-across with generous widths overflowed the
+  enumerate's line in 1.6's activity and homework: TeX breaks at the `\hfill` (infinite
+  stretch = zero badness), right-aligns the trailing label against the margin, and dumps its
+  `\blank` onto the next line as an **orphan underline** — with *no* overfull-hbox warning,
+  because the break was legal. The student is left with a label and nowhere to write. The
+  **key never shows it** (an `\ans` is narrower than the blank it replaces), page parity
+  still passes, and `make check` sees nothing. Budget ~14.5 cm of usable width inside a
+  `notesbox` enumerate: two labels plus two `\blank{3.6cm}` fit; three do not. Put the third
+  on its own line. **Look for stray underlines at the left margin** when scanning a blank.
+- **Render the component PDFs, not the merged packet, right after an edit.** `make check`
+  rebuilds the components but does not always re-merge `target/compiled/*_student.pdf`, so a
+  packet render can be a build behind. Two "fixes that did not take" in 1.6 were both stale
+  renders — one of them a `\tcbbreak` that had in fact worked. Verify against
+  `target/unitXX/lessonYY/<comp>/main.pdf`, or run `make all` before rendering the packet.
+- **`\tcbbreak` before an `\item` works exactly as in 1.5.** 1.6's homework had the same
+  failure (item 6's prompt at the foot of page 1, its table at the head of page 2), and one
+  `\tcbbreak` on its own line before the `\item`, mirrored byte-for-byte into the key, moved
+  the whole item to page 2 with no page-count change. Blank and key had chosen the same break
+  point, which is what made the unconditional break safe — check that first, as always.
 - **Do not trust a cached absolute path across a run.** The project directory was renamed
   mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target
