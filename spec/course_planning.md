@@ -1,9 +1,9 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.4 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lessons 1.1, 1.2, and 1.3. Previous run (2026-08-05):
-Lesson 1.0 authored and the course palette replaced royal blue → **cerulean** across the
-whole tree.
+**Last updated:** 2026-08-06 — **Lesson 1.5 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lessons 1.1, 1.2, 1.3, and 1.4. Previous run
+(2026-08-05): Lesson 1.0 authored and the course palette replaced royal blue → **cerulean**
+across the whole tree.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -148,34 +148,72 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
     plan 6pp, slides 9 frames. `make -C unit01/lesson04 all` and `check` both exit 0; PDFs
     eyeballed for stranded boxes (see the Tier E note under "Gotchas").
-- **All other 61 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.5 — "Observational Studies" — is COMPLETE.** All components authored, built,
+  and passing the gate.
+  - Standards: **PS.DC.2d** (PS.DC.1a–b carried forward in the cycle and conclusion items).
+  - Scope: the one-word definition — you measure or survey **without assigning**, so the
+    groups formed themselves (and a **survey is one type of observational study**, which
+    makes every Unit 1 study so far one); **using the statistical cycle to plan and conduct**
+    the study, which is what PS.DC.2d actually asks and is the section not to skip; comparing
+    two already-existing groups with two different denominators; **explanatory vs. response**
+    variable; and the lesson's pivot — **association is not causation**, taught as *three live
+    stories for one table*: the claim, the same arrow **backwards**, and a **lurking
+    variable** outside the study moving both. Closes on which statements the study licenses,
+    a banned-verb list (*causes, makes, raises, improves*), and the fact that a prediction
+    about switching groups is a causal claim in disguise. Experiments are named only as the
+    1.6 hand-off.
+  - **Deliberate placement after 1.4:** every scenario in 1.5 is drawn at random with a 100%
+    response rate, so bias is off the table and what remains is visible. The homework's
+    closing item is exactly this — *no bias at all, and still no causation*.
+  - Contexts: Harbor Point Community Pool carried from 1.2/1.3/1.4 (warm-up + notes; SRS of
+    $200$ from $1{,}500$, $80$ morning / $120$ evening, sleep $7+$ hrs $56/80 = 70\%$ against
+    $54/120 = 45\%$, a $25$-point gap; pooled $110/200 = 55\%$ scaled to $825$; the lurking
+    variable is retirement, $60/80 = 75\%$ against $18/120 = 15\%$), Riverbend HS carried from
+    1.0–1.3 (activity; $900$ students, sample of $150$, Study Center users $39/60 = 65\%$
+    against non-users $72/90 = 80\%$ — the association runs **backwards**, and Tier E proves
+    it with the previous quarter's records, $45/60 = 75\%$ had already failed a class against
+    $9/90 = 10\%$; pooled $111/150 = 74\%$ scaled to $666$), Bayside Middle School carried
+    from 1.3/1.4 (exit ticket; band $90/150 = 60\%$ against $240/600 = 40\%$, a $20$-point
+    gap), Millbrook Public Library carried from 1.2/1.4 (homework; $1{,}200$ card holders,
+    unbiased phone sample of $240$, Summer Reading Program $72/90 = 80\%$ against $48/150 =
+    32\%$, a $48$-point gap; pooled $120/240 = 50\%$ scaled to $600$; previous-summer records
+    $63/90 = 70\%$ against $30/150 = 20\%$). All arithmetic verified in Python before
+    authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 6pp, slides 9 frames. `make -C unit01/lesson05 all` and `check` both exit 0; every
+    page of both packets was rendered and eyeballed (see "Gotchas" for the two boxguard
+    repairs that took).
+- **All other 60 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 5 of 9 authored (lesson00, lesson01, lesson02, lesson03,
-  lesson04)**; U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 6 of 9 authored (lesson00, lesson01, lesson02, lesson03,
+  lesson04, lesson05)**; U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Commit Lesson 1.4** on `claude/lesson-1-4-generation-9412d9` and open its PR. The lesson is
+1. **Commit Lesson 1.5** on `claude/lesson-1-5-generation-ffc6b9` and open its PR. The lesson is
    authored, built, and gated but **not yet committed** — the run stopped short of committing
    because commits/pushes are only made on request.
-2. **Author Unit 1 Lesson 1.5** — "Observational studies" (PS.DC.2d). Lesson 1.4's homework
-   remindbox sets it up: every study in Unit 1 so far has only *watched* — nobody has changed
-   anything. Scope from PS.DC.2d: using the statistical cycle to plan and conduct an
-   observational study, what such a study can and cannot support, and why "these two things go
-   together" is not "one caused the other." Causation language should be *named* here and
-   fully paid off in 1.6–1.7 (experimental design). Can assume 1.0–1.3's vocabulary plus
-   1.4's: bias, sampling bias, undercoverage, nonresponse, response bias and its seven named
-   forms, question order bias, and the precision-vs-accuracy contrast. Live contexts available
-   for reuse: Harbor Point pool, Cedar Ridge Apartments, Millbrook Public Library, Riverbend HS,
-   Bayside Middle School.
-3. Then finish Unit 1 (1.6–1.8), building + `make check` per lesson.
+2. **Author Unit 1 Lesson 1.6** — "Principles of experimental design" (PS.DC.3a–b;
+   AFDA.DA.2c). Lesson 1.5's homework remindbox sets it up and already names all four
+   principles, so do not re-introduce them from scratch: an observational study cannot reach
+   causation because the groups build themselves, so build them instead. Scope from PS.DC.3a:
+   treatment/control groups, blinding and the placebo effect, experimental units/subjects,
+   and blocking / matched pairs / completely randomized designs; then PS.DC.3b's four
+   principles — **comparison, randomization, replication, control** — evaluated in context.
+   Can assume all of 1.0–1.5's vocabulary, and specifically 1.5's association/causation,
+   lurking variable, and explanatory/response pair. The activity's Tier E item 3(b) already
+   floated a randomized design for the Riverbend Study Center *and* the ethical objection
+   (you must deny half the students help) — that is the natural opening context. Live
+   contexts for reuse: Harbor Point pool, Riverbend HS Study Center, Millbrook Library
+   Summer Reading Program, Cedar Ridge Apartments, Bayside Middle School.
+3. Then finish Unit 1 (1.7–1.8), building + `make check` per lesson.
 4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
 5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
-   PR #5; Lesson 1.3 as PR #6.
+   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7.
 
 ## Gotchas found this session
 
@@ -227,6 +265,31 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   one line; the `\ans{}` that replaces it often wraps to two or three. That asymmetry is
   already absorbed once the pair builds at equal page counts, so **re-measure both files after
   any table edit** rather than assuming a change that shortens the blank shortens the key.
+- **The gate passed on 1.5's first build and the activity still had a stub** — the same
+  failure 1.4 shipped, in the same component. Activity was 2/2 pages, parity perfect, while
+  Tier A broke leaving only its closing rule and one write-line (~0.4in) at the top of page 2.
+  The repair was ~35pt of *mirrored* shaving, not a guard: `itemsep` 4pt→2pt on Tier R and
+  5pt→3pt on Tier A, box padding 1.5mm→1mm and 2mm→1.5mm, the three inter-box `\vspace`s
+  0.06in→0.03in, and Tier R item 1's two blank-lines merged into one four-field line. Tier E's
+  existing `\boxguard` is what made the shaving safe — over-shaving could only have pulled
+  Tier E up, and the guard refuses that. **Shave the page above a stub before guarding the box
+  below it.**
+- **`\tcbbreak` is the right tool when a prompt gets separated from its table.** 1.5's
+  homework broke inside the `notesbox` with item 6's question at the foot of page 1 and its
+  four-row table at the head of page 2 — not a stub (both sides were full), just bad reading.
+  `\boxguard` cannot fix it (inert inside a breakable tcolorbox); one `\tcbbreak` before the
+  `\item`, mirrored byte-for-byte into the key, moved item 6 whole to page 2 with no page-count
+  change. The blank and key had chosen the *same* break point, which is what made an
+  unconditional break safe — check that first.
+- **The lesson plan gets stubs too, and nothing checks it.** 1.5's plan left a 7-line tail of
+  the Homework `teachernote` alone on page 6. `\boxguard[26]` before that one note moved the
+  whole note down and kept the plan at 6 pages. Do not guard *every* teacher note — they total
+  ~95 lines and guarding them all costs a seventh page; guard only the one that strands.
+- **A wide beamer table overflows silently at 16pt.** 1.5's cycle-table slide reported one
+  `Overfull \hbox (16.19pt)` logged at the *frame's* closing line, not the table's, so the line
+  number points nowhere useful. The offending row was ~77 characters at `\small`; ~70 fits.
+  Trim the longest row and the label ("Analyze \& communicate" → "Analyze \& report") rather
+  than shrinking the font.
 - **Do not trust a cached absolute path across a run.** The project directory was renamed
   mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target

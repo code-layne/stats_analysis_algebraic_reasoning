@@ -12,9 +12,155 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\boxguard[24]
+\begin{scenariobox}[Millbrook Public Library --- Does the Summer Reading Program Work?]{cerulean}
+\small
+Millbrook Public Library has $1{,}200$ card holders. Every summer it runs a
+free Summer Reading Program that any card holder may sign up for. In September
+the director draws a random sample of $240$ card holders from the full
+membership list and reaches every one of them by phone.
+
+\vspace{2pt}
+Of the $240$, \textbf{$90$ had signed up for the program} and \textbf{$150$ had
+not}. Of the $90$ who signed up, $72$ read at least $10$ books over the summer.
+Of the $150$ who did not, $48$ did.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{notesbox}{Practice}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item The director did not put anybody into the program --- card holders
+        signed themselves up.
+
+        \textbf{(a)} Is this an observational study? \blank{2cm}
+
+        \textbf{(b)} Who decided which card holders were in each group?
+        \blank{5cm}
+
+  \item Compute the reading rate for each group.
+
+        \textbf{(a)} What percent of the $90$ who signed up read at least $10$
+        books?
+
+        \begin{work}
+          \dfrac{72}{90} &= 0.80 \\
+                         &= 80\%
+        \end{work}
+
+        \textbf{(b)} What percent of the $150$ who did not sign up read at least
+        $10$ books?
+
+        \begin{work}
+          \dfrac{48}{150} &= 0.32 \\
+                          &= 32\%
+        \end{work}
+
+        \textbf{(c)} The program group is higher by \blank{2cm} percentage
+        points.
+
+  \item Now use the whole sample.
+
+        \textbf{(a)} How many of the $240$ card holders read at least $10$
+        books, and what percent is that?
+
+        \begin{work}
+          72 + 48 &= 120 \text{ card holders} \\
+          \dfrac{120}{240} &= 0.50 = 50\%
+        \end{work}
+
+        \textbf{(b)} About how many of all $1{,}200$ card holders does that
+        predict?
+
+        \begin{work}
+          0.50 \times 1200 &= 600 \text{ card holders}
+        \end{work}
+
+  \item Name the two variables, then write the finding the safe way.
+
+        Explanatory: \blank{4cm} \hfill Response: \blank{4cm}
+
+        Write one sentence reporting the result as an \emph{association}, using
+        both percents and no causal words.
+        \writelines{2}
+
+  \item The director's newsletter says: \emph{``The Summer Reading Program more
+        than doubles how much our members read.''} Give \emph{two} explanations
+        for the $48$-point gap other than the program itself.
+        \writelines{2}
+
+  \tcbbreak   % keep item 6's prompt with its table — mirrored in homework_key
+  \item Each row below reports a real association somebody found by watching.
+        Name one lurking variable that could explain it instead.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.45}
+        \begin{tabularx}{0.97\linewidth}{@{} X p{3.7cm} @{}}
+        \toprule
+        \textbf{What was observed} & \textbf{A lurking variable} \\
+        \midrule
+        On days when more ice cream is sold, more people get sunburned.
+          & \blank{3.3cm} \\
+        Children with larger shoe sizes read at a higher level.
+          & \blank{3.3cm} \\
+        Card holders who use the online catalog return books on time more often.
+          & \blank{3.3cm} \\
+        Students who own a graphing calculator score higher on the state test.
+          & \blank{3.3cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item The director checks one more record: how much each card holder read the
+        \emph{previous} summer, before the program existed. Of the $90$ who
+        signed up, $63$ had already read $10$ or more books. Of the $150$ who did
+        not sign up, $30$ had.
+
+        \textbf{(a)} Signed up: \blank{2cm} \qquad Did not sign up: \blank{2cm}
+
+        \textbf{(b)} What does that say about who signs up, and does it make the
+        program look better or worse than it is?
+        \writelines{2}
+
+  \item The sample was drawn at random from the full card-holder list, every
+        person answered, and every count is correct --- so there is no bias in
+        this study.
+
+        Explain why it \emph{still} cannot show that the program caused the
+        extra reading.
+        \writelines{2}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+Find a real headline that claims one thing causes another --- a news story, an
+ad, a social media post. Copy it down exactly, then:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item Name the explanatory variable and the response variable.
+  \item Say whether the evidence behind it came from watching or from assigning.
+  \item Name one lurking variable that could explain the association instead.
+  \item Rewrite the headline so it claims only what the study can support.
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{remindbox}
+\small
+\textbf{Next class (Lesson 1.6):} an observational study cannot show causation
+because the groups build themselves --- so what if we build them instead? Next
+class is \textbf{experimental design}: assigning subjects to treatment and
+control groups on purpose, and the four principles (comparison, randomization,
+replication, and control) that make an experiment worth trusting.
+\end{remindbox}
 
 \end{document}
