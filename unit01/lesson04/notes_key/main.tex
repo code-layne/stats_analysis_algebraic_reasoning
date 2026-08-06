@@ -12,9 +12,305 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item explain what makes a study \textbf{biased}, and tell bias apart from
+        ordinary sampling variability;
+  \item identify \textbf{sampling bias} in a plan by naming who the frame leaves
+        out;
+  \item explain why a \textbf{larger sample does not fix bias};
+  \item name the forms of \textbf{response bias}, including
+        \textbf{question order bias};
+  \item describe \emph{ways to reduce bias} in a study plan and justify each one.
+\end{enumerate}
+\end{objectivebox}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\vocabans{Bias}{A study is biased when its procedure systematically
+overestimates or underestimates the population value. Every sample it takes
+leans the same direction --- so bias is a direction, not the bad luck of one
+draw.}
+\vocabans{Sampling bias}{Bias that comes from how the sample was chosen: some
+members of the population are systematically more likely to be selected than
+others, so chance was never really doing the choosing.}
+\vocabans{Undercoverage}{Part of the population is left off the sampling frame
+entirely, so those members have no chance at all of being selected --- morning
+swimmers cannot be asked at a Tuesday-evening table.}
+\vocabans{Nonresponse}{Individuals are chosen properly but never answer. The
+frame was fine; the returned data is missing exactly the people who stayed
+silent, and they usually differ from the ones who replied.}
+\vocabans{Response bias}{Anything about the survey itself --- who asks, how it is
+worded, what order it comes in --- that pushes a respondent away from their true
+answer. It happens after the right person has been chosen.}
+\vocabans{Question order bias}{A form of response bias in which an earlier
+question changes the answer to a later one, so the same two questions produce
+different results just by being reordered.}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+In Lesson 1.3 you replanned the pool study properly: a numbered frame, chance
+doing the choosing, every membership type in proportion. The board runs it --- and
+hands the surveys out at the front desk with the pool director standing beside
+the table, watching.
+
+\vspace{2pt}
+\textbf{The sample was chosen perfectly. Name one reason the answers still might
+not be true.}
+\ansline{Answers vary. Members will not criticize the pool with the director standing there,}
+\ansline{so the answers come back kinder than what those same members actually think.}
+\end{hookbox}
+
+\boxguard[30]
+\begin{notesbox}{1. Bias Is a Direction, Not Bad Luck}
+\small
+Lesson 1.2 said that honest random samples disagree with each other --- that is
+\textbf{sampling variability}, and nobody is wrong. Those samples scatter
+\emph{around} the true value.
+
+\vspace{2pt}
+A study is \textbf{biased} when its procedure \emph{systematically} overestimates
+or underestimates the population value. Every sample it takes leans the
+\textbf{same direction}.
+
+\vspace{3pt}
+The pool office's own records say $20\%$ of all $1{,}500$ members mainly swim
+laps. Here are two ways of taking three samples of $75$:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} X c c c p{2.1cm} @{}}
+\toprule
+\textbf{How the $75$ were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd}
+  & \textbf{Average} \\
+\midrule
+At random from the full membership list & $19\%$ & $22\%$ & $19\%$
+  & \ans{$20\%$} \\
+From whoever arrived Tuesday evening & $35\%$ & $36\%$ & $37\%$
+  & \ans{$36\%$} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Both rows disagree with themselves --- that is variability, and it is unavoidable.
+Only one row disagrees with the \emph{truth} every single time.
+
+\vspace{2pt}
+The biased row is the \ans{Tuesday-evening} row, and it misses \ans{too high}
+(too high / too low).
+
+\vspace{3pt}
+\textit{Variability is noise: it shrinks when the sample grows. Bias is a
+direction: it does not.}
 \end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{2. Sampling Bias --- Who Never Had a Chance}
+\small
+The \textbf{sampling frame} is the list a study can actually choose from.
+\textbf{Sampling bias} happens when some members of the population are
+systematically more likely to be chosen than others.
+
+\vspace{2pt}
+Two ways it gets in:
+
+\vspace{2pt}
+\textbf{Undercoverage} --- part of the population is left off the frame entirely,
+so those members can never be chosen. \textbf{Nonresponse} --- members are chosen
+properly but do not answer, so the data that comes back is missing exactly the
+people who stayed silent.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} X p{4.3cm} @{}}
+\toprule
+\textbf{The plan} & \textbf{Who is missing?} \\
+\midrule
+Ask the members who arrive Tuesday evening. & \ans{morning and weekend members} \\
+Email the survey only to members with an address on file. & \ans{members with no
+email --- often the oldest ones} \\
+Post the survey on the pool's social media page. & \ans{members who do not follow
+the page} \\
+Mail a card to all $1{,}500$ members; $200$ mail it back. & \ans{the $1{,}300$
+who did not reply} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+The first three rows are \textbf{undercoverage} --- the frame itself is too
+small. The last row has a perfect frame and still has a problem: it is
+\ans{nonresponse}.
+
+\vspace{2pt}
+\textit{Nobody left off the frame can ever be sampled, and nobody who stays
+silent can ever be counted. Neither one shows up in your arithmetic.}
+\end{notesbox}
+
+\boxguard[26]
+\begin{notesbox}{3. A Bigger Sample Does Not Fix Bias}
+\small
+The staff member is told her sample was too small, so she runs the same Tuesday
+evening survey every week for ten weeks. She ends up asking $750$ members, and
+$270$ of them say they mainly swim laps.
+
+\begin{work}
+  \dfrac{270}{750} &= 0.36 \\
+                   &= 36\%
+\end{work}
+
+\vspace{2pt}
+Ten times the work, and the same answer. Fill in the comparison:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.95\linewidth}{@{} c c c X @{}}
+\toprule
+\textbf{Members asked} & \textbf{Study says} & \textbf{Truth}
+  & \textbf{Off by how many percentage points?} \\
+\midrule
+$75$  & $36\%$ & $20\%$ & \ans{$36 - 20 = 16$ points} \\
+$750$ & $36\%$ & $20\%$ & \ans{$36 - 20 = 16$ points --- no better} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+A larger sample makes an estimate more \ans{precise}, but it cannot make a
+biased procedure \ans{correct}. Sample size fixes
+\ans{variability}; it does nothing to bias.
+
+\vspace{2pt}
+\textit{Said plainly: a bigger biased sample is a more confident wrong answer.}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{4. Response Bias --- When the Answer Is Not the Truth}
+\small
+Everything so far went wrong before anyone spoke. \textbf{Response bias} is
+anything about the survey itself --- who is asking, how it is worded, what order
+it comes in --- that pushes a respondent away from their real answer.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{0.98\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+\toprule
+\textbf{\normalfont Kind} & \textbf{What the respondent does} \\
+\midrule
+Demand bias & Guesses what the study wants to hear and answers to match. \\
+Social desirability & Gives the answer that looks good to other people. \\
+Dissent bias & Answers negatively to everything, often without understanding
+  the questions. \\
+Acquiescence bias & Answers positively to everything --- agrees with it all. \\
+Extreme responses & Always picks ``strongly agree'' or ``strongly disagree.'' \\
+Neutral responding & Always picks the middle, no-opinion choice. \\
+Question order bias & An earlier question changes the answer to a later one. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Name the kind of response bias in each situation:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} X p{3.6cm} @{}}
+\toprule
+\textbf{At the pool} & \textbf{Kind of response bias} \\
+\midrule
+The head lifeguard hands out the survey and waits. Members who complained last
+week now rate the staff ``excellent.'' & \ans{social desirability} \\
+A member marks ``no opinion'' on all fifteen questions. & \ans{neutral
+responding} \\
+A member marks ``strongly agree'' on every question, including two that
+contradict each other. & \ans{extreme responses} \\
+The survey is titled \emph{``Help us show the pool needs longer hours.''}
+& \ans{demand bias} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{2pt}
+\textit{Response bias does not care how you drew the sample. It happens after
+the right person has already been chosen.}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{5. Question Order --- and How to Reduce Bias}
+\small
+The board sends out two versions of the same two-question survey. The questions
+are word-for-word identical; only the \textbf{order} is different.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} p{1.9cm} X c @{}}
+\toprule
+\textbf{Version} & \textbf{Order of the two questions}
+  & \textbf{Said yes to the \$40,000} \\
+\midrule
+A & ``Are the lap lanes overcrowded?'' \emph{then} ``Should the town spend
+    \$40,000 to add a lane?'' & $62\%$ \\
+B & ``Should the town spend \$40,000 to add a lane?'' \emph{then} ``Are the lap
+    lanes overcrowded?'' & $41\%$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{2pt}
+The two versions differ by \ans{$21$} percentage points, on the same
+question, from the same membership. This is \ans{question order bias}.
+
+\vspace{3pt}
+\textbf{Four ways to reduce bias in a plan.} Fill in what each one fixes:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt]
+  \item Build the frame from the \emph{complete} membership list, not from
+        whoever shows up. \\ Fixes: \ans{undercoverage}
+  \item Go back to the members who did not answer the first time. \\
+        Fixes: \ans{nonresponse}
+  \item Word every question neutrally --- never ``Don't you agree that\dots'' \\
+        Fixes: \ans{demand bias and acquiescence}
+  \item Let members answer anonymously, with nobody watching. \\
+        Fixes: \ans{social desirability bias}
+\end{enumerate}
+\end{notesbox}
+
+\boxguard
+\begin{practicebox}
+\small
+For each plan, name the main source of bias and give one change that would fix
+it.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.98\linewidth}{@{} X p{2.8cm} p{3.5cm} @{}}
+\toprule
+\textbf{The plan} & \textbf{Source of bias} & \textbf{One fix} \\
+\midrule
+A gym surveys members about closing early by asking people working out at
+$9$~p.m.
+  & \ans{undercoverage} & \ans{sample the full member list, not one hour} \\
+A principal asks students, by name and out loud in class, whether they have ever
+skipped a class.
+  & \ans{social desirability} & \ans{let students answer anonymously} \\
+A town mails a survey to all $4{,}000$ households and $310$ send it back.
+  & \ans{nonresponse} & \ans{follow up with the households that did not reply} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+The pool board says: ``Fine --- next time we'll survey \emph{four times as many}
+people the same way.'' Explain, in one or two sentences, why that will not help.
+\ansline{The same way means the same Tuesday-evening frame, so the same members are still}
+\ansline{left out. Four times the data gives a more precise version of the same wrong answer.}
+\end{practicebox}
 
 \end{document}
