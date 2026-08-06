@@ -12,9 +12,156 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{headlinebox}{frost}
+\small
+\textbf{Settle It --- Harbor Point Community Pool.} Last lesson the pool's
+survey found that $70\%$ of morning swimmers sleep at least $7$ hours against
+$45\%$ of evening swimmers --- but the members had chosen their own swim times,
+and $75\%$ of the morning swimmers turned out to be retired. This month the
+director settles the question. \textbf{$90$ members volunteer.} A random number
+generator assigns \textbf{$45$ to a reserved $6$~a.m.\ slot} and \textbf{$45$ to
+a reserved $7$~p.m.\ slot} for four weeks; everything else about the pool stays
+the same. Every volunteer keeps a sleep log. At the end, \textbf{$27$} of the
+morning group averaged at least $7$ hours of sleep, and \textbf{$18$} of the
+evening group did.
+\end{headlinebox}
+
+\vspace{0.03in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=1mm, bottom=1mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=2pt, topsep=3pt]
+
+  \item Name the numbers in this experiment.
+
+        Volunteers: \ans{$90$} \hfill Morning group: \ans{$45$} \hfill
+        Evening group: \ans{$45$} \hfill Pool members in all: \ans{$1{,}500$}
+
+  \item Nobody asked the volunteers what time they would prefer.
+
+        \textbf{(a)} Is this an experiment? \ans{yes}
+
+        \textbf{(b)} Who decided which group each volunteer ended up in?
+        \ans{chance --- a random generator}
+
+  \item Of the $45$ volunteers assigned to the morning slot, $27$ averaged at
+        least $7$ hours of sleep. What percent is that?
+
+        \begin{work}
+          \dfrac{27}{45} &= 0.60 \\
+                         &= 60\%
+        \end{work}
+
+  \item Of the $45$ assigned to the evening slot, $18$ did. What percent is
+        that?
+
+        \begin{work}
+          \dfrac{18}{45} &= 0.40 \\
+                         &= 40\%
+        \end{work}
+
+  \item Which group slept more, and by how many percentage points?
+        \ansline{The morning group, by $60 - 40 = 20$ percentage points.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.03in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+
+  \item Put the volunteers back together.
+
+        \textbf{(a)} How many of the $90$ volunteers slept at least $7$ hours,
+        and what percent is that?
+
+        \begin{work}
+          27 + 18 &= 45 \text{ volunteers} \\
+          \dfrac{45}{90} &= 0.50 = 50\%
+        \end{work}
+
+        \textbf{(b)} About how many of all $1{,}500$ pool members does that
+        predict?
+
+        \begin{work}
+          0.50 \times 1500 &= 750 \text{ members}
+        \end{work}
+
+  \item Name the parts of the design.
+
+        Experimental units: \ans{the $90$ volunteers} \hfill Treatment:
+        \ans{the $6$~a.m.\ slot}
+
+        Control group: \ans{the $7$~p.m.\ group}
+
+  \item In a few words each, say how this design meets the four principles.
+
+        Comparison: \ans{two groups, morning against evening} \hfill
+        Randomization: \ans{a generator made the split}
+
+        Replication: \ans{$45$ volunteers in each group, not one} \hfill
+        Control: \ans{same pool, same four weeks, same everything else}
+
+  \item Watching gave a $25$-point gap. This experiment gives a $20$-point gap.
+        Explain why the \emph{smaller} number is the one to trust.
+        \ansline{Watching mixed the swim time with retirement, which inflated the gap. Random}
+        \ansline{assignment spread the retired members evenly, so $20$ points is the swim time alone.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.03in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt]
+
+  \item Retirement was the lurking variable last lesson, so the director blocks
+        on it: $30$ of the $90$ volunteers are retired and $60$ still work full
+        time. She randomizes \emph{inside} each block.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.35}
+        \begin{tabularx}{0.93\linewidth}{@{} X c c c @{}}
+        \toprule
+        \textbf{Block} & \textbf{In block} & \textbf{To $6$~a.m.}
+          & \textbf{To $7$~p.m.} \\
+        \midrule
+        Retired & $30$ & \ans{$15$} & \ans{$15$} \\
+        Still working full time & $60$ & \ans{$30$} & \ans{$30$} \\
+        \midrule
+        Total & $90$ & \ans{$45$} & \ans{$45$} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Why block on retirement instead of trusting the random assignment to
+        even it out? \ansline{Chance usually evens it out, but it can miss; blocking makes it certain.}
+
+  \item Each change below breaks one principle. Name it, and say what could go
+        wrong.
+
+        \textbf{(a)} The director lets each volunteer pick the slot they prefer.
+        \ansline{Randomization. The retired members pick mornings again, and we are back to 1.5.}
+
+        \textbf{(b)} The morning group swims in the newly renovated lap pool;
+        the evening group swims in the old one.
+        \ansline{Control. The new pool is a confounding variable --- the gap may be the pool.}
+
+  \item Could this experiment be run \emph{double-blind}? Say who could be kept
+        from knowing which group a volunteer was in, and who could not.
+        \ansline{No. A volunteer obviously knows whether they swam at $6$ a.m.\ or $7$ p.m. But the}
+        \ansline{staff who read and score the sleep logs can be kept from knowing --- that is single-blind.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
