@@ -12,9 +12,162 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[24]
+\begin{scenariobox}[Lakeside Farmers Market]{cerulean}
+\small
+The Lakeside Farmers Market draws about $800$ shoppers on a Saturday morning. The
+market manager is deciding whether to ask the town for a free shuttle from the
+library parking lot, so she runs a study.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=3pt, label=\textbf{Stage \arabic*.}]
+  \item She asks: \emph{``How do Lakeside Farmers Market shoppers travel to the
+        market on a Saturday?''}
+  \item One Saturday she asks $50$ shoppers as they arrive.
+  \item She counts the answers by travel method.
+  \item She writes up what the market should do next.
+\end{enumerate}
+
+\vspace{2pt}
+Her $50$ answers: $26$ drove, $12$ walked, $7$ biked, $5$ rode the bus.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{notesbox}{Practice}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item Name the \textbf{variable of interest} --- what the manager recorded for
+        each shopper.
+
+        Variable: \ans{how that shopper traveled} \hfill Type: \ans{categorical}
+
+        How do you know? \ans{drove, walked, biked, bus are labels --- no mean}
+
+  \item Complete the manager's frequency table.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.45}
+        \begin{tabularx}{0.92\linewidth}{@{} l c X @{}}
+        \toprule
+        \textbf{How they traveled} & \textbf{Count} &
+        \textbf{Relative frequency (percent)} \\
+        \midrule
+        Drove & 26 & \ans{$26/50 = 0.52 = 52\%$} \\
+        Walked & 12 & \ans{$12/50 = 0.24 = 24\%$} \\
+        Biked &  7 & \ans{$7/50 = 0.14 = 14\%$} \\
+        Bus   &  5 & \ans{$5/50 = 0.10 = 10\%$} \\
+        \midrule
+        \textbf{Total} & \ans{50} & \ans{$50/50 = 1.00 = 100\%$} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        Show your work for the \textbf{Bus} row.
+
+        \begin{work}
+          \dfrac{5}{50} &= 0.10 \\
+                        &= 10\%
+        \end{work}
+
+  \item About $800$ shoppers come on a Saturday. Based on the survey, predict how
+        many of them ride the bus to the market.
+
+        \begin{work}
+          0.10 \times 800 &= 80 \text{ shoppers}
+        \end{work}
+
+        Write that result as one sentence the manager could put in her report.
+        Name the group and the number.
+        \ansline{About 80 of the market's 800 Saturday shoppers ride the bus to the market.}
+
+  \item The manager also asked eight of the shoppers how many miles they traveled
+        to reach the market: $3, \; 5, \; 1, \; 8, \; 2, \; 6, \; 4, \; 3$.
+
+        \textbf{(a)} Find the mean distance traveled.
+
+        \begin{work}
+          \bar{x} &= \dfrac{3+5+1+8+2+6+4+3}{8} \\
+                  &= \dfrac{32}{8} \\
+                  &= 4 \text{ miles}
+        \end{work}
+
+        \textbf{(b)} Write one sentence interpreting that number. Name the group
+        and the units.
+        \ansline{The eight shoppers asked traveled a mean distance of 4 miles to the market.}
+
+        \textbf{(c)} Distance is quantitative, so a mean is available. Explain why
+        the manager cannot report a ``mean travel method'' the same way.
+        \ansline{Travel method records labels, which cannot be added, so no mean exists --- only counts.}
+
+  \item For each question, decide whether data could answer it as written. If not,
+        name the test it fails and repair it.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{0.97\linewidth}{@{} p{5.2cm} p{2cm} X @{}}
+        \toprule
+        \textbf{Question} & \textbf{Ready?} & \textbf{If not, repair it} \\
+        \midrule
+        Is the market popular?              & \ans{no} & \ans{How many shoppers visit on a Saturday morning?} \\
+        How far did Mr.\ Ruiz drive today?  & \ans{no} & \ans{How far do Saturday shoppers drive to the market?} \\
+        How many miles do Saturday shoppers travel to the market?
+                                            & \ans{yes} & \ans{already passes all three tests} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Each mistake below happens at one stage of the data cycle. Write the
+        stage number.
+
+        \begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt, label=(\alph*)]
+          \item The manager asked only shoppers arriving in the parking lot.
+                \hfill \ans{2}
+          \item The 50 answers were never counted by travel method, so nobody
+                could tell which group was biggest. \hfill \ans{3}
+          \item The report says shoppers ``want a shuttle,'' but no one was ever
+                asked about a shuttle. \hfill \ans{4}
+          \item The original question never said \emph{which} shoppers or
+                \emph{which} day. \hfill \ans{1}
+        \end{enumerate}
+
+  \item The manager's final report says: \textit{``Only $10\%$ of our shoppers
+        ride the bus, so a free shuttle would be used by very few people.''}
+
+        Every number in that sentence is correct. Explain why the conclusion still
+        does not follow, and name the stage she should return to.
+        \ansline{The survey recorded how shoppers travel now, not whether they would use a shuttle,}
+        \ansline{and it missed anyone kept away by the trip. Go back to stage 1 and ask that.}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+Pick something you actually wonder about --- your team, your job, your bus route,
+your favorite game. Write it as a question data could settle, then fill in the
+plan:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item My question (names a group, says what gets recorded).
+  \item The variable of interest, and its type.
+  \item Who I would ask, and how many.
+  \item The sentence I hope to be able to write at stage 4.
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{remindbox}
+\small
+\textbf{Next class (Lesson 1.2):} the survey asked $50$ shoppers but the report
+talks about all $800$. Those two groups have names --- \emph{sample} and
+\emph{population} --- and so do the numbers computed from them. Bring today's
+frequency table.
+\end{remindbox}
 
 \end{document}

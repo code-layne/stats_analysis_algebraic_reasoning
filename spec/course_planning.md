@@ -1,8 +1,8 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-05 — **Lesson 1.0 authored, built, and gated** (the course's first
-real lesson and the model for the rest), and the **course palette was replaced**: royal blue
-→ **cerulean**, renamed across the whole tree.
+**Last updated:** 2026-08-06 — **Lesson 1.1 authored, built, and gated** (all components +
+keys + slides), mirroring Lesson 1.0's structure. Previous run (2026-08-05): Lesson 1.0
+authored and the course palette replaced royal blue → **cerulean** across the whole tree.
 
 ## Current state
 
@@ -50,23 +50,40 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
     plan 5pp, slides 9 frames.
   - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**.
-- **All other 65 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE.** All components
+  authored, built, and passing the gate.
+  - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e in the 1.2 hand-off).
+  - Scope: the four stages named formally and what each *hands to the next*; the three tests
+    for a question (answers vary / group named / measurement named) and repairing one that
+    fails; **the question decides the data type** (the lesson's pivot — 1.0 classified
+    variables in a finished table, 1.1 decides the type before any data exist); frequency
+    tables and relative frequency; conclusion in context; diagnosing which stage a flawed
+    study broke at.
+  - Contexts: Riverbend Student Council bike-rack survey (notes; 60 students — bus 27, car 15,
+    walk 12, bike 6, scaled to 900), Riverbend breakfast cart (activity; 40 students), Lakeside
+    Farmers Market (homework; 50 shoppers, 800 Saturday total). All arithmetic verified in
+    Python.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 5pp, slides 9 frames. `make -C unit01/lesson01 all` and `check` both exit 0.
+- **All other 64 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 1 of 9 authored (lesson00)**; U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 2 of 9 authored (lesson00, lesson01)**; U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Author Unit 1 Lesson 1.1** — "The statistical cycle; formulating questions; types of data"
-   (PS.DC.1a–c; AFDA.DA.2a). Mirror lesson00's structure. It must teach the **four stages
-   formally** (lesson00 only previewed them) and can assume the vocabulary lesson00 established:
-   individual, variable, categorical, quantitative, statistical question.
-2. Then scale out through Unit 1 (1.2–1.8), building + `make check` per lesson.
+1. **Author Unit 1 Lesson 1.2** — "Population vs. sample; parameter vs. statistic; constraints"
+   (PS.DC.1d–e). Lesson 1.1's homework sets it up deliberately: the Lakeside survey asks 50
+   shoppers and the report talks about all 800. Can assume 1.0's vocabulary (individual,
+   variable, categorical, quantitative) and 1.1's (data cycle, statistical question, variable
+   of interest, frequency table, relative frequency, conclusion in context).
+2. Then scale out through Unit 1 (1.3–1.8), building + `make check` per lesson.
 3. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
-4. Open a PR for the lesson-1.0 + palette work on branch `claude/lesson-planning-generate-3d9e93`.
+4. Open a PR for the lesson-1.0 + palette work on branch `claude/lesson-planning-generate-3d9e93`,
+   and for lesson 1.1 on `claude/lesson-1-1-generation-3cb6d5` (uncommitted as of this run).
 
 ## Gotchas found this session
 
@@ -76,3 +93,10 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   to one line, or reserve a second `\writeline` in the blank.
 - `\boxguard` defaults to 16 baselines, which over-refuses for a short box. Size it to the box:
   `\boxguard[12]` for a ~10-line box like `hookbox`.
+- **`\writeline` does not break the line** (it is `\hrulefill` + spacing), so two in a row render
+  as *one* writing line while the matching pair of `\ansline`s in the key prints two. Page parity
+  still passes, but the student is short a line. Use `\writelines{2}` wherever the key answer
+  needs two lines. (Lesson 1.0 has the older two-`\writeline` pattern in a few places; harmless,
+  worth converting whenever 1.0 is next revised.)
+- A ~6.0pt overfull `\hbox` appears once in every component log — it is the `\pageheader` banner
+  (10.8pt on the cover), same as the model lesson. Not a defect.
