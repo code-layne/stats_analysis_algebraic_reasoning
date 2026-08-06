@@ -12,9 +12,281 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\small
+By the end of this lesson, I will be able to\dots
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item name the \textbf{population} and the \textbf{sample} in a study, and give
+        the sample size;
+  \item tell a \textbf{parameter} from a \textbf{statistic}, and say which one I
+        actually know;
+  \item name the \textbf{constraints} that make a census impractical and force us
+        to sample;
+  \item explain why a statistic changes from sample to sample while the parameter
+        does not;
+  \item say what a sample does --- and does \emph{not} --- let me claim about the
+        population.
+\end{enumerate}
+\end{objectivebox}
+
+\boxguard
+\begin{vocabbox}
+\small
+Fill in each term as we build it together.
+\vocabans{Population}{The entire group the question is about --- every individual
+you would like the conclusion to describe. The question decides it, so it is
+named at stage 1, before anybody is asked anything.}
+\vocabans{Sample}{The part of the population you actually collect data from. It
+is always chosen out of the population, which is why you cannot name a sample
+until you have named the population it came from.}
+\vocabans{Census}{A study that collects data from every individual in the
+population, so nobody is left out. The U.S. Census is one; almost nothing else
+in this course will be, because of constraints.}
+\vocabans{Parameter}{A number that describes the population --- for example, the
+true percent of all 800 Saturday shoppers who drove. It is one fixed number, and
+it is almost always unknown.}
+\vocabans{Statistic}{A number that describes the sample. You compute it from the
+data you actually collected, so you know its value --- and it changes when the
+sample changes.}
+\vocabans{Constraint}{Something in the real world that limits how a study can be
+run: time, cost, access, destruction, or a population that keeps changing.
+Constraints are the reason samples exist at all.}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+The market manager's report says: \textit{``$52\%$ of our Saturday shoppers drive
+to the market.''} But she never asked $800$ shoppers. She asked $50$.
+
+\vspace{2pt}
+\textbf{Why would she not just ask all $800$?} Give two reasons.
+\ansline{Answers vary. Asking 800 people would take far more time than one morning allows,}
+\ansline{and many shoppers leave, refuse, or are never reached at all.}
+\ansline{Also accept: it would cost more than the market can spend on a survey.}
+\end{hookbox}
+
+\boxguard[30]
+\begin{notesbox}{1. Every Study Has Two Groups}
+\small
+The \textbf{population} is the entire group the question is about. The
+\textbf{sample} is the part of the population you actually collect data from. The
+number of individuals in the sample is the \textbf{sample size}.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.98\linewidth}{@{} X p{3.3cm} p{2.8cm} c @{}}
+\toprule
+\textbf{Study} & \textbf{Population} & \textbf{Sample} &
+\textbf{Sample size} \\
+\midrule
+The manager asks $50$ of the market's $800$ Saturday shoppers how they traveled.
+  & \ans{all 800 Saturday shoppers} & \ans{the 50 she asked} & \ans{50} \\
+The principal asks $45$ of Riverbend's $900$ students how many hours a week they
+work.
+  & \ans{all 900 Riverbend students} & \ans{the 45 asked} & \ans{45} \\
+A cereal plant weighs $30$ of the $12{,}000$ boxes it filled on Tuesday.
+  & \ans{all 12,000 Tuesday boxes} & \ans{the 30 weighed} & \ans{30} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Collecting data from \emph{every} individual in the population is called a
+\ans{census}. The U.S. Census is one; almost nothing else you meet in this course
+will be.
+
+\vspace{2pt}
+\textit{The sample is always chosen out of the population --- so before you can
+name a sample, you have to know what the population is.}
 \end{notesbox}
+
+\boxguard
+\begin{notesbox}{2. Two Kinds of Numbers: Parameter and Statistic}
+\small
+Both groups produce numbers, and the two kinds are not interchangeable.
+
+\vspace{2pt}
+A number that describes the \textbf{population} is a \ans{parameter}.\\
+A number that describes the \textbf{sample} is a \ans{statistic}.
+
+\vspace{2pt}
+\textit{Memory hook:} \textbf{p}opulation goes with \textbf{p}arameter;
+\textbf{s}ample goes with \textbf{s}tatistic.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{0.98\linewidth}{@{} X p{2.6cm} p{2.6cm} @{}}
+\toprule
+\textbf{The number} & \textbf{Describes\dots} & \textbf{So it is a\dots} \\
+\midrule
+$52\%$ of the $50$ shoppers asked drove to the market.
+  & \ans{the sample} & \ans{statistic} \\
+The market had $800$ shoppers on Saturday morning.
+  & \ans{the population} & \ans{parameter} \\
+The $8$ shoppers asked traveled a mean of $4$ miles.
+  & \ans{the sample} & \ans{statistic} \\
+District records show $61\%$ of Riverbend's $900$ students ride a bus.
+  & \ans{the population} & \ans{parameter} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Which one do you almost always \emph{know}? The \ans{statistic}.
+Which one do you actually \emph{want}? The \ans{parameter}.
+
+\vspace{2pt}
+That gap is the whole reason this course exists: you use the number you have to
+estimate the number you want.
+
+\vspace{2pt}
+{\small\textit{Notation you will meet later in the course: a population mean is
+written $\mu$ and a sample mean $\bar{x}$; a population percent is written $p$
+and a sample percent $\hat{p}$. You do not need these symbols today.}}
+\end{notesbox}
+
+\boxguard[26]
+\begin{notesbox}{3. Constraints --- Why We Sample at All}
+\small
+A \textbf{constraint} is something in the real world that limits how a study can
+be run. Constraints are the reason a census is usually off the table.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{0.95\linewidth}{@{} p{3.4cm} X @{}}
+\toprule
+\textbf{Constraint} & \textbf{What it means} \\
+\midrule
+Time     & Reaching everyone would take longer than you have. \\
+Cost     & Reaching everyone would cost more than the budget. \\
+Access   & Some individuals cannot be found, reached, or made to answer. \\
+Destruction & Measuring the individual ruins it, so you cannot measure them all. \\
+Change   & The population keeps changing while you collect. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Name the constraint that stands in the way in each situation.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.97\linewidth}{@{} X p{3.2cm} @{}}
+\toprule
+\textbf{Situation} & \textbf{Constraint} \\
+\midrule
+To check a cereal box's weight you must open it, and $12{,}000$ were filled
+Tuesday. & \ans{destruction} \\
+A different set of shoppers comes to the market every Saturday.
+  & \ans{change} \\
+Surveying all $900$ Riverbend students would take three class periods nobody can
+spare. & \ans{time} \\
+Reaching every household in the county would mean mailing $40{,}000$ letters.
+  & \ans{cost} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{notesbox}
+
+\boxguard
+\begin{notesbox}{4. The Statistic Moves. The Parameter Does Not.}
+\small
+Three volunteers each asked a \emph{different} $50$ shoppers on the \emph{same}
+Saturday morning. Here is how many in each group said they drove.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+\toprule
+\textbf{Volunteer} & \textbf{Drove} & \textbf{Percent of that sample} \\
+\midrule
+Ana   & 26 & $26/50 = 0.52 = 52\%$ \\
+Ben   & 24 & \ans{$24/50 = 0.48 = 48\%$} \\
+Cleo  & 29 & \ans{$29/50 = 0.58 = 58\%$} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+Show the work for \textbf{Cleo's} row:
+
+\begin{work}
+  \dfrac{29}{50} &= 0.58 \\
+                 &= 58\%
+\end{work}
+
+\vspace{2pt}
+How many different statistics did the three volunteers produce? \ans{3}
+
+How many true percents are there for all $800$ Saturday shoppers? \ans{1}
+
+\vspace{2pt}
+This change from one sample to the next is called \textbf{sampling variability}.
+It is not a mistake --- nobody miscounted. It is what samples do.
+
+\vspace{2pt}
+\textit{A statistic is an \textbf{estimate} of the parameter. A larger sample
+usually lands closer to it, but no sample lands exactly on it every time.}
+\end{notesbox}
+
+\boxguard
+\begin{notesbox}{5. What a Sample Lets You Say}
+\small
+Fill in the manager's report sentence from her own sample:
+
+\vspace{2pt}
+\textit{``Of the \ans{50} shoppers we asked, \ans{52}\% drove. If our
+sample represents the market, that is about \ans{416} of the
+\ans{800} shoppers who come on a Saturday.''}
+
+\vspace{4pt}
+Now judge three claims she might make. Write \emph{allowed} or \emph{not
+allowed}, and say why.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.97\linewidth}{@{} X p{2.3cm} p{4.1cm} @{}}
+\toprule
+\textbf{Claim} & \textbf{Allowed?} & \textbf{Why} \\
+\midrule
+``About half of the shoppers we asked drove.''
+  & \ans{allowed} & \ans{it describes only the 50 shoppers she asked} \\
+``Exactly $416$ Saturday shoppers drove to the market.''
+  & \ans{not allowed} & \ans{416 is an estimate from a sample, not a count} \\
+``$52\%$ of Lakeside residents drive to the market.''
+  & \ans{not allowed} & \ans{the population was Saturday shoppers, not residents} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{notesbox}
+
+\boxguard
+\begin{practicebox}
+\small
+The Riverbend principal wants to know what fraction of the school's $900$ students
+hold a part-time job. She surveys $45$ students; $18$ of them have one.
+
+\textbf{(a)} What percent of the students she surveyed have a part-time job?
+
+\begin{work}
+  \dfrac{18}{45} &= 0.40 \\
+                 &= 40\%
+\end{work}
+
+\textbf{(b)} Estimate how many of Riverbend's $900$ students have a part-time job.
+
+\begin{work}
+  0.40 \times 900 &= 360 \text{ students}
+\end{work}
+
+\textbf{(c)} Which of your two answers is a statistic, and which is an estimate of
+a parameter?
+\ansline{40\% is the statistic; 360 students estimates the parameter for all 900.}
+
+\textbf{(d)} Name one constraint that kept the principal from asking all $900$
+students.
+\ansline{Time --- surveying 900 students would take class periods she does not have.}
+\end{practicebox}
 
 \end{document}
