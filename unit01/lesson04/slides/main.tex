@@ -17,10 +17,224 @@
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: section title}
-  % TODO: slide content
+  \ceruleanheader{You did everything right}
+  \sectionlabel[goldacc]{hook}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Last class you replanned the pool study properly --- a numbered frame,
+      chance doing the choosing, every membership type in proportion. The board
+      runs it, and hands out the surveys at the front desk\dots\ with the
+      \textbf{pool director standing beside the table, watching}.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.8cm}
+  \begin{center}
+    {\color{goldacc}\bfseries The sample was perfect. Why might the answers
+    still be wrong?}
+  \end{center}
+\end{frame}
+
+% ── BIAS IS A DIRECTION ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Bias is a direction, not bad luck}
+  \sectionlabel{variability vs.\ bias}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c c @{}}
+    \hline
+    \textbf{How the 75 were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd}
+      & \textbf{Average} \\
+    \hline
+    At random from the full member list & 19\% & 22\% & 19\% & \textbf{20\%} \\
+    From whoever arrived Tuesday evening & 35\% & 36\% & 37\% & \textbf{36\%} \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    The office's records say the truth is \textbf{20\%}.
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Both rows wobble. Only one row is wrong the same
+    way every time.}
+  \end{center}
+\end{frame}
+
+% ── SAMPLING BIAS ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Sampling bias --- who never had a chance}
+  \sectionlabel{before anyone speaks}
+
+  \vspace{0.3cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Undercoverage}
+        Part of the population is left off the \textbf{frame} entirely. Morning
+        swimmers cannot be asked at a Tuesday-evening table.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Nonresponse}
+        The frame was perfect and the draw was fair --- but the chosen people
+        \textbf{never answer}. Mail 1,500 cards, get 200 back.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7cm}
+  \begin{center}
+    \begin{minipage}{0.85\textwidth}
+      \small Nobody off the frame can be sampled, and nobody who stays silent
+      can be counted. \textbf{Neither one shows up in your arithmetic.}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── SIZE DOES NOT FIX BIAS ───────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{A bigger sample does not fix bias}
+  \sectionlabel[goldacc]{the line to memorize}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{@{} c c c c @{}}
+    \hline
+    \textbf{Members asked} & \textbf{Study says} & \textbf{Truth}
+      & \textbf{Off by} \\
+    \hline
+    75  & 36\% & 20\% & 16 points \\
+    750 & 36\% & 20\% & 16 points \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    Ten weeks of Tuesday evenings. $270 \div 750 = 36\%$. Same answer.
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{goldacc}\bfseries A bigger biased sample is a more confident wrong
+    answer.}
+  \end{center}
+\end{frame}
+
+% ── RESPONSE BIAS ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Response bias --- seven ways to get a false answer}
+  \sectionlabel{after the right person is chosen}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Demand} & guesses what the study wants, answers to match \\
+    \textbf{Social desirability} & gives the answer that looks good to others \\
+    \textbf{Dissent} & answers negatively to everything \\
+    \textbf{Acquiescence} & answers positively to everything \\
+    \textbf{Extreme responses} & always ``strongly agree'' or ``strongly disagree'' \\
+    \textbf{Neutral responding} & always the middle, no-opinion box \\
+    \textbf{Question order} & an earlier question changes a later answer \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \small Response bias does not care how you drew the sample.
+  \end{center}
+\end{frame}
+
+% ── QUESTION ORDER ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Same questions. Different order.}
+  \sectionlabel[goldacc]{question order bias}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item \textbf{Version A:} ``Are the lap lanes overcrowded?'' \emph{then}
+              ``Should the town spend \$40,000?'' \hfill $\rightarrow$
+              \textbf{62\% yes}
+        \item \textbf{Version B:} ``Should the town spend \$40,000?''
+              \emph{then} ``Are the lap lanes overcrowded?'' \hfill
+              $\rightarrow$ \textbf{41\% yes}
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    {\color{cerulean}\bfseries 21 percentage points --- same question, same
+    members, same words.}\\[6pt]
+    \small Only the order changed.
+  \end{center}
+\end{frame}
+
+% ── REDUCING BIAS ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Four ways to reduce bias}
+  \sectionlabel{what each one fixes}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item Build the frame from the \textbf{complete} list, not from whoever
+              shows up. \hfill \emph{fixes undercoverage}
+        \item Go back to the people who \textbf{did not answer}. \hfill
+              \emph{fixes nonresponse}
+        \item Word every question \textbf{neutrally} --- never ``Don't you agree
+              that\dots'' \hfill \emph{fixes demand \& acquiescence}
+        \item Let people answer \textbf{anonymously}, nobody watching. \hfill
+              \emph{fixes social desirability}
+      \end{itemize}
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Today in one line}
+  \sectionlabel[goldacc]{exit ticket next}
+
+  \vspace{0.5cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{9pt}
+        \item A study is \textbf{biased} when its procedure misses the truth the
+              \textbf{same way every time}.
+        \item \textbf{Undercoverage}: left off the frame. \textbf{Nonresponse}:
+              chosen, but silent.
+        \item \textbf{Response bias}: who asks, how it is worded, what order it
+              comes in.
+        \item A larger sample makes an estimate more \textbf{precise}, never more
+              \textbf{correct}.
+        \item You fix bias in the \textbf{plan} --- and you have to say what each
+              change fixes.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}

@@ -12,9 +12,162 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\boxguard[24]
+\begin{scenariobox}[Millbrook Public Library --- Should Weekend Hours Be Longer?]{cerulean}
+\small
+Millbrook Public Library has $1{,}200$ card holders. The director wants to know
+what share of them want longer weekend hours before she asks the town for the
+money.
+
+\vspace{2pt}
+Her first attempt: a stack of paper surveys left on the front desk for one week,
+with a box beside it. $90$ surveys come back, and $72$ of those say they want
+longer weekend hours.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{notesbox}{Practice}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item The front-desk survey could only be filled out by someone standing at the
+        front desk that week. Name two kinds of card holders who had almost no
+        chance of being included.
+        \ansline{Card holders who did not visit that week, and those who only use the website.}
+
+        A frame that leaves out part of the population like this causes
+        \ans{undercoverage}.
+
+  \item Of the $90$ surveys returned, $72$ said they want longer weekend hours.
+
+        \textbf{(a)} What percent of the returned surveys is that?
+
+        \begin{work}
+          \dfrac{72}{90} &= 0.80 \\
+                         &= 80\%
+        \end{work}
+
+        \textbf{(b)} If the director applies that percent to all $1{,}200$ card
+        holders, how many does she predict want longer weekend hours?
+
+        \begin{work}
+          0.80 \times 1200 &= 960 \text{ card holders}
+        \end{work}
+
+  \item A statistician talks her into doing it properly: a random sample of $120$
+        card holders drawn from the full membership list, reached by phone until
+        every one of them answers. $54$ say they want longer weekend hours.
+
+        \textbf{(a)} What percent of the $120$ is that?
+
+        \begin{work}
+          \dfrac{54}{120} &= 0.45 \\
+                          &= 45\%
+        \end{work}
+
+        \textbf{(b)} What does that percent predict for all $1{,}200$ card
+        holders?
+
+        \begin{work}
+          0.45 \times 1200 &= 540 \text{ card holders}
+        \end{work}
+
+        \textbf{(c)} The front-desk study was too high by \ans{$35$}
+        percentage points --- about \ans{$420$} card holders.
+
+  \item Before the phone survey, the director had said: ``The front-desk number
+        is fine, we just need more of them --- let's leave the surveys out for
+        four weeks and get $360$ back.''
+
+        Roughly what percent would those $360$ have reported, and why?
+        \ansline{About 80\% again. Four weeks at the front desk still only reaches frequent visitors,}
+        \ansline{so a bigger pile of the same biased surveys repeats the same wrong answer.}
+
+  \item Name the kind of response bias in each situation.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.45}
+        \begin{tabularx}{0.97\linewidth}{@{} X p{3.3cm} @{}}
+        \toprule
+        \textbf{The situation} & \textbf{Kind of response bias} \\
+        \midrule
+        A card holder circles ``strongly agree'' on all ten statements, two of
+        which contradict each other. & \ans{extreme responses} \\
+        The survey is headed \emph{``Help us win longer weekend hours!''}
+          & \ans{demand bias} \\
+        The librarian who runs story hour hands out the survey and waits for it.
+          & \ans{social desirability} \\
+        A card holder circles the middle box, ``no opinion,'' on every question.
+          & \ans{neutral responding} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item The director tests two orders of the same pair of questions on two
+        randomly chosen halves of her sample.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.95\linewidth}{@{} p{1.7cm} X c @{}}
+        \toprule
+        \textbf{Version} & \textbf{Question asked first}
+          & \textbf{Supported longer hours} \\
+        \midrule
+        A & ``Have you ever arrived to find the library closed?'' & $68\%$ \\
+        B & ``Should the town raise library funding?'' & $47\%$ \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        The two versions differ by \ans{$21$} percentage points. Name the bias
+        this shows. \ans{question order bias}
+
+  \item Name \emph{two} changes the director should make to her original
+        front-desk plan, and say what each one fixes.
+        \ansline{Draw a random sample from the full card-holder list --- that fixes undercoverage.}
+        \ansline{Follow up with the ones who do not reply --- that fixes nonresponse.}
+
+  \item Suppose the phone sample of $120$ had been drawn exactly the same way,
+        but only $78$ of the $120$ card holders ever picked up.
+
+        \textbf{(a)} What percent of the sample answered? \ans{$65\%$}
+
+        \textbf{(b)} The draw was perfectly random and every count is correct.
+        Explain why the result could still be biased.
+        \ansline{A random draw only decides who is asked, not who answers. The 42 who never picked}
+        \ansline{up may use the library differently, and nonresponse leaves them out of the count.}
+
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+Find a real survey question --- a news poll, a social media poll, a customer
+review form, a question from a club at school. Copy it down exactly, then:
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
+  \item Say who could answer it and who is left out.
+  \item Name any response bias the wording invites, and quote the words that do
+        it.
+  \item Rewrite the question so it does not push either way.
+  \item Say which direction you think the original wording moved the results.
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{remindbox}
+\small
+\textbf{Next class (Lesson 1.5):} you now know how to choose a sample and how to
+keep bias out of the asking. But so far every study has only \emph{watched} ---
+nobody has changed anything. Next class is about \textbf{observational studies}:
+what they can tell you, what they cannot, and why ``these two things go
+together'' is not the same as ``one caused the other.''
+\end{remindbox}
 
 \end{document}

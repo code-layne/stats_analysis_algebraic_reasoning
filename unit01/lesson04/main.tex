@@ -16,56 +16,330 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will explain what makes a study
+    \emph{biased} rather than merely variable, identify sampling bias
+    (undercoverage and nonresponse) and the named forms of response bias in a
+    given plan, show by computation that a larger sample does not reduce bias,
+    and describe and justify specific changes that would reduce the bias in a
+    plan.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Distinguish \textbf{bias} from \textbf{sampling variability} by
+            comparing repeated samples to the true value.
+            \hfill \textit{PS.DC.2c}
+      \item Identify \textbf{sampling bias} in a plan, naming
+            \textbf{undercoverage} and \textbf{nonresponse}.
+            \hfill \textit{PS.DC.2c; AFDA.DA.2e--f}
+      \item Show by computation that \textbf{a larger sample does not fix
+            bias}. \hfill \textit{PS.DC.2c}
+      \item Name the forms of \textbf{response bias}: demand, social
+            desirability, dissent, acquiescence, extreme responses, neutral
+            responding, question order. \hfill \textit{PS.DC.2c}
+      \item Identify the \textbf{direction} a biased plan pushes an estimate.
+            \hfill \textit{PS.DC.2c; AFDA.DA.2e}
+      \item Given a study plan, \textbf{name sources of bias and describe ways
+            to reduce them}. \hfill \textit{AFDA.DA.2g}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item \emph{Bias is a direction, not bad luck.} Lesson 1.2's honest
+            samples scattered \emph{around} the parameter; a biased procedure
+            misses the same way every time.
+      \item A study is biased if the procedure systematically overestimates or
+            underestimates the population value --- so bias is a property of the
+            \textbf{method}, not of any one sample.
+      \item \textbf{A large sample size does not make up for bias.} Size shrinks
+            variability; nothing about size touches direction.
+      \item Lesson 1.3 chose \emph{who} to ask. Response bias happens after the
+            right person has already been chosen --- it is about who asks, how
+            it is worded, and what order it comes in.
+      \item Every fix has a price. Naming a source of bias is half the standard;
+            \textbf{describing a way to reduce it} is the other half.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Bias & A study is biased when its procedure systematically overestimates or
+       underestimates the population value. Every sample it takes leans the
+       same direction. \\
+Sampling bias & Bias from how the sample was chosen: some members are
+       systematically more likely to be selected than others. \\
+Undercoverage & Part of the population is left off the sampling frame, so those
+       members have no chance at all of being selected. \\
+Nonresponse & Individuals are chosen properly but never answer, so the returned
+       data is missing exactly the people who stayed silent. \\
+Response bias & Anything about the survey itself --- who asks, the wording, the
+       order --- that pushes a respondent away from their true answer. \\
+Forms of response bias & Demand, social desirability, dissent, acquiescence,
+       extreme responses, neutral responding, question order. \\
+Question order bias & An earlier question changes the answer to a later one, so
+       reordering the same questions changes the result. \\
+Precision vs.\ accuracy & A larger sample buys precision (less scatter). Only a
+       better procedure buys accuracy (no lean). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It rehearses the three moves the
+            whole lesson runs on:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Writing a part of a whole as a percent --- twice, once for
+                    the population and once for the sample.
+              \item Scaling a sample percent up to the whole population.
+              \item \textbf{Comparing the prediction to the known truth} and
+                    saying whether it misses high or low.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            All three items sit on Harbor Point's $1{,}500$ members, the same
+            context the notes use, so the numbers $20\%$, $36\%$, $540$, and
+            $300$ are already on the board when the word \emph{bias} arrives.
+            Item 3(b) is the entire lesson in one blank: the study is off by
+            $240$ members, and always in the same direction.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
+\boxguard
 \begin{skillbox}[Hook]{frost}
-    % TODO: the engaging entry question / scenario.
+    Put the replanned pool study on the board --- the good one the class built
+    last period: numbered frame, chance choosing, membership types in
+    proportion. Then add one detail: \textbf{the surveys are handed out at the
+    front desk with the pool director standing beside the table, watching.}
+    \textbf{Ask: the sample is perfect. Name one reason the answers could still
+    be wrong.} Wait through the silence --- students have spent a full lesson
+    being told that a good sampling method is the fix, and this is the first
+    time that promise fails. Somebody will say ``people won't complain in front
+    of her.'' Write it down and give it its name later. The point to land before
+    the notes open: \textbf{Lesson 1.3 fixed \emph{who gets asked}. It cannot
+    fix \emph{what they say}.} Everything today lives in that gap.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{frost}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Bias is a direction.} Start with the two-row table, because it does
+the whole conceptual job visually. Both rows wobble; only one is wrong the same
+way every time. \textbf{Ask before revealing the averages: which row would you
+trust, and why?} Students reliably say ``the one that agrees with itself'' ---
+the Tuesday row, whose numbers are tightest. That wrong answer is worth two
+minutes: consistency is not accuracy. Then compute the averages and put $20\%$
+beside them.
+
+\textbf{2. Sampling bias.} Undercoverage first, since it is 1.3's frame idea
+wearing a new name. Run the four-row table fast. Save the argument for row 4:
+the frame is \emph{perfect} --- all $1{,}500$ got a card --- and the study is
+still broken. \textbf{Ask what is different about the $200$ who mailed theirs
+back.} That is nonresponse, and it is the row students will meet again on the
+activity and twice on the homework.
+
+\textbf{3. Size does not fix bias.} The arithmetic is one division and takes a
+minute; the idea takes the rest. Do the division, fill in $16$ points twice, and
+then say the sentence out loud and have them write it: \emph{a larger sample
+makes an estimate more precise, not more correct.} This is the single most
+transferable line in Unit 1 and it returns in Unit 7 as the difference between a
+narrow interval and a right one.
+
+\textbf{4. Response bias.} Seven names is a lot; do not lecture them. Read the
+reference table once, then go straight to the four diagnostic rows and let the
+class argue. Rows 2 and 3 (neutral responding vs.\ extreme responses) are the
+pair worth slowing down on --- they are opposites and students conflate them
+with ``didn't care.''
+
+\textbf{5. Question order, and fixes.} The $62\%$/$41\%$ pair sells itself:
+identical words, $21$ points apart. Then the four fixes --- this is AFDA.DA.2g
+and it is the part that gets assessed on the homework. Insist each fix be
+attached to the bias it removes; ``ask better questions'' is not an answer.
+
+\textbf{Guided practice.} Three plans, a bias, and a fix each. The gym row is
+undercoverage, the principal row is social desirability, the mail row is
+nonresponse. Assign the closing write for homework if time runs out --- but do
+not skip it, it is the exit ticket in miniature.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Diagnosing Bias in a Study Plan]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Who is on the frame?} If part of the population cannot be
+        reached at all, that is \textbf{undercoverage}.
+  \item \textbf{Who was chosen but never answered?} That is
+        \textbf{nonresponse}.
+  \item \textbf{Who is asking, and is anyone watching?} That points to
+        \textbf{social desirability}.
+  \item \textbf{What do the words tell the respondent to say?} That points to
+        \textbf{demand bias} or \textbf{acquiescence}.
+  \item \textbf{What came before this question?} That points to
+        \textbf{question order bias}.
+  \item \textbf{Which way does it push?} Say \emph{too high} or \emph{too low},
+        and name who is over- or under-counted.
+  \item \textbf{Name the fix and what it removes.} A bias named with no fix is
+        half an answer; a fix named with no bias is not an answer.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- ``A library leaves surveys on the front desk for a
+week. $90$ come back; $72$ want longer weekend hours, so the director reports
+$80\%$ of $1{,}200$ card holders --- about $960$ people.''}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] The frame is \emph{people at the desk that week}, not card holders
+        --- undercoverage of everyone who did not visit.
+  \item[2.] Of those who saw it, only the motivated filled it out ---
+        nonresponse on top of undercoverage.
+  \item[3--5.] Nobody watching, neutral wording, one question --- no response
+        bias here. The damage is all in the frame.
+  \item[6.] \textbf{Too high.} The people who want longer hours are exactly the
+        ones who visit often and bother to write.
+  \item[7.] \textbf{Fix:} draw a random sample from the full card-holder list
+        (removes undercoverage) and call back the ones who do not reply
+        (removes nonresponse).
+\end{itemize}
+\textit{The proper phone survey came back $45\%$ --- $540$ people, not $960$.
+The first study was not a little off; it was off by $420$ card holders.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for ``biased'' used to mean ``prejudiced.''} Students
+        arrive with the everyday meaning and write ``the survey was unfair to
+        seniors.'' Redirect every time to the statistical meaning: \emph{which
+        direction does the number miss, and by how much?}
+  \item \textbf{Watch for ``the sample was too small.''} This is the reflex
+        answer to every flawed study in the lesson and it is wrong in all of
+        them. Diagnostic: \emph{if they asked ten times as many the same way,
+        what would change?} Section 3 exists for this student.
+  \item \textbf{Watch for undercoverage and nonresponse fused.} Both leave
+        people out of the data. The split is whether they were ever \emph{on the
+        frame}. Ask: \emph{could that person have been chosen?} Yes but silent
+        $\Rightarrow$ nonresponse. No $\Rightarrow$ undercoverage.
+  \item \textbf{Watch for a bias named without a direction.} ``Nonresponse''
+        alone earns half credit on the activity and homework; the standard is
+        satisfied when the student says which way the estimate moves and who is
+        over-counted.
+  \item \textbf{Watch for neutral responding read as extreme.} The two are
+        opposites. Point at the actual boxes the respondent circled.
+  \item \textbf{Cold-call prompts:} ``Could that person have been chosen at
+        all?'' ``Who is missing from the data?'' ``Which direction does it
+        push?'' ``What would ten times as many change?'' ``What does your fix
+        remove?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Name the population and how many households answered.
+  \item Match five plans to their source of bias, including one with a perfect
+        frame.
+  \item Compute the return rate $150 \div 600 = 25\%$ and the complaint rate
+        $96 \div 150 = 64\%$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Scale $64\%$ to $384$ households, then compare to the census truth of
+        $40\%$ ($240$).
+  \item Re-run with twice the cards ($192/300$) and explain the unchanged
+        $64\%$.
+  \item Name the bias a leading question invites, then rewrite it neutrally.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Explain why the $450$ silent households bias the result, and which way.
+  \item Reason from unit type to the \emph{direction} of the error.
+  \item Name what each of three competing fixes removes --- and what it costs.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
+$750$ students, the lunch period.
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Name the source of bias in three plans --- one undercoverage, one
+        nonresponse, one social desirability.
+  \item Compute $24 \div 30 = 80\%$, then $48 \div 60 = 80\%$, and say whether
+        doubling the sample fixed anything (it did not --- same library, same
+        missing students).
+  \item \textbf{Conceptual / justification check:} name what is wrong with
+        \emph{``Don't you agree that our rushed $25$-minute lunch should be
+        longer?''} and rewrite it neutrally. Correct answer names the leading
+        phrasing (``Don't you agree,'' ``rushed'') and the acquiescence it
+        invites, then offers a balanced replacement. Grade this one first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) named the wording
+problem \emph{and} produced a genuinely neutral rewrite, (b) named the problem
+but rewrote it leading the other way (``Is our lunch period long enough?''
+with no ``no'' offered), (c) rewrote it without naming anything. Pile (b) is the
+interesting one and is worth two minutes at the start of Lesson 1.5: they have
+seen that wording matters but not yet that \emph{balance} is what fixes it.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Millbrook Public Library, two studies and two answers.} The
+same question is studied twice: a front-desk pile that returns $80\%$ and a
+proper random phone sample that returns $45\%$. Students name the undercoverage,
+compute both percents and both scaled predictions ($960$ and $540$), quantify
+the gap ($35$ points, $420$ card holders), predict what four weeks of the same
+flawed collection would have produced, match four response biases, compute a
+$21$-point question-order gap, propose two fixes with what each removes, and
+close by explaining why a perfectly random draw with a $65\%$ response rate can
+still be biased.
+
+\textbf{Extension (optional).} Students find a real survey question --- a news
+poll, a social media poll, a review form --- and critique it: who could answer,
+what bias the wording invites (quoting the words), a neutral rewrite, and the
+direction they think the original moved the result. Collect these; with the 1.2
+and 1.3 extensions they are most of a proposal for the Lesson 1.8 class-survey
+project.
+
+\textbf{Preview of Lesson 1.5.} Every study in Unit 1 so far has only
+\emph{watched}. Next class names that: observational studies --- what they can
+support, what they cannot, and why ``these two things go together'' is not
+``one caused the other'' (PS.DC.2d).
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
+only as trustworthy as the study that produced it. \textit{Standards covered:}
+PS.DC.2c; AFDA.DA.2e, AFDA.DA.2f, AFDA.DA.2g. \textit{Spirals forward to:}
+observational studies (1.5, PS.DC.2d), control and randomization in experimental
+design (1.6, PS.DC.3a--b), choosing a collection method (1.7), the full-cycle
+project (1.8), and --- directly --- the conditions on inference in Units 7 and 8,
+where a biased sample invalidates an interval no matter how narrow it is.
+\textit{Reaches back to:} Lesson 1.2's sampling variability (the contrast that
+opens this lesson) and Lesson 1.3's sampling frame.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -73,22 +347,121 @@
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. Items 1 and 2 are Algebra 1 percent work and
+    should be near-universal. Item 3 is the one that matters.
+
+    Item 3(a) is a straight ``percent of'' computation, $0.36 \times 1500 = 540$.
+    Item 3(b) asks students to compare $540$ against the $300$ they computed in
+    item 1 --- and this is the first time in Unit 1 that a sample statistic is
+    put beside a \emph{known} parameter. Do not explain why yet. Collect the
+    warm-up with the answers ``$240$, too high'' on the board and leave them
+    there; section 1 of the notes points back at them.
+
+    Watch for students who answer 3(b) with a percent ($16$ points) instead of a
+    count. Both are right ideas but the item asks for members; the percentage
+    form is exactly what section 3 will want, so credit it and tell them to hold
+    the thought.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: section 1 in 10 minutes, section 2 in 9, section 3 in 8, section 4 in
+    12, section 5 in 8, guided practice in 8. \textbf{Sections 1 and 3 are the
+    lesson}; section 4 is the longest but the least difficult.
+
+    Section 1's table is the conceptual heart and it fails if you reveal the
+    averages too early. Ask which row they would trust \emph{first}. The tight
+    Tuesday row draws the vote, and the correction --- consistent is not the
+    same as correct --- is the idea the whole lesson rests on. Budget two
+    minutes for it.
+
+    Section 2 row 4 is the one that argues: every member got a card, so the
+    frame is perfect, and the study is still wrong. If students insist that is
+    the same as undercoverage, use the test question --- \emph{could that person
+    have been chosen?} --- and hold the line. The activity's entire premise is
+    this row.
+
+    Section 4's seven names are recognition-level, not recall-level. Do not
+    lecture the reference table; read it once and go to the four diagnostic
+    rows. The pair to slow down on is neutral responding versus extreme
+    responses, which are opposites and get fused into ``didn't take it
+    seriously.''
+
+    If you are short on time, compress section 4 (the homework re-teaches it
+    with four more rows) --- never section 1 or section 3.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    Groups of three, 15--18 minutes, tiers assigned rather than chosen. The
+    headline box is doing real work: \emph{every} household got a card. Read
+    that sentence aloud when you assign, because Tier R item 5 and all of Tier E
+    depend on students believing the frame was perfect.
+
+    Tier R item 2 is fast; circulate instead on items 3 and 4, where the two
+    fractions have different denominators on purpose. $150/600$ is the return
+    rate and $96/150$ is the complaint rate; groups that divide $96$ by $600$
+    have merged the two questions and will get $16\%$. That error is worth
+    catching at the table.
+
+    Tier A item 1(c) is the payoff for the whole tier: $384$ predicted against
+    $240$ actual, a gap of $24$ points and $144$ households. Tier A item 2
+    then re-runs the study at double size and lands on $64\%$ again. Groups that
+    reach 2(b) and write ``more of a biased sample is still biased'' have the
+    lesson.
+
+    Tier E item 2 is the best item on the page and the hardest: two-bedroom
+    households own more cars \emph{and} answered at twice the rate, so the
+    complaint rate among returned cards beats the real one. Students must chain
+    two facts to get the direction. Pull it to the whole class if two or more
+    groups reach it. Tier E item 3 is where the ``just do it properly'' answer
+    meets reality: insist on \emph{both} halves of each line, because the cost
+    is the half students skip --- $450$ door knocks is not free.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Item 1 should be near
+    universal; if the nonresponse row is widely missed, section 2 row 4 did not
+    land and needs three minutes at the start of Lesson 1.5.
+
+    Item 2(b) is the one that separates the class. The percent is trivial ---
+    $48/60 = 80\%$ --- and the explanation is the assessment. ``No, because it
+    is still only library students'' is full credit. ``No, because $60$ is still
+    too small'' is the section-3 misconception surviving intact; write the
+    correction on the paper rather than marking it, because these students will
+    carry the same error into Unit 7.
+
+    Grade item 3 first and only item 3 if time is short. Full credit needs both
+    halves: naming the leading phrasing \emph{and} a rewrite that is genuinely
+    balanced. Watch for the rewrite that simply flips the lean (``Is our lunch
+    period long enough?'' with no ``no'' option offered) --- it shows the student
+    has learned that wording matters without yet seeing that balance is the fix.
+    That is the productive pile and it is worth two minutes next class.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all eight items; about $30$ minutes. Items 4, 7, and 8 cannot be
+    answered by computing anything --- flag all three when assigning, because
+    students who treat this as a calculation sheet will skip exactly those.
+
+    Items 2 and 3 are the spine and are designed to be done in order: $80\%$ and
+    $960$, then $45\%$ and $540$, then the gap in 3(c) --- $35$ points and $420$
+    card holders. A student who computes 3(c) as $960 - 540$ and as $80 - 45$
+    has understood that percentage points and counts are two views of the same
+    error. Both are asked for; accept either order.
+
+    Item 4 is the transfer item for section 3 and the answer is a number
+    (``about $80\%$ again'') plus a reason. Students who predict something
+    closer to $45\%$ believe more data drifts toward truth on its own; that is
+    the misconception to correct in writing.
+
+    Item 8 closes the arc the hook opened. The draw was perfectly random and the
+    counts are all correct, so the answer cannot be ``they sampled badly.'' It
+    has to be that a random draw decides who is \emph{asked}, not who
+    \emph{answers} --- and the $42$ who never picked up may use the library
+    differently from the $78$ who did. Students who write ``$78$ is too small''
+    have the wrong lever again; ask them what would change if the library called
+    $1{,}200$ people and $780$ answered.
+
+    The \textbf{remindbox} hands off to Lesson 1.5: every study in this unit so
+    far has only watched, never changed anything. Do not open causation here.
 \end{teachernote}
 \end{document}

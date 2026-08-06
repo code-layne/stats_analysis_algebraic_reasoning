@@ -1,7 +1,7 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.3 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lessons 1.1 and 1.2. Previous run (2026-08-05):
+**Last updated:** 2026-08-06 — **Lesson 1.4 authored, built, and gated** (all components +
+keys + slides). Earlier the same day: Lessons 1.1, 1.2, and 1.3. Previous run (2026-08-05):
 Lesson 1.0 authored and the course palette replaced royal blue → **cerulean** across the
 whole tree.
 
@@ -117,36 +117,65 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
     plan 5pp, slides 9 frames. `make -C unit01/lesson03 all` and `check` both exit 0; PDFs
     eyeballed for stranded boxes (none — the homework's Practice box splits 4 items / 4 items).
-- **All other 62 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.4 — "Bias in Samples and Surveys" — is COMPLETE.** All components authored,
+  built, and passing the gate.
+  - Standards: **PS.DC.2c; AFDA.DA.2e, 2f, 2g**.
+  - Scope: **bias is a direction, not bad luck** — the lesson's pivot, taught by contrasting
+    1.2's honest samples (which scatter *around* the parameter) with a biased procedure that
+    misses the same way every time. Then **sampling bias** split into **undercoverage** (off
+    the frame) and **nonresponse** (chosen but silent), with the test question *could that
+    person have been chosen?* separating them; the standard's line that **a large sample size
+    does not make up for bias**, carried by arithmetic rather than assertion; the seven named
+    **response biases** (demand, social desirability, dissent, acquiescence, extreme responses,
+    neutral responding, question order) as a pre-filled reference table plus four diagnostic
+    rows; and closing on **AFDA.DA.2g** — four ways to reduce bias, each attached to the bias
+    it removes. Students are asked for the **direction** of the error throughout, not just the
+    label.
+  - Contexts: Harbor Point Community Pool carried from 1.2/1.3 (warm-up + notes; census truth
+    $300/1500 = 20\%$, Tuesday-evening sample $27/75 = 36\%$ scaled to $0.36 \times 1500 = 540$,
+    off by $240$ members; the ten-week repeat $270/750 = 36\%$ — same answer, same $16$-point
+    error; three honest samples 19/22/19 average exactly $20\%$ against three Tuesday samples
+    35/36/37 averaging $36\%$; question-order pair $62\%$ vs. $41\%$, a $21$-point gap), Cedar
+    Ridge Apartments carried from 1.3 (activity; $600$ households mailed, $150$ return =
+    $25\%$, $96/150 = 64\%$ scaled to $384$, census truth $240/600 = 40\%$ → $24$ points and
+    $144$ households too many; the double-size re-run $192/300 = 64\%$ is the "size doesn't
+    fix it" payoff), Bayside Middle School carried from 1.3 (exit ticket; $24/30 = 80\%$, then
+    $48/60 = 80\%$), Millbrook Public Library carried from 1.2 (homework; front-desk pile
+    $72/90 = 80\%$ → $960$ of $1{,}200$, against a proper phone sample $54/120 = 45\%$ → $540$,
+    a gap of $35$ points and $420$ card holders; order effect $68\%$ vs. $47\%$; a $78/120 =
+    65\%$ response rate as the closing transfer item). All arithmetic verified in Python
+    before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 6pp, slides 9 frames. `make -C unit01/lesson04 all` and `check` both exit 0; PDFs
+    eyeballed for stranded boxes (see the Tier E note under "Gotchas").
+- **All other 61 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 4 of 9 authored (lesson00, lesson01, lesson02, lesson03)**;
-  U2–U8 scaffolded, 0 authored.
+- Per-unit progress: **U1: 5 of 9 authored (lesson00, lesson01, lesson02, lesson03,
+  lesson04)**; U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Commit Lesson 1.3** on `claude/lesson-1-3-generation-a737ce` and open its PR. The lesson is
+1. **Commit Lesson 1.4** on `claude/lesson-1-4-generation-9412d9` and open its PR. The lesson is
    authored, built, and gated but **not yet committed** — the run stopped short of committing
    because commits/pushes are only made on request.
-2. **Author Unit 1 Lesson 1.4** — "Bias in samples and surveys" (PS.DC.2c; AFDA.DA.2e–g).
-   Lesson 1.3's homework remindbox sets it up: every technique in 1.3 assumed the chosen
-   individuals answer, answer honestly, and read the question the same way — 1.4 drops all
-   three. Scope from the standards: **sampling bias** (undercoverage / the frame), and the
-   named **response biases** (demand, social desirability, dissent, acquiescence, extreme,
-   neutral responding, question order), plus "a large sample size does not fix bias."
-   Can assume 1.0's vocabulary (individual, variable, categorical, quantitative), 1.1's (data
-   cycle, statistical question, variable of interest, frequency table, relative frequency,
-   conclusion in context), 1.2's (population, sample, sample size, census, parameter, statistic,
-   constraint, sampling variability), and 1.3's (sampling frame, probability sample, SRS,
-   stratified/strata, systematic, cluster, convenience). The Harbor Point pool and Cedar Ridge
-   Apartments are both live contexts available for reuse.
-3. Then scale out through Unit 1 (1.5–1.8), building + `make check` per lesson.
+2. **Author Unit 1 Lesson 1.5** — "Observational studies" (PS.DC.2d). Lesson 1.4's homework
+   remindbox sets it up: every study in Unit 1 so far has only *watched* — nobody has changed
+   anything. Scope from PS.DC.2d: using the statistical cycle to plan and conduct an
+   observational study, what such a study can and cannot support, and why "these two things go
+   together" is not "one caused the other." Causation language should be *named* here and
+   fully paid off in 1.6–1.7 (experimental design). Can assume 1.0–1.3's vocabulary plus
+   1.4's: bias, sampling bias, undercoverage, nonresponse, response bias and its seven named
+   forms, question order bias, and the precision-vs-accuracy contrast. Live contexts available
+   for reuse: Harbor Point pool, Cedar Ridge Apartments, Millbrook Public Library, Riverbend HS,
+   Bayside Middle School.
+3. Then finish Unit 1 (1.6–1.8), building + `make check` per lesson.
 4. Author the Unit 1 practice/actual tests once its lessons exist, plus `unit01/unit_cover/` and
    `unit_cover_key/` (the test rationale/scoring page).
 5. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
-   PR #5.
+   PR #5; Lesson 1.3 as PR #6.
 
 ## Gotchas found this session
 
@@ -180,6 +209,24 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   a defect. Guards used: `\boxguard[30]` on the notes' §1, §3, and §5 and on activity Tier R,
   `\boxguard[26]` on notes §4, `\boxguard[24]` on the homework scenario box, `\boxguard[12]` on
   the `hookbox`, bare `\boxguard` elsewhere — mirrored byte-for-byte into every `_key`.
+- **`make check` cannot see the one failure mode that actually shipped in 1.4.** The gate passed
+  on the first build with the activity at 3/3 pages — perfect parity — while Tier E was split
+  across the break with *only its final table* on page 3, a ~1.5in stub under two-thirds of a
+  blank page. Page parity and the stub are independent failures; the gate proves the first and
+  says nothing about the second. **Render the packet and look at every page**, not just the
+  page counts.
+- **A wide fill-in table is the most expensive block you can put at the end of a tier**, and it
+  is usually convertible. Lesson 1.4's Tier E closed on a 3-row × 3-column removes/costs table
+  (~1.75in tall) that would not fit; rewriting it as three `(a)/(b)/(c)` lines each with one
+  `\writeline` kept all three options, saved ~0.75in, and pulled the activity from 3 pages to 2.
+  Prefer this to `\boxguard`-ing a tail block onto its own page, which buys a stub-free layout
+  at the cost of two two-thirds-empty pages. Shave the cheap things first (inter-box `\vspace`,
+  `arraystretch`, box padding, `itemsep`) — on 1.4 those together were worth only ~0.2in and did
+  not close the gap on their own.
+- **A key's table cells are usually taller than the blank's.** A `\blank{3.9cm}` cell is always
+  one line; the `\ans{}` that replaces it often wraps to two or three. That asymmetry is
+  already absorbed once the pair builds at equal page counts, so **re-measure both files after
+  any table edit** rather than assuming a change that shortens the blank shortens the key.
 - **Do not trust a cached absolute path across a run.** The project directory was renamed
   mid-session and eight `Write` calls silently recreated the old path as an empty shell instead
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target
