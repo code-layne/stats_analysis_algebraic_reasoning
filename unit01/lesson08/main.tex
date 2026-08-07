@@ -16,79 +16,465 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms
-    % (what students can do, interpret, and justify with this topic).
+    \textbf{Primary Objective:} Students will plan and conduct a survey of
+    their own through all four stages of the statistical cycle --- writing a
+    statistical question, choosing a sample, building a neutral instrument,
+    collecting real data from real classmates, organizing the answers into a
+    frequency table and a bar graph, and reporting a conclusion in context ---
+    and will judge the \emph{validity} of that conclusion by naming whom their
+    design actually allows them to describe.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
+\boxguard
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority ideas/skills for this topic;
-    %       right minipage = Key Understandings (the "why", in conceptual/geometric terms).
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
+    \textbf{Skills for this lesson}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item Use the \textbf{statistical cycle} to plan and conduct an
+            observational study. \hfill \textit{PS.DC.2d}
+      \item Build a \textbf{survey instrument}: one idea per item, neutral
+            wording, non-overlapping choices. \hfill \textit{AFDA.DA.2d}
+      \item \textbf{Collect} real data from a real sample and tally it into a
+            frequency table. \hfill \textit{AFDA.DA.2d}
+      \item Compute \textbf{relative frequencies} and scale a sample percent
+            to a population. \hfill \textit{AFDA.DA.2i}
+      \item Select and complete the \textbf{visual representation} that fits
+            categorical data. \hfill \textit{AFDA.DA.2h}
+      \item \textbf{Communicate} the study, its data, and the
+            \textbf{validity} of its conclusion. \hfill \textit{AFDA.DA.2j}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}
+    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+      \item A survey is an \emph{observational study} --- so the whole unit's
+            machinery applies to the students' own project, not just to
+            somebody else's.
+      \item Each stage hands something to the next. A bad question cannot be
+            repaired by good arithmetic later.
+      \item Bias written into the \emph{instrument} is in the data
+            permanently. There is no downstream fix.
+      \item A percent may be scaled to a population only when \textbf{chance}
+            chose the sample --- which is exactly what a class does not have.
+      \item Naming the limit is part of the answer. A report that admits its
+            convenience sample is \emph{better} work, not weaker work.
+      \item The class study and the council's stratified survey nearly agree.
+            Agreement by luck is still not evidence.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+\boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Survey instrument & The actual list of questions, in the order they will be
+       asked, that every person in the sample answers. The tool that turns a
+       statistical question into data. \\
+Closed-response item & A question offering a fixed set of choices, so every
+       answer falls into one category and the answers can be counted. \\
+Open-response item & A question answered in the person's own words. Rich, but
+       it cannot be tallied without extra work. \\
+Relative frequency & A category's count divided by the total number of
+       responses, written as a decimal or a percent. All of them add to
+       $100\%$. \\
+Bar graph & A display for categorical data: one bar per category, bars drawn
+       separated, height equal to the frequency or relative frequency. \\
+Validity of a conclusion & Whether the design actually supports the claim ---
+       who was sampled, how they were chosen, and therefore whom the result
+       may describe. \\
+Convenience sample & A sample chosen because it was available. A class
+       surveying itself is one, every time. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached spiral review. It is the entire arithmetic
+            spine of the project, run once on a study that is already
+            finished:
+            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+              \item Writing a count out of a total as a \textbf{percent},
+                    twice --- $21/60$ and $6/60$.
+              \item \textbf{Scaling} a sample percent to a population:
+                    $0.35 \times 900 = 315$.
+              \item Reading what it means that four percents add to $100\%$.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
+            \small
+            Item 3(b) is the one to collect aloud: the percents total $100\%$
+            because every student picked exactly one choice and the options
+            left nobody out. That is rule 3 of the instrument, arriving before
+            the instrument does. Leave $35\%$, $30\%$, $25\%$, $10\%$, and
+            $315$ on the board --- the notes, the activity, and the slides all
+            run on them.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
+\boxguard
 \begin{skillbox}[Hook]{frost}
-    % TODO: the engaging entry question / scenario.
+    Two council members are arguing about the \$$3{,}000$: one says
+    \emph{everybody wants longer lunch}, the other says \emph{nobody I know
+    does}. Let the class enjoy it for a moment, then point out that both of
+    them are describing the people they happen to sit with --- and that this is
+    the same error the class is about to be at risk of. Put the council's real
+    numbers up: $35\%$, $30\%$, $25\%$, $10\%$, longer lunch \emph{last}.
+    \textbf{Ask what the council has that the two arguing members do not.} The
+    one-word answer is \emph{data}; the second half of the question is the
+    lesson --- it cost them a plan, a named population, $60$ students chosen by
+    chance, and one question asked the same way every time. Today the class
+    pays that price itself.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Lesson]{frost}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. The project on one page.} The cycle table is a checklist, not new
+content --- students have filled this shape in 1.5 and 1.7. What is new is the
+third column: \emph{what you hand in}. \textbf{Say plainly that a survey is an
+observational study} (1.5), so PS.DC.2d's cycle is literally today's to-do
+list. Five minutes, no more.
+
+\textbf{2. The question and the sample.} The three tests come from 1.1 and the
+stratified allocation from 1.3, so both should be fast. The row that matters is
+the last one: \emph{when your class surveys only this room, chance did not
+choose them --- the schedule did.} Land the word \textbf{convenience sample}
+here and leave it on the board; the activity's Tier E and the exit ticket both
+turn on it.
+
+\textbf{3. The instrument.} This is the genuinely new content of the lesson.
+Four rules, then three broken items to repair. Students met all three failures
+in 1.4 as response bias; make them say the 1.4 name out loud (\emph{leading /
+demand}, \emph{double-barrelled}, \emph{overlapping choices}) before writing
+the repair. The closing line is the point: a biased instrument is wrong in a
+\emph{direction}, and no arithmetic downstream can pull it back.
+
+\textbf{4. Represent, then analyze.} The relative frequency column is four
+divisions by $60$; do the first together. The bar graph's axes are drawn and
+scaled --- students draw four bars only. \textbf{Insist on the gaps between the
+bars} and ask why: the categories are labels, not a number line. That question
+returns on the homework.
+
+\textbf{Guided practice.} The four-sentence report frame. Sentence 4 is the
+only hard one and it is the one the project is graded on. Then the validity
+check: what earns the council the right to talk about all $900$, and what a
+noon cafeteria sample would have cost it.
+\end{multicols}
 \end{skillbox}
 
+\boxguard
+\begin{skillbox}[Explicit Instruction: Running the Cycle on Your Own Question]{frost}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Steps --- give these verbatim}
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Write the question} so the answers vary, a group is named, and
+        a measurement is named.
+  \item \textbf{Name the population} --- the group the answer will be about ---
+        and then name the sample you can actually reach.
+  \item \textbf{Choose the technique and the method.} If chance cannot choose,
+        say so now, not at the end.
+  \item \textbf{Write the instrument:} one idea per item, neutral wording,
+        choices that cover everyone without overlapping, short.
+  \item \textbf{Collect.} Ask everyone the same way. Tally as you go.
+  \item \textbf{Represent:} frequency table, then relative frequency, then a
+        bar graph.
+  \item \textbf{Analyze:} percents, largest and smallest, and the scaled
+        estimate \emph{if} chance chose the sample.
+  \item \textbf{Report in four sentences}, and name the limit yourself before
+        a reader finds it.
+\end{enumerate}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\textbf{Worked example --- the Student Council's grant survey.}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
+  \item[1.] ``Which of four options would the most Riverbend students choose
+        for the \$$3{,}000$?''
+  \item[2.] Population: all $900$ students. Sample: $60$.
+  \item[3.] Stratified at $60 \div 900 = \frac{1}{15}$, so $18$/$16$/$14$/$12$
+        by grade; method is a survey.
+  \item[4.] One closed-response item, four choices, no overlap.
+  \item[5.] All $60$ answered --- a $100\%$ response rate.
+  \item[6.] $21$/$18$/$15$/$6$ becomes $35\%$/$30\%$/$25\%$/$10\%$.
+  \item[7.] $0.35 \times 900 = 315$ students for club funding.
+  \item[8.] ``Club funding is the single choice most Riverbend students
+        support --- about $315$ of the $900$.'' Allowed: chance chose the
+        sample and every grade is represented.
+\end{itemize}
+\textit{Now change step 2 to ``the $25$ students in this room'' and step 8
+collapses to a sentence about $25$ people. Same arithmetic, a much smaller
+claim.}
+\end{minipage}
+\end{tabularx}
+\end{skillbox}
+
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
+  \item \textbf{Watch for a question with no measurement in it.} ``What do
+        people think about lunch?'' is a conversation topic. Ask: \emph{what
+        exactly will you write down for each person?}
+  \item \textbf{Watch for the instrument being written after the data are
+        collected.} Some groups will just start asking. Stop them --- the
+        wording has to be fixed before the first person answers, or the
+        answers are not comparable.
+  \item \textbf{Watch for overlapping choices.} It is the least obvious of the
+        four rules and the one that breaks the $100\%$ check. If the percents
+        do not add to $100$, look at the choices before you look at the
+        arithmetic.
+  \item \textbf{Watch for a scaled estimate on a class sample.} A group that
+        writes ``so $324$ of the $900$ students want club funding'' has done
+        the arithmetic right and the statistics wrong. This is the error to
+        pull to the whole class.
+  \item \textbf{Watch for ``our sample is bad'' as an apology.} Naming the
+        limit is the skill. Push them to say it as a sentence with a
+        \emph{whom} in it, not as a shrug.
+  \item \textbf{Cold-call prompts:} ``What will you write down for each
+        person?'' ``Who is your population?'' ``Who chose this sample?''
+        ``Do your percents add to $100$?'' ``About whom is that sentence?''
+\end{itemize}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\small
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Name the population and count the sample.
+  \item Fill the four cycle stages for the class question.
+  \item Name the collection method and give one reason.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Write the item and four non-overlapping choices.
+  \item Ask everyone; tally; fill count and percent columns.
+  \item Compute largest and smallest as percents.
+  \item Check that the four percents total $100\%$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
+  \item Scale the top percent to $900$ --- then refuse to report it.
+  \item Write the honest sentence, with its \emph{whom}.
+  \item Explain why near-agreement with the council is luck.
+  \item Name one fix and what it costs.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit ticket (3 items, no notes).} One context: a Bayside homeroom of
+$30$ that surveyed itself and reported to a school of $750$.
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
+  \item Compute $12 \div 30 = 40\%$, then $0.40 \times 750 = 300$. Both are
+        gifts, and the second one is a trap they are meant to walk into ---
+        the arithmetic is right and the reporting will not be.
+  \item ``Theme'' is categorical, so a bar graph; the tallest bar's height is
+        the \emph{share} that chose decades, not the number of students.
+  \item \textbf{Conceptual / justification check:} the flawed report sentence.
+        Full credit names the convenience sample \emph{and} rewrites the claim
+        so it describes the $30$ students only. Grade this one first.
+\end{enumerate}
+\textbf{Using the results:} sort into three piles --- (a) rewrote the claim and
+named the sample, (b) knew something was wrong but rewrote it as ``most
+students probably want decades,'' (c) accepted the sentence. Pile (b) is the
+useful one: they have the instinct and not the vocabulary, and one sentence of
+feedback fixes it. Pile (c) needs the convenience-sample idea re-taught before
+the unit test, where it is worth several points across Parts C and D.
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- Millbrook Public Library, the phone survey and the
+clipboard.} The library that was watched in 1.5, assigned in 1.6, and studied a
+third time in 1.7 now runs a survey: an SRS of $80$ card holders reached by
+phone, $28$/$24$/$20$/$8$ across four programs. Students complete the relative
+frequency column ($35\%$/$30\%$/$25\%$/$10\%$), scale two of them to the
+$1{,}200$ card holders ($420$ and $300$), read a bar graph and say why the bars
+have gaps, repair two broken instrument items, fill the four stages of the
+cycle, then compare against a front-desk clipboard where $30$ of $50$ chose
+story hour --- $60\%$ against $25\%$, a $35$-point gap worth about $420$ card
+holders --- name the bias and its direction, compute a $40\%$ response rate,
+and write the sentence the phone survey earns.
+
+\textbf{Extension (optional) --- the project deliverable.} Students finish the
+four-sentence report on the data their own class collected today, then add one
+sentence naming the limit they would fix first and what fixing it would cost.
+This is the piece to collect and grade as the project.
+
+\textbf{Preview.} Unit 1 is finished. Next class is review, then the unit test;
+Unit 2 opens by asking what a distribution of a single \emph{quantitative}
+variable looks like, where a bar graph is replaced by a dot plot and a
+histogram (PS.DS.1a).
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
+only as trustworthy as the study that produced it --- and today the study is
+theirs. \textit{Standards covered:} AFDA.DA.2d, 2h, 2i, 2j; PS.DC.2d --- with
+AFDA.DA.2a--c and 2e--g exercised throughout the planning. \textit{Spirals
+forward to:} displays of quantitative data (2.1--2.2), comparing distributions
+(2.7), categorical displays and two-way tables (3.1), the data cycle with
+bivariate data (5.7), and inference, where a sample percent finally acquires a
+margin of error (7.2--7.4). \textit{Reaches back to:} every lesson in the unit
+--- 1.1's cycle and data types, 1.2's population and sample, 1.3's stratified
+allocation, 1.4's bias, 1.5's observational study, and 1.7's collection
+methods.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
 % Teacher-only prose lives HERE, never in a _key: a note is the one block in a
 % key with no counterpart in the blank, so it makes the key longer than the
 % blank. See references/conventions.md ("teachernote").
+\boxguard[12]
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+    Five minutes, silent, timed. Nothing is new: two divisions by $60$ and one
+    multiplication, all of which the class has run since 1.2.
+
+    Item 3(b) is the only item that is not arithmetic, and it is the one to
+    collect aloud. The four percents add to $100\%$ because every student
+    picked exactly one choice and the four options left nobody out. That is
+    instrument rule 3 arriving forty minutes early --- say so when you collect
+    it, and the notes' rule list will land as a name for something they have
+    already noticed.
+
+    Leave $35\%$, $30\%$, $25\%$, $10\%$, and $315$ on the board and do not
+    erase them. The hook needs them immediately, the notes' section 4 rebuilds
+    them, the activity compares against them, and the slides show them twice.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    Pace: section 1 in 5 minutes, section 2 in 10, section 3 in 12, section 4
+    in 10, guided practice in 8. \textbf{Section 3 is the new content} --- the
+    other three are the unit's own material reassembled as a checklist, and
+    they should move fast.
+
+    Section 1's third column is the only column that is blank. Read the whole
+    table aloud once before anyone writes; students who see all four
+    deliverables at the start plan better in the activity.
+
+    Section 2's stratified arithmetic is 1.3's, unchanged. The item that
+    matters is the last sentence of the box, and it is about them: the class is
+    a convenience sample because the schedule chose it. Expect resistance ---
+    somebody will argue that their class is ``pretty representative.'' The
+    answer is not that it is unrepresentative; it is that nobody can know,
+    because chance was never involved. Write \textbf{convenience sample} on the
+    board and leave it there.
+
+    Section 3 is the lesson. Do not shorten it. For each broken item, ask for
+    the 1.4 name before the repair --- leading, double-barrelled, overlapping.
+    The age item is the one students accept as fine: point at $16$ and ask
+    which box a $16$-year-old checks.
+
+    Section 4: do the first division together, then let them finish. The bar
+    graph is drawing four bars on axes that are already scaled --- two minutes,
+    not ten. Ask why the bars have gaps; it returns as homework item 3(b).
+
+    If time runs short, compress section 1 to reading the table aloud. Never
+    compress section 3 or the guided practice's validity question.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+    \textbf{This is the lesson's deliverable and it needs the room.} Budget
+    20--25 minutes and settle the class question \emph{before} groups split up
+    --- one question, asked by everyone, or the tallies cannot be combined. The
+    grant question in the key is a safe default if the class stalls; anything
+    with four clean, non-overlapping choices works.
+
+    \textbf{The key is a worked exemplar, not the only right answer.} It runs
+    on a class of $25$ answering the grant question $9$/$7$/$6$/$3$, which
+    gives $36\%$/$28\%$/$24\%$/$12\%$ and scales to $324$. Your class's numbers
+    will differ; the arithmetic in the \texttt{work} blocks is there so
+    students have the shape of the computation, and you should mark against
+    their own totals. What is \emph{not} negotiable is the structure: four
+    percents that add to $100\%$, and a sentence in Tier E item 2 whose subject
+    is this class and not the school.
+
+    Tier R is planning and should take five minutes. Groups that cannot name a
+    population are the ones to sit with --- everything downstream depends on
+    it.
+
+    Tier A is where the period can disappear. Give a hard two-minute limit on
+    writing the item, then send them to collect. Check every instrument against
+    rule 3 before it is used; an overlapping choice set is discovered later as
+    percents that do not total $100$, and by then the data are gone.
+
+    Tier E is the payoff and the reason the exemplar's $36\%$ sits so close to
+    the council's $35\%$. Item 3(b) is the hardest question in the lesson: the
+    two studies nearly agree, and that agreement is \emph{luck}, because chance
+    never chose this class. A group that says ``we were close, so our method
+    was fine'' has inverted the entire unit --- pull that one to the whole
+    class if it appears.
 \end{teachernote}
 
+\boxguard[22]
 \begin{teachernote}[Exit Ticket]
-    % TODO
+    Five minutes, notes closed, collected at the door. Items 1(a) and 1(b) are
+    deliberately easy and deliberately misleading: $300$ of $750$ is correct
+    arithmetic on a sample that has no business speaking for $750$ people.
+    Nobody is penalized for computing it --- item 3 is where the reporting is
+    judged.
+
+    Item 2(a) should be near-universal. In 2(b), ``$12$ students'' is half
+    credit and ``$40\%$ of the homeroom'' is full: the bar's height is a
+    \emph{share}, which is exactly what makes it comparable to another
+    homeroom of a different size.
+
+    Item 3(a) is the one that separates the class, and it has two halves. The
+    flaw is that a single homeroom is a convenience sample; the rewrite must
+    change the \emph{subject} of the sentence to the $30$ students. A student
+    who names the flaw but leaves the claim about ``Bayside students'' has done
+    half the item. Item 3(b) wants the sample changed, not the wording ---
+    choose the students by chance from all $750$.
+
+    Grade item 3 first and only item 3 if time is short. It is the single best
+    predictor of how the unit test's Part D will go.
 \end{teachernote}
 
+\boxguard[26]
 \begin{teachernote}[Homework]
-    % TODO
+    Assign all seven items; about $30$ minutes. The scenario box carries two
+    studies of the same library and students must keep them apart --- the phone
+    survey is the good one, the clipboard is the trap.
+
+    Items 1 and 2 are the arithmetic spine: $35\%$/$30\%$/$25\%$/$10\%$, then
+    $420$ and $300$. All four denominators are $80$, so an error here is a
+    place-value slip.
+
+    Item 3(b) is the one most students guess at. The bars are separated because
+    the categories are labels, not positions on a number line --- there is no
+    ``between book club and coding lab.'' It is worth saying that this is
+    exactly what will change in Unit 2, where the variable is a number and the
+    bars will touch.
+
+    Item 4 repeats notes section 3 with two of the same three failures. Item 5
+    is the cycle table; a \emph{Collect} row that says ``she called people''
+    has missed that the sampling lives there.
+
+    Item 6 is the payoff. $30/50 = 60\%$ against the phone survey's $25\%$ is a
+    $35$-point gap, which scales to about $420$ card holders --- the same
+    number as item 2(a), which is worth pointing out: the bias is as large as
+    the entire top result. Full credit on 6(c) names undercoverage or
+    self-selection \emph{and} gives the direction (too high).
+
+    Item 7(a) is a $40\%$ response rate, a callback to 1.4's nonresponse. In
+    7(b) the sentence must have $1{,}200$ card holders as its subject for the
+    phone survey and nobody but the signers for the clipboard.
+
+    \textbf{The extension box is the project deliverable} --- collect and grade
+    it. Four sentences plus a named limit. The most common failure is sentence
+    4 written about the school rather than the class; that is the same error as
+    exit ticket item 3, and seeing it twice in one night is the point.
 \end{teachernote}
 \end{document}
