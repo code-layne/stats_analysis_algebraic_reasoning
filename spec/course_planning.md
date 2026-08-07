@@ -1,9 +1,12 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-07 — **Lesson 1.8 authored, built, and gated**, which **completes
-Unit 1's nine lessons**. Previous run (2026-08-06): Lessons 1.1–1.7. Run before that
-(2026-08-05): Lesson 1.0 authored and the course palette replaced royal blue → **cerulean**
-across the whole tree.
+**Last updated:** 2026-08-07 — **Unit 1's assessment set and unit cover pair authored, built,
+and hand-verified**: `tests/practice_test` + `actual_test`, `test_keys/practice_test_key` +
+`actual_test_key`, `unit_cover/` (shared `body.tex`) and `unit_cover_key/`. **Unit 1 is now
+complete end to end** — 9 lessons, 2 parallel test forms with keys, and both packet covers.
+Earlier the same day: Lesson 1.8, which completed the nine lessons. Previous run (2026-08-06):
+Lessons 1.1–1.7. Run before that (2026-08-05): Lesson 1.0 authored and the course palette
+replaced royal blue → **cerulean** across the whole tree.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -307,38 +310,95 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     `make -C unit01/lesson08 all` and `check` both exit 0; `make -C unit01 check` passes all
     **9 lessons**. Every page of both packets and the plan was rendered and eyeballed (see
     "Gotchas" for the four repairs that took).
-- **All other 57 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
-  are skeletons too.
-- Per-unit progress: **U1: 9 of 9 authored — COMPLETE (lesson00 through lesson08)**;
+- **All other 57 lesson dirs are unmodified skeletons** (now cerulean). **U2–U8 unit tests and
+  test keys are still skeletons**, and none of them has a `unit_cover` pair.
+- Per-unit progress: **U1: 9 of 9 lessons + full assessment set + cover pair — COMPLETE**;
   U2–U8 scaffolded, 0 authored.
+
+### Unit 1 assessments and cover pair — COMPLETE (2026-08-07)
+
+**Blueprint, both forms** (parallel: same structure, different numbers, reshuffled vocab
+letters). $100$ points, $33$ items, **6 pages blank and 6 pages keyed** on both forms:
+
+| Part | Items | Pts | Content |
+|---|---|---|---|
+| A — Vocabulary, two matching sets of $7$ | 14 | 14 | Set 1 samples/bias, Set 2 studies/experiments |
+| B — Multiple choice | 8 | 16 | one concept check per lesson, 1.1 → 1.7 |
+| C — Short answer \& computation | 8 | 40 | **one computational item per lesson**, 1.1–1.8 |
+| D — Extended response | 3 | 30 | the 1.5/1.6 study pair, a bias diagnosis, a design-and-critique |
+
+**Part C spine — practice form** (all reused from the unit's already hand-verified numbers):
+23 Bayside data types; 24 Harbor Point $27/75 = 36\%$, $0.36 \times 1500 = 540$;
+25 Riverbend stratified $\frac{1}{15}$, $18$/$16$/$14$/$12$; 26 Cedar Ridge $k = 10$, start
+$4 \to 4, 14, 24, 34$; 27 Millbrook $72/90 = 80\%$ → $960$ against $54/120 = 45\%$ → $540$;
+28 Riverbend observational $65\%$/$80\%$, pooled $111/150 = 74\%$ → $666$; 29 Riverbend
+experiment $75\%$/$55\%$, blocks $40$/$40$ and $20$/$20$; 30 Student Council
+$35$/$30$/$25$/$10\%$ → $315$. Part D: 31 the Riverbend pair; 32 Cedar Ridge mail survey
+($25\%$ response, $96/150 = 64\%$ → $384$ against the true $240/600 = 40\%$; the re-run
+$192/300 = 64\%$); 33 Bayside design + the homeroom convenience-sample trap.
+
+**Part C spine — actual form** (new numbers, verified in Python before authoring):
+23 Oakmont ($600$) data types; 24 Northgate $28/80 = 35\%$, $0.35 \times 1200 = 420$;
+25 Westfield stratified $\frac{1}{16}$, $16$/$14$/$11$/$9$ from $256$/$224$/$176$/$144$;
+26 Pinehurst $k = 20$, start $6 \to 6, 26, 46, 66$; 27 Lakeside $96/120 = 80\%$ → $640$
+against $45/150 = 30\%$ → $240$; 28 Oakmont observational $55\%$/$70\%$, pooled
+$128/200 = 64\%$ → $384$; 29 Oakmont experiment $70\%$/$40\%$, blocks $30$/$30$ and
+$20$/$20$; 30 Westfield $40$/$30$/$20$/$10\%$ → $320$. Part D: 31 the Oakmont pair;
+32 Pinehurst mail survey ($25\%$ response, $128/200 = 64\%$ → $512$ against the true
+$320/800 = 40\%$; the re-run $256/400 = 64\%$); 33 Lakeside design + the vendor's own
+customers.
+
+**Answer letters** (also on p2 of `unit_cover_key`): practice Set 1 `C F A B G D E`,
+Set 2 `E A C G B F D`, MC `B C A B D C A B`; actual Set 1 `A F B C G D E`,
+Set 2 `C E F A D G B`, MC `C A D B C A D B`.
+
+**Cover pair.** `unit01/unit_cover/body.tex` is the sheet; both wrappers `\input` it, so
+page 1 cannot drift. Page 1: full-bleed banner + standards line, name row, `objectivebox`
+overview, `tocbox` listing all nine lessons with their standard codes plus a practice-test
+row, `spiralbox` with the unit's four big ideas, `remindbox` explaining the practice test.
+`unit_cover_key/main.tex` adds **page 2**, the exam scoring notes for *both* forms in three
+`teachernote` blocks (answer letters + MC rationale; Part C point split and both forms'
+answers; the Part D rubric and two errors to watch). Merged page counts confirm the design:
+**student packet $133$pp, key packet $134$pp** — the one-page difference is exactly the
+teacher scoring page, which is what should never reach a student.
+
+**Verification done by hand** (unit tests are outside `make check`, which walks lesson dirs
+only): both forms compile clean; every blank/key pair is **6/6 pages**; page starts align
+1–5 on both pairs; no `teachernote` in any test key; no `\ans` inside math, checked by
+importing `strip_comments`/`math_spans` from `shared/lesson_check.py` rather than a hand
+regex (a naive `\$[^$]*\\ans` reports ~35 false positives on these files). Every page of all
+six documents was rendered and eyeballed for stubs and orphan underlines — none.
+`make -C unit01 check` still passes all **9 lessons**.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Author the Unit 1 assessments** — `unit01/tests/practice_test` + `actual_test` and their
-   two keys, plus `unit01/unit_cover/` and `unit_cover_key/` (page 2 of the key cover is where
-   the answer rationale and Part D scoring go — never at the foot of a `*_test_key`, because
-   the practice test rides in the *student* packet). The unit's arithmetic spine is hand
-   verified across 1.0–1.8; **reuse those numbers rather than inventing new ones**. The
-   richest spines to sample: 1.3's stratified $18$/$16$/$14$/$12$, 1.4's Harbor Point
-   $20\%$ census vs. $36\%$ Tuesday sample, 1.6's assigned $75\%$/$55\%$, and 1.8's
-   $35$/$30$/$25$/$10$ with the $0.35 \times 900 = 315$ scale-up. Remember the unit tests are
-   **outside `make check`** — verify by hand that each key paginates like its blank and
-   carries no `teachernote`.
-2. **Then Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
+1. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
    `lesson00`. Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before
    authoring; the scaffolded titles in `unit02/lesson*/main.tex` are the proposal.
    Note the hand-off already written into 1.8's homework teacher note: Unit 2 is where the
    variable becomes a number and the bars start touching.
-3. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8;
-   re-check its status table and counts whenever a lesson lands, since it is the doc most
-   likely to go stale.
-4. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5;
+2. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint above
+   ($14$/$16$/$40$/$30$, $33$ items, 6 pages) and the `unit_cover` + `unit_cover_key`
+   pair (shared `body.tex`, scoring notes on the key's page 2) are the pattern; only the
+   contexts and numbers change. `\setlength{\workrowsep}{5pt}` in every test preamble is what
+   gives `work` blocks handwriting room without pushing the form to 7 pages — keep it
+   identical in the blank and the key.
+3. **A course-wide final (`finals/`) is still not scaffolded.** With Unit 1's forms in place
+   there is now a working model for the four flat subdirs; wait until more units exist so the
+   exam can actually be cumulative.
+4. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8
+   and Unit 1's assessments; re-check its status table and counts whenever a lesson lands,
+   since it is the doc most likely to go stale.
+5. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5;
    1.3 as PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10;
-   1.7 as PR #11. **Lesson 1.8 is authored, built, and gated but not yet committed** — this
-   run stopped short of committing because commits/pushes are only made on request.
+   1.7 as PR #11; 1.8 as PR #12. **The Unit 1 assessment set and cover pair are authored,
+   built, and verified but not yet committed** — this run stopped short of committing because
+   commits/pushes are only made on request. Note `unit01/sample_test/main.pdf` and
+   `unit01/sample_test_key/main.pdf` are newly published drop-ins and are **untracked**; they
+   belong in the commit, since `unit.mk` reads them from the source tree with no compile step.
 
 ## Gotchas found this session
 
@@ -500,3 +560,34 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   ~3 lines: figure `y=0.086cm`→`0.066cm`, table `arraystretch` 1.3→1.15, and `itemsep`
   8pt→6pt, all applied to **both** files, plus one shortened `\ansline` in the key alone. Shave
   the shared things first — they cannot open a new mismatch.
+
+### Found authoring the Unit 1 assessments (2026-08-07)
+
+- **`\workrowsep` is the one dial that tunes a test's page count**, and it is safe because it
+  moves the blank and the key together. At `0pt` a `work` block gives a student almost no
+  handwriting room; at `7pt` the practice form spilled to 7 pages with the last page two-thirds
+  empty. **`5pt` was the value that bought real writing room and held 6 pages.** Sweep it
+  (`3pt`/`4pt`/`5pt`) with a loop rather than guessing — the page count is a step function.
+- **A naive `\$[^$]*\\ans` grep is useless on a test key** — it reported 35 hits on a file with
+  zero real violations, because `[^$]*` walks straight across the gap between two separate
+  `$…$` groups (`\ans{$18$} & \ans{$16$}`). Import `strip_comments` and `math_spans` from
+  `shared/lesson_check.py` instead and test membership in the returned spans; that is the same
+  code the gate runs, and it is right.
+- **The lesson cover's banner geometry does not transfer to a unit cover.** Copying
+  `rectangle ([yshift=-0.9in]…)` + `\vspace{-0.8in}` with a taller four-line title block
+  clipped the first line off the top of the page. Crop the top of the rendered page
+  (`pdftoppm -r 150 -x 0 -y 0 -W 1300 -H 220`) and measure: a 1.25in banner with
+  `\vspace{-0.72in}` centres a four-line block. The clipping is silent — no overfull box, no
+  error.
+- **Balance the multiple-choice answer letters before writing the key.** The first draft of the
+  practice form came out `B C A B B C B B` — five B's out of eight. Reordering two items' option
+  lists fixed it to `B C A B D C A B` at zero cost to pagination, since reordering the same
+  strings changes no line counts. Do this on the blank *before* mirroring into the key.
+- **Unit tests are outside `make check`, so the page-parity check is yours to run.**
+  `pdfinfo | grep Pages` on each blank/key pair, plus
+  `pdftotext -f N -l N | head -1` per page on both to confirm the page starts align. A pair can
+  legitimately diverge on the last page (a key's `\ansline` wraps where the blank's rule does
+  not) and still be correct as long as the totals match.
+- **The merged packets are the real proof the cover pair works.** Student $133$pp against key
+  $134$pp is exactly right: one extra page, and it is the teacher scoring page. If those two
+  numbers ever differ by more than one, something other than the cover is drifting.

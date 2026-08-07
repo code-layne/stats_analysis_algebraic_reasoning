@@ -3,6 +3,10 @@
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 
+% Work blocks on a test need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
 % Part-divider strip
 \newcommand{\parthead}[1]{%
   \vspace{6pt}\noindent
@@ -16,18 +20,508 @@
 
 \vspace{0.06in}
 \noindent\textbf{Instructions:} Show all work. No notes unless your teacher says so.
+\textbf{100 points:} Part A $14$, Part B $16$, Part C $40$, Part D $30$.
 
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: matching / fill-in vocabulary items for this unit.
+\parthead{Part A --- Vocabulary \hfill 14 questions, 1 point each}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: multiple-choice items (concept checks).
+\small
+\textbf{Set 1 --- Samples and Bias.} Write the letter of the matching description
+next to each term.
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: computation items; leave \vspace work room after each.
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item \blank{0.8cm} Census
+  \item \blank{0.8cm} Parameter
+  \item \blank{0.8cm} Statistic
+  \item \blank{0.8cm} Convenience sample
+  \item \blank{0.8cm} Systematic sample
+  \item \blank{0.8cm} Simple random sample
+  \item \blank{0.8cm} Nonresponse
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item Every individual in the population is measured.
+  \item A number that describes a sample.
+  \item Individuals are chosen because they are the easiest ones to reach.
+  \item Every group of the chosen size is equally likely to be the one selected.
+  \item People who were chosen for the sample never answered.
+  \item A number that describes a population.
+  \item Start at a random individual on the list, then take every $k$th one
+        after that.
+\end{enumerate}
+\end{minipage}
 
-\parthead{Part D --- Extended Response}
-% TODO: one or two interpret/justify items ("what does this mean, and how do you know?").
+\vspace{6pt}
+\textbf{Set 2 --- Studies and Experiments.} Same directions.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=8]
+  \item \blank{0.8cm} Observational study
+  \item \blank{0.8cm} Experiment
+  \item \blank{0.8cm} Control group
+  \item \blank{0.8cm} Randomization
+  \item \blank{0.8cm} Replication
+  \item \blank{0.8cm} Confounding variable
+  \item \blank{0.8cm} Placebo effect
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item Using chance to decide which group each subject lands in.
+  \item Subjects respond to being chosen and treated, not to the treatment itself.
+  \item The researcher measures or surveys without assigning anyone to a group.
+  \item Enough units in each group that a result is not one person's luck.
+  \item The researcher assigns individuals to groups and imposes a condition.
+  \item The baseline group, which gets no treatment or the usual condition.
+  \item A second difference between the groups, so you cannot tell which one
+        produced the result.
+\end{enumerate}
+\end{minipage}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part B --- Multiple Choice \hfill 8 questions, 2 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=15]
+
+\item Oakmont Middle School records each player's \textbf{jersey number} ($7$,
+$12$, $23$, \ldots). This variable is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item quantitative, because the values are numbers.
+  \item quantitative, because you can compute a mean of them.
+  \item categorical, because the numbers are labels for players.
+  \item neither, because jersey numbers are assigned at random.
+\end{enumerate}
+
+\item In a random sample of $80$ Northgate members, $35\%$ said they drive to the
+center. That $35\%$ is a
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item statistic, because it describes the $80$ members who were surveyed.
+  \item statistic, because the sample was chosen at random.
+  \item parameter, because it is written as a percent.
+  \item parameter, because it will be used to describe all the members.
+\end{enumerate}
+
+\item Which sentence describes a \textbf{cluster} sample?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item Some individuals are chosen at random from every group.
+  \item Every $k$th individual on the list is chosen after a random start.
+  \item Whoever happens to be nearby is asked.
+  \item A few whole groups are chosen at random, and everyone in them is studied.
+\end{enumerate}
+
+\item A survey is mailed to all $800$ households in a neighborhood, and only
+$200$ send it back. The $600$ who threw it away disagree with the ones who
+answered. This is an example of
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item undercoverage, because those households were never on the list.
+  \item nonresponse, because those households were chosen but did not answer.
+  \item sampling variability, because samples differ from each other.
+  \item a response bias, because the question was worded badly.
+\end{enumerate}
+
+\item A biased survey is repeated with the same method and \textbf{twice as many
+responses}. The new percent will most likely
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item move halfway toward the true value.
+  \item move all the way to the true value.
+  \item stay about the same, because the method did not change.
+  \item become impossible to predict in any direction.
+\end{enumerate}
+
+\item In a random sample of Oakmont students, members of the Homework Club pass
+\emph{fewer} classes than non-members. This result shows
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item an association; a lurking variable could explain the whole thing.
+  \item that the Homework Club causes students to pass fewer classes.
+  \item that passing classes causes students to avoid the Homework Club.
+  \item nothing at all, because the sample was chosen at random.
+\end{enumerate}
+
+\item In an experiment, the purpose of \textbf{random assignment} is to
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item make the two groups exactly the same size.
+  \item let the subjects pick the group they would rather be in.
+  \item guarantee that the treatment works.
+  \item make the two groups alike at the start, so the treatment is the only
+        difference left.
+\end{enumerate}
+
+\item A researcher wants to know whether growing up in a home with heavy mold
+causes asthma. No experiment is run. The best reason is that the experiment
+would be
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item impractical, because volunteers are hard to find.
+  \item unethical, because it would assign children to live with mold.
+  \item impossible, because asthma cannot be measured.
+  \item unnecessary, because observational studies prove causation.
+\end{enumerate}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part C --- Short Answer \& Computation \hfill 8 questions, 5 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=23]
+
+% ---------------------------------------------------------------- C1 (1.1)
+\item \textbf{Oakmont Middle School} has $600$ students. For each student the
+principal records: grade level, minutes spent reading last night, whether the
+student walks to school, and favorite elective.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \blank{6.2cm}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Grade level & \blank{4.4cm} \\
+Minutes of reading last night & \blank{4.4cm} \\
+Walks to school (yes / no) & \blank{4.4cm} \\
+Favorite elective & \blank{4.4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) The principal's first draft question is \emph{``Do students read?''}
+Explain why that is not a statistical question, then rewrite it so that it is.
+
+\writelines{2}
+
+% ---------------------------------------------------------------- C2 (1.2)
+\boxguard[16]
+\item \textbf{Northgate Recreation Center} has $1{,}200$ members. The director
+surveys $80$ members chosen at random; $28$ of them say they drive to the center.
+
+\vspace{2pt}
+(a) Population: \blank{4.4cm} \quad Sample size: \blank{1.8cm}
+
+\vspace{3pt}
+Sample: \blank{9.0cm}
+
+\vspace{3pt}
+(b) What percent of the sample drives? About how many of all $1{,}200$ members
+does that estimate?
+
+\begin{work}
+  \dfrac{28}{80} &= 0.35 = 35\% \\
+  0.35 \times 1200 &= 420 \text{ members}
+\end{work}
+
+(c) Is the $35\%$ a parameter or a statistic? Say how you know.
+
+\writeline
+
+(d) Give one reason a \textbf{census} of all $1{,}200$ members is impractical here.
+
+\writeline
+
+% ---------------------------------------------------------------- C3 (1.3)
+\boxguard[18]
+\item \textbf{Westfield High School} has $800$ students and wants a
+\textbf{stratified} random sample of $50$, allocated in proportion to grade size.
+
+\vspace{2pt}
+(a) What fraction of the school is being sampled?
+
+\begin{work}
+  \dfrac{50}{800} &= \dfrac{1}{16}
+\end{work}
+
+(b) Show the work for the \textbf{11th grade} row, then complete the table.
+
+\begin{work}
+  176 \times \dfrac{1}{16} &= 11 \text{ students}
+\end{work}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & 9 & 10 & 11 & 12 & \textbf{Total} \\
+\midrule
+Students in grade & $256$ & $224$ & $176$ & $144$ & $800$ \\
+Number sampled & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- C4 (1.3)
+\boxguard[18]
+\item \textbf{Pinehurst Apartments} has $800$ households on a numbered list.
+The manager wants a \textbf{systematic} random sample of $40$.
+
+\vspace{2pt}
+(a) Find the interval $k$.
+
+\begin{work}
+  k &= 800 \div 40 \\
+  k &= 20
+\end{work}
+
+(b) The random start is household $6$. List the first four households selected:
+
+\vspace{2pt}
+\blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm}
+
+\vspace{4pt}
+(c) Name the sampling technique each manager used.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the manager did} & \textbf{Technique} \\
+\midrule
+Split the list by unit type, then drew households at random from
+every type. & \blank{3.4cm} \\
+Asked the households on the two floors he manages himself. & \blank{3.4cm} \\
+Drew $5$ of the $40$ buildings at random and surveyed everyone in them. & \blank{3.4cm} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- C5 (1.4)
+\boxguard[20]
+\item \textbf{Lakeside Farmers Market} has $800$ Saturday shoppers and wants to
+know what fraction would come to a Wednesday market. Two studies were run.
+
+\vspace{1pt}
+\textbf{Method 1 --- clipboard at the market's own booth.} $120$ people signed
+it; $96$ said yes. \\
+\textbf{Method 2 --- random sample of shoppers.} $150$ were asked; $45$ said yes.
+
+\vspace{2pt}
+(a) Find the percent saying yes for each method.
+
+\begin{work}
+  \dfrac{96}{120} &= 0.80 = 80\% \\
+  \dfrac{45}{150} &= 0.30 = 30\%
+\end{work}
+
+(b) Estimate the number of all $800$ Saturday shoppers each method points to.
+
+\begin{work}
+  0.80 \times 800 &= 640 \text{ shoppers} \\
+  0.30 \times 800 &= 240 \text{ shoppers}
+\end{work}
+
+(c) One method is biased. Name it, name the \textbf{type} of bias, and say which
+\textbf{direction} it pushes the estimate.
+
+\writelines{2}
+
+% ---------------------------------------------------------------- C6 (1.5)
+\boxguard[20]
+\item A random sample of $200$ Oakmont students is taken. Of the $80$ who belong
+to the \textbf{Homework Club}, $44$ passed all their classes. Of the $120$ who do
+not belong, $84$ passed all their classes. Nobody was assigned --- students joined.
+
+\vspace{2pt}
+(a) Find each group's pass percent, and the gap between them.
+
+\begin{work}
+  \dfrac{44}{80} &= 0.55 = 55\% \\
+  \dfrac{84}{120} &= 0.70 = 70\% \\
+  70\% - 55\% &= 15 \text{ percentage points}
+\end{work}
+
+(b) Explanatory variable: \blank{4.6cm} \quad Response: \blank{4.6cm}
+
+\vspace{3pt}
+(c) Using all $200$ students, find the overall pass percent and estimate how
+many of all $600$ students that is.
+
+\begin{work}
+  \dfrac{44 + 84}{200} &= \dfrac{128}{200} = 0.64 = 64\% \\
+  0.64 \times 600 &= 384 \text{ students}
+\end{work}
+
+(d) Name one \textbf{lurking variable} that could produce this result, and say
+which way it would push the numbers.
+
+\writelines{2}
+
+% ---------------------------------------------------------------- C7 (1.6)
+\boxguard[20]
+\item Oakmont now runs an \textbf{experiment}. Of $100$ volunteers, a random
+number generator sends $50$ to required Homework Club meetings and $50$ to no
+meetings. Afterwards $35$ of the meeting group and $20$ of the other group
+passed all their classes.
+
+\vspace{2pt}
+(a) Find each group's pass percent and the gap.
+
+\begin{work}
+  \dfrac{35}{50} &= 0.70 = 70\% \\
+  \dfrac{20}{50} &= 0.40 = 40\% \\
+  70\% - 40\% &= 30 \text{ percentage points}
+\end{work}
+
+(b) Treatment: \blank{4.6cm} \quad Control group: \blank{4.6cm}
+
+\vspace{3pt}
+(c) Instead, Oakmont \textbf{blocks} on last quarter's grades: $60$ volunteers
+passed everything and $40$ did not. Randomly split each block in half. How many
+go to each group?
+
+\begin{work}
+  60 \div 2 &= 30 \text{ per group (passed-everything block)} \\
+  40 \div 2 &= 20 \text{ per group (did-not block)}
+\end{work}
+
+% ---------------------------------------------------------------- C8 (1.8)
+\boxguard[30]
+\item Westfield's student government asked a random sample of $50$ students how
+to spend a \$$2{,}000$ grant. Complete the table, then complete the bar graph.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Choice} & \textbf{Count} & \textbf{Relative frequency} \\
+\midrule
+Spirit week     & $20$ & \blank{2.6cm} \\
+Field trips     & $15$ & \blank{2.6cm} \\
+New computers   & $10$ & \blank{2.6cm} \\
+Longer lunch    & $5$  & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=0.075cm]
+  \foreach \y in {5,15,25,35}
+    \draw[linegray, very thin] (0,\y) -- (10.4,\y);
+  \foreach \y in {10,20,30,40}
+    \draw[linegray] (0,\y) -- (10.4,\y);
+  \foreach \y in {0,10,20,30,40}
+    \node[left, font=\scriptsize] at (-0.05,\y) {\y\%};
+  \foreach \x in {2.6,5.2,7.8}
+    \draw[linegray, dashed] (\x,0) -- (\x,45);
+  \foreach \i/\lab in {1/Spirit week, 2/Field trips, 3/New computers,
+                       4/Longer lunch}
+    \node[below, font=\scriptsize, align=center, text width=2.4cm]
+      at ({2.6*\i-1.3},-0.5) {\lab};
+  \draw[cerulean, thick] (0,45) -- (0,0) -- (10.4,0);
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+About how many of all $800$ Westfield students would choose spirit week?
+
+\begin{work}
+  0.40 \times 800 &= 320 \text{ students}
+\end{work}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[10]
+\parthead{Part D --- Extended Response \hfill 3 questions, 10 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=31]
+
+% ---------------------------------------------------------------- D1
+\item Oakmont has now run \textbf{two} studies of the same Homework Club.
+
+\vspace{1pt}
+\textbf{Study A.} A random sample of students was watched. Of the students who
+\emph{chose} to join the club, $55\%$ passed all classes; of those who did not
+join, $70\%$ did. \\
+\textbf{Study B.} Of $100$ volunteers, half were \emph{assigned} to required
+meetings. Of those, $70\%$ passed all classes; of the others, $40\%$ did.
+
+\vspace{3pt}
+(a) Which study is observational and which is an experiment? Give the one
+feature that decides it.
+
+\writelines{2}
+
+(b) Study A's gap is $15$ points and Study B's is $30$ points. Which study lets
+the school write \emph{``the Homework Club caused more students to pass''}?
+Justify your choice.
+
+\writelines{2}
+
+(c) Explain how the same Homework Club can look \emph{harmful} in Study A and
+\emph{helpful} in Study B.
+
+\writelines{2}
+
+% ---------------------------------------------------------------- D2
+\boxguard[26]
+\item \textbf{Pinehurst Apartments} mailed a survey about a proposed community
+garden to all $800$ households. $200$ were returned, and $128$ of those said yes.
+The management office's own sign-up records show that $320$ of the $800$
+households actually want one.
+
+\vspace{2pt}
+(a) Find the response rate, the survey's percent saying yes, and the number of
+households that percent points to.
+
+\begin{work}
+  \dfrac{200}{800} &= 0.25 = 25\% \text{ response rate} \\
+  \dfrac{128}{200} &= 0.64 = 64\% \\
+  0.64 \times 800 &= 512 \text{ households}
+\end{work}
+
+(b) The records say the truth is $320$ of $800$, or $40\%$. Name the bias, and
+give its size in percentage points \emph{and} in households.
+
+\writelines{2}
+
+(c) The manager mails again and gets $400$ returns, $256$ of them yes. Compute
+that percent and explain what the result shows.
+
+\begin{work}
+  \dfrac{256}{400} &= 0.64 = 64\%
+\end{work}
+
+\writeline
+
+(d) Describe one change that would actually reduce the bias, and name the bias
+it removes.
+
+\writelines{2}
+
+% ---------------------------------------------------------------- D3
+\boxguard[24]
+\item \textbf{Lakeside Farmers Market} wants to know whether to add a Wednesday
+market. Its loyalty program has a numbered list of all $800$ regular shoppers,
+and the three shopper types --- produce only, crafts only, and both --- are
+believed to differ a lot in their answers.
+
+\vspace{2pt}
+(a) Choose \textbf{one} of the four sampling techniques and justify it from what
+this context allows.
+
+\writelines{2}
+
+(b) Name one of the five \textbf{data collection methods} and say why it fits
+this question.
+
+\writelines{2}
+
+(c) Instead, one vendor asks her own $20$ regular customers; $8$ say yes. She
+reports: \emph{``$8 \div 20 = 40\%$, and $0.40 \times 800 = 320$ shoppers want
+the Wednesday market.''} Her arithmetic is correct. Explain what is wrong with
+the report, and state what she \emph{is} allowed to say.
+
+\writelines{3}
+
+\end{enumerate}
+\normalsize
 
 \end{document}

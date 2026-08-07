@@ -3,32 +3,572 @@
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 
+% Work blocks on a test need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
 % Part-divider strip
 \newcommand{\parthead}[1]{%
   \vspace{6pt}\noindent
   \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
   \vspace{4pt}}
 
+% NO teachernote here: the practice test rides in the STUDENT packet, and this
+% key must stay the same length as its blank. Answer rationale and Part D
+% scoring live on page 2 of unit01/unit_cover_key/main.tex (key packet only).
+
 \begin{document}
 
 \pageheader{Unit 1: Asking Questions with Data: Study Design}{Practice Test --- Study Copy --- Answer Key}
+\namedateperiod
 
-% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
-% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
-% NO teachernote here: the practice test rides in the STUDENT packet, and the
-% key must stay the same length as its blank. Answer rationale and Part D
-% scoring go on page 2 of unit1/unit_cover_key/main.tex (key packet only).
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This is a practice test.} It mirrors the real Unit 1 test in length, format,
+and the ideas it covers, but the numbers and contexts differ. Work every problem
+with no notes, then check your answers against the key.
+\textbf{100 points:} Part A $14$, Part B $16$, Part C $40$, Part D $30$.
+\end{remindbox}
+
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: answers via \ans{...}
+\parthead{Part A --- Vocabulary \hfill 14 questions, 1 point each}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\small
+\textbf{Set 1 --- Samples and Bias.} Write the letter of the matching description
+next to each term.
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: worked answers via \ans{...}
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item \ans{C} Population
+  \item \ans{F} Parameter
+  \item \ans{A} Statistic
+  \item \ans{B} Sampling frame
+  \item \ans{G} Stratified sample
+  \item \ans{D} Cluster sample
+  \item \ans{E} Undercoverage
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item A number that describes a sample.
+  \item The list of individuals a sample can actually be drawn from.
+  \item Every individual the study wants to describe.
+  \item A few whole groups are chosen at random, and everyone in them is studied.
+  \item Part of the population has no chance of being chosen at all.
+  \item A number that describes a population.
+  \item The population is split into groups, and some are chosen at random from
+        every group.
+\end{enumerate}
+\end{minipage}
 
-\parthead{Part D --- Extended Response}
-% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
+\vspace{6pt}
+\textbf{Set 2 --- Studies and Experiments.} Same directions.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=8]
+  \item \ans{E} Observational study
+  \item \ans{A} Experiment
+  \item \ans{C} Treatment
+  \item \ans{G} Control group
+  \item \ans{B} Lurking variable
+  \item \ans{F} Confounding variable
+  \item \ans{D} Nonresponse
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item The researcher assigns individuals to groups and imposes a condition.
+  \item A variable outside the study that could be moving both of the variables
+        being compared.
+  \item The specific condition a group is given.
+  \item Individuals were chosen for the sample but never answered.
+  \item The researcher measures or surveys without assigning anyone to a group.
+  \item The groups inside the experiment differ in a second way too, so you
+        cannot tell which difference produced the result.
+  \item The baseline group, which gets no treatment or the usual condition.
+\end{enumerate}
+\end{minipage}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part B --- Multiple Choice \hfill 8 questions, 2 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=15]
+
+\item Riverbend High School records each student's \textbf{grade level} as
+$9$, $10$, $11$, or $12$. This variable is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item quantitative, because the values are numbers.
+  \item categorical, because the numbers are labels for groups.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item quantitative, because you can compute a mean of them.
+  \item neither, because grade level is not really data.
+\end{enumerate}
+
+\item District records show that \textbf{exactly $20\%$ of all $1{,}500$ Harbor
+Point members} swim before 9 a.m. That $20\%$ is a
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item statistic, because it is written as a percent.
+  \item statistic, because $1{,}500$ is a large number.
+  \item parameter, because it describes every member of the population.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item parameter, because it came out to a round number.
+\end{enumerate}
+
+\item Which sentence states the difference between a stratified sample and a
+cluster sample?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item Stratified takes some from every group; cluster takes everyone from a
+        few groups. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item Stratified takes everyone from a few groups; cluster takes some from
+        every group.
+  \item Stratified uses chance to choose; cluster does not use chance at all.
+  \item There is no difference --- the two names describe the same procedure.
+\end{enumerate}
+
+\item A survey is conducted by calling landline telephones. Households that own
+no landline can never be reached. This is an example of
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item nonresponse, because those households did not answer.
+  \item undercoverage, because those households could never be chosen.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item sampling variability, because samples differ from each other.
+  \item a response bias, because the question was worded badly.
+\end{enumerate}
+
+\item A survey's method causes it to overestimate by $16$ percentage points. The
+researcher repeats it using \textbf{ten times as many people} and the same
+method. The new estimate will most likely
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item land very close to the true value, because the sample is large.
+  \item underestimate, because large samples pull the other way.
+  \item be impossible to predict in any direction.
+  \item overestimate by about the same $16$ points.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
+
+\item In a random sample of Riverbend students, those who use the Study Center
+pass \emph{fewer} classes than those who do not. This result shows
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item that the Study Center causes students to pass fewer classes.
+  \item that passing classes causes students to avoid the Study Center.
+  \item an association; a lurking variable could explain the whole thing.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item nothing at all, because the sample was chosen at random.
+\end{enumerate}
+
+\item In an experiment, the purpose of the \textbf{control group} is to
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item provide a baseline the treatment group can be compared against.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item give some subjects a break from the study.
+  \item make the total number of subjects larger.
+  \item remove the need for random assignment.
+\end{enumerate}
+
+\item A researcher wants to know whether smoking causes lung disease in
+teenagers. No experiment is run. The best reason is that the experiment would be
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item impractical, because volunteers are hard to find.
+  \item unethical, because it would assign teenagers to smoke.
+        \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item impossible, because smoking cannot be measured.
+  \item unnecessary, because observational studies prove causation.
+\end{enumerate}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part C --- Short Answer \& Computation \hfill 8 questions, 5 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=23]
+
+% ---------------------------------------------------------------- C1 (1.1)
+\item \textbf{Bayside Middle School} has $750$ students. For each student the
+principal records: grade level, minutes spent on homework last night, whether
+the student rides the bus, and favorite lunch entr\'ee.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \ans{The 750 students}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Grade level & \ans{Categorical} \\
+Minutes of homework last night & \ans{Quantitative} \\
+Rides the bus (yes / no) & \ans{Categorical} \\
+Favorite lunch entr\'ee & \ans{Categorical} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) The principal's first draft question is \emph{``How much homework?''}
+Explain why that is not a statistical question, then rewrite it so that it is.
+
+\ansline{It names no group and no measurement, so every student would answer it
+differently.}
+\ansline{``How many minutes did Bayside students spend on homework last night?''}
+
+% ---------------------------------------------------------------- C2 (1.2)
+\boxguard[16]
+\item \textbf{Harbor Point Community Pool} has $1{,}500$ members. The manager
+surveys $75$ members chosen at random; $27$ of them say they drive to the pool.
+
+\vspace{2pt}
+(a) Population: \ans{All 1,500 members} \quad Sample size: \ans{$75$}
+
+\vspace{3pt}
+Sample: \ans{The 75 members who were surveyed}
+
+\vspace{3pt}
+(b) What percent of the sample drives? About how many of all $1{,}500$ members
+does that estimate?
+
+\begin{work}
+  \dfrac{27}{75} &= 0.36 = 36\% \\
+  0.36 \times 1500 &= 540 \text{ members}
+\end{work}
+
+(c) Is the $36\%$ a parameter or a statistic? Say how you know.
+
+\ansline{A statistic --- it describes the 75-member sample, not all 1,500 members.}
+
+(d) Give one reason a \textbf{census} of all $1{,}500$ members is impractical here.
+
+\ansline{Time --- reaching every one of 1,500 members would take far too long.}
+
+% ---------------------------------------------------------------- C3 (1.3)
+\boxguard[18]
+\item \textbf{Riverbend High School} has $900$ students and wants a
+\textbf{stratified} random sample of $60$, allocated in proportion to grade size.
+
+\vspace{2pt}
+(a) What fraction of the school is being sampled?
+
+\begin{work}
+  \dfrac{60}{900} &= \dfrac{1}{15}
+\end{work}
+
+(b) Show the work for the \textbf{10th grade} row, then complete the table.
+
+\begin{work}
+  240 \times \dfrac{1}{15} &= 16 \text{ students}
+\end{work}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & 9 & 10 & 11 & 12 & \textbf{Total} \\
+\midrule
+Students in grade & $270$ & $240$ & $210$ & $180$ & $900$ \\
+Number sampled & \ans{$18$} & \ans{$16$} & \ans{$14$} & \ans{$12$} & \ans{$60$} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- C4 (1.3)
+\boxguard[18]
+\item \textbf{Cedar Ridge Apartments} has $600$ households on a numbered list.
+The manager wants a \textbf{systematic} random sample of $60$.
+
+\vspace{2pt}
+(a) Find the interval $k$.
+
+\begin{work}
+  k &= 600 \div 60 \\
+  k &= 10
+\end{work}
+
+(b) The random start is household $4$. List the first four households selected:
+
+\vspace{2pt}
+\ans{$4$} \quad \ans{$14$} \quad \ans{$24$} \quad \ans{$34$}
+
+\vspace{4pt}
+(c) Name the sampling technique each manager used.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the manager did} & \textbf{Technique} \\
+\midrule
+Drew $6$ of the $30$ buildings at random, then surveyed every
+household in those $6$. & \ans{Cluster} \\
+Stood at the mailboxes on Tuesday and asked whoever walked past. & \ans{Convenience} \\
+Put all $600$ household numbers in a generator and drew $60$. & \ans{Simple random} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- C5 (1.4)
+\boxguard[20]
+\item \textbf{Millbrook Public Library} has $1{,}200$ card holders and wants to
+know what fraction want Saturday evening hours. Two studies were run.
+
+\vspace{1pt}
+\textbf{Method 1 --- clipboard at the front desk.} $90$ people signed it; $72$
+said yes. \\
+\textbf{Method 2 --- random phone sample.} $120$ card holders called; $54$ said yes.
+
+\vspace{2pt}
+(a) Find the percent saying yes for each method.
+
+\begin{work}
+  \dfrac{72}{90} &= 0.80 = 80\% \\
+  \dfrac{54}{120} &= 0.45 = 45\%
+\end{work}
+
+(b) Estimate the number of all $1{,}200$ card holders each method points to.
+
+\begin{work}
+  0.80 \times 1200 &= 960 \text{ card holders} \\
+  0.45 \times 1200 &= 540 \text{ card holders}
+\end{work}
+
+(c) One method is biased. Name it, name the \textbf{type} of bias, and say which
+\textbf{direction} it pushes the estimate.
+
+\ansline{Method 1. Undercoverage --- only people already at the library on that day
+could sign,}
+\ansline{and they are the heaviest users, so it overestimates: $960$ against $540$.}
+
+% ---------------------------------------------------------------- C6 (1.5)
+\boxguard[20]
+\item A random sample of $150$ Riverbend students is taken. Of the $60$ who use
+the \textbf{Study Center}, $39$ passed all their classes. Of the $90$ who do not
+use it, $72$ passed all their classes. Nobody was assigned --- students chose.
+
+\vspace{2pt}
+(a) Find each group's pass percent, and the gap between them.
+
+\begin{work}
+  \dfrac{39}{60} &= 0.65 = 65\% \\
+  \dfrac{72}{90} &= 0.80 = 80\% \\
+  80\% - 65\% &= 15 \text{ percentage points}
+\end{work}
+
+(b) Explanatory variable: \ans{Study Center use} \quad Response: \ans{Passed all classes}
+
+\vspace{3pt}
+(c) Using all $150$ students, find the overall pass percent and estimate how
+many of all $900$ students that is.
+
+\begin{work}
+  \dfrac{39 + 72}{150} &= \dfrac{111}{150} = 0.74 = 74\% \\
+  0.74 \times 900 &= 666 \text{ students}
+\end{work}
+
+(d) Name one \textbf{lurking variable} that could produce this result, and say
+which way it would push the numbers.
+
+\ansline{Students who were already struggling are the ones who go to the Study
+Center.}
+\ansline{That pushes the users' pass rate down without the Study Center causing it.}
+
+% ---------------------------------------------------------------- C7 (1.6)
+\boxguard[20]
+\item Riverbend now runs an \textbf{experiment}. Of $120$ volunteers, a random
+number generator sends $60$ to required weekly Study Center sessions and $60$ to
+no sessions. Afterwards $45$ of the session group and $33$ of the other group
+passed all their classes.
+
+\vspace{2pt}
+(a) Find each group's pass percent and the gap.
+
+\begin{work}
+  \dfrac{45}{60} &= 0.75 = 75\% \\
+  \dfrac{33}{60} &= 0.55 = 55\% \\
+  75\% - 55\% &= 20 \text{ percentage points}
+\end{work}
+
+(b) Treatment: \ans{Required weekly sessions} \quad Control group: \ans{The 60 with no sessions}
+
+\vspace{3pt}
+(c) Instead, Riverbend \textbf{blocks} on last quarter's grades: $80$ volunteers
+passed everything and $40$ did not. Randomly split each block in half. How many
+go to each group?
+
+\begin{work}
+  80 \div 2 &= 40 \text{ per group (passed-everything block)} \\
+  40 \div 2 &= 20 \text{ per group (did-not block)}
+\end{work}
+
+% ---------------------------------------------------------------- C8 (1.8)
+\boxguard[30]
+\item The Riverbend Student Council asked its stratified sample of $60$ students
+how to spend a \$$3{,}000$ grant. Complete the table, then complete the bar graph.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Choice} & \textbf{Count} & \textbf{Relative frequency} \\
+\midrule
+Club funding    & $21$ & \ans{$35\%$} \\
+Field trips     & $18$ & \ans{$30\%$} \\
+Gym equipment   & $15$ & \ans{$25\%$} \\
+Longer lunch    & $6$  & \ans{$10\%$} \\
+\end{tabularx}
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=0.075cm]
+  \foreach \y in {5,15,25,35}
+    \draw[linegray, very thin] (0,\y) -- (10.4,\y);
+  \foreach \y in {10,20,30,40}
+    \draw[linegray] (0,\y) -- (10.4,\y);
+  \foreach \y in {0,10,20,30,40}
+    \node[left, font=\scriptsize] at (-0.05,\y) {\y\%};
+  \foreach \x in {2.6,5.2,7.8}
+    \draw[linegray, dashed] (\x,0) -- (\x,45);
+  \foreach \i/\lab in {1/Club funding, 2/Field trips, 3/Gym equipment,
+                       4/Longer lunch}
+    \node[below, font=\scriptsize, align=center, text width=2.4cm]
+      at ({2.6*\i-1.3},-0.5) {\lab};
+  \draw[cerulean, thick] (0,45) -- (0,0) -- (10.4,0);
+  % Key only: the four correct bars, drawn inside the existing bounding box.
+  \foreach \i/\h in {1/35, 2/30, 3/25, 4/10}
+    \fill[keyred, opacity=0.55] ({2.6*\i-2.0},0) rectangle ({2.6*\i-0.6},\h);
+\end{tikzpicture}
+\end{center}
+
+\vspace{2pt}
+About how many of all $900$ Riverbend students would choose club funding?
+
+\begin{work}
+  0.35 \times 900 &= 315 \text{ students}
+\end{work}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[10]
+\parthead{Part D --- Extended Response \hfill 3 questions, 10 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=31]
+
+% ---------------------------------------------------------------- D1
+\item Riverbend has now run \textbf{two} studies of the same Study Center.
+
+\vspace{1pt}
+\textbf{Study A.} A random sample of students was watched. Of the students who
+\emph{chose} to use the Study Center, $65\%$ passed all classes; of those who did
+not, $80\%$ did. \\
+\textbf{Study B.} Of $120$ volunteers, half were \emph{assigned} to weekly
+sessions. Of those, $75\%$ passed all classes; of the others, $55\%$ did.
+
+\vspace{3pt}
+(a) Which study is observational and which is an experiment? Give the one
+feature that decides it.
+
+\ansline{A is observational, B is an experiment. The deciding feature is who decides
+the groups:}
+\ansline{in A the students chose; in B a random generator assigned them.}
+
+(b) Study A's gap is $15$ points and Study B's is $20$ points. Which study lets
+the council write \emph{``the Study Center caused more students to pass''}?
+Justify your choice.
+
+\ansline{Study B. Random assignment makes the two groups alike at the start, so the
+sessions are}
+\ansline{the only difference left. Study A's larger-looking gap earns only ``is
+associated with.''}
+
+(c) Explain how the same Study Center can look \emph{harmful} in Study A and
+\emph{helpful} in Study B.
+
+\ansline{In A the students who chose the Study Center were already struggling, so
+their group}
+\ansline{started behind. In B nobody chose, so that head start cannot be hiding in
+the gap.}
+
+% ---------------------------------------------------------------- D2
+\boxguard[26]
+\item \textbf{Cedar Ridge Apartments} mailed a survey about a proposed dog park
+to all $600$ households. $150$ were returned, and $96$ of those said yes. The
+management office's own sign-up records show that $240$ of the $600$ households
+actually want one.
+
+\vspace{2pt}
+(a) Find the response rate, the survey's percent saying yes, and the number of
+households that percent points to.
+
+\begin{work}
+  \dfrac{150}{600} &= 0.25 = 25\% \text{ response rate} \\
+  \dfrac{96}{150} &= 0.64 = 64\% \\
+  0.64 \times 600 &= 384 \text{ households}
+\end{work}
+
+(b) The records say the truth is $240$ of $600$, or $40\%$. Name the bias, and
+give its size in percentage points \emph{and} in households.
+
+\ansline{Nonresponse bias --- the $75\%$ who threw the survey away cared less about a
+dog park.}
+\ansline{The survey overestimates by $24$ percentage points, or $384 - 240 = 144$
+households.}
+
+(c) The manager mails again and gets $300$ returns, $192$ of them yes. Compute
+that percent and explain what the result shows.
+
+\begin{work}
+  \dfrac{192}{300} &= 0.64 = 64\%
+\end{work}
+
+\ansline{Twice the responses, the same wrong $64\%$: sample size does not remove bias.}
+
+(d) Describe one change that would actually reduce the bias, and name the bias
+it removes.
+
+\ansline{Draw a random sample of households and follow up by phone or in person until
+nearly}
+\ansline{all of them answer. That removes the nonresponse bias, not the sample size.}
+
+% ---------------------------------------------------------------- D3
+\boxguard[24]
+\item \textbf{Bayside Middle School} ($750$ students) wants to know whether to
+add a late activity bus. The office has a numbered list of all $750$ students,
+and the four grades are believed to differ a lot in their answers.
+
+\vspace{2pt}
+(a) Choose \textbf{one} of the four sampling techniques and justify it from what
+this context allows.
+
+\ansline{Stratified. A full numbered list exists, and the grades are expected to
+differ, so}
+\ansline{sampling within each grade guarantees all four are represented in
+proportion.}
+
+(b) Name one of the five \textbf{data collection methods} and say why it fits
+this question.
+
+\ansline{Survey. The question has a small set of fixed answers and needs many students,}
+\ansline{so a short written instrument can be counted quickly.}
+
+(c) Instead, a teacher asks her own homeroom of $30$ students; $12$ say yes. She
+reports: \emph{``$12 \div 30 = 40\%$, and $0.40 \times 750 = 300$ students want
+the late bus.''} Her arithmetic is correct. Explain what is wrong with the
+report, and state what she \emph{is} allowed to say.
+
+\ansline{Her homeroom is a convenience sample --- chance never chose it, and the other
+$720$}
+\ansline{students had no possibility of being asked, so the $300$ is not an estimate
+for the school.}
+\ansline{She may say only that $40\%$ of her own homeroom wants the late bus.}
+
+\end{enumerate}
+\normalsize
 
 \end{document}
