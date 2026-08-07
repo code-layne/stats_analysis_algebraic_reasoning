@@ -12,7 +12,7 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 | Content lessons | 58 (≤ 8 per unit) |
 | Unit-launch lessons (Lesson 0) | 8 |
 | Lesson directories total | 66 |
-| Assessments | 8 unit tests (practice + actual, each with key) + 8 sample tests |
+| Assessments | 8 unit tests (practice + actual, each with key) + 8 sample tests — **Unit 1 authored** |
 | Semester split | after Unit 4 — S1 *data and chance*, S2 *models and decisions* |
 | Projects | Units 1, 5, 6, 8 (Lesson 1.8, 5.7, 6.8, 8.6 capstone) |
 | Standards strands | PS.\* (primary), AFDA.\* , A2.\* (reach-ins only) |
@@ -29,7 +29,8 @@ Each lesson directory ships the same nine components: `warmup`, `notes`,
 ## Semester 1 — Data and Chance
 
 ### Unit 1 — Asking Questions with Data: Study Design
-Standards: PS.DC.1, PS.DC.2, PS.DC.3, AFDA.DA.2 · 8 content lessons
+Standards: PS.DC.1, PS.DC.2, PS.DC.3, AFDA.DA.2 · 8 content lessons ·
+assessments and cover pair ✅
 
 | # | Title | Standards | Status |
 |---|---|---|---|
@@ -179,5 +180,18 @@ Every unit carries, alongside its lessons:
 - `tests/practice_test` + `test_keys/practice_test_key`
 - `tests/actual_test` + `test_keys/actual_test_key`
 - `sample_test` + `sample_test_key`
+- optionally `unit_cover` + `unit_cover_key` (shared `body.tex`; the key adds a
+  teacher-only page of exam scoring notes, merged into the key packet only)
 
+**Unit 1's set is authored and built** — the pattern for the rest. Both forms are
+parallel: $100$ points, $33$ items, 6 pages blank and 6 keyed.
+
+| Part | Items | Pts | Coverage |
+|---|---|---|---|
+| A — Vocabulary (two matching sets of $7$) | 14 | 14 | samples/bias; studies/experiments |
+| B — Multiple choice | 8 | 16 | one concept check per lesson, 1.1–1.7 |
+| C — Short answer \& computation | 8 | 40 | one computational item per lesson, 1.1–1.8 |
+| D — Extended response | 3 | 30 | study-pair comparison, bias diagnosis, design + critique |
+
+U2–U8 tests and test keys are still skeletons, and only Unit 1 has a cover pair.
 A course-wide cumulative final (`finals/`) is planned but not yet scaffolded.
