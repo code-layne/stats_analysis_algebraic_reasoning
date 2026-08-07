@@ -1,6 +1,6 @@
 # Statistical Analysis & Algebraic Reasoning — Unit & Lesson Breakdown
 
-Generated 2026-08-06 from `spec/statistical_analysis_algebraic_reasoning.md` (the
+Generated 2026-08-06, updated 2026-08-07, from `spec/statistical_analysis_algebraic_reasoning.md` (the
 confirmed course map) and the scaffolded `\LessonNumberName` titles in
 `unitXX/lessonYY/main.tex`. Titles below are the ones the tree actually carries.
 
@@ -40,8 +40,8 @@ Standards: PS.DC.1, PS.DC.2, PS.DC.3, AFDA.DA.2 · 8 content lessons
 | 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ |
 | 1.5 | Observational Studies | PS.DC.2d | ✅ |
 | 1.6 | Principles of Experimental Design | PS.DC.3a–b; AFDA.DA.2c | ✅ |
-| 1.7 | Choosing a Data Collection Method | PS.DC.3c–e | ⬜ |
-| 1.8 | Project: Design and Conduct a Survey | AFDA.DA.2d, h–j; PS.DC.2d | ⬜ |
+| 1.7 | Comparing Studies and Choosing a Method | PS.DC.3c–e | ✅ |
+| 1.8 | Project: Design and Conduct a Survey | AFDA.DA.2d, h–j; PS.DC.2d | ✅ |
 
 ### Unit 2 — Describing One Variable
 Standards: PS.DS.1, PS.DS.2, PS.DS.3 · 7 content lessons
@@ -152,7 +152,7 @@ Standards: PS.IS.2 · 6 content lessons
 
 | Unit | Content lessons | Dirs (incl. Lesson 0) | Authored |
 |---|---|---|---|
-| 1 | 8 | 9 | 7 of 9 |
+| 1 | 8 | 9 | **9 of 9 — complete** |
 | 2 | 7 | 8 | 0 |
 | 3 | 8 | 9 | 0 |
 | 4 | 7 | 8 | 0 |
@@ -160,7 +160,7 @@ Standards: PS.IS.2 · 6 content lessons
 | 6 | 8 | 9 | 0 |
 | 7 | 7 | 8 | 0 |
 | 8 | 6 | 7 | 0 |
-| **Total** | **58** | **66** | **7** |
+| **Total** | **58** | **66** | **9** |
 
 ## Standards coverage
 

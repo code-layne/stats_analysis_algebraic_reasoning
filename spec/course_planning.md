@@ -1,8 +1,9 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-06 — **Lesson 1.7 authored, built, and gated** (all components +
-keys + slides). Earlier the same day: Lessons 1.1–1.6. Previous run (2026-08-05): Lesson 1.0
-authored and the course palette replaced royal blue → **cerulean** across the whole tree.
+**Last updated:** 2026-08-07 — **Lesson 1.8 authored, built, and gated**, which **completes
+Unit 1's nine lessons**. Previous run (2026-08-06): Lessons 1.1–1.7. Run before that
+(2026-08-05): Lesson 1.0 authored and the course palette replaced royal blue → **cerulean**
+across the whole tree.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -264,33 +265,80 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     plan 6pp, slides 10 frames. `make -C unit01/lesson07 all` and `check` both exit 0;
     every page of both packets and the plan was rendered and eyeballed (see "Gotchas" for
     the three repairs that took).
-- **All other 58 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
+- **Lesson 1.8 — "Project: Design and Conduct a Survey" — is COMPLETE**, and with it
+  **Unit 1 is finished**. All components authored, built, and passing the gate.
+  - Standards: **AFDA.DA.2d, 2h, 2i, 2j; PS.DC.2d** (AFDA.DA.2a–c and 2e–g exercised
+    throughout the planning rather than taught fresh).
+  - Scope: the unit **run forwards** — students build a study instead of taking one apart. The
+    four-stage cycle as a *deliverables checklist* (third column: what you hand in); the three
+    tests for a statistical question and 1.3's stratified allocation, both reused unchanged;
+    **the survey instrument**, which is the lesson's only genuinely new content — four rules
+    (one idea per item, neutral wording, choices that cover everyone without overlapping,
+    short) taught by repairing three broken items that students met in 1.4 as response bias;
+    **relative frequency** and a **bar graph** completed on pre-drawn, pre-scaled axes
+    (AFDA.DA.2h — no sketching from a blank page); scaling a sample percent to a population;
+    and the **four-sentence report** whose fourth sentence is what the project is graded on.
+  - **The lesson's pivot is that the class is a convenience sample.** The Student Council's
+    stratified $60$ may speak about all $900$ students; the class of $25$ may not. The two
+    results are deliberately built to *nearly agree* ($35\%$ vs. $36\%$ on the top choice) so
+    that activity Tier E can make the hardest point in the unit: near-agreement is luck, not
+    evidence, because chance never chose this class. Naming the limit is scored as part of the
+    answer, not as an apology.
+  - **Packet budgeted as a project**, per the plan left by 1.7: the activity is a planning page
+    (Tier R), an instrument the class actually builds plus a live tally (Tier A), and a
+    reporting/validity page (Tier E). The homework's `extensionbox` is **the project
+    deliverable** — the four-sentence report on the class's own data.
+  - **The activity key is a worked exemplar, not the only right answer** (flagged in its
+    teacher note): a class of $25$ answering the grant question $9$/$7$/$6$/$3$ →
+    $36\%$/$28\%$/$24\%$/$12\%$, scaling to $324$. Real class data will differ; mark against
+    the class's own totals. The `work` blocks carry the shape of the computation.
+  - Contexts: Riverbend HS carried from 1.0–1.7 (warm-up + notes + activity; Student Council
+    \$$3{,}000$ grant, stratified $60$ from $900$ at $1/15$ → $18$/$16$/$14$/$12$; counts
+    $21$/$18$/$15$/$6$ → $35\%$/$30\%$/$25\%$/$10\%$, scaled $315$/$270$/$225$/$90$), Bayside
+    Middle School carried from 1.3–1.7 (exit ticket; homeroom of $30$, $12$/$9$/$6$/$3$ →
+    $40$/$30$/$20$/$10$, the trap being $0.40 \times 750 = 300$ computed correctly off a
+    convenience sample), Millbrook Public Library carried from 1.2/1.4/1.5/1.6/1.7 (homework;
+    a proper SRS of $80$ → $28$/$24$/$20$/$8$ = $35$/$30$/$25$/$10$, scaled $420$ and $300$,
+    against a front-desk clipboard where $30$ of $50$ = $60\%$ chose story hour — a $35$-point
+    gap worth about $420$ card holders, the same size as the entire top result; plus a $40\%$
+    response rate). All arithmetic verified in Python before authoring.
+  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
+    plan 6pp, slides 10 frames; student and key packets both 14pp.
+    `make -C unit01/lesson08 all` and `check` both exit 0; `make -C unit01 check` passes all
+    **9 lessons**. Every page of both packets and the plan was rendered and eyeballed (see
+    "Gotchas" for the four repairs that took).
+- **All other 57 lesson dirs are unmodified skeletons** (now cerulean). Unit tests/test keys
   are skeletons too.
-- Per-unit progress: **U1: 8 of 9 authored (lesson00 through lesson07)**; U2–U8 scaffolded,
-  0 authored.
+- Per-unit progress: **U1: 9 of 9 authored — COMPLETE (lesson00 through lesson08)**;
+  U2–U8 scaffolded, 0 authored.
 - Key design decisions (user-confirmed 2026-08-05): AFDA.AF.3 excluded; no trig; polynomial/log
   from A2.F.1/A2.F.2; counting = two lessons (3.7, 3.8); projects close U1, U5, U6, U7 + U8
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
 
-1. **Commit Lesson 1.7** on `claude/lesson-1-7-generation-b049e4` and open its PR. The lesson
-   is authored, built, and gated but **not yet committed** — the run stopped short of
-   committing because commits/pushes are only made on request.
-2. **Author Unit 1 Lesson 1.8** — the class-survey project (AFDA.DA.2d, h–j; PS.DC.2d) — and
-   Unit 1 is done. Everything it needs is already promised in writing: 1.7's homework
-   remindbox tells students they will *run* the study, and 1.7's extension box is explicitly
-   "the project's first page in miniature" (can it be an experiment at all → the four cycle
-   stages → the collection method with a reason → the conclusion sentence written *before*
-   the data). The project should therefore open by collecting that extension, not by
-   starting from scratch. It is the one lesson in the unit whose deliverable is student-
-   generated data, so budget the packet differently: a planning page, a data-collection
-   instrument the class actually builds, and a reporting page.
-3. Author the Unit 1 practice/actual tests once 1.8 exists, plus `unit01/unit_cover/` and
-   `unit_cover_key/` (the test rationale/scoring page). The unit's arithmetic spine is
-   already hand-verified across 1.0–1.7 — reuse those numbers rather than inventing new ones.
-4. The lesson-1.0 + palette work merged to `main` as PR #3; Lesson 1.1 as PR #4; Lesson 1.2 as
-   PR #5; Lesson 1.3 as PR #6; Lesson 1.4 as PR #7; Lesson 1.5 as PR #8; Lesson 1.6 as PR #9.
+1. **Author the Unit 1 assessments** — `unit01/tests/practice_test` + `actual_test` and their
+   two keys, plus `unit01/unit_cover/` and `unit_cover_key/` (page 2 of the key cover is where
+   the answer rationale and Part D scoring go — never at the foot of a `*_test_key`, because
+   the practice test rides in the *student* packet). The unit's arithmetic spine is hand
+   verified across 1.0–1.8; **reuse those numbers rather than inventing new ones**. The
+   richest spines to sample: 1.3's stratified $18$/$16$/$14$/$12$, 1.4's Harbor Point
+   $20\%$ census vs. $36\%$ Tuesday sample, 1.6's assigned $75\%$/$55\%$, and 1.8's
+   $35$/$30$/$25$/$10$ with the $0.35 \times 900 = 315$ scale-up. Remember the unit tests are
+   **outside `make check`** — verify by hand that each key paginates like its blank and
+   carries no `teachernote`.
+2. **Then Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
+   `lesson00`. Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before
+   authoring; the scaffolded titles in `unit02/lesson*/main.tex` are the proposal.
+   Note the hand-off already written into 1.8's homework teacher note: Unit 2 is where the
+   variable becomes a number and the bars start touching.
+3. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8;
+   re-check its status table and counts whenever a lesson lands, since it is the doc most
+   likely to go stale.
+4. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5;
+   1.3 as PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10;
+   1.7 as PR #11. **Lesson 1.8 is authored, built, and gated but not yet committed** — this
+   run stopped short of committing because commits/pushes are only made on request.
 
 ## Gotchas found this session
 
@@ -417,3 +465,38 @@ user redirected to a third blue. No burgundy remains in the tree.)*
   of failing. Nothing was lost, but the files had to be relocated by hand. If a `make` target
   that worked earlier suddenly reports "No rule to make target," check `ls` on the project root
   before assuming the Makefile is at fault.
+
+### Found authoring Lesson 1.8 (2026-08-07)
+
+- **`perl -pi -e` silently ate text in a replacement containing `$3`/`$1`.** Rewriting a key's
+  `\ansline` to `{$35\%$ chose the evening book club.}` produced `{\% the evening book club.}`
+  because Perl read `$3` and `$1` in the *replacement* as capture-group backreferences. It
+  compiled fine and the gate passed — only the rendered page showed it. **Never use `perl -pi`
+  on LaTeX containing `$`**; use the editor, or the damage is invisible to every check.
+- **A prompt followed inline by `\writeline` / `\ansline` drifts by a line.** The blank's rule
+  fills whatever is left of the prompt's last line (1 line); the key's answer usually wraps to
+  a second. Put the answer in **its own paragraph** — a blank line between the prompt and the
+  `\writeline`/`\ansline` — and both sides reserve exactly one full line. This fixed the
+  homework's 2/3 mismatch where shortening answers had not.
+- **The 1.6 orphan-underline bug recurred**, this time as `question? \blank{7.6cm}` at the end
+  of a long prompt: TeX broke at the space, stretched the question across the full measure, and
+  dumped the rule alone at the left margin of the next line. The key never showed it (`\ans` is
+  narrower) and the gate saw nothing. Same fix as above — own paragraph, `\writeline`.
+- **`\tcbbreak` can strand the *opening* of a box, not just its tail.** The activity's Tier A
+  was split after item 1, shipping a title plus three lines at the foot of page 1 with 3.5in of
+  white below it. `\tcbbreak` is for keeping a prompt with its table *inside* a box that
+  otherwise fits; when the box does not fit at all, drop the `\tcbbreak` and raise
+  **`\boxguard[34]`** on the box so the whole thing moves. Page counts did not change.
+- **A key can carry a figure's answer for free.** The notes' bar graph is authored as identical
+  TikZ in both files; the key adds four `\fill[keyred, opacity=0.55]` bars *inside the existing
+  bounding box*, so the figure's height is unchanged and parity is untouched. Use this rather
+  than describing bar heights in prose.
+- **The plan stranded a teacher-note head this time, not a tail** — the Warm-Up note's title
+  plus three lines at the foot of page 4. `\boxguard[12]` on that one note moved it whole to
+  page 5 and the plan stayed 6pp. That is **three lessons running** (1.5, 1.7, 1.8) where the
+  plan needed exactly one guarded note; check the plan's page breaks every time, and guard only
+  the note that strands.
+- **Mirrored shaves are safe; asymmetric ones are not.** Getting the homework back to 2/2 took
+  ~3 lines: figure `y=0.086cm`→`0.066cm`, table `arraystretch` 1.3→1.15, and `itemsep`
+  8pt→6pt, all applied to **both** files, plus one shortened `\ansline` in the key alone. Shave
+  the shared things first — they cannot open a new mismatch.
