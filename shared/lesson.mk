@@ -47,8 +47,15 @@ comp-pdf     = $(if $(wildcard $1/main.tex),$(PDF_DIR)/$1/main.pdf,$1/main.pdf)
 comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
 
 # ── Component discovery (in pedagogical order) ────────────────────────────────
-STUDENT_ORDER := cover warmup notes activity exit_ticket homework
-KEYED_PAIRS   := warmup notes activity exit_ticket homework
+# EFFL shape (2026-08 redesign): cover · warmup · experience · homework.
+# `experience` is the build identifier for the component labelled "Experience &
+# Formalize" (Activity → QuickNotes → Application); renaming the directory would
+# mean editing this file, so the directory keeps the short name.
+# `notes`, `activity`, and `exit_ticket` are pre-EFFL and stay in the order so the
+# lessons authored before the redesign keep building untouched. A lesson only
+# merges the components it actually has, so an EFFL lesson simply skips them.
+STUDENT_ORDER := cover warmup experience notes activity exit_ticket homework
+KEYED_PAIRS   := warmup experience notes activity exit_ticket homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 

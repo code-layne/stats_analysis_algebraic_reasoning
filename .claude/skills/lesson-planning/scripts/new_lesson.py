@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 01 --lesson 01 \
         --title "Describing a Distribution" --unit-title "Data Analysis" \
-        --components cover,warmup,notes,activity,exit_ticket,homework,slides
+        --components cover,warmup,experience,homework,slides
 """
 from __future__ import annotations
 
@@ -21,17 +21,38 @@ from pathlib import Path
 
 SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 
-KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
+# EFFL component set (Math Medic "experience first, formalize later", 2026-08 redesign):
+# a lesson is cover / warmup / experience / homework / slides. The `experience` directory
+# name is a build identifier (shared/lesson.mk STUDENT_ORDER/KEYED_PAIRS); the component is
+# *labelled* "Experience & Formalize" everywhere a student or teacher reads it.
+#
+# This course KEEPS homework, and homework is where Check Your Understanding lives: the
+# Experience & Formalize component is three parts (Activity, QuickNotes, Application) and
+# carries no in-class practice section, so the CYU-style problem set IS the homework. It is
+# scored (the cover's score column carries a \blank{} for it). Whether a given lesson's set
+# is assigned from the packet or swapped for the equivalent DeltaMath assignment is a
+# per-lesson teacher decision made at Close & Assign — the packet pages are authored either
+# way. (Algebra 2 dropped homework entirely and AP Statistics keeps a separate in-class CYU;
+# do not copy either.)
+#
+# `notes`, `activity`, and `exit_ticket` are pre-EFFL components. They are still scaffoldable
+# by name so the lessons authored before the redesign can be patched or regenerated, but they
+# are NOT defaults — do not author them into a new lesson.
+KEYED = ["warmup", "experience", "homework", "notes", "activity", "exit_ticket"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "homework", "slides"]
+# slides is a default: every lesson owes a deck, since lessonYY_slides.pdf and
+# lessonYY_slides.pptx are two of the five work products the build produces.
+DEFAULT_COMPONENTS = ["cover", "warmup", "experience", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
+    "experience": "Experience \\& Formalize",
+    "homework": "Homework",
+    # legacy (pre-EFFL) components:
     "notes": "Guided Notes",
     "activity": "Group Activity",
     "exit_ticket": "Exit Ticket",
-    "homework": "Homework",
 }
 # NAMESTRIP (references/conventions.md): worksheet components carry NO name/date/
 # period row — the student writes their name once, on the cover the packet is
@@ -256,6 +277,11 @@ def main() -> None:
             write(dest / "cover" / "main.tex", render("cover.tex", base), args.force)
         elif comp == "slides":
             write(dest / "slides" / "main.tex", render("slides.tex", base), args.force)
+        elif comp == "experience":
+            # The EFFL centerpiece — labelled "Experience & Formalize" — gets its own 12pt
+            # skeleton (Activity + QuickNotes + Application, with the \answerspace macro)
+            # rather than the generic 10pt worksheet.
+            write(dest / "experience" / "main.tex", render("experience.tex", base), args.force)
         else:  # authored worksheet component
             subs = {**base, "DOCTITLE": DOC_TITLE[comp], "NAMEROW": name_row}
             write(dest / comp / "main.tex", render("worksheet.tex", subs), args.force)
@@ -264,6 +290,8 @@ def main() -> None:
             key = f"{comp}_key"
             if key in prefab:
                 prefab_dir(dest / key)
+            elif comp == "experience":
+                write(dest / key / "main.tex", render("experience_key.tex", base), args.force)
             else:
                 subs = {**base, "DOCTITLE": DOC_TITLE[comp], "NAMEROW": name_row}
                 write(dest / key / "main.tex", render("worksheet_key.tex", subs), args.force)

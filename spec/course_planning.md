@@ -1,6 +1,6 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-07 — **Unit 1's assessment set and unit cover pair authored, built,
+**Last updated:** 2026-08-29 — **EFFL PORTED (build system + skill + skeletons).** The course moved to the Math Medic "experience first, formalize later" model: a lesson is now `cover / warmup / experience / homework / slides`. See "EFFL — PORTED 2026-08-29" below for the shape, the decisions behind it, and what is left. **No lesson content was regenerated** — all 61 existing lessons are still legacy-shape and still build. Previous substantive run (2026-08-07) — **Unit 1's assessment set and unit cover pair authored, built,
 and hand-verified**: `tests/practice_test` + `actual_test`, `test_keys/practice_test_key` +
 `actual_test_key`, `unit_cover/` (shared `body.tex`) and `unit_cover_key/`. **Unit 1 is now
 complete end to end** — 9 lessons, 2 parallel test forms with keys, and both packet covers.
@@ -15,6 +15,76 @@ replaced royal blue → **cerulean** across the whole tree.
 > new path.
 
 ## Current state
+
+### EFFL — PORTED 2026-08-29 (build system, skill, and skeletons only)
+
+The course now runs the Math Medic **"experience first, formalize later"** model. Ported from
+`~/Mathematics/stats` (the AP Statistics EFFL implementation) and adapted to this course's
+decisions. **The port is infrastructure only — no lesson content has been regenerated yet.**
+
+**The SAAR EFFL shape** — `cover` · `warmup`(+key) · `experience`(+key) · `homework`(+key) · `slides`
+
+| Part | Where | Budget |
+|---|---|---|
+| Activity — two scenarios, prior knowledge only, crux question in scenario 2 | `experience/` | ≤ 2 pp |
+| QuickNotes — the debrief fills it | `experience/` | ½ pp |
+| Application — worked together; compute → interpret → **justify** | `experience/` | ½–1 pp |
+| Check Your Understanding — ~6 items, new contexts | `homework/` | 1–2 pp |
+
+55 minutes: **5 warm-up / 22 activity / 14 debrief / 10 application / 4 close & assign.**
+
+**Three user decisions this course does differently (2026-08-29):**
+
+1. **Experience & Formalize is THREE parts, not four.** There is no in-class CYU section —
+   the CYU questions moved into `homework`. The Application is the lesson's only in-class
+   practice *and* its formative check (there is no exit ticket).
+2. **The component is still labelled "Homework"** on the cover, the `\pageheader`, and the deck.
+   Only its *item style* changed to CYU-style problems.
+3. **Homework is SCORED** — the cover's score column carries a `\blank{}`, never `NA`.
+   Whether a lesson's practice is assigned as the packet pages or as the equivalent **DeltaMath**
+   set is a **per-lesson teacher decision** made aloud at Close & Assign, depending on DeltaMath
+   content availability. The packet pages are authored either way, so nothing in the packet, the
+   cover row, or the score column changes with that choice.
+   - *Contrast with the siblings:* AP Statistics keeps a separate unscored in-class CYU **and** an
+     AP-style homework; Algebra 2 dropped homework entirely. Copy neither.
+
+**What changed on disk**
+
+- `shared/lesson.mk` — `experience` added to `STUDENT_ORDER` / `KEYED_PAIRS`, between `warmup`
+  and the pre-EFFL trio. Legacy `notes`/`activity`/`exit_ticket` stay in the order, so all 61
+  legacy lessons keep building untouched.
+- `shared/lesson_check.py` — `experience` added to `KEYED` (page parity now gated for it).
+  `ONE_PAGE` unchanged (`warmup`, and legacy `exit_ticket`).
+- `.claude/skills/lesson-planning/scripts/new_lesson.py` —
+  `DEFAULT_COMPONENTS = cover, warmup, experience, homework, slides`; `experience` added to
+  `KEYED` with its own skeleton branch; legacy components still scaffoldable by name.
+- **Skeletons** — new `experience.tex` (12pt, `\answerspace`, three parts) and
+  `experience_key.tex` (a structural mirror of the blank, so a fresh scaffold passes `make check`).
+  `cover.tex`, `lesson_plan.tex`, and `slides.tex` rewritten for EFFL — **and their stale
+  `royal`/`mist`/`mistmid`/`\royalheader` references fixed** (they had never been updated for the
+  2026-08-05 cerulean rename and would not have compiled). `test.tex`/`test_key.tex` had the same
+  stale `royal` and are fixed too. `worksheet{,_key}.tex` gained boxguard/work-rule hints.
+- **Skill docs** — `SKILL.md` (EFFL model, the three differences, the naming rule, spoiler rule,
+  timebox rule, `\answerspace`, a new **Retrofit** section for regenerating legacy lessons, and
+  updated guardrails), `references/components.md` (new *Experience & Formalize* spec; *Homework*
+  rewritten as the CYU set; legacy specs moved under a *Legacy components — pre-EFFL* heading;
+  EFFL cover packet table, deck flow, and lesson-plan section order), `references/conventions.md`
+  (12pt experience preamble + `\answerspace` spec, three teacher notes, EFFL plan order),
+  `references/build.md`, `references/course-workflow.md`.
+- Also corrected in passing: SKILL.md and course-workflow.md claimed the course spec did not
+  exist yet. It does (`spec/statistical_analysis_algebraic_reasoning.md`,
+  `spec/unit_lesson_breakdown.md`).
+
+**Verification (2026-08-29):** a throwaway EFFL scaffold built all five work products, page
+parity held (warmup 1/1, experience 2/2, homework 1/1), and `make check` passed. A legacy lesson
+(`unit01/lesson02`) rebuilt clean and passed `make check`. `python3 shared/lesson_check.py --all
+--no-pages` → 66 lessons, no violations. The throwaway lesson was removed.
+
+**NOT done — this is the remaining work:** every one of the 61 existing lessons is still
+legacy-shape (`notes`/`activity`/`exit_ticket`). Regenerate them **one lesson at a time** per the
+Retrofit section of `SKILL.md`; there is deliberately no bulk sweep, since regenerating in bulk
+would re-flow the pagination of every verified lesson at once. Unit 1's assessment set and cover
+pair are unaffected by the shape change.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
 
@@ -375,6 +445,11 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 
 ## Next steps
 
+0. **Author the first real EFFL lesson** — it becomes the model every later lesson and
+   every regeneration mirrors, so build and proofread it carefully. Recommended: regenerate
+   **Lesson 1.0** (already authored in legacy shape, so the content exists to fold into the
+   three parts) per the Retrofit section of `SKILL.md`. Everything below assumes the EFFL
+   shape from here on — do not author a new lesson with `notes`/`activity`/`exit_ticket`.
 1. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
    `lesson00`. Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before
    authoring; the scaffolded titles in `unit02/lesson*/main.tex` are the proposal.

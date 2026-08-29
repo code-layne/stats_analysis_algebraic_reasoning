@@ -33,8 +33,9 @@ Two standing rules carry over from the courses this skill was ported from, and b
 
 ## Where the content lives
 
-- `spec/statistical_analysis_algebraic_reasoning.md` — **to be authored**: course design notes,
-  the standards inventory, and the unit map. **This will be the unit/lesson map.**
+- `spec/statistical_analysis_algebraic_reasoning.md` — course design notes, the standards
+  inventory, and the unit map. **This is the unit/lesson map**;
+  `spec/unit_lesson_breakdown.md` is the per-lesson index and status table.
 - The **approved standards PDFs in `spec/`** — the authoritative standard text and its
   **lettered Knowledge & Skills**. Those letters are the codes a lesson cites.
 - The **"Understanding the Standards" PDFs in `spec/`** — the clarifications: **scope limits,
@@ -43,14 +44,16 @@ Two standing rules carry over from the courses this skill was ported from, and b
 
 A practical loop per lesson: find the standard's lettered skills in the approved standards PDF →
 read the matching pages of the Understanding the Standards PDF for scope and notation → choose a
-context → build the components around a compute-then-interpret spine.
+**data context students can work from prior knowledge alone** → build the Activity's two scenarios
+around it (scenario 2 carries the crux question) → decide which formal terms the debrief attaches
+in QuickNotes → build the Application and the homework CYU set around a
+compute-then-interpret-then-justify spine.
 
 ## The course units
 
-**Not yet mapped.** Once `spec/statistical_analysis_algebraic_reasoning.md` exists, reproduce its
-course map here as a `| Unit | Title | Standards |` table, along with the dependencies worth
-protecting (which units must precede which). Until then, treat any unit numbering in an example
-as a placeholder.
+The authoritative map is `spec/statistical_analysis_algebraic_reasoning.md`, with
+`spec/unit_lesson_breakdown.md` as the per-lesson index. Read them rather than reproducing them
+here — a copy in this file goes stale.
 
 ## Decomposing a unit into lessons
 
@@ -77,9 +80,10 @@ write in the course's contextual, modeling-first voice.
 | **Primary Objective** (lesson plan) | What students will be able to *do / model / interpret / justify* with this topic, in student terms |
 | **Priority Ideas & Skills** (gold box) | Left: the lettered Knowledge & Skills this lesson covers, in student language. Right: "Key Understandings" — the *why*, drawn from the matching "Understanding the Standards" pages |
 | **Vocabulary, Concepts & Theorems** | Terms and notation the standard introduces (use `\TallMath{...}` for tall formulas) |
-| **Hook** | A scenario from the course's application domains |
+| **Activity data context** (Experience & Formalize) | A scenario from the course's application domains, worked from prior knowledge only — never naming the lesson's formal vocabulary (the spoiler rule) |
+| **QuickNotes terms** | The formal vocabulary and notation the debrief attaches to what the groups found |
 | **Learning Targets** (cover, "I can…") | One target per lettered skill covered, reworded as "I can …" |
-| Activity / homework contexts | Real or realistic data and scenarios — compute *then* interpret and connect to meaning |
+| Application / homework CYU contexts | Real or realistic data and scenarios — compute *then* interpret and justify |
 | Connections line | The unit's core idea, **the standard codes covered**, and links to prior/next lessons (spiral) |
 
 **Every lesson cites its standard codes.** That is the accountability spine of a standards-driven
