@@ -30,7 +30,7 @@ Every lesson builds five files into `target/compiled/unitXX/`:
 | `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
 | `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
 | `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
-| `lessonYY_student.pdf` | `cover warmup notes activity exit_ticket homework` — the blank versions, in that pedagogical order. |
+| `lessonYY_student.pdf` | `cover warmup experience homework` — the blank versions, in that pedagogical order. (`shared/lesson.mk`'s `STUDENT_ORDER` also lists the pre-EFFL `notes activity exit_ticket` between `experience` and `homework`, so legacy lessons still merge correctly; a component absent from the lesson dir is simply skipped.) |
 | `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
 
 Three passes make those products more than a `pdfunite` concatenation:
@@ -92,9 +92,12 @@ resolves regardless of build order.
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 03 --lesson 02 \
   --title "<Lesson Title>" --unit-title "<Unit Title>" \
-  --components cover,warmup,notes,activity,exit_ticket,homework,slides \
+  [--components cover,warmup,experience,homework,slides] \
   [--prefab warmup,warmup_key] [--lesson-id 8.3]
 ```
+
+`--components` defaults to the EFFL set shown above, so omit it. The legacy `notes`, `activity`,
+and `exit_ticket` are still accepted by name for patching a pre-EFFL lesson.
 
 It detects the prefix (`saar`) from `shared/*-colors.sty`. Because `\CourseName` is defined
 in `shared/saar-article.sty`, the generated lesson plan omits the course macros (so

@@ -5,14 +5,19 @@ description: >-
   curriculum (a project with a shared/ style package — prefix saar — and a Makefile hierarchy
   that compiles components with latexmk and merges them with pdfunite).
   Use this whenever the user wants to create, draft, or build a lesson, a lesson plan, a
-  unit, or any lesson component — warm-up, guided notes, activity, exit ticket, homework,
-  cover sheet, or their answer keys. The course will be defined by
+  unit, or any lesson component — warm-up, Experience & Formalize (the experience component:
+  activity + QuickNotes + application), homework (this course's Check Your Understanding set),
+  cover sheet, slides, or their answer keys. Lessons follow the Math Medic "experience first,
+  formalize later" (EFFL) model. The course is defined by
   spec/statistical_analysis_algebraic_reasoning.md and the standards documents in spec/; units are
   standard clusters and lessons are groups of the standards' lettered Knowledge & Skills.
   Trigger this even when the user just says "make lesson 2.3" or
   "I need a warm-up and key for tomorrow," and even if they don't say "skill" or "LaTeX." Also
   use it to author unit-level tests and a cumulative, course-wide final exam (the `finals/`
   deliverable) — any "final," "final exam," or "cumulative assessment" for the whole course.
+  Also use it to RETROFIT a lesson to a named convention — boxguard, namestrip, vocabpar, the
+  work rule, teachernotes — or to REGENERATE a pre-EFFL lesson in the EFFL shape, as in
+  "regenerate unit 2 as EFFL." See the Retrofit section.
 ---
 
 # Lesson Planning — Statistical Analysis & Algebraic Reasoning
@@ -24,18 +29,45 @@ applications-first** secondary course pairing statistical work with algebraic re
 every component in that spirit: start from a context, compute, then **interpret and justify** —
 and cite the standard codes the lesson covers.
 
-> **The course is not mapped yet.** `spec/` holds the source standards PDFs and nothing else —
-> there is no `spec/statistical_analysis_algebraic_reasoning.md`, no unit map, and no built
-> lesson. The build system, the style packages, and the five conventions are all in place and
-> ready. **Do not infer a unit/lesson map on your own** — propose one, confirm it with the user,
-> and write it into that spec file (see `references/course-workflow.md`).
+**Every new lesson follows the Math Medic "experience first, formalize later" (EFFL) model**
+(mathmedic.com/how-it-works): students work an activity in small groups using only prior
+knowledge; the teacher circulates with *questions, cues, and prompts — not answers*; a debrief
+attaches the formal vocabulary to what the groups already found (QuickNotes); an application uses
+it once together, in context. There is **no separate direct-instruction block, no guided-notes
+component, no exit ticket, and no tiered instruction.** The 55-minute period runs
+**5 warm-up / 22 activity / 14 debrief / 10 application / 4 close & assign**.
+
+**Naming rule — the in-class component is called "Experience & Formalize."** That is the label on
+the cover's packet table, the component's `\pageheader`, the deck's activity frame, the lesson
+plan's activity box, and its teacher note — in LaTeX, `Experience \& Formalize`. The **directory
+keeps the short name `experience/`** (with `experience_key/`): it is a build identifier
+hard-coded in `shared/lesson.mk`'s `STUDENT_ORDER`/`KEYED_PAIRS`, and renaming it would mean
+editing the build system, which this skill never does.
+
+### What is different about this course
+
+This course runs EFFL like the sibling courses, with three deliberate differences:
+
+1. **Homework is retained, and homework *is* Check Your Understanding.** Experience & Formalize
+   is **three** parts — Activity, QuickNotes, Application — and carries **no in-class practice
+   section**. The CYU-style problem set is the `homework` component: ~6 items in new contexts,
+   **scored** (the cover's score column carries a `\blank{}`, never `NA`).
+   - AP Statistics keeps a separate unscored in-class CYU *and* an AP-style homework; Algebra 2
+     dropped homework entirely. **Do not copy either.**
+2. **Packet or DeltaMath is a per-lesson teacher decision.** The packet CYU pages are authored
+   for every lesson regardless. At Close & Assign the teacher names which form today's practice
+   takes — the packet pages, or the equivalent DeltaMath set when DeltaMath has content for this
+   lesson's skills. Nothing in the packet changes either way; the lesson plan's Homework box and
+   the deck's closing frame carry the choice.
+3. **This course HAS `fixedskillbox`** (AP Statistics does not). Use it where a lesson-plan
+   `tabularx` must stay intact on one page; use `skillbox` + `\boxguard` everywhere else.
 
 ## The course at a glance
 
-- **Structure** will come from `spec/statistical_analysis_algebraic_reasoning.md` — the guiding
+- **Structure** comes from `spec/statistical_analysis_algebraic_reasoning.md` — the guiding
   philosophy and the **course map**: one unit per standard cluster, each lesson grouping a
-  standard's lettered Knowledge & Skills. **That file does not exist yet**; writing it (with the
-  user) is the first real course-planning task.
+  standard's lettered Knowledge & Skills. `spec/unit_lesson_breakdown.md` is the per-lesson index
+  and status table; `spec/course_planning.md` is the running handoff log.
 - **Content** comes from the **standards documents in `spec/`**: the approved standards PDFs give
   the standard text and its lettered skills (the codes a lesson cites); the **"Understanding the
   Standards"** PDFs give the scope limits and notation — read the relevant pages *before*
@@ -56,10 +88,22 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
 - **`main.tex`** — the teacher-facing **lesson plan** (the root document of the lesson dir).
 - A set of **student components**, each its own subdirectory containing **either** a
   `main.tex` (authored, compiled to a PDF) **or** a `main.pdf` (a prefab PDF, used as-is):
-  `cover`, `warmup`, `notes`, `activity`, `exit_ticket`, `homework`, and optional `slides`.
+  `cover`, `warmup`, **`experience`** (displayed as **Experience & Formalize**), `homework`,
+  and `slides`.
 - An **answer key** for each keyed component, as a *separate* sibling directory:
-  `warmup_key`, `notes_key`, `activity_key`, `exit_ticket_key`, `homework_key`.
-  (`cover` has no key.)
+  `warmup_key`, `experience_key`, `homework_key`. (`cover` and `slides` have no key.)
+- **`experience` — *Experience & Formalize* — is the heart of the lesson.** One document in
+  **three** parts on a page budget: the group **Activity** (two scenarios worked from prior
+  knowledge, **≤2pp**), a **QuickNotes** box the debrief fills (**½pp**), and an **Application**
+  worked together (**½–1pp**) that computes, interprets, *and* justifies. See
+  `references/components.md`.
+- **`homework` is this course's Check Your Understanding set** — ~6 items in new contexts
+  spanning the lesson's lettered skills, **scored**, assigned from the packet or swapped for the
+  equivalent DeltaMath set lesson by lesson.
+- *Legacy shape:* the 60+ lessons authored before the 2026-08 EFFL redesign carry `notes`,
+  `activity`, and `exit_ticket` dirs; the build accepts them and they keep working untouched.
+  When asked to touch a legacy lesson, **ask whether to regenerate it in the EFFL shape** rather
+  than patching the old components — see Retrofit.
 
 `shared/lesson.mk` discovers a component if it has a `main.tex` **or** a `main.pdf` and
 compiles the `main.tex` ones with `latexmk -xelatex`; a prefab `main.pdf` is used as-is from
@@ -71,7 +115,7 @@ the source tree with no compile step (Step 4). It then builds **five work produc
 | `lessonYY_plan.pdf` | the lesson plan (the lesson-root `main.tex`), on its own |
 | `lessonYY_slides.pdf` | the Beamer deck **printed** — 3 slides per page, each with a ruled notes column beside it |
 | `lessonYY_slides.pptx` | the same deck wrapped for PowerPoint (one full-page image per slide) — the **projected** form |
-| `lessonYY_student.pdf` | cover + the **blank** warmup, notes, activity, exit ticket, homework, in that order |
+| `lessonYY_student.pdf` | cover + the **blank** warmup, Experience & Formalize, homework, in that order |
 | `lessonYY_key.pdf` | cover + the **key** version of each, in the same order |
 
 The student and key packets are paginated as one pair: numbers run lesson-wide, each component
@@ -161,18 +205,20 @@ clean, detect project context:
    `\UnitNumberName` and `\LessonNumberName` (the scaffolder handles this).
 4. **Find the insertion point.** List `unit*/lesson*` to find the next unit/lesson number
    and whether the target lesson already exists.
-5. **Find a model lesson — or recognize there isn't one yet.** If a built lesson already
-   exists, open it and mirror its preamble, box usage, and tone. **This is a greenfield
-   course**: if no lesson exists yet, `references/conventions.md` and
-   `references/components.md` are your reference, and the *first* lesson you author becomes
-   the model for the rest — build and proofread it carefully before scaling out.
+5. **Find a model lesson — and check its shape.** Open a built lesson and mirror its preamble,
+   box usage, and tone. **Mirror an EFFL lesson, not a legacy one:** a lesson with an
+   `experience/` dir is EFFL; one with `notes/`, `activity/`, `exit_ticket/` predates the
+   redesign. `spec/course_planning.md` records which lessons have been regenerated. If no EFFL
+   lesson exists yet, `references/conventions.md` and `references/components.md` are your
+   reference, and the *first* EFFL lesson you author becomes the model — build and proofread it
+   carefully before scaling out.
 
 ### Step 1 — Map the unit into lessons, then gather the lesson's content
 
 The content path is always `references/course-workflow.md`:
 
 - **Decompose the unit into lessons** from `spec/statistical_analysis_algebraic_reasoning.md`
-  (once it exists — until then the course map itself is the thing to settle with the user). The
+  and `spec/unit_lesson_breakdown.md`. The
   convention is **one lesson per Knowledge-and-Skills cluster** — group the standard's lettered
   bullets into coherent 55-minute chunks, in listed order (Lesson `<unit>.<n>`). Present the
   proposed lesson map for the unit and **confirm it with the user before authoring** — bullets
@@ -191,9 +237,12 @@ unit `Makefile`** so the unit/curriculum builds work:
 
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 03 --lesson 02 \
-  --title "<Lesson Title>" --unit-title "<Unit Title>" \
-  --components cover,warmup,notes,activity,exit_ticket,homework,slides
+  --title "<Lesson Title>" --unit-title "<Unit Title>"
 ```
+
+`--components` defaults to the EFFL set — **`cover,warmup,experience,homework,slides`** — so
+omit the flag. `notes`, `activity`, and `exit_ticket` are still scaffoldable by name so a legacy
+lesson can be patched, but **never author them into a new lesson.**
 
 The script is bundled with the skill, so it is invoked via `${CLAUDE_SKILL_DIR}` (the
 working directory at runtime is the user's project, not the skill folder); `--project .`
@@ -223,7 +272,21 @@ Author each file following `references/components.md`, which gives the required 
 structure and a worked skeleton for every component and its key. Hold to these invariants:
 
 - **Student components** preamble with `\documentclass[10pt]{article}` +
-  `\usepackage{saar-article}` + `\usepackage{saar-boxes}`.
+  `\usepackage{saar-article}` + `\usepackage{saar-boxes}` — **except `experience/`, which is
+  `\documentclass[12pt]{article}`** (Math Medic sizing; the rest of the packet is 10pt).
+- **`experience/` uses `\answerspace{H}{}`, never `\writeline`.** The blank reserves exactly
+  `H`; the key passes the answer in the identical height, so the two paginate identically by
+  construction. The macro is defined in the component's own preamble and is authored
+  byte-identically in the blank and the key. Sizing: `1.4cm` ≈ 2 handwritten lines, `2.0cm` ≈ 3,
+  `2.6cm` ≈ 4. **`\boxguard` counts in `experience/` are 12pt-relative — use ~14–16, not 24–30.**
+- **The spoiler rule.** Nothing the student sees *before* the activity — the cover, the warm-up,
+  the deck's learning-targets frame — may pre-name the vocabulary the debrief will attach. Write
+  targets in plain language ("how spread out the values are", not "standard deviation"), and keep
+  the cover's Keep-in-Mind box to describing the EFFL process itself. The **teacher-facing plan
+  keeps the formal vocabulary and the standard codes** — the rule does not apply there.
+- **The timebox rule.** The activity must fit its 22-minute block: two scenarios, ~10–14 lettered
+  sub-questions, ≤2 pages. Extra examples belong to the debrief, the Application, or the homework
+  CYU set — a part that runs over gets cut, not carried.
 - **Answer keys** are *separate files* that swap `-boxes` for `\usepackage{saar-key}`
   and wrap every answer in `\ans{...}` (inline) or `\ansline{...}` (fills a write-line).
   Mirror the blank document exactly, then fill the blanks with `\ans`. There is **no**
@@ -318,6 +381,31 @@ Update the file to reflect reality *now*:
 Keep it terse and current — overwrite stale entries rather than appending a changelog. If the
 file does not exist yet, create it with these sections. Since it lives in `spec/`, it is
 tracked and travels with the branch, so the Step 0 sync always brings the latest state forward.
+
+## Retrofit — regenerating a pre-EFFL lesson
+
+The 60+ lessons authored before the 2026-08 EFFL redesign carry `notes/`, `activity/`, and
+`exit_ticket/`. `shared/lesson.mk` still merges them, so every one of them keeps building
+untouched. **Do not patch a legacy lesson's old components in place** — when the user asks you to
+touch one, ask whether to regenerate it in the EFFL shape instead. There is **no bulk sweep**;
+lessons are regenerated one at a time as they come up.
+
+Regenerating one lesson means:
+
+1. Create `experience/` + `experience_key/` (scaffold with `--components experience`).
+2. **Fold the old components into the three parts.** The group activity becomes the *Activity*
+   (two scenarios, ≤2pp); the guided notes become *QuickNotes* (½pp, a summary of what the groups
+   found — not the old lecture); the worked examples become the *Application* (½–1pp, ending in
+   interpret + justify). The exit ticket's check becomes the Application's What-if prompt.
+3. **Fold the old homework and any leftover practice into the CYU-style homework set** — ~6 items
+   in new contexts spanning the lesson's lettered skills, still scored.
+4. Delete `notes/`, `activity/`, `exit_ticket/` and their `_key`s.
+5. Rewrite the cover's packet table (three rows) and the lesson plan (EFFL phase table, three
+   teacher notes) and the deck (EFFL frame flow).
+
+**Build gotcha when deleting a component:** a stale stamp under `.stamps/unitXX/lessonYY/` makes
+`make` skip recompiling a *sibling* whose PDF was cleaned, and `pdfunite` then fails on a missing
+file. Remove `.stamps/<unit>/<lesson>` alongside `target/<unit>/<lesson>`.
 
 ## Reviewing or revising a lesson — the five conventions, in order
 
@@ -454,15 +542,26 @@ forms' Part C spines, so a later run can reproduce or revise it.
   end-of-run update, even for a partial run.
 - **Full `Read` each skeleton before writing it** (Step 3). A `bash`/`cat` dump does not
   register the file with the editor, so the write fails; always use the `Read` tool first.
-- Structure comes from `spec/statistical_analysis_algebraic_reasoning.md` (**not written yet** —
-  settle the course map with the user, never infer it); content comes from the **standards
+- Structure comes from `spec/statistical_analysis_algebraic_reasoning.md` and
+  `spec/unit_lesson_breakdown.md`; content comes from the **standards
   documents in `spec/`** — read the matching "Understanding the Standards" pages for scope
   before authoring. Don't invent scope the standard does not carry.
 - **Cite the standard codes** in every lesson plan (Priority Ideas box and Connections line).
 - Audience is secondary school, mid-track: context first, small numbers, one new idea at a time,
   heavy scaffolding.
-- Greenfield: there may be no existing lesson to mirror; lean on the reference docs and make
-  the first lesson a clean model.
+- **Every new lesson is EFFL:** `cover`, `warmup`, `experience` (three parts — Activity,
+  QuickNotes, Application), `homework` (the scored Check Your Understanding set), `slides`.
+  Never author `notes`, `activity`, or `exit_ticket` into a new lesson; when a legacy lesson
+  needs work, ask whether to regenerate it (see "Retrofit").
+- **Mirror an EFFL lesson, never a legacy one.** A lesson with `experience/` is EFFL; one with
+  `notes/`/`activity/`/`exit_ticket/` predates the redesign and is not the model.
+- **Obey the spoiler rule and the timebox rule.** No formal vocabulary on the cover, in the
+  warm-up, or on any pre-debrief slide; the activity fits 22 minutes and ≤2 pages.
+- **`experience/` is 12pt and uses `\answerspace{H}{}`, never `\writeline`** — and its
+  `\boxguard` counts are 12pt-relative (~14–16, not 24–30).
+- **Homework is scored and is the CYU set.** The cover's score column carries a `\blank{}` for
+  it, never `NA`. Author the packet pages for every lesson; the packet-vs-DeltaMath choice is
+  the teacher's, made at Close & Assign, and does not change what you author.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in, and it
   must come out the **same number of pages**. Worked solutions live in shared `work` blocks (the
   work rule); a key that runs long costs the student packet a blank padding page.

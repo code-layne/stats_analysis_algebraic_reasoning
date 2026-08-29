@@ -43,7 +43,9 @@ import subprocess
 import sys
 from pathlib import Path
 
-KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
+# EFFL: warmup, experience, homework. notes/activity/exit_ticket are pre-EFFL and
+# stay gated so legacy lessons are still checked.
+KEYED = ["warmup", "experience", "notes", "activity", "exit_ticket", "homework"]
 ONE_PAGE = ["warmup", "exit_ticket"]
 WORKSHEETS = KEYED + [f"{c}_key" for c in KEYED]
 
