@@ -1,4 +1,6 @@
 %! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Lesson Plan
+% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
+% apply here: the formal vocabulary and the lettered standard codes are used freely.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -16,11 +18,19 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will explain that data are numbers
-    \emph{with a context}, identify the individuals and variables in a data set,
-    classify each variable as categorical or quantitative, and decide whether a
-    question is a statistical question --- justifying every choice by the context
-    it came from.
+    \textbf{Primary Objective:} Students will explain that data are numbers \emph{with a
+    context}, identify the individuals and variables in a data set, classify each variable
+    as categorical or quantitative, and decide whether a question takes data to answer ---
+    justifying every choice from the data it came from.
+    \\[2pt]
+    \textbf{Standards:} PS.DC.1a, PS.DC.1b, PS.DC.1c; AFDA.DA.2a. \emph{Previews:} PS.DC.1d--e
+    (1.2), PS.DC.2 (1.3), PS.DC.3 (1.5--1.7).
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
+    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
+    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
+    found; the application uses it once together, in context. No separate direct-instruction
+    block, no tiered instruction, no exit ticket.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -52,9 +62,10 @@
       \item The \textbf{type} of a variable decides what you are allowed to do with
             it. You may average a quantitative variable; a categorical variable can
             only be counted and turned into a percent.
-      \item \textbf{Numbers can be labels.} Grade level, jersey number, and ZIP code
-            are categorical even though they are digits. The test is not ``does it
-            look like a number?'' but ``does arithmetic on it mean anything?''
+      \item \textbf{Target misconception: the digit reflex.} Students classify
+            anything written with digits as quantitative. Jersey number, grade level,
+            and ZIP code are categorical. The test is not ``does it look like a
+            number?'' but ``does arithmetic on it mean anything?''
       \item A \textbf{statistical question anticipates variability}. ``How tall am
             I?'' has one answer; ``How tall are students at this school?'' has many.
       \item Every stage of the cycle can go wrong. The rest of Unit 1 is about
@@ -66,6 +77,8 @@
 \boxguard[24]
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \small
+% Attached in the DEBRIEF. None of these words appears on the cover, in the warm-up, in the
+% Activity, or on any pre-debrief slide (the spoiler rule).
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
 Data & Numbers or labels collected about individuals, together with the context
@@ -75,9 +88,9 @@ Individual & One person, animal, or object that data are collected about ---
 Variable & A characteristic recorded for each individual --- one \emph{column}
        of a data table. \\
 Categorical variable & A variable that records a \emph{label} or group name
-       (lunch choice, grade level, yes/no). Summarize with counts and percents. \\
+       (position, lunch choice, grade level, yes/no). Summarize with counts and percents. \\
 Quantitative variable & A variable that records a \emph{measured amount} with
-       units (minutes, siblings, dollars). Summarize with a mean or median. \\
+       units (points, minutes, siblings). Summarize with a mean or median. \\
 Statistical question & A question whose answers are expected to \emph{vary} from
        individual to individual, so it takes data to answer. \\
 Population & The entire group you want to know about. \\
@@ -91,281 +104,258 @@ Data cycle & The four repeating stages of a study: \emph{formulate questions
 \begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review. It rehearses the Algebra 1 fluency
-            this unit leans on constantly:
+            Please see the attached spiral review. Three Algebra 1 items, five minutes,
+            silent. Each plants a seed the debrief will name --- \textbf{do not name it here}:
             \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
-              \item Writing a part-to-whole comparison as a percent.
-              \item Scaling a sample proportion up to a whole population.
-              \item Computing the mean of a small data set.
+              \item \textit{Item 1} (percent from a part and a whole) seeds the summary
+                    a \emph{categorical} variable gets.
+              \item \textit{Item 2} (scaling $18/50$ up to 900) seeds sample $\rightarrow$
+                    population, which Lesson 1.2 formalizes.
+              \item \textit{Item 3} (mean, then a sentence naming the group and the units)
+                    seeds the summary a \emph{quantitative} variable gets --- and the
+                    ``a number needs a context'' idea the whole lesson turns on.
             \end{itemize}
         \end{minipage}
         &
         \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
             \small
-            Every one of these returns this unit as a \emph{statistic}: a number
-            computed from a sample and used to say something about a population.
-            Listen for students who can compute the percent but cannot say what
-            group it describes --- that gap is the whole point of Unit 1.
+            % Authored warm-up: it compiles to target/, so there is no source PDF to embed.
+            \textbf{Debrief item 3(b) aloud, and only 3(b).} Take two student sentences and
+            ask the class which one you could act on. Do not accept the bare number ``14'' ---
+            the sentence, with its group and its units, is the whole seed. Listen for students
+            who can compute the percent in item 1 but cannot say what group it describes;
+            that gap is what Unit 1 exists to close.
         \end{minipage}
     \end{tabularx}
 \end{fixedskillbox}
 
-\boxguard
-\begin{skillbox}[Hook]{frost}
-    Put this on the board before anyone sits down:
-    \begin{center}
-      \textit{``Four out of five students at Riverbend High School
-      say the lunch line is too slow.''}
-    \end{center}
-    \textbf{Ask:} ``Do you believe it?'' Take votes both ways, then push:
-    \textbf{Who did they ask? How many? What exactly did they ask?} Students will
-    generate the objections themselves --- \emph{maybe they only asked people
-    standing in the line}; \emph{maybe five people}; \emph{maybe they asked ``Isn't
-    the lunch line too slow?''} Name what just happened: they did not argue about
-    arithmetic, they argued about \textbf{where the number came from}. That is
-    Unit 1. Close the hook by writing the four stages of the data cycle on the
-    board and telling them each of their objections attacks a different stage.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Lesson]{frost}
-\begin{multicols}{2}
-\textbf{1. Data are numbers with a context.} Write a bare ``18'' on the board and
-ask what it tells them. Nothing. Now write \emph{``18 minutes --- the mean
-one-way commute for the six Riverbend students we surveyed.''} \textbf{Ask: what
-three things did I have to add?} \emph{Who} was measured, \emph{what} was
-measured, and the \emph{units}. Give the rule: a number without a context is not
-data.
-
-\textbf{2. Rows and columns have names.} Project the Riverbend Student Life
-Survey table (six students; grade level, commute time, lunch choice, siblings,
-club member). \textbf{Ask: what is one row? what is one column?} Name them:
-each row is an \textbf{individual}, each column is a \textbf{variable}. Have
-students count both --- six individuals, five variables --- before any
-classification starts.
-
-\textbf{3. Two types of variables.} Take the commute column and the lunch column.
-\textbf{Ask: which one could I find an average of?} Commute, yes; lunch choice,
-no --- there is no such thing as an average of ``cafeteria, home, off campus.''
-That contrast \emph{is} the definition. Quantitative variables record measured
-amounts with units and get a mean; categorical variables record labels and get
-counts and percents.
-
-\textbf{4. The trap: numbers that are really labels.} Point at the grade-level
-column: 10, 11, 9, 12, 10, 11. \textbf{Ask: it is made of numbers --- is it
-quantitative?} Let them argue, then settle it by computing the ``mean grade
-level'' aloud: $10.5$. \textbf{Ask: who is in grade 10.5?} Nobody. Grade level is
-a \textbf{label written with digits}, so it is categorical. Give them the test to
-write down: \emph{does arithmetic on this variable mean anything?} Add jersey
-numbers and ZIP codes as the other classic cases.
-
-\textbf{5. Statistical questions.} Ask ``How tall am I?'' --- one answer, measure
-once, done. Ask ``How tall are students at Riverbend?'' --- the answers vary from
-student to student, so it takes data. Give the definition: a \textbf{statistical
-question anticipates variability} in the answers. Run four quick questions and
-have the class thumbs-up/thumbs-down each one.
-
-\textbf{6. The road map.} Return to the lunch-line claim from the hook and lay the
-four stages of the data cycle over it. Formulate the question; collect the data;
-organize and represent it; analyze and communicate. Tell them where the unit
-goes: Lessons 1.1--1.2 sharpen the question and the group it describes,
-1.3--1.4 attack \emph{how} the data get collected, 1.5--1.7 handle studies and
-experiments, and 1.8 has them run the whole cycle themselves.
-\end{multicols}
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Explicit Instruction: Classifying a Variable]{frost}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
-\begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Steps --- give these verbatim}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Say the variable out loud in a sentence about \emph{one} individual:
-        ``This student's \underline{\hspace{1.6cm}} is \underline{\hspace{1.6cm}}.''
-  \item Ask: is the answer a \textbf{label} or a \textbf{measured amount with
-        units}?
-  \item If it is an amount, ask the check question: \textbf{would averaging these
-        mean anything?}
-  \item Label: only if the answer is a real amount and averaging makes sense is
-        it \textbf{quantitative}. Otherwise it is \textbf{categorical}.
-  \item Say how you would summarize it --- mean for quantitative, counts and
-        percents for categorical.
-\end{enumerate}
-\end{minipage}
-&
-\begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Worked example --- ``Grade level''}
-\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-  \item[1.] ``This student's grade level is 10.''
-  \item[2.] It \emph{looks} like an amount --- 10 is a number.
-  \item[3.] Mean of $10, 11, 9, 12, 10, 11$ is $10.5$. There is no grade 10.5,
-        and nobody is ``half a grade taller.''
-  \item[4.] Averaging is meaningless $\Rightarrow$ \textbf{categorical}.
-  \item[5.] Summarize by counting: 2 sophomores, 2 juniors, 1 freshman,
-        1 senior.
-\end{itemize}
-\textit{Contrast with ``commute time'': ``this student's commute is 20 minutes,''
-a real amount in real units, and 18 minutes is a meaningful average.
-$\Rightarrow$ quantitative.}
-\end{minipage}
+\begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Three Algebra 1 items, silent, then check with a neighbor & Circulate; debrief item~3(b) aloud \\
+Experience \& Formalize: Activity & 22 & \emph{Data Detectives}, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
+Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' own work (second color); fill QuickNotes together \\
+Application & 10 & \emph{The Student Life Survey}, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
+Close \& Assign & 4 & Record the assignment; preview Lesson 1.1 & Name what changed today; choose packet CYU or DeltaMath \\
 \end{tabularx}
-\end{skillbox}
+\end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Watch for the digit reflex.} The single most common error today is
-        classifying anything written with digits as quantitative. Circulate
-        specifically to the grade-level and jersey-number items and ask,
-        \emph{``what would the average of these be, and who would that describe?''}
-  \item \textbf{Watch for context-free answers.} A student who writes ``18'' and
-        stops has not finished. Require units and the group: ``18 minutes, for
-        the six students surveyed.''
-  \item \textbf{Watch for ``statistical means it uses numbers.''} Students will
-        call ``How many students go to Riverbend?'' statistical because it has a
-        number in it. Redirect to variability: \emph{do different people give
-        different answers?}
-  \item \textbf{Cold-call prompts:} ``Name one individual in this table.''
-        ``Name one variable.'' ``Give me a variable made of digits that is
-        \emph{not} quantitative.'' ``Change this question so it becomes
-        statistical.''
-\end{itemize}
-\end{skillbox}
+\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{Data Detectives}]{frost}
+\textbf{Launch (2 min).} Put the roster on the board and read the blog quote aloud: \emph{``The
+Riverbend roster's mean jersey number is 14 --- this is a young, inexperienced team.''} Then
+stop. Do not evaluate it. Charge them: \emph{``Two scenarios. Use what you already know --- every
+word on those pages is a word you have already met. For every answer, be ready to show me where
+you see it in the table.''} Groups of 3--4, 22 minutes.
 
-\boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\small
-\begin{multicols}{3}
-\textbf{Tier R --- Remediate}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Athletics table given; count and name individuals and variables.
-  \item Classify three variables with the label/amount question supplied as a
-        prompt.
-  \item Every answer is read directly from the table --- no scaling, no percents.
-\end{itemize}
+\begin{multicols}{2}
+\textbf{What students do.} \emph{Scenario 1} builds the whole toolkit on one data set: count the
+rows and the recorded columns (\textbf{a}), compute a mean and \emph{say what it describes}
+(\textbf{b--c}), hit the first wall with ``mean position'' (\textbf{d}), then sort all five
+columns into an \textbf{amount} pile and a \textbf{label} pile in their own words (\textbf{e}),
+and summarize a label column with a percent instead (\textbf{f}).
+
+\emph{Scenario 2} is the contrast case. They verify the blog's arithmetic (\textbf{a}) --- it is
+correct --- and then \textbf{2b is the crux question}: the arithmetic is right, so is the
+conclusion? It forces them back to their own part-\textbf{e} pile for Jersey \#. Items
+\textbf{c--d} split four questions into one-look-up versus many-answers and have them rewrite one.
 
 \columnbreak
-\textbf{Tier A --- Approaching Proficiency}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Three short scenarios; for each, name the population, the variable, and
-        its type.
-  \item One percent computation from a sample, then scaled to the population.
-  \item First ``is this question statistical?'' item with a written reason.
+\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
+\emph{question, cue, or prompt}, not an answer:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{1d:} ``Write Guard $+$ Forward on your paper. What is it?''
+  \item \textbf{1e, Jersey \#:} ``Say it in a sentence: \emph{this player's jersey number
+        is 12.} Is 12 an amount of something?''
+  \item \textbf{2b (crux), if they defend the blog:} ``Compute it: 14. Now find me the player
+        who wears 14 on average.''
+  \item \textbf{2b, if they are stuck at `it's wrong':} ``Wrong how? Point at the row in
+        part \textbf{e} that decides it.''
+  \item \textbf{2c:} ``Ask two different players. Do you get two different answers?''
 \end{itemize}
-
-\columnbreak
-\textbf{Tier E --- Extension}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Critique a claim built on a categorical variable that was averaged.
-  \item Write an original statistical question, name the variable and its type,
-        and say what data would answer it.
-  \item Justify why the same recorded value can be categorical in one study and
-        quantitative in another.
-\end{itemize}
+Pick the group work to display: one good \textbf{1c} sentence, one \textbf{1e} table with a
+defended Jersey \# row, and two different \textbf{2b} answers.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit ticket (3 items, no notes).}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Classify two variables from a short context and justify each with the
-        averaging test.
-  \item Decide which of two questions is statistical, and say why.
-  \item \textbf{Conceptual / justification check:} ``The mean of the numbers on
-        the team's jerseys is 42.'' What does that tell you about the team?
-        Correct answer: \emph{nothing} --- jersey number is a label, so its mean
-        describes no real quantity. This is the item to grade first.
+\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
+Work through the displayed student work in order and \textbf{attach each formal name to
+something a group already wrote}. Students record each line in QuickNotes as you go.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item Over the \textbf{1c} sentence: ``12 points, for the six players on the roster'' $\to$
+        this is \emph{data} --- a number plus \emph{who}, \emph{what}, and \emph{units}.
+  \item Over the roster: ``each row is a player,'' ``each column is a thing recorded'' $\to$
+        \emph{individual} and \emph{variable}. Count aloud: 6 and 5.
+  \item Over the \textbf{1e} amount pile $\to$ \emph{quantitative}; summarized by a
+        \emph{mean}. Over the label pile $\to$ \emph{categorical}; summarized by
+        \emph{counts and percents} (point at their \textbf{1f}, $50\%$).
+  \item Over the \textbf{2b} answers $\to$ the test: \emph{does arithmetic on this variable
+        mean anything?} Add grade level and ZIP code as the other classic cases.
+  \item Over \textbf{2c--d} $\to$ \emph{statistical question}: its answers are expected to
+        \emph{vary}, so it takes data.
 \end{enumerate}
-\textbf{Using the results:} sort into three piles --- (a) classified correctly
-\emph{and} justified, (b) classified correctly but justified by ``it's a number,''
-(c) missed the classification. Pile (b) is the biggest and the most fixable;
-open Lesson 1.1 with two of their own item-3 responses read aloud, unattributed.
+\columnbreak
+\textbf{QuickNotes.} Six bullets, filled in this same order --- it is a record of what the room
+just found, not a new lecture. Say each blank out loud once and move; the arguing has already
+happened.
+
+\textbf{Why this order.} Context first, because it is the only claim the warm-up already made.
+Individuals and variables next, because they are just names for rows and columns the groups
+counted. The two types third, because \emph{that contrast is the definition} --- do not define
+them and then sort; sort and then define. The digit test fourth, because it only lands after
+they have watched a correct computation produce a worthless number.
+
+\textbf{Pose cold (the activity does not carry it):} \emph{``Siblings: 2, 0, 3, 1, 2, 4. Digits.
+Categorical or quantitative?''} Quantitative --- a mean of 2 siblings is a real amount. Digits
+are not the enemy; meaningless arithmetic is.
+\end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework --- Northgate Community Recreation Center.} A fresh context with
-the same spine: identify individuals and variables in a members table, classify
-four variables, compute and \emph{interpret} a mean of a quantitative variable,
-turn a categorical variable into a percent, scale a sample percent up to the
-full membership, and sort four questions into statistical and not. Closes with an
-interpretation item that cannot be answered by computing anything.
+\begin{skillbox}[Application --- \emph{The Student Life Survey} (worked together, 10 min)]{frost}
+A fresh six-row table with a second instance of the trap (Grade: 10, 11, 9, 12, 10, 11). This is
+the first place today's vocabulary is \emph{used} rather than argued into existence, and the
+lesson's only in-class practice. Students hold the pen; you hold the questions:
+\begin{itemize}[leftmargin=1.2em, nosep, itemsep=2pt]
+  \item \textbf{``How many individuals, how many variables?''} --- 6 and 5. ``Student'' names
+        the individuals; it is not a variable being studied. Expect ``6'' here.
+  \item \textbf{``Grade is 10, 11, 9, 12 --- which type, and how do you know?''} Categorical.
+        Make somebody compute the mean grade level aloud: $63/6 = 10.5$. \emph{Who is in grade
+        10.5?} This is the second exposure to the crux and it must be theirs, not yours.
+  \item \textbf{``What group and what units?''} --- for the Interpret line. Reject the bare
+        ``18.'' The answer is \emph{these six students}, not all of Riverbend; that restriction
+        is what Lesson 1.2 turns into population versus sample.
+\end{itemize}
+The mean commute is computed in the packet's \texttt{work} block ($108/6 = 18$ minutes).
 
-\textbf{Extension (optional).} Students bring in one real claim --- a headline,
-an ad, a social-media poll --- and name the population it claims to describe, the
-variable behind it, and that variable's type. Collect these; they seed the bias
-discussion in Lesson 1.4.
+\textbf{This is the formative check.} There is no exit ticket. Read the \emph{Interpret} and
+\emph{What if} responses over shoulders and sort into three piles: \textbf{(a)} correct
+\emph{and} justified from the variable's type; \textbf{(b)} correct but justified by ``it's a
+number'' / ``it's words''; \textbf{(c)} missed the classification. Pile (b) is the biggest and
+the most fixable. Open Lesson 1.1 by reading two pile-(b) \emph{What if} responses aloud,
+unattributed.
+\end{skillbox}
 
-\textbf{Preview of Lesson 1.1.} We name the four stages of the data cycle
-formally, write questions that a data set can actually answer, and sort variables
-by type at speed. Today's vocabulary --- individual, variable, categorical,
-quantitative --- is assumed from here on.
+\boxguard
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep, itemsep=2pt]
+  \item \textbf{The digit reflex} --- \textbf{1e}, Jersey \# row. The single most common error
+        today. Ask: ``what would the average of these be, and who would that describe?''
+  \item \textbf{Context-free answers} --- \textbf{1c} and the Application's \emph{Interpret}.
+        A student who writes ``12'' and stops has not finished. Require the group and the units.
+  \item \textbf{``It's wrong because the blog is biased''} --- \textbf{2b}. A real objection,
+        but not today's. Redirect to the column: which pile is Jersey \# in, and why does that
+        settle it?
+  \item \textbf{``It takes data because it has a number in it''} --- \textbf{2c}. Students mark
+        (i) and (iii) as \textbf{M} because they mention numbers. Redirect to variability:
+        \emph{do different players give different answers?}
+  \item \textbf{Height read as a label} --- \textbf{1e}. Over-correction after the Jersey \#
+        argument. Ask whether 70 inches is an amount of anything.
+\end{itemize}
+Cold-call prompts: ``Name one individual in this table.'' ``Name one variable.'' ``Give me a
+column of digits that is \emph{not} quantitative --- and one that is.'' ``Change this question
+so it takes data to answer.''
+\end{skillbox}
 
-\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only
-as trustworthy as the study that produced it. \textit{Standards covered:}
-PS.DC.1a, PS.DC.1b, PS.DC.1c; AFDA.DA.2a. \textit{Spirals forward to:} population
-vs.\ sample and parameter vs.\ statistic (1.2, PS.DC.1d--e), sampling technique
-(1.3), and bias (1.4). \textit{Reaches back to:} Algebra 1 percent and
-proportional reasoning.
+\boxguard
+\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
+\textbf{Northgate Community Recreation Center} --- a new context on the same spine, seven items,
+about 20 minutes. Items 1--2 name individuals and variables and classify four columns; the
+\textbf{contrast pair} is \emph{Member ID} (digits, label) against \emph{Age} (digits, amount),
+which is the target misconception with the training wheels off. Item 3 computes a mean and
+\emph{interprets} it; item 4 justifies why a percent, not a mean, summarizes ``Group class?'';
+item 5 is the \textbf{spiral} (Algebra 1 percent and proportion, scaled to 2000 members); item 6
+sorts four questions into statistical and not, then rewrites one; item 7 is the
+\textbf{justification item} --- the mean Member ID of $140.5$ --- and cannot be answered by
+computing anything. Optional extension: bring in one real claim about a group of people.
+
+\textbf{Scored} out of 20, due at the start of the next class; the cover's score column carries
+a blank for it. Score items 1--5 for correctness and items 6--7 for the \emph{reason}, not the
+verdict.
+
+\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way.
+DeltaMath's coverage of individuals/variables and categorical-vs-quantitative classification is
+thin, and it has nothing for item 7's ``this mean measures nothing'' reasoning, so \textbf{assign
+the packet pages for 1.0}. Say it aloud at Close \& Assign so it is unambiguous.
+\end{skillbox}
+
+\boxguard
+\begin{skillbox}[Close \& Preview]{goldbox}
+\textbf{Assign the practice} (name it: the packet's Check Your Understanding pages), then name
+what changed today rather than closing on the assignment alone: \emph{``You walked in able to
+compute a mean. You walk out able to say when a mean is allowed to exist --- and that is decided
+by the variable, not by the arithmetic.''}
+
+\textbf{Connections:} \textit{Covered today:} PS.DC.1a, PS.DC.1b, PS.DC.1c; AFDA.DA.2a.
+\textit{Unit 1 core idea:} a conclusion is only as trustworthy as the study that produced it.
+\textit{Spirals forward to:} population vs.\ sample and parameter vs.\ statistic (1.2,
+PS.DC.1d--e), sampling technique (1.3, PS.DC.2), bias (1.4), and observational studies vs.\
+experiments (1.5--1.7, PS.DC.3). \textit{Reaches back to:} Algebra 1 percent and proportional
+reasoning.
+
+\textbf{Preview (Lesson 1.1).} We name the four stages of the data cycle formally, write
+questions a data set can actually answer, and sort variables by type at speed. Today's words ---
+individual, variable, categorical, quantitative --- are assumed from here on.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
+% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
+% with no counterpart in the blank, so it makes the key run longer and costs the student
+% packet a blank page. Three notes in an EFFL lesson.
 \begin{teachernote}[Warm-Up]
-    Five minutes, silent, timed. All three items are Algebra 1 review and should
-    be quick; the point is diagnostic, not instructional. Item 2 (scaling
-    $18/50$ up to 900 students) is the one that separates the class --- students
-    who multiply $18 \times 18$ or add rather than scale the \emph{proportion}
-    need a five-minute pull-aside during the activity. Item 3 asks for the mean
-    \emph{and} a sentence naming what it describes; do not accept the bare
+    Five minutes, silent, timed. All three items are Algebra 1 review and should be quick; the
+    point is diagnostic, not instructional. Item 2 (scaling $18/50$ up to 900 students) is the
+    one that separates the class --- students who multiply $18 \times 18$ or add rather than
+    scale the \emph{proportion} need a five-minute pull-aside while the groups work. Item 3
+    asks for the mean \emph{and} a sentence naming what it describes; do not accept the bare
     number, because the whole lesson turns on that sentence.
+
+    \textbf{If it runs long, cut item 1} --- item 1f of the activity re-teaches the same percent
+    in context ten minutes later.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    Pace: vocabulary and sections 1--2 in the first 12 minutes, section 3 (the
-    two types) in 8, section 4 (numbers that are really labels) in 8. Do
-    \emph{not} shortchange section 4 --- it is the misconception that survives
-    the whole unit if it is not confronted here, and the ``mean grade level is
-    $10.5$'' computation done aloud is what breaks it. Section 5 is fast.
-    Section 6 (the road map) is a two-minute preview, not a lesson; resist
-    teaching the cycle today, since Lesson 1.1 does it properly.
+\begin{teachernote}[Experience \& Formalize]
+    \textbf{Activity (22 min).} Split it 13/9: scenario 1 by the 13-minute mark, scenario 2 in
+    the last 9. Scenario 1 is the toolkit and every answer is readable off the table, so groups
+    that stall there are stalling on reading, not on mathematics --- point at the row. Announce
+    the switch aloud at 13 minutes even if some groups are still on \textbf{1f}; \textbf{2b} is
+    the crux and must be attempted by every group. Early finishers: send them to \textbf{2d} to
+    write a second rewrite, or have them defend the ``Height'' row of \textbf{1e} to a group
+    that put it in the wrong pile.
 
-    In Guided Practice part (b), students will want to answer ``because it's
-    words.'' Push once for the real reason: there is no order and no unit, so
-    addition is undefined --- and a mean is built from addition.
-\end{teachernote}
+    \textbf{Debrief (14 min).} The must-land moment is move~4 --- the digit test --- and it
+    lands only because they watched a correct computation (jersey mean $=14$) produce a
+    worthless number. Do not shorten move~3 to protect it: sorting-then-defining is the whole
+    method, and if you define categorical and quantitative first, the lesson collapses into
+    the direct instruction it replaced. If time is short, cut the cold-posed ``Siblings''
+    example and hand it to the Application instead.
 
-\begin{teachernote}[Group Activity]
-    Groups of three, 15 minutes, tiers assigned rather than chosen. Tier R is a
-    reading task and should finish early --- have those groups then attempt Tier
-    A's item 1. Tier E item 3 (the same value being categorical in one study and
-    quantitative in another) is genuinely hard; accept any defended answer that
-    turns on \emph{what was asked}, e.g.\ recording ``how many siblings'' (an
-    amount) versus recording ``only child / has siblings'' (a label).
-
-    Circulate to Tier A item 2 first --- it is the only place in the packet where
-    the warm-up's scaling skill is reused, and it is where you will find out
-    whether the warm-up stuck.
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    Five minutes, notes closed, collected at the door. Grade item 3 first and
-    only item 3 if time is short: it is the single item that distinguishes
-    students who learned the rule from students who learned the reason. Any
-    answer computing something about 42 is a miss, however well written.
-    Expect roughly a third of the class to miss it on day one --- that is the
-    normal starting point, not a failure of the lesson.
+    \textbf{Application (10 min).} The \texttt{work} block for the mean commute is already in
+    the packet ($108/6 = 18$ minutes), so no board computation is needed --- spend the time on
+    the three questions instead. The \emph{Grade} column is the second run at the crux; make a
+    student, not you, compute $63/6 = 10.5$ aloud. Sort the \emph{Interpret} and \emph{What if}
+    responses into the three piles as you circulate (correct-and-justified / correct-but-``it's
+    a number'' / missed); expect roughly a third of the class in the middle pile on day one.
+    That is the normal starting point, not a failure of the lesson.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    Assign all seven items; they take about 20 minutes. Item 3 asks for a mean
-    and a sentence interpreting it, and item 7 cannot be answered by computing
-    anything --- flag both when assigning, because students who treat this as a
-    calculation sheet will skip exactly those. The extension (bring in a real
-    claim) is worth collecting even from students who skip it as optional;
-    those artifacts are reused in Lesson 1.4 for bias.
+    Assign all seven items. Item 3 asks for a mean \emph{and} a sentence interpreting it, and
+    item 7 cannot be answered by computing anything --- flag both when assigning, because
+    students who treat this as a calculation sheet will skip exactly those. Item 5 is the
+    Algebra 1 spiral and is the one to check first if the warm-up showed scaling trouble.
+
+    Grade item 7 first and only item 7 if time is short: it is the single item that separates
+    students who learned the rule from students who learned the reason. Any answer that
+    computes something \emph{about} $140.5$ is a miss, however well written. Go over item 2's
+    Member ID row and item 7 at the start of Lesson 1.1, in that order.
+
+    DeltaMath does not carry this lesson's skills adequately (see the Homework box), so the
+    packet pages are the assignment for 1.0. The optional extension is worth collecting even
+    from students who skip it --- those artifacts are reused in Lesson 1.4 for bias.
 \end{teachernote}
 \end{document}

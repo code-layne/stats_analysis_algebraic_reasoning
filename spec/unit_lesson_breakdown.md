@@ -23,9 +23,10 @@ Each lesson directory ships the **EFFL** component set: `warmup`, `experience`
 `slides`, and the lesson plan (`main.tex`).
 
 **Shape status (2026-08-30):** Units 2–8 (57 lesson dirs) are scaffolded in the EFFL
-shape. **Unit 1's 9 lessons are still legacy-shape** (`notes`/`activity`/`exit_ticket`)
-— they carry authored content and are retrofitted one at a time per the Retrofit
-section of the lesson-planning skill.
+shape. **Lesson 1.0 has been regenerated in the EFFL shape and is the model lesson** —
+mirror it, not a legacy lesson. **Unit 1's remaining 8 lessons (1.1–1.8) are still
+legacy-shape** (`notes`/`activity`/`exit_ticket`) — they carry authored content and are
+retrofitted one at a time per the Retrofit section of the lesson-planning skill.
 
 **Status legend:** ✅ authored, built, and gated · ⬜ scaffolded only (EFFL skeletons, builds clean).
 
