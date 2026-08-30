@@ -1,0 +1,98 @@
+%! Probability Basics — Unit 3, Lesson 3.2 — Experience & Formalize
+%! (Activity · QuickNotes · Application)
+%! Directory stays `experience/` (a build identifier in shared/lesson.mk); the label
+%! students and teachers read is "Experience & Formalize".
+% EFFL component, Math Medic sizing: 12pt body, OPEN white space after every question (no
+% write-lines). \answerspace{H}{} reserves exactly H of space in the blank; the key passes the
+% answer as the second argument, so the two files paginate identically by construction.
+% Sizing: 1.4cm ~ 2 handwritten lines, 2.0cm ~ 3, 2.6cm ~ 4. Keep this macro byte-identical
+% in the blank and the key. \boxguard counts here are 12pt-relative: use ~14-16, not 24-30.
+%
+% THREE parts on a page budget: Activity <=2pp · QuickNotes 1/2pp · Application 1/2-1pp.
+% There is NO Check Your Understanding section in this component — this course's CYU-style
+% practice is the `homework` component. Everything here happens in class, together.
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
+  \color{keyred}\bfseries #2\end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.2}{Experience \& Formalize: TODO Activity Title}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.06in}
+
+% ── Part 1: the Activity (22 min) ────────────────────────────────────────────
+% TWO scenarios, ~10-14 lettered sub-questions total, ~2 pages — the 22-minute timebox.
+% Students work from PRIOR KNOWLEDGE ONLY: never name the formal vocabulary here (the
+% debrief attaches it). All graphs, dotplots, and computer output are PRE-DRAWN — students
+% read, annotate, and answer in the open space, never "sketch a graph". Scenario 2 carries
+% the lesson's crux question (the target misconception).
+% Use REAL, plausible data in a context students recognize: this is a modeling and
+% applications course, so every answer they write should be phrased in that context.
+\begin{headlinebox}{frost}
+\textbf{TODO Activity Title.} TODO: one motivating data context, 2--3 sentences, ending with what
+groups should be ready to explain (``how you know \dots\ from the data'').
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{scenariobox}[1. TODO Scenario One]{cerulean}
+TODO: scenario setup. Builds the whole toolkit on one data set.
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=8pt]
+  \item TODO: a table to complete / a value to compute from the pre-drawn display.
+  \item TODO: a feature to circle on the pre-drawn display, then interpret \emph{in context}:
+        \answerspace{2.0cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+\boxguard[16]
+\begin{scenariobox}[2. TODO Scenario Two]{cerulean}
+TODO: the contrast case. Carries the crux question, then closes with context-vs-computation.
+\begin{enumerate}[label=\textbf{\alph*.}, leftmargin=1.8em, itemsep=8pt]
+  \item TODO: the crux question (surfaces the target misconception):
+        \answerspace{2.6cm}{}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Part 2: QuickNotes (the debrief fills this, 14 min) — target: half a page ─
+\boxguard[14]
+\begin{tcolorbox}[enhanced, colback=frost, colframe=cerulean, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm, breakable,
+    fonttitle=\bfseries\small\color{white}, title={QuickNotes: TODO Topic},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=cerulean, colframe=cerulean, arc=1.5mm}]
+% A worked-example figure or formula beside fill-in bullets for the formal terms. A summary
+% of what the groups discovered, not a lecture — one box, ~half a page.
+\small
+\begin{itemize}[leftmargin=1.1em, itemsep=8pt]
+  \item TODO: formal term --- definition with \blank{2.4cm} fills.
+\end{itemize}
+\end{tcolorbox}
+
+% ── Part 3: the Application (worked together, 10 min) ────────────────────────
+% This is the LAST thing in the packet's in-class portion, so it carries the whole
+% compute-then-interpret-and-justify arc, not just a computation.
+% practicebox takes NO argument (its title is fixed as "Guided Practice"), so a titled
+% Application uses notesbox. The \begin{work} block takes no argument either, and its body
+% is math (an amsmath aligned): one statement per line, & immediately before the relation.
+\boxguard[14]
+\begin{notesbox}{Application: TODO Title}
+TODO: the one problem worked together --- the first place the just-named vocabulary is USED.
+The computation goes in the \texttt{work} block below, authored BYTE-IDENTICALLY in the key.
+\begin{work}
+  \text{TODO statistic} &= \text{TODO formula} \\
+                        &= \text{TODO substitution} \\
+                        &\approx \text{TODO value}
+\end{work}
+\textbf{Interpret.} TODO: what this number says about the situation, in context:
+\answerspace{1.8cm}{}
+
+\textbf{What if?} TODO: the ``change one number'' question that tests the concept rather than
+the procedure --- and the justification it demands:
+\answerspace{2.0cm}{}
+\end{notesbox}
+
+\end{document}

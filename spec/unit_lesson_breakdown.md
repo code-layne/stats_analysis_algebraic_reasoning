@@ -18,11 +18,16 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 | Standards strands | PS.\* (primary), AFDA.\* , A2.\* (reach-ins only) |
 | Excluded by design | AFDA.AF.3 (linear programming); no trigonometry |
 
-Each lesson directory ships the same nine components: `warmup`, `notes`,
-`activity`, `exit_ticket`, `homework` (each with a `_key`), plus `cover`,
+Each lesson directory ships the **EFFL** component set: `warmup`, `experience`
+(*Experience & Formalize*), `homework` (each with a `_key`), plus `cover`,
 `slides`, and the lesson plan (`main.tex`).
 
-**Status legend:** ✅ authored, built, and gated · ⬜ scaffolded only.
+**Shape status (2026-08-30):** Units 2–8 (57 lesson dirs) are scaffolded in the EFFL
+shape. **Unit 1's 9 lessons are still legacy-shape** (`notes`/`activity`/`exit_ticket`)
+— they carry authored content and are retrofitted one at a time per the Retrofit
+section of the lesson-planning skill.
+
+**Status legend:** ✅ authored, built, and gated · ⬜ scaffolded only (EFFL skeletons, builds clean).
 
 ---
 
