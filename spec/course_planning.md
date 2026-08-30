@@ -1,6 +1,6 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-29 — **EFFL PORTED (build system + skill + skeletons).** The course moved to the Math Medic "experience first, formalize later" model: a lesson is now `cover / warmup / experience / homework / slides`. See "EFFL — PORTED 2026-08-29" below for the shape, the decisions behind it, and what is left. **No lesson content was regenerated** — all 61 existing lessons are still legacy-shape and still build. Previous substantive run (2026-08-07) — **Unit 1's assessment set and unit cover pair authored, built,
+**Last updated:** 2026-08-30 — **UNITS 2–8 RE-SCAFFOLDED INTO THE EFFL SHAPE (57 lesson dirs).** Every stub lesson outside Unit 1 now carries `cover / warmup / experience / homework / slides`; the legacy `notes`/`activity`/`exit_ticket` dirs are gone from U2–U8. All 57 build all five work products and pass the gate. **Unit 1's 9 authored lessons are still legacy-shape** and remain the real retrofit work. Previous run (2026-08-29) — **EFFL PORTED (build system + skill + skeletons).** The course moved to the Math Medic "experience first, formalize later" model: a lesson is now `cover / warmup / experience / homework / slides`. See "EFFL — PORTED 2026-08-29" below for the shape, the decisions behind it, and what is left. **No lesson content was regenerated** — all 61 existing lessons are still legacy-shape and still build. Previous substantive run (2026-08-07) — **Unit 1's assessment set and unit cover pair authored, built,
 and hand-verified**: `tests/practice_test` + `actual_test`, `test_keys/practice_test_key` +
 `actual_test_key`, `unit_cover/` (shared `body.tex`) and `unit_cover_key/`. **Unit 1 is now
 complete end to end** — 9 lessons, 2 parallel test forms with keys, and both packet covers.
@@ -80,10 +80,32 @@ parity held (warmup 1/1, experience 2/2, homework 1/1), and `make check` passed.
 (`unit01/lesson02`) rebuilt clean and passed `make check`. `python3 shared/lesson_check.py --all
 --no-pages` → 66 lessons, no violations. The throwaway lesson was removed.
 
-**NOT done — this is the remaining work:** every one of the 61 existing lessons is still
-legacy-shape (`notes`/`activity`/`exit_ticket`). Regenerate them **one lesson at a time** per the
-Retrofit section of `SKILL.md`; there is deliberately no bulk sweep, since regenerating in bulk
-would re-flow the pagination of every verified lesson at once. Unit 1's assessment set and cover
+### EFFL — UNITS 2–8 RE-SCAFFOLDED 2026-08-30
+
+The 57 lesson dirs in `unit02`–`unit08` were **re-scaffolded**, not retrofitted. They held no
+authored content: every one was a byte-identical 373-line TODO skeleton (verified — uniform
+per-file line counts, a `TODO` marker in every file, one md5 across all 57 once the title line
+was stripped, no `images/`). So the migration was lossless by construction:
+
+1. `rm -rf` the six legacy dirs (`notes`, `activity`, `exit_ticket` + `_key`s).
+2. Re-run `new_lesson.py --force --no-tests` with the lesson's own title and unit title,
+   parsed out of the existing `main.tex` `\LessonNumberName`/`\UnitNumberName` (all 57 parsed;
+   titles match `spec/unit_lesson_breakdown.md`).
+
+The scaffolder's `ensure()` left each unit's `Makefile` and its already-scaffolded `tests/`,
+`test_keys/`, `sample_test*/` untouched; `--no-tests` was passed as a belt-and-braces guard.
+
+**Verification:** all 57 lessons build all five work products (`make -C unitXX/lessonYY all`,
+run 6-way parallel) and `python3 shared/lesson_check.py --all --no-pages` passes across all 66
+lesson dirs. Every U2–U8 lesson now shows the identical component set
+`cover, experience, experience_key, homework, homework_key, slides, warmup, warmup_key`.
+
+**STILL NOT done — this is the remaining EFFL work:** **Unit 1's 9 lessons** (`lesson00`–
+`lesson08`) are authored, ~2,300 lines each, and still legacy-shape. They need the *real*
+retrofit — folding activity → Activity, notes → QuickNotes, worked examples → Application,
+exit-ticket check → the Application's What-if, homework → the CYU set — **one lesson at a
+time** per the Retrofit section of `SKILL.md`. No bulk sweep: regenerating in bulk would
+re-flow the pagination of every verified lesson at once. Unit 1's assessment set and cover
 pair are unaffected by the shape change.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
@@ -450,9 +472,14 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    **Lesson 1.0** (already authored in legacy shape, so the content exists to fold into the
    three parts) per the Retrofit section of `SKILL.md`. Everything below assumes the EFFL
    shape from here on — do not author a new lesson with `notes`/`activity`/`exit_ticket`.
+   *Until this lands there is no EFFL model lesson in the tree to mirror* — U2–U8 are EFFL
+   skeletons, not authored EFFL lessons, so `references/components.md` is the reference.
+0b. **Retrofit the other 8 Unit 1 lessons** (1.1–1.8) after 1.0 sets the model, one at a
+   time. This is the only remaining EFFL migration work; U2–U8 are already EFFL-shaped.
 1. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
-   `lesson00`. Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before
-   authoring; the scaffolded titles in `unit02/lesson*/main.tex` are the proposal.
+   `lesson00`. Nothing in U2–U8 is authored (the dirs are EFFL skeletons). Confirm the U2
+   lesson map with the user before authoring; the scaffolded titles in
+   `unit02/lesson*/main.tex` are the proposal.
    Note the hand-off already written into 1.8's homework teacher note: Unit 2 is where the
    variable becomes a number and the bars start touching.
 2. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint above
