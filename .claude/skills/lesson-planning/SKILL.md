@@ -220,7 +220,7 @@ The content path is always `references/course-workflow.md`:
 - **Decompose the unit into lessons** from `spec/statistical_analysis_algebraic_reasoning.md`
   and `spec/unit_lesson_breakdown.md`. The
   convention is **one lesson per Knowledge-and-Skills cluster** — group the standard's lettered
-  bullets into coherent 55-minute chunks, in listed order (Lesson `<unit>.<n>`). Present the
+  bullets into coherent 60-minute chunks, in listed order (Lesson `<unit>.<n>`). Present the
   proposed lesson map for the unit and **confirm it with the user before authoring** — bullets
   merge and split depending on the class.
 - **Gather the lesson's content**: the lettered skills from the approved standards PDF, the scope

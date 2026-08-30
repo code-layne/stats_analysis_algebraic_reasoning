@@ -58,7 +58,7 @@ here — a copy in this file goes stale.
 ## Decomposing a unit into lessons
 
 **Convention: one lesson per Knowledge-and-Skills cluster** — *not* one per lettered bullet. The
-letters are finer than a 55-minute class; group them into coherent chunks in the order the
+letters are finer than a 60-minute class; group them into coherent chunks in the order the
 standard lists them. Lesson id is `<unit>.<n>` where *n* counts lessons within the unit (Lesson
 3.1, 3.2, …). Always **present the proposed lesson map for the unit and confirm it with the user
 before authoring** — bullets merge and split depending on the class.
