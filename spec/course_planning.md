@@ -1,19 +1,27 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-30 — **LESSON 1.0 REGENERATED IN THE EFFL SHAPE. It is now the model
-EFFL lesson in the tree — mirror it, not a legacy lesson.** The legacy `notes`/`activity`/
-`exit_ticket` trio was folded into `experience/` (Activity · QuickNotes · Application) and the
-homework was reshaped into this course's Check Your Understanding set; the six legacy dirs are
-deleted. Cover, lesson plan, and deck were rewritten for EFFL. All five work products build,
-`make check` passes, and every page was eyeballed for stranded boxes. Earlier the same day —
-**UNITS 2–8 RE-SCAFFOLDED INTO THE EFFL SHAPE (57 lesson dirs)**; every stub lesson outside
-Unit 1 carries `cover / warmup / experience / homework / slides`. Previous run (2026-08-29) —
-**EFFL PORTED (build system + skill + skeletons).** See "EFFL — PORTED 2026-08-29" below for the
-shape and the decisions behind it. Previous substantive run (2026-08-07) — **Unit 1's assessment
-set and unit cover pair authored, built, and hand-verified**: `tests/practice_test` +
-`actual_test`, `test_keys/practice_test_key` + `actual_test_key`, `unit_cover/` (shared
-`body.tex`) and `unit_cover_key/`. Earlier: Lesson 1.8 (2026-08-07), Lessons 1.1–1.7
-(2026-08-06), Lesson 1.0 + the royal → **cerulean** palette replacement (2026-08-05).
+**Last updated:** 2026-08-31 — **EFFL SCRAPPED. THE COURSE IS BACK ON GRADUAL RELEASE**
+(warm-up / guided notes and practice / tiered group activity / teacher-led debrief / close and
+assign). The students rejected the experience-first model, so the two-day-old EFFL trial is over.
+This run: **Lessons 1.0 and 1.1 converted to the gradual-release shape** and **the
+`lesson-planning` skill rewritten** to match (SKILL.md, all four references, the scaffolder's
+defaults, and the worksheet skeleton). Lesson 1.0's `experience/` was unfolded into `notes/` +
+`activity/`; Lesson 1.1, which was still in the original pre-EFFL shape, lost its `exit_ticket/`
+and had its notes trimmed to fit the 20-minute block. Both build, both pass `make check`, and
+both were eyeballed page by page. **Lessons 1.0 and 1.1 are the models now — mirror them.**
+
+**The agreed period shape (user-confirmed 2026-08-31):**
+**5 warm-up · 20 guided notes & practice · 18 group activity · 7 debrief · 5 close & assign.**
+The **debrief is a phase, not a component** — lesson plan and deck only. **There is no exit
+ticket.** **Homework is authored for every lesson and is scored**; DeltaMath's statistics
+coverage is thin, so the packet is the default and DeltaMath is the teacher's per-lesson
+override, named aloud at Close & Assign.
+
+Previous runs — 2026-08-30: Lesson 1.0 regenerated in the EFFL shape, and units 2–8
+re-scaffolded into it (57 lesson dirs). 2026-08-29: EFFL ported (build system + skill +
+skeletons). 2026-08-07: Unit 1's assessment set and unit cover pair authored, built, and
+hand-verified. Earlier: Lesson 1.8 (2026-08-07), Lessons 1.1–1.7 (2026-08-06), Lesson 1.0 + the
+royal → **cerulean** palette replacement (2026-08-05).
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -23,160 +31,62 @@ set and unit cover pair authored, built, and hand-verified**: `tests/practice_te
 
 ## Current state
 
-### EFFL — PORTED 2026-08-29 (build system, skill, and skeletons only)
+### GRADUAL RELEASE — RESTORED 2026-08-31 (the current design)
 
-The course now runs the Math Medic **"experience first, formalize later"** model. Ported from
-`~/Mathematics/stats` (the AP Statistics EFFL implementation) and adapted to this course's
-decisions. **The port is infrastructure only — no lesson content has been regenerated yet.**
+The EFFL trial (2026-08-29 → 2026-08-31) is over. The course runs **gradual release**:
+*I do, we do, you do together.*
 
-**The SAAR EFFL shape** — `cover` · `warmup`(+key) · `experience`(+key) · `homework`(+key) · `slides`
+**Components.** A lesson is `cover` + `warmup` + `notes` + `activity` + `homework` + `slides`,
+each with a `_key` where keyed. `shared/lesson.mk`'s `STUDENT_ORDER` is
+`cover warmup experience notes activity exit_ticket homework` and was **not touched** — it
+already merges the gradual-release set in the right order, and it still merges the retired
+`experience`/`exit_ticket` dirs so any lesson still carrying them keeps building.
 
-| Part | Where | Budget |
-|---|---|---|
-| Activity — two scenarios, prior knowledge only, crux question in scenario 2 | `experience/` | ≤ 2 pp |
-| QuickNotes — the debrief fills it | `experience/` | ½ pp |
-| Application — worked together; compute → interpret → **justify** | `experience/` | ½–1 pp |
-| Check Your Understanding — ~6 items, new contexts | `homework/` | 1–2 pp |
+**Phases.** 5 warm-up / 20 guided notes & practice / 18 group activity / 7 debrief /
+5 close & assign, over the 55-minute period. Every lesson plan carries a *Lesson at a Glance*
+`fixedskillbox` with that table, placed after the Vocabulary box.
 
-55 minutes: **5 warm-up / 22 activity / 14 debrief / 10 application / 4 close & assign.**
+**The debrief is not a component.** It is a teacher-led phase in the plan's Debrief box and one
+deck frame: run the displayed group work in order while students correct their own in a second
+color, then a **whole-class cold check** and a three-pile formative read that decides how the
+next lesson opens. It replaces the exit ticket entirely.
 
-**Three user decisions this course does differently (2026-08-29):**
+**Lesson-plan box order.** Primary Objective → Priority Ideas & Skills → Vocabulary → **Lesson at
+a Glance** → Activate Prior Knowledge & Spiral Review → Hook → **Lesson — Guided Notes (20 min)**
+→ Explicit Instruction → Active Monitoring → **Group Work & Differentiation (18 min)** →
+**Debrief (7 min)** → Reinforcement & Extension → four teacher notes (`[Warm-Up]`,
+`[Guided Notes]`, `[Group Activity]`, `[Homework]`).
 
-1. **Experience & Formalize is THREE parts, not four.** There is no in-class CYU section —
-   the CYU questions moved into `homework`. The Application is the lesson's only in-class
-   practice *and* its formative check (there is no exit ticket).
-2. **The component is still labelled "Homework"** on the cover, the `\pageheader`, and the deck.
-   Only its *item style* changed to CYU-style problems.
-3. **Homework is SCORED** — the cover's score column carries a `\blank{}`, never `NA`.
-   Whether a lesson's practice is assigned as the packet pages or as the equivalent **DeltaMath**
-   set is a **per-lesson teacher decision** made aloud at Close & Assign, depending on DeltaMath
-   content availability. The packet pages are authored either way, so nothing in the packet, the
-   cover row, or the score column changes with that choice.
-   - *Contrast with the siblings:* AP Statistics keeps a separate unscored in-class CYU **and** an
-     AP-style homework; Algebra 2 dropped homework entirely. Copy neither.
+**No spoiler rule.** The vocabulary is taught, so the cover, warm-up, notes, and slides all name
+it outright. That rule died with EFFL, along with the 12pt `experience/` component and its
+`\answerspace{H}{}` macro — **every component is 10pt and uses `\writeline`/`\blank{}` again.**
 
-**What changed on disk**
+**Tiered group work is back.** Tier R / Tier A / Tier E over **one shared data set**, tiers
+assigned rather than chosen, in a **fresh context** the notes did not already work.
 
-- `shared/lesson.mk` — `experience` added to `STUDENT_ORDER` / `KEYED_PAIRS`, between `warmup`
-  and the pre-EFFL trio. Legacy `notes`/`activity`/`exit_ticket` stay in the order, so all 61
-  legacy lessons keep building untouched.
-- `shared/lesson_check.py` — `experience` added to `KEYED` (page parity now gated for it).
-  `ONE_PAGE` unchanged (`warmup`, and legacy `exit_ticket`).
-- `.claude/skills/lesson-planning/scripts/new_lesson.py` —
-  `DEFAULT_COMPONENTS = cover, warmup, experience, homework, slides`; `experience` added to
-  `KEYED` with its own skeleton branch; legacy components still scaffoldable by name.
-- **Skeletons** — new `experience.tex` (12pt, `\answerspace`, three parts) and
-  `experience_key.tex` (a structural mirror of the blank, so a fresh scaffold passes `make check`).
-  `cover.tex`, `lesson_plan.tex`, and `slides.tex` rewritten for EFFL — **and their stale
-  `royal`/`mist`/`mistmid`/`\royalheader` references fixed** (they had never been updated for the
-  2026-08-05 cerulean rename and would not have compiled). `test.tex`/`test_key.tex` had the same
-  stale `royal` and are fixed too. `worksheet{,_key}.tex` gained boxguard/work-rule hints.
-- **Skill docs** — `SKILL.md` (EFFL model, the three differences, the naming rule, spoiler rule,
-  timebox rule, `\answerspace`, a new **Retrofit** section for regenerating legacy lessons, and
-  updated guardrails), `references/components.md` (new *Experience & Formalize* spec; *Homework*
-  rewritten as the CYU set; legacy specs moved under a *Legacy components — pre-EFFL* heading;
-  EFFL cover packet table, deck flow, and lesson-plan section order), `references/conventions.md`
-  (12pt experience preamble + `\answerspace` spec, three teacher notes, EFFL plan order),
-  `references/build.md`, `references/course-workflow.md`.
-- Also corrected in passing: SKILL.md and course-workflow.md claimed the course spec did not
-  exist yet. It does (`spec/statistical_analysis_algebraic_reasoning.md`,
-  `spec/unit_lesson_breakdown.md`).
+#### The skill was rewritten this run
 
-**Verification (2026-08-29):** a throwaway EFFL scaffold built all five work products, page
-parity held (warmup 1/1, experience 2/2, homework 1/1), and `make check` passed. A legacy lesson
-(`unit01/lesson02`) rebuilt clean and passed `make check`. `python3 shared/lesson_check.py --all
---no-pages` → 66 lessons, no violations. The throwaway lesson was removed.
+`.claude/skills/lesson-planning/` now describes gradual release, not EFFL:
+- `SKILL.md` — frontmatter description, the model paragraph, "what a lesson is", the workflow
+  steps, the Retrofit section (now *converting to* gradual release, with separate recipes for an
+  EFFL lesson and a pre-EFFL one), and the guardrails.
+- `references/components.md` — the `Experience & Formalize` spec is replaced by full
+  **Guided notes** and **Group activity** specs; cover is four rows; the deck flow is
+  gradual-release; a **Dead shapes** section documents `experience/` and `exit_ticket/`.
+- `references/conventions.md` — 10pt everywhere, `\answerspace` retired, plan order rewritten,
+  four teacher notes, plus a new **"Page-for-page alignment"** subsection (see the gotcha below).
+- `references/build.md`, `references/course-workflow.md` — component order and content mapping.
+- `scripts/new_lesson.py` — `DEFAULT_COMPONENTS` is now
+  `cover,warmup,notes,activity,homework,slides`; `experience`/`exit_ticket` remain scaffoldable
+  by name for patching. Smoke-tested end to end: scaffold → `make all` → `make check`, all green.
+- `assets/skeletons/worksheet.tex` — TODO comment now covers notes / activity / homework.
 
-### EFFL — UNITS 2–8 RE-SCAFFOLDED 2026-08-30
+#### Units 2–8 are scaffolded in the WRONG shape
 
-The 57 lesson dirs in `unit02`–`unit08` were **re-scaffolded**, not retrofitted. They held no
-authored content: every one was a byte-identical 373-line TODO skeleton (verified — uniform
-per-file line counts, a `TODO` marker in every file, one md5 across all 57 once the title line
-was stripped, no `images/`). So the migration was lossless by construction:
-
-1. `rm -rf` the six legacy dirs (`notes`, `activity`, `exit_ticket` + `_key`s).
-2. Re-run `new_lesson.py --force --no-tests` with the lesson's own title and unit title,
-   parsed out of the existing `main.tex` `\LessonNumberName`/`\UnitNumberName` (all 57 parsed;
-   titles match `spec/unit_lesson_breakdown.md`).
-
-The scaffolder's `ensure()` left each unit's `Makefile` and its already-scaffolded `tests/`,
-`test_keys/`, `sample_test*/` untouched; `--no-tests` was passed as a belt-and-braces guard.
-
-**Verification:** all 57 lessons build all five work products (`make -C unitXX/lessonYY all`,
-run 6-way parallel) and `python3 shared/lesson_check.py --all --no-pages` passes across all 66
-lesson dirs. Every U2–U8 lesson now shows the identical component set
-`cover, experience, experience_key, homework, homework_key, slides, warmup, warmup_key`.
-
-**STILL NOT done — this is the remaining EFFL work:** **Unit 1's lessons 1.1–1.8**
-(`lesson01`–`lesson08`) are authored, ~2,300 lines each, and still legacy-shape.
-(`lesson00` was regenerated on 2026-08-30 — see the section above.) They need the *real*
-retrofit — folding activity → Activity, notes → QuickNotes, worked examples → Application,
-exit-ticket check → the Application's What-if, homework → the CYU set — **one lesson at a
-time** per the Retrofit section of `SKILL.md`. No bulk sweep: regenerating in bulk would
-re-flow the pagination of every verified lesson at once. Unit 1's assessment set and cover
-pair are unaffected by the shape change.
-
-### EFFL — LESSON 1.0 REGENERATED 2026-08-30 (the model lesson)
-
-**`unit01/lesson00` is the first authored EFFL lesson in the tree. Mirror it.** Until this run
-there was no EFFL lesson to copy — U2–U8 are skeletons, not authored lessons.
-
-**What the retrofit did** (per the Retrofit section of `SKILL.md`):
-
-| Legacy component | Folded into |
-|---|---|
-| `activity/` (Data Detectives, 3 tiers) | `experience/` **Activity** — 2 scenarios, 10 sub-questions, exactly 2pp |
-| `notes/` (6 sections + guided practice) | `experience/` **QuickNotes** — 6 fill-in bullets, ~½pp |
-| `notes/` worked examples + `exit_ticket/` check | `experience/` **Application** — Student Life Survey, ~1pp |
-| `homework/` | the scored **Check Your Understanding** set (unchanged spine, reshaped) |
-
-`notes`, `activity`, `exit_ticket` and their `_key`s are **deleted**. Cover, lesson plan, and
-deck rewritten for EFFL.
-
-- **Contexts.** Activity: Riverbend varsity basketball roster (6 players — jersey 12/7/23/4/17/21,
-  points 14/9/6/19/11/13, heights 64/71/75/68/70/72, 3 captains). Scenario 2 is the sports-blog
-  claim built on the **mean jersey number = 14** — the crux. Application: Riverbend Student Life
-  Survey (6 students; mean commute $108/6 = 18$ min; Grade $63/6 = 10.5$ is the second run at the
-  trap). Homework: Northgate Recreation Center, unchanged. **All arithmetic re-verified in Python.**
-- **The lesson's pivot is the digit reflex**, surfaced twice: activity 2b (jersey number) and the
-  Application's Grade column. Students sort columns into *amount* / *label* piles in their own
-  words; the debrief attaches *quantitative* / *categorical* to those piles.
-- **Spoiler rule verified on the rendered PDFs**, not just the source: `pdftotext` on the cover,
-  the warm-up, and experience pages 1–2 returns **zero** hits for *categorical*, *quantitative*,
-  *statistical question*, *individual*, or *variable*. The deck's pre-debrief frames are clean too.
-- **Page counts:** cover 1, warmup 1/1, experience **3/3**, homework 2/2; plan 6pp, deck 11 frames,
-  student and key packets both 10pp. `make -C unit01/lesson00 all` and `check` both exit 0.
-
-**Getting `experience/` to 3 pages took two rounds of mirrored shaving** — it first built at 4
-with the Application tail stranded as a ~1.2in stub on page 4 (the exact failure `make check`
-cannot see). What worked, in order: dropped the scenario-1 lead line and one redundant clause from
-the headlinebox; item **a** rewritten to 2 lines; item **f**'s `work` block replaced by an inline
-`\blank{}` (the percent is still theirs, the 1.2in block is gone); `itemsep` 8pt→6pt in both
-scenarioboxes; the sort table `arraystretch` 1.5→1.3 with a `>{\raggedright\arraybackslash}`
-middle column (which also fixed an ``Amount or la-bel?'' hyphenation); QuickNotes `itemsep`
-7pt→5pt with narrowed fills so bullets stopped wrapping; `\vspace{-6pt}` around the Application
-table; `\answerspace` 2.6→2.2cm, 1.8→1.6cm, 2.0→1.8cm with the key answers shortened to match.
-Every one of these was applied to the blank **and** the key.
-
-**New gotchas found this run:**
-
-- **The `\vspace` around the Application table is load-bearing.** Relaxing `\vspace{-6pt}` to
-  `-2pt` (8pt total) flips `experience` back to 4 pages. There is under 8pt of slack on page 3 —
-  re-measure before touching any spacing in that box.
-- **A `sed -n '/\begin{work}/,/\end{work}/p'` work-rule diff gives a false DIFFER on
-  `experience_key`**, because the key's header comment contains the literal text
-  `\begin{work}` and opens a bogus range. Strip comment lines (`grep -v '^\s*%'`) first.
-- **`\MeetingLength` is `60 minutes` course-wide while the EFFL phase split totals 55 — and
-  that is fine (user decision, 2026-08-30).** The phase minutes are not required to sum to the
-  meeting length. Do **not** edit `shared/saar-article.sty` to reconcile them, and do not add a
-  note to the plan explaining the gap; a reconciliation line was written this run and then
-  removed at the user's direction.
-- **Check the deck for overfull `\vbox`.** The Application frame overflowed its frame by 6.4pt
-  and nothing in `make check` catches it; `grep -c 'Overfull \vbox' target/.../slides/main.log`
-  does. Fixed with `\footnotesize` on the table and a shorter third bullet.
-- **The two-`\writeline` pattern flagged in the gotchas below was live in 1.0's homework item 7**
-  and is now converted to `\writelines{2}`. Homework held at 2/2. 1.0 is clean of it; 1.1–1.8
-  may still carry it.
+The 2026-08-30 run re-scaffolded 57 lesson dirs across units 2–8 with `cover / warmup /
+experience / homework / slides`. **They are all empty skeletons** — no authored content — so the
+fix is mechanical: for each lesson, scaffold `notes,activity` and delete `experience`/
+`experience_key`. Nothing is lost. Do it as part of authoring each unit, not as a bulk sweep.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
 
@@ -210,24 +120,39 @@ user redirected to a third blue. No burgundy remains in the tree.)*
 
 - `spec/statistical_analysis_algebraic_reasoning.md` is the **confirmed** course map: 8 units,
   58 content lessons + one Lesson 0 per unit (66 lesson dirs), semester split after Unit 4.
-- **Lesson 1.0 — "Unit Launch: Study Design" — is COMPLETE and is the EFFL MODEL LESSON**
-  (regenerated 2026-08-30; see "EFFL — LESSON 1.0 REGENERATED" above). All components authored,
-  built, and passing the gate. **Mirror this lesson, not a legacy one.**
+- **Lesson 1.0 — "Unit Launch: Study Design" — is COMPLETE and is a GRADUAL-RELEASE MODEL
+  LESSON** (converted 2026-08-31 from the one-day-old EFFL shape). **Mirror this lesson.**
   - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e, PS.DC.2, PS.DC.3).
   - Scope: data-in-context (who/what/units), individuals vs. variables, **categorical vs.
-    quantitative**, the numbers-that-are-really-labels trap (grade level, jersey #, ZIP),
-    statistical questions, and a preview of the 4-stage data cycle. The cycle is *previewed*
-    only — Lesson 1.1 teaches it formally.
-  - Contexts: Riverbend Athletics roster + the sports-blog jersey claim (Activity), Riverbend
-    HS Student Life Survey (Application), Northgate Recreation Center (homework CYU set). All
-    arithmetic verified in Python.
-  - Components: `cover`, `warmup`(+key), `experience`(+key), `homework`(+key), `slides`. The
-    legacy `notes`/`activity`/`exit_ticket` dirs are deleted.
-  - Page counts: warmup 1/1, **experience 3/3**, homework 2/2; plan 6pp, deck 11 frames,
-    student and key packets 10pp each.
-  - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**.
-- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE.** All components
-  authored, built, and passing the gate.
+    quantitative**, and the **digit test** for numbers that are really labels (jersey #, ZIP,
+    grade level), plus statistical questions.
+  - Contexts: Riverbend Athletics roster + the sports-blog jersey claim (**guided notes**),
+    Riverbend HS Student Life Survey (**practice box**), the Riverbend cross-country meet card
+    + a recap-blog bib-number claim (**group activity**, a deliberately fresh context),
+    Northgate Recreation Center (homework). All arithmetic verified: points mean $72/6=12$,
+    jersey mean $84/6=14$, height mean $420/6=70$, captains $3/6=50\%$, commute mean
+    $108/6=18$, grade mean $63/6=10.5$; meet card — bib mean $115/5=23$, finish mean
+    $120/5=24$, medaled $2/5=40\%$.
+  - Notes sections: 1. Data are numbers with a context · 2. Individuals and variables ·
+    3. Two types of variables · 4. **The digit test** (the crux) · 5. Statistical questions ·
+    Guided Practice. Budget 3/3/5/5/3 + 2 = 20 min.
+  - **The crux is earned, not announced:** section 3 classifies Jersey \# *last*, takes a hand
+    vote, records the split, and **does not settle it**; section 4 settles it by producing a
+    correct mean that describes nobody. Settling it early collapses the lesson into a
+    definition to copy.
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `activity`(+key), `homework`(+key),
+    `slides`. `experience/` and `experience_key/` are deleted.
+  - Page counts: warmup 1/1, **notes 4/4**, **activity 2/2**, homework 2/2; plan 6pp, deck 13
+    frames, student and key packets 12pp each.
+  - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**; every
+    page eyeballed — no stranded boxes, and blank/key aligned heading-for-heading.
+- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE and is the second
+  GRADUAL-RELEASE MODEL LESSON** (converted 2026-08-31). It was never EFFL — it kept the
+  original pre-EFFL shape — so the conversion was: delete `exit_ticket/` + `exit_ticket_key/`,
+  add the *Lesson at a Glance* phase table, replace the plan's *Individual Work & Assessment*
+  box with a **Debrief (7 min)** box that folds the exit ticket's stage-2/stage-4 item in as a
+  whole-class cold check, add an activity-launch frame and a debrief frame to the deck, and
+  **trim the notes to fit the 20-minute block**.
   - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e in the 1.2 hand-off).
   - Scope: the four stages named formally and what each *hands to the next*; the three tests
     for a question (answers vary / group named / measurement named) and repairing one that
@@ -239,8 +164,15 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     walk 12, bike 6, scaled to 900), Riverbend breakfast cart (activity; 40 students), Lakeside
     Farmers Market (homework; 50 shoppers, 800 Saturday total). All arithmetic verified in
     Python.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 5pp, slides 9 frames. `make -C unit01/lesson01 all` and `check` both exit 0.
+  - **Notes trimmed to fit 20 minutes** (they were paced at ~40 in the old teacher note):
+    section 6's four broken-study scenarios were cut — they duplicated activity Tier A item 3,
+    where groups now have to argue them instead of copying them — and the practice box's
+    scale-to-900 part (c) was cut as redundant with section 5. New pacing: 6/5/6/1 + 2 = 20 min.
+  - Page counts: warmup 1/1, **notes 3/3**, activity 2/2, homework 2/2; plan 6pp, deck 11
+    frames, student and key packets 12pp each. `make -C unit01/lesson01 all` and `check` both
+    exit 0; pages eyeballed.
+  - The deck's "cycle turns" frame was **de-spoilered** — it used to list the four broken
+    studies that are now activity Tier A item 3, which would have handed groups the answers.
 - **Lesson 1.2 — "Populations, Samples, Parameters, and Statistics" — is COMPLETE.** All
   components authored, built, and passing the gate.
   - Standards: **PS.DC.1d, PS.DC.1e** (PS.DC.1b carried forward in the conclusion items).
@@ -541,44 +473,103 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 
 ## Next steps
 
-0. ~~Author the first real EFFL lesson~~ — **DONE 2026-08-30.** `unit01/lesson00` is the
-   model. Open it before authoring or regenerating anything; `references/components.md` is
-   the spec, but 1.0 is the live reference for voice, page budget, and the mirrored-shave
-   technique that holds `experience/` to 3 pages.
-0b. **Retrofit the other 8 Unit 1 lessons (1.1–1.8), one at a time.** This is the only
-   remaining EFFL migration work; U2–U8 are already EFFL-shaped. Do them individually — a
-   bulk pass would re-flow every verified lesson's pagination at once. Budget real time for
-   the page-fitting: 1.0 needed two rounds of mirrored shaving to get `experience/` from 4
-   pages (with a stranded stub the gate could not see) down to 3.
-0c. **Also convert the two-`\writeline` pattern** wherever 1.1–1.8 still carry it (see the
-   gotcha below). 1.0's last instance was fixed this run.
-1. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus
-   `lesson00`. Nothing in U2–U8 is authored (the dirs are EFFL skeletons). Confirm the U2
-   lesson map with the user before authoring; the scaffolded titles in
-   `unit02/lesson*/main.tex` are the proposal.
-   Note the hand-off already written into 1.8's homework teacher note: Unit 2 is where the
-   variable becomes a number and the bars start touching.
-2. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint above
-   ($14$/$16$/$40$/$30$, $33$ items, 6 pages) and the `unit_cover` + `unit_cover_key`
-   pair (shared `body.tex`, scoring notes on the key's page 2) are the pattern; only the
-   contexts and numbers change. `\setlength{\workrowsep}{5pt}` in every test preamble is what
-   gives `work` blocks handwriting room without pushing the form to 7 pages — keep it
-   identical in the blank and the key.
-3. **A course-wide final (`finals/`) is still not scaffolded.** With Unit 1's forms in place
-   there is now a working model for the four flat subdirs; wait until more units exist so the
-   exam can actually be cumulative.
-4. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8
-   and Unit 1's assessments; re-check its status table and counts whenever a lesson lands,
-   since it is the doc most likely to go stale.
-5. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5;
-   1.3 as PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10;
-   1.7 as PR #11; 1.8 as PR #12. **The Unit 1 assessment set and cover pair are authored,
-   built, and verified but not yet committed** — this run stopped short of committing because
-   commits/pushes are only made on request. Note `unit01/sample_test/main.pdf` and
-   `unit01/sample_test_key/main.pdf` are newly published drop-ins and are **untracked**; they
-   belong in the commit, since `unit.mk` reads them from the source tree with no compile step.
+0. ~~Convert 1.0 and 1.1 to gradual release~~ and ~~rewrite the skill~~ — **DONE 2026-08-31.**
+   **Lessons 1.0 and 1.1 are the models.** Open both before authoring or converting anything;
+   `references/components.md` is the spec, but those two are the live reference for voice, page
+   budget, and the per-section minute budgeting that keeps the notes inside 20 minutes.
+1. **Convert the rest of Unit 1 — lessons 1.2 through 1.8 — one at a time.** They are all in
+   the original pre-EFFL shape (`notes` / `activity` / `exit_ticket`), so each is the *cheap*
+   conversion: follow the "Converting a pre-EFFL lesson" recipe in the skill's Retrofit section.
+   Per lesson: delete `exit_ticket/` + `exit_ticket_key/` and their `.stamps`/`target` dirs, drop
+   the Exit Ticket cover row and teacher note, swap *Individual Work & Assessment* for a
+   **Debrief (7 min)** box folding the exit ticket's conceptual item in as a cold check, add the
+   *Lesson at a Glance* table, add activity-launch + debrief frames to the deck and put the
+   packet-or-DeltaMath line on its closing frame, **re-time the notes to 20 minutes — trimming
+   if they do not fit**, and **collapse the three tiers into one whole-class activity** of ~6–7
+   items in two guarded parts plus an `extensionbox` (cut, do not concatenate — see the sizing
+   trap above). 1.2–1.8 all still carry Tier R / Tier A / Tier E boxes. Every one of 1.2–1.8 was written against a longer notes block,
+   so expect to cut. Do them individually; a bulk pass would re-flow every verified lesson at once.
+2. **Fix the Unit 2–8 skeletons as you author each unit** (see "Units 2–8 are scaffolded in the
+   WRONG shape"): scaffold `notes,activity` and delete `experience`/`experience_key`. They are
+   empty, so nothing is lost.
+3. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus `lesson00`.
+   Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before authoring; the
+   scaffolded titles in `unit02/lesson*/main.tex` are the proposal. Note the hand-off already
+   written into 1.8's homework teacher note: Unit 2 is where the variable becomes a number and
+   the bars start touching.
+4. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint
+   ($14$/$16$/$40$/$30$, $33$ items, 6 pages) and the `unit_cover` + `unit_cover_key` pair
+   (shared `body.tex`, scoring notes on the key's page 2) are the pattern; only the contexts and
+   numbers change. `\setlength{\workrowsep}{5pt}` in every test preamble is what gives `work`
+   blocks handwriting room without pushing the form to 7 pages — keep it identical in the blank
+   and the key. **The tests were untouched by both redesigns** — they have no pedagogy in them.
+5. **A course-wide final (`finals/`) is still not scaffolded.** Wait until more units exist so
+   the exam can actually be cumulative.
+6. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8 and
+   Unit 1's assessments, but **still describes the EFFL component set** — fix it on the next run
+   that touches it. It is the doc most likely to go stale.
+7. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as
+   PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11;
+   1.8 as PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16. **The Unit 1 assessment
+   set and cover pair are authored, built, and verified but still not committed.** Note
+   `unit01/sample_test/main.pdf` and `unit01/sample_test_key/main.pdf` are untracked drop-ins and
+   belong in that commit, since `unit.mk` reads them from the source tree with no compile step.
 
 ## Gotchas found this session
+
+### Blank/key page alignment is NOT what `make check` verifies (found 2026-08-31)
+
+The gate compares a component with its key by **total page count only**. Two files can both be
+4 pages and still break in different places, so the teacher's page 3 is not the student's page 3.
+
+**Cause.** In the guided notes' `vocabbox`, the blank's `\termblanklong{Term}` reserves two ruled
+lines per term while the key's `\vocabans{Term}{definition}` prints a wrapped definition that is
+usually shorter. The key's page 1 gains an inch or two, the first `notesbox` floats up onto it,
+and every section after it sits one page early. **Lesson 1.1 shipped this way** — it was not
+introduced by this run's edits.
+
+**Fix.** `\boxguard[20]` before the first `notesbox` after the `vocabbox`, in the blank **and**
+the key. Verify by comparing per-page headings, not page counts:
+
+```
+for p in 1 2 3 4; do
+  diff <(pdftotext -f $p -l $p notes/main.pdf -     | grep -oE '^[0-9]+\. [A-Z].*') \
+       <(pdftotext -f $p -l $p notes_key/main.pdf - | grep -oE '^[0-9]+\. [A-Z].*') \
+    && echo "p$p ok"
+done
+```
+
+**Known limit.** `\boxguard` is `\Needspace`, and `\Needspace` is **inert inside a breakable
+`tcolorbox`** (it is documented as such in `saar-boxes.sty`). So drift *within* one long box —
+a homework `notesbox` running six items across two pages — cannot be fixed this way. Both 1.0's
+and 1.1's homework still drift by about half an item on page 2. Reflow the items or accept it;
+do not fake it.
+
+### A tall table closing the last box strands a page (found 2026-08-31)
+
+Lesson 1.0's group activity ran to three pages because the final 5-row `tabularx` spilled one
+inch onto page 3 — the exact stranded stub `boxguard` exists to prevent and `make check` cannot
+see. Converting that table to three inline `\blank{}` lines brought the component to two pages.
+**Prefer inline blanks over a tall table at the end of a box**, and always render the activity to
+PNG and look at the last page.
+
+### Splitting a long box is how you align blank and key (found 2026-08-31)
+
+`\boxguard` is inert inside a breakable `tcolorbox`, so a component built as ONE long box has no
+lever for controlling where it breaks — and the key breaks elsewhere than the blank whenever an
+`\ans{}` wraps where a `\blank{}` did not. The fix is structural: **split the box in two at a
+real phase change and guard the second half** (`\boxguard[30]`), continuing the item numbering
+with `\begin{enumerate}[..., start=N]`. This is what got 1.0's and 1.1's activities and 1.0's
+homework to align page-for-page.
+
+Two things that do *not* work, both tried: shortening the wrapping `\ans{}` (the answer space
+begins mid-prompt-line, since `\writeline` is `\hrulefill`, so there is almost no width to play
+with), and `\par\writeline` / `\par\ansline` to force a full-width answer line (helps, but does
+not close a one-line gap accumulated earlier in the box).
+
+**Still open:** lesson 1.1's homework page 2 is off by one line between blank and key. The
+item-boundary split that would fix it pushes the component to 3 pages, which is worse. Left as
+is, deliberately.
 
 - **`sed -i '' -e 's/\bfoo\b/'` silently does nothing on macOS** — BSD sed has no `\b`. Use
   `perl -pi -e` for any word-boundary rename.

@@ -46,7 +46,7 @@ A practical loop per lesson: find the standard's lettered skills in the approved
 read the matching pages of the Understanding the Standards PDF for scope and notation → choose a
 **data context students can work from prior knowledge alone** → build the Activity's two scenarios
 around it (scenario 2 carries the crux question) → decide which formal terms the debrief attaches
-in QuickNotes → build the Application and the homework CYU set around a
+in the guided notes → build the practice box and the homework around a
 compute-then-interpret-then-justify spine.
 
 ## The course units
@@ -80,8 +80,9 @@ write in the course's contextual, modeling-first voice.
 | **Primary Objective** (lesson plan) | What students will be able to *do / model / interpret / justify* with this topic, in student terms |
 | **Priority Ideas & Skills** (gold box) | Left: the lettered Knowledge & Skills this lesson covers, in student language. Right: "Key Understandings" — the *why*, drawn from the matching "Understanding the Standards" pages |
 | **Vocabulary, Concepts & Theorems** | Terms and notation the standard introduces (use `\TallMath{...}` for tall formulas) |
-| **Activity data context** (Experience & Formalize) | A scenario from the course's application domains, worked from prior knowledge only — never naming the lesson's formal vocabulary (the spoiler rule) |
-| **QuickNotes terms** | The formal vocabulary and notation the debrief attaches to what the groups found |
+| **Guided-notes context** | A scenario from the course's application domains, reused across several notes sections so one data set carries the whole lesson |
+| **Group-activity context** | A *second*, fresh scenario on the same skills, so the group work is transfer rather than repetition |
+| **Vocabulary-box terms** | The formal vocabulary and notation, taught outright in the notes and listed in the plan's Vocabulary box |
 | **Learning Targets** (cover, "I can…") | One target per lettered skill covered, reworded as "I can …" |
 | Application / homework CYU contexts | Real or realistic data and scenarios — compute *then* interpret and justify |
 | Connections line | The unit's core idea, **the standard codes covered**, and links to prior/next lessons (spiral) |

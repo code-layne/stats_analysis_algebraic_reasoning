@@ -1,0 +1,162 @@
+%! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Group Activity (Answer Key)
+% ONE activity for the whole class — no tiers. Every group works items 1-7 in 18 minutes;
+% the extension box is for groups that finish early, not a separate assignment.
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.0}{Group Activity --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
+
+\vspace{0.15in}
+
+\begin{headlinebox}{frost}
+\small
+\textbf{Data Detectives --- The Riverbend Cross-Country Meet.} The athletic department kept a
+card on every runner at Saturday's meet, and a recap blog has already made a claim about it.
+Work with your group. \textbf{Every answer needs a reason}, and \textbf{every conclusion has to
+name the group it applies to.} ``It's words'' and ``it's numbers'' are not reasons.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} l c c l c @{}}
+\multicolumn{5}{c}{\textbf{The Meet Card}} \\
+\toprule
+\textbf{Runner} & \textbf{Bib \#} & \textbf{Finish time (min)} &
+\textbf{Team color} & \textbf{Medal?} \\
+\midrule
+Amara & 31 & 22 & Blue & Yes \\
+Ben   & 18 & 26 & Gold & No  \\
+Cruz  & 45 & 24 & Blue & No  \\
+Dana  &  9 & 21 & Gold & Yes \\
+Eli   & 12 & 27 & Blue & No  \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.06in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Part 1 --- Read the data},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt]
+
+  \item How many \textbf{individuals} does the meet card describe? \ans{5}
+        \quad Not counting ``Runner,'' how many \textbf{variables}? \ans{4}
+
+  \item Classify each recorded variable, and give the reason you used.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabularx}{0.95\linewidth}{@{} p{3cm} p{3cm} X @{}}
+        \toprule
+        \textbf{Variable} & \textbf{Type} & \textbf{Our reason} \\
+        \midrule
+        Bib \#           & \ans{categorical} & \ans{it identifies a runner; its mean is meaningless} \\
+        Finish time      & \ans{quantitative} & \ans{it measures an amount, in minutes} \\
+        Team color       & \ans{categorical} & \ans{Blue and Gold are group names} \\
+        Medal?           & \ans{categorical} & \ans{Yes/No are labels, not amounts} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Find the mean finish time for these five runners.
+
+        \begin{work}
+          \bar{x} &= \dfrac{22+26+24+21+27}{5} \\
+                  &= \dfrac{120}{5} \\
+                  &= 24 \text{ minutes}
+        \end{work}
+
+  \item ``Medal?'' is categorical, so a mean is not available. Summarize it the
+        other way --- what percent of these runners medaled?
+
+        \begin{work}
+          \dfrac{2}{5} &= 0.40 \\
+                       &= 40\%
+        \end{work}
+
+  \item Write one sentence saying what your answer to item 3 describes. Name the
+        group and the units.
+        \ansline{The five Riverbend runners on the meet card had a mean finish time of 24 minutes.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40, breakable,
+    title=\textbf{Part 2 --- Judge the claim},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=4pt, start=6]
+
+  \item The recap blog wrote:
+
+        \begin{center}
+        \textit{``Riverbend's mean bib number was 23 --- a low number for a varsity
+        meet. This is a young, inexperienced squad.''}
+        \end{center}
+
+        \textbf{(a)} Check the blog's arithmetic.
+
+        \begin{work}
+          \bar{x} &= \dfrac{31+18+45+9+12}{5} \\
+                  &= \dfrac{115}{5} \\
+                  &= 23
+        \end{work}
+
+        \textbf{(b)} The arithmetic is correct. \textbf{Is the conclusion?} Use
+        the type you assigned to ``Bib \#'' in item 2 to explain what is wrong.
+        \ansline{No. Bib \# is categorical --- it only identifies a runner --- so its mean is not}
+        \ansline{an amount of anything. No runner wears bib 23, and it says nothing about age.}
+
+  \item The coach says: ``Bib numbers are numbers, so of course you can average
+        them. Team colors are words, so of course you cannot.'' The coach reaches
+        the right answer for ``Team color'' but the \emph{wrong reason} for
+        ``Bib \#.'' State the rule the coach should be using instead.
+        \ansline{Ask whether arithmetic on the variable means anything --- not whether it looks numeric.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\boxguard
+\begin{extensionbox}
+\small
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt]
+
+  \item The school newspaper prints: \textit{``Riverbend runners average 24 minutes ---
+        the fastest squad in the district.''} The arithmetic behind the $24$ is correct.
+        Name \emph{two} separate things this sentence claims that the meet card cannot
+        support.
+        \ansline{(1) The 24 minutes describes only these five runners, not every Riverbend runner.}
+        \ansline{(2) No other district team was measured, so ``fastest in the district'' has no data.}
+
+  \item Two reporters cover the same five runners. Reporter 1 records \emph{how many
+        minutes} each runner took. Reporter 2 records only whether each runner finished
+        \emph{under 25 minutes} --- yes or no.
+
+        Type for Reporter 1: \ans{quantitative} \hfill
+        Type for Reporter 2: \ans{categorical}
+
+        Same runners, same race. Explain how the \emph{question asked} --- not the
+        runners --- decided the type of data.
+        \ansline{Reporter 1 asked for an amount; Reporter 2 asked for a yes/no label you can only count.}
+
+\end{enumerate}
+\end{extensionbox}
+
+\end{document}

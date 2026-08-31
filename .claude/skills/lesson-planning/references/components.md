@@ -2,27 +2,25 @@
 
 The spec for authoring each file after scaffolding. The scaffolder (`scripts/new_lesson.py`)
 gives you a correctly-preambled skeleton with TODO markers; this file says what fills them.
-**Always also open a real built EFFL lesson as the gold reference** — these specs summarize the
+**Always also open lessons 1.0 and 1.1 as the gold reference** — these specs summarize the
 pattern, but the live project is authoritative. For macros and boxes
 see `references/conventions.md`; for where content comes from, `references/course-workflow.md`.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
-[**Experience & Formalize**](#experience--formalize) · [Homework](#homework) ·
-[Slides](#slides) · [Legacy components](#legacy-components--pre-effl) ·
-[Answer-key discipline](#answer-key-discipline)
+[**Guided notes**](#guided-notes) · [**Group activity**](#group-activity) · [Homework](#homework) ·
+[Slides](#slides) · [Dead shapes](#dead-shapes) · [Answer-key discipline](#answer-key-discipline)
 
-**A new lesson is `cover` + `warmup` + `experience` + `homework` + `slides`.** That is the EFFL
-(experience first, formalize later) shape. `notes`, `activity`, and `exit_ticket` are pre-EFFL —
-the build still merges them so the 60+ legacy lessons keep working, but do not author new ones.
-See [Legacy components](#legacy-components--pre-effl).
+**A new lesson is `cover` + `warmup` + `notes` + `activity` + `homework` + `slides`.** That is
+the gradual-release shape. The **debrief is a phase, not a component** — it lives in the lesson
+plan and the deck only — and **there is no exit ticket**. `experience/` (the scrapped EFFL
+component) and `exit_ticket/` still build if a lesson has them, but do not author either.
+See [Dead shapes](#dead-shapes).
 
 General rules:
 - Student components preamble with `saar-article` + `saar-boxes`; keys with
-  `saar-article` + `saar-key`. **The `experience` component is 12pt; everything else is 10pt.**
-- **The spoiler rule:** nothing the student sees *before* the activity — the cover, the warm-up,
-  the deck's learning-targets frame — may pre-name the vocabulary the debrief will attach. Write
-  targets in plain language ("how spread out the values are", not "standard deviation"). The
-  teacher-facing lesson plan keeps the formal vocabulary and the standard codes.
+  `saar-article` + `saar-key`. **Every component is 10pt.**
+- **There is no spoiler rule.** The vocabulary is taught, so the cover, the warm-up, the notes,
+  and the slides may all name it outright.
 - Keep the **key structurally identical** to its blank — it is the blank with answers filled in.
 - **Secondary-school audience, standards-sourced.** Take the scope from the standard's lettered
   Knowledge & Skills and the matching "Understanding the Standards" pages, then write to level:
@@ -54,51 +52,61 @@ order:
    reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`
    **only if the warm-up is a prefab PDF** (authored warm-ups stay text-only).
 6. **Lesson at a Glance — `\MeetingLength`** — `fixedskillbox{frost}`, a four-column `tabularx`
-   (Phase / Min / Students / Teacher) carrying the five EFFL phases:
-   **Warm-Up 5 · Experience & Formalize: Activity 22 · Debrief: Formalize 14 · Application 10 ·
-   Close & Assign 4.** `fixedskillbox` because a `tabularx` must not split.
-7. **Experience & Formalize — The Activity** — `skillbox{frost}`: the 2-minute launch script,
-   then `multicols{2}` — *what students do* (the arc of the two scenarios, and which item is the
-   **crux question**) beside *what the teacher does* (circulate; the questions, cues, and prompts
-   to give instead of answers; which group work to display).
-8. **Debrief — Formalize** — `skillbox{frost}`: the ordered "red ink" moves, each attaching a
-   formal name to something a group already wrote, plus the QuickNotes walkthrough and why this
-   order.
-9. **Application** — `skillbox{frost}`: the one problem worked together, the three questions the
-   teacher asks while students hold the pen, and how to sort the Interpret/What-if responses.
-   **This is the lesson's formative check** — there is no exit ticket.
-10. **Watch For** — `skillbox{redbox}`: misconceptions keyed to item numbers; cold-call prompts.
-11. **Homework — Check Your Understanding** — `skillbox{goldbox}`: the ~6 CYU items and what each
-    targets, how it is scored and when it is due, and **whether today's practice is the packet
-    pages or the equivalent DeltaMath set** (see the Homework spec below).
-12. **Close & Preview** — `skillbox{goldbox}`: name what changed today, the **Connections** line
-    carrying the lettered standard codes covered, and a one-line preview of the next lesson.
-13. **Teacher notes** — `\begin{teachernote}[Component]`, one per component in packet order:
-    **[Warm-Up]**, **[Experience & Formalize]** (Activity / Debrief / Application), **[Homework]**.
-    Three notes, not five. Teacher prose lives here and **never** in a `_key`.
+   (Phase / Min / Students / Teacher) carrying the five phases:
+   **Warm-Up 5 · Guided Notes & Practice 20 · Group Activity 18 · Debrief 7 · Close & Assign 5.**
+   `fixedskillbox` because a `tabularx` must not split. Place it after the Vocabulary box and
+   before Activate Prior Knowledge. **This table is a contract** — the Lesson box's per-section
+   minutes must sum to 20, and the activity must be workable in 18.
+7. **Hook** — `skillbox{frost}`: what goes on the board before anyone sits down, the question to
+   ask, and what to do with the answers. End it *unresolved* when the lesson's crux is a
+   misconception the notes will settle.
+8. **Lesson — Guided Notes (20 min)** — `skillbox{frost}`, `multicols{2}`: one bolded paragraph
+   per notes section, **each carrying its own minute budget**, saying what to model (*I do*),
+   what to fill in with the class (*we do*), and what to release (*you do*). Name which section
+   is **the lesson** and which to compress if you run behind.
+9. **Explicit Instruction: \<the core move\>** — `skillbox{frost}`, a two-column `tabularx`:
+   numbered **steps to give verbatim** beside one fully **worked example**, plus a contrast case.
+10. **Active Monitoring** — `skillbox{redbox}`: misconceptions keyed to item numbers across the
+    notes *and* the activity; the answers to reject; cold-call prompts.
+11. **Group Work (18 min)** — `skillbox{redbox}`: one paragraph on **the arc** (which items are
+    the fast on-ramp, which is the **crux**, which is hardest), then the **circulation prompts**
+    (questions and cues, not answers) keyed to item numbers, and **which student work to display
+    for the debrief**. No tiers to describe — everyone works the same items.
+12. **Debrief (7 min) — what goes on the board** — `skillbox{frost}`: the ordered walkthrough of
+    the displayed work (students correct their own in a second color), a **whole-class cold check
+    for understanding** with its correct answer, and the **formative read** — the three piles to
+    sort responses into and how the next lesson opens from them. This replaces the exit ticket.
+13. **Reinforcement & Extension** — `skillbox{goldbox}`: the ~6 homework items and what each
+    targets, how it is scored and when it is due, **whether today's practice is the packet pages
+    or the DeltaMath override**, the optional extension, the next-lesson preview, and the
+    **Connections** line carrying the lettered standard codes covered.
+14. **Teacher notes** — `\begin{teachernote}[Component]`, one per component in packet order:
+    **[Warm-Up]**, **[Guided Notes]**, **[Group Activity]**, **[Homework]**. Four notes — there is
+    no note for the debrief, which is fully specified in its own box. Teacher prose lives here and
+    **never** in a `_key`.
 
 ## Cover
 
 `cover/main.tex` — student-facing front page of the packet. No key. Structure:
 - Full-bleed cerulean banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
-- `learningtargetbox` — an "I can…" list, one target per priority idea/skill, **spoiler-free**:
-  plain-language descriptions of what students will be able to *do*, never the formal vocabulary
-  the debrief will attach. The lettered standard codes belong in the lesson plan, not here.
+- `learningtargetbox` — an "I can…" list, one target per priority idea/skill, **naming the
+  formal vocabulary outright**. The lettered standard codes belong in the lesson plan, not here.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score blank)
-  with a Total row. In an EFFL lesson that is **three rows**:
+  with a Total row — **four rows**:
 
   | # | Component | Description | Score |
   |---|---|---|---|
-  | 1 | Warm-Up | spoiler-free one-liner | `\blank{1.2cm}` |
-  | 2 | Experience & Formalize | *Activity Title* — scenarios with your group, then QuickNotes and an application we work together | `\blank{1.2cm}` |
-  | 3 | Homework | Check Your Understanding — practice in new contexts | `\blank{1.2cm}` |
+  | 1 | Warm-Up | what the spiral items rehearse | `\blank{1.2cm}` |
+  | 2 | Guided Notes | the ideas the notes build, in order | `\blank{1.2cm}` |
+  | 3 | Group Activity | *Activity Title* — the data set or scenario | `\blank{1.2cm}` |
+  | 4 | Homework | the new context, one line | `\blank{1.2cm}` |
 
   **Homework is scored**, so its score cell is a `\blank{}` — never `NA`. The row never changes
   with the packet-vs-DeltaMath choice; that is announced aloud at Close & Assign.
-- `remindbox` ("Keep in Mind") — describes the **EFFL process only** and stops there. No content
-  preview, no formal vocabulary: *"you and your group will work out … using what you already
-  know — and only afterward will we name what you found."*
+- `remindbox` ("Keep in Mind") — the lesson's **content takeaway** in three or four sentences:
+  the rule, the test to apply, and the trap to avoid, stated in the formal vocabulary. This is
+  the page a student flips back to while doing the homework.
 
 ## Warm-up
 
@@ -108,74 +116,82 @@ prior lessons' skills). Frequently a **prefab PDF**: if so, drop it in as
 plan can embed its thumbnail. If authored: 3–5 quick problems with work space (`\vspace`), **no
 name row** (namestrip), and the spiral review stays text-only in the plan. Key mirrors with `\ans`.
 The warm-up must fit **one page**, blank and key.
-**Spoiler rule:** the warm-up runs *before* the activity, so it reviews prerequisite skills and
-plants seeds without naming any of the lesson's formal vocabulary. The lesson plan's spiral-review
-box says which formal idea each item seeds; the student page does not.
+Each item should be a **tool the notes pick up again** — the plan's spiral-review box names which
+notes section reuses it, so the warm-up reads as a running start rather than a detour. Say so when
+you collect it.
 
-## Experience & Formalize
+## Guided notes
 
-**The component's name is "Experience & Formalize"** — that is what the cover, the packet header,
-the deck, and the lesson plan call it. **The directory stays `experience/`**: it is a build
-identifier listed in `shared/lesson.mk`'s `STUDENT_ORDER`/`KEYED_PAIRS`, and renaming it would
-mean editing the build system. Directory `experience`, label *Experience & Formalize*.
+`notes/` (+ `notes_key/`) — **the heart of the lesson**: the direct-instruction handout the class
+fills in together. Budget **≤ 4 pages**, **20 minutes**, blank and key. Structure, in order:
 
-`experience/` (+ `experience_key/`) — **the heart of the lesson**, one document, **three parts**,
-in this order, on an explicit **page budget**:
+- `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` — **no name row** (namestrip).
+- `objectivebox` — "By the end of this lesson, I will be able to…" **filled in, not blank.** One
+  per priority idea/skill, worded exactly as the cover's learning targets. Not a fill-in — no
+  `\writeline`s here, and the key carries identical text (which also makes it parity-proof).
+- `vocabbox` — `\termblanklong{Term}` per key term; the key uses `\vocabans{Term}{definition}`.
+  Write the intro sentence plainly: the term macros carry their own `\par` (vocabpar is enforced
+  in the package), so **do not** add `\par\vspace{2pt}` — it double-spaces the box.
+- `hookbox` — the same hook as the plan, with `\writelines{2}` for the student response. When the
+  hook is a claim the lesson will demolish, state it and **leave it unresolved**.
+- **4–6 numbered teaching sections**, each a `notesbox{N. Title}`, with `\blank{}` and
+  `\writeline` at the points where students record a definition, a step, or a result, and
+  `work` blocks for multi-step computations. Build every example from a **context**, and reuse
+  one data set across several sections rather than introducing a new one each time.
+  - Sequence them so the **crux section is earned, not announced**: set up the misconception,
+    take a vote or a commitment, *do not settle it*, then settle it in the crux section with a
+    correct computation that produces a worthless answer. The plan says which section is which.
+  - Number them in the text (`1.`, `2.`, …) so the plan's Lesson box and the deck can refer to
+    them by number.
+- A closing `practicebox` — the **you-do** release. `practicebox` takes **no argument** (its
+  title is fixed as "Guided Practice"). Put a *second instance of the lesson's trap* here, and
+  pre-work the arithmetic in a `work` block so the release is spent on the classification and
+  the interpretation sentence, not on computation. End with an **interpret-in-context** line.
 
-| Part | Budget | What it is |
-| --- | --- | --- |
-| 1. Activity | **≤ 2 pages** | group work from prior knowledge only |
-| 2. QuickNotes | **½ page** | the debrief fills it |
-| 3. Application | **½–1 page** | one problem worked *together* — compute, interpret, justify |
+**Pagination.** Guard the first `notesbox` after the `vocabbox` with `\boxguard[20]` in **both**
+files — the key's `\vocabans{}` runs shorter than the blank's `\termblanklong{}` rules and will
+otherwise float that section onto page 1 in the key only, silently desynchronizing the packet.
+Raise `\boxguard` to ~30–40 before any section opening with an unbreakable `tabularx`. Never let
+a lead-in sentence be orphaned from the table it introduces — `\nopagebreak` after it.
 
-Hold the budget: it is the whole point of the split. A part that runs over gets cut, not carried.
-**There is no Check Your Understanding section in this component** — this course's CYU-style
-practice is the `homework` component, and everything in `experience/` happens in class, together.
+## Group activity
 
-`\documentclass[12pt]{article}` (Math Medic sizing — the rest of the packet is 10pt),
-`\pageheader{Unit X, Lesson Y.Z}{Experience \& Formalize: <Activity Title>}`, no name row.
+`activity/` (+ `activity_key/`) — **one activity for the whole class**, worked in **groups of
+three**, **18 minutes**, *after* the notes, so students already hold the vocabulary. Budget
+**≤ 2 pages**, blank and key. **There are no tiers**: nothing is assigned, nothing is sorted, and
+every group works the same items.
 
-The preamble defines `\answerspace{H}{answer}` (see `conventions.md`). The blank passes `{}`; the
-key passes the answer, occupying the identical height — so the two files paginate identically by
-construction. **No `\writelines` in Experience & Formalize** — answers go in open space. Short
-inline `\blank{}`s remain for table cells and one-word fills. `\boxguard` counts here are
-12pt-relative: use **~14–16**, not the 24–30 used in 10pt components.
-
-1. **Activity** — a `headlinebox{frost}` framing one motivating **data context**, then **two
-   `scenariobox`es** (`{cerulean}`; ~10–14 lettered sub-questions total, ~2 pages) that students
-   work **from prior knowledge only**: complete a table, compute a value, circle/annotate a
-   **pre-drawn** display, answer in the open space. Scenario 1 builds the toolkit on one data set;
-   scenario 2 varies it (the contrast case) and carries the lesson's **crux question** — the one
-   that surfaces the target misconception. **The timebox rule:** the activity must fit the
-   22-minute block; extra examples belong to the debrief, the Application, or the homework CYU
-   set. Never name the formal vocabulary here — students answer in their own words. Every display
-   is pre-drawn; **never ask a student to sketch a graph from scratch.**
-2. **QuickNotes** — one titled `tcolorbox` (frost/cerulean) the **debrief fills**: a small worked
-   example or formula beside fill-in bullets covering the lesson's formal terms and notation. A
-   summary of what the groups discovered, not a lecture; **half a page**. Blanks are `\blank{}`
-   (key: `\ans{}`).
-3. **Application** — a `notesbox{Application: <Title>}` with **one problem worked together**. This
-   is the first place the just-named vocabulary is *used* and the lesson's only in-class practice,
-   so it carries the whole arc: state the question in context, compute in a `work` block,
-   **interpret the result in context**, then a "what if we change a number?" prompt that tests the
-   concept rather than the procedure and demands a **justification**. Note `practicebox` takes
-   **no argument** (its title is fixed as "Guided Practice"), so a titled Application uses
-   `notesbox`.
-
-   **The Application is the formative check.** With no exit ticket, the teacher reads the
-   Interpret and What-if responses over shoulders and sorts them to decide how the next lesson
-   opens; the lesson plan says into which categories.
-
-Key mirrors exactly: same `\answerspace` macro and heights, answers in its second argument,
-`\ans{}` in the blanks, `work` blocks carried over byte-identically, MC option tagged
-`\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`.
+- `\pageheader{Unit X, Lesson Y.Z}{Group Activity}` — **no name row** (namestrip).
+- A `headlinebox{frost}` naming the investigation and stating the two standing rules: **every
+  answer needs a reason**, and **every conclusion names the group it applies to**.
+- **One shared data set**, printed once, above the item boxes.
+- Set it in a **fresh context** — not the one the notes just worked. Same skills, new data.
+- **~6–7 items in two labelled `tcolorbox`es** (`colback=white, colframe=black!40, breakable`),
+  split at a real phase change — *Part 1 — Read the data* / *Part 2 — Judge the claim*, or
+  *Part 1 — Run the cycle* / *Part 2 — A second study, then two that failed*. Continue the
+  numbering with `\begin{enumerate}[..., start=N]`.
+  - **Put `\boxguard[30]` before Part 2.** That split is what lets the blank and the key break
+    in the same place; with one long box there is no lever, because `\boxguard` is inert inside
+    a breakable `tcolorbox`.
+- **Differentiate by depth, not by handout.** Items 1–2 must be readable straight off the data so
+  every group is writing within two minutes; the middle items compute and demand a sentence
+  naming the group and the units; then **the crux item**, which is the misconception the notes
+  set up. Put the single hardest item last.
+- Close with an optional **`extensionbox`** ("Extension — optional") of one or two items for
+  groups that finish early. Expect two or three groups to reach it and none to finish it. The
+  lesson plan says to pose its best item aloud in the debrief if nobody got there.
+- **Size it for one group, not three.** Everyone works the same set, so ~6–7 items is the 18-minute
+  budget. A merged three-tier activity (12+ items) is roughly triple what the block holds.
+- Prefer inline blanks over tall tables at the end of a box: a 5-row `tabularx` closing the last
+  box is the single most common cause of a stranded one-inch stub on a third page.
+- Key mirrors exactly, filling with `\ans{...}`, carrying every `work` block and `\boxguard`
+  over unchanged, and marking correct MC options with
+  `\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`.
 
 ## Homework
 
-`homework/` (+ `homework_key/`) — **this course's Check Your Understanding set.** Experience &
-Formalize carries no practice section, so this is where the CYU-style problems live. It is the
-lesson's practice *and* its graded work: the cover's score column carries a `\blank{}` for it,
-never `NA`.
+`homework/` (+ `homework_key/`) — authored for **every** lesson. It is the lesson's practice
+*and* its graded work: the cover's score column carries a `\blank{}` for it, never `NA`.
 
 `\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **1–2 pages**, blank and key.
 Structure:
@@ -200,50 +216,22 @@ DeltaMath carries adequate content for that lesson's skills; when it does, stude
 pages as a worked reference instead. Nothing about what you author changes — say the choice in the
 lesson plan's Homework box and on the deck's closing frame, and leave the cover row alone.
 
-## Legacy components — pre-EFFL
+## Dead shapes
 
-`notes/`, `activity/`, and `exit_ticket/` (with their `_key`s) predate the 2026-08 EFFL redesign.
-`shared/lesson.mk` still merges them, so the 60+ legacy lessons keep building untouched, and the
-scaffolder still accepts them by name (`--components ...,notes,activity,exit_ticket`) so a legacy
-lesson can be patched. **Do not author them into a new lesson.** For how to regenerate a legacy
-lesson in the EFFL shape, see the Retrofit section of `SKILL.md`. Their specs follow for reference
-while converting.
+Two component shapes survive in the tree but must never be authored into a new lesson.
+`shared/lesson.mk` still merges both, so any lesson carrying them keeps building, and the
+scaffolder still accepts them by name (`--components ...,experience,exit_ticket`) so one can be
+patched. For how to convert such a lesson, see the Retrofit section of `SKILL.md`.
 
-## Guided notes
-
-`notes/` (+ `notes_key/`) — the student's fill-in notes. Structure:
-- `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` — **no name row** (namestrip).
-- `objectivebox` — "By the end of this lesson, I will be able to…" **filled in, not blank.**
-  State the objectives outright, one per priority idea/skill, worded exactly as the cover's
-  learning targets. The student should be able to read what the lesson is for without waiting
-  for it to be dictated, so this box is **not** a fill-in — no `\writeline`s here, and the key
-  carries the identical text (which also makes it parity-proof).
-- `vocabbox` — `\termblanklong{Term}` per key term (key uses `\vocabans{Term}{definition}`).
-  Write the intro sentence plainly: the term macros carry their own `\par` (vocabpar is enforced
-  in the package), so **do not** add `\par\vspace{2pt}` — it double-spaces the box.
-- `hookbox` — the same hook as the plan, with write-lines for student responses.
-- Direct-instruction sections in `notesbox{Title}` with blanks (`\blank`, `\writeline`) at the
-  points where students record steps/definitions/results. Build the worked example from the standard's
-  scope, in a context.
-- Optional `practicebox` ("Guided Practice") with 1–2 worked-with-class problems.
-
-## Activity
-
-`activity/` (+ `activity_key/`) — differentiated group practice, ideally a small **applied
-investigation** — a data set to analyze, a scenario to model, a measurement to solve for.
-- `\pageheader{Unit X, Lesson Y.Z}{Group Activity}` — **no name row** (namestrip).
-- Three `tcolorbox`es titled **Tier R — Remediate**, **Tier A — Approaching Proficiency**,
-  **Tier E — Extension** (`colframe=black!40`), each with problems and generous `\vspace` work
-  room. Tiers escalate in difficulty and align to the same skills; the top tier should reach an
-  interpret/justify/critique-the-model task.
-- Key mirrors exactly, filling answers with `\ans{...}` and marking correct MC options with
-  `\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`, plus brief worked steps.
-
-## Exit ticket
-
-`exit_ticket/` (+ `exit_ticket_key/`) — a short independent check (2–3 items), no notes.
-`\pageheader{...}{Exit Ticket}` — **no name row** (namestrip); a tight `enumerate` with a little work
-space. Include at least one "what does this result mean?" item. Key fills with `\ans`.
+- **`experience/` (+ `experience_key/`)** — the scrapped EFFL in-class component: one 12pt
+  document in three parts (Activity · QuickNotes · Application) using an `\answerspace{H}{}`
+  macro instead of write-lines. The EFFL trial ran 2026-08-29 to 2026-08-31 and was rejected by
+  students. When converting, QuickNotes expands back into taught notes sections, the Application
+  becomes the notes' `practicebox`, and the Activity becomes the group activity in a fresh
+  context.
+- **`exit_ticket/` (+ `exit_ticket_key/`)** — a short independent check (2–3 items), no notes,
+  one page. Replaced by the debrief's whole-class cold check. When converting, fold the exit
+  ticket's conceptual item into the plan's Debrief box as that cold check.
 
 ## Slides
 
@@ -257,13 +245,16 @@ Reasoning" literally. `saar-beamer` also does **not** load `tcolorbox`: use beam
 `\begin{block}{}` for a highlighted box inside a frame, and note `\begin{itemize}` in beamer
 does not accept `[leftmargin=…]` — set `\setlength{\itemsep}{…}` instead.
 
-**The deck follows the EFFL flow (~9 frames):** title → learning targets (**spoiler-free**) →
-warm-up → activity launch → 3–4 debrief frames (formal terms in "red ink", `\redink{}` =
-`redacc`) → QuickNotes summary → application → close & assign. **Everything before the debrief
-frames stays vocabulary-free** (the spoiler rule). The closing frame names the assignment and
-says plainly which form it takes today — the packet's Check Your Understanding pages or the
-equivalent DeltaMath set — with the due date and how it is scored. Written to the
-secondary-school audience throughout.
+**The deck follows the gradual-release flow (~12 frames):** title → learning targets → warm-up
+→ hook → **one frame per numbered notes section** (the crux section's frame flagged with
+`\sectionlabel[redacc]{}`) → practice → group-activity launch (the shared data set, the item
+range and timing, the two standing rules) → debrief → close & assign. The notes frames carry the *answers*
+the class arrives at, so they are the board, not a preview — advance them in step with the
+handout. **Do not put the group activity's own items on a slide before the activity**; a deck
+that lists the answers pattern turns the activity into copying. The closing frame names what changed
+today, then the assignment and plainly which form it takes — the packet pages or the DeltaMath
+override — with the due date and how it is scored. Written to the secondary-school audience
+throughout.
 
 ## Unit tests (summative assessments)
 
