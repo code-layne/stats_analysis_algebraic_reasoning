@@ -1,7 +1,38 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-31 — **LESSON 1.1 IS CONVERTED AND IS NOW THE PROJECT'S FIRST CURRENT
-MODEL.** This run regenerated 1.1 in the notes-only gradual-release shape: the group activity was
+**Last updated:** 2026-08-31 — **LESSON 1.1 REVISED FROM CLASSROOM FEEDBACK, AND IT REMAINS THE
+PROJECT'S FIRST CURRENT MODEL.** This run took three corrections on 1.1: (1) the **warm-up was
+enlarged** — body set at `\large`, `\workrowsep` raised to `50pt`, item spacing to `22pt`, table
+`\arraystretch` to `3.3` and its columns widened — so items 1 and 2 each get roughly two inches of
+handwriting room and the classify-the-variable rows are full-height; **it still fits on one page**,
+which is the constraint the gate enforces. (2) **Homework format defects fixed** (see below).
+(3) **Every `extensionbox` was removed from the lesson** — from `notes`, `notes_key`, `homework`,
+`homework_key` — along with all four references to it in the lesson plan and the deck. **A revised
+1.1 has no extension block; do not mirror one into a new lesson from it.**
+
+**The homework format defects, and the fixes — check for these when authoring:**
+
+- **`\textbf{Stage \arabic*.}` labels hung outside the `scenariobox`'s left border.** enumitem
+  right-aligns a label inside `leftmargin`, so a label wider than `leftmargin=1.5em` protrudes into
+  the box frame. Fix: `leftmargin=*, labelindent=0pt, align=left, labelsep=0.6em`, which sizes the
+  margin from the widest label. **Any list with a wide custom `label=` needs this.**
+- **`\writeline` / `\writelines{n}` / `\ansline` opening on its own source line still continues
+  the paragraph**, so the first rule renders as a short stub at the end of the prompt instead of a
+  full-width line. Fix: `\par\writeline`. This was wrong in five places in the notes and two in
+  the homework; all seven are fixed. **Author it as `\par\writeline` from now on** — and in a key,
+  put the `\par` on only the *first* `\ansline` of a consecutive run, or the key grows taller than
+  its blank.
+- **Cramped answer space in Practice item 1** (Variable/Type/How-do-you-know pressed together, and
+  the `Type:` blank running to the box edge) — split onto spaced lines with `\par\vspace{6pt}` /
+  `\par\vspace{10pt}` and the blanks widened.
+- **Tables set at `0.92\linewidth` / `0.97\linewidth` inside a `center`** sat short of and offset
+  from the item's text block. Set them at `\linewidth` and widen the answer blanks to match the
+  column; add `>{\raggedright\arraybackslash}X` to stop hyphenation in a narrow reason column.
+
+`make -C unit01/lesson01 all` and `check` both exit 0; blank and key re-verified page-for-page by
+per-page heading (warm-up 1pp, notes 5pp, homework 2pp, each matching its key).
+
+Earlier the same day: **LESSON 1.1 WAS CONVERTED TO THE NOTES-ONLY SHAPE.** This run regenerated 1.1 in the notes-only gradual-release shape: the group activity was
 folded into the guided notes and `activity/` + `activity_key/` were deleted. `make -C
 unit01/lesson01 all` and `check` both exit 0; blank and key verified page-for-page. Mirror 1.1
 when authoring a new lesson.
@@ -546,6 +577,13 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
   capstone; every unit gets a `lesson00/` launch outside the 8-content-lesson cap.
 
 ## Next steps
+
+0b. **OPEN QUESTION FOR THE USER — is the extension block gone for good?** 1.1's extension blocks
+   were removed on request (2026-08-31), but the request was scoped to that lesson. The
+   `lesson-planning` skill still lists `extensionbox` as an optional early-finisher block inside
+   the notes. **Ask before authoring the next lesson:** drop `extensionbox` course-wide (and edit
+   the skill), or keep it as an option and treat 1.1 as the exception. 1.1's plan and deck now send
+   early finishers to re-read their answers and check that each conclusion names its group.
 
 0. ~~Rewrite the skill for the notes-only shape~~ — **DONE 2026-08-31 (this run).** The skill,
    its four references, the scaffolder, and all four skeletons now describe the notes-only
