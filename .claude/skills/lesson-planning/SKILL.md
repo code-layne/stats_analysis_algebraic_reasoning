@@ -5,10 +5,10 @@ description: >-
   curriculum (a project with a shared/ style package — prefix saar — and a Makefile hierarchy
   that compiles components with latexmk and merges them with pdfunite).
   Use this whenever the user wants to create, draft, or build a lesson, a lesson plan, a
-  unit, or any lesson component — warm-up, guided notes, group activity, homework, cover sheet,
-  slides, or their answer keys. Lessons follow a gradual-release model (I do / we do / you do
-  together): warm-up, guided notes and practice, one whole-class group activity, teacher-led debrief,
-  close and assign. The course is defined by
+  unit, or any lesson component — warm-up, guided notes, homework, cover sheet,
+  slides, or their answer keys. Lessons follow a gradual-release model carried entirely by the
+  guided notes (I do one / we do one / you do 1–3): warm-up, guided notes, independent practice,
+  teacher-led debrief, close and assign. There is no group activity. The course is defined by
   spec/statistical_analysis_algebraic_reasoning.md and the standards documents in spec/; units are
   standard clusters and lessons are groups of the standards' lettered Knowledge & Skills.
   Trigger this even when the user just says "make lesson 2.3" or
@@ -16,8 +16,9 @@ description: >-
   use it to author unit-level tests and a cumulative, course-wide final exam (the `finals/`
   deliverable) — any "final," "final exam," or "cumulative assessment" for the whole course.
   Also use it to RETROFIT a lesson to a named convention — boxguard, namestrip, vocabpar, the
-  work rule, teachernotes — or to CONVERT an older lesson into the gradual-release shape, as in
-  "convert unit 2 back to guided notes." See the Retrofit section.
+  work rule, teachernotes — or to CONVERT an older lesson into the current notes-only
+  gradual-release shape, as in "convert unit 2 back to guided notes" or "drop the group activity
+  from lesson 1.1." See the Retrofit section.
 ---
 
 # Lesson Planning — Statistical Analysis & Algebraic Reasoning
@@ -29,22 +30,39 @@ applications-first** secondary course pairing statistical work with algebraic re
 every component in that spirit: start from a context, compute, then **interpret and justify** —
 and cite the standard codes the lesson covers.
 
-**Every new lesson follows the gradual-release model** — *I do, we do, you do together*. The
-teacher hooks the class, builds the ideas in **guided notes** with worked examples and a
-class-filled vocabulary box, releases a short practice box, then hands the work to **groups of
-three working one common activity**; a teacher-led **debrief** closes the loop and is the formative check. The 55-minute
-period runs **5 warm-up / 20 guided notes & practice / 18 group activity / 7 debrief /
-5 close & assign**.
+**Every new lesson follows the gradual-release model, and the guided notes carry all of it** —
+*I work one, we work one, you work some*. The teacher hooks the class, builds the ideas in
+**guided notes** with a class-filled vocabulary box and worked examples the teacher models
+(**I do**), works one example jointly with the class (**we do**), then releases a closing
+practice box of **1–3 items students work alone** (**you do**); a teacher-led **debrief** closes
+the loop and is the formative check. The 55-minute period runs **5 warm-up / 30 guided notes /
+10 independent practice / 7 debrief / 3 close & assign**.
+
+**There is no group activity.** Students do not work in groups on a separate handout — the
+release happens inside the notes, individually. Do not author an `activity/` component; see
+Retrofit for converting a lesson that still has one.
+
+**The release runs once per lesson, not once per section.** The numbered teaching sections are
+the *I do* — the teacher models throughout. One designated **We Do** example follows them, and
+then the single closing practice box is the *you do*. Do not split the notes into three-part
+mini-cycles.
 
 **The debrief is not a component.** It is a phase, and it lives *only* in the lesson plan's
-Debrief box and the deck's debrief frame — there is no student page for it. **There is no exit
-ticket**: the debrief's cold check, run whole-class while students correct their own work in a
-second color, is what tells you whether the lesson landed.
+Debrief box and the deck's debrief frame — there is no student page for it. It walks the
+**independent practice** items students just worked alone. **There is no exit ticket**: the
+debrief's cold check, run whole-class while students correct their own work in a second color,
+is what tells you whether the lesson landed.
+
+**Independent practice is a phase with a page, not a component.** It is the notes' closing
+`practicebox` — 10 minutes, worked silently and alone. It gets no directory of its own.
 
 > **History.** An "experience first, formalize later" (EFFL) trial ran from 2026-08-29 to
 > 2026-08-31 and put a single `experience/` component (Activity · QuickNotes · Application) in
-> place of notes and activity. It was **scrapped** — students rejected it. Do not author
-> `experience/` into a new lesson; see Retrofit for converting one that still exists.
+> place of notes and activity. It was **scrapped** — students rejected it. Gradual release was
+> restored on 2026-08-31 with a separate 18-minute **group activity**, and that activity was
+> **dropped on 2026-08-31** in favor of individual release inside the notes. Do not author
+> `experience/` or `activity/` into a new lesson; see Retrofit for converting one that has
+> either.
 
 ### What is different about this course
 
@@ -52,15 +70,17 @@ second color, is what tells you whether the lesson landed.
    spanning the lesson's lettered skills, each ending in an interpretation or a justification
    (the cover's score column carries a `\blank{}`, never `NA`). Algebra 2 dropped homework
    entirely and AP Statistics keeps a separate unscored in-class CYU — **do not copy either.**
-2. **Packet or DeltaMath is a per-lesson teacher decision.** The packet pages are authored for
-   every lesson regardless. **DeltaMath's statistics coverage is thin, so the packet is the
-   default**; at Close & Assign the teacher may override it with the equivalent DeltaMath set
-   where DeltaMath actually carries this lesson's skills. Nothing in the packet changes either
-   way; the lesson plan's Homework box and the deck's closing frame carry the choice.
-3. **Group work is NOT tiered.** One activity, the whole class, groups of three — nothing to
-   assign or sort. Differentiate by **depth, not by handout**: the items ramp from readable-off-
-   the-data to the crux, and an optional `extensionbox` at the end absorbs groups that finish
-   early. Do not author Tier R / Tier A / Tier E boxes.
+2. **Packet or Desmos is a per-lesson teacher decision.** The packet pages are authored for
+   every lesson regardless. **Desmos Classroom's coverage of this course's standards is uneven,
+   so the packet is the default**; at Close & Assign the teacher may override it with an
+   equivalent **Desmos** activity for the lessons Desmos actually carries. Check Desmos lesson by
+   lesson — do not assume either way. Nothing in the packet changes with the choice; the lesson
+   plan's Homework box and the deck's closing frame carry it.
+3. **There is no group work at all.** No group activity, no groups of three, no tiers, and no
+   `activity/` component. The release is **individual**: students work the notes' closing
+   practice box alone for 10 minutes while the teacher circulates. Differentiate by **depth
+   inside that box** — 1–3 items that ramp toward the lesson's crux, plus an optional
+   `extensionbox` for students who finish early. Do not author Tier R / Tier A / Tier E boxes.
 4. **This course HAS `fixedskillbox`** (AP Statistics does not). Use it where a lesson-plan
    `tabularx` must stay intact on one page; use `skillbox` + `\boxguard` everywhere else.
 
@@ -90,22 +110,23 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
 - **`main.tex`** — the teacher-facing **lesson plan** (the root document of the lesson dir).
 - A set of **student components**, each its own subdirectory containing **either** a
   `main.tex` (authored, compiled to a PDF) **or** a `main.pdf` (a prefab PDF, used as-is):
-  `cover`, `warmup`, `notes`, `activity`, `homework`, and `slides`.
+  `cover`, `warmup`, `notes`, `homework`, and `slides`.
 - An **answer key** for each keyed component, as a *separate* sibling directory:
-  `warmup_key`, `notes_key`, `activity_key`, `homework_key`. (`cover` and `slides` have no key.)
-- **`notes` — the guided notes — is the heart of the lesson.** Objectives, a `vocabbox` the
-  class fills in together, a `hookbox`, **4–6 numbered `notesbox` teaching sections** (I do /
-  we do), and a closing `practicebox` (you do). Budget **≤4pp**, ~20 minutes.
-- **`activity` is one group activity for the whole class**, worked in groups of three *after*
-  the notes, so students already hold the vocabulary. One shared data set, ~6–7 items in two
-  labelled parts, then an optional `extensionbox`. Budget **≤2pp**, 18 minutes.
+  `warmup_key`, `notes_key`, `homework_key`. (`cover` and `slides` have no key.)
+- **`notes` — the guided notes — is the lesson.** It carries the whole gradual release:
+  objectives, a `vocabbox` the class fills in together, a `hookbox`, **4–6 numbered `notesbox`
+  teaching sections the teacher models** (*I do*), one designated **We Do** example worked
+  jointly with the class, and a closing `practicebox` of **1–3 items worked alone** (*you do*).
+  Budget **≤6pp**; 30 minutes for everything through the We Do, then 10 minutes for the practice
+  box.
 - **`homework` is authored for every lesson and is scored** — ~6 items in new contexts spanning
-  the lesson's lettered skills, assigned from the packet by default or overridden with DeltaMath
-  lesson by lesson.
-- *Dead shape:* `experience/` (and `experience_key/`) is the scrapped EFFL component;
-  `exit_ticket/` predates both redesigns. The build still merges both, so any lesson carrying
-  them keeps building untouched. When asked to touch such a lesson, **ask whether to regenerate
-  it in the gradual-release shape** rather than patching it — see Retrofit.
+  the lesson's lettered skills, assigned from the packet by default or overridden with a Desmos
+  activity lesson by lesson.
+- *Dead shapes:* `activity/` (+ `activity_key/`) is the dropped group activity; `experience/`
+  (+ `experience_key/`) is the scrapped EFFL component; `exit_ticket/` predates both redesigns.
+  The build still merges all three, so any lesson carrying them keeps building untouched. When
+  asked to touch such a lesson, **ask whether to regenerate it in the current shape** rather than
+  patching it — see Retrofit.
 
 `shared/lesson.mk` discovers a component if it has a `main.tex` **or** a `main.pdf` and
 compiles the `main.tex` ones with `latexmk -xelatex`; a prefab `main.pdf` is used as-is from
@@ -117,7 +138,7 @@ the source tree with no compile step (Step 4). It then builds **five work produc
 | `lessonYY_plan.pdf` | the lesson plan (the lesson-root `main.tex`), on its own |
 | `lessonYY_slides.pdf` | the Beamer deck **printed** — 3 slides per page, each with a ruled notes column beside it |
 | `lessonYY_slides.pptx` | the same deck wrapped for PowerPoint (one full-page image per slide) — the **projected** form |
-| `lessonYY_student.pdf` | cover + the **blank** warmup, notes, activity, homework, in that order |
+| `lessonYY_student.pdf` | cover + the **blank** warmup, notes, homework, in that order |
 | `lessonYY_key.pdf` | cover + the **key** version of each, in the same order |
 
 The student and key packets are paginated as one pair: numbers run lesson-wide, each component
@@ -208,11 +229,13 @@ clean, detect project context:
 4. **Find the insertion point.** List `unit*/lesson*` to find the next unit/lesson number
    and whether the target lesson already exists.
 5. **Find a model lesson — and check its shape.** Open a built lesson and mirror its preamble,
-   box usage, and tone. **Mirror a current gradual-release lesson.** A lesson is current when it
-   has `notes/` + `activity/`, **no `exit_ticket/`**, and a *Lesson at a Glance* phase table in
-   its plan. A lesson with `experience/` is the scrapped EFFL shape; a lesson with
-   `exit_ticket/` predates the current design. `spec/course_planning.md` records which lessons
-   have been converted. **Lessons 1.0 and 1.1 are the models** — mirror them.
+   box usage, and tone. A lesson is **current** only when it has `notes/` and **none of**
+   `activity/`, `experience/`, or `exit_ticket/`, and its plan carries a *Lesson at a Glance*
+   table reading **5 / 30 / 10 / 7 / 3**. A lesson with `activity/` is the dropped
+   group-activity shape; one with `experience/` is the scrapped EFFL shape; one with
+   `exit_ticket/` predates both. `spec/course_planning.md` records which lessons have been
+   converted — **read it to find the current model**, and if no lesson is current yet, build
+   from the skeletons and `references/components.md` rather than mirroring a stale lesson.
 
 ### Step 1 — Map the unit into lessons, then gather the lesson's content
 
@@ -241,10 +264,10 @@ python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 03 --lesson
   --title "<Lesson Title>" --unit-title "<Unit Title>"
 ```
 
-`--components` defaults to the gradual-release set —
-**`cover,warmup,notes,activity,homework,slides`** — so omit the flag. `experience` and
+`--components` defaults to the current set —
+**`cover,warmup,notes,homework,slides`** — so omit the flag. `activity`, `experience`, and
 `exit_ticket` are still scaffoldable by name so an older lesson can be patched, but **never
-author either into a new lesson.**
+author any of them into a new lesson.**
 
 The script is bundled with the skill, so it is invoked via `${CLAUDE_SKILL_DIR}` (the
 working directory at runtime is the user's project, not the skill folder); `--project .`
@@ -280,13 +303,15 @@ structure and a worked skeleton for every component and its key. Hold to these i
 - **The vocabulary is taught, not discovered.** Gradual release has no spoiler rule: the cover's
   learning targets, the warm-up, the notes' `vocabbox`, and every slide may name the formal
   terms outright. Say the word, define it, then use it.
-- **The timebox rule.** Each phase must fit its block. Guided notes: 4–6 sections plus a
-  practice box, ≤4pp, 20 minutes — the plan's Lesson box carries a **per-section minute budget**
-  that has to sum to 20. Group activity: **~6–7 items** over one shared data set, ≤2pp, 18
-  minutes — everyone works the same set, so it must be sized for one group, not split three ways.
-  A part that runs over gets cut or moved to the homework, not carried.
+- **The timebox rule.** Each phase must fit its block. Guided notes: 4–6 modeled sections plus
+  the We Do example, **30 minutes** — the plan's Lesson box carries a **per-section minute
+  budget** that has to sum to 30, with the We Do carrying its own line. The closing
+  `practicebox`: **1–3 items, 10 minutes**, worked alone — three items is the ceiling, not the
+  target, and an item that needs more than ~3 minutes alone belongs in the homework. Whole
+  document ≤6pp. A part that runs over gets cut or moved to the homework, not carried.
 - **Every lesson plan carries a *Lesson at a Glance* phase table** (`fixedskillbox`) with the
-  five phases, their minutes, what students do, and what the teacher does. It goes after the
+  five phases — **Warm-Up 5 · Guided Notes 30 · Independent Practice 10 · Debrief 7 · Close &
+  Assign 3** — their minutes, what students do, and what the teacher does. It goes after the
   Vocabulary box and before Activate Prior Knowledge.
 - **Blank and key must align page-for-page, not just page-count-for-page-count.** The gate only
   compares totals. A key runs more compact than its blank wherever `\vocabans{}` replaces
@@ -388,35 +413,57 @@ Keep it terse and current — overwrite stale entries rather than appending a ch
 file does not exist yet, create it with these sections. Since it lives in `spec/`, it is
 tracked and travels with the branch, so the Step 0 sync always brings the latest state forward.
 
-## Retrofit — converting a lesson to the gradual-release shape
+## Retrofit — converting a lesson to the current shape
 
-Two older shapes exist in the tree, and `shared/lesson.mk` still merges both, so every such
-lesson keeps building untouched. **Do not patch one in place** — when the user asks you to touch
-it, ask whether to convert it instead. There is **no bulk sweep**; lessons are converted one at a
-time as they come up.
+Three older shapes exist in the tree, and `shared/lesson.mk` still merges all of them, so every
+such lesson keeps building untouched. **Do not patch one in place** — when the user asks you to
+touch it, ask whether to convert it instead. There is **no bulk sweep**; lessons are converted
+one at a time as they come up.
+
+Whichever shape you start from, the destination is the same: `cover` + `warmup` + `notes` +
+`homework` + `slides`, a **5 / 30 / 10 / 7 / 3** phase table, and the whole release living
+inside the notes.
+
+**Converting a group-activity lesson** (it has `activity/` — this is lessons 1.0 and 1.1):
+
+1. **Fold the activity into the notes, do not just delete it.** The activity's best items are
+   the raw material for the notes' expansion from 20 minutes to 30: its on-ramp items become
+   worked examples inside the numbered sections, its **crux item becomes the We Do**, and one or
+   two of its later items become the closing `practicebox`. Everything else is cut or moved to
+   the homework — you are converting an 18-minute group block into 10 minutes of solo work, so
+   most of it does not survive.
+2. **Re-set what you keep in the notes' own context.** The activity deliberately used a *fresh*
+   context so group work was transfer; folded into the notes it should now run on the notes'
+   data set, since the point is no longer transfer but release.
+3. Delete `activity/` and `activity_key/`.
+4. Keep the homework; it needs no reshaping.
+5. Rewrite the cover's packet table (**three rows** — Warm-Up, Guided Notes, Homework), the
+   lesson plan (phase table, Lesson — Guided Notes **(30 min)**, **Independent Practice
+   (10 min)** in place of Group Work & Differentiation, **Debrief** now walking the practice
+   items, Reinforcement; **three** teacher notes — Warm-Up, Guided Notes, Homework), and the
+   deck (hook → notes frames → We Do → practice launch → debrief → close & assign).
 
 **Converting an EFFL lesson** (it has `experience/`):
 
-1. Create `notes/` + `notes_key/` and `activity/` + `activity_key/` (scaffold with
-   `--components notes,activity`).
+1. Create `notes/` + `notes_key/` (scaffold with `--components notes`).
 2. **Unfold the three EFFL parts.** QuickNotes becomes the spine of the **guided notes**, but
    expand it back into 4–6 taught sections with worked examples — a QuickNotes bullet is a
-   summary, not a lesson. The EFFL Application becomes the notes' closing `practicebox`. The
-   EFFL Activity's scenarios become the **group activity**, re-set in a
-   *fresh context* so it does not repeat what the notes just worked.
+   summary, not a lesson. The EFFL Activity's richest scenario becomes the **We Do**, and the
+   EFFL Application becomes the closing `practicebox`. The remaining EFFL Activity scenarios are
+   cut or moved to the homework; **do not** create an `activity/` for them.
 3. Keep the homework; it needs no reshaping.
 4. Delete `experience/` and `experience_key/`.
-5. Rewrite the cover's packet table (four rows), the lesson plan (phase table, Hook, Lesson,
-   Explicit Instruction, Active Monitoring, Group Work & Differentiation, **Debrief**,
-   Reinforcement; four teacher notes — Warm-Up, Guided Notes, Group Activity, Homework), and the
-   deck (hook → notes frames → activity launch → debrief → close & assign).
+5. Rewrite the cover (three rows), the lesson plan (phase table, Hook, Lesson, Explicit
+   Instruction, Active Monitoring, **Independent Practice**, **Debrief**, Reinforcement; three
+   teacher notes), and the deck.
 
-**Converting a pre-EFFL lesson** (it has `exit_ticket/`): the notes and activity are already the
-right shape. Delete `exit_ticket/` + `exit_ticket_key/`, drop the Exit Ticket row from the cover
-and its teacher note from the plan, replace the plan's *Individual Work & Assessment* box with a
-**Debrief** box that folds the exit ticket's conceptual item in as a whole-class cold check, add
-the *Lesson at a Glance* phase table, and re-time the notes to the 20-minute block — **trim if
-they do not fit; do not let the phase table lie.**
+**Converting a pre-EFFL lesson** (it has `exit_ticket/`, and usually `activity/` too): delete
+`exit_ticket/` + `exit_ticket_key/`, drop the Exit Ticket row from the cover and its teacher
+note from the plan, replace the plan's *Individual Work & Assessment* box with a **Debrief** box
+that folds the exit ticket's conceptual item in as a whole-class cold check, add the *Lesson at a
+Glance* phase table, and then run the group-activity conversion above for its `activity/`.
+Re-time the notes to the 30-minute block — **expand or trim so they fit; do not let the phase
+table lie.**
 
 **Build gotcha when deleting a component:** a stale stamp under `.stamps/unitXX/lessonYY/` makes
 `make` skip recompiling a *sibling* whose PDF was cleaned, and `pdfunite` then fails on a missing
@@ -564,20 +611,25 @@ forms' Part C spines, so a later run can reproduce or revise it.
 - **Cite the standard codes** in every lesson plan (Priority Ideas box and Connections line).
 - Audience is secondary school, mid-track: context first, small numbers, one new idea at a time,
   heavy scaffolding.
-- **Every new lesson is gradual release:** `cover`, `warmup`, `notes` (guided notes +
-  practice), `activity` (one whole-class group activity), `homework` (scored), `slides`. The **debrief is a
-  phase, not a component**, and there is **no exit ticket**. Never author `experience` or
-  `exit_ticket` into a new lesson; when an older lesson needs work, ask whether to convert it
-  (see "Retrofit").
-- **Mirror lessons 1.0 and 1.1.** A lesson with `experience/` is the scrapped EFFL shape; one
-  with `exit_ticket/` predates the current design. Neither is the model.
+- **Every new lesson is gradual release, carried by the notes:** `cover`, `warmup`, `notes`
+  (modeled sections + We Do + independent practice box), `homework` (scored), `slides`. The
+  **debrief is a phase, not a component**; **independent practice is a phase with a page** — the
+  notes' closing `practicebox`, not a directory; and there is **no exit ticket**. **There is no
+  group activity** — never author `activity`, `experience`, or `exit_ticket` into a new lesson;
+  when an older lesson needs work, ask whether to convert it (see "Retrofit").
+- **A lesson with `activity/`, `experience/`, or `exit_ticket/` is not a model.** Check
+  `spec/course_planning.md` for which lessons are current before mirroring one.
+- **The release runs once per lesson:** the numbered sections are the *I do*, one designated
+  example is the *We Do*, and the closing practice box is the *you do*. Do not build per-section
+  mini-cycles.
 - **There is no spoiler rule** — name the vocabulary on the cover, in the notes, and on the
-  slides. **Obey the timebox rule:** notes ≤4pp / 20 min with a per-section minute budget that
-  sums to 20; activity ≤2pp / 18 min.
-- **Every plan carries a *Lesson at a Glance* phase table** — 5 / 20 / 18 / 7 / 5.
+  slides. **Obey the timebox rule:** notes ≤6pp, with a per-section minute budget that sums to
+  30 through the We Do, then a practice box of **1–3 items** sized for 10 minutes alone.
+- **Every plan carries a *Lesson at a Glance* phase table** — 5 / 30 / 10 / 7 / 3.
 - **Homework is scored.** The cover's score column carries a `\blank{}` for it, never `NA`.
-  Author the packet pages for every lesson; DeltaMath is the teacher's override at Close &
-  Assign and does not change what you author.
+  Author the packet pages for every lesson; a **Desmos** activity is the teacher's per-lesson
+  override at Close & Assign, chosen on whether Desmos actually carries that lesson's skills, and
+  it does not change what you author.
 - **Check page-for-page alignment, not just page counts.** `make check` compares totals only;
   a key can float a section onto an earlier page. Compare per-page headings between blank and
   key, and guard the first `notesbox` after the `vocabbox` with `\boxguard[20]` in both.

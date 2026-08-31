@@ -30,7 +30,7 @@ before using it.
 
 ## Per-document-type preambles
 
-**Student component** (warmup, notes, activity, homework, cover) — **all 10pt**:
+**Student component** (warmup, notes, homework, cover) — **all 10pt**:
 ```latex
 \documentclass[10pt]{article}
 \usepackage{saar-article}
@@ -134,7 +134,7 @@ Titled student boxes (title is fixed by the environment unless it takes an argum
 | `notesbox{Title}` | generic titled notes section | title |
 | `practicebox` | "Guided Practice" | — |
 | `spiralbox` | "Connections & Big Ideas" | — |
-| `scenariobox[Title]{color}` | activity/homework scenario | title, color |
+| `scenariobox[Title]{color}` | notes/homework scenario | title, color |
 | `headlinebox{color}` | colored callout strip | color |
 | `blurbbox[Title]{color}` | study/excerpt blurb | title, color |
 | `reflectionbox` | "Reflection" (homework) | — |
@@ -218,14 +218,13 @@ The plan closes with one note per component, in packet order, each titled for it
 ```latex
 \begin{teachernote}[Warm-Up]                 ... \end{teachernote}   % → "Teacher Note: Warm-Up"
 \begin{teachernote}[Guided Notes] ... \end{teachernote}
-\begin{teachernote}[Group Activity] ... \end{teachernote}
-\begin{teachernote}[Homework]                ... \end{teachernote}   % the CYU set + packet-vs-DeltaMath
+\begin{teachernote}[Homework]                ... \end{teachernote}   % the item set + packet-vs-Desmos
 ```
 
-**Four** notes, in packet order: `[Warm-Up]`, `[Guided Notes]`, `[Group Activity]`, `[Homework]`.
-There is no note for the debrief — it is fully specified in its own Debrief box. A lesson still in
-an older shape may carry `[Experience & Formalize]` or `[Exit Ticket]`; leave those alone unless
-you are converting the lesson.
+**Three** notes, in packet order: `[Warm-Up]`, `[Guided Notes]`, `[Homework]`. There is no note
+for the debrief or the independent practice — both are fully specified in their own boxes. A
+lesson still in an older shape may carry `[Group Activity]`, `[Experience & Formalize]`, or
+`[Exit Ticket]`; leave those alone unless you are converting the lesson.
 
 **There is no exemption — this applies to assessment keys too.** A unit test's answer rationale
 and Part D scoring go on **page 2 of `unitXX/unit_cover_key/main.tex`**, not at the foot of
@@ -255,8 +254,8 @@ components stapled *behind* the cover sheet. The student writes their name once;
 vertical space at the top of a page — space that matters most on the warm-up, which
 are held to one page.
 
-Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `notes`, `activity`, `homework` (and
-from any `experience`/`exit_ticket` still present) **and from every matching `_key` file**, which stay
+Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `notes`, `homework` (and from any
+`activity`/`experience`/`exit_ticket` still present) **and from every matching `_key` file**, which stay
 in lockstep. Two exemptions:
 
 - **`cover/`** — the one place the row belongs. Never strip it.
@@ -462,14 +461,16 @@ back to `-colors`.
 
 **Gradual-release order.** Primary Objective (with the standard codes) → Priority Ideas & Skills
 → Vocabulary, Concepts & Theorems → **Lesson at a Glance** (`fixedskillbox`, the five-phase table:
-5 / 20 / 18 / 7 / 5) → Activate Prior Knowledge & Spiral Review (embeds the warm-up thumbnail if
-prefab) → **Hook** → **Lesson — Guided Notes (20 min)** → **Explicit Instruction** → **Active
-Monitoring** → **Group Work & Differentiation (18 min)** → **Debrief (7 min)** → Reinforcement &
+**5 / 30 / 10 / 7 / 3**) → Activate Prior Knowledge & Spiral Review (embeds the warm-up thumbnail
+if prefab) → **Hook** → **Lesson — Guided Notes (30 min)** → **Explicit Instruction** → **Active
+Monitoring** → **Independent Practice (10 min)** → **Debrief (7 min)** → Reinforcement &
 Extension → teacher notes. Keep the Primary Objective in plain student terms — what they can do,
 model, interpret, and justify with the topic.
 
-There is no Individual Work & Assessment box and no exit ticket: the **Debrief** box carries the
-whole-class cold check and the formative read that used to live there.
+There is no Group Work & Differentiation box, no Individual Work & Assessment box, and no exit
+ticket. The **Independent Practice** box governs the notes' closing practice box — worked
+silently and alone — and the **Debrief** box carries the whole-class cold check and the formative
+read.
 
 **Tag the standards.** This is a standards-driven course: the Priority Ideas & Skills box and the
 Connections line both carry the lettered standard codes the lesson covers. See

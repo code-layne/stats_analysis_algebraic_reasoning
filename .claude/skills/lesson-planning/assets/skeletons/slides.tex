@@ -17,23 +17,24 @@
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~9 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → close & assign.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
+% The deck follows the GRADUAL-RELEASE flow (~12 frames):
+%   learning targets → warm-up → hook → one frame per numbered notes section (I DO)
+%   → We Do → independent-practice launch → debrief → close & assign.
+% THERE IS NO SPOILER RULE: name the formal vocabulary on every frame it belongs on.
+% \redink{} is for the term the moment it is first attached to an idea.
 \newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
-% LEARNING TARGETS (spoiler-free)
+% LEARNING TARGETS — name the vocabulary outright, worded as on the cover.
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
+  \ceruleanheader{Today: TODO topic}
   \sectionlabel{Learning targets}
   By the end of today, I can\ldots
   \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+    \item TODO: target 1, naming the formal term.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    one application together $\to$ practice.
+    Warm-up $\to$ \textbf{I work one} $\to$ \textbf{we work one} $\to$
+    \textbf{you work TODO on your own} $\to$ we go over them.
   \end{block}
 \end{frame}
 
@@ -41,49 +42,62 @@
 \begin{frame}[t, plain]
   \ceruleanheader{Warm-Up: things you already know}
   \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items.
+  % TODO: the warm-up items, and which notes section picks each one up again.
 \end{frame}
 
-% ACTIVITY LAUNCH
+% HOOK — leave it UNRESOLVED if the lesson's crux is the misconception it plants.
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \ceruleanheader{TODO: the hook question}
+  \sectionlabel[goldacc]{Commit to an answer --- we will settle this later}
+  % TODO: the claim or question, and the vote/commitment to take. Do not resolve it here.
+\end{frame}
+
+% NOTES SECTION — I DO. Repeat this frame once per numbered notes section (4-6 of them).
+% Flag the CRUX section's frame with \sectionlabel[redacc]{}.
+% These frames carry the ANSWERS the class writes down — they are the board, not a preview,
+% so advance them in step with the handout.
+\begin{frame}[t, plain]
+  \ceruleanheader{TODO: notes section N title}
+  \sectionlabel{I do --- copy this down}
+  % TODO: the worked example exactly as it goes on the board, with the formal term in
+  % \redink{} the first time it is attached.
+\end{frame}
+
+% WE DO — a LIVE surface. Show the task and the data; leave the reasoning BLANK and fill it
+% in from what the class supplies. Do NOT ship this frame pre-answered.
+\begin{frame}[t, plain]
+  \ceruleanheader{We Do: TODO task}
+  \sectionlabel[goldacc]{You tell me every step --- I hold the pen}
+  % TODO: the task and its data only. Same task the practice box will release, new numbers.
+\end{frame}
+
+% INDEPENDENT-PRACTICE LAUNCH — the item range and the rule ONLY.
+% DO NOT put the practice items or their answers on a slide before the practice; a deck that
+% shows the answer pattern turns the release into copying.
+\begin{frame}[t, plain]
+  \ceruleanheader{Your turn}
+  \sectionlabel[goldacc]{Practice box, items 1--TODO $\cdot$ 10 minutes}
+  \begin{block}{The rule}
+    \textbf{Silently, on your own.} Every answer ends in a sentence that says what it means
+    \emph{in this situation}.
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
+% DEBRIEF — walk the displayed practice work, then the cold check.
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
-\end{frame}
-
-% QUICKNOTES SUMMARY
-\begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
-\end{frame}
-
-% APPLICATION
-\begin{frame}[t, plain]
-  \ceruleanheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, then the interpret-in-context question and the "what if" that
-  % demands a justification. This is the lesson's only in-class practice.
+  \ceruleanheader{Going over it}
+  \sectionlabel[redacc]{Correct your own work in a second color}
+  % TODO: the displayed items in order, the crux item with two disagreeing answers, then the
+  % whole-class check-for-understanding question asked cold. This replaces the exit ticket.
 \end{frame}
 
 % CLOSE & ASSIGN
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
-  % TODO: name the assignment and say plainly which form it takes today — the packet's
-  % Check Your Understanding pages OR the equivalent DeltaMath set. Give the due date and
-  % how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{What changed today \& what's next}
+  \sectionlabel[goldacc]{Homework --- this one is scored}
+  % TODO: one line on what changed today. Then name the assignment and say plainly which form
+  % it takes — the packet's homework pages OR a specific DESMOS activity (name it). Give the
+  % due date and how it is scored; close with a one-line preview of the next lesson.
 \end{frame}
 
 \end{document}

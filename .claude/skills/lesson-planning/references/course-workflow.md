@@ -24,8 +24,8 @@ examples, and vocabulary support. Small numbers, concrete contexts, one new idea
 Two standing rules carry over from the courses this skill was ported from, and both hold here:
 
 - **Technology is assumed but pre-digested.** Show calculator/Desmos/spreadsheet output as a
-  **pre-made figure to read and interpret**; save student keystrokes for the activity, where a
-  teacher is circulating.
+  **pre-made figure to read and interpret**; save student keystrokes for the We Do, where the
+  teacher is driving, or the homework, not for the solo practice box.
 - **Never ask students to sketch, draw, or construct a graph from a blank page.** Give a
   pre-drawn, pre-scaled axis system to complete, a figure to read, or a table to fill in. A
   standard that says "sketch" is satisfied by pre-drawn, pre-scaled axes — reconcile the two, do
@@ -44,10 +44,10 @@ Two standing rules carry over from the courses this skill was ported from, and b
 
 A practical loop per lesson: find the standard's lettered skills in the approved standards PDF →
 read the matching pages of the Understanding the Standards PDF for scope and notation → choose a
-**data context students can work from prior knowledge alone** → build the Activity's two scenarios
-around it (scenario 2 carries the crux question) → decide which formal terms the debrief attaches
-in the guided notes → build the practice box and the homework around a
-compute-then-interpret-then-justify spine.
+**data context students can work from prior knowledge alone** → build the numbered notes sections
+around it, ending in the section that settles the lesson's crux → choose the **We Do** example, on
+different data but the *same task the practice box will release* → build the practice box (1–3
+items, worked alone) and the homework around a compute-then-interpret-then-justify spine.
 
 ## The course units
 
@@ -81,7 +81,8 @@ write in the course's contextual, modeling-first voice.
 | **Priority Ideas & Skills** (gold box) | Left: the lettered Knowledge & Skills this lesson covers, in student language. Right: "Key Understandings" — the *why*, drawn from the matching "Understanding the Standards" pages |
 | **Vocabulary, Concepts & Theorems** | Terms and notation the standard introduces (use `\TallMath{...}` for tall formulas) |
 | **Guided-notes context** | A scenario from the course's application domains, reused across several notes sections so one data set carries the whole lesson |
-| **Group-activity context** | A *second*, fresh scenario on the same skills, so the group work is transfer rather than repetition |
+| **We Do context** | A *second* scenario on the same skills, run jointly with the class — same task the practice box releases, different data, so students hold a completed template before working alone |
+| **Practice-box context** | The release: 1–3 items students work silently and alone in 10 minutes, ramping to a second instance of the lesson's trap |
 | **Vocabulary-box terms** | The formal vocabulary and notation, taught outright in the notes and listed in the plan's Vocabulary box |
 | **Learning Targets** (cover, "I can…") | One target per lettered skill covered, reworded as "I can …" |
 | Application / homework CYU contexts | Real or realistic data and scenarios — compute *then* interpret and justify |
@@ -96,8 +97,9 @@ course. Put the codes in the lesson plan's Priority Ideas box and in the Connect
   label, or complete on them. That satisfies "sketch the graph" and removes the setup burden that
   eats a class period.
 - **Technology output** (scatterplots, regression curves, distribution plots, parameter sweeps):
-  show the result as a figure to read and interpret. Put the keystrokes in the activity, not the
-  notes.
+  show the result as a figure to read and interpret. Put the keystrokes in the We Do, where the
+  teacher drives, or in the homework — never in the solo practice box, where a student stuck on a
+  menu loses the whole release.
 
 Never ask for a graph sketched from a blank page, and never make a component's core skill depend
 on a device the class may not have in hand.

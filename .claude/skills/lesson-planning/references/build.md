@@ -30,7 +30,7 @@ Every lesson builds five files into `target/compiled/unitXX/`:
 | `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
 | `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
 | `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
-| `lessonYY_student.pdf` | `cover warmup notes activity homework` — the blank versions, in that pedagogical order. (`shared/lesson.mk`'s `STUDENT_ORDER` is `cover warmup experience notes activity exit_ticket homework`, so a lesson still carrying the retired `experience` or `exit_ticket` dirs merges correctly too; a component absent from the lesson dir is simply skipped.) |
+| `lessonYY_student.pdf` | `cover warmup notes homework` — the blank versions, in that pedagogical order. (`shared/lesson.mk`'s `STUDENT_ORDER` is `cover warmup experience notes activity exit_ticket homework`, so a lesson still carrying the retired `activity`, `experience`, or `exit_ticket` dirs merges correctly too; a component absent from the lesson dir is simply skipped. Leave `STUDENT_ORDER` alone — it costs nothing and keeps older lessons building.) |
 | `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
 
 Three passes make those products more than a `pdfunite` concatenation:
@@ -92,7 +92,7 @@ resolves regardless of build order.
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 03 --lesson 02 \
   --title "<Lesson Title>" --unit-title "<Unit Title>" \
-  [--components cover,warmup,notes,activity,homework,slides] \
+  [--components cover,warmup,notes,homework,slides] \
   [--prefab warmup,warmup_key] [--lesson-id 8.3]
 ```
 
