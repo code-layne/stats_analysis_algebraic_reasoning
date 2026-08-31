@@ -1,11 +1,8 @@
 %! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Slides (Beamer)
-% EFFL flow: title → learning targets (SPOILER-FREE) → warm-up → activity launch →
-% 4 debrief frames (formal terms in "red ink") → QuickNotes → application → close & assign.
-% EVERYTHING BEFORE THE DEBRIEF FRAMES IS VOCABULARY-FREE (the spoiler rule).
+% Gradual release: hook -> guided notes (I do / we do) -> group activity (you do together)
+% -> debrief -> close & assign.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
-
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -22,53 +19,113 @@
 \end{frame}
 }
 
-% ── LEARNING TARGETS (spoiler-free: no formal vocabulary anywhere on this frame) ──
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
+  \ceruleanheader{Today}
   \sectionlabel{Learning targets}
-  By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item say why a number tells you nothing until I know \textbf{who} was measured,
-          \textbf{what} was measured, and in \textbf{what units}.
-    \item read a data table and say who each row is about and what each column records.
-    \item decide whether a column can honestly be averaged or only counted --- and defend it.
-    \item spot a column written with digits that still cannot be averaged.
-    \item tell a question one look-up answers from a question that takes data from many people.
-  \end{itemize}
-  \begin{block}{How today works}
-    Warm-up $\to$ \textbf{Data Detectives} with your group $\to$ we name what you found
-    $\to$ one application together $\to$ practice.
-  \end{block}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{7pt}
+        \item Why a number means nothing without \textbf{who}, \textbf{what}, and
+              \textbf{units}.
+        \item Naming the \textbf{individuals} and \textbf{variables} in a data table.
+        \item Classifying a variable as \textbf{categorical} or
+              \textbf{quantitative} --- and justifying it.
+        \item The \textbf{digit test}: a column of digits that still cannot be
+              averaged.
+        \item What makes a question a \textbf{statistical question}.
+      \end{itemize}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 % ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
+  \ceruleanheader{Warm-Up}
   \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  \vspace{0.2cm}
-  \begin{enumerate}\setlength{\itemsep}{9pt}
-    \item Riverbend has 240 seniors; 84 ride the bus. What \textbf{percent} ride the bus?
-    \item A survey of 50 students found 18 who walk. Riverbend has 900 students.
-          \textbf{Predict} how many of the 900 walk.
-    \item Homework minutes: $12, 15, 9, 20, 14$. \textbf{(a)} Find the mean.
-          \textbf{(b)} Write one sentence saying what your answer describes ---
-          name the group and the units.
-  \end{enumerate}
-  \vspace{0.3cm}
+
+  \vspace{0.4cm}
   \begin{center}
-    {\color{cerulean}\bfseries 3(b) is the one we will read aloud. The number by itself
-     is not an answer.}
+    \begin{minipage}{0.86\textwidth}
+      \begin{enumerate}
+        \setlength{\itemsep}{9pt}
+        \item $84$ of Riverbend's $240$ seniors ride the bus. What percent is that?
+        \item $18$ of $50$ students surveyed walk to school. Riverbend has $900$
+              students --- predict how many walk.
+        \item Homework minutes: $12, 15, 9, 20, 14$. Find the mean \textbf{and write
+              a sentence saying what it describes.}
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{goldacc}\bfseries Item 3(b) is the one we will read aloud.}
   \end{center}
 \end{frame}
 
-% ── ACTIVITY LAUNCH ──────────────────────────────────────────────────────────
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: Data Detectives}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
+  \ceruleanheader{A sports blog on the Riverbend roster}
+  \sectionlabel[goldacc]{hook}
 
   \begin{center}
+    \vspace{0.3cm}
+    {\Large\itshape ``The Riverbend roster's mean jersey number is 14.\\[4pt]
+     That is low for a varsity squad --- this is a\\[4pt]
+     young, inexperienced team.''}
+  \end{center}
+
+  \vspace{0.7cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Every number in that sentence is correct.}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{goldacc}\bfseries\large Is the conclusion?}
+  \end{center}
+\end{frame}
+
+% ── NOTES 1: DATA NEED CONTEXT ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Data are numbers \emph{with a context}}
+  \sectionlabel{notes section 1}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\Huge\bfseries 12}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    What does that tell you? \quad {\color{cerulean}\bfseries Nothing.}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{block}{Now add the context --- who, what, units}
+    ``The \textbf{six players on the Riverbend varsity roster} scored a mean of
+    \textbf{12 points} per player.''
+  \end{block}
+
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{goldacc}\bfseries That sentence is data. The bare 12 is not.}
+  \end{center}
+\end{frame}
+
+% ── NOTES 2: INDIVIDUALS AND VARIABLES ───────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Individuals and variables}
+  \sectionlabel{notes section 2}
+
+  \vspace{0.2cm}
+  \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.15}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{@{} l c l c c c @{}}
     \hline
     \textbf{Player} & \textbf{Jersey \#} & \textbf{Position} & \textbf{Points} &
@@ -84,168 +141,129 @@
     \end{tabular}
   \end{center}
 
-  \vspace{0.15cm}
-  \begin{center}
-    {\itshape ``The Riverbend roster's mean jersey number is 14. That is low for a varsity
-     squad --- this is a young, inexperienced team.''}
-  \end{center}
-
-  \begin{block}{Your job}
-    Use what you already know. Every word on those pages is one you have already met.
-    For \emph{every} answer, be ready to show me \textbf{where you see it in the table}.
-  \end{block}
-\end{frame}
-
-% ── DEBRIEF 1 ────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{1. a number, and a table}
-
-  \vspace{0.3cm}
-  \begin{center}
-    {\Huge\bfseries 12} \qquad vs. \qquad
-    {\large ``12 points, for the six players on the Riverbend roster''}
-  \end{center}
-
   \vspace{0.4cm}
-  \begin{center}
-  \begin{minipage}{0.86\textwidth}
-    \begin{itemize}\setlength{\itemsep}{7pt}
-      \item A number plus \textbf{who}, \textbf{what}, and \textbf{units} is
-            \redink{data}. Without them it is just a number.
-      \item Each \textbf{row} of the roster is one \redink{individual} --- 6 of them.
-      \item Each \textbf{column} is one \redink{variable} --- 5 of them.
-            (``Player'' names the individuals; it is not a variable we study.)
-    \end{itemize}
-  \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── DEBRIEF 2 ────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Debrief: your two piles already had names}
-  \sectionlabel[redacc]{2. amount vs. label}
-
-  \vspace{0.2cm}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
-      \begin{block}{Your ``amount'' pile}
-        Points, Height\\[4pt]
-        A measured amount \textbf{with units}. Mean points $= 12$ --- a real number
-        of points.\\[4pt]
-        {\color{cerulean}\bfseries This is \redink{quantitative}.} Summarize with a
-        \textbf{mean}.
+      \begin{block}{Each row}
+        one \textbf{individual} --- one player.\\[3pt]
+        This table has {\color{cerulean}\bfseries 6}.
       \end{block}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \begin{block}{Your ``label'' pile}
-        Position, Captain, Jersey \#\\[4pt]
-        Guard $+$ Forward is nothing. There is no mean position.\\[4pt]
-        {\color{cerulean}\bfseries This is \redink{categorical}.} Summarize with
-        \textbf{counts and percents} --- your $50\%$ captains.
+      \begin{block}{Each column}
+        one \textbf{variable} --- one thing recorded.\\[3pt]
+        This table has {\color{cerulean}\bfseries 5}.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── NOTES 3: TWO TYPES ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two types of variables}
+  \sectionlabel{notes section 3}
+
+  \vspace{0.4cm}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Quantitative}
+        Records a \textbf{measured amount}, with units.\\[5pt]
+        Points, Height, minutes, siblings.\\[5pt]
+        {\color{cerulean}\bfseries Summarize with a mean.}
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Categorical}
+        Records a \textbf{label} or group name.\\[5pt]
+        Position, Captain, lunch choice.\\[5pt]
+        {\color{cerulean}\bfseries Summarize with counts and percents.}
       \end{block}
     \end{column}
   \end{columns}
 
-  \vspace{0.4cm}
+  \vspace{0.7cm}
   \begin{center}
-    You did not learn a rule and then sort. You sorted --- and the sort \emph{is} the
-    definition.
+    Captains: $3$ of $6 = \mathbf{50\%}$. \quad
+    {\color{goldacc}\bfseries A categorical variable does get summarized --- just not
+    with a mean.}
   \end{center}
 \end{frame}
 
-% ── DEBRIEF 3 (the crux) ─────────────────────────────────────────────────────
+% ── NOTES 4: THE DIGIT TEST (the crux) ───────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: the blog's arithmetic was right}
-  \sectionlabel[redacc]{3. the test to write down}
-
-  \vspace{0.2cm}
-  \begin{center}
-    $\dfrac{12+7+23+4+17+21}{6} \;=\; \dfrac{84}{6} \;=\; 14$ \qquad
-    {\color{goldacc}\bfseries Correct.}
-  \end{center}
+  \ceruleanheader{The blog's arithmetic was right}
+  \sectionlabel[redacc]{notes section 4 --- the digit test}
 
   \vspace{0.3cm}
   \begin{center}
-    {\color{goldacc}\bfseries\large So who wears 14 on average?}
+    $\dfrac{12+7+23+4+17+21}{6} = \dfrac{84}{6} = 14$
   \end{center}
 
-  \vspace{0.3cm}
+  \vspace{0.5cm}
   \begin{center}
-    Nobody. Jersey \# was in your \textbf{label} pile --- the digits only tell the players
-    apart, so the mean measures nothing at all.
+    {\color{redacc}\bfseries\large Now find me the player who wears 14 on average.}
   \end{center}
 
-  \vspace{0.35cm}
-  \begin{block}{The test --- write this down}
-    Not ``does it look like a number?'' but
-    \redink{does arithmetic on this variable mean anything?}\\[3pt]
-    Grade level and ZIP code fail it too. \textbf{Siblings} $2,0,3,1,2,4$ passes it ---
-    digits are not the enemy, meaningless arithmetic is.
+  \vspace{0.6cm}
+  \begin{block}{The test is not ``does it look like a number?''}
+    \begin{center}
+      \textbf{Does \emph{arithmetic} on this variable mean anything?}
+    \end{center}
   \end{block}
+
+  \vspace{0.3cm}
+  \begin{center}
+    Fails it: jersey number, ZIP code, grade level. \quad
+    Passes it: points, height, minutes.
+  \end{center}
 \end{frame}
 
-% ── DEBRIEF 4 ────────────────────────────────────────────────────────────────
+% ── NOTES 5: STATISTICAL QUESTIONS ───────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: which questions take data?}
-  \sectionlabel[redacc]{4. one answer, or many}
+  \ceruleanheader{Which questions take data to answer?}
+  \sectionlabel{notes section 5}
 
-  \vspace{0.2cm}
+  \vspace{0.3cm}
+  \begin{center}
+    A \textbf{statistical question} is one whose answers are expected to
+    {\color{cerulean}\bfseries vary} from individual to individual.
+  \end{center}
+
+  \vspace{0.5cm}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{block}{One look-up (O)}
-        ``What number does Sasha wear?''\\
-        ``How tall is Marcus?''\\[4pt]
-        Look at one row. One answer. Done.
+        What number does Sasha wear?\\[4pt]
+        How tall is Marcus?
       \end{block}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \begin{block}{Many answers (M)}
-        ``How many points do Riverbend players score in a game?''\\
-        ``How tall are the players on the roster?''\\[4pt]
-        The answers \textbf{vary} from player to player.
+      \begin{block}{Takes many answers (M)}
+        How many points do Riverbend players score in a game?\\[4pt]
+        How tall are the players on the roster?
       \end{block}
     \end{column}
   \end{columns}
 
   \vspace{0.5cm}
   \begin{center}
-    Your \textbf{M} questions have a name: a \redink{statistical question} is one whose
-    answers are \textbf{expected to vary}, so it takes data to answer.\\[6pt]
-    {\color{cerulean}\bfseries A question can contain a number and still not be statistical.}
+    {\color{goldacc}\bfseries The M questions are the statistical ones.}
   \end{center}
 \end{frame}
 
-% ── QUICKNOTES ───────────────────────────────────────────────────────────────
+% ── PRACTICE ─────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: naming what you found}
-  \sectionlabel{Fill the box in your packet}
+  \ceruleanheader{Practice: The Student Life Survey}
+  \sectionlabel[goldacc]{your turn --- practice box}
+
   \vspace{0.2cm}
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item \textbf{Data} = numbers or labels $+$ the \redink{context}: who, what, and the
-          \redink{units}.
-    \item Row $=$ one \redink{individual}. \qquad Column $=$ one \redink{variable}.
-    \item \redink{Quantitative} $\rightarrow$ measured amount with units
-          $\rightarrow$ summarize with a \redink{mean}.
-    \item \redink{Categorical} $\rightarrow$ label or group name $\rightarrow$ summarize with
-          counts and \redink{percents}.
-    \item The test for digits: \redink{does arithmetic on it mean anything?}
-    \item A \redink{statistical question} expects the answers to \redink{vary}.
-  \end{itemize}
-\end{frame}
-
-% ── APPLICATION ──────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Application: The Student Life Survey}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-
   \begin{center}
-    \footnotesize
-    \renewcommand{\arraystretch}{1.1}
+    \small
+    \renewcommand{\arraystretch}{1.15}
     \begin{tabular}{@{} l c c l c c @{}}
     \hline
     \textbf{Student} & \textbf{Grade} & \textbf{Commute (min)} & \textbf{Lunch} &
-    \textbf{Siblings} & \textbf{Club} \\
+    \textbf{Siblings} & \textbf{Club member} \\
     \hline
     Alina   & 10 & 20 & Home       & 2 & Yes \\
     Devon   & 11 &  8 & Cafeteria  & 0 & No  \\
@@ -257,43 +275,102 @@
     \end{tabular}
   \end{center}
 
-  \vspace{0.05cm}
+  \vspace{0.4cm}
   \begin{center}
-  \begin{minipage}{0.9\textwidth}
-    \begin{itemize}\setlength{\itemsep}{4pt}
-      \item How many individuals? How many variables? Classify Commute, Lunch, and
-            \textbf{Grade}.
-      \item Mean commute: $\dfrac{20+8+35+15+5+25}{6} = \dfrac{108}{6} = 18$ minutes.
-            \textbf{Interpret it} --- name the group and the units.
-      \item \textbf{What if} we recorded \emph{minutes waiting in the lunch line} instead
-            of \emph{where} they eat? Does the type change? \textbf{Justify.}
-    \end{itemize}
-  \end{minipage}
+    How many individuals? How many variables?\\[4pt]
+    Classify \textbf{Commute}, \textbf{Lunch}, and \textbf{Grade}.\\[4pt]
+    {\color{redacc}\bfseries Grade is 10, 11, 9, 12. What is the mean grade level ---
+    and who is in it?}
+  \end{center}
+\end{frame}
+
+% ── GROUP ACTIVITY LAUNCH ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Group Activity: Data Detectives}
+  \sectionlabel[goldacc]{Groups of 3 $\cdot$ 18 minutes $\cdot$ items 1--7}
+
+  \vspace{0.2cm}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l c c l c @{}}
+    \multicolumn{5}{c}{\textbf{The Riverbend Cross-Country Meet Card}} \\
+    \hline
+    \textbf{Runner} & \textbf{Bib \#} & \textbf{Finish time (min)} &
+    \textbf{Team color} & \textbf{Medal?} \\
+    \hline
+    Amara & 31 & 22 & Blue & Yes \\
+    Ben   & 18 & 26 & Gold & No  \\
+    Cruz  & 45 & 24 & Blue & No  \\
+    Dana  &  9 & 21 & Gold & Yes \\
+    Eli   & 12 & 27 & Blue & No  \\
+    \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \textbf{Every answer needs a reason, and every conclusion has to name the
+      group it applies to.} ``It's words'' and ``it's numbers'' are not reasons.\\[6pt]
+      Finish items 1--7, then the gold \textbf{Extension} box.
+    \end{minipage}
+  \end{center}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief --- correct your reasons in a second color}
+  \sectionlabel[redacc]{7 minutes}
+
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      \begin{enumerate}
+        \setlength{\itemsep}{7pt}
+        \item A number is not an answer until it names a \textbf{group} and
+              \textbf{units}.
+        \item The recap blog's mean bib number of $23$ is arithmetically correct
+              --- and worthless.
+        \item State the digit test in your own words.
+        \item Same runners, two questions, two different types. \textbf{The
+              question decides the type.}
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.5cm}
+  \begin{center}
+    {\color{redacc}\bfseries A correct computation on the wrong kind of variable is
+    still a worthless number.}
   \end{center}
 \end{frame}
 
 % ── CLOSE & ASSIGN ───────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
+  \ceruleanheader{Today in one line --- and what's next}
+  \sectionlabel[goldacc]{homework is scored}
 
-  \vspace{0.3cm}
-  \begin{block}{Tonight}
-    \textbf{The packet's Check Your Understanding pages} --- Northgate Recreation Center,
-    7 items, about 20 minutes. \emph{Not} DeltaMath for this lesson.\\[4pt]
-    Due at the start of next class. Scored out of 20 --- items 6 and 7 are scored on your
-    \textbf{reason}, not your verdict. Item 7 cannot be answered by computing anything.
+  \vspace{0.4cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      You walked in able to compute a mean. You walk out able to say
+      \textbf{when a mean is allowed to exist} --- and that is decided by the
+      variable, not by the arithmetic.
+    \end{minipage}
+  \end{center}
+
+  \vspace{0.6cm}
+  \begin{block}{Homework}
+    \textbf{Northgate Recreation Center}, 7 items --- \emph{or} the DeltaMath set,
+    if that is what I named today. Items 3 and 7 cannot be answered by computing
+    anything.
   \end{block}
 
-  \vspace{0.35cm}
+  \vspace{0.3cm}
   \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      {\color{cerulean}\bfseries What changed today:} you walked in able to compute a mean.
-      You walk out able to say \textbf{when a mean is allowed to exist} --- and that is decided
-      by the variable, not by the arithmetic.\\[8pt]
-      {\bfseries Next (1.1):} the four stages of the data cycle, formally --- and writing
-      questions a data set can actually answer.
-    \end{minipage}
+    {\color{cerulean}\bfseries Next: the four stages of the data cycle, and questions
+    a data set can actually answer.}
   \end{center}
 \end{frame}
 

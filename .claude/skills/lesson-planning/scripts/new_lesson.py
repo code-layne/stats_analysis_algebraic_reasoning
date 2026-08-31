@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 01 --lesson 01 \
         --title "Describing a Distribution" --unit-title "Data Analysis" \
-        --components cover,warmup,experience,homework,slides
+        --components cover,warmup,notes,activity,homework,slides
 """
 from __future__ import annotations
 
@@ -21,37 +21,43 @@ from pathlib import Path
 
 SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 
-# EFFL component set (Math Medic "experience first, formalize later", 2026-08 redesign):
-# a lesson is cover / warmup / experience / homework / slides. The `experience` directory
-# name is a build identifier (shared/lesson.mk STUDENT_ORDER/KEYED_PAIRS); the component is
-# *labelled* "Experience & Formalize" everywhere a student or teacher reads it.
+# GRADUAL-RELEASE component set (2026-08-31 redesign, replacing the short-lived EFFL trial):
+# a lesson is cover / warmup / notes / activity / homework / slides. The period runs
+# 5 warm-up / 20 guided notes & practice / 18 group activity / 7 debrief / 5 close & assign.
 #
-# This course KEEPS homework, and homework is where Check Your Understanding lives: the
-# Experience & Formalize component is three parts (Activity, QuickNotes, Application) and
-# carries no in-class practice section, so the CYU-style problem set IS the homework. It is
-# scored (the cover's score column carries a \blank{} for it). Whether a given lesson's set
-# is assigned from the packet or swapped for the equivalent DeltaMath assignment is a
-# per-lesson teacher decision made at Close & Assign — the packet pages are authored either
-# way. (Algebra 2 dropped homework entirely and AP Statistics keeps a separate in-class CYU;
-# do not copy either.)
+# The DEBRIEF IS NOT A COMPONENT. It is a teacher-led phase that closes the group activity and
+# lives only in the lesson plan and the deck — there is no student page for it, and there is no
+# exit ticket: the debrief is the formative check.
 #
-# `notes`, `activity`, and `exit_ticket` are pre-EFFL components. They are still scaffoldable
-# by name so the lessons authored before the redesign can be patched or regenerated, but they
-# are NOT defaults — do not author them into a new lesson.
-KEYED = ["warmup", "experience", "homework", "notes", "activity", "exit_ticket"]
+# `notes` is the guided-notes handout: objectives, a vocab box the class fills in, a hook, the
+# numbered teaching sections (I do / we do), and a closing practice box (you do).
+# `activity` is ONE group activity for the whole class — no tiers — worked in groups of three
+# AFTER the notes, so students already hold the vocabulary. Differentiate by depth: the items
+# ramp toward the crux and an optional extensionbox absorbs groups that finish early.
+#
+# Homework is authored for EVERY lesson and is scored (the cover's score column carries a
+# \blank{} for it) — DeltaMath's statistics coverage is thin, so the packet set is the default.
+# Whether a given lesson's set is assigned from the packet or overridden with the equivalent
+# DeltaMath assignment is a per-lesson teacher decision made at Close & Assign; the packet
+# pages are authored either way.
+#
+# `experience` and `exit_ticket` are dead shapes. `experience` was the EFFL in-class component
+# and `exit_ticket` predates both redesigns. Both remain scaffoldable by name so an older
+# lesson can be patched, but they are NOT defaults — do not author either into a new lesson.
+KEYED = ["warmup", "notes", "activity", "homework", "experience", "exit_ticket"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
 # slides is a default: every lesson owes a deck, since lessonYY_slides.pdf and
 # lessonYY_slides.pptx are two of the five work products the build produces.
-DEFAULT_COMPONENTS = ["cover", "warmup", "experience", "homework", "slides"]
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
-    "experience": "Experience \\& Formalize",
-    "homework": "Homework",
-    # legacy (pre-EFFL) components:
     "notes": "Guided Notes",
     "activity": "Group Activity",
+    "homework": "Homework",
+    # dead shapes, scaffoldable only to patch an older lesson:
+    "experience": "Experience \\& Formalize",
     "exit_ticket": "Exit Ticket",
 }
 # NAMESTRIP (references/conventions.md): worksheet components carry NO name/date/

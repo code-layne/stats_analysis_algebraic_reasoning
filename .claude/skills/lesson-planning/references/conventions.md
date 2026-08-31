@@ -30,7 +30,7 @@ before using it.
 
 ## Per-document-type preambles
 
-**Student component** (warmup, homework, cover — and the legacy notes/activity/exit_ticket):
+**Student component** (warmup, notes, activity, homework, cover) — **all 10pt**:
 ```latex
 \documentclass[10pt]{article}
 \usepackage{saar-article}
@@ -38,36 +38,34 @@ before using it.
 % cover also: \usepackage{ltablex}\keepXColumns
 ```
 
-**Experience & Formalize** (`experience/`) — **12pt**, Math Medic sizing, plus its own
-`\answerspace` macro:
-```latex
-\documentclass[12pt]{article}
-\usepackage{saar-article}
-\usepackage{saar-boxes}
-\newcommand{\answerspace}[2]{\par\nopagebreak\noindent\begin{minipage}[t][#1][t]{\linewidth}%
-  \color{keyred}\bfseries #2\end{minipage}\par}
-```
-
 **Answer key** (the matching `_key` directory):
 ```latex
-\documentclass[10pt]{article}   % 12pt for experience_key
+\documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}     % pulls in -boxes; do NOT also load -boxes
-% experience_key repeats the identical \answerspace definition
 ```
 
-### `\answerspace{H}{answer}` — the experience component's parity mechanism
+> **Gone with EFFL.** `experience/` was 12pt and used an `\answerspace{H}{answer}` macro instead
+> of write-lines. Both the 12pt component and the macro are retired — every component is 10pt and
+> student answer space is `\writeline` / `\writelines{n}` / `\blank{}`. Leave the macro alone in
+> any lesson that still carries an `experience/` dir; do not introduce it into a new one.
 
-`experience/` uses **open white space**, never `\writeline`s. `\answerspace` reserves exactly
-`H` of vertical space: the blank passes `{}` and prints nothing, the key passes the answer and
-prints it in the *identical* height. Because the two files carry the same heights, they paginate
-identically **by construction** — the work rule, applied to prose answers.
+### Page-for-page alignment — the gap the gate does not close
 
-- Sizing: `1.4cm` ≈ 2 handwritten lines · `2.0cm` ≈ 3 · `2.6cm` ≈ 4.
-- The macro definition and every `H` value stay **byte-identical** in the blank and the key.
-  Never resize one to fit an answer — shorten the answer.
-- **`\boxguard` counts in `experience/` are 12pt-relative:** a value tuned at 10pt is ~40%
-  oversized at 12pt, so use **~14–16**, not the 24–30 used elsewhere.
+`make check` compares blank and key by **total page count only**. Two components can have equal
+totals and still break in different places, so the teacher's page 3 is not the student's page 3.
+
+The usual culprit is the guided notes' `vocabbox`: in the blank, `\termblanklong{Term}` reserves
+two ruled lines per term; in the key, `\vocabans{Term}{definition}` prints a wrapped definition
+that is typically shorter. The key's page 1 gains room, the first `notesbox` floats up onto it,
+and every section thereafter is one page early.
+
+- **Guard the first `notesbox` after the `vocabbox` with `\boxguard[20]`** in the blank *and* the
+  key. That forces the break to the same place in both.
+- **Verify by comparing per-page headings**, not page counts, on every component of the pair.
+- **Known limit:** `\boxguard` is inert inside a breakable `tcolorbox` (`\Needspace` cannot fire
+  there), so drift *within* one long box — a homework `notesbox` running six items across two
+  pages — cannot be fixed this way. Reflow the items or accept it; do not fake it.
 
 **Lesson plan** (`main.tex` at the lesson root): loads `-boxes` and `graphicx`. The course
 macros `\CourseName` and `\MeetingLength` are defined in `saar-article.sty`, so
@@ -219,12 +217,15 @@ The plan closes with one note per component, in packet order, each titled for it
 
 ```latex
 \begin{teachernote}[Warm-Up]                 ... \end{teachernote}   % → "Teacher Note: Warm-Up"
-\begin{teachernote}[Experience \& Formalize] ... \end{teachernote}   % Activity / Debrief / Application
+\begin{teachernote}[Guided Notes] ... \end{teachernote}
+\begin{teachernote}[Group Activity] ... \end{teachernote}
 \begin{teachernote}[Homework]                ... \end{teachernote}   % the CYU set + packet-vs-DeltaMath
 ```
 
-Three notes in an EFFL lesson. A legacy lesson still carries `[Guided Notes]`, `[Group Activity]`,
-and `[Exit Ticket]` notes; leave them alone unless you are regenerating the lesson.
+**Four** notes, in packet order: `[Warm-Up]`, `[Guided Notes]`, `[Group Activity]`, `[Homework]`.
+There is no note for the debrief — it is fully specified in its own Debrief box. A lesson still in
+an older shape may carry `[Experience & Formalize]` or `[Exit Ticket]`; leave those alone unless
+you are converting the lesson.
 
 **There is no exemption — this applies to assessment keys too.** A unit test's answer rationale
 and Part D scoring go on **page 2 of `unitXX/unit_cover_key/main.tex`**, not at the foot of
@@ -251,11 +252,11 @@ run twice on the same lesson. `--check` reports without changing anything.
 
 When a review says "lesson 3.2 needs a namestrip," the name/date/period row is repeating on
 components stapled *behind* the cover sheet. The student writes their name once; every repeat costs
-vertical space at the top of a page — space that matters most on the warm-up and exit ticket, which
+vertical space at the top of a page — space that matters most on the warm-up, which
 are held to one page.
 
-Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `experience`, `homework` (and from
-the legacy `notes`, `activity`, `exit_ticket`) **and from every matching `_key` file**, which stay
+Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `notes`, `activity`, `homework` (and
+from any `experience`/`exit_ticket` still present) **and from every matching `_key` file**, which stay
 in lockstep. Two exemptions:
 
 - **`cover/`** — the one place the row belongs. Never strip it.
@@ -270,7 +271,7 @@ python3 .claude/skills/lesson-planning/scripts/namestrip.py --project . --unit 0
 ```
 
 `--check` writes nothing and exits 1 if it finds anything, so it doubles as a review gate. Rebuild
-afterward and confirm the warm-up and exit ticket are **still 1 page**, blank *and* key.
+afterward and confirm the warm-up is **still 1 page**, blank *and* key.
 
 **Going forward this is automatic:** `new_lesson.py` and the worksheet skeletons no longer emit a
 name row, so newly scaffolded lessons are born namestripped. Namestrip is **not always free** —
@@ -360,7 +361,7 @@ re-measure rather than trusting a prior refusal.
 
 ## The convention gate — `make check`
 
-`make all` exits 0 on a key that runs a page longer than its blank, on a two-page exit ticket, and
+`make all` exits 0 on a key that runs a page longer than its blank, on a two-page warm-up, and
 on `\ans` buried in math. `make check` is what turns those into build failures:
 
 ```bash
@@ -376,7 +377,7 @@ enforces, all defined in `shared/lesson_check.py`:
 | Check | Fails when |
 | --- | --- |
 | **page parity** | a keyed component's page count ≠ its `_key`'s (the work rule's observable consequence) |
-| **one-pagers** | `warmup` or `exit_ticket` (legacy) is not exactly 1 page, blank **or** key |
+| **one-pagers** | `warmup` (or a retired `exit_ticket`) is not exactly 1 page, blank **or** key |
 | **ans-in-math** | `\ans` / `\ansline` / `\vocabans` appears inside `$…$`, `\[…\]`, or `\(…\)` |
 | **teachernote** | `\begin{teachernote}` appears in a lesson component's `_key` |
 | **namestrip** | a live `\namedateperiod` / `\namepartnerperiod` appears on a worksheet component |
@@ -459,21 +460,16 @@ back to `-colors`.
 
 ## Lesson-plan section order (canonical)
 
-**EFFL order.** Primary Objective (with the standard codes and the lesson-model line) →
-Priority Ideas & Skills → Vocabulary, Concepts & Theorems → Activate Prior Knowledge & Spiral
-Review (embeds the warm-up thumbnail if prefab) → **Lesson at a Glance** (`fixedskillbox`, the
-five-phase table) → **Experience & Formalize — The Activity** → **Debrief — Formalize** →
-**Application** → Watch For → **Homework — Check Your Understanding** → Close & Preview →
-teacher notes. Keep the Primary Objective in plain student terms — what they can do, model,
-interpret, and justify with the topic.
+**Gradual-release order.** Primary Objective (with the standard codes) → Priority Ideas & Skills
+→ Vocabulary, Concepts & Theorems → **Lesson at a Glance** (`fixedskillbox`, the five-phase table:
+5 / 20 / 18 / 7 / 5) → Activate Prior Knowledge & Spiral Review (embeds the warm-up thumbnail if
+prefab) → **Hook** → **Lesson — Guided Notes (20 min)** → **Explicit Instruction** → **Active
+Monitoring** → **Group Work & Differentiation (18 min)** → **Debrief (7 min)** → Reinforcement &
+Extension → teacher notes. Keep the Primary Objective in plain student terms — what they can do,
+model, interpret, and justify with the topic.
 
-There is no Hook box, no Lesson/Explicit Instruction box, no Group Work & Differentiation box,
-and no Individual Work & Assessment box: EFFL has no direct-instruction block, no tiers, and no
-exit ticket. **Three** teacher notes — `[Warm-Up]`, `[Experience & Formalize]`, `[Homework]`.
-
-**The spoiler rule does not apply here.** The lesson plan is teacher-facing: use the formal
-vocabulary and the lettered codes freely. It applies to the cover, the warm-up, and every deck
-frame before the debrief.
+There is no Individual Work & Assessment box and no exit ticket: the **Debrief** box carries the
+whole-class cold check and the formative read that used to live there.
 
 **Tag the standards.** This is a standards-driven course: the Priority Ideas & Skills box and the
 Connections line both carry the lettered standard codes the lesson covers. See
