@@ -1,8 +1,14 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-31 — **THE GROUP ACTIVITY IS DROPPED. THE GUIDED NOTES NOW CARRY THE
-WHOLE GRADUAL RELEASE.** This run rewrote the `lesson-planning` skill only; **no lesson content
-was touched**. Second design change of 2026-08-31 (the first restored gradual release after the
+**Last updated:** 2026-08-31 — **LESSON 1.1 IS CONVERTED AND IS NOW THE PROJECT'S FIRST CURRENT
+MODEL.** This run regenerated 1.1 in the notes-only gradual-release shape: the group activity was
+folded into the guided notes and `activity/` + `activity_key/` were deleted. `make -C
+unit01/lesson01 all` and `check` both exit 0; blank and key verified page-for-page. Mirror 1.1
+when authoring a new lesson.
+
+Earlier the same day: **THE GROUP ACTIVITY WAS DROPPED. THE GUIDED NOTES NOW CARRY THE WHOLE
+GRADUAL RELEASE.** That run rewrote the `lesson-planning` skill only; no lesson content was
+touched. Second design change of 2026-08-31 (the first restored gradual release after the
 EFFL trial and kept an 18-minute group activity; that activity is now gone).
 
 **The agreed period shape (user-confirmed 2026-08-31, second revision):**
@@ -122,21 +128,22 @@ the lesson was deleted. Working tree carries skill changes only.
 > — but worth a user decision: either set `\MeetingLength` to 55 or add 5 minutes of
 > transition/passing to the table.
 
-### Units 1–8 are ALL in older shapes — none is a current model
+### Lesson 1.1 is the current model; everything else is in an older shape
 
-Nothing in the tree matches the notes-only design yet.
-
-- **Lessons 1.0 and 1.1** are authored and complete but carry `activity/` + `activity_key/`.
-  They are **no longer models** — do not mirror them. Convert with the group-activity recipe in
-  SKILL.md's Retrofit section when either comes up.
+- **Lesson 1.1 is CONVERTED (2026-08-31) and is the model to mirror.** `cover / warmup / notes /
+  homework / slides` + the three keys, a 5/30/10/7/3 phase table, six modeled notes sections plus
+  a We Do, and a 3-item closing practice box. Nothing else in the tree matches the notes-only
+  design.
+- **Lesson 1.0** is authored and complete but still carries `activity/` + `activity_key/`. It is
+  **not a model** — convert it with the group-activity recipe in SKILL.md's Retrofit section.
 - **Lessons 1.2–1.8** are authored but pre-EFFL: they carry both `exit_ticket/` and `activity/`.
 - **Units 2–8** (57 lesson dirs) are **empty EFFL skeletons** — `cover / warmup / experience /
   homework / slides`, no authored content. The fix per lesson is mechanical: scaffold `notes` and
   delete `experience`/`experience_key`. Nothing is lost. Do it as part of authoring each unit,
   **not as a bulk sweep**.
 
-Until a lesson is converted, **author new lessons from the skeletons and
-`references/components.md`**, not by mirroring an existing lesson.
+**Mirror lesson 1.1** when authoring a new lesson; fall back to the skeletons and
+`references/components.md` for anything 1.1 does not show.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
 
@@ -199,33 +206,47 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     frames, student and key packets 12pp each.
   - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**; every
     page eyeballed — no stranded boxes, and blank/key aligned heading-for-heading.
-- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE but is NO LONGER A
-  MODEL.** It still carries `activity/` + `activity_key/`; **do not mirror it.** It was never
-  EFFL — it kept the original pre-EFFL shape — so its 2026-08-31 conversion was: delete `exit_ticket/` + `exit_ticket_key/`,
-  add the *Lesson at a Glance* phase table, replace the plan's *Individual Work & Assessment*
-  box with a **Debrief (7 min)** box that folds the exit ticket's stage-2/stage-4 item in as a
-  whole-class cold check, add an activity-launch frame and a debrief frame to the deck, and
-  **trim the notes to fit the 20-minute block**.
+- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE and CONVERTED
+  (2026-08-31). It is the project's FIRST CURRENT MODEL — mirror it.** The group activity was
+  folded into the guided notes and `activity/` + `activity_key/` deleted.
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. No
+    `activity/`, no `exit_ticket/`, no `experience/`.
   - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e in the 1.2 hand-off).
-  - Scope: the four stages named formally and what each *hands to the next*; the three tests
-    for a question (answers vary / group named / measurement named) and repairing one that
-    fails; **the question decides the data type** (the lesson's pivot — 1.0 classified
-    variables in a finished table, 1.1 decides the type before any data exist); frequency
-    tables and relative frequency; conclusion in context; diagnosing which stage a flawed
-    study broke at.
-  - Contexts: Riverbend Student Council bike-rack survey (notes; 60 students — bus 27, car 15,
-    walk 12, bike 6, scaled to 900), Riverbend breakfast cart (activity; 40 students), Lakeside
-    Farmers Market (homework; 50 shoppers, 800 Saturday total). All arithmetic verified in
-    Python.
-  - **Notes trimmed to fit 20 minutes** (they were paced at ~40 in the old teacher note):
-    section 6's four broken-study scenarios were cut — they duplicated activity Tier A item 3,
-    where groups now have to argue them instead of copying them — and the practice box's
-    scale-to-900 part (c) was cut as redundant with section 5. New pacing: 6/5/6/1 + 2 = 20 min.
-  - Page counts: warmup 1/1, **notes 3/3**, activity 2/2, homework 2/2; plan 6pp, deck 11
-    frames, student and key packets 12pp each. `make -C unit01/lesson01 all` and `check` both
-    exit 0; pages eyeballed.
-  - The deck's "cycle turns" frame was **de-spoilered** — it used to list the four broken
-    studies that are now activity Tier A item 3, which would have handed groups the answers.
+  - Scope: the four stages and what each *hands to the next*; the three tests for a question and
+    repairing one that fails; **the question decides the data type** (the crux — 1.0 classified
+    variables in a finished table, 1.1 decides the type before any data exist); frequency and
+    relative frequency; conclusion in context; and **diagnosing which stage a flawed study broke
+    at** (restored this run — it had been cut to the activity when the notes were squeezed into
+    20 minutes).
+  - **Notes pacing, 4 + 4 + 6 + 3 + 3 + 4 + 6 = 30 min:** §1 four stages (+ sort the council's
+    own four actions into stages), §2 the three tests, §3 *the lesson* — the question decides the
+    type, §4 stages 2–3 frequency table, §5 stage 4 conclusion + the "would bike" trap that
+    settles the hook, §6 where a study breaks down (four failed reports, **one per stage** —
+    row 4 is the only true stage-4 failure, so "stage 4" means something), §7 **We Do**.
+  - **The We Do is the council's second survey** (80 asked, 24 would ride → 30% → 270 of 900),
+    and it runs the *same five moves* the practice box releases: variable + type, percent,
+    scale-up, conclusion sentence, diagnose the stage.
+  - **Practice box (10 min, alone) is the Riverbend breakfast cart** — the old activity's context,
+    kept because it is the same school, a different study. 3 items: (1) variable + type, on-ramp;
+    (2) 35% and 315-of-900 **pre-worked in a `work` block** so the time goes to a conclusion that
+    names *the 40 she asked*; (3) **the crux** — the newspaper's arithmetically-correct sentence,
+    which stage it entered at (**2**) and *two* claims the data cannot support. Plus an
+    `extensionbox` (write a question that passes all three tests).
+  - Where the old activity went: item 1 → §1's sort table; item 2 → practice item 2; item 3 →
+    practice item 1; item 4 → §2's repair table; item 5 → the We Do; item 6 → §6's diagnosis
+    table; extension 1 → practice item 3; extension 2 → §3's closing paragraph.
+  - Contexts: Riverbend Student Council bike-rack survey (warm-up + notes §1–§6; 60 students —
+    bus 27, car 15, walk 12, bike 6, scaled to 900), the council's follow-up (We Do; 80 → 24),
+    the Riverbend breakfast cart (practice; 40 students — bagel 14, fruit cup 10, muffin 12,
+    nothing 4), Lakeside Farmers Market (homework; 50 shoppers, 800 Saturday total). **All
+    arithmetic re-verified in Python this run.**
+  - Page counts: warmup 1/1, **notes 5/5**, homework 2/2; plan 6pp, deck 14 frames, student and
+    key packets 12pp each. `make -C unit01/lesson01 all` and `check` both exit 0; **notes blank
+    and key verified page-for-page by comparing per-page headings**, not just totals; every page
+    eyeballed — no stranded boxes, no overfull vbox in the deck.
+  - Homework was **not** reshaped (the recipe says it needs none). DeltaMath → **Desmos** across
+    the cover comment, the plan, and the deck; 1.1 stays a **packet** night, because item 7's
+    correct-arithmetic / wrong-conclusion reasoning has no Desmos equivalent.
 - **Lesson 1.2 — "Populations, Samples, Parameters, and Statistics" — is COMPLETE.** All
   components authored, built, and passing the gate.
   - Standards: **PS.DC.1d, PS.DC.1e** (PS.DC.1b carried forward in the conclusion items).
@@ -531,26 +552,29 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    gradual release; smoke-tested scaffold → `make all` → `make check`, all green. **No lesson
    content was touched this run**, so nothing in the tree matches the skill yet: author new
    lessons from the skeletons and `references/components.md`, and do **not** mirror 1.0 or 1.1.
-1. **Convert lessons 1.0 and 1.1 off the group activity** — the two authored gradual-release
-   lessons, and the highest-value next job, since converting one gives the project its first
-   current model to mirror. Follow "Converting a group-activity lesson" in the skill's Retrofit
-   section. Per lesson: **fold the activity into the notes rather than deleting it** — its
-   on-ramp items become worked examples in the numbered sections, its **crux item becomes the We
-   Do**, one or two later items become the `practicebox`, and the rest is cut or moved to the
-   homework; re-set what survives in the notes' own context (the activity's deliberately *fresh*
-   context existed to make group work transfer, and that reason is gone). Then delete
-   `activity/` + `activity_key/` and their `.stamps`/`target` dirs, cut the cover to three rows,
-   swap *Group Work & Differentiation* for **Independent Practice (10 min)**, re-point the
-   Debrief box at the practice items, drop the `[Group Activity]` teacher note, re-time the
-   notes to **30 minutes — expanding into the freed block**, and rebuild the deck's We Do and
-   practice-launch frames. **Do 1.0 first** and make it the model.
-   - Specifics already known: 1.0's activity is the cross-country meet card (bib-number claim) —
-     its bib-vs-finish contrast is the natural **We Do**, since it re-runs the digit test that is
-     section 4's crux. 1.1's activity is the breakfast-cart survey (40 students).
-   - Both were paced to a **20-minute** notes block and were *trimmed* to get there (1.1 lost
-     section 6's four broken-study scenarios to the activity, and its practice box lost the
-     scale-to-900 part). The 30-minute block is where that cut material goes back — check the
-     per-lesson notes above for what was removed before inventing new content.
+1. ~~Convert lessons 1.0 and 1.1 off the group activity~~ — **1.1 IS DONE (2026-08-31).** It is
+   now the current model; mirror it rather than the skeletons. **1.0 is still to do**, and it is
+   the next highest-value job. Follow "Converting a group-activity lesson" in the skill's Retrofit
+   section, and use 1.1's conversion as the worked example:
+   - **Fold the activity into the notes rather than deleting it.** 1.0's activity is the
+     cross-country meet card (bib-number claim); its bib-vs-finish contrast is the natural
+     **We Do**, since it re-runs the digit test that is section 4's crux. Its on-ramp items become
+     worked examples inside the numbered sections and one or two later items become the
+     `practicebox`; the rest is cut or moved to the homework.
+   - **The 30-minute block is where the material cut in the 2026-08-31 trim goes back.** 1.0 was
+     paced to a 20-minute notes block and trimmed to get there — check 1.0's entry above for what
+     was removed before inventing new content. (This is exactly how 1.1 got its §6: the four
+     broken-study scenarios that had been cut to the activity came back as one failure per stage.)
+   - **Keeping the activity's context is fine when it is the same setting, a different study.**
+     1.1 kept the breakfast cart for its practice box because it is still Riverbend; the We Do
+     runs on the notes' own council data. Do the same rather than forcing a rewrite.
+   - Then: delete `activity/` + `activity_key/` **and their `.stamps/` + `target/` dirs** (a stale
+     stamp makes `make` skip a sibling and `pdfunite` fails on a missing file), cut the cover to
+     three rows, swap *Group Work & Differentiation* for **Independent Practice (10 min)**,
+     re-point the Debrief box at the practice items, drop the `[Group Activity]` teacher note,
+     re-time the notes to 30 minutes, and rebuild the deck (learning targets → warm-up → hook →
+     one frame per notes section → **We Do, left un-answered** → practice launch carrying *only*
+     the item range and the rule → debrief → close). DeltaMath → **Desmos** everywhere.
 2. **Convert the rest of Unit 1 — lessons 1.2 through 1.8 — one at a time.** They carry **both**
    `exit_ticket/` and `activity/` (plus Tier R / Tier A / Tier E boxes), so each needs the
    pre-EFFL recipe *and* the group-activity recipe: delete `exit_ticket/` + `exit_ticket_key/`
@@ -581,8 +605,12 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    redesigns stale. Fix it on the next run that touches it; it is the doc most likely to mislead.
 8. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as
    PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11;
-   1.8 as PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16. **The Unit 1 assessment
-   set and cover pair are authored, built, and verified but still not committed.** Note
+   1.8 as PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release
+   restoration as PR #17; the drop-the-activity skill rewrite as PR #18.
+   **The 1.1 notes-only conversion is authored, built, and verified but NOT YET COMMITTED**
+   (branch `claude/lesson-1-1-regenerate-ffdf58`; `activity/` + `activity_key/` are staged as
+   deletions). **The Unit 1 assessment
+   set and cover pair are also authored, built, and verified but still not committed.** Note
    `unit01/sample_test/main.pdf` and `unit01/sample_test_key/main.pdf` are untracked drop-ins and
    belong in that commit, since `unit.mk` reads them from the source tree with no compile step.
 
@@ -596,8 +624,10 @@ The gate compares a component with its key by **total page count only**. Two fil
 **Cause.** In the guided notes' `vocabbox`, the blank's `\termblanklong{Term}` reserves two ruled
 lines per term while the key's `\vocabans{Term}{definition}` prints a wrapped definition that is
 usually shorter. The key's page 1 gains an inch or two, the first `notesbox` floats up onto it,
-and every section after it sits one page early. **Lesson 1.1 shipped this way** — it was not
-introduced by this run's edits.
+and every section after it sits one page early. **Lesson 1.1 shipped this way originally**, and the
+2026-08-31 regeneration **fixed it**: `\boxguard[20]` now guards the first `notesbox` after the
+`vocabbox` in both files, and all five notes pages were verified heading-for-heading. Do the same
+in every conversion.
 
 **Fix.** `\boxguard[20]` before the first `notesbox` after the `vocabbox`, in the blank **and**
 the key. Verify by comparing per-page headings, not page counts:
