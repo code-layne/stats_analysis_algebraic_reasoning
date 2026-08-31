@@ -3,6 +3,9 @@
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
@@ -13,11 +16,11 @@
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- Percents, Scaling, and Types of Data}
-\small
+\large
 The Riverbend Student Council asked $60$ students, ``How do you usually get to
 school?'' Of the $60$ students asked, $27$ said they ride the bus.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, topsep=4pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
   \item What \textbf{percent} of the students asked ride the bus?
 
@@ -30,23 +33,23 @@ school?'' Of the $60$ students asked, $27$ said they ride the bus.
         \textbf{predict} how many of the $900$ students ride the bus.
 
         \begin{work}
-          0.45 \times 900 &= 405 \text{ students}
+          0.45 \times 900 &= 405 \\
+                          &= 405 \text{ students}
         \end{work}
 
   \item The council recorded two things about each student. Classify each
         variable, and give the reason you used.
 
-        \begin{center}
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabularx}{0.95\linewidth}{@{} p{4.2cm} p{2.9cm} X @{}}
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{3.3}
+        \begin{tabularx}{\linewidth}{@{} p{6.2cm} p{3.4cm} >{\raggedright\arraybackslash}X @{}}
         \toprule
         \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
         \midrule
-        How the student gets to school & \blank{2.4cm} & \blank{4.2cm} \\
-        Minutes the trip takes         & \blank{2.4cm} & \blank{4.2cm} \\
+        How the student gets to school & \blank{3cm} & \blank{5.4cm} \\
+        Minutes the trip takes         & \blank{3cm} & \blank{5.4cm} \\
         \bottomrule
         \end{tabularx}
-        \end{center}
 
 \end{enumerate}
 \end{notesbox}
