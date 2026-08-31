@@ -578,12 +578,15 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 
 ## Next steps
 
-0b. **OPEN QUESTION FOR THE USER — is the extension block gone for good?** 1.1's extension blocks
-   were removed on request (2026-08-31), but the request was scoped to that lesson. The
-   `lesson-planning` skill still lists `extensionbox` as an optional early-finisher block inside
-   the notes. **Ask before authoring the next lesson:** drop `extensionbox` course-wide (and edit
-   the skill), or keep it as an option and treat 1.1 as the exception. 1.1's plan and deck now send
-   early finishers to re-read their answers and check that each conclusion names its group.
+0b. **`extensionbox` — DECIDED 2026-08-31, and it is NOT a course-wide change. Do not re-ask.**
+   The removal of the extension blocks is **scoped to lesson 1.1 only.** The `lesson-planning`
+   skill is unchanged and still lists `extensionbox` as an optional early-finisher block inside
+   the notes; **that option stands, and the skill was deliberately not edited.** The user will
+   **re-evaluate lesson by lesson as lessons are regenerated** — so when you convert or author a
+   lesson, treat the extension block as a live per-lesson choice rather than a settled rule in
+   either direction, and do not delete one from another lesson without being asked. 1.1's plan and
+   deck now send early finishers to re-read their answers and check that each conclusion names the
+   group it applies to; that is the pattern to reach for when a lesson does drop its extension.
 
 0. ~~Rewrite the skill for the notes-only shape~~ — **DONE 2026-08-31 (this run).** The skill,
    its four references, the scaffolder, and all four skeletons now describe the notes-only
