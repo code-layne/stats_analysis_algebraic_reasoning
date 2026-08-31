@@ -1,27 +1,41 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-08-31 — **EFFL SCRAPPED. THE COURSE IS BACK ON GRADUAL RELEASE**
-(warm-up / guided notes and practice / tiered group activity / teacher-led debrief / close and
-assign). The students rejected the experience-first model, so the two-day-old EFFL trial is over.
-This run: **Lessons 1.0 and 1.1 converted to the gradual-release shape** and **the
-`lesson-planning` skill rewritten** to match (SKILL.md, all four references, the scaffolder's
-defaults, and the worksheet skeleton). Lesson 1.0's `experience/` was unfolded into `notes/` +
-`activity/`; Lesson 1.1, which was still in the original pre-EFFL shape, lost its `exit_ticket/`
-and had its notes trimmed to fit the 20-minute block. Both build, both pass `make check`, and
-both were eyeballed page by page. **Lessons 1.0 and 1.1 are the models now — mirror them.**
+**Last updated:** 2026-08-31 — **THE GROUP ACTIVITY IS DROPPED. THE GUIDED NOTES NOW CARRY THE
+WHOLE GRADUAL RELEASE.** This run rewrote the `lesson-planning` skill only; **no lesson content
+was touched**. Second design change of 2026-08-31 (the first restored gradual release after the
+EFFL trial and kept an 18-minute group activity; that activity is now gone).
 
-**The agreed period shape (user-confirmed 2026-08-31):**
-**5 warm-up · 20 guided notes & practice · 18 group activity · 7 debrief · 5 close & assign.**
-The **debrief is a phase, not a component** — lesson plan and deck only. **There is no exit
-ticket.** **Homework is authored for every lesson and is scored**; DeltaMath's statistics
-coverage is thin, so the packet is the default and DeltaMath is the teacher's per-lesson
-override, named aloud at Close & Assign.
+**The agreed period shape (user-confirmed 2026-08-31, second revision):**
+**5 warm-up · 30 guided notes · 10 independent practice · 7 debrief · 3 close & assign.**
 
-Previous runs — 2026-08-30: Lesson 1.0 regenerated in the EFFL shape, and units 2–8
-re-scaffolded into it (57 lesson dirs). 2026-08-29: EFFL ported (build system + skill +
-skeletons). 2026-08-07: Unit 1's assessment set and unit cover pair authored, built, and
-hand-verified. Earlier: Lesson 1.8 (2026-08-07), Lessons 1.1–1.7 (2026-08-06), Lesson 1.0 + the
-royal → **cerulean** palette replacement (2026-08-05).
+**What changed, and why it matters when authoring:**
+
+- **No group activity, no group work at all.** There is no `activity/` component. The release is
+  **individual**.
+- **The release runs ONCE per lesson, not per section** (user-confirmed): the 4–6 numbered notes
+  sections are the *I do* (teacher models throughout), **one designated "We Do" section** is the
+  joint example, and the notes' **closing `practicebox` of 1–3 items** is the *you do*. Do not
+  build per-section I-do/we-do/you-do mini-cycles.
+- **The We Do runs the same task the practice box releases**, on different data — students hold a
+  completed template before they work alone.
+- **Independent practice is a phase with a page, not a component.** It is that closing practice
+  box, 10 minutes, worked silently and alone. No directory of its own, and **no row of its own on
+  the cover** — the cover packet table is now **three rows** (Warm-Up · Guided Notes · Homework).
+- **Notes budget is now ≤6pp**, with per-section minutes summing to **30** through the We Do.
+- **The debrief survives** as a phase; it now walks the independent practice work instead of
+  group work. Still no exit ticket.
+- **DESMOS replaces DELTAMATH** as the homework override. Homework is still authored for every
+  lesson and still scored; the packet is still the default. The per-lesson question is now
+  whether **Desmos** carries an activity adequate to that lesson's skills — its coverage of this
+  course's standards is uneven (stronger on function modeling and regression, thinner on
+  inference and study design), so it is checked per lesson and never assumed.
+- **Three teacher notes**, not four: `[Warm-Up]`, `[Guided Notes]`, `[Homework]`.
+
+**History.** EFFL trial 2026-08-29 → 2026-08-31, scrapped (students rejected it). Gradual release
+restored 2026-08-31 with an 18-minute group activity; that activity dropped the same day.
+Earlier — 2026-08-30: units 2–8 re-scaffolded into the EFFL shape (57 lesson dirs). 2026-08-07:
+Unit 1's assessment set and unit cover pair authored and hand-verified. 2026-08-06: Lessons
+1.1–1.7. 2026-08-05: Lesson 1.0 + the royal → **cerulean** palette replacement.
 
 > **PROJECT DIRECTORY RENAMED 2026-08-06:** `~/Mathematics/stats_analysis_algebraic_reasoning`
 > → `~/Mathematics/saar`. Worktrees created after the rename are fine; a worktree opened
@@ -31,62 +45,98 @@ royal → **cerulean** palette replacement (2026-08-05).
 
 ## Current state
 
-### GRADUAL RELEASE — RESTORED 2026-08-31 (the current design)
+### NOTES-ONLY GRADUAL RELEASE — the current design (2026-08-31, second revision)
 
-The EFFL trial (2026-08-29 → 2026-08-31) is over. The course runs **gradual release**:
-*I do, we do, you do together.*
+*I do, we do, you do* — **all of it inside the guided notes**. There is no group activity.
 
-**Components.** A lesson is `cover` + `warmup` + `notes` + `activity` + `homework` + `slides`,
-each with a `_key` where keyed. `shared/lesson.mk`'s `STUDENT_ORDER` is
-`cover warmup experience notes activity exit_ticket homework` and was **not touched** — it
-already merges the gradual-release set in the right order, and it still merges the retired
-`experience`/`exit_ticket` dirs so any lesson still carrying them keeps building.
+**Components.** A lesson is `cover` + `warmup` + `notes` + `homework` + `slides`, each with a
+`_key` where keyed. `shared/lesson.mk`'s `STUDENT_ORDER` is
+`cover warmup experience notes activity exit_ticket homework` and was **deliberately not
+touched** — it merges the current set in the right order and still merges the retired
+`activity`/`experience`/`exit_ticket` dirs, so every older lesson keeps building. Leave it alone.
 
-**Phases.** 5 warm-up / 20 guided notes & practice / 18 group activity / 7 debrief /
-5 close & assign, over the 55-minute period. Every lesson plan carries a *Lesson at a Glance*
-`fixedskillbox` with that table, placed after the Vocabulary box.
+**Phases.** 5 warm-up / 30 guided notes / 10 independent practice / 7 debrief / 3 close & assign,
+over the period. Every lesson plan carries a *Lesson at a Glance* `fixedskillbox` with that
+table, placed after the Vocabulary box.
+
+**The notes carry the release.** objectivebox → vocabbox → hookbox → **4–6 numbered `notesbox`
+sections the teacher models (I do)** → **one `notesbox` "We Do" worked jointly (we do)** →
+**closing `practicebox`, 1–3 items, silently and alone (you do)** → optional `extensionbox`.
+≤6pp. Per-section minutes sum to **30** through the We Do; the practice box is the separate
+10-minute Independent Practice phase.
 
 **The debrief is not a component.** It is a teacher-led phase in the plan's Debrief box and one
-deck frame: run the displayed group work in order while students correct their own in a second
-color, then a **whole-class cold check** and a three-pile formative read that decides how the
-next lesson opens. It replaces the exit ticket entirely.
+deck frame: walk the displayed **independent practice** work while students correct their own in
+a second color, then a **whole-class cold check** and a three-pile formative read that decides
+how the next lesson opens. It replaces the exit ticket.
+
+**Independent practice is not a component either** — it is the notes' closing practice box. No
+directory, no cover row.
 
 **Lesson-plan box order.** Primary Objective → Priority Ideas & Skills → Vocabulary → **Lesson at
-a Glance** → Activate Prior Knowledge & Spiral Review → Hook → **Lesson — Guided Notes (20 min)**
-→ Explicit Instruction → Active Monitoring → **Group Work & Differentiation (18 min)** →
-**Debrief (7 min)** → Reinforcement & Extension → four teacher notes (`[Warm-Up]`,
-`[Guided Notes]`, `[Group Activity]`, `[Homework]`).
+a Glance** → Activate Prior Knowledge & Spiral Review → Hook → **Lesson — Guided Notes (30 min)**
+→ Explicit Instruction → Active Monitoring → **Independent Practice (10 min)** → **Debrief
+(7 min)** → Reinforcement & Extension → **three** teacher notes (`[Warm-Up]`, `[Guided Notes]`,
+`[Homework]`).
 
 **No spoiler rule.** The vocabulary is taught, so the cover, warm-up, notes, and slides all name
-it outright. That rule died with EFFL, along with the 12pt `experience/` component and its
-`\answerspace{H}{}` macro — **every component is 10pt and uses `\writeline`/`\blank{}` again.**
+it outright. Every component is 10pt and uses `\writeline`/`\blank{}`; `\answerspace` died with
+EFFL.
 
-**Tiered group work is back.** Tier R / Tier A / Tier E over **one shared data set**, tiers
-assigned rather than chosen, in a **fresh context** the notes did not already work.
+**Cover packet table is THREE rows** — Warm-Up · Guided Notes · Homework.
 
-#### The skill was rewritten this run
+#### The skill was rewritten this run (2026-08-31, second revision)
 
-`.claude/skills/lesson-planning/` now describes gradual release, not EFFL:
-- `SKILL.md` — frontmatter description, the model paragraph, "what a lesson is", the workflow
-  steps, the Retrofit section (now *converting to* gradual release, with separate recipes for an
-  EFFL lesson and a pre-EFFL one), and the guardrails.
-- `references/components.md` — the `Experience & Formalize` spec is replaced by full
-  **Guided notes** and **Group activity** specs; cover is four rows; the deck flow is
-  gradual-release; a **Dead shapes** section documents `experience/` and `exit_ticket/`.
-- `references/conventions.md` — 10pt everywhere, `\answerspace` retired, plan order rewritten,
-  four teacher notes, plus a new **"Page-for-page alignment"** subsection (see the gotcha below).
-- `references/build.md`, `references/course-workflow.md` — component order and content mapping.
-- `scripts/new_lesson.py` — `DEFAULT_COMPONENTS` is now
-  `cover,warmup,notes,activity,homework,slides`; `experience`/`exit_ticket` remain scaffoldable
-  by name for patching. Smoke-tested end to end: scaffold → `make all` → `make check`, all green.
-- `assets/skeletons/worksheet.tex` — TODO comment now covers notes / activity / homework.
+`.claude/skills/lesson-planning/` now describes the notes-only shape:
+- `SKILL.md` — frontmatter, the model paragraphs, "what a lesson is", the work-products table,
+  Step 0 model detection, Step 2 defaults, the timebox rule, the Retrofit section (now three
+  conversion recipes, including **converting a group-activity lesson**), and the guardrails.
+- `references/components.md` — the **Group activity** spec is **deleted**; the Guided notes spec
+  now covers I do / We Do / you do; cover is three rows; the deck flow gained a We Do frame and
+  an independent-practice launch frame; `activity/` is documented under **Dead shapes**.
+- `references/conventions.md` — three teacher notes, plan order rewritten to 5/30/10/7/3,
+  namestrip and 10pt component lists updated.
+- `references/build.md`, `references/course-workflow.md` — component order, the We Do /
+  practice-box content-mapping rows, and the technology rule (keystrokes go in the We Do or the
+  homework, never in the solo practice box).
+- `scripts/new_lesson.py` — `DEFAULT_COMPONENTS` is now `cover,warmup,notes,homework,slides`;
+  `activity` joins `experience`/`exit_ticket` as a dead shape, still scaffoldable by name.
+- `assets/skeletons/lesson_plan.tex` — phase table, Lesson box (30 min, with the We Do
+  paragraph), **Independent Practice** box replacing Group Work, Debrief, Reinforcement
+  (packet-or-Desmos), and three teacher notes.
+- `assets/skeletons/cover.tex` and `slides.tex` — **these two were still EFFL-shaped**; the
+  2026-08-31 gradual-release run missed them. Both are now current: the cover has three rows, no
+  spoiler-rule comment, and a content-takeaway *Keep in Mind*; the deck follows
+  targets → warm-up → hook → I-do frames → We Do → practice launch → debrief → close.
+- `assets/skeletons/worksheet.tex` — guidance rewritten for the notes-only release.
 
-#### Units 2–8 are scaffolded in the WRONG shape
+**Smoke-tested end to end** on a throwaway `unit08/lesson99`: scaffold (no `activity/` emitted) →
+`make all` (all five products) → `make check` **passed**; plan p1/p2 and the cover eyeballed
+(phase table 5/30/10/7/3, Independent Practice box, three teacher notes, three cover rows), then
+the lesson was deleted. Working tree carries skill changes only.
 
-The 2026-08-30 run re-scaffolded 57 lesson dirs across units 2–8 with `cover / warmup /
-experience / homework / slides`. **They are all empty skeletons** — no authored content — so the
-fix is mechanical: for each lesson, scaffold `notes,activity` and delete `experience`/
-`experience_key`. Nothing is lost. Do it as part of authoring each unit, not as a bulk sweep.
+> **Known cosmetic mismatch (pre-existing, not introduced here):** `\MeetingLength` in
+> `shared/saar-article.sty` is `60 minutes`, so the phase table's header reads "Lesson at a
+> Glance — 60 minutes" while the phases sum to **55**. The old 5/20/18/7/5 split summed to 55
+> too, so this predates both redesigns. Left alone — `shared/` is off-limits to lesson authoring
+> — but worth a user decision: either set `\MeetingLength` to 55 or add 5 minutes of
+> transition/passing to the table.
+
+### Units 1–8 are ALL in older shapes — none is a current model
+
+Nothing in the tree matches the notes-only design yet.
+
+- **Lessons 1.0 and 1.1** are authored and complete but carry `activity/` + `activity_key/`.
+  They are **no longer models** — do not mirror them. Convert with the group-activity recipe in
+  SKILL.md's Retrofit section when either comes up.
+- **Lessons 1.2–1.8** are authored but pre-EFFL: they carry both `exit_ticket/` and `activity/`.
+- **Units 2–8** (57 lesson dirs) are **empty EFFL skeletons** — `cover / warmup / experience /
+  homework / slides`, no authored content. The fix per lesson is mechanical: scaffold `notes` and
+  delete `experience`/`experience_key`. Nothing is lost. Do it as part of authoring each unit,
+  **not as a bulk sweep**.
+
+Until a lesson is converted, **author new lessons from the skeletons and
+`references/components.md`**, not by mirroring an existing lesson.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
 
@@ -120,8 +170,11 @@ user redirected to a third blue. No burgundy remains in the tree.)*
 
 - `spec/statistical_analysis_algebraic_reasoning.md` is the **confirmed** course map: 8 units,
   58 content lessons + one Lesson 0 per unit (66 lesson dirs), semester split after Unit 4.
-- **Lesson 1.0 — "Unit Launch: Study Design" — is COMPLETE and is a GRADUAL-RELEASE MODEL
-  LESSON** (converted 2026-08-31 from the one-day-old EFFL shape). **Mirror this lesson.**
+- **Lesson 1.0 — "Unit Launch: Study Design" — is COMPLETE but is NO LONGER A MODEL.** It was
+  converted 2026-08-31 from EFFL to the group-activity gradual-release shape, and that shape was
+  retired the same day. It still carries `activity/` + `activity_key/`. **Do not mirror it**;
+  convert it with the group-activity recipe when it next comes up. Its content below is still
+  accurate and the arithmetic is still verified — only the shape is stale.
   - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e, PS.DC.2, PS.DC.3).
   - Scope: data-in-context (who/what/units), individuals vs. variables, **categorical vs.
     quantitative**, and the **digit test** for numbers that are really labels (jersey #, ZIP,
@@ -146,9 +199,9 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     frames, student and key packets 12pp each.
   - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**; every
     page eyeballed — no stranded boxes, and blank/key aligned heading-for-heading.
-- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE and is the second
-  GRADUAL-RELEASE MODEL LESSON** (converted 2026-08-31). It was never EFFL — it kept the
-  original pre-EFFL shape — so the conversion was: delete `exit_ticket/` + `exit_ticket_key/`,
+- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE but is NO LONGER A
+  MODEL.** It still carries `activity/` + `activity_key/`; **do not mirror it.** It was never
+  EFFL — it kept the original pre-EFFL shape — so its 2026-08-31 conversion was: delete `exit_ticket/` + `exit_ticket_key/`,
   add the *Lesson at a Glance* phase table, replace the plan's *Individual Work & Assessment*
   box with a **Debrief (7 min)** box that folds the exit ticket's stage-2/stage-4 item in as a
   whole-class cold check, add an activity-launch frame and a debrief frame to the deck, and
@@ -473,42 +526,60 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 
 ## Next steps
 
-0. ~~Convert 1.0 and 1.1 to gradual release~~ and ~~rewrite the skill~~ — **DONE 2026-08-31.**
-   **Lessons 1.0 and 1.1 are the models.** Open both before authoring or converting anything;
-   `references/components.md` is the spec, but those two are the live reference for voice, page
-   budget, and the per-section minute budgeting that keeps the notes inside 20 minutes.
-1. **Convert the rest of Unit 1 — lessons 1.2 through 1.8 — one at a time.** They are all in
-   the original pre-EFFL shape (`notes` / `activity` / `exit_ticket`), so each is the *cheap*
-   conversion: follow the "Converting a pre-EFFL lesson" recipe in the skill's Retrofit section.
-   Per lesson: delete `exit_ticket/` + `exit_ticket_key/` and their `.stamps`/`target` dirs, drop
-   the Exit Ticket cover row and teacher note, swap *Individual Work & Assessment* for a
-   **Debrief (7 min)** box folding the exit ticket's conceptual item in as a cold check, add the
-   *Lesson at a Glance* table, add activity-launch + debrief frames to the deck and put the
-   packet-or-DeltaMath line on its closing frame, **re-time the notes to 20 minutes — trimming
-   if they do not fit**, and **collapse the three tiers into one whole-class activity** of ~6–7
-   items in two guarded parts plus an `extensionbox` (cut, do not concatenate — see the sizing
-   trap above). 1.2–1.8 all still carry Tier R / Tier A / Tier E boxes. Every one of 1.2–1.8 was written against a longer notes block,
-   so expect to cut. Do them individually; a bulk pass would re-flow every verified lesson at once.
-2. **Fix the Unit 2–8 skeletons as you author each unit** (see "Units 2–8 are scaffolded in the
-   WRONG shape"): scaffold `notes,activity` and delete `experience`/`experience_key`. They are
-   empty, so nothing is lost.
-3. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus `lesson00`.
+0. ~~Rewrite the skill for the notes-only shape~~ — **DONE 2026-08-31 (this run).** The skill,
+   its four references, the scaffolder, and all four skeletons now describe the notes-only
+   gradual release; smoke-tested scaffold → `make all` → `make check`, all green. **No lesson
+   content was touched this run**, so nothing in the tree matches the skill yet: author new
+   lessons from the skeletons and `references/components.md`, and do **not** mirror 1.0 or 1.1.
+1. **Convert lessons 1.0 and 1.1 off the group activity** — the two authored gradual-release
+   lessons, and the highest-value next job, since converting one gives the project its first
+   current model to mirror. Follow "Converting a group-activity lesson" in the skill's Retrofit
+   section. Per lesson: **fold the activity into the notes rather than deleting it** — its
+   on-ramp items become worked examples in the numbered sections, its **crux item becomes the We
+   Do**, one or two later items become the `practicebox`, and the rest is cut or moved to the
+   homework; re-set what survives in the notes' own context (the activity's deliberately *fresh*
+   context existed to make group work transfer, and that reason is gone). Then delete
+   `activity/` + `activity_key/` and their `.stamps`/`target` dirs, cut the cover to three rows,
+   swap *Group Work & Differentiation* for **Independent Practice (10 min)**, re-point the
+   Debrief box at the practice items, drop the `[Group Activity]` teacher note, re-time the
+   notes to **30 minutes — expanding into the freed block**, and rebuild the deck's We Do and
+   practice-launch frames. **Do 1.0 first** and make it the model.
+   - Specifics already known: 1.0's activity is the cross-country meet card (bib-number claim) —
+     its bib-vs-finish contrast is the natural **We Do**, since it re-runs the digit test that is
+     section 4's crux. 1.1's activity is the breakfast-cart survey (40 students).
+   - Both were paced to a **20-minute** notes block and were *trimmed* to get there (1.1 lost
+     section 6's four broken-study scenarios to the activity, and its practice box lost the
+     scale-to-900 part). The 30-minute block is where that cut material goes back — check the
+     per-lesson notes above for what was removed before inventing new content.
+2. **Convert the rest of Unit 1 — lessons 1.2 through 1.8 — one at a time.** They carry **both**
+   `exit_ticket/` and `activity/` (plus Tier R / Tier A / Tier E boxes), so each needs the
+   pre-EFFL recipe *and* the group-activity recipe: delete `exit_ticket/` + `exit_ticket_key/`
+   and their `.stamps`/`target` dirs, drop the Exit Ticket cover row and teacher note, swap
+   *Individual Work & Assessment* for a **Debrief (7 min)** box folding the exit ticket's
+   conceptual item in as the cold check, add the *Lesson at a Glance* table (5/30/10/7/3), then
+   fold the tiered activity into the notes as in step 1 — **the three tiers collapse into the We
+   Do plus a 1–3 item practice box; cut, do not concatenate.** Re-time the notes to 30 minutes.
+   Do them individually; a bulk pass would re-flow every verified lesson at once.
+3. **Fix the Unit 2–8 skeletons as you author each unit**: scaffold `notes` (only) and delete
+   `experience`/`experience_key`. They are empty, so nothing is lost. Do **not** scaffold
+   `activity`.
+4. **Unit 2** — "Describing One Variable" (PS.DS.1–3), seven content lessons plus `lesson00`.
    Nothing in U2–U8 is authored. Confirm the U2 lesson map with the user before authoring; the
    scaffolded titles in `unit02/lesson*/main.tex` are the proposal. Note the hand-off already
    written into 1.8's homework teacher note: Unit 2 is where the variable becomes a number and
    the bars start touching.
-4. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint
+5. **Reuse the Unit 1 assessment set as the template for U2–U8.** The blueprint
    ($14$/$16$/$40$/$30$, $33$ items, 6 pages) and the `unit_cover` + `unit_cover_key` pair
    (shared `body.tex`, scoring notes on the key's page 2) are the pattern; only the contexts and
    numbers change. `\setlength{\workrowsep}{5pt}` in every test preamble is what gives `work`
    blocks handwriting room without pushing the form to 7 pages — keep it identical in the blank
    and the key. **The tests were untouched by both redesigns** — they have no pedagogy in them.
-5. **A course-wide final (`finals/`) is still not scaffolded.** Wait until more units exist so
+6. **A course-wide final (`finals/`) is still not scaffolded.** Wait until more units exist so
    the exam can actually be cumulative.
-6. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8 and
-   Unit 1's assessments, but **still describes the EFFL component set** — fix it on the next run
-   that touches it. It is the doc most likely to go stale.
-7. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as
+7. **Two spec docs to keep in sync.** `spec/unit_lesson_breakdown.md` is updated through 1.8 and
+   Unit 1's assessments, but **still describes the EFFL component set** — it is now two
+   redesigns stale. Fix it on the next run that touches it; it is the doc most likely to mislead.
+8. Merged to `main` so far: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as
    PR #6; 1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11;
    1.8 as PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16. **The Unit 1 assessment
    set and cover pair are authored, built, and verified but still not committed.** Note

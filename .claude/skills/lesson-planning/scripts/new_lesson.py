@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 01 --lesson 01 \
         --title "Describing a Distribution" --unit-title "Data Analysis" \
-        --components cover,warmup,notes,activity,homework,slides
+        --components cover,warmup,notes,homework,slides
 """
 from __future__ import annotations
 
@@ -21,42 +21,47 @@ from pathlib import Path
 
 SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 
-# GRADUAL-RELEASE component set (2026-08-31 redesign, replacing the short-lived EFFL trial):
-# a lesson is cover / warmup / notes / activity / homework / slides. The period runs
-# 5 warm-up / 20 guided notes & practice / 18 group activity / 7 debrief / 5 close & assign.
+# GRADUAL-RELEASE component set (2026-08-31, revised the same day to drop the group activity):
+# a lesson is cover / warmup / notes / homework / slides. The period runs
+# 5 warm-up / 30 guided notes / 10 independent practice / 7 debrief / 3 close & assign.
 #
-# The DEBRIEF IS NOT A COMPONENT. It is a teacher-led phase that closes the group activity and
-# lives only in the lesson plan and the deck — there is no student page for it, and there is no
-# exit ticket: the debrief is the formative check.
+# `notes` carries the WHOLE gradual release. Objectives, a vocab box the class fills in, a hook,
+# 4-6 numbered teaching sections the teacher models (I DO), one designated "We Do" section worked
+# jointly with the class (WE DO), and a closing practice box of 1-3 items worked silently and
+# alone (YOU DO). The release runs ONCE per lesson, not once per section.
 #
-# `notes` is the guided-notes handout: objectives, a vocab box the class fills in, a hook, the
-# numbered teaching sections (I do / we do), and a closing practice box (you do).
-# `activity` is ONE group activity for the whole class — no tiers — worked in groups of three
-# AFTER the notes, so students already hold the vocabulary. Differentiate by depth: the items
-# ramp toward the crux and an optional extensionbox absorbs groups that finish early.
+# THERE IS NO GROUP ACTIVITY. The release is individual. `activity` is a dead shape.
+#
+# The DEBRIEF IS NOT A COMPONENT. It is a teacher-led phase that walks the independent practice
+# and lives only in the lesson plan and the deck — there is no student page for it, and there is
+# no exit ticket: the debrief is the formative check.
+#
+# INDEPENDENT PRACTICE IS A PHASE WITH A PAGE, NOT A COMPONENT: it is the notes' closing
+# practicebox, 10 minutes, and it gets no directory of its own.
 #
 # Homework is authored for EVERY lesson and is scored (the cover's score column carries a
-# \blank{} for it) — DeltaMath's statistics coverage is thin, so the packet set is the default.
-# Whether a given lesson's set is assigned from the packet or overridden with the equivalent
-# DeltaMath assignment is a per-lesson teacher decision made at Close & Assign; the packet
-# pages are authored either way.
+# \blank{} for it). Desmos Classroom's coverage of this course's standards is uneven, so the
+# packet set is the default. Whether a given lesson's set is assigned from the packet or
+# overridden with an equivalent DESMOS activity is a per-lesson teacher decision made at Close &
+# Assign; the packet pages are authored either way.
 #
-# `experience` and `exit_ticket` are dead shapes. `experience` was the EFFL in-class component
-# and `exit_ticket` predates both redesigns. Both remain scaffoldable by name so an older
-# lesson can be patched, but they are NOT defaults — do not author either into a new lesson.
-KEYED = ["warmup", "notes", "activity", "homework", "experience", "exit_ticket"]
+# `activity`, `experience`, and `exit_ticket` are dead shapes. `activity` was the group activity,
+# `experience` was the EFFL in-class component, and `exit_ticket` predates both redesigns. All
+# three remain scaffoldable by name so an older lesson can be patched, but they are NOT defaults
+# — do not author any of them into a new lesson.
+KEYED = ["warmup", "notes", "homework", "activity", "experience", "exit_ticket"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
 # slides is a default: every lesson owes a deck, since lessonYY_slides.pdf and
 # lessonYY_slides.pptx are two of the five work products the build produces.
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "homework", "slides"]
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
     "notes": "Guided Notes",
-    "activity": "Group Activity",
     "homework": "Homework",
     # dead shapes, scaffoldable only to patch an older lesson:
+    "activity": "Group Activity",
     "experience": "Experience \\& Formalize",
     "exit_ticket": "Exit Ticket",
 }
