@@ -1,10 +1,12 @@
 # Components
 
-The spec for authoring each file after scaffolding. The scaffolder (`scripts/new_lesson.py`)
-gives you a correctly-preambled skeleton with TODO markers; this file says what fills them.
+The spec for authoring each file after scaffolding. The scaffolder
+(`~/.claude/skills/lesson-planning/scripts/new_lesson.py`) gives you a correctly-preambled
+skeleton with TODO markers from the `.tex` files beside this one; this file says what fills them.
 **Always also open lessons 1.0 and 1.1 as the gold reference** — these specs summarize the
 pattern, but the live project is authoritative. For macros and boxes
-see `references/conventions.md`; for where content comes from, `references/course-workflow.md`.
+see the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`) and
+section 4 of `LESSON_SHAPE.md`; for where content comes from, `templates/lesson/course-workflow.md`.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [**Guided notes**](#guided-notes) · [Homework](#homework) ·
@@ -33,7 +35,7 @@ General rules:
   and how do you know?"). Never ask students to *sketch/draw/construct* a graph from a blank
   page — give a pre-drawn, pre-scaled axis system to complete, a figure to read, a table to
   fill in, or a computation/interpretation task. (A standard that says "sketch" is satisfied by
-  pre-drawn, pre-scaled axes — see `course-workflow.md`.)
+  pre-drawn, pre-scaled axes — see `templates/lesson/course-workflow.md`.)
 - Use the project's boxes and fill-in macros rather than hand-rolling layout.
 
 ## Lesson plan
@@ -42,7 +44,7 @@ General rules:
 order:
 
 1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. **No school year**
-   — see "No year on any document" in `conventions.md`.
+   — see "No year on any document" in section 4 of `LESSON_SHAPE.md`.
 2. **Primary Objective** — a `tcolorbox` (frost/cerulean). One or two sentences in student terms
    stating what students will be able to do, interpret, and justify with the topic.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
@@ -218,7 +220,7 @@ Desmos activity there if that is the call, and leave the cover row alone.
 Three component shapes survive in the tree but must never be authored into a new lesson.
 `shared/lesson.mk` still merges all of them, so any lesson carrying them keeps building, and the
 scaffolder still accepts them by name (`--components ...,activity,experience,exit_ticket`) so one
-can be patched. For how to convert such a lesson, see the Retrofit section of `SKILL.md`.
+can be patched. For how to convert such a lesson, see section 7 of `LESSON_SHAPE.md` (Legacy shapes and regeneration).
 
 - **`activity/` (+ `activity_key/`)** — the dropped group activity: ~6–7 items over one shared
   data set, worked in groups of three for 18 minutes after the notes, in a context fresh from the
@@ -269,7 +271,7 @@ scored. Written to the secondary-school audience throughout.
 ## Unit tests (summative assessments)
 
 Unit-level, not per-lesson — scaffolded once per unit under `unitXX/tests/` and
-`unitXX/test_keys/` (see SKILL "What a unit is" and `references/build.md`). Author **two blank
+`unitXX/test_keys/` (see section 6 of `LESSON_SHAPE.md` and the shared skill's `references/build.md`). Author **two blank
 tests and their two keys**, all with `\pageheader{Unit X: <Title>}{...}` + `\namedateperiod` — tests
 are taken in a testing setting, not stapled behind a lesson cover, so they keep the name row:
 
@@ -354,4 +356,4 @@ test keys too):
 - Because the key matches the blank line-for-line, the two paginate identically. **Verify with
   `make -C unitXX/lessonYY check`**, which fails on a blank/key page mismatch, a warm-up or exit
   ticket over one page, `\ans` inside math, a `teachernote` in a key, and a name row on a
-  component. See `references/conventions.md` ("The convention gate").
+  component. See section 8 of `LESSON_SHAPE.md` (the convention gate).
