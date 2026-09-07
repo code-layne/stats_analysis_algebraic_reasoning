@@ -87,7 +87,9 @@ second context; the homework on a third.
 
 **The components:**
 
-- **`cover`** — full-bleed cerulean banner, `\namedateperiod` (the one place it appears),
+- **`cover`** — full-bleed cerulean banner **sized to the title block** (`\coverbanner{Unit N}{Lesson
+  N.M \quad Title}`, a measured banner defined in the cover's own preamble because `saar-article`
+  carries none — the fixed 0.9in band overflowed at 12pt), `\namedateperiod` (the one place it appears),
   `learningtargetbox` of "I can…" targets **naming the formal vocabulary outright**, a `tocbox`
   packet table of **three rows** (Warm-Up · Guided Notes & Practice · Homework), every score cell
   a `\blank{1.2cm}`, and a `remindbox` *Keep in Mind* carrying the lesson's **content

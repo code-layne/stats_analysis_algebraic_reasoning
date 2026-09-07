@@ -25,6 +25,11 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
   page 1 with its table on page 2; moving items 4–6 into the `…, continued` box fixed it.
 - **`\boxguard[24]` before a `multicols` box** — the plan's Debrief box opened as a two-line
   sliver at the foot of a page with the default guard.
+- **The cover banner is measured, not fixed.** At 12pt the three-line title overran the old
+  0.9in tikz band. The cover (and its skeleton) now defines `\coverbanner{}{}` locally — the stats
+  course's measured banner, savebox + tikz sized to it — since `saar-article.sty` has no such macro
+  and `shared/` is off-limits to lesson authoring. **Worth promoting into `saar-article.sty`** on a
+  run that is allowed to touch `shared/`; every future cover copies the block until then.
 - **Student components are 12pt** (user decision 2026-09-06, matching stats 1.4): cover, warm-up,
   notes, homework and keys; `\small` inside the notes' and cover's boxes, homework practice boxes
   at full size. Plan 10pt, deck 11pt. Notes 4/4, homework 3/3 (three boxes, one per page, no item
