@@ -5,7 +5,7 @@ STATISTICS LESSON 1.4 MINUS ITS AP PRACTICE PAGE. IT IS THE MODEL FOR EVERY FUTU
 The user asked for 1.2 rebuilt on the most recent stats lesson (`~/Mathematics/stats`
 `unit01/lesson04`, 2026-09-06) without the `ap_practice` component. What that shape is:
 **5 warm-up · 34 guided notes & practice (I do two long sections ≈ 20, we do one Guided Practice
-≈ 14) · 8 spoken debrief · 8 close & START THE HOMEWORK in class.** The homework *is* the
+≈ 15) · 8 spoken debrief · 8 close & START THE HOMEWORK in class.** The homework *is* the
 individual practice; there is no solo practice box in the notes, no `hookbox` (the hook is a dark
 slide), no extension, no exit ticket. `LESSON_SHAPE.md` (sections 1, 2, 4, 5, 7 and the
 frontmatter — `reference_lesson: unit01/lesson02`, notes doc title *Guided Notes \& Practice*),
@@ -25,7 +25,9 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
   page 1 with its table on page 2; moving items 4–6 into the `…, continued` box fixed it.
 - **`\boxguard[24]` before a `multicols` box** — the plan's Debrief box opened as a two-line
   sliver at the foot of a page with the default guard.
-- The meeting-length discrepancy stands (table sums to 55, `\MeetingLength` prints 60).
+- **Three user decisions (2026-09-06), now in the profile:** the phases total 60 — **5 / 35 / 10 /
+  10**; **no extension box anywhere**, course-wide; homework is **due at the start of the first
+  class after two study halls** (the stats convention), never "due next class".
 
 **The agreed period shape (user-confirmed 2026-08-31, second revision):**
 **5 warm-up · 30 guided notes · 10 independent practice · 7 debrief · 3 close & assign.**
@@ -76,7 +78,7 @@ the reference implementation; mirror it.** `LESSON_SHAPE.md` section 1 is the sp
 each with a `_key` where keyed. `shared/lesson.mk`'s `STUDENT_ORDER` is unchanged and still merges
 the retired `activity`/`experience`/`exit_ticket` dirs, so every older lesson keeps building.
 
-**Phases.** 5 / 34 / 8 / 8. The plan's *Lesson at a Glance* `fixedskillbox` carries that table.
+**Phases.** 5 / 35 / 10 / 10. The plan's *Lesson at a Glance* `fixedskillbox` carries that table.
 
 **The notes:** `objectivebox` (printed) → `vocabbox` of `\termblank{}` (key: two-line
 `\vocabans{}`) → **exactly two** `notesbox{N. Title}` sections, each in two moves, the second
@@ -86,7 +88,8 @@ section 2 → one `practicebox` ("Guided Practice", 3–4 lettered parts, worked
 
 **The homework is the individual practice**: `remindbox` ("This is your graded homework"),
 `scenariobox` (third context), ~6 items in a `notesbox` + `…, continued`, closing `spiralbox`.
-Scored 2 per item; started in class in the last eight minutes.
+Scored 2 per item; started in class in the last ten minutes; due at the start of the first class
+after two study halls.
 
 **Plan order:** Primary Objective (+ Standards, Lesson model) → Learning Targets & Key
 Understandings → Vocabulary → Lesson at a Glance → Warm-Up (seeds / running it) → Hook →
@@ -100,9 +103,8 @@ start the homework → close (dark).
 
 **Cover packet table is THREE rows** — Warm-Up · Guided Notes & Practice · Homework.
 
-> **Known cosmetic mismatch (pre-existing):** `\MeetingLength` prints `60 minutes` while the
-> phase table sums to **55**. Left alone — `shared/` is off-limits — pending a user decision:
-> set `\MeetingLength` to 55 or add a transition row.
+> The old 55-vs-60 mismatch is **closed** (2026-09-06): the phase table now allocates the whole
+> 60-minute period, 5 / 35 / 10 / 10.
 
 ### Lesson 1.2 is the current model; everything else is in an older shape
 
@@ -529,16 +531,12 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 0. **Confirm the pilot in the classroom.** Teach 1.2; bring back what worked and what did not. The
    shape is written into `LESSON_SHAPE.md` as the course rule already, so a correction to 1.2 is a
    correction to the rule — change the profile first, then the lesson.
-1. **Open questions for the user:**
-   - The meeting-length discrepancy (table sums to 55, `\MeetingLength` prints 60) — set the
-     macro to 55, or add a 5-minute transition row?
-   - The pilot has no `extensionbox` anywhere (1.1's were removed on request 2026-08-31, and the
-     stats model has none). Treated as gone course-wide; say so if it should return.
-   - Homework due date: the pilot says "due next class." The stats course moved to "the first
-     class after two study halls" — adopt that here, or keep per-lesson?
+1. ~~Open questions for the user~~ — **all three decided 2026-09-06**: phases total 60
+   (5 / 35 / 10 / 10; the old 55-vs-60 mismatch is closed); no `extensionbox` course-wide; homework
+   due at the start of the first class after two study halls.
 2. **Convert 1.1 to the pilot shape** (notes-only recipe, `LESSON_SHAPE.md` section 7) once the
    pilot is confirmed — fold six sections into two, merge the We Do and the practice box into one
-   Guided Practice, `\termblank` vocab, 5/34/8/8, three cover rows renamed, deck reordered.
+   Guided Practice, `\termblank` vocab, 5/35/10/10, three cover rows renamed, deck reordered.
 3. **Convert 1.0** (group-activity recipe) and **1.3–1.8** (pre-EFFL recipe, then as for 1.1), one
    at a time, each with `make all` + `make check` + per-page heading comparison.
 4. **Units 2–8**: scaffold `notes` (only) into each lesson as authored and delete

@@ -23,7 +23,7 @@ keyed component with a `_key`), `slides`, and the lesson plan (`main.tex`).
 
 **Shape status (2026-09-06):** **Lesson 1.2 is the PILOT** — regenerated on the AP Statistics 1.4
 model (two long notes sections, a Guided Practice worked together, a spoken debrief, the homework
-started in class; 5 / 34 / 8 / 8) — **and is the model every future lesson follows.** Lesson 1.1
+started in class; 5 / 35 / 10 / 10) — **and is the model every future lesson follows.** Lesson 1.1
 is in the previous notes-only shape (2026-08-31); lesson 1.0 still carries `activity/`; lessons
 1.3–1.8 are pre-EFFL legacy (`notes`/`activity`/`exit_ticket`) with authored content; units 2–8
 (57 lesson dirs) are empty EFFL skeletons. Convert one lesson at a time per section 7 of

@@ -58,18 +58,15 @@ of the notes.
 | Phase | Minutes | Component |
 | --- | --- | --- |
 | Warm-Up | 5 | `warmup` |
-| Guided Notes & Practice — I do (two sections, ~20) + we do (Guided Practice, ~14) | 34 | `notes` |
-| Debrief — whole class, spoken | 8 | — (in the plan and the deck only) |
-| Close & start the homework, alone, teacher circulating | 8 | `homework` |
+| Guided Notes & Practice — I do (two sections, ~20) + we do (Guided Practice, ~15) | 35 | `notes` |
+| Debrief — whole class, spoken | 10 | — (in the plan and the deck only) |
+| Close & start the homework, alone, teacher circulating | 10 | `homework` |
 
-**Meeting-length discrepancy — flagged, not resolved.** `\MeetingLength` in
-`shared/saar-article.sty` prints **60 minutes** (so `meeting_length` above is 60 and the plan's
-*Lesson at a Glance* header reads "60 minutes"), but the phase table sums to **55** — as did the
-notes-only table (5/30/10/7/3) and the original 5/20/18/7/5 split; the mismatch predates every
-redesign. **Author the phase table as 5 / 34 / 8 / 8 exactly; do not stretch a phase to make the
-minutes reach 60, and do not edit `shared/`.** The five unallocated minutes are passing/transition
-until the user decides whether to set `\MeetingLength` to 55 or add a transition row. Ask before
-doing either.
+**The phases total 60 minutes — `\MeetingLength` (user decision 2026-09-06).** Earlier tables
+(5/20/18/7/5, then 5/30/10/7/3, then the pilot's first draft 5/34/8/8) summed to 55 against a
+60-minute macro; the user resolved it by allocating the whole period: **5 / 35 / 10 / 10**, with
+the I do about 20 of the 35 and the Guided Practice about 15. Author the table exactly so; if a
+phase does not fit, cut content — do not let the table lie, and do not edit `shared/`.
 
 **`notes` — *Guided Notes & Practice* — is the in-class centrepiece**, and it runs *short* on
 purpose. `\pageheader{…}{Guided Notes \& Practice}` → `objectivebox` (**printed** targets, worded
@@ -109,7 +106,7 @@ second context; the homework on a third.
   an interpret-in-context item, a justification item, and **one spiral item** reaching back — split
   into a second `notesbox{…, continued}` where the pages fall, and closed by a `spiralbox`
   previewing the next lesson. Every answer is phrased in its context. Students start it in the last
-  eight minutes of the period.
+  ten minutes of the period.
 - **`slides`** — the required Beamer deck, ~14 frames: title → learning targets (with a *How
   today works* block) → warm-up → **hook, dark frame, left unresolved** → **I-do divider** → two
   or three frames per notes section (the crux frame flagged `\sectionlabel[redacc]{}`) → **Guided
@@ -129,7 +126,8 @@ it, then use it.
   again during the supervised homework start — and the plan says what to do with each of three
   piles of what the teacher sees. The debrief's whole-class cold check replaces the exit ticket.
 - **No independent practice set in the notes, no closing `practicebox` of solo items, no
-  `extensionbox`, no `reflectionbox`, no `hookbox`.** The debrief is spoken; the individual
+  `extensionbox` anywhere (retired course-wide, user decision 2026-09-06 — the environment still
+  exists in `saar-boxes.sty`; never author one), no `reflectionbox`, no `hookbox`.** The debrief is spoken; the individual
   practice is the homework. (The 2026-08-31 notes-only shape had a 10-minute solo practice box
   after a We Do section; the pilot retired it.)
 - **The debrief is not a component** and gets no directory and no cover row.
@@ -144,7 +142,7 @@ with a separate 18-minute **group activity**, dropped the same day for a **notes
 4–6 modeled sections, a We Do section, a 10-minute solo `practicebox`, a 7-minute debrief
 (5/30/10/7/3) — in which lesson 1.1 was converted. On **2026-09-06 lesson 1.2 was regenerated as
 the PILOT** on the AP Statistics 1.4 model (two long sections, Guided Practice, spoken debrief,
-homework started in class; 5/34/8/8), and it is the shape every future lesson follows.
+homework started in class; 5/35/10/10), and it is the shape every future lesson follows.
 
 **`unit01/lesson02` is the reference implementation** (the pilot, 2026-09-06). Mirror its
 preamble, box usage, pacing, and tone; the live lesson overrides every document, this one
@@ -152,14 +150,14 @@ included. **Lesson 1.1 is in the previous notes-only shape and is no longer the 
 warm-up sizing and its homework-format fixes still stand (section 4). **Lesson 1.0 is not a
 model** — it still carries `activity/`. A lesson is current only when it has `notes/` with exactly
 two numbered sections and a Guided Practice, **none of** `activity/`, `experience/`, or
-`exit_ticket/`, and a plan whose *Lesson at a Glance* reads 5 / 34 / 8 / 8.
+`exit_ticket/`, and a plan whose *Lesson at a Glance* reads 5 / 35 / 10 / 10.
 
 ## 2. Grading and homework policy
 
 - **Every score cell on the cover is a `\blank{}`** — Warm-Up, Guided Notes, and Homework rows
   plus the Total. Nothing prints `NA`.
 - **Homework is authored for every lesson, it is scored, and it is the individual practice —
-  started in class in the last eight minutes of the period, alone, teacher circulating.** ~6 items
+  started in class in the last ten minutes of the period, alone, teacher circulating.** ~6 items
   in new contexts, each ending in an interpretation or a justification; the pilot scores 2 points
   per item (12 for six). Algebra 2 dropped homework entirely and AP
   Statistics keeps a separate unscored in-class practice set — **copy neither.** Scoring guidance
@@ -173,8 +171,10 @@ two numbered sections and a Guided Practice, **none of** `activity/`, `experienc
   deck's closing frame say which form the assignment takes (naming the specific Desmos activity
   when that is the call); the cover row and its score cell never change. (Desmos replaced
   DeltaMath as the override on 2026-08-31 — do not write DeltaMath anywhere.)
-- **No course-wide due-date rule.** The plan's Reinforcement box and the deck's closing frame
-  state, per lesson, how the homework is scored and when it is due.
+- **Homework is due at the start of the first class after two study halls** — never "due next
+  class" (user decision 2026-09-06, the same convention as the AP Statistics course). Write it that
+  way on the homework's `remindbox`, the cover row, the plan's Homework box and teacher note, and
+  the deck's *You do* frame.
 - The Guided Practice has no cover row and no score cell of its own — it is inside the Guided
   Notes & Practice row, because it has no separate handout.
 
@@ -266,7 +266,7 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   a titled box is `notesbox{Title}`), `spiralbox` ("Connections & Big Ideas"),
   `scenariobox[Title]{color}`, `headlinebox{color}` (callout strip; the tests' `\parthead` wraps
   it), `blurbbox[Title]{color}`, `reflectionbox` ("Reflection" — exists, but the current shape has
-  no use for it), `extensionbox` ("Extension — optional"), `tocbox` ("What's in This Packet",
+  no use for it), `extensionbox` ("Extension — optional" — **retired**, never author one), `tocbox` ("What's in This Packet",
   cover), `remindbox` ("Keep in Mind", cover), `teachernote[Title]` (plan only), and `work` (**no
   argument**; body is an amsmath `aligned` — one statement per line, `&` immediately before the
   relation; `\workrowsep` adds leading and moves blank and key together). `\tierbox` and
@@ -326,23 +326,23 @@ teacher needs before opening the notes) → **Learning Targets & Key Understandi
 codes · *Key understandings*, the why, with the **target misconception named** and any second
 one) → **Vocabulary, Concepts & Theorems** (`skillbox{greenbox}`, term/definition `tabularx`) →
 **Lesson at a Glance — `\MeetingLength`** (`fixedskillbox{frost}`, Phase / Min / Students /
-Teacher, **5 / 34 / 8 / 8**; the table is a contract — I do ≈ 20 of the 34, Guided Practice ≈ 14)
+Teacher, **5 / 35 / 10 / 10**; the table is a contract — I do ≈ 20 of the 35, Guided Practice ≈ 15)
 → **Warm-Up — Activate Prior Knowledge (5 min)** (`fixedskillbox{frost}`, two columns: *the three
 items and what each seeds* · *running it*; `\includegraphics[page=1]{warmup/main}` **only** for a
 prefab warm-up) → **Hook — before anyone sits down** (`skillbox{frost}`; the claim on the board,
 the vote, and *do not settle it* — name where it settles) → **Guided Notes & Practice — I do, then
-we do (34 min)** (`skillbox{frost}`, `multicols{2}`; left column: *I do*, one paragraph per
+we do (35 min)** (`skillbox{frost}`, `multicols{2}`; left column: *I do*, one paragraph per
 section in two moves each with its minutes, and which section *is* the lesson; right column: *we
 do*, the Guided Practice with the questions the teacher asks per lettered part, the circulation
-prompts, and which papers to collect for the debrief) → **Debrief — whole class, spoken (8 min)**
+prompts, and which papers to collect for the debrief) → **Debrief — whole class, spoken (10 min)**
 (`skillbox{frost}`, `multicols{2}`; the ordered walk with what goes back on the board; the
 **cold check** with its correct answer — *this replaces the exit ticket*; the **formative read**
 into three piles and how the next lesson opens from pile (c); what to cut if short) →
-**Homework — scored, started in class, due next class** (`skillbox{goldbox}`; the ~6 items and
+**Homework — scored, started in class, due after two study halls** (`skillbox{goldbox}`; the ~6 items and
 what each targets, scoring, **packet or Desmos** with the activity named, the next-lesson preview,
 and the **Connections & Big Ideas** line carrying the standard codes) → **Watch For (while
 circulating)** (`skillbox{redbox}`; misconceptions keyed to notes section, Guided Practice part,
-*and* homework item; a probe for each; cold-call prompts) → **Close & Assign (8 min)**
+*and* homework item; a probe for each; cold-call prompts) → **Close & Assign (10 min)**
 (`skillbox{goldbox}`; the homework launch, which items to start in class, the three-pile sort
 while circulating, the one-line "what changed today," the preview) → **Teacher Notes, three of
 them in packet order:** `[Warm-Up]`, `[Guided Notes \& Practice]`, `[Homework]`. There is no note
@@ -456,7 +456,7 @@ Recognize the shape by the component directories:
 
 | Shape | Has | Notes |
 | --- | --- | --- |
-| **current — the pilot** (2026-09-06) | `notes/` with exactly two numbered sections + a Guided Practice, no `activity/` / `experience/` / `exit_ticket/`; plan reads 5 / 34 / 8 / 8 | `unit01/lesson02` — the target |
+| **current — the pilot** (2026-09-06) | `notes/` with exactly two numbered sections + a Guided Practice, no `activity/` / `experience/` / `exit_ticket/`; plan reads 5 / 35 / 10 / 10 | `unit01/lesson02` — the target |
 | **notes-only** (2026-08-31, evening) | `notes/` with 4–6 sections + a We Do + a solo `practicebox`; plan reads 5 / 30 / 10 / 7 / 3 | `unit01/lesson01` |
 | **group-activity** (2026-08-31, morning) | `notes/` + `activity/`, no `exit_ticket/` | `unit01/lesson00` |
 | **EFFL** (2026-08-29 → 31) | `experience/` (12pt, `\answerspace`), no `notes/` | units 02–08, empty skeletons |
@@ -471,7 +471,7 @@ place** — when asked to touch such a lesson, **ask whether to convert it** to 
 **There is no bulk sweep**: converting every lesson at once would re-flow the pagination of every
 verified lesson; convert one at a time as each comes up, and rebuild that lesson's unit packet.
 Whatever the starting shape, the destination is `cover` + `warmup` + `notes` + `homework` +
-`slides`, a 5 / 34 / 8 / 8 phase table, two long notes sections plus a Guided Practice, a spoken
+`slides`, a 5 / 35 / 10 / 10 phase table, two long notes sections plus a Guided Practice, a spoken
 debrief, and the homework started in class.
 
 **From the notes-only shape** (1.1; 1.2's regeneration from the legacy shape is the worked
@@ -484,7 +484,7 @@ example):
    solo practice go to the homework or are cut. Delete the `hookbox` (the hook is a slide) and any
    `extensionbox`.
 3. Vocab rows become `\termblank{}` ↔ two-line `\vocabans{}` so the boxes match in height.
-4. Repace the plan to **5 / 34 / 8 / 8** in the section-5 order (drop *Explicit Instruction*,
+4. Repace the plan to **5 / 35 / 10 / 10** in the section-5 order (drop *Explicit Instruction*,
    *Active Monitoring*, *Independent Practice*, *Reinforcement*; add *Warm-Up*, *Homework*,
    *Watch For*, *Close & Assign*); retitle the notes teacher note `[Guided Notes \& Practice]`.
 5. Cover row 2 becomes *Guided Notes & Practice*; the homework row says *scored, started in
