@@ -457,7 +457,7 @@ Recognize the shape by the component directories:
 | **notes-only** (2026-08-31, evening) | `notes/` with 4–6 sections + a We Do + a solo `practicebox`; plan reads 5 / 30 / 10 / 7 / 3 | `unit01/lesson01` |
 | **group-activity** (2026-08-31, morning) | `notes/` + `activity/`, no `exit_ticket/` | `unit01/lesson00` |
 | **EFFL** (2026-08-29 → 31) | `experience/` (12pt, `\answerspace`), no `notes/` | units 02–08, empty skeletons |
-| **pre-EFFL legacy** (2026-08-06) | `notes/` + `activity/` + `exit_ticket/`, Tier R / A / E boxes in the activity | `unit01/lesson02`–`lesson08` |
+| **pre-EFFL legacy** (2026-08-06) | `notes/` + `activity/` + `exit_ticket/`, Tier R / A / E boxes in the activity | `unit01/lesson04`–`lesson08` (1.3 converted 2026-09-07) |
 
 `shared/lesson.mk`'s `STUDENT_ORDER` (`cover warmup experience notes activity exit_ticket
 homework`) was **deliberately left alone** — it merges the current set in the right order and
@@ -524,7 +524,8 @@ authoring each unit, never as a sweep):
    Active Monitoring, **Independent Practice**, **Debrief**, Reinforcement; three teacher notes),
    and the deck.
 
-**From the pre-EFFL legacy shape** (1.2–1.8, which carry both `exit_ticket/` and `activity/`):
+**From the pre-EFFL legacy shape** (1.4–1.8, which carry both `exit_ticket/` and `activity/`; 1.2's
+and 1.3's regenerations are the worked examples):
 delete `exit_ticket/` + `exit_ticket_key/` (and their stamps/target dirs); drop the Exit Ticket
 cover row and its teacher note; replace the plan's *Individual Work & Assessment* box with a
 **Debrief (7 min)** box that folds the exit ticket's conceptual item in as the whole-class cold
@@ -539,13 +540,16 @@ target dir. Finish with the evidence per lesson: `make -C unitXX/lessonYY all` *
 `make -C unitXX/lessonYY check` exit 0, blank and key verified page-for-page by per-page heading,
 the PDF eyeballed for stranded boxes, then the planning-log update.
 
-**Scoreboard (2026-09-06):** 66 lesson directories. **1 current — the pilot** (`unit01/lesson02`);
-**1 notes-only** (`unit01/lesson01`, complete, the next conversion once the pilot is confirmed in
-the classroom); **1 group-activity** (`unit01/lesson00`, authored and complete); **6 pre-EFFL
-legacy** (`unit01/lesson03`–`lesson08`, authored, built, and gated in their old shape); **57 EFFL** (units 02–08, empty skeletons). The five conventions are already clean
-tree-wide: no live `\namedateperiod` off the cover, no live `teachernote` in any `_key`, and every
-lesson has a deck — the shape conversions are what remain. Unit 1's assessments and cover pair are
-complete; units 2–8 have scaffolded test skeletons only.
+**Scoreboard (2026-09-07):** 66 lesson directories. **2 current — the pilot and its first
+conversion** (`unit01/lesson02`, the model; `unit01/lesson03`, regenerated from the pre-EFFL
+shape 2026-09-07 — the worked example for 1.4–1.8); **1 notes-only** (`unit01/lesson01`,
+complete, the next conversion once the pilot is confirmed in the classroom); **1
+group-activity** (`unit01/lesson00`, authored and complete); **5 pre-EFFL legacy**
+(`unit01/lesson04`–`lesson08`, authored, built, and gated in their old shape); **57 EFFL** (units
+02–08, empty skeletons). The five conventions are already clean tree-wide: no live
+`\namedateperiod` off the cover, no live `teachernote` in any `_key`, and every lesson has a
+deck — the shape conversions are what remain. Unit 1's assessments and cover pair are complete;
+units 2–8 have scaffolded test skeletons only.
 
 ## 8. Review order
 

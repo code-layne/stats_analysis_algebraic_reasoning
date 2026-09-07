@@ -1,0 +1,18 @@
+{"blanks": [
+  "all 1,500 members", "the 75 asked Tuesday evening",
+  "convenience",
+  "no --- out of range (above 1500)", "none",
+  "yes --- in range and new", "member 973",
+  "no --- already chosen", "none",
+  "yes --- in range and new", "member 288",
+  "$600 \\div 15 = 40$", "$525 \\div 15 = 35$", "$375 \\div 15 = 25$", "$40+35+25 = 100$",
+  "24", "39", "54",
+  "stratified", "cluster"
+ ],
+ "lines": [
+  ["Morning or weekend swimmers, or anyone who works Tuesday evenings."],
+  ["A swim session is not a small mix of the membership --- lap swimmers fill lap hours --- so",
+   "four clusters that all lean one way leave families and seniors out. Chance chose; the groups are alike inside."],
+  ["Plan B, stratified: it samples the senior stratum separately, so 25 seniors are guaranteed",
+   "a place in proportion. No other plan promises seniors appear at all --- a random draw only makes it likely."]
+ ]}

@@ -1,23 +1,37 @@
-%! Choosing a Sample — Unit 1, Lesson 1.3 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Warm-Up (Answer Key)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt, so each
+% item gets real handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up rehearses, WITHOUT naming them, the three computations the four
+% techniques run on. Item 1 is a part of a whole as a percent (spiral to 1.1). Item 2 is the
+% stratified allocation with the name removed — section 2 of the notes opens on this 18. Item 3
+% is the systematic sample with the name removed — k = 900/60 = 15, start 7, then 22 and 37 —
+% which the second half of section 1 picks up. Same 900 students the notes use.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- Riverbend High School}
-\small
+\normalsize
 Riverbend High School has $900$ students. The student council wants to survey
 $60$ of them about a new late-bus schedule.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, topsep=4pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
   \item Of Riverbend's $900$ students, $270$ are in $9$th grade. What
         \textbf{percent} of the school is that?
@@ -35,9 +49,8 @@ $60$ of them about a new late-bus schedule.
           0.30 \times 60 &= 18 \text{ students}
         \end{work}
 
-  \item The office prints one list with all $900$ students on it, in order.
-        You want to pick $60$ of them, spread evenly from the top of the list to
-        the bottom.
+  \item The office prints one list of all $900$ students, in order. You want to
+        pick $60$ of them, spread evenly from the top of the list to the bottom.
 
         \textbf{(a)} How many names apart should the picks be?
 
@@ -45,10 +58,11 @@ $60$ of them about a new late-bus schedule.
           900 \div 60 &= 15
         \end{work}
 
-        \textbf{(b)} If you start at the $7$th name on the list and then keep
-        counting by your answer to (a), which two names do you take next?
+        \textbf{(b)} You start at the $7$th name on the list and keep counting by
+        your answer to (a). Which two names do you take next?
+        \wordbank{8 \;\textbullet\; 9 \;\textbullet\; 15 \;\textbullet\; 22 \;\textbullet\; 37 \;\textbullet\; 52}
 
-        \ans{the 22nd} \qquad \ans{the 37th}
+        \ans{22} \qquad \ans{37}
 
 \end{enumerate}
 \end{notesbox}

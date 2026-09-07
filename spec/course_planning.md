@@ -1,6 +1,19 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-09-06 — **LESSON 1.2 REGENERATED AS THE PILOT SHAPE, MODELED ON AP
+**Last updated:** 2026-09-07 — **LESSON 1.3 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
+regenerate 1.3`): the pre-EFFL legacy lesson (notes + activity + exit ticket) was rebuilt as
+`cover` + `warmup` + `notes` + `homework` + `slides` on the 1.2 model — two long notes sections,
+one Guided Practice, spoken debrief, homework started in class, 5 / 35 / 10 / 10, 12pt student
+components, `\vterm` vocab rows, word banks, keys generated with `mkkey.py`. `activity/`,
+`activity_key/`, `exit_ticket/`, `exit_ticket_key/` were `git rm`'d. **The crux was re-engineered
+on the notes' own data**: Riverbend's 30 homerooms of 30 are grouped by grade (1–9 ninth, 10–17
+tenth, 18–24 eleventh, 25–30 twelfth), so Maya's random draw of homerooms 4 and 7 is 60 ninth
+graders and no seniors — "chance chose" is not enough; a homeroom is a stratum wearing a
+cluster's clothes (the old activity's Tier E payoff, now the second half of section 2). The old
+36 × 25 / 3-drawn cluster numbers are gone. Details in the Lesson 1.3 entry below. **Next
+conversion: 1.1 (notes-only recipe) or 1.4 (pre-EFFL recipe) — one at a time.**
+
+**Previous run (2026-09-06) — LESSON 1.2 REGENERATED AS THE PILOT SHAPE, MODELED ON AP
 STATISTICS LESSON 1.4 MINUS ITS AP PRACTICE PAGE. IT IS THE MODEL FOR EVERY FUTURE LESSON.**
 The user asked for 1.2 rebuilt on the most recent stats lesson (`~/Mathematics/stats`
 `unit01/lesson04`, 2026-09-06) without the `ap_practice` component. What that shape is:
@@ -138,7 +151,9 @@ start the homework → close (dark).
   format fixes carry into the pilot. Convert it with the notes-only recipe in `LESSON_SHAPE.md`
   section 7 once the pilot is confirmed in the classroom.
 - **Lesson 1.0** still carries `activity/` + `activity_key/`. Not a model.
-- **Lessons 1.3–1.8** are pre-EFFL: both `exit_ticket/` and `activity/`.
+- **Lesson 1.3 is CURRENT** — regenerated in the pilot shape 2026-09-07 (the second lesson in
+  the shape; mirror 1.2 first, 1.3 second).
+- **Lessons 1.4–1.8** are pre-EFFL: both `exit_ticket/` and `activity/`.
 - **Units 2–8** (57 lesson dirs) are empty EFFL skeletons.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
@@ -273,31 +288,60 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     `check` both exit 0; every page rendered and eyeballed.
   - Keys generated with `templates/lesson/mkkey.py` from
     `templates/lesson/examples/lesson02_{warmup,notes,homework}_key.json`.
-- **Lesson 1.3 — "Choosing a Sample: Four Sampling Techniques" — is COMPLETE.** All components
-  authored, built, and passing the gate.
-  - Standards: **PS.DC.2a, PS.DC.2b; AFDA.DA.2b**.
-  - Scope: the **sampling frame**, and the one line that separates a **probability sample**
-    (chance chooses) from a **convenience sample** (the researcher / the schedule chooses);
-    then the four techniques with an executable procedure each — SRS off a random digit strip
-    (skip out-of-range, skip repeats), **stratified** allocation proportional to strata size,
-    **systematic** interval $k = N \div n$ from a random start, and **cluster** (a few whole
-    groups, everyone in them). The lesson's pivot is **stratified vs. cluster**, taught as
-    *some from every group vs. everyone from a few groups*, with a fill-in contrast table.
-    Closes on PS.DC.2b: choosing a technique from **what the context allows** (what list
-    exists; which subgroups differ) and justifying it. Bias is named only as a hand-off.
-  - Contexts: Riverbend HS carried from 1.1/1.2 (notes; 900 students → 60; strata 270/240/210/180
-    → 18/16/14/12 at 1/15; systematic $k=15$ from start 7 → 22, 37, 52; 36 homerooms × 25,
-    3 drawn → 75), Cedar Ridge Apartments (activity; 600 households in 30 buildings × 20,
-    unit-type strata 120/280/200 → 12/28/20 at 1/10, $k=10$ from start 4; buildings 1–6 studio,
-    7–20 one-bed, 21–30 two-bed, so a building is a **stratum wearing a cluster's clothes** —
-    Tier E), Bayside Middle School (exit ticket; 750 → 30, $k=25$ from start 6 → 31, 56),
-    Harbor Point Community Pool (homework; **1.2's flawed Tuesday-evening study, replanned** —
-    1,500 members → 100, generator returns 0412/1587/0973/0412/0288 → members 412, 973, 288;
-    strata 600/525/375 → 40/35/25 at 1/15; $k=15$ from start 9; 4 of 25 swim sessions × 25 ≈ 100).
-    All arithmetic verified in Python before authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 5pp, slides 9 frames. `make -C unit01/lesson03 all` and `check` both exit 0; PDFs
-    eyeballed for stranded boxes (none — the homework's Practice box splits 4 items / 4 items).
+- **Lesson 1.3 — "Choosing a Sample: Four Sampling Techniques" — is COMPLETE and CURRENT
+  (regenerated in the PILOT shape 2026-09-07 from the pre-EFFL legacy shape).**
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. `activity/`,
+    `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted (`git rm`).
+  - Standards: **PS.DC.2a, PS.DC.2b; AFDA.DA.2b** (PS.DC.1d carried forward in the
+    population/sample items).
+  - Scope: the **sampling frame**; **probability vs. convenience** decided by *who could never
+    have been picked* (second trap, section 1's first half: the teacher's own third period is
+    convenience, however fair it felt); **SRS** off the digit strip 714 028 951 366 (skip 951)
+    and the **systematic** shortcut $k = 900 \div 60 = 15$, start 7 → 22, 37, 52 (the warm-up
+    with its name) — both in section 1's second half; **stratified** allocation 270/240/210/180
+    at 1/15 → 18/16/14/12 (section 2's first half, opening on the warm-up's 18); and **the
+    target misconception in section 2's second half — "chance chose, so it is fine"**: a cluster
+    sample works only when each cluster is a small mix of the whole. Riverbend's 30 homerooms of
+    30 are grouped by grade (1–9 ninth, 10–17 tenth, 18–24 eleventh, 25–30 twelfth); Maya's
+    random draw of rooms 4 and 7 is $2 \times 30 = 60$ ninth graders and 0 seniors, nobody
+    counted wrong, and about one draw in four (200/870 = 23%) lands both rooms in one grade. Rule:
+    alike inside → some from every group (stratified); a mix of the whole → everyone from a few
+    (cluster). Closes on the stratified/cluster contrast table and PS.DC.2b (choose and justify
+    from how the groups are built).
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** Maya's hat draw — *is that as
+    trustworthy as drawing 60 names out of the hat?* Circle yes / no / it depends; the homeroom
+    map is withheld until the second half of section 2, where the vote is re-taken.
+  - Contexts: Riverbend HS (warm-up + notes; 900 → 60), **Cedar Ridge Apartments (Guided
+    Practice; 600 households in 30 buildings × 20, buildings 1–6 studios / 7–20 one-bed / 21–30
+    two-bed → strata 120/280/200 → 12/28/20 at 1/10; the cluster draw of buildings 2, 5, 6 = 60
+    studio households — the crux transferred; part (e): with only a list of buildings, only
+    cluster survives)**, Harbor Point Community Pool (homework; 1.2's Tuesday-evening study
+    replanned — 1,500 → 100; generator 0412/1587/0973/0412/0288 → members 412, 973, 288; strata
+    600/525/375 → 40/35/25 at 1/15; $k = 15$ from start 9 → 24, 39, 54; 4 of 25 swim sessions ×
+    25 = 100). Bayside Middle School (750 → 30, homerooms by grade) survives only as the
+    debrief's **cold check** (Plan 1 cluster vs. Plan 2 stratified — which *guarantees* all three
+    grades). All arithmetic verified in Python before authoring.
+  - Homework: 6 items, 12 points — the Tuesday-evening study (spiral to 1.2); Plan A generator
+    table (out-of-range vs. repeat); Plan B allocation; Plan C interval; **item 5 = the contrast
+    pair (Plan B stratified / Plan D cluster) then the crux head-on (three lap-swim hours drawn
+    at random)**; item 6 = the board's "seniors must be heard" justification (PS.DC.2b). Two
+    pages (items 1–2 / 3–6 + spiralbox). Packet night (Desmos has sampling simulations but no
+    stratum-or-cluster reasoning). The old 8-item set's matching table and extension are gone.
+  - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page last lines identical: p3 ends on the
+    contrast table, p4 is the Guided Practice), homework 2/2, cover 1; plan 6pp, deck 14 frames,
+    student and key packets 10pp each. `make -C unit01/lesson03 all` and `check` both exit 0;
+    every page rendered and eyeballed — no stranded boxes; zero overfull boxes in the plan and
+    deck (the cover's 16pt overfull banner line is the course name at `\LARGE`, identical in
+    1.2).
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson03_{warmup,notes,homework}_key.json`.
+  - **Fitting lesson:** the first compile ran notes 6/5, homework 3/3, cover 2 — section 2's
+    contrast table, the Guided Practice's part (e), the homework's spiralbox, and the cover's
+    Keep in Mind each spilled by a few lines. Trimming prose (one line per paragraph, table
+    `\arraystretch` 1.3 → 1.2, homework `itemsep` 6 → 4pt) fixed all four without cutting an
+    item. At 12pt a section page holds roughly: intro (2 lines) + 2-line word bank + 4-line
+    paragraph + 5-row table + 2-line work block + 2-line paragraph + run-in + 4-line paragraph +
+    1-line work block + 3-line paragraph + 4-line callout + 3-row table — nothing more.
 - **Lesson 1.4 — "Bias in Samples and Surveys" — is COMPLETE.** All components authored,
   built, and passing the gate.
   - Standards: **PS.DC.2c; AFDA.DA.2e, 2f, 2g**.
@@ -562,8 +606,9 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 2. **Convert 1.1 to the pilot shape** (notes-only recipe, `LESSON_SHAPE.md` section 7) once the
    pilot is confirmed — fold six sections into two, merge the We Do and the practice box into one
    Guided Practice, `\termblank` vocab, 5/35/10/10, three cover rows renamed, deck reordered.
-3. **Convert 1.0** (group-activity recipe) and **1.3–1.8** (pre-EFFL recipe, then as for 1.1), one
-   at a time, each with `make all` + `make check` + per-page heading comparison.
+3. **Convert 1.0** (group-activity recipe) and **1.4–1.8** (pre-EFFL recipe — 1.3's regeneration on
+   2026-09-07 is the worked example), one at a time, each with `make all` + `make check` +
+   per-page heading comparison.
 4. **Units 2–8**: scaffold `notes` (only) into each lesson as authored and delete
    `experience`/`experience_key`; confirm the Unit 2 lesson map with the user before authoring.
 5. **Reuse the Unit 1 assessment set as the template for U2–U8** (blueprint 14/16/40/30, 33 items,
@@ -574,7 +619,7 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
-   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23.
+   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07).
 
 ## Gotchas found this session
 

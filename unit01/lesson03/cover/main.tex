@@ -1,42 +1,63 @@
-%! Choosing a Sample — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, started in class, and it is SCORED, so its cell is a \blank{}, never NA.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.3 \quad Choosing a Sample: Four Sampling Techniques}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.3 \quad Choosing a Sample: Four Sampling Techniques}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DC.2a-b; AFDA.DA.2b) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} say whether \textbf{chance} or \textbf{convenience} chose a
-        sample, and name the \textbf{sampling frame}.
-  \item \ldots{} describe and carry out a \textbf{simple random},
-        \textbf{stratified}, \textbf{systematic}, and \textbf{cluster} sample.
-  \item \ldots{} compute a stratified allocation and a systematic interval
-        $k = N \div n$.
-  \item \ldots{} tell a \textbf{stratum} from a \textbf{cluster} --- some from
-        every group versus everyone from a few groups.
-  \item \ldots{} choose the best technique for a given context and
-        \emph{justify} the choice.
+  \item \ldots{} name the \textbf{sampling frame} and say whether \textbf{chance} or
+        \textbf{convenience} chose a sample --- by asking \emph{who could never have been picked}.
+  \item \ldots{} carry out a \textbf{simple random sample} from generator digits and a
+        \textbf{systematic sample} with interval $k = N \div n$.
+  \item \ldots{} compute a \textbf{stratified} allocation in proportion, and count what a
+        \textbf{cluster sample} reaches.
+  \item \ldots{} tell a \textbf{stratum} from a \textbf{cluster} --- some from every group
+        versus everyone from a few --- and choose and \emph{justify} the technique a context
+        calls for.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -49,11 +70,16 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Percents, proportional shares, and an interval down a list & \blank{1.2cm} \\
-2 & Guided Notes   & The four probability techniques, and how to run each one & \blank{1.2cm} \\
-3 & Group Activity & Four Ways In: Cedar Ridge Apartments & \blank{1.2cm} \\
-4 & Exit Ticket    & Name the technique, find the interval, justify a choice & \blank{1.2cm} \\
-5 & Homework       & Harbor Point Community Pool: plan the study properly & \blank{1.2cm} \\
+1 & Warm-Up & Riverbend's $900$ students: a percent, a share of $60$, and an interval down
+             a list & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Who chooses the sample; the four techniques; Maya's homeroom
+             draw --- then Cedar Ridge Apartments worked together & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Harbor Point pool, done properly: run four plans and choose the one the board
+             needs --- \textbf{scored, started in class, due the first class after two study
+             halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -61,15 +87,16 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-In a \textbf{probability sample}, chance chooses --- not the researcher, and not
-who happens to be standing there. \textbf{Simple random}: number the frame and
-draw. \textbf{Stratified}: some from every group, sized in proportion.
-\textbf{Systematic}: a random start, then every $k$th one, where
-$k = N \div n$. \textbf{Cluster}: everyone from a few randomly chosen groups.
-The two that get mixed up are the middle pair --- \emph{strata are alike inside;
-clusters are supposed to be a small mix of the whole}.
+In a \textbf{probability sample}, chance chooses --- ask \emph{who could never have been
+picked?} \textbf{Simple random}: number the frame and draw, skipping repeats and out-of-range
+values. \textbf{Systematic}: a random start, then every $k$th, $k = N \div n$.
+\textbf{Stratified}: some from \emph{every} group, in proportion --- for groups that are
+\emph{alike inside}. \textbf{Cluster}: everyone from a \emph{few} groups --- only for groups
+that are each a \emph{small mix of the whole}. \textbf{Watch out:} ``chance chose'' is not
+enough --- draw a few groups that are alike inside and you can miss a whole grade.
 \end{remindbox}
 
 \end{document}
