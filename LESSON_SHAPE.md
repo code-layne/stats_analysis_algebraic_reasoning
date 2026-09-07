@@ -269,7 +269,7 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   **`\termans` is undefined in this course** — the shared skill's `\termblank` ↔ `\termans` pair is
   **a fixed-height row pair defined in the notes' own preamble — `\vterm{Term}` ↔
   `\vtermans{Term}{def}`** (user decision 2026-09-06: the vocab box follows the stats course — a
-  1.6cm row carrying the term and one full-width blank, **no rule line**, the key filling exactly
+  2.3cm row carrying the term label and open writing space — **no inline blank and no rule line** (user correction 2026-09-06) — the key filling exactly
   the same height, definitions two lines at most). `saar-article` does not carry the pair, so
   every notes file copies the block from `unit01/lesson02/notes/main.tex` (worth promoting into
   `shared/` on a run allowed to touch it). `\termblank` / `\vocabans` remain in the package but

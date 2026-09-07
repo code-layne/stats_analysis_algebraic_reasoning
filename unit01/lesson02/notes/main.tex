@@ -33,19 +33,19 @@
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
 \newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
-% Vocabulary rows follow the stats course: a FIXED-HEIGHT row carrying the term and one
-% full-width blank — no rule line — and the key fills exactly the same height, so the box
-% cannot drift blank vs. keyed. saar-article's \termblank adds a rule line, so the pair is
-% defined here (the key is generated from this file and inherits both). 1.6cm per row gives
-% students two handwritten lines of room; keep key definitions to two lines.
-\newcommand{\termrowheight}{1.6cm}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
 \newlength{\termrowinset}\setlength{\termrowinset}{7pt}
-\newlength{\termwd}
 \newcommand{\vterm}[1]{%
-  \settowidth{\termwd}{\textbf{#1:}}%
   \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
     \vspace*{\termrowinset}%
-    \textbf{\textcolor{cerulean}{#1:}}\quad\blank{\dimexpr\linewidth-\termwd-1.6em\relax}%
+    \textbf{\textcolor{cerulean}{#1:}}%
   \end{minipage}\par}
 \newcommand{\vtermans}[2]{%
   \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%

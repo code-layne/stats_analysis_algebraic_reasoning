@@ -140,8 +140,9 @@ the second is introduced by a bold run-in heading, `\textbf{\textcolor{cerulean}
 by a third box. **The crux lives in the second half of section 2.**
 - **Page plan (fixed):** page 1 = `vocabbox` + `hookbox`; page 2 = section 1; page 3 = section 2 (`\newpage` before each section); page 4 = the Guided Practice alone. **No `objectivebox`** — the cover carries the targets.
 - Every fill-in cluster opens with a `\wordbank{…}` strip (defined in the preamble; copy from 1.2) listing every word and number its blanks take.
-- `vocabbox` — one `\vterm{Term}` per key term (4–5 of them): a **fixed-height 1.6cm row** with the
-  term and one full-width blank and **no rule line**, as the stats course does. The box says
+- `vocabbox` — one `\vterm{Term}` per key term (4–5 of them): a **fixed-height 2.3cm row** with the
+  term label and open writing space — **no inline blank and no rule line** (user correction
+  2026-09-06: the black answer line crowded the row). The box says
   **"Fill in each term as we name it in the notes below"** — filled during instruction, never
   front-loaded. The key uses `\vtermans{Term}{definition}`, which fills exactly the same height
   (keep definitions to two lines), so the box cannot drift blank vs. keyed. The `\vterm` /

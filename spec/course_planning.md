@@ -24,8 +24,9 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
   cluster opens with a `\wordbank{}` strip** (gold, defined per document) in the notes, the Guided
   Practice, the warm-up, and the homework.
 - **Vocab rows are fixed-height stats-style rows** (user request 2026-09-06): `\vterm{}` ↔
-  `\vtermans{}{}`, a 1.6cm minipage pair defined in the notes preamble — term + one full-width
-  blank, no rule line, the key filling the same height. Supersedes the earlier `\termblank` ↔
+  `\vtermans{}{}`, a 2.3cm minipage pair defined in the notes preamble — term label + open
+  writing space, no inline blank, no rule line (user correction 2026-09-06), the key filling
+  the same height. Supersedes the earlier `\termblank` ↔
   two-line `\vocabans` rule. **Worth promoting into `saar-article.sty` / `saar-key.sty`** with the
   cover banner, on a run allowed to touch `shared/`.
 - ~~Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.~~ With `\termblanklong` (three
