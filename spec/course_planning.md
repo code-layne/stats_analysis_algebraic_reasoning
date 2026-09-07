@@ -265,7 +265,8 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     pair; second sample 30/75 = 40%). All arithmetic verified in Python before authoring.
   - Homework: 6 items, 12 points — groups; frequency table (spiral to 1.1); scale-up as an
     estimate; label four numbers (rows ii/iv the contrast pair); four constraints; the second
-    sample (crux head-on) and the board's over-claim. Packet night (Desmos carries only the
+    sample (crux head-on). Two pages max (user decision 2026-09-06); the board's over-claim
+    moved to Guided Practice (e). Packet night (Desmos carries only the
     percent arithmetic).
   - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page headings identical), homework 3/3;
     plan 6pp, deck 14 frames, student and key packets 12pp each. `make -C unit01/lesson02 all` and
