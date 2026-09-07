@@ -183,8 +183,8 @@ practice** *and* its graded work: the cover's score column carries a `\blank{}` 
 and **students start it in class in the last ten minutes of the period**, alone, while the
 teacher circulates for the second formative read.
 
-`\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **2–3 pages** at 12pt, blank
-and key; the practice boxes at full size (`\small` only in the opening `remindbox`).
+`\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **two pages maximum** at 12pt, blank
+and key (user decision 2026-09-06 — cut an item or a part rather than run to a third page); the practice boxes at full size (`\small` only in the opening `remindbox`).
 Structure, in order:
 
 - A `remindbox` — "**This is your graded homework.** It is scored out of N and due …; you will
@@ -196,7 +196,8 @@ Structure, in order:
   a **deliberate contrast pair** (same task, opposite condition — the pair that surfaces the target
   misconception), the **crux head-on**, and a justification item. Every answer is phrased in its
   context. Split into `notesbox{…, continued}` boxes so that **no item breaks across a page** and
-  no lead-in sentence is stranded from its table — three boxes at 12pt is normal.
+  no lead-in sentence is stranded from its table — two boxes at 12pt (items 1–2 / 3–6) is the
+  norm.
 - A closing `spiralbox` (its title is fixed as "Connections & Big Ideas") previewing the next
   lesson. No `extensionbox`.
 
