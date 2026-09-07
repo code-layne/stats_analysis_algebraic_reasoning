@@ -23,7 +23,7 @@ structure_source: standards
 spec_dir: spec
 course_index: spec/course_planning.md
 check_target: true
-point_size: 10
+point_size: 12
 ---
 
 # Lesson Shape — Statistical Analysis & Algebraic Reasoning
@@ -74,8 +74,7 @@ as on the cover) → `vocabbox` filled *as each term is named* → **exactly two
 `notesbox{N. Title}` sections** (the I do), each long, its second half introduced by a bold run-in
 heading `\textbf{\textcolor{cerulean}{Its Title.}}` rather than a third box → one `practicebox`
 (fixed title "Guided Practice") worked together (the we do), three or four lettered parts, the
-last of which tests the misconception on new ground. **The notes end there.** Target **3–4 pages**
-at 10pt, blank and key. **There is no `hookbox` in the notes** — the hook is a slide and lives in
+last of which tests the misconception on new ground. **The notes end there.** Target **4 pages** at 12pt, blank and key. **There is no `hookbox` in the notes** — the hook is a slide and lives in
 the plan. **The crux — the item that surfaces the lesson's target misconception — lives in the
 second half of section 2**; the second half of section 1 may carry a second trap in a
 `\fcolorbox{redacc}{redbg}{\parbox{…}}` callout, broken where it is set.
@@ -95,16 +94,16 @@ second context; the homework on a third.
   takeaway** — the rule, the test to apply, the trap to avoid, in the formal vocabulary — never
   the lesson's process. Standard codes stay off the cover.
 - **`warmup`** — 3 spiral items on *prerequisite* skills, **exactly one page** blank and key, at
-  lesson 1.1's enlarged sizing (`\large` body, `\workrowsep` 50pt, item spacing 22pt). Each item
+  12pt with `\workrowsep` 50pt and item spacing 22pt (12pt replaces 1.1's `\large`-at-10pt trick). Each item
   is a **tool the notes pick up again**; the plan's Warm-Up box says what each item *seeds* and
   which notes section reuses it. Often the same numbers the notes open with.
 - **`notes`** — as above. Two sections, one Guided Practice, nothing after it.
-- **`homework`** — authored for **every** lesson, 1–2 pages, and it is **the individual
+- **`homework`** — authored for **every** lesson, 2–3 pages at 12pt, and it is **the individual
   practice**: opens with a `remindbox` ("This is your graded homework…", identical in blank and
   key), then a context `scenariobox`, then ~6 items in a `notesbox` — the core procedure, a
   **deliberate contrast pair** (the pair that surfaces the target misconception), the crux head-on,
   an interpret-in-context item, a justification item, and **one spiral item** reaching back — split
-  into a second `notesbox{…, continued}` where the pages fall, and closed by a `spiralbox`
+  into `notesbox{…, continued}` boxes so no item breaks across a page, and closed by a `spiralbox`
   previewing the next lesson. Every answer is phrased in its context. Students start it in the last
   ten minutes of the period.
 - **`slides`** — the required Beamer deck, ~14 frames: title → learning targets (with a *How
@@ -131,8 +130,8 @@ it, then use it.
   practice is the homework. (The 2026-08-31 notes-only shape had a 10-minute solo practice box
   after a We Do section; the pilot retired it.)
 - **The debrief is not a component** and gets no directory and no cover row.
-- **No 12pt component and no `\answerspace`.** Both died with EFFL; every component is 10pt and
-  answer space is `\writeline` / `\writelines{n}` / `\blank{}` (section 4).
+- **No `\answerspace`.** It died with EFFL; answer space is `\writeline` / `\writelines{n}` /
+  `\blank{}` (section 4). (Student components are 12pt since 2026-09-06 — section 4.)
 - **No per-section I-do/we-do/you-do mini-cycles, no 4–6 short sections.** Two sections, each in
   two moves.
 
@@ -237,12 +236,17 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   itself (`-article` does not). **There is deliberately no `\SchoolYear` macro — no year on any
   document.** These materials are reused year over year; the plan's title block is `\CourseName`
   alone. Do not reintroduce one.
-- **Every component is 10pt** — cover, warm-up, notes, homework, tests, and the plan alike:
-  `\documentclass[10pt]{article}` + `saar-article` + `saar-boxes` (cover also `ltablex` +
-  `\keepXColumns`). That is the frontmatter's `point_size: 10` — most sibling courses are 12pt;
-  the only 12pt document this course ever had was EFFL's `experience/`, which is retired.
-  `\boxguard` counts were tuned at 10pt (default 16; ~20 after a `vocabbox`; 30 before a box
-  opening with an unbreakable TikZ/pgfplots figure or `tabularx`).
+- **Every student-facing lesson component is 12pt** (user decision 2026-09-06, matching the AP
+  Statistics model): cover, warm-up, notes, homework, and their keys are
+  `\documentclass[12pt]{article}` + `saar-article` + `saar-boxes` (cover also `ltablex` +
+  `\keepXColumns`), with `\small` inside the cover's boxes and the notes' boxes as the stats
+  model does, and the homework's practice boxes at full size. That is the frontmatter's
+  `point_size: 12`. **The lesson plan stays 10pt and the deck 11pt** — they are not student
+  work. The unit tests were authored at 10pt and have not been resized (not part of the pilot).
+  At 12pt the notes run **4 pages** and the homework **3** (three boxes, no item breaking across a
+  page); `\boxguard` counts are baselines, so the same numbers reserve more at 12pt (12 before
+  the first `notesbox` after the vocab box; 30 before a box opening with an unbreakable
+  TikZ/pgfplots figure or `tabularx`).
 - **Palette — cerulean with gold accents** (`cerulean` #0B6FA4 is the dominant color, the third
   blue across the stats-family courses, separated by hue so it survives a photocopy; the deck
   overrides it to a brighter #1785BF). Defined: `cerulean ceruleanlight frost frostmid charcoal

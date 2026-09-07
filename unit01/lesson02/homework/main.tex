@@ -6,14 +6,14 @@
 % the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
 % THIRD CONTEXT: the notes teach on the Lakeside market, the Guided Practice runs on
 % Riverbend HS, and these items are on the Harbor Point pool — recall is not the skill.
-% Items 4-6 sit in the "continued" box so item 4's lead-in is never orphaned from its table.
+% Three boxes — items 1-3, 4-5, 6 — so no item breaks across a page (12pt runs three pages).
 % Item 4 rows (ii) and (iv) are the deliberate CONTRAST PAIR: two percents, one a statistic
 % and one a parameter. Item 6 is the target misconception head-on.
 % THE DATA — Harbor Point Community Pool: 1,500 members; 75 asked on a Tuesday evening ->
 %   27 lap (36%), 21 family (28%), 18 lessons (24%), 9 aerobics (12%); 0.36 x 1500 = 540;
 %   front-desk records: 62% of all 1,500 members renewed; second sample 30/75 = 40%.
 % PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -38,7 +38,6 @@ you before you leave, then finish it on your own.
 
 \boxguard[20]
 \begin{scenariobox}[Harbor Point Community Pool]{cerulean}
-\small
 The Harbor Point Community Pool has $1{,}500$ members. The board is deciding whether to
 reserve a second lane for lap swimming, so a staff member asks $75$ members arriving on a
 Tuesday evening what they mainly use the pool for.
@@ -51,7 +50,6 @@ The $75$ answers: $27$ lap swimming, $21$ family swim, $18$ lessons, $9$ water a
 
 \boxguard
 \begin{notesbox}{Populations, Samples, and the Numbers They Produce}
-\small
 Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ members.
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
@@ -101,7 +99,6 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
 
 \boxguard[30]
 \begin{notesbox}{Populations, Samples, and the Numbers They Produce, continued}
-\small
 \begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt, start=4]
 
   \item Label each number \textbf{parameter} or \textbf{statistic}, and say who it describes.
@@ -145,6 +142,13 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \end{tabularx}
         \end{center}
 
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{Populations, Samples, and the Numbers They Produce, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt, start=6]
+
   \item A month later a different staff member asks another $75$ members the same question.
         This time $30$ say they mainly swim laps.
 
@@ -172,7 +176,6 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
 
 \boxguard[10]
 \begin{spiralbox}
-\small
 \textbf{Next lesson: Choosing a Sample --- Four Sampling Techniques.} The staff member asked
 whoever showed up on a Tuesday evening --- and lap swimmers keep evening hours. Next class is
 about \emph{how} the sample gets chosen, and why that choice decides whether a statistic is worth

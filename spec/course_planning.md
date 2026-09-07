@@ -25,6 +25,11 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
   page 1 with its table on page 2; moving items 4–6 into the `…, continued` box fixed it.
 - **`\boxguard[24]` before a `multicols` box** — the plan's Debrief box opened as a two-line
   sliver at the foot of a page with the default guard.
+- **Student components are 12pt** (user decision 2026-09-06, matching stats 1.4): cover, warm-up,
+  notes, homework and keys; `\small` inside the notes' and cover's boxes, homework practice boxes
+  at full size. Plan 10pt, deck 11pt. Notes 4/4, homework 3/3 (three boxes, one per page, no item
+  breaking across a page), warm-up 1/1. Three of the key's answers had to be shortened to one line
+  at 12pt — the generator makes that a one-word edit in the JSON.
 - **Three user decisions (2026-09-06), now in the profile:** the phases total 60 — **5 / 35 / 10 /
   10**; **no extension box anywhere**, course-wide; homework is **due at the start of the first
   class after two study halls** (the stats convention), never "due next class".
@@ -102,6 +107,8 @@ formative read) → Homework → Watch For → Close & Assign → three teacher 
 start the homework → close (dark).
 
 **Cover packet table is THREE rows** — Warm-Up · Guided Notes & Practice · Homework.
+
+**Student components are 12pt** (cover, warm-up, notes, homework, keys); plan 10pt, deck 11pt.
 
 > The old 55-vs-60 mismatch is **closed** (2026-09-06): the phase table now allocates the whole
 > 60-minute period, 5 / 35 / 10 / 10.
@@ -243,8 +250,8 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     estimate; label four numbers (rows ii/iv the contrast pair); four constraints; the second
     sample (crux head-on) and the board's over-claim. Packet night (Desmos carries only the
     percent arithmetic).
-  - Page counts: warmup 1/1, **notes 3/3** (per-page headings identical), homework 2/2; plan
-    6pp, deck 14 frames, student and key packets 10pp each. `make -C unit01/lesson02 all` and
+  - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page headings identical), homework 3/3;
+    plan 6pp, deck 14 frames, student and key packets 12pp each. `make -C unit01/lesson02 all` and
     `check` both exit 0; every page rendered and eyeballed.
   - Keys generated with `templates/lesson/mkkey.py` from
     `templates/lesson/examples/lesson02_{warmup,notes,homework}_key.json`.
@@ -549,8 +556,7 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
-   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **This run (the
-   1.2 pilot + profile rewrite) is on branch `claude/lesson-1-2-regeneration-pilot-28d12b`.**
+   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23.
 
 ## Gotchas found this session
 
