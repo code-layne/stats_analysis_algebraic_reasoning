@@ -18,15 +18,16 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 | Standards strands | PS.\* (primary), AFDA.\* , A2.\* (reach-ins only) |
 | Excluded by design | AFDA.AF.3 (linear programming); no trigonometry |
 
-Each lesson directory ships the **EFFL** component set: `warmup`, `experience`
-(*Experience & Formalize*), `homework` (each with a `_key`), plus `cover`,
-`slides`, and the lesson plan (`main.tex`).
+A current lesson ships `cover`, `warmup`, `notes` (*Guided Notes & Practice*), `homework` (each
+keyed component with a `_key`), `slides`, and the lesson plan (`main.tex`).
 
-**Shape status (2026-08-30):** Units 2–8 (57 lesson dirs) are scaffolded in the EFFL
-shape. **Lesson 1.0 has been regenerated in the EFFL shape and is the model lesson** —
-mirror it, not a legacy lesson. **Unit 1's remaining 8 lessons (1.1–1.8) are still
-legacy-shape** (`notes`/`activity`/`exit_ticket`) — they carry authored content and are
-retrofitted one at a time per the Retrofit section of the lesson-planning skill.
+**Shape status (2026-09-06):** **Lesson 1.2 is the PILOT** — regenerated on the AP Statistics 1.4
+model (two long notes sections, a Guided Practice worked together, a spoken debrief, the homework
+started in class; 5 / 34 / 8 / 8) — **and is the model every future lesson follows.** Lesson 1.1
+is in the previous notes-only shape (2026-08-31); lesson 1.0 still carries `activity/`; lessons
+1.3–1.8 are pre-EFFL legacy (`notes`/`activity`/`exit_ticket`) with authored content; units 2–8
+(57 lesson dirs) are empty EFFL skeletons. Convert one lesson at a time per section 7 of
+`LESSON_SHAPE.md`.
 
 **Status legend:** ✅ authored, built, and gated · ⬜ scaffolded only (EFFL skeletons, builds clean).
 
@@ -42,7 +43,7 @@ assessments and cover pair ✅
 |---|---|---|---|
 | 1.0 | Unit Launch: Study Design | PS.DC.1a–c; AFDA.DA.2a | ✅ |
 | 1.1 | The Statistical Cycle and Types of Data | PS.DC.1a–c; AFDA.DA.2a | ✅ |
-| 1.2 | Populations, Samples, Parameters, and Statistics | PS.DC.1d–e | ✅ |
+| 1.2 | Populations, Samples, Parameters, and Statistics | PS.DC.1d–e | ✅ **pilot shape** |
 | 1.3 | Choosing a Sample — Four Sampling Techniques | PS.DC.2a–b; AFDA.DA.2b | ✅ |
 | 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ |
 | 1.5 | Observational Studies | PS.DC.2d | ✅ |

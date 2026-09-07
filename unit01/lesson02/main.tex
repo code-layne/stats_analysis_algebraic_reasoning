@@ -1,8 +1,15 @@
 %! Populations, Samples, Parameters, and Statistics — Unit 1, Lesson 1.2 — Lesson Plan
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / spoken debrief / close and START
+% THE HOMEWORK). The guided notes carry the release: I do (two sections) -> we do (Guided
+% Practice). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the homework is the individual
+% practice, and the period ends with students starting it. Teacher-facing. Breakable boxes are
+% `skillbox` with a \boxguard ahead; the two tabularx boxes are `fixedskillbox` (never splits).
+% No group activity, no tier boxes, no exit ticket.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
@@ -16,373 +23,387 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will name the population and the sample
-    in a study, label a given number as a parameter or a statistic, explain the
-    real-world constraints that make a census impractical, explain why two honest
-    samples give two different statistics for one unchanging parameter, and judge
+    \textbf{Primary Objective:} Students will name the population and the sample in a study,
+    label a given number as a parameter or a statistic by asking \emph{who it describes},
+    name the real-world constraint that keeps the study from being a census, explain why two
+    honest samples give two different statistics for one unchanging parameter, and judge
     what a sample does --- and does not --- allow a report to claim.
+    \\[2pt]
+    \textbf{Standards:} PS.DC.1d, PS.DC.1e \quad$\cdot$\quad PS.DC.1b carried forward in the
+    conclusion items \quad$\cdot$\quad previews PS.DC.2a--c (Lessons 1.3--1.4)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction in two sections; the Guided Practice is worked together with
+    students holding the pen; \textbf{the homework is the individual practice}, and students
+    start it in class while you circulate. The whole-class debrief is \emph{spoken} --- there is
+    no practice set at the end of the notes and no exit ticket.
+    \\[2pt]
+    \textbf{Note on the notation line:} $\mu$, $\bar{x}$, $p$, $\hat{p}$ appear once at the end
+    of section 1, pre-printed, as exposure only. Read the line aloud, say the symbols return in
+    Units 4, 7, and 8, and move on --- do not assign or test them today.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 \boxguard
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-    \textbf{Skills for this lesson}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item Identify the \textbf{population}, the \textbf{sample}, and the
-            \textbf{sample size} in a described study. \hfill \textit{PS.DC.1d}
-      \item Distinguish a \textbf{parameter} from a \textbf{statistic}, and say
-            which of the two is known. \hfill \textit{PS.DC.1d}
-      \item Define a \textbf{census} and explain why it is rarely available.
-            \hfill \textit{PS.DC.1d--e}
-      \item Name the \textbf{constraint} --- time, cost, access, destruction,
-            change --- that forces sampling in a given context.
-            \hfill \textit{PS.DC.1e}
-      \item Explain \textbf{sampling variability}: one parameter, many
-            statistics. \hfill \textit{PS.DC.1e}
-      \item Judge whether a written claim stays inside what the sample supports.
-            \hfill \textit{PS.DC.1b, e}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item \emph{The population is decided by the question, not by who happens
-            to be available.} Naming it is a stage-1 act; the sample is chosen
-            out of it afterwards.
-      \item The number you \textbf{want} (the parameter) is almost never the
-            number you \textbf{have} (the statistic). Everything after this
-            lesson is about closing that gap.
-      \item A statistic is not the parameter with error in it --- it is a
-            \emph{different number} that varies by design. Two honest surveys
-            disagreeing is normal, not evidence of a mistake.
-      \item Constraints are not excuses. They are why sampling exists, and they
-            are part of describing a study honestly.
-      \item A conclusion may describe only the population the sample was drawn
-            from --- change the population and the same statistic estimates a
-            different parameter.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can name the \textbf{population} and the \textbf{sample} in a study, and give the
+        sample size. \hfill \textit{PS.DC.1d}
+  \item I can tell a \textbf{parameter} from a \textbf{statistic} by asking who the number
+        describes --- never by what it looks like. \hfill \textit{PS.DC.1d}
+  \item I can name the \textbf{constraint} --- time, cost, access, destruction, change --- that
+        keeps a study from being a census. \hfill \textit{PS.DC.1e}
+  \item I can explain why two honest samples give two different statistics for one parameter,
+        and say what a sample does and does not let a report claim.
+        \hfill \textit{PS.DC.1d--e; 1b}
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item \emph{The population is decided by the question, not by who is available.} Naming it
+        is a stage-1 act; the sample is chosen out of it afterwards.
+  \item \textbf{Target misconception:} that two samples disagreeing means somebody made a
+        mistake --- or that the ``real'' answer is one of them. There is \textbf{one}
+        parameter and it did not move; the three volunteers' $52\%$, $48\%$, and $58\%$ are
+        three honest estimates of it. \emph{Sampling variability is what samples do.}
+  \item \textbf{Second misconception:} that a percent is a statistic and a count is a
+        parameter. The kind is decided by \emph{who the number describes}: $61\%$ drawn from
+        the records of all $900$ students is a parameter.
+  \item Constraints are not excuses. They are why sampling exists, and part of describing a
+        study honestly (PS.DC.1e).
+  \item A conclusion may describe only the population the sample was drawn from, and only
+        the question that was asked --- change either and the same statistic estimates a
+        different parameter, or nothing at all.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
 \boxguard[24]
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \small
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
-Population & The entire group the question is about --- every individual you
-       would like the conclusion to describe. \\
-Sample & The part of the population data were actually collected from. \\
-Sample size & How many individuals are in the sample. \\
+Population & The entire group the question is about --- every individual the conclusion should
+       describe. \\
+Sample & The part of the population data were actually collected from. \textbf{Sample size}
+       ($n$) --- how many individuals are in it. \\
 Census & A study that collects data from every individual in the population. \\
-Parameter & A number that describes the population. Usually unknown. \\
-Statistic & A number that describes the sample; computed from collected data. \\
-Constraint & A real-world limit on how a study can be run --- time, cost,
-       access, destruction, or a changing population. \\
-Sampling variability & The fact that a statistic changes from one sample to the
-       next even when nothing about the population changes. \\
-Estimate & Using a statistic as the best available stand-in for a parameter.
-       \emph{(Made precise in Unit 7.)} \\
+Parameter & A number that describes the population. Usually unknown --- and there is only one. \\
+Statistic & A number computed from the sample. Known --- and it changes from sample to sample. \\
+Constraint & A real-world limit on how a study can be run: time, cost, access, destruction, or
+       a changing population. \\
+Sampling variability & The change in a statistic from one sample to the next, even when the
+       population has not changed. Not a mistake. \\
+Estimate & Using a statistic as the best available stand-in for a parameter. \emph{(Made
+       precise in Unit 7.)} \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review. It rehearses the two computations
-            today's lesson leans on, and quietly stages the new idea:
-            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
-              \item Turning a count out of a total into a percent.
-              \item Scaling a sample percent up to a whole group.
-              \item Separating the group that was \emph{asked} from the group the
-                    report is \emph{about} (Lesson 1.1's homework).
-            \end{itemize}
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-            \small
-            The warm-up reuses the Lakeside Farmers Market numbers students left
-            with last night --- $26$ of $50$, scaled to $800$. Item 3 asks them
-            to write $50$ and $800$ in two rows without giving them the words
-            \emph{sample} and \emph{population}; the notes then name what they
-            have already separated.
-        \end{minipage}
-    \end{tabularx}
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 34 / 8 / 8 — the I do is ~20 of the 34 and the Guided
+% Practice ~14; the debrief is spoken; the homework start is the second formative read.
+\begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Last night's market arithmetic, then the two groups hiding in the paragraph ---
+  silent & Debrief item~3 aloud; write ``$50$ asked, $800$ reported on'' on the board and leave
+  it up all period \\
+Guided Notes \& Practice & 34 & Fill the vocabulary box and notes 1--2 as each term is named;
+  then \emph{The Riverbend Job Survey} together, pen in their hand & \textbf{I do} notes 1--2
+  (20) $\to$ \textbf{we do} the Guided Practice box (14) \\
+Debrief & 8 & Pens down, papers up --- answer aloud, nothing to fill in & Put Ana, Ben, and
+  Cleo back on the board and take the ``somebody counted wrong'' reflex, then the
+  ``a percent is a statistic'' reflex \\
+Close \& Assign & 8 & \textbf{Start the homework in class}, alone and silent & Announce the
+  homework and its form (packet or Desmos), circulate for the second formative read, preview
+  Lesson~1.3 \\
+\end{tabularx}
 \end{fixedskillbox}
 
-\boxguard
-\begin{skillbox}[Hook]{frost}
-    Put the manager's sentence on the board: \textit{``$52\%$ of our Saturday
-    shoppers drive to the market.''} Under it write the two numbers from the
-    warm-up: \textbf{50} and \textbf{800}.
-    \textbf{Ask: she never asked 800 people. Is she allowed to write that
-    sentence?} Take the argument --- there will be one. Then turn it:
-    \textbf{why would she not just ask all 800?} Collect reasons on the board
-    (too slow, they leave, nobody would answer, no money) and leave them there;
-    those are the constraints you will name in section 3, and students will have
-    supplied them themselves. Close the hook by pointing at $52\%$ and asking
-    what number she \emph{actually wanted} to know. Nobody knows it. That gap is
-    today's lesson.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Lesson]{frost}
-\begin{multicols}{2}
-\textbf{1. Two groups.} Population, sample, sample size --- on the Lakeside study
-they already know. Run the three-row table; the cereal-plant row is the one that
-breaks the ``population $=$ people'' assumption, so do not skip it.
-\textbf{Ask: can you name the sample before you name the population?} No --- the
-sample is chosen \emph{out of} the population, so the population comes first.
-Then define \textbf{census} and ask for an example. Most classes land on the U.S.
-Census, and that is nearly the whole list.
-
-\textbf{2. Parameter and statistic.} Give the p/p and s/s memory hook, then run
-the four-row table. Row 4 (district records, $61\%$ of all $900$) is the one that
-matters: it is a percent, like row 1, and it is still a parameter --- because of
-\emph{who it describes}, not how it looks. Close with the two closing blanks:
-you know the statistic, you want the parameter. Say plainly that Units 7 and 8
-are entirely about that gap. The notation line ($\mu$, $\bar{x}$, $p$, $\hat p$)
-is a preview only --- read it aloud, do not drill it.
-
-\textbf{3. Constraints.} This is PS.DC.1e and it is easy to under-teach as a list.
-Point back at the hook board: the class already generated these. Name the five,
-then run the matching table. The cereal box (destruction) and the changing
-Saturday crowd (change) are the two students have never considered.
-
-\textbf{4. Sampling variability --- the pivot.} Ana, Ben, and Cleo asked three
-different sets of $50$ shoppers on the \emph{same} morning and got $52\%$, $48\%$,
-$58\%$. Compute Cleo's row in the work block, then ask the two counting
-questions: \textbf{three statistics, one parameter.} Ask outright: \emph{which
-one of them is wrong?} None. Let the class sit in that. This is the idea Unit 7
-is built on.
-
-\textbf{5. What a sample lets you say.} Fill the report sentence, then judge the
-three claims. ``Exactly $416$'' is the subtle one --- the arithmetic is right and
-the word \emph{exactly} is what fails. The Lakeside-residents claim changes the
-population out from under the statistic.
-\end{multicols}
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Explicit Instruction: Labeling a Number Parameter or Statistic]{frost}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Steps --- give these verbatim}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Read the number and ask: \textbf{who does it describe?} Underline that
-        group in the sentence.
-  \item Is that group \textbf{everybody the question is about}, or only
-        \textbf{the ones who were measured}?
-  \item Everybody $\Rightarrow$ \textbf{parameter}. Only the measured ones
-        $\Rightarrow$ \textbf{statistic}.
-  \item Check yourself: could you compute it from the collected data? If yes,
-        it is a statistic.
-  \item Ignore what the number \emph{looks} like. A percent, a mean, and a count
-        can each be either one.
-\end{enumerate}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $26$ of $50$ as a percent. \textbf{Spirals} to Lesson 1.1 --- and it is
+            the $52\%$ that section~1 will label a \emph{statistic}.
+      \item \textbf{2.} $52\%$ of $800$. \textbf{Seeds:} the $416$ that the end of section~2
+            calls an \emph{estimate}, not a count.
+      \item \textbf{3.} Two groups, no vocabulary. \textbf{Seeds:} population and sample ---
+            section~1 attaches the names to a distinction students have already drawn.
+    \end{itemize}
 \end{minipage}
 &
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Worked example --- ``$61\%$ of Riverbend's $900$ students ride a bus.''}
-\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-  \item[1.] Who does it describe? \emph{Riverbend's $900$ students} --- underline
-        it.
-  \item[2.] That is everybody the question is about, not a measured subset.
-  \item[3.] Therefore a \textbf{parameter}.
-  \item[4.] Could you get it from the $45$ surveys? No --- it came from district
-        records covering all $900$.
-  \item[5.] It is a percent, exactly like the $52\%$ statistic. The shape told
-        you nothing; the group told you everything.
-\end{itemize}
-\textit{Contrast: ``the $8$ shoppers asked traveled a mean of $4$ miles'' ---
-a mean, but it describes only the measured $8$, so it is a statistic.}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and write the two counts on the board --- \emph{$50$
+            asked, $800$ reported on} --- in a student's own words. Leave it up all period;
+            section~1 hangs \emph{sample} and \emph{population} on that line.
+      \item Item~3's last question is the tell. \emph{The $52\%$} was counted; the $416$ was
+            computed from it. A student who says $416$ has confused a prediction with a count
+            and needs section~1 slowly.
+      \item Items 1--2 are last night's arithmetic --- say so, so nobody thinks they are being
+            retested. Do not let them expand.
+    \end{itemize}
 \end{minipage}
 \end{tabularx}
+\end{fixedskillbox}
+
+\boxguard
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+On the board: \textit{``Three volunteers. The same Saturday morning. Each asked $50$ shoppers
+the same question. Ana got $52\%$. Ben got $48\%$. Cleo got $58\%$.''} \textbf{Ask: who made
+the mistake?} Take a hand vote --- Ana, Ben, Cleo, or nobody --- and write the split on the
+board. Most rooms vote for somebody, or split the difference (``the real answer is $52.7\%$'').
+\textbf{Do not settle it.} Say only that the answer is the last thing in section~2, and that
+they will vote again then. The vote is what makes the crux land: students have to have
+committed to \emph{somebody is wrong} before the notes take it away.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Watch for ``big number $=$ parameter.''} Students decide by size:
-        $1{,}500$ must be the parameter, $75$ must be the statistic. Break it
-        with a small population (Ashford's $400$) or a large sample. Force the
-        question \emph{who does it describe?} every time.
-  \item \textbf{Watch for percent $=$ statistic.} A percent computed from
-        district records for all $900$ students is a parameter. Row 4 of the
-        notes table exists for this; check it as you circulate.
-  \item \textbf{Watch for ``one of them counted wrong.''} On the Ana/Ben/Cleo
-        item, many students will assume an error. Ask: \emph{did they survey the
-        same 50 people?} No. Then no count is wrong.
-  \item \textbf{Watch for the population drifting.} On the activity's Tier E
-        item 2, students say ``both are $35\%$, so same parameter.'' Ask them to
-        finish ``$35\%$ of \underline{\hspace{1.6cm}}'' out loud for each library.
-  \item \textbf{Cold-call prompts:} ``Who does that number describe?''
-        ``Which one do you actually know?'' ``Name the constraint.''
-        ``How many parameters are there?''
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (34 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+\begin{multicols}{2}
+\textbf{I do (about 20 min).} Two sections, each in two moves; students fill the blanks as each
+idea is named, and the vocabulary box is filled \emph{as you go}, never in advance.
+
+\emph{Section 1} opens on the line already on the board: $50$ asked, $800$ reported on. Name
+them --- population, sample, sample size --- and fill the three-study table with the room.
+The cereal row is there because a population is not always people. Four minutes. Its second
+half, \emph{Parameter and Statistic}, is the sorting table. \textbf{Take row 4 last and take a
+hand count before anyone writes}: $61\%$ from district records. Half the room will say
+\emph{statistic} because it is a percent. Then ask the only question that matters --- \emph{who
+does it describe?} --- and let the red callout close it. Six minutes.
+
+\textbf{Section 2 is the lesson.} Its first half is the constraints table: give the five
+meanings, then take the five situations from the class; the last row (\emph{access}) is the
+one they will not have a word for. Four minutes. Its second half, \emph{The Statistic Moves.
+The Parameter Does Not}, is the crux. Put Ana, Ben, and Cleo up, fill Ben's and Cleo's rows,
+work Cleo's \texttt{work} block live --- and then \textbf{re-take the hook vote}. Three
+statistics, one parameter, nobody wrong. Land the sentence in the blue callout word by word:
+\emph{the statistic moves; the parameter stays put}. Then the manager's report sentence and the
+two claims she may not make. Six minutes.
+
+\columnbreak
+\textbf{We do (about 14 min).} The Guided Practice box, \emph{The Riverbend Job Survey} --- the
+same four moves the homework will ask alone, on a school instead of a market. \textbf{Students
+hold the pen; you hold the questions.} Part (a) goes on them cold. Part (b) is warm-up
+arithmetic; the labels under it are the point --- \emph{statistic}, then \emph{estimate of a
+parameter}. \textbf{Part (c) is the crux transferred}: a second $50$ students, $46\%$ instead of
+$40\%$. Take a hand count on \emph{did somebody make a mistake} before anyone writes, and make
+both sides defend it.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Part (a):} ``Who is the question about? Now --- who did she actually ask?''
+  \item \textbf{Part (b):} ``You wrote \emph{statistic} for the $360$. Who did she count to get
+        $360$?'' (Nobody --- it was computed from the $40\%$.)
+  \item \textbf{Part (c):} ``Which of the two surveys found the true percent?'' A student who
+        picks one has not left the hook vote.
 \end{itemize}
+While circulating, pick the papers to put up in the debrief --- one part (c) that said
+\emph{neither, one parameter}, and one that picked a survey. \textbf{Your formative read comes
+twice}: here, and again in the last eight minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\small
-\begin{multicols}{3}
-\textbf{Tier R --- Remediate}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Name population, sample, and sample size for one described survey.
-  \item Complete a frequency table with one row worked as a model.
-  \item Label two numbers parameter or statistic; scale a percent up and write
-        the conclusion sentence.
-\end{itemize}
-
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (8 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Put Ana, Ben, and Cleo back up} and make a student say the sentence: three
+        statistics, one parameter, nobody wrong. Then state it as PS.DC.1e: the value of a
+        statistic varies from sample to sample. That is sampling variability, and it is the
+        reason Unit~7 exists.
+  \item Put up the two Guided Practice part (c)s you picked. The difference between them is
+        not arithmetic --- it is whether the student still believes one survey ``won.'' Read
+        both aloud and let the room hear which one a board member could act on.
+  \item Circle the $61\%$ row and take the \emph{a-percent-is-a-statistic} reflex:
+        \emph{``Who does the $61\%$ describe? Then what is it?''}
+  \item Take the over-claim last: \emph{``Exactly $416$ drove.''} What word is wrong, and why
+        (\emph{exactly} --- the $416$ is an estimate, and the true count is the parameter
+        nobody knows).
+\end{enumerate}
 \columnbreak
-\textbf{Tier A --- Approaching Proficiency}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Match three situations to the constraint that blocks a census.
-  \item Two samples, two statistics ($35\%$ and $45\%$) --- explain the
-        difference and count the parameters.
-  \item Compute a mean and justify labeling it a statistic.
-\end{itemize}
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``A school of $1{,}200$
+students. The yearbook staff asks $60$ students and finds $45\%$ have a part-time job; the
+newspaper asks a different $60$ and finds $50\%$. A teacher says one of them must have made
+an error. Is the teacher right? What is the true percent?''} Hands down, thirty seconds of
+think time, then cold-call three students. Correct answer: \textbf{no} --- two samples, two
+statistics, sampling variability; the true percent is the one parameter for all $1{,}200$,
+and neither survey found it. \emph{This replaces the exit ticket.}
 
-\columnbreak
-\textbf{Tier E --- Extension}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Find \emph{two} separate overclaims in one printed sentence.
-  \item Two libraries, equal statistics, different parameters --- explain why.
-  \item Plan a study for a mean: population, sample, statistic, parameter,
-        constraint.
-\end{itemize}
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} said \emph{no} and
+named one parameter; \textbf{(b)} said \emph{no} but guessed ``the real answer is halfway'';
+\textbf{(c)} picked a survey or said someone erred. Pile (b) is the teachable one and will be
+large --- name it as an interesting guess Unit~7 makes precise, not as nonsense. \textbf{If
+pile (c) runs past a third of the room, open Lesson~1.3 by re-running section~2's second
+half}, and say so plainly.
+
+\textbf{If the debrief runs short}, cut items 3 and~4 --- item~1 is the one that cannot be
+cut. \textbf{Do not let the debrief eat the last eight minutes} --- the homework start is not
+optional padding, it is your second formative read.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit ticket (3 items, no notes).} One context: Westfield High School,
-$800$ students, $40$ asked in one lunch period, $65\%$ said cafeteria.
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Name the population, the sample, and the sample size.
-  \item Label three numbers parameter or statistic --- including the third,
-        \emph{the true percent for all $800$}, which no one has computed and
-        which is still a parameter.
-  \item \textbf{Conceptual / justification check:} name one constraint that
-        blocked a census, then explain whether a second survey returning $60\%$
-        means one of the two is wrong. Correct answer: \emph{neither} --- a
-        statistic varies from sample to sample, and both estimate the same single
-        parameter. Grade this one first.
-\end{enumerate}
-\textbf{Using the results:} sort into three piles --- (a) said neither is wrong
-and named sampling variability, (b) said one must be wrong or that the truth is
-``somewhere in between'' without saying why, (c) recomputed something. Pile (b)
-is the teachable one and will be large; it is also exactly the intuition Unit 7
-formalizes, so name it now rather than correcting it as an error.
+\begin{skillbox}[Homework --- scored, started in class, due next class]{goldbox}
+Six exercises on the \textbf{Harbor Point Community Pool} ($1{,}500$ members; $75$ asked on a
+Tuesday evening): \textbf{1} name the population, sample, and sample size; \textbf{2} the
+frequency table with relative frequencies (\emph{the spiral to Lesson 1.1}); \textbf{3} scale
+$36\%$ to $1{,}500$ and write the sentence \emph{as an estimate}; \textbf{4} label four numbers
+--- rows (ii) and (iv) are the \textbf{contrast pair}: two percents, one a statistic and one a
+parameter drawn from front-desk records; \textbf{5} name four constraints; \textbf{6} a second
+sample of $75$ gives $40\%$ against the first $36\%$ --- \emph{the crux head-on} --- then the
+board's over-claiming sentence and the two things it asserts that the survey cannot support.
+
+\textbf{Start it in the last eight minutes of the period, in class and alone.} \textbf{Scoring:}
+12 points --- 2 per item. \textbf{Item~6(b) is where the misconception shows}: a student who
+explains the difference by ``the second staff member was more careful'' has learned the word
+and not the rule. \textbf{Item~4 row (iv) carries the second check.}
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom has percent-of-a-total practice that would cover items 2--3, but nothing that
+asks a student to explain why two surveys disagree or what a sentence over-claims --- the items
+this lesson exists for --- so \textbf{1.2 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~1.3.} The staff member asked whoever showed up on a Tuesday evening
+--- lap swimmers keep evening hours. Do not resolve that here; it is 1.3's opening (how a sample
+gets chosen) and 1.4's bias work.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only as
+trustworthy as the study that produced it. \textit{Standards covered:} PS.DC.1d, PS.DC.1e
+(with PS.DC.1b carried forward in the conclusion items). \textit{Spirals forward to:} sampling
+techniques (1.3, PS.DC.2a--b), bias (1.4, PS.DC.2c), the full-cycle project (1.8), and ---
+directly --- sampling distributions and margin of error (7.1--7.2, PS.IS.1a, d).
+\textit{Reaches back to:} Lesson 1.1's data cycle and conclusion in context, and Algebra~1
+percent and proportional reasoning.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework --- Harbor Point Community Pool.} A fresh context with the same
-spine: name the population and sample, complete a frequency table with relative
-frequencies, scale $36\%$ up to $1{,}500$ members, compute and label a mean,
-sort three numbers into parameter and statistic, match four situations to their
-constraints, explain why a second sample gave $40\%$, and close with a
-correct-arithmetic / wrong-conclusion item that has to be answered in words.
-
-\textbf{Extension (optional).} Students choose a group they belong to and plan a
-study for it: population, realistic sample, the statistic they would compute, the
-parameter it estimates, and the one constraint that blocks a census. Collect
-these --- they feed the Lesson 1.8 class-survey project.
-
-\textbf{Preview of Lesson 1.3.} The pool staff surveyed whoever arrived on a
-Tuesday evening, and lap swimmers keep evening hours. Today's lesson says a
-statistic estimates a parameter; next class asks \emph{which} samples are worth
-trusting, and names the four techniques --- simple random, stratified,
-systematic, cluster.
-
-\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only
-as trustworthy as the study that produced it. \textit{Standards covered:}
-PS.DC.1d, PS.DC.1e (with PS.DC.1b carried forward in the conclusion items).
-\textit{Spirals forward to:} sampling techniques (1.3, PS.DC.2a--b), bias
-(1.4, PS.DC.2c), the full-cycle project (1.8), and --- directly --- sampling
-distributions and margin of error (7.1--7.2, PS.IS.1a, d).
-\textit{Reaches back to:} Lesson 1.1's data cycle and conclusion-in-context, and
-Algebra 1 percent and proportional reasoning.
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``Somebody counted wrong''} (notes~2, GP~(c), HW~6(b) --- the target
+        misconception). Probe: \emph{``How many true percents are there for the whole
+        population? Then how many of the three found it?''}
+  \item \textbf{``The real answer is in the middle''} (notes~2, the cold check). Not wrong,
+        not yet right: name it as the guess Unit~7 makes precise. Probe: \emph{``Would a fourth
+        volunteer land on your middle number?''}
+  \item \textbf{A percent is a statistic; a count is a parameter} (notes~1 row~4, HW~4(iv)).
+        Probe: \emph{``Who does the number describe --- the ones asked, or everyone?''}
+  \item \textbf{The estimate reported as a count} (notes~2 claims table, GP~(b), HW~3): ``$360$
+        students have a job.'' Probe: \emph{``Who did she count to get $360$?''}
+  \item \textbf{Population named as whoever was handy} (notes~1, GP~(a), HW~1): ``the
+        population is the $50$ students.'' Probe: \emph{``Who is the question \emph{about}?''}
+  \item \textbf{Over-claiming beyond the sample} (notes~2, HW~6(c)): from $75$ on a Tuesday to
+        every member, and from \emph{what do you use the pool for} to \emph{do you want a
+        second lane}. Probe: \emph{``Who was asked, and what were they asked?''}
+\end{itemize}
+Cold-call prompts: \emph{``Name a parameter about this school that nobody has ever
+computed.''} \quad \emph{``Give me a study where the population is not people.''}
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
+\boxguard
+\begin{skillbox}[Close \& Assign (8 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+six exercises on paper, scored out of 12, due next class --- and point out that the
+\emph{Keep in Mind} box on the cover is the page to flip back to. Circulate: \textbf{item~6(b)
+is the column that tells you whether section~2 landed}, and it is on page~2, so put students
+on 1, 4, and~6 first and let 2, 3, and~5 go home. Sort what you see into three piles as you
+walk --- said \emph{no mistake} and named one parameter (ready); said \emph{no mistake} with
+no reason (ready, needs the language); blamed a staff member or picked a survey (the
+misconception survived) --- and open Lesson~1.3 by re-running section~2's second half if that
+third pile ran past a third of the room. Then close on what changed: \emph{``You walked in
+knowing how to turn $26$ of $50$ into a percent. You walk out knowing that percent is a
+statistic, that the number you actually want is a parameter you will never see, and that two
+honest samples disagreeing is not a mistake --- it is the whole reason the rest of this course
+exists.''} \textbf{Preview:} Lesson~1.3, \emph{Choosing a Sample} --- today three volunteers
+each grabbed $50$ shoppers; next time we ask \emph{which} $50$, and find out that how you
+choose them decides whether the statistic is worth anything.
+\end{skillbox}
+
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a key with no
+% counterpart in the blank. No note for the debrief or the homework start — both are fully
+% specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    Five minutes, silent, timed. Items 1 and 2 are last night's homework
-    arithmetic on purpose --- say so, so nobody thinks they are being retested.
-    Item 3 is the one to read while collecting: students who write $50$ and $800$
-    in the right rows have already made today's distinction without the
-    vocabulary, and the notes can move fast. Students who put $416$ in a row have
-    confused an estimate with a group and will need section 1 slowly. Do
-    \emph{not} supply the words \emph{sample} and \emph{population} here --- the
-    warm-up is deliberately wordless about them.
+Five minutes, silent, timed. Items 1 and~2 are last night's homework arithmetic on purpose ---
+say so, so nobody thinks they are being retested. \textbf{Item~3 is the one to read while
+collecting}: students who write $50$ and $800$ in the right rows and circle the $52\%$ have
+already made today's distinction without the vocabulary, and section~1 can move fast.
+Students who put $416$ in a row, or name it as the counted number, have confused an estimate
+with a group and will need section~1 slowly. Write the two counts on the board in a student's
+own words and \textbf{leave them up all period}; you will hang \emph{sample} and
+\emph{population} on that line in section~1 and circle it again in the debrief. Do \emph{not}
+supply the words \emph{sample} and \emph{population} here --- the warm-up is deliberately
+wordless about them.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    Pace: section 1 in 8 minutes, section 2 in 12, section 3 in 8, section 4 in
-    10, section 5 in 7. \textbf{Section 4 is the lesson.} Sections 1--3 are
-    vocabulary students will absorb quickly; the idea that three honest surveys
-    can disagree and none be wrong is the one that does not land on its own.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 20 / 14, then 8 for the debrief, then 8 for
+the homework start.} Section~1 must move: four minutes on the two groups, six on parameter and
+statistic. \textbf{Take the hand count on the $61\%$ row before anyone writes.} If students
+fill the row first, the trap is gone and the callout becomes a definition to copy; if they
+commit to \emph{statistic} and \emph{then} ask who the number describes, the rule arrives as the
+answer to a question they already have.
 
-    Section 2's fourth table row --- $61\%$ from district records --- is the
-    single most productive line in the notes. Every student who has decided
-    ``percent means statistic'' gets caught there. Do not fix it for them; ask
-    who the $61\%$ describes.
+\textbf{Spend the time in section~2}, which carries the misconception. Give the five constraint
+meanings and take the five situations from the class quickly --- four minutes --- then slow
+down. Fill Ben's and Cleo's rows, work Cleo's \texttt{work} block live, and \textbf{re-take the
+hook vote before you say anything}: Ana, Ben, Cleo, or nobody. Let the room argue. Then land the
+blue callout word by word. Do not resolve it by repeating the definition; count the parameters
+out loud --- \emph{one} --- and count the statistics --- \emph{three}.
 
-    The notation line at the end of section 2 is exposure only. Read it, say the
-    symbols return in Units 4, 7, and 8, and move on --- do not assign or test
-    them today.
+\textbf{Do not skip the claims table} at the end of section~2. Without it students leave
+believing an estimate is a count, which is the version of this error that resurfaces in every
+conclusion they write for the rest of the unit.
 
-    If you are short on time, compress section 3's matching table (the class
-    generated those constraints during the hook) --- never section 4.
-\end{teachernote}
+\textbf{Guided Practice is where the pen changes hands.} \emph{The Riverbend Job Survey} runs
+the four moves the homework will ask alone --- name the groups, compute and label, the second
+sample, the constraint --- on a school instead of a market. Part (c) is the crux transferred:
+$46\%$ against $40\%$, and a student who picks a survey has not left the hook vote. If you only
+get through (a), (b), and (c), that is the right trade; (d) can be said aloud.
 
-\begin{teachernote}[Group Activity]
-    Groups of three, 15 minutes, tiers assigned rather than chosen. Tier R item 1
-    is where you will find out who is still guessing: circulate there first and
-    make them point at the words in the scenario.
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice.} Guided Practice is the last thing on the page; the period
+ends with students starting the homework in front of you, which is where your second formative
+read comes from. Item~6(b) is the one to watch. If the ``somebody counted wrong'' pile is more
+than a third of the room, \textbf{open Lesson~1.3 by re-running the second half of section~2},
+and say so plainly.
 
-    Tier A item 2(b) is the same idea as notes section 4 in a new context; if a
-    group writes ``the second librarian was more careful,'' send them back to the
-    Ana/Ben/Cleo table rather than explaining.
-
-    Tier E item 2 (Millbrook $1{,}200$ vs.\ Ashford $400$, both $35\%$) is the
-    hardest item in the lesson and is worth pulling to the whole class if two or
-    more groups get it. The answer students need to say out loud is that
-    ``$35\%$'' is incomplete until you finish the sentence ``$35\%$ of
-    \emph{whom}.''
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    Five minutes, notes closed, collected at the door. Item 1 should be near
-    universal. Item 2's third row is the discriminator --- a parameter nobody has
-    computed is still a parameter; if that row is widely wrong, reopen it for two
-    minutes before Lesson 1.3.
-
-    Grade item 3(b) first and only 3(b) if time is short. ``No'' with no reason is
-    half credit; the reason --- different samples, one parameter --- is what
-    Lesson 1.3 and all of Unit 7 build on. Watch for the plausible-but-wrong
-    ``the real answer is halfway between,'' which is worth naming as an
-    interesting guess that Unit 7 will make precise rather than marking as
-    nonsense.
+\textbf{Debrief (8 min), spoken.} Ana, Ben, and Cleo back on the board with a student saying
+\emph{three statistics, one parameter}; it is the one move that cannot be cut. \textbf{Do not
+let the debrief eat the last eight minutes} --- the homework start is not optional padding.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    Assign all eight items; about 25 minutes. Items 7(b) and 8 cannot be answered
-    by computing anything --- flag both when assigning, because students who
-    treat this as a calculation sheet will skip exactly those two.
+\textbf{Scored, 12 points (2 per item), due next class.} The eight minutes at the end of the
+period are a \emph{start}, not a completion: put students on 1, 4, and~6 while you can still
+catch a wrong start, and let 2, 3, and~5 go home. Item~6(b) is the one to read first when
+scoring --- any student who explains $36\%$ versus $40\%$ by someone being ``more careful'' has
+learned the word and not the rule. Item~4 is the fullest diagnostic in the set: row (iv) is a
+percent computed from the records of all $1{,}500$ members, and a student who labels it a
+statistic is still sorting by what the number looks like. Score items 1--5 for correctness and
+item~6 for the \emph{reason}, not the verdict. \textbf{When you score the page, sort item~6(b)
+into three piles} --- said \emph{no} and named one parameter (ready); said \emph{no} vaguely
+(ready, needs the language); blamed a staff member or picked a survey (the misconception
+survived). If more than a third land in the last pile, reopen Ana, Ben, and Cleo in the
+Lesson~1.3 warm-up debrief rather than letting it ride.
 
-    Item 8 is the transfer item and has two distinct answers, not one said twice:
-    the $36\%$ describes only the $75$ asked, \emph{and} nobody was ever asked
-    about a second lane. Students who find one usually find the population error
-    and miss the question error.
-
-    The \textbf{remindbox} at the foot plants Lesson 1.3 deliberately --- the
-    sample was whoever turned up on a Tuesday evening, which is a lap-swimmer's
-    hour. Do not resolve that here; it is 1.3's opening and 1.4's bias work.
+\textbf{Packet is the call for 1.2.} Desmos carries the percent arithmetic and nothing else in
+this set; do not swap it in. Go over item~6(c) at the start of Lesson~1.3 --- the Tuesday-evening
+sample is 1.3's opening.
 \end{teachernote}
 \end{document}

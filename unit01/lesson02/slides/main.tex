@@ -1,6 +1,13 @@
 %! Populations, Samples, Parameters, and Statistics — Unit 1, Lesson 1.2 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → hook (unresolved) → I DO divider → two frames per
+% notes section → WE DO (a live surface, un-answered) → spoken debrief → close & START THE
+% HOMEWORK, which is the individual practice. No group activity, no practice launch, no exit
+% ticket. There is no spoiler rule: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,224 +24,271 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{She asked 50. She wrote about 800.}
-  \sectionlabel[goldacc]{hook}
-
-  \begin{center}
-    \vspace{0.3cm}
-    {\Large\itshape ``52\% of our Saturday shoppers\\[4pt]
-     drive to the market.''}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Is she allowed to write that sentence?}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    \begin{minipage}{0.8\textwidth}
-      \textbf{And why would she not just ask all 800 of them?}
-    \end{minipage}
-  \end{center}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.2}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item name the \textbf{population} and the \textbf{sample} in a study, and give the sample size.
+    \item tell a \textbf{parameter} from a \textbf{statistic} by asking \emph{who the number
+          describes}.
+    \item name the \textbf{constraint} that keeps a study from being a \textbf{census}.
+    \item explain why two honest samples disagree --- \textbf{sampling variability} --- and say
+          what a sample does and does not let a report claim.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one survey we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
 \end{frame}
 
-% ── POPULATION AND SAMPLE ────────────────────────────────────────────────────
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Every study has two groups}
-  \sectionlabel{name the population first}
-
-  \vspace{0.3cm}
-  \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Population}
-        The \textbf{entire} group the question is about.\\[4pt]
-        All 800 Saturday shoppers.
-      \end{block}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Sample}
-        The part you actually \textbf{collected data from}.\\[4pt]
-        The 50 she asked. Sample size: 50.
-      \end{block}
-    \end{column}
-  \end{columns}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      A \textbf{census} collects data from every individual in the population.
-      You will meet almost none of them.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── PARAMETER AND STATISTIC ──────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Two kinds of numbers}
-  \sectionlabel{who does it describe?}
-
-  \vspace{0.2cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{@{} l l l @{}}
-    \hline
-    \textbf{Kind} & \textbf{Describes} & \textbf{Do you know it?} \\
-    \hline
-    Parameter & the \textbf{p}opulation & almost never \\
-    Statistic & the \textbf{s}ample     & yes --- you computed it \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{cerulean}\bfseries You use the number you have to estimate the number
-    you want.}
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \small A percent, a mean, or a count can be \emph{either} one. What the
-      number looks like tells you nothing --- the group it describes tells you
-      everything.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── LABEL IT ─────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Label each number}
-  \sectionlabel{parameter or statistic?}
-
-  \vspace{0.2cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.35}
-    \begin{tabular}{@{} l l l @{}}
-    \hline
-    \textbf{The number} & \textbf{Describes} & \textbf{Kind} \\
-    \hline
-    52\% of the 50 shoppers asked drove       & the sample     & statistic \\
-    800 shoppers came Saturday morning        & the population & parameter \\
-    The 8 asked traveled a mean of 4 miles    & the sample     & statistic \\
-    61\% of all 900 Riverbend students ride a bus & the population & parameter \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Row 4 is a percent --- and it is still a parameter.}
-  \end{center}
-\end{frame}
-
-% ── CONSTRAINTS ──────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Constraints --- why we sample at all}
-  \sectionlabel{the census is off the table}
-
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{back to the Lakeside Farmers Market}
   \vspace{0.3cm}
   \begin{center}
     \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{6pt}
-        \item \textbf{Time} --- reaching everyone takes longer than you have.
-        \item \textbf{Cost} --- reaching everyone costs more than the budget.
-        \item \textbf{Access} --- some individuals cannot be found or reached.
-        \item \textbf{Destruction} --- measuring ruins the item you measured.
-        \item \textbf{Change} --- the population shifts while you collect.
-      \end{itemize}
+      About \textbf{800} shoppers come on a Saturday. The manager asked \textbf{50} of them;
+      \textbf{26} drove.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item What percent of the shoppers she asked drove?
+        \item Predict how many of the 800 drove.
+        \item Two groups are hiding in that paragraph. How many in each --- and which number
+              did she actually \emph{count}?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.5cm}
+  \vspace{0.4cm}
   \begin{center}
-    \small A cereal plant filled 12,000 boxes Tuesday. To weigh a box you have to
-    open it.
+    {\color{cerulean}\bfseries Last night's numbers. Keep the page --- the notes open with them.}
   \end{center}
 \end{frame}
 
-% ── SAMPLING VARIABILITY ─────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Three volunteers. One Saturday. Three answers.}
-  \sectionlabel[goldacc]{which one is wrong?}
+% ── HOOK — leave it UNRESOLVED; the second half of section 2 settles it ──────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.3cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small THREE VOLUNTEERS. THE SAME SATURDAY MORNING. 50 SHOPPERS EACH.}\\[0.8cm]
+    {\color{white}\bfseries\Large Ana got 52\%. \quad Ben got 48\%. \quad Cleo got 58\%.}\\[0.9cm]
+    {\color{goldacc}\bfseries\large Who made the mistake?}\\[0.5cm]
+    {\color{frostmid}\small Vote: Ana, Ben, Cleo, or nobody. We settle this at the end of
+    section 2.}
+  \end{center}
+\end{frame}
+}
 
-  \vspace{0.2cm}
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── 1a. TWO GROUPS ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two groups}
+  \sectionlabel{notes section 1 $\cdot$ population, sample, sample size}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Population}
+        The entire group the question is about --- everyone the conclusion should describe.
+      \end{block}
+      \vspace{4pt}
+      {\small Lakeside: all \textbf{800} Saturday shoppers.}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Sample}
+        The part of the population you actually collected data from.
+      \end{block}
+      \vspace{4pt}
+      {\small Lakeside: the \textbf{50} she asked. Sample size $n = 50$.}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large The population is decided by the \redink{question} --- not by who was handy.}\\[6pt]
+    {\small\color{slate} Ask everyone in the population and you have run a \textbf{census}.
+    Almost nothing in this course is one.}
+  \end{center}
+\end{frame}
+
+% ── 1b. PARAMETER AND STATISTIC ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two kinds of numbers}
+  \sectionlabel{notes section 1 $\cdot$ parameter and statistic}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item A number that describes the \textbf{p}opulation is a \textbf{\color{cerulean}parameter}.
+          Usually unknown --- and there is only one.
+    \item A number that describes the \textbf{s}ample is a \textbf{\color{cerulean}statistic}.
+          Known --- and it changes from sample to sample.
+    \item To sort a number, ask one question: \redink{who does it describe?}
+  \end{itemize}
+  \vspace{8pt}
+  \begin{block}{Vote first: ``District records show 61\% of Riverbend's 900 students ride a bus.''}
+    Parameter or statistic? --- It is a percent. Somebody computed it. And it describes
+    \textbf{all 900}. So it is a \redink{parameter}. What the number looks like never decides.
+  \end{block}
+\end{frame}
+
+% ── 2a. CONSTRAINTS ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Why not just ask all 800?}
+  \sectionlabel{notes section 2 $\cdot$ constraints}
+  \vspace{2pt}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Constraint} & \textbf{What it means} \\
+    \hline
+    Time        & Reaching everyone would take longer than you have. \\
+    Cost        & Reaching everyone would cost more than the budget. \\
+    Access      & Some individuals cannot be found, reached, or made to answer. \\
+    Destruction & Measuring the individual ruins it. \\
+    Change      & The population keeps changing while you collect. \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \begin{center}
+    {\color{cerulean}\bfseries A constraint is not an excuse. It is why sampling exists ---
+    and part of describing a study honestly.}
+  \end{center}
+\end{frame}
+
+% ── 2b. THE CRUX ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The statistic moves. The parameter does not.}
+  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
+  \vspace{4pt}
   \begin{center}
     \small
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l c l @{}}
     \hline
-    \textbf{Volunteer} & \textbf{Drove, of 50} & \textbf{Percent} \\
+    \textbf{Volunteer} & \textbf{Drove (of 50)} & \textbf{Statistic} \\
     \hline
-    Ana  & 26 & $26/50 = 0.52 = 52\%$ \\
-    Ben  & 24 & $24/50 = 0.48 = 48\%$ \\
-    Cleo & 29 & $29/50 = 0.58 = 58\%$ \\
+    Ana  & 26 & $26/50 = 52\%$ \\
+    Ben  & 24 & $24/50 = 48\%$ \\
+    Cleo & 29 & $29/50 = 58\%$ \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    Three statistics. \textbf{One} parameter. Nobody miscounted.\\[6pt]
-    {\color{cerulean}\bfseries This is sampling variability --- it is what samples
-    do.}
-  \end{center}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Three samples. Three statistics. \textbf{Vote again --- who made the mistake?}
+    \item How many true percents are there for all 800 shoppers? \redink{One.} Did it move? \redink{No.}
+  \end{itemize}
+  \begin{block}{Sampling variability (PS.DC.1e)}
+    \textbf{A different answer is not a wrong answer.} A statistic changes from sample to
+    sample even though the population did not. Nobody miscounted. \redink{It is what samples do.}
+  \end{block}
 \end{frame}
 
-% ── WHAT YOU MAY CLAIM ───────────────────────────────────────────────────────
+% ── 2c. WHAT A SAMPLE LETS YOU SAY ───────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{What the sample lets you say}
-  \sectionlabel{and what it does not}
-
-  \vspace{0.3cm}
-  \begin{block}{Allowed}
-    ``About half of the shoppers \textbf{we asked} drove.''
+  \ceruleanheader{What a sample lets you say --- and what it does not}
+  \sectionlabel{notes section 2 $\cdot$ estimate, not count}
+  \vspace{4pt}
+  \begin{block}{The manager's sentence}
+    ``Of the \textbf{50} shoppers we asked, \textbf{52\%} drove. If our sample represents the
+    market, that is about \textbf{416} of the \textbf{800} shoppers who come on a Saturday.''
   \end{block}
+  \vspace{8pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{``Exactly 416 drove.''}
+        \redink{Not allowed.} 416 is an estimate of the parameter --- nobody counted it.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{``52\% of Lakeside residents drive to the market.''}
+        \redink{Not allowed.} Residents were never the population.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
 
-  \vspace{0.3cm}
-  \begin{block}{Not allowed}
-    ``\textbf{Exactly} 416 Saturday shoppers drove.'' --- 416 is an estimate, not
-    a count.\\[4pt]
-    ``52\% of \textbf{Lakeside residents} drive to the market.'' --- wrong
-    population.
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Guided Practice: The Riverbend Job Survey}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  The principal wants to know what fraction of Riverbend's \textbf{900} students hold a
+  part-time job. She asks \textbf{50}; \textbf{20} have one.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item[(a)] Population, sample, sample size.
+    \item[(b)] The percent, and about how many of the 900 --- then \emph{label} both numbers.
+    \item[(c)] The assistant principal asks a \emph{different} 50; \textbf{23} have a job.
+          Did somebody make a mistake? Which survey found the true percent?
+    \item[(d)] One constraint that kept her from asking all 900.
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If you picked a survey in (c), you are still at the hook vote.
   \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Change the population and the same statistic
-    estimates a different parameter.}
-  \end{center}
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief: three statistics, one parameter}
+  \sectionlabel{8 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Ana, Ben, Cleo --- say the sentence. Then: who does the \textbf{61\%} describe?
+    \item ``Exactly 416 drove.'' Which word is wrong, and why?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    A school of 1{,}200 students. The yearbook staff asks 60 and finds 45\% have a job; the
+    newspaper asks a different 60 and finds 50\%. A teacher says one of them made an error.
+    \textbf{Is the teacher right? What is the true percent?}
+  \end{block}
+\end{frame}
+
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 8 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Harbor Point Community Pool} --- 1{,}500 members, 75 asked on a Tuesday evening.
+    \item Name the groups; the frequency table; scale 36\% to 1{,}500 \emph{as an estimate}.
+    \item Label four numbers --- two of them are percents, and they are not the same kind.
+    \item A second survey gets 40\% instead of 36\%. Explain why nobody counted wrong.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due next class.}
+    Start with \textbf{1, 4, and 6}. Item 6(b) is the one I am reading over your shoulder ---
+    if you blamed a staff member, flag me before you leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.6cm}
-  \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item The \textbf{population} is everyone the question is about; the
-              \textbf{sample} is who you measured.
-        \item A \textbf{parameter} describes the population and is almost always
-              unknown.
-        \item A \textbf{statistic} describes the sample --- it is the number you
-              can actually compute.
-        \item \textbf{Constraints} --- time, cost, access, destruction, change ---
-              are why we sample.
-        \item Two honest samples give two statistics for \textbf{one} parameter.
-              That is not an error.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large A statistic describes the sample you have. A parameter
+    describes the population you want --- and there is only one. Two honest samples
+    disagreeing is not a mistake.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.3 --- three volunteers each grabbed 50 shoppers.
+    \emph{Which} 50? How you choose them decides whether the statistic is worth anything.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

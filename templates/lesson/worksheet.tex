@@ -12,23 +12,22 @@
 \vspace{0.15in}
 
 % TODO: author the @@DOCTITLE@@. See templates/lesson/components.md for the expected structure.
-% GUIDED NOTES carry the WHOLE gradual release; there is no group activity.
-%   objectivebox (filled in, not blank) -> vocabbox of \termblanklong{} terms -> hookbox ->
-%   4-6 numbered \begin{notesbox}{N. Title} teaching sections the teacher MODELS (I DO) ->
-%   one \begin{notesbox}{N. We Do --- <task>} worked jointly with the class (WE DO) ->
-%   a closing \begin{practicebox} of 1-3 items worked SILENTLY AND ALONE (YOU DO), optionally
-%   followed by an \begin{extensionbox} for students who finish early.
-% <= 6pp. Per-section minutes sum to 30 through the We Do; the practice box is the separate
-% 10-minute Independent Practice phase. The release runs ONCE per lesson — do NOT build
-% per-section I-do/we-do/you-do mini-cycles, and do NOT add a second practice box.
-% The We Do runs the SAME TASK the practice box releases, on different data, so students hold
-% a completed template before they work alone.
-% Guard the FIRST notesbox after the vocabbox with \boxguard[20] in BOTH files: the key's
-% \vocabans{} runs shorter than the blank's rules and will otherwise float that section a page
-% early in the key only.
-% HOMEWORK: ~6 items in new contexts spanning the lesson's lettered skills, each ending in an
-% interpretation or a justification, plus one spiral item and a closing \begin{spiralbox}
-% preview. It IS scored.
+% PILOT SHAPE (2026-09-06) — mirror unit01/lesson02. GUIDED NOTES & PRACTICE carry the whole
+% gradual release and END AT THE GUIDED PRACTICE:
+%   objectivebox (printed targets, worded as on the cover) -> vocabbox of \termblank{} terms
+%   (key: \vocabans{}{} with a TWO-LINE definition so the boxes match in height) ->
+%   EXACTLY TWO \begin{notesbox}{N. Title} sections the teacher models (I DO), each in two
+%   moves, the second move introduced by \textbf{\textcolor{cerulean}{Its Title.}} ->
+%   one \begin{practicebox} ("Guided Practice", WE DO) of three or four lettered parts, the last
+%   testing the misconception on new ground.
+% No hookbox (the hook is a slide), no solo practice box, no extensionbox. The crux is the second
+% half of section 2. Target 3-4 pages, blank and key. The homework is the individual practice.
+% HOMEWORK: a remindbox ("This is your graded homework..."), a scenariobox context, ~6 items in a
+% notesbox (split into a "..., continued" box where the pages fall — never strand a lead-in from
+% its table), a contrast pair, the crux head-on, one spiral item, and a closing \begin{spiralbox}
+% preview. Scored; started in class in the last eight minutes.
+% GENERATE THE KEY from the blank: python3 templates/lesson/mkkey.py blank key answers.json
+% (see templates/lesson/examples/). Never hand-edit a key.
 % \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
 % the box opens with an unbreakable TikZ figure or tabularx.
 % Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
