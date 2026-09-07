@@ -11,25 +11,25 @@
   "800",
   "50",
   "50",
-  "the 800 Saturday shoppers",
+  "all 800 shoppers",
   "the 50 asked",
   "50",
-  "Riverbend's 900 students",
+  "all 900 students",
   "the 45 asked",
   "45",
-  "the 12,000 boxes filled Tuesday",
-  "the 30 weighed",
+  "the 12,000 boxes",
+  "the 30 boxes",
   "30",
   "census",
   "parameter",
   "statistic",
-  "the sample",
+  "sample",
   "statistic",
-  "the population",
+  "population",
   "parameter",
-  "the sample",
+  "sample",
   "statistic",
-  "the population",
+  "population",
   "parameter",
   "all",
   "population",
@@ -47,34 +47,38 @@
   "3",
   "1",
   "No",
-  "none --- each is an estimate",
+  "none of them",
   "sampling variability",
   "do",
   "moves",
   "stays put",
   "closer",
-  "50",
-  "52",
-  "416",
-  "800",
-  "No",
-  "estimate, not a count",
-  "No",
-  "wrong population",
   "Riverbend's 900 students",
   "50",
   "the 50 students she asked",
   "statistic",
   "estimate",
-  "parameter"
+  "parameter",
+  "50",
+  "40",
+  "360",
+  "900",
+  "No"
  ],
  "lines": [
+  [
+   "Answers vary --- most of the room picks a volunteer, or says the truth is ``in between.''",
+   "(Settled at the end of section 2: nobody --- three samples, three statistics, one parameter.)"
+  ],
   [
    "No. Two different samples of 50 give two different statistics.",
    "Neither found it --- there is one parameter, and both estimate it."
   ],
   [
    "Time --- three class periods nobody can spare (also cost or access)."
+  ],
+  [
+   "360 was computed from the 40\\%, not counted --- it is an estimate of the parameter."
   ]
  ]
 }

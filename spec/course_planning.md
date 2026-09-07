@@ -17,6 +17,12 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
 - **Keys are generated, not hand-edited.** `templates/lesson/mkkey.py` takes the blank plus a JSON
   list of answers in order (`templates/lesson/examples/lesson02_*_key.json`) and writes the key;
   it refuses to run if the blank count and answer count differ. Three keys, zero drift.
+- **Notes page plan and word banks (user requests 2026-09-06):** page 1 = vocab box + hook (no
+  objective box — the cover carries the targets); pages 2–3 = the two sections, `\newpage` before
+  each, unlabeled on the page; page 4 = the Guided Practice alone. Section 2's report sentence and
+  over-claim moved into Guided Practice part (e) to make section 2 fit its page. **Every fill-in
+  cluster opens with a `\wordbank{}` strip** (gold, defined per document) in the notes, the Guided
+  Practice, the warm-up, and the homework.
 - **Vocab rows are fixed-height stats-style rows** (user request 2026-09-06): `\vterm{}` ↔
   `\vtermans{}{}`, a 1.6cm minipage pair defined in the notes preamble — term + one full-width
   blank, no rule line, the key filling the same height. Supersedes the earlier `\termblank` ↔
@@ -248,8 +254,8 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     volunteers, three statistics, one parameter, nobody wrong; then the claims table (an estimate
     is not a count; residents were never the population). Notation line (μ, x̄, p, p̂) pre-printed
     once, exposure only.
-  - **Hook (slide + plan, unresolved):** Ana 52%, Ben 48%, Cleo 58% — *who made the mistake?*
-    Vote at the door; re-vote in section 2's second half.
+    - **Hook (notes page 1 + slide + plan, unresolved):** Ana 52%, Ben 48%, Cleo 58% — *who made the
+    mistake?* Circle one in the hook box and write why; re-vote in section 2's second half.
   - Contexts: Lakeside Farmers Market (warm-up + notes; 800 shoppers, 50 asked, 26 drove → 52%,
     0.52 × 800 = 416; Ana/Ben/Cleo 26/24/29 of 50 → 52/48/58%), **Riverbend HS job survey
     (Guided Practice; 900 students, 50 asked, 20 → 40%, 0.40 × 900 = 360; a second 50, 23 → 46%)**,

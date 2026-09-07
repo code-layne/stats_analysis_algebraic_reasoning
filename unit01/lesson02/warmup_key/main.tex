@@ -11,6 +11,9 @@
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 % Handwriting room inside every \begin{work} block. Moves the blank and the
 % key together, so the two can never drift apart.
 \setlength{\workrowsep}{50pt}
@@ -45,8 +48,8 @@ Of the $50$ she asked, $26$ drove.
           0.52 \times 800 &= 416 \text{ shoppers}
         \end{work}
 
-  \item Two different groups of shoppers appear in the paragraph above. Write
-        how many are in each group.
+  \item Two different groups of shoppers appear in the paragraph above. Write how many are in each group.
+        \wordbank{50 \;\textbullet\; 800 \;\textbullet\; 416 \;\textbullet\; the 52\% \;\textbullet\; the 416}
 
         \vspace{4pt}
         \renewcommand{\arraystretch}{2.6}
