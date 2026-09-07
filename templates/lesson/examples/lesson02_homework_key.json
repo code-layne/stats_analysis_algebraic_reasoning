@@ -1,0 +1,18 @@
+{"blanks": [
+  "all 1,500 Harbor Point members", "75", "the 75 members asked on Tuesday evening",
+  "$27/75 = 0.36 = 36\\%$", "$21/75 = 0.28 = 28\\%$", "$18/75 = 0.24 = 24\\%$", "$9/75 = 0.12 = 12\\%$",
+  "75", "$75/75 = 1.00 = 100\\%$",
+  "parameter", "all 1,500 members",
+  "statistic", "the 75 asked",
+  "parameter", "all 1,500 members",
+  "parameter", "all 1,500 members (records)",
+  "time", "cost", "access", "change"
+ ],
+ "lines": [
+  ["Of the 75 members we asked, 36\\% mainly swim laps. If they represent the pool, that is",
+   "about 540 of Harbor Point's 1,500 members --- an estimate, not a count."],
+  ["Two different samples of 75 give two different statistics --- sampling variability, not a",
+   "counting error. There is exactly one true percent for all 1,500 members; both estimate it."],
+  ["(1) Only 75 members were asked, on one Tuesday evening --- the sentence claims all 1,500.",
+   "(2) Nobody was asked about a second lane; the survey recorded what members mainly do."]
+ ]}

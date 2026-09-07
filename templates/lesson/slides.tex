@@ -1,6 +1,13 @@
 %! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — Slides (Beamer)
+% PILOT SHAPE (2026-09-06). GRADUAL RELEASE deck (~14 frames): title → targets → warm-up → hook
+% (dark, UNRESOLVED) → I DO divider (dark) → two or three frames per notes section (crux frame
+% flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
+% debrief with the cold check → You do: START THE HOMEWORK → close (dark). No practice launch,
+% no exit ticket. There is no spoiler rule. Mirror unit01/lesson02/slides.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{@@PREFIX@@-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,87 +24,107 @@
 \end{frame}
 }
 
-% The deck follows the GRADUAL-RELEASE flow (~12 frames):
-%   learning targets → warm-up → hook → one frame per numbered notes section (I DO)
-%   → We Do → independent-practice launch → debrief → close & assign.
-% THERE IS NO SPOILER RULE: name the formal vocabulary on every frame it belongs on.
-% \redink{} is for the term the moment it is first attached to an idea.
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% LEARNING TARGETS — name the vocabulary outright, worded as on the cover.
+% ── LEARNING TARGETS — worded as on the cover ────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: TODO topic}
-  \sectionlabel{Learning targets}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson @@LESSONID@@}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{6pt}
+  \begin{itemize}\setlength{\itemsep}{5pt}
     \item TODO: target 1, naming the formal term.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{I work one} $\to$ \textbf{we work one} $\to$
-    \textbf{you work TODO on your own} $\to$ we go over them.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
   \end{block}
 \end{frame}
 
-% WARM-UP
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
-  \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items, and which notes section picks each one up again.
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{spiral review}
+  % TODO: the three items in one line each, and the line saying the notes reuse these numbers.
 \end{frame}
 
-% HOOK — leave it UNRESOLVED if the lesson's crux is the misconception it plants.
+% ── HOOK — dark frame; leave it UNRESOLVED; section 2's second half settles it ──
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.3cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small TODO SETUP LINE}\\[0.8cm]
+    {\color{white}\bfseries\Large TODO the claim.}\\[0.9cm]
+    {\color{goldacc}\bfseries\large TODO the question --- vote.}\\[0.5cm]
+    {\color{frostmid}\small We settle this at the end of section 2.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{frostmid}\small TODO terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── NOTES SECTION FRAMES — two or three per section; these ARE the board ─────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: the hook question}
-  \sectionlabel[goldacc]{Commit to an answer --- we will settle this later}
-  % TODO: the claim or question, and the vote/commitment to take. Do not resolve it here.
+  \ceruleanheader{TODO section 1, first move}
+  \sectionlabel{notes section 1 $\cdot$ TODO}
+  % TODO: the definitions and the worked example exactly as they go on the board.
 \end{frame}
 
-% NOTES SECTION — I DO. Repeat this frame once per numbered notes section (4-6 of them).
-% Flag the CRUX section's frame with \sectionlabel[redacc]{}.
-% These frames carry the ANSWERS the class writes down — they are the board, not a preview,
-% so advance them in step with the handout.
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO: notes section N title}
-  \sectionlabel{I do --- copy this down}
-  % TODO: the worked example exactly as it goes on the board, with the formal term in
-  % \redink{} the first time it is attached.
+  \ceruleanheader{TODO section 2, second move --- the crux}
+  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
+  % TODO: the computation, the re-vote, and the rule in a block, with the term in \redink{}.
 \end{frame}
 
-% WE DO — a LIVE surface. Show the task and the data; leave the reasoning BLANK and fill it
-% in from what the class supplies. Do NOT ship this frame pre-answered.
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{We Do: TODO task}
-  \sectionlabel[goldacc]{You tell me every step --- I hold the pen}
-  % TODO: the task and its data only. Same task the practice box will release, new numbers.
-\end{frame}
-
-% INDEPENDENT-PRACTICE LAUNCH — the item range and the rule ONLY.
-% DO NOT put the practice items or their answers on a slide before the practice; a deck that
-% shows the answer pattern turns the release into copying.
-\begin{frame}[t, plain]
-  \ceruleanheader{Your turn}
-  \sectionlabel[goldacc]{Practice box, items 1--TODO $\cdot$ 10 minutes}
-  \begin{block}{The rule}
-    \textbf{Silently, on your own.} Every answer ends in a sentence that says what it means
-    \emph{in this situation}.
+  \ceruleanheader{Guided Practice: TODO title}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  % TODO: the context and its data, then the lettered parts as questions.
+  \begin{block}{The question behind the question}
+    TODO: the trap, named.
   \end{block}
 \end{frame}
 
-% DEBRIEF — walk the displayed practice work, then the cold check.
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Going over it}
-  \sectionlabel[redacc]{Correct your own work in a second color}
-  % TODO: the displayed items in order, the crux item with two disagreeing answers, then the
-  % whole-class check-for-understanding question asked cold. This replaces the exit ticket.
+  \ceruleanheader{Debrief: TODO}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  % TODO: the two or three things that go back on the board, then the cold check in a block.
 \end{frame}
 
-% CLOSE & ASSIGN
+% ── YOU DO — the homework is the individual practice, started in class ───────
 \begin{frame}[t, plain]
-  \ceruleanheader{What changed today \& what's next}
-  \sectionlabel[goldacc]{Homework --- this one is scored}
-  % TODO: one line on what changed today. Then name the assignment and say plainly which form
-  % it takes — the packet's homework pages OR a specific DESMOS activity (name it). Give the
-  % due date and how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  % TODO: the context, the item themes (never the answers).
+  \begin{block}{Silent and alone --- I am circulating. TODO form (packet pages or a named Desmos activity), points, due date.}
+    Start with TODO items. Item TODO is the one I am reading over your shoulder.
+  \end{block}
 \end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large TODO: what changed today, in two sentences.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson TODO --- TODO one-line preview.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}
