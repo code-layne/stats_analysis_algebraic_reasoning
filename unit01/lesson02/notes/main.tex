@@ -24,7 +24,7 @@
 % an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \termblank{} a
 % \vocabans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
 % answers so the two files wrap alike.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -65,8 +65,8 @@ Fill in each term \textbf{as we name it} in the notes below.
 \end{vocabbox}
 
 % ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Guarded at 20 in BOTH files: the key's \vocabans{} runs shorter than the blank's rules.
-\boxguard[20]
+% Guarded at 12 in BOTH files (the vocab rows match in height, so no float-early risk).
+\boxguard[12]
 \begin{notesbox}{1. Two Groups --- and the Two Kinds of Numbers They Produce}
 \small
 Last night's homework asked $50$ shoppers and then talked about all $800$. Those two groups
@@ -264,14 +264,14 @@ a Saturday.''}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} X p{2cm} >{\raggedright\arraybackslash}p{4.6cm} @{}}
+\begin{tabularx}{\linewidth}{@{} X p{2cm} >{\raggedright\arraybackslash}p{5.2cm} @{}}
 \toprule
 \textbf{Claim} & \textbf{Allowed?} & \textbf{Why} \\
 \midrule
 ``Exactly $416$ Saturday shoppers drove to the market.''
-  & \blank{1.6cm} & \blank{4.2cm} \\
+  & \blank{1.6cm} & \blank{4.8cm} \\
 ``$52\%$ of Lakeside residents drive to the market.''
-  & \blank{1.6cm} & \blank{4.2cm} \\
+  & \blank{1.6cm} & \blank{4.8cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}

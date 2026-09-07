@@ -24,7 +24,8 @@ build if a lesson has them, but do not author any of them. See [Dead shapes](#de
 
 General rules:
 - Student components preamble with `saar-article` + `saar-boxes`; keys with
-  `saar-article` + `saar-key`. **Every component is 10pt.**
+  `saar-article` + `saar-key`. **Every student component is 12pt** (cover, warm-up, notes,
+  homework, keys); the lesson plan is 10pt and the deck 11pt.
 - **There is no spoiler rule.** The vocabulary is taught, so the cover, the warm-up, the notes,
   and the slides may all name it outright.
 - Keep the **key structurally identical** to its blank — it is the blank with answers filled in.
@@ -119,9 +120,8 @@ order:
 `warmup/` (+ `warmup_key/`) — short spiral review of *prerequisite* skills (prior-course fluency,
 prior lessons' skills). Frequently a **prefab PDF**: if so, drop it in as
 `warmup/main.pdf` (and `warmup_key/main.pdf`) — `lesson.mk` merges it directly and the lesson
-plan can embed its thumbnail. If authored: **three** items at lesson 1.1's enlarged sizing (`\large` body,
-`\setlength{\workrowsep}{50pt}`, `itemsep=22pt`, tables at `\arraystretch` 2.6–3.3) so each item
-gets real handwriting room, **no name row** (namestrip), and the spiral review stays text-only in
+plan can embed its thumbnail. If authored: **three** items at 12pt (`\setlength{\workrowsep}{50pt}`, `itemsep=22pt`, tables at
+`\arraystretch` 2.6–3.3) so each item gets real handwriting room, **no name row** (namestrip), and the spiral review stays text-only in
 the plan. Key mirrors with `\ans` (generate it with `mkkey.py`). The warm-up must fit **one page**,
 blank and key — do not add a fourth item.
 Each item should be a **tool the notes pick up again** — the plan's spiral-review box names which
@@ -132,7 +132,7 @@ you collect it.
 
 `notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 35 minutes**, in two moves.
 `\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` — **no name row** (namestrip). Target
-**3–4 pages** at 10pt, blank and key. **It runs short on purpose**: the period ends with students
+**4 pages** at 12pt, blank and key, `\small` inside every box as the stats model does. **It runs short on purpose**: the period ends with students
 starting the homework, which is where the individual practice lives.
 
 **I do (~20 min)** — **exactly two** numbered notes sections. Each is long, carrying two moves:
@@ -183,7 +183,8 @@ practice** *and* its graded work: the cover's score column carries a `\blank{}` 
 and **students start it in class in the last ten minutes of the period**, alone, while the
 teacher circulates for the second formative read.
 
-`\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **1–2 pages**, blank and key.
+`\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **2–3 pages** at 12pt, blank
+and key; the practice boxes at full size (`\small` only in the opening `remindbox`).
 Structure, in order:
 
 - A `remindbox` — "**This is your graded homework.** It is scored out of N and due …; you will
@@ -194,8 +195,8 @@ Structure, in order:
   procedure, **one spiral item** reaching back to an earlier lesson, an interpret-in-context item,
   a **deliberate contrast pair** (same task, opposite condition — the pair that surfaces the target
   misconception), the **crux head-on**, and a justification item. Every answer is phrased in its
-  context. Split into a second `notesbox{…, continued}` where the pages fall — **never strand an
-  item's lead-in sentence from its table** across the split; move the whole item.
+  context. Split into `notesbox{…, continued}` boxes so that **no item breaks across a page** and
+  no lead-in sentence is stranded from its table — three boxes at 12pt is normal.
 - A closing `spiralbox` (its title is fixed as "Connections & Big Ideas") previewing the next
   lesson. No `extensionbox`.
 
