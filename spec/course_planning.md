@@ -17,7 +17,19 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
 - **Keys are generated, not hand-edited.** `templates/lesson/mkkey.py` takes the blank plus a JSON
   list of answers in order (`templates/lesson/examples/lesson02_*_key.json`) and writes the key;
   it refuses to run if the blank count and answer count differ. Three keys, zero drift.
-- **Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.** With `\termblanklong` (three
+- **Notes page plan and word banks (user requests 2026-09-06):** page 1 = vocab box + hook (no
+  objective box — the cover carries the targets); pages 2–3 = the two sections, `\newpage` before
+  each, unlabeled on the page; page 4 = the Guided Practice alone. Section 2's report sentence and
+  over-claim moved into Guided Practice part (e) to make section 2 fit its page. **Every fill-in
+  cluster opens with a `\wordbank{}` strip** (gold, defined per document) in the notes, the Guided
+  Practice, the warm-up, and the homework.
+- **Vocab rows are fixed-height stats-style rows** (user request 2026-09-06): `\vterm{}` ↔
+  `\vtermans{}{}`, a 2.3cm minipage pair defined in the notes preamble — term label + open
+  writing space, no inline blank, no rule line (user correction 2026-09-06), the key filling
+  the same height. Supersedes the earlier `\termblank` ↔
+  two-line `\vocabans` rule. **Worth promoting into `saar-article.sty` / `saar-key.sty`** with the
+  cover banner, on a run allowed to touch `shared/`.
+- ~~Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.~~ With `\termblanklong` (three
   lines) the notes ran 4pp blank / 3pp key with section 1 on different pages; with `\termblank`
   and definitions long enough to wrap to two lines the boxes match and both files are 3pp with
   identical per-page headings. This is now the profile's rule.
@@ -25,6 +37,11 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
   page 1 with its table on page 2; moving items 4–6 into the `…, continued` box fixed it.
 - **`\boxguard[24]` before a `multicols` box** — the plan's Debrief box opened as a two-line
   sliver at the foot of a page with the default guard.
+- **The cover banner is measured, not fixed.** At 12pt the three-line title overran the old
+  0.9in tikz band. The cover (and its skeleton) now defines `\coverbanner{}{}` locally — the stats
+  course's measured banner, savebox + tikz sized to it — since `saar-article.sty` has no such macro
+  and `shared/` is off-limits to lesson authoring. **Worth promoting into `saar-article.sty`** on a
+  run that is allowed to touch `shared/`; every future cover copies the block until then.
 - **Student components are 12pt** (user decision 2026-09-06, matching stats 1.4): cover, warm-up,
   notes, homework and keys; `\small` inside the notes' and cover's boxes, homework practice boxes
   at full size. Plan 10pt, deck 11pt. Notes 4/4, homework 3/3 (three boxes, one per page, no item
@@ -238,8 +255,8 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     volunteers, three statistics, one parameter, nobody wrong; then the claims table (an estimate
     is not a count; residents were never the population). Notation line (μ, x̄, p, p̂) pre-printed
     once, exposure only.
-  - **Hook (slide + plan, unresolved):** Ana 52%, Ben 48%, Cleo 58% — *who made the mistake?*
-    Vote at the door; re-vote in section 2's second half.
+    - **Hook (notes page 1 + slide + plan, unresolved):** Ana 52%, Ben 48%, Cleo 58% — *who made the
+    mistake?* Circle one in the hook box and write why; re-vote in section 2's second half.
   - Contexts: Lakeside Farmers Market (warm-up + notes; 800 shoppers, 50 asked, 26 drove → 52%,
     0.52 × 800 = 416; Ana/Ben/Cleo 26/24/29 of 50 → 52/48/58%), **Riverbend HS job survey
     (Guided Practice; 900 students, 50 asked, 20 → 40%, 0.40 × 900 = 360; a second 50, 23 → 46%)**,

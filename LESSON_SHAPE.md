@@ -68,26 +68,18 @@ of the notes.
 the I do about 20 of the 35 and the Guided Practice about 15. Author the table exactly so; if a
 phase does not fit, cut content — do not let the table lie, and do not edit `shared/`.
 
-**`notes` — *Guided Notes & Practice* — is the in-class centrepiece**, and it runs *short* on
-purpose. `\pageheader{…}{Guided Notes \& Practice}` → `objectivebox` (**printed** targets, worded
-as on the cover) → `vocabbox` filled *as each term is named* → **exactly two numbered
-`notesbox{N. Title}` sections** (the I do), each long, its second half introduced by a bold run-in
-heading `\textbf{\textcolor{cerulean}{Its Title.}}` rather than a third box → one `practicebox`
-(fixed title "Guided Practice") worked together (the we do), three or four lettered parts, the
-last of which tests the misconception on new ground. **The notes end there.** Target **4 pages** at 12pt, blank and key. **There is no `hookbox` in the notes** — the hook is a slide and lives in
-the plan. **The crux — the item that surfaces the lesson's target misconception — lives in the
-second half of section 2**; the second half of section 1 may carry a second trap in a
-`\fcolorbox{redacc}{redbg}{\parbox{…}}` callout, broken where it is set.
+**`notes` — *Guided Notes & Practice* — is the in-class centrepiece**, and it has a fixed **four-page plan** (user decision 2026-09-06): **page 1** = `\pageheader{…}{Guided Notes \& Practice}` → `vocabbox` (fixed-height rows, filled *as each term is named*) → `hookbox` (the claim, a circle-one vote, two lines of reason — **left unresolved**); **there is no `objectivebox`** — the cover carries the targets. **Page 2** = `notesbox{1. Title}`; **page 3** = `notesbox{2. Title}` (a `\newpage` before each, so the layout is deterministic); each section is long, its second half introduced by a bold run-in heading `\textbf{\textcolor{cerulean}{Its Title.}}` rather than a third box, and the sections are **not labeled** I do / we do on the page. **Page 4** = one `practicebox` (fixed title "Guided Practice") worked together, four or five lettered parts, one of which tests the misconception on new ground, **alone on its page**. **The notes end there.** A section that does not fit its page is cut or its closing item moves into the Guided Practice — never carried over. **Every fill-in cluster opens with a `\wordbank{…}` strip** (gold, defined per document) listing the words and numbers the blanks take, so the work is choosing and justifying, not recalling. **The crux — the item that surfaces the lesson's target misconception — lives in the second half of section 2**; the second half of section 1 may carry a second trap in a `\fcolorbox{redacc}{redbg}{\parbox{…}}` callout, broken where it is set.
 
-**Sequence the sections so the crux is earned, not announced:** the hook plants it (a claim, a
-vote, no resolution), section 1 builds the vocabulary against the warm-up's own numbers, and the
+**Sequence the sections so the crux is earned, not announced:** the hook on page 1 plants it (a claim, a circle-one vote, no resolution), section 1 builds the vocabulary against the warm-up's own numbers, and the
 second half of section 2 settles it with a correct computation — then the Guided Practice tests it
 again in a fresh context. Reuse one data set across the two sections; the Guided Practice runs on a
 second context; the homework on a third.
 
 **The components:**
 
-- **`cover`** — full-bleed cerulean banner, `\namedateperiod` (the one place it appears),
+- **`cover`** — full-bleed cerulean banner **sized to the title block** (`\coverbanner{Unit N}{Lesson
+  N.M \quad Title}`, a measured banner defined in the cover's own preamble because `saar-article`
+  carries none — the fixed 0.9in band overflowed at 12pt), `\namedateperiod` (the one place it appears),
   `learningtargetbox` of "I can…" targets **naming the formal vocabulary outright**, a `tocbox`
   packet table of **three rows** (Warm-Up · Guided Notes & Practice · Homework), every score cell
   a `\blank{1.2cm}`, and a `remindbox` *Keep in Mind* carrying the lesson's **content
@@ -124,9 +116,7 @@ it, then use it.
 - **No exit ticket.** The formative read comes twice — circulating during Guided Practice, and
   again during the supervised homework start — and the plan says what to do with each of three
   piles of what the teacher sees. The debrief's whole-class cold check replaces the exit ticket.
-- **No independent practice set in the notes, no closing `practicebox` of solo items, no
-  `extensionbox` anywhere (retired course-wide, user decision 2026-09-06 — the environment still
-  exists in `saar-boxes.sty`; never author one), no `reflectionbox`, no `hookbox`.** The debrief is spoken; the individual
+- **No independent practice set in the notes, no closing `practicebox` of solo items, no `extensionbox` anywhere (retired course-wide, user decision 2026-09-06 — the environment still exists in `saar-boxes.sty`; never author one), no `reflectionbox`, no `objectivebox` in the notes.** The debrief is spoken; the individual
   practice is the homework. (The 2026-08-31 notes-only shape had a 10-minute solo practice box
   after a We Do section; the pilot retired it.)
 - **The debrief is not a component** and gets no directory and no cover row.
@@ -236,8 +226,8 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   itself (`-article` does not). **There is deliberately no `\SchoolYear` macro — no year on any
   document.** These materials are reused year over year; the plan's title block is `\CourseName`
   alone. Do not reintroduce one.
-- **Every student-facing lesson component is 12pt** (user decision 2026-09-06, matching the AP
-  Statistics model): cover, warm-up, notes, homework, and their keys are
+- **Word banks.** Every fill-in cluster — each notes section, the Guided Practice, the warm-up's fill-in item, the homework's practice box — opens with `\wordbank{a \;\textbullet\; b \;\textbullet\; …}`, a gold strip defined in the document's preamble (copy the block from lesson 1.2; the key inherits it). List every word or number the cluster's blanks take, in the order of first use where natural; numbers a student computes from the text belong in the bank too.
+- **Every student-facing lesson component is 12pt** (user decision 2026-09-06, matching the AP Statistics model): cover, warm-up, notes, homework, and their keys are
   `\documentclass[12pt]{article}` + `saar-article` + `saar-boxes` (cover also `ltablex` +
   `\keepXColumns`), with `\small` inside the cover's boxes and the notes' boxes as the stats
   model does, and the homework's practice boxes at full size. That is the frontmatter's
@@ -277,10 +267,13 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   `\componenttable` do not exist here.
 - **Key macros (`saar-key.sty`): `\ans{}`, `\ansline{}`, and `\vocabans{Term}{definition}`.**
   **`\termans` is undefined in this course** — the shared skill's `\termblank` ↔ `\termans` pair is
-  **`\termblank{Term}` (term + inline blank + one write-line) ↔ `\vocabans{Term}{def}`** here, with
-  the key's definition written long enough to wrap to **two lines**, so the blank and key vocab
-  boxes are the same height and the first `notesbox` starts on the same page in both (**the pilot's
-  rule**; 1.2 proves it). `\termblanklong{Term}` (term + two write-lines) still exists, but it runs
+  **a fixed-height row pair defined in the notes' own preamble — `\vterm{Term}` ↔
+  `\vtermans{Term}{def}`** (user decision 2026-09-06: the vocab box follows the stats course — a
+  2.3cm row carrying the term label and open writing space — **no inline blank and no rule line** (user correction 2026-09-06) — the key filling exactly
+  the same height, definitions two lines at most). `saar-article` does not carry the pair, so
+  every notes file copies the block from `unit01/lesson02/notes/main.tex` (worth promoting into
+  `shared/` on a run allowed to touch it). `\termblank` / `\vocabans` remain in the package but
+  add a rule line and drift in height — do not use them in a new lesson. `\termblanklong{Term}` (term + two write-lines) still exists, but it runs
   three lines against the key's one or two and floats the first section a page early in the key —
   if you use it, guard the first `notesbox` with `\boxguard[40]` in both files and re-verify. **vocabpar is
   automatic**: `\termblank`, `\termblanklong`, and `\vocabans` each open with their own `\par`, so
