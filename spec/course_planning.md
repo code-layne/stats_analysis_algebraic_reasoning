@@ -4,8 +4,8 @@
 STATISTICS LESSON 1.4 MINUS ITS AP PRACTICE PAGE. IT IS THE MODEL FOR EVERY FUTURE LESSON.**
 The user asked for 1.2 rebuilt on the most recent stats lesson (`~/Mathematics/stats`
 `unit01/lesson04`, 2026-09-06) without the `ap_practice` component. What that shape is:
-**5 warm-up · 34 guided notes & practice (I do two long sections ≈ 20, we do one Guided Practice
-≈ 15) · 8 spoken debrief · 8 close & START THE HOMEWORK in class.** The homework *is* the
+**5 warm-up · 35 guided notes & practice (I do two long sections ≈ 20, we do one Guided Practice
+≈ 15) · 10 spoken debrief · 10 close & START THE HOMEWORK in class.** The homework *is* the
 individual practice; there is no solo practice box in the notes, no `hookbox` (the hook is a dark
 slide), no extension, no exit ticket. `LESSON_SHAPE.md` (sections 1, 2, 4, 5, 7 and the
 frontmatter — `reference_lesson: unit01/lesson02`, notes doc title *Guided Notes \& Practice*),
