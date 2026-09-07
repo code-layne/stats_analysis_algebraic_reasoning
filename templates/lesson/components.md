@@ -138,16 +138,16 @@ starting the homework, which is where the individual practice lives.
 **I do (~20 min)** — **exactly two** numbered notes sections. Each is long, carrying two moves:
 the second is introduced by a bold run-in heading, `\textbf{\textcolor{cerulean}{Its Title.}}`, not
 by a third box. **The crux lives in the second half of section 2.**
-- `objectivebox` — the "By the end of these notes I will be able to…" targets, **printed**, worded
-  exactly as the cover's learning targets. No `\writeline`s here; the key carries identical text.
-- `vocabbox` — one `\termblank{Term}` per key term (4–5 of them). The box says **"Fill in each term
-  as we name it in the notes below"** — filled during instruction, never front-loaded. The key uses
-  `\vocabans{Term}{definition}` with the definition written long enough to **wrap to two lines**, so
-  the blank's row (term + inline blank + one write-line) and the key's row are the same height and
-  section 1 starts on the same page in both files. (`\termblanklong` runs three lines against the
-  key's one and floats section 1 a page early in the key — avoid it.) Write the intro sentence
-  plainly; the term macros carry their own `\par`.
-- **No `hookbox`.** The hook is a dark slide and a plan box, left unresolved.
+- **Page plan (fixed):** page 1 = `vocabbox` + `hookbox`; page 2 = section 1; page 3 = section 2 (`\newpage` before each section); page 4 = the Guided Practice alone. **No `objectivebox`** — the cover carries the targets.
+- Every fill-in cluster opens with a `\wordbank{…}` strip (defined in the preamble; copy from 1.2) listing every word and number its blanks take.
+- `vocabbox` — one `\vterm{Term}` per key term (4–5 of them): a **fixed-height 1.6cm row** with the
+  term and one full-width blank and **no rule line**, as the stats course does. The box says
+  **"Fill in each term as we name it in the notes below"** — filled during instruction, never
+  front-loaded. The key uses `\vtermans{Term}{definition}`, which fills exactly the same height
+  (keep definitions to two lines), so the box cannot drift blank vs. keyed. The `\vterm` /
+  `\vtermans` pair is defined in the notes preamble — copy the block from lesson 1.2; `mkkey.py`
+  maps one to the other. Do not use `\termblank` / `\termblanklong` / `\vocabans` in a new lesson.
+- `hookbox` on page 1, under the vocab box: the claim, a circle-one vote, `\par\writelines{2}` for the reason — **left unresolved**; the same hook is a dark slide and a plan box.
 - Two `notesbox{N. Title}` sections. Each opens in the warm-up's own context, carries a short piece
   of exposition, a **pre-drawn** table or display with `\blank{W}` fills at the points where students
   record the definition or the conclusion, and any computation in a `work` block (byte-identical in
@@ -159,8 +159,7 @@ by a third box. **The crux lives in the second half of section 2.**
   both sections.
 
 **We do (~15 min)**
-- One `practicebox` — **takes no argument**, its title is fixed as "Guided Practice". Open with
-  "**Title — we work this one together**" in a **second context**. Three or four lettered parts: the
+- One `practicebox` — **takes no argument**, its title is fixed as "Guided Practice". Open with "**Title — we work this one together**" in a **second context**, alone on page 4. Four or five lettered parts: the
   setup/identification move, the computation with its labels (`work` block), **the part that is the
   point of the box** — the one that tests the misconception on new ground — and optionally one
   short closing part. `\par\writelines{n}` for prose answers (the key: `\par\ansline{}` on the first

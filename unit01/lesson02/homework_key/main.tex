@@ -6,7 +6,7 @@
 % the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
 % THIRD CONTEXT: the notes teach on the Lakeside market, the Guided Practice runs on
 % Riverbend HS, and these items are on the Harbor Point pool — recall is not the skill.
-% Three boxes — items 1-3, 4-5, 6 — so no item breaks across a page (12pt runs three pages).
+% Three boxes — items 1-2, 3-5, 6 — so no item breaks across a page (12pt runs three pages).
 % Item 4 rows (ii) and (iv) are the deliberate CONTRAST PAIR: two percents, one a statistic
 % and one a parameter. Item 6 is the target misconception head-on.
 % THE DATA — Harbor Point Community Pool: 1,500 members; 75 asked on a Tuesday evening ->
@@ -17,6 +17,9 @@
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
@@ -51,6 +54,7 @@ The $75$ answers: $27$ lap swimming, $21$ family swim, $18$ lessons, $9$ water a
 \boxguard
 \begin{notesbox}{Populations, Samples, and the Numbers They Produce}
 Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ members.
+\wordbank{all 1,500 Harbor Point members \;\textbullet\; the 75 members asked on Tuesday evening \;\textbullet\; 75 \;\textbullet\; parameter \;\textbullet\; statistic \;\textbullet\; time \;\textbullet\; cost \;\textbullet\; access \;\textbullet\; destruction \;\textbullet\; change}
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
   \item Name the groups in this study.
@@ -84,6 +88,13 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
                         &= 12\%
         \end{work}
 
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{Populations, Samples, and the Numbers They Produce, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt, start=3]
+
   \item Estimate how many of the pool's $1{,}500$ members mainly swim laps.
 
         \begin{work}
@@ -95,12 +106,6 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \par\ansline{Of the 75 members we asked, 36\% mainly swim laps. If they represent the pool, that is}
 \ansline{about 540 of Harbor Point's 1,500 members --- an estimate, not a count.}
 
-\end{enumerate}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{Populations, Samples, and the Numbers They Produce, continued}
-\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt, start=4]
 
   \item Label each number \textbf{parameter} or \textbf{statistic}, and say who it describes.
 

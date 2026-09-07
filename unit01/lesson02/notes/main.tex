@@ -7,7 +7,9 @@
 %   WE DO  : the practicebox ("Guided Practice") — the Riverbend job survey, together. (~15 min)
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
 %            last ten minutes of the period.
-% No hookbox (the hook is a slide and lives in the plan), no closing practice set, no extension.
+% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
+% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
+% with a \wordbank{}. No closing practice set, no extension.
 % Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: a
 % statistic that differs from another statistic is not a mistake — the parameter is one fixed
 % number and statistics vary by sample (PS.DC.1d-e). The second half of section 1 carries the
@@ -21,13 +23,35 @@
 %     a second 50 asked, 23 have one -> 46%
 %
 % PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
-% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \termblank{} a
-% \vocabans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
+% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
+% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
 % answers so the two files wrap alike.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows follow the stats course: a FIXED-HEIGHT row carrying the term and one
+% full-width blank — no rule line — and the key fills exactly the same height, so the box
+% cannot drift blank vs. keyed. saar-article's \termblank adds a rule line, so the pair is
+% defined here (the key is generated from this file and inherits both). 1.6cm per row gives
+% students two handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{1.6cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newlength{\termwd}
+\newcommand{\vterm}[1]{%
+  \settowidth{\termwd}{\textbf{#1:}}%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\blank{\dimexpr\linewidth-\termwd-1.6em\relax}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
@@ -37,42 +61,37 @@
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of these notes I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item name the \textbf{population} and the \textbf{sample} in a study, and give the sample
-        size;
-  \item tell a \textbf{parameter} from a \textbf{statistic} by asking \emph{who the number
-        describes} --- never by what the number looks like;
-  \item name the \textbf{constraint} --- time, cost, access, destruction, or change --- that
-        keeps a study from being a \textbf{census};
-  \item explain why two honest samples give two different statistics for one unchanging
-        parameter (\textbf{sampling variability}), and say what a sample does --- and does
-        \emph{not} --- let a report claim.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
-\termblank{Population}
-\termblank{Sample}
-\termblank{Parameter}
-\termblank{Statistic}
-\termblank{Sampling variability}
+\vterm{Population}
+\vterm{Sample}
+\vterm{Parameter}
+\vterm{Statistic}
+\vterm{Sampling variability}
 \end{vocabbox}
 
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Guarded at 12 in BOTH files (the vocab rows match in height, so no float-early risk).
 \boxguard[12]
+\begin{hookbox}
+\small
+Three volunteers stood at the Lakeside Farmers Market on the \emph{same} Saturday morning, and
+each asked a \emph{different} $50$ shoppers whether they drove. Ana found $52\%$. Ben found
+$48\%$. Cleo found $58\%$.
+
+\vspace{3pt}
+\textbf{Who made the mistake?} Circle one: \quad Ana \qquad Ben \qquad Cleo \qquad nobody
+\quad --- and say why you think so. We vote again at the end of section~2.
+\par\writelines{2}
+\end{hookbox}
+
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+% Page 2: section 1 (page 1 is the vocab box + hook).
+\newpage
 \begin{notesbox}{1. Two Groups --- and the Two Kinds of Numbers They Produce}
 \small
 Last night's homework asked $50$ shoppers and then talked about all $800$. Those two groups
 have names, and so do the numbers computed from them.
-
-\vspace{3pt}
+\wordbank{population \;\textbullet\; sample \;\textbullet\; parameter \;\textbullet\; statistic \;\textbullet\; census \;\textbullet\; who \;\textbullet\; all \;\textbullet\; 50 \;\textbullet\; 800}
 The \textbf{population} is the entire group the question is about --- every individual you
 would like the conclusion to describe. At Lakeside, that is all \blank{1.2cm} Saturday
 shoppers. The \textbf{sample} is the part of the population you actually collected data from
@@ -80,8 +99,7 @@ shoppers. The \textbf{sample} is the part of the population you actually collect
 the \textbf{sample size}, $n = $ \blank{1.2cm}.
 
 \vspace{3pt}
-Name the two groups in each study. \emph{The sample is always chosen out of the population
---- so before you can name a sample, you have to know what the population is.}
+Name the two groups in each study --- \emph{the population first; the sample is chosen out of it.}
 \nopagebreak
 
 \begin{center}
@@ -104,7 +122,7 @@ A cereal plant weighs $30$ of the $12{,}000$ boxes it filled on Tuesday.
 Collecting data from \emph{every} individual in the population is called a \blank{2cm}. The
 U.S. Census is one; almost nothing else you meet in this course will be.
 
-\vspace{10pt}
+\vspace{6pt}
 \textbf{\textcolor{cerulean}{Parameter and Statistic.}}
 Both groups produce numbers, and the two kinds are not interchangeable.
 
@@ -113,8 +131,7 @@ A number that describes the \textbf{population} is a \blank{2.4cm}. \quad
 A number that describes the \textbf{sample} is a \blank{2.4cm}.
 
 \vspace{2pt}
-\textit{Memory hook:} \textbf{p}opulation goes with \textbf{p}arameter; \textbf{s}ample goes
-with \textbf{s}tatistic. To sort a number, ask one question: \textbf{who does it describe?}
+\textit{Memory hook:} \textbf{p}opulation--\textbf{p}arameter, \textbf{s}ample--\textbf{s}tatistic. To sort a number, ask: \textbf{who does it describe?}
 \nopagebreak
 
 \begin{center}
@@ -146,46 +163,34 @@ like}; it is \emph{\blank{1.1cm} does it describe}.}}
 \end{center}
 
 \vspace{4pt}
-Which kind do you almost always \emph{know}? The \blank{1.8cm}. \quad Which kind do you
-actually \emph{want}? The \blank{1.8cm}. That gap is the whole reason this course exists: you
-use the number you have to \textbf{estimate} the number you want.
+Which kind do you almost always \emph{know}? The \blank{1.8cm}. \quad Which kind do you actually \emph{want}? The \blank{1.8cm}. You use the number you have to \textbf{estimate} the number you want --- that gap is the whole reason this course exists.
 
-\vspace{2pt}
-{\small\textit{Notation you will meet later in the course: a population mean is written $\mu$
-and a sample mean $\bar{x}$; a population percent is written $p$ and a sample percent
-$\hat{p}$. You do not need these symbols today.}}
 \end{notesbox}
 
-% ── I DO: section 2 — constraints, then the crux ─────────────────────────────
-\boxguard[26]
+% Page 3: section 2.
+\newpage
 \begin{notesbox}{2. Why We Sample at All --- and What Happens When We Do}
 \small
-If the manager wants a parameter, why not just ask all $800$? A \textbf{constraint} is
-something in the real world that limits how a study can be run. Constraints are the reason a
-census is usually off the table --- and they are part of describing a study honestly.
+If the manager wants a parameter, why not just ask all $800$? A \textbf{constraint} is a real-world limit on how a study can be run --- the reason a census is usually off the table.
+\wordbank{time \;\textbullet\; cost \;\textbullet\; access \;\textbullet\; destruction \;\textbullet\; change \;\textbullet\; sampling variability \;\textbullet\; moves \;\textbullet\; stays put \;\textbullet\; do \;\textbullet\; closer \;\textbullet\; 1 \;\textbullet\; 3 \;\textbullet\; No \;\textbullet\; none of them}
 \nopagebreak
 
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} p{2.6cm} X @{}}
-\toprule
-\textbf{Constraint} & \textbf{What it means} \\
-\midrule
-Time        & Reaching everyone would take longer than you have. \\
-Cost        & Reaching everyone would cost more than the budget. \\
-Access      & Some individuals cannot be found, reached, or made to answer. \\
-Destruction & Measuring the individual ruins it, so you cannot measure them all. \\
-Change      & The population keeps changing while you collect. \\
-\bottomrule
-\end{tabularx}
-\end{center}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Time} --- reaching everyone takes longer than you have.
+  \item \textbf{Cost} --- reaching everyone costs more than the budget.
+  \item \textbf{Access} --- some individuals cannot be found, reached, or made to answer.
+  \item \textbf{Destruction} --- measuring the individual ruins it.
+  \item \textbf{Change} --- the population keeps changing while you collect.
+\end{itemize}
+\end{multicols}
 
 \vspace{3pt}
 Name the constraint that stands in the way in each situation.
 \nopagebreak
 
 \begin{center}
-\renewcommand{\arraystretch}{1.45}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\linewidth}{@{} X p{2.8cm} @{}}
 \toprule
 \textbf{Situation} & \textbf{Constraint} \\
@@ -204,7 +209,7 @@ Many shoppers pay and leave before anyone can get near them with a clipboard.
 \end{tabularx}
 \end{center}
 
-\vspace{10pt}
+\vspace{6pt}
 \textbf{\textcolor{cerulean}{The Statistic Moves. The Parameter Does Not.}}
 Three volunteers each asked a \emph{different} $50$ shoppers on the \emph{same} Saturday
 morning. Here is how many in each group said they drove.
@@ -224,11 +229,8 @@ Cleo  & 29 & \blank{4.5cm} \\
 \end{center}
 
 \vspace{3pt}
-Show the work for \textbf{Cleo's} row:
-
 \begin{work}
-  \dfrac{29}{50} &= 0.58 \\
-                 &= 58\%
+  \text{Cleo: } \dfrac{29}{50} &= 0.58 = 58\%
 \end{work}
 
 \vspace{2pt}
@@ -245,47 +247,19 @@ percent for all $800$? \blank{3.2cm}
 \textbf{A different answer is not a wrong answer.} This change from one sample to the next
 is called \blank{3.4cm}. It is not a mistake --- nobody miscounted. It is what samples
 \blank{1cm}. The statistic \blank{1.4cm} from sample to sample; the parameter
-\blank{2cm}, because the $800$ shoppers did not change.}}
+\blank{2cm}, because the $800$ shoppers did not change. Each statistic is an \textbf{estimate} of the one parameter; a larger sample usually lands \blank{1.6cm} to it, but none lands exactly on it every time.}}
 \end{center}
 
-\vspace{4pt}
-Each of the three statistics is an \textbf{estimate} of the one parameter. A larger sample
-usually lands \blank{1.6cm} to it, but no sample lands exactly on it every time.
-
-\vspace{6pt}
-\textbf{One limit on what you may claim.} Fill in the manager's report sentence from her own
-sample, then judge two sentences she is tempted to write instead.
-
-\vspace{2pt}
-\textit{``Of the \blank{1.2cm} shoppers we asked, \blank{1.2cm}\% drove. If our sample
-represents the market, that is about \blank{1.2cm} of the \blank{1.2cm} shoppers who come on
-a Saturday.''}
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} X p{2cm} >{\raggedright\arraybackslash}p{5.2cm} @{}}
-\toprule
-\textbf{Claim} & \textbf{Allowed?} & \textbf{Why} \\
-\midrule
-``Exactly $416$ Saturday shoppers drove to the market.''
-  & \blank{1.6cm} & \blank{4.8cm} \\
-``$52\%$ of Lakeside residents drive to the market.''
-  & \blank{1.6cm} & \blank{4.8cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
 \end{notesbox}
 
-% ── WE DO: guided practice ───────────────────────────────────────────────────
-\boxguard[24]
+% Page 4: the Guided Practice, alone.
+\newpage
 \begin{practicebox}
 \small
 \textbf{The Riverbend Job Survey --- we work this one together.} The Riverbend principal wants
 to know what fraction of the school's $900$ students hold a part-time job. She asks $50$
 students; $20$ of them have one.
-
-\vspace{3pt}
+\wordbank{Riverbend's 900 students \;\textbullet\; the 50 students she asked \;\textbullet\; statistic \;\textbullet\; estimate \;\textbullet\; parameter \;\textbullet\; 50 \;\textbullet\; 40 \;\textbullet\; 360 \;\textbullet\; 900 \;\textbullet\; No}
 \textbf{(a)} Name the groups.
 
 Population: \blank{5.4cm} \hfill Sample size: \blank{1.4cm}
@@ -318,6 +292,18 @@ found the true percent for all $900$ students? Explain.
 \vspace{3pt}
 \textbf{(d)} Name one constraint that kept the principal from asking all $900$ students, and say
 which of the five it is.
+\par\writeline
+
+\vspace{3pt}
+\textbf{(e)} Fill in the principal's report sentence from her own sample:
+
+\textit{``Of the \blank{1.2cm} students we asked, \blank{1.2cm}\% have a part-time job. If our
+sample represents the school, that is about \blank{1.2cm} of Riverbend's \blank{1.2cm}
+students.''}
+
+\vspace{2pt}
+Her draft says instead: \textit{``Exactly $360$ Riverbend students have a part-time job.''}
+Allowed? \blank{1.2cm} \quad Why not?
 \par\writeline
 \end{practicebox}
 
