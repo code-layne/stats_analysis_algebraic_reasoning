@@ -1,0 +1,80 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Sampling frame": "The list of individuals a study can actually choose from. Anyone left off the frame can never be sampled, however good the method.",
+  "Simple random sample (SRS)": "Every individual --- and every possible group of $n$ individuals --- has an equal chance of being chosen. Number the frame and draw, skipping out-of-range and repeat values.",
+  "Stratified sample": "Split the population into strata (alike inside, different between); take a separate random sample from every stratum, in proportion.",
+  "Systematic sample": "From an ordered list, take every $k$th individual after a random start, where $k = N \\div n$. Only the start is random.",
+  "Cluster sample": "Draw a few whole groups (clusters) at random and collect data from everyone in them. Works only when each cluster is a small mix of the whole."
+ },
+ "blanks": [
+  "chance",
+  "convenience",
+  "convenience",
+  "chance",
+  "convenience",
+  "chance",
+  "could not",
+  "convenience",
+  "yes",
+  "student 28",
+  "no --- skip it",
+  "none",
+  "yes",
+  "student 366",
+  "three",
+  "start",
+  "15",
+  "22",
+  "37",
+  "52",
+  "every",
+  "$240 \\div 15 = 16$",
+  "$210 \\div 15 = 14$",
+  "$180 \\div 15 = 12$",
+  "$18+16+14+12 = 60$",
+  "a few",
+  "everyone",
+  "mix",
+  "9th",
+  "0",
+  "Yes",
+  "No",
+  "alike",
+  "stratum",
+  "every",
+  "stratified",
+  "all",
+  "a few",
+  "a random sample",
+  "everyone",
+  "simple random",
+  "cluster",
+  "stratified",
+  "systematic",
+  "convenience",
+  "$120 \\div 10 = 12$",
+  "$280 \\div 10 = 28$",
+  "$200 \\div 10 = 20$",
+  "$12+28+20 = 60$",
+  "studio",
+  "stratum"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most of the room says yes (``it was random'') or it depends.",
+   "(Settled at the end of section 2: no --- both rooms are 9th grade; not one senior was asked.)"
+  ],
+  [
+   "A stratum: each building holds one unit type, so it is alike inside, not a mix.",
+   "Drawing three whole strata left every one- and two-bedroom household --- the car owners --- out."
+  ],
+  [
+   "Stratified, because the groups (unit types) are alike inside and differ on cars;",
+   "sampling every stratum in proportion guarantees the two-bedroom households are heard."
+  ],
+  [
+   "Only cluster --- it needs a list of groups. SRS, stratified, and systematic need every household numbered."
+  ]
+ ]
+}

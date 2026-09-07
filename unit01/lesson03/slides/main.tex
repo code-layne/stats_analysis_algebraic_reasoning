@@ -1,6 +1,13 @@
-%! Choosing a Sample — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (unresolved) → I DO divider → two frames
+% per notes section → WE DO (a live surface, un-answered) → spoken debrief → close & START THE
+% HOMEWORK, which is the individual practice. No group activity, no practice launch, no exit
+% ticket. There is no spoiler rule: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,174 +24,190 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Tuesday evening at the pool}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.3}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item name the \textbf{sampling frame} and say whether \textbf{chance} or
+          \textbf{convenience} chose a sample --- by asking \emph{who could never have been picked}.
+    \item run a \textbf{simple random sample} from generator digits and a \textbf{systematic
+          sample} with $k = N \div n$.
+    \item compute a \textbf{stratified} allocation and count what a \textbf{cluster sample} reaches.
+    \item tell a \textbf{stratum} from a \textbf{cluster}, and choose --- with a reason --- the
+          technique a context calls for.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one survey we plan as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{Riverbend High School: 900 students, 60 to survey}
+  \vspace{0.3cm}
   \begin{center}
     \begin{minipage}{0.86\textwidth}
-      A staff member asked the \textbf{75 members who arrived Tuesday evening}.
-      36\% said they mainly swim laps. The board is about to reserve a lane for
-      all \textbf{1,500} members.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item $270$ of the $900$ students are in 9th grade. What percent of the school is that?
+        \item If 9th graders should be the same share of the \emph{survey}, how many of the
+              $60$ should be 9th graders?
+        \item One list of all $900$, in order. Pick $60$ spread evenly: how many names apart?
+              Start at the 7th name --- which two names come next?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.8cm}
+  \vspace{0.4cm}
   \begin{center}
-    {\color{goldacc}\bfseries Who had no chance of being asked at all?}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \small Morning swimmers. Weekend families. Anyone who works evenings.
+    {\color{cerulean}\bfseries Algebra 1 arithmetic. Keep the page --- every number on it
+    comes back with a name today.}
   \end{center}
 \end{frame}
 
-% ── CHANCE VS CONVENIENCE ────────────────────────────────────────────────────
+% ── HOOK — leave it UNRESOLVED; the second half of section 2 settles it ──────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.2cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small THE COUNCIL NEEDS 60 OF RIVERBEND'S 900 STUDENTS.}\\[0.7cm]
+    {\color{white}\bfseries\Large Maya puts the 30 homeroom numbers in a hat, draws two ---
+    rooms 4 and 7 --- and surveys all 30 students in each. Pure chance.}\\[0.9cm]
+    {\color{goldacc}\bfseries\large Is that as trustworthy as drawing 60 names out of the hat?}\\[0.5cm]
+    {\color{frostmid}\small Vote: yes, no, or it depends. Write one line of reason in the hook
+    box. We settle this at the end of section 2.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── 1a. WHO CHOSE THE SAMPLE ─────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Who chose the sample?}
-  \sectionlabel{chance, or convenience}
-
-  \vspace{0.3cm}
+  \sectionlabel{notes section 1 $\cdot$ the frame, chance, convenience}
+  \vspace{4pt}
   \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Probability sample}
-        \textbf{Chance} chooses. Every individual on the frame has a known
-        chance of being picked.
+        \textbf{Chance} chooses. Every individual on the \textbf{sampling frame} --- the list
+        you can actually draw from --- has a known chance of being picked.
       \end{block}
     \end{column}
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Convenience sample}
-        The \textbf{researcher} takes whoever is easiest to reach. Tuesday
-        evening chose that sample.
+        The \textbf{researcher} takes whoever is easiest to reach. Tuesday evening chose the
+        pool sample. The bell schedule chose the third-period sample.
       \end{block}
     \end{column}
   \end{columns}
-
-  \vspace{0.7cm}
+  \vspace{12pt}
   \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      The \textbf{sampling frame} is the list you can actually choose from.
-      Anybody left off it can never be sampled --- no matter how good your
-      method is.
-    \end{minipage}
+    {\large \emph{Random} does not mean \emph{unplanned}. Ask: \redink{who could never have
+    been picked?}}\\[6pt]
+    {\small\color{slate} If that list is not empty, chance did not choose --- and no sample
+    size fixes it.}
   \end{center}
 \end{frame}
 
-% ── SRS ──────────────────────────────────────────────────────────────────────
+% ── 1b. SRS AND SYSTEMATIC ───────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Simple random sample}
-  \sectionlabel{number the frame, then draw}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Every individual has an equal chance --- and so does every possible group
-      of $n$ individuals.
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    Riverbend's 900 students, numbered 001--900:\\[6pt]
-    {\ttfamily\large 7 1 4 \quad 0 2 8 \quad 9 5 1 \quad 3 6 6}\\[8pt]
+  \ceruleanheader{Simple random --- and the systematic shortcut}
+  \sectionlabel{notes section 1 $\cdot$ number the frame, then let chance draw}
+  \vspace{2pt}
+  \begin{block}{Simple random sample: Riverbend's 900 students, numbered 001--900}
+    {\ttfamily\large 7 1 4 \quad 0 2 8 \quad 9 5 1 \quad 3 6 6}\\[4pt]
     student 714 \quad$\cdot$\quad student 28 \quad$\cdot$\quad
-    {\color{goldacc}\bfseries 951 --- skip, out of range} \quad$\cdot$\quad
-    student 366
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \small Skip anything out of range, and anything you have already used.
-  \end{center}
+    \redink{951 --- out of range, skip it} \quad$\cdot$\quad student 366\\[2pt]
+    {\small Three digits at a time because $900$ has three. Skip anything out of range or
+    already used --- \emph{skip}, not stop.}
+  \end{block}
+  \vspace{4pt}
+  \begin{block}{Systematic sample: the list is already in order}
+    $k = N \div n = 900 \div 60 = \mathbf{15}$. Random start between 1 and 15 --- it lands on
+    \textbf{7}. Take 7, 22, 37, 52, \dots\ (the warm-up, with its name).\\[2pt]
+    {\small Only the \textbf{start} is random. Fine, as long as the list's order has nothing to
+    do with the interval.}
+  \end{block}
 \end{frame}
 
-% ── STRATIFIED ───────────────────────────────────────────────────────────────
+% ── 2a. STRATIFIED ───────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Stratified sample}
-  \sectionlabel{some from every group}
-
-  \vspace{0.2cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{@{} l c c @{}}
-    \hline
-    \textbf{Grade} & \textbf{Students} & \textbf{Survey $1/15$ of each} \\
-    \hline
-    9th  & 270 & 18 \\
-    10th & 240 & 16 \\
-    11th & 210 & 14 \\
-    12th & 180 & 12 \\
-    \hline
-    \textbf{Total} & \textbf{900} & \textbf{60} \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Strata are alike inside and different from each
-    other.}\\[6pt]
-    \small Most seniors drive. Stratifying \emph{guarantees} they are heard.
-  \end{center}
-\end{frame}
-
-% ── SYSTEMATIC ───────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Systematic sample}
-  \sectionlabel{a random start, then every $k$th}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.8\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{7pt}
-        \item Put the population in a list of $N$.
-        \item Interval: $k = N \div n = 900 \div 60 = \mathbf{15}$.
-        \item Random start between 1 and 15 --- it lands on \textbf{7}.
-        \item Take 7, 22, 37, 52, \dots
+  \ceruleanheader{Stratified: some from every group}
+  \sectionlabel{notes section 2 $\cdot$ strata are alike inside, different between}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+        \small
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+        \textbf{Grade} & \textbf{Students} & \textbf{$1/15$ of each} \\
+        \hline
+        9th  & 270 & 18 \\
+        10th & 240 & 16 \\
+        11th & 210 & 14 \\
+        12th & 180 & 12 \\
+        \hline
+        \textbf{Total} & \textbf{900} & \textbf{60} \\
+        \hline
+        \end{tabular}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Seniors drive. Grade is a natural set of \textbf{strata}.
+        \item $60/900 = 1/15$, so take $1/15$ of \emph{every} grade --- the warm-up's 18 was
+              this row.
+        \item Stratifying \redink{guarantees} each grade is heard in proportion. A fair SRS only
+              makes it \emph{likely}.
       \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Only the start is random. After that, the list
-    decides.}
-  \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% ── CLUSTER ──────────────────────────────────────────────────────────────────
+% ── 2b. THE CRUX ─────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Cluster sample}
-  \sectionlabel{everyone from a few groups}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Riverbend's 900 students sit in \textbf{36 homerooms of 25}. Draw 3
-      homeroom numbers at random and survey \textbf{every} student in them.
-      \\[6pt]
-      $3 \times 25 = 75$ students --- and you never needed a list of students,
-      only a list of homerooms.
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \small Cheapest of the four. Also the riskiest: if the clusters really differ
-    from each other, three of them can miss the population badly.
-  \end{center}
+  \ceruleanheader{Cluster: everyone from a few groups --- and Maya's draw}
+  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Cluster sample: draw a \textbf{few whole groups} at random, survey \textbf{everyone}
+          in them. $30$ homerooms of $30$; Maya drew rooms $4$ and $7$: $2 \times 30 = 60$.
+    \item The fact Maya did not check: \textbf{homerooms 1--9 are 9th grade}, 10--17 are 10th,
+          18--24 are 11th, 25--30 are 12th.
+    \item Rooms 4 and 7: \redink{60 ninth graders. Zero seniors.} Did chance choose?
+          \textbf{Yes.} Did anyone count wrong? \textbf{No.} \textbf{Vote again.}
+  \end{itemize}
+  \begin{block}{``Chance chose'' is not enough --- the technique has to match the groups}
+    A cluster sample works only when each cluster is a \textbf{small mix of the whole}. A
+    Riverbend homeroom is \textbf{alike inside} --- it is really a \textbf{stratum} --- and
+    drawing a few whole strata can miss a whole grade (about one draw in four lands both rooms
+    in one grade). Alike inside $\Rightarrow$ \redink{some from every group}.
+  \end{block}
 \end{frame}
 
-% ── STRATIFIED VS CLUSTER ────────────────────────────────────────────────────
+% ── 2c. THE CONTRAST ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{The two everybody mixes up}
-  \sectionlabel[goldacc]{stratified vs.\ cluster}
-
+  \sectionlabel{notes section 2 $\cdot$ stratified vs.\ cluster}
   \vspace{0.2cm}
   \begin{center}
     \small
@@ -193,42 +216,96 @@
     \hline
      & \textbf{Stratified} & \textbf{Cluster} \\
     \hline
-    The groups are   & alike inside, different from each other & each a small mix of the whole \\
-    You use          & \textbf{all} of the groups & \textbf{a few} of the groups \\
+    The groups are     & alike inside, different from each other & each a small mix of the whole \\
+    You use            & \textbf{all} of the groups & \textbf{a few} of the groups \\
     From each you take & a random sample & \textbf{everyone} \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.7cm}
+  \vspace{0.6cm}
   \begin{center}
     {\color{cerulean}\bfseries Stratified is some from every group.\\[4pt]
-     Cluster is everyone from a few groups.}
+     Cluster is everyone from a few groups.}\\[8pt]
+    {\small\color{slate} Do not decide from the group names. Decide from \emph{how the groups
+    are built}.}
   \end{center}
+\end{frame}
+
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Guided Practice: Cedar Ridge Apartments}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  $600$ households in $30$ buildings of $20$; a parking survey of $60$. Buildings 1--6 are
+  studios ($120$), 7--20 one-bedrooms ($280$), 21--30 two-bedrooms ($200$). Two-bedroom
+  households own the most cars.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[(a)] Five plans --- name the technique in each.
+    \item[(b)] The stratified plan: $1/10$ of each unit type. Show the one-bedroom row.
+    \item[(c)] The hat gives buildings 2, 5, and 6. Who is in the sample --- and is a building a
+          mix of the whole, or a stratum?
+    \item[(d)] Which plan should management run, \emph{because the groups are}\,\ldots?
+    \item[(e)] They have a list of buildings, never of residents. Which techniques survive?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If you defended the cluster draw in (c) with ``but it was random,'' you are still at the hook vote.
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief: chance chose --- and it still missed}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Maya's rooms 4 and 7 back on the board. Say the sentence: \emph{chance chose, nobody
+          counted wrong, and not one senior was asked --- because a homeroom is a stratum.}
+    \item The third-period class. Who could never have been picked? Then what kind of sample is it?
+    \item Cedar Ridge (d): the reason, not the word --- \emph{because the groups are}\,\ldots
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Bayside Middle School: $750$ students in three grades, homerooms grouped by grade, $30$ to
+    survey. \textbf{Plan 1:} draw $2$ of the $30$ homerooms and ask everyone in them.
+    \textbf{Plan 2:} a random $10$ from each grade. \textbf{Name each technique. Which one
+    \emph{guarantees} all three grades are heard --- and why doesn't the other, even though it
+    is random?}
+  \end{block}
+\end{frame}
+
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Harbor Point Community Pool, done properly} --- the board threw out the
+          Tuesday-evening study; you plan $100$ of $1{,}500$.
+    \item Run all four plans: generator digits, a stratified allocation, an interval down the
+          list, four swim sessions.
+    \item Two plans both ``use groups'' --- name which is which, then explain why a random draw
+          of lap-swim hours can still miss.
+    \item The board's requirement: \emph{seniors must be heard}. Choose the plan and say why.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 5, and 6}. Item 5 is the one I am reading over your shoulder ---
+    if your reason is ``the draw was unlucky,'' flag me before you leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item In a probability sample, \textbf{chance} chooses --- not you, and
-              not whoever happens to be standing there.
-        \item \textbf{Simple random}: number the frame and draw.
-        \item \textbf{Stratified}: some from every group, in proportion.
-        \item \textbf{Systematic}: random start, then every $k$th,
-              $k = N \div n$.
-        \item \textbf{Cluster}: everyone from a few randomly chosen groups.
-        \item The best technique is the one the \textbf{context} allows --- and
-              you have to say why.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large In a probability sample, chance chooses. But chance
+    choosing is not enough --- the technique has to match how the groups are built. Alike
+    inside: some from every group. A mix of the whole: everyone from a few.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.4 --- you can choose a sample perfectly and still
+    get a misleading answer. Who is missing from the frame, who refuses, and how the question
+    is worded: \emph{bias}.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

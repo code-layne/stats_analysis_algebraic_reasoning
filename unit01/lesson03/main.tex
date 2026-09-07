@@ -1,8 +1,15 @@
-%! Choosing a Sample — Unit 1, Lesson 1.3 — Lesson Plan
+%! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Lesson Plan
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / spoken debrief / close and START
+% THE HOMEWORK). The guided notes carry the release: I do (two sections) -> we do (Guided
+% Practice). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the homework is the individual
+% practice, and the period ends with students starting it. Teacher-facing. Breakable boxes are
+% `skillbox` with a \boxguard ahead; the two tabularx boxes are `fixedskillbox` (never splits).
+% No group activity, no tier boxes, no exit ticket.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
@@ -16,418 +23,425 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe and carry out the four
-    probability sampling techniques --- simple random, stratified, systematic,
-    and cluster --- computing a stratified allocation and a systematic interval,
-    distinguishing a stratum from a cluster, and choosing the technique a given
-    context calls for with a reason that names what the context allows.
+    \textbf{Primary Objective:} Students will name the sampling frame and say whether chance
+    or convenience chose a sample; carry out a simple random sample from generator digits and
+    a systematic sample from a random start; compute a stratified allocation in proportion to
+    the strata and count what a cluster sample reaches; tell a stratum from a cluster; and
+    choose the technique a context calls for with a reason that names \emph{how the groups are
+    built}.
+    \\[2pt]
+    \textbf{Standards:} PS.DC.2a, PS.DC.2b; AFDA.DA.2b \quad$\cdot$\quad PS.DC.1d carried
+    forward in the population/sample items \quad$\cdot$\quad previews PS.DC.2c and
+    AFDA.DA.2e--g (Lesson 1.4)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity. The notes name the vocabulary as they teach
+    it and deliver the instruction in two sections; the Guided Practice is worked together with
+    students holding the pen; \textbf{the homework is the individual practice}, and students
+    start it in class while you circulate. The whole-class debrief is \emph{spoken} --- there is
+    no practice set at the end of the notes and no exit ticket.
+    \\[2pt]
+    \textbf{Note on the homeroom map:} the crux depends on Riverbend's homerooms being grouped
+    by grade ($1$--$9$ ninth, $10$--$17$ tenth, $18$--$24$ eleventh, $25$--$30$ twelfth). Do
+    not reveal that until the second half of section~2 --- the hook and the first half of
+    section~2 run on the hat draw alone.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 \boxguard
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-    \textbf{Skills for this lesson}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item Identify the \textbf{sampling frame} and say whether chance or
-            convenience chose a sample. \hfill \textit{PS.DC.2a}
-      \item Describe and execute a \textbf{simple random sample} from numbered
-            digits, skipping out-of-range and repeat values.
-            \hfill \textit{PS.DC.2a; AFDA.DA.2b}
-      \item Compute a \textbf{stratified} allocation proportional to the strata
-            sizes. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
-      \item Compute a \textbf{systematic} interval $k = N \div n$ and list the
-            selections from a random start. \hfill \textit{PS.DC.2a}
-      \item Describe a \textbf{cluster} sample and count the individuals it
-            reaches. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
-      \item \textbf{Choose} the best technique for a context and justify it from
-            what the context allows. \hfill \textit{PS.DC.2b; AFDA.DA.2b}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item \emph{The method is the study's weakest link.} Lesson 1.2 said a
-            statistic estimates a parameter; whether it estimates it \emph{well}
-            is decided here, before any data exist.
-      \item In a probability sample, \textbf{chance} does the choosing. That is
-            the single line separating all four techniques from a convenience
-            sample.
-      \item Nobody left off the \textbf{frame} can ever be sampled, however good
-            the method is. The Tuesday-evening frame was one evening's arrivals.
-      \item \textbf{Strata are alike inside; clusters are supposed to be a small
-            mix of the whole.} That one sentence is the whole stratified/cluster
-            distinction, and everything else follows from it.
-      \item ``Best'' is not a property of a technique --- it is a property of a
-            technique \emph{in a context}. What list exists, and which subgroups
-            differ, decide it.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can name the \textbf{sampling frame} and say whether \textbf{chance} or
+        \textbf{convenience} chose a sample, by asking who could never have been picked.
+        \hfill \textit{PS.DC.2a}
+  \item I can carry out a \textbf{simple random sample} from generator digits and a
+        \textbf{systematic sample} with $k = N \div n$. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
+  \item I can compute a \textbf{stratified} allocation in proportion and count what a
+        \textbf{cluster sample} reaches. \hfill \textit{PS.DC.2a; AFDA.DA.2b}
+  \item I can tell a \textbf{stratum} from a \textbf{cluster} and choose --- with a reason ---
+        the technique a context calls for. \hfill \textit{PS.DC.2b; AFDA.DA.2b}
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item \emph{The method is decided before any data exist}, and it decides what the statistic
+        is worth. Lesson 1.2 said a statistic estimates a parameter; whether it estimates it
+        \emph{well} starts here.
+  \item \textbf{Target misconception:} that ``chance chose'' settles it --- that a random draw
+        of groups is as good as a random draw of individuals, so stratified and cluster are
+        interchangeable ways of ``using the groups.'' They are not: a cluster sample works only
+        when each cluster is a \emph{small mix of the whole}. Maya's two random homerooms are
+        $60$ ninth graders and no seniors, because a homeroom is alike inside --- a stratum.
+        \emph{Alike inside: some from every group. A mix of the whole: everyone from a few.}
+  \item \textbf{Second misconception:} that \emph{random} means \emph{unplanned}. The teacher
+        who surveys her own third period picked no favorites, yet a fourth-period student could
+        never have been chosen --- convenience, however fair it felt.
+  \item Nobody left off the \textbf{frame} can ever be sampled, however good the method.
+  \item ``Best'' is not a property of a technique; it is a property of a technique \emph{in a
+        context} --- what list exists, and how the groups are built (PS.DC.2b).
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
 \boxguard[24]
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \small
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
-Sampling frame & The list of individuals a study can actually choose from.
-       Anyone off the frame cannot be sampled. \\
-Probability sample & A sample in which chance does the choosing and every
-       individual on the frame has a known chance of selection. \\
-Simple random sample & Every individual --- and every group of $n$ individuals
-       --- has an equal chance of being selected. \\
-Stratified sample & The population is split into \emph{strata} whose members are
-       alike; a random sample is drawn from \emph{every} stratum, in proportion. \\
-Systematic sample & From an ordered list, take every $k$th individual after a
-       random start, where $k = N \div n$. \\
-Cluster sample & The population is split into \emph{clusters}; a few whole
-       clusters are drawn at random and everyone in them is measured. \\
-Convenience sample & A sample of whoever is easiest to reach --- the researcher,
-       not chance, does the choosing. \\
-Stratum / cluster & A stratum is alike \emph{inside} and differs from other
-       strata; a cluster is meant to be a small mix of the whole population. \\
+Sampling frame & The list of individuals a study can actually choose from. Anyone off the
+       frame cannot be sampled. \\
+Probability sample & Chance does the choosing; every individual on the frame has a known
+       chance of selection. All four techniques today are probability samples. \\
+Convenience sample & Whoever is easiest to reach --- the researcher or the schedule, not
+       chance, chose. Test: \emph{who could never have been picked?} \\
+Simple random sample & Every individual --- and every group of $n$ individuals --- has an
+       equal chance. Number the frame, draw, skip out-of-range and repeat values. \\
+Systematic sample & From an ordered list, every $k$th individual after a random start, where
+       $k = N \div n$. Only the start is random. \\
+Stratified sample & The population is split into \emph{strata} whose members are alike
+       inside; a random sample is drawn from \emph{every} stratum, in proportion. \\
+Cluster sample & The population is split into \emph{clusters}, each meant to be a small mix
+       of the whole; a few whole clusters are drawn at random and everyone in them is
+       measured. \\
+Stratum vs.\ cluster & A stratum is alike \emph{inside} and differs from other strata; a
+       cluster is a small mix of the whole. Which technique you may use follows from which
+       kind of group you have. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review. It rehearses the three
-            computations today's four techniques run on:
-            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
-              \item Writing a part of a whole as a percent.
-              \item Taking that same percent of a smaller total --- the
-                    stratified allocation, without the name.
-              \item Dividing $N$ by $n$ to get an interval, then counting on by
-                    it --- the systematic interval, without the name.
-            \end{itemize}
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-            \small
-            All three items sit on Riverbend's $900$ students, the same context
-            the notes use, so the arithmetic is already done when the vocabulary
-            arrives. Item 3(b) is the systematic sample in miniature: start at
-            the $7$th name, count by $15$. Students who get $22$ and $37$ here
-            will not need section 4 explained twice.
-        \end{minipage}
-    \end{tabularx}
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 35 / 10 / 10 — the I do is ~20 of the 35 and the Guided
+% Practice ~15; the debrief is spoken; the homework start is the second formative read.
+\begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & Riverbend's $900$: a percent, that percent of $60$, an interval down a list ---
+  silent & Debrief item~3 aloud; write ``$900 \div 60 = 15$; $7$, $22$, $37$'' on the board
+  and leave it up --- section~1 names it \\
+Guided Notes \& Practice & 35 & Fill the vocabulary box and notes 1--2 as each term is named;
+  then \emph{Cedar Ridge Apartments} together, pen in their hand & \textbf{I do} notes 1--2
+  (20) $\to$ \textbf{we do} the Guided Practice box (15) \\
+Debrief & 10 & Pens down, papers up --- answer aloud, nothing to fill in & Maya's rooms $4$
+  and $7$ back on the board; the ``it was random, so it's fine'' reflex, then the
+  ``random means unplanned'' reflex; the Bayside cold check \\
+Close \& Assign & 10 & \textbf{Start the homework in class}, alone and silent & Announce the
+  homework and its form (packet), circulate for the second formative read, preview
+  Lesson~1.4 \\
+\end{tabularx}
 \end{fixedskillbox}
 
-\boxguard
-\begin{skillbox}[Hook]{frost}
-    Put last night's homework sentence back on the board: \textit{``$36\%$ of
-    Harbor Point's members mainly swim laps''} --- and under it, \textbf{75
-    members, Tuesday evening}. \textbf{Ask: who at that pool had no chance of
-    being asked?} Collect names until somebody says \emph{morning swimmers}, and
-    then keep going --- weekend families, anyone who works evenings, seniors who
-    swim at $10$~a.m. Write them in a column headed \textbf{never had a chance}.
-    That column is the lesson: a sample is not just a size, it is a
-    \emph{procedure}, and this one's procedure quietly deleted half the
-    membership before a single question was asked. Then ask the turn:
-    \textbf{whose fault is it --- the staff member's, or the schedule's?} The
-    answer students need is that the \emph{evening} chose the sample. Today is
-    about handing that job to chance instead.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Lesson]{frost}
-\begin{multicols}{2}
-\textbf{1. Chance, or convenience.} Frame first, then the two ways to choose.
-The four-row table is fast; the only row that argues is the teacher surveying her
-own third period, which many students read as random because she did not pick
-favorites. Press: \emph{could a fourth-period student have been chosen?} No.
-Close with the line that organizes the whole lesson --- all four techniques are
-probability samples, and they differ only in \emph{what chance gets to choose
-from}.
-
-\textbf{2. Simple random sample.} Run the digit strip live. Read
-\texttt{714 028 951 366} across the board and stop at $951$: \textbf{ask what to
-do with it} before telling them. The skip is the whole skill. Then the
-three-digit question --- why groups of three? --- which students answer
-correctly and cannot always explain. Name the price of an SRS out loud: you need
-a complete list, and your $60$ students end up scattered across the building.
-
-\textbf{3. Stratified.} The warm-up already computed $18$; start there and ask
-what they were doing without knowing it. Run the $1/15$ table --- the arithmetic
-is one division per row and should take three minutes. Spend the time instead on
-\emph{why}: seniors drive, so seniors do not care about a late bus. Stratifying
-\textbf{guarantees} the grades are heard; an SRS only makes it likely.
-
-\textbf{4. Systematic.} $k = 900 \div 60 = 15$, random start $7$, then count on.
-Ask the sharp question: \textbf{what is actually random here?} Only the start.
-Then plant the trap the activity pays off --- a list whose order lines up with
-the interval.
-
-\textbf{5. Cluster --- and the pivot.} Homerooms. Draw three, survey all $75$.
-Then the contrast table, which is the most important block in the notes: some
-from every group versus everyone from a few groups. Make the class say the
-one-liner out loud before they write it. Close by naming cluster as the cheapest
-and riskiest of the four --- it is the only one whose failure mode students meet
-again in the activity.
-
-\textbf{Guided practice.} Three contexts, three techniques, and a written reason
-for each. This is PS.DC.2b and it is the part that will not be finished; assign
-the pool row for homework if time runs out.
-\end{multicols}
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Explicit Instruction: Choosing a Technique for a Context]{frost}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Steps --- give these verbatim}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item \textbf{What list exists?} A list of individuals, a list of groups, or
-        no list at all?
-  \item \textbf{Is there a subgroup that must be heard?} If subgroups differ on
-        the variable of interest, that points to \textbf{stratified}.
-  \item \textbf{Is the population spread out, or already gathered in groups?}
-        That points to \textbf{cluster}.
-  \item \textbf{Is the population already in order --- a line, a list, a
-        conveyor?} That points to \textbf{systematic}.
-  \item \textbf{None of the above?} Take the \textbf{simple random sample}. It
-        is the default, not the fallback.
-  \item Write the reason as \emph{``\dots because the context gives me
-        \underline{\hspace{1.4cm}}.''} A technique named with no reason is not
-        an answer.
-\end{enumerate}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $270$ of $900$ as a percent. \textbf{Spirals} to Lesson 1.1's relative
+            frequency; it is the share the strata table in section~2 preserves.
+      \item \textbf{2.} $30\%$ of $60$. \textbf{Seeds:} the stratified allocation with the
+            name removed --- section~2 opens on this $18$ and asks what they were doing.
+      \item \textbf{3.} $900 \div 60 = 15$, start $7$, then $22$ and $37$. \textbf{Seeds:} the
+            systematic sample with the name removed --- the second half of section~1 attaches
+            the name to arithmetic already done.
+    \end{itemize}
 \end{minipage}
 &
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Worked example --- ``A county wants opinions from $1{,}200$ households
-over $400$ square miles. There is no list of residents, only a map of blocks.''}
-\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-  \item[1.] What list exists? Only a list of \emph{blocks} --- groups, not
-        individuals.
-  \item[2.] Any subgroup that must be heard? None is named, so stratified is not
-        forced.
-  \item[3.] Spread out over $400$ square miles and already gathered into blocks
-        --- that is the cluster signal.
-  \item[4.] Not in any order, so systematic does not apply.
-  \item[5.] An SRS is impossible here: you cannot number households you have no
-        list of.
-  \item[6.] \textbf{Cluster}, \emph{because the context gives me a list of
-        groups and no list of individuals.}
-\end{itemize}
-\textit{Contrast: give the county a complete resident roll and the same question
-becomes an SRS --- the context changed, so the answer changed.}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and write $900 \div 60 = 15$; $7$, $22$, $37$ on the
+            board. Leave it up all period; section~1 hangs \emph{systematic sample} on that line.
+      \item Item~3(b) is the tell. Students who write $8$ and $9$ read ``next'' as ``the next
+            name'' --- fix that misread at the board in ten seconds before the notes begin.
+      \item Say that all three are Algebra~1 arithmetic and are not being retested. \textbf{Do
+            not name any technique here} --- the warm-up is deliberately wordless about them.
+    \end{itemize}
 \end{minipage}
 \end{tabularx}
+\end{fixedskillbox}
+
+\boxguard
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``The council needs $60$ of Riverbend's $900$ students. Maya puts the $30$ homeroom
+numbers in a hat, draws two --- rooms $4$ and $7$ --- and surveys all $30$ students in each.
+Pure chance.''} \textbf{Ask: is that as trustworthy as drawing $60$ names out of the hat?}
+Students circle \emph{yes}, \emph{no}, or \emph{it depends} and write one line of reason in the
+hook box \emph{before} anyone speaks; then take the hand vote and write the split on the
+board. Most rooms vote \emph{yes} --- ``it was random.'' \textbf{Do not settle it, and do not
+mention that homerooms are grouped by grade.} Say only that the answer is the last thing in
+section~2 and that they will vote again then. The vote is what makes the crux land: students
+have to have committed to \emph{chance chose, so it is fine} before the notes take it away.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Watch for ``random'' meaning ``unplanned.''} Students call the
-        cafeteria-door sample random because nobody was chosen on purpose. Ask
-        every time: \emph{who could not possibly have been picked?} If that list
-        is non-empty, chance did not choose.
-  \item \textbf{Watch for stratified and cluster swapping.} This is the error of
-        the lesson. Diagnostic question: \emph{how many of the groups did you
-        use?} All of them $\Rightarrow$ stratified. A few $\Rightarrow$ cluster.
-        Do not accept the group names as evidence.
-  \item \textbf{Watch for the interval computed as $n \div N$.} A student who
-        writes $60 \div 900$ gets $0.0\overline{6}$ and moves on. Catch it by
-        asking what the units of $k$ are --- names, not fractions.
-  \item \textbf{Watch for ``skip it'' meaning ``stop.''} On the digit strip,
-        some students discard $951$ and abandon the row. The generator keeps
-        running; only that number is discarded.
-  \item \textbf{Watch for a technique named with no reason} on the practice box
-        and on activity Tier E. Half credit at most --- PS.DC.2b is the
-        justification, not the label.
-  \item \textbf{Cold-call prompts:} ``Who chose that sample?'' ``What list do
-        they have?'' ``How many of the groups did you use?'' ``Who could never
-        have been picked?''
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (35 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+\begin{multicols}{2}
+\textbf{I do (about 20 min).} Two sections, each in two moves; students fill the blanks as each
+idea is named, and the vocabulary box on page~1 is filled \emph{as you go}, never in advance.
+\textbf{Every fill-in cluster opens with a word bank}; the work is choosing and justifying,
+not recalling.
+
+\emph{Section 1} opens on the frame and the two ways to choose, then the four-row \emph{who
+chose it?} table. \textbf{Take the third-period row last and take a hand count before anyone
+writes}: half the room calls it random because the teacher picked no favorites. Then ask
+\emph{could a fourth-period student have been chosen?} and let the red callout close it ---
+\emph{random} does not mean \emph{unplanned}. Five minutes. Its second half is the two list
+techniques: run the digit strip live and \textbf{stop at $951$} --- vote on what to do with it
+before saying anything; the skip is the only non-obvious move in an SRS. Then the systematic
+paragraph, which is the warm-up with its name: $k = 15$, start $7$, and \emph{what is actually
+random here?} Only the start. Five minutes.
+
+\textbf{Section 2 is the lesson.} Its first half is stratified: the warm-up already computed
+$18$ --- start there and ask what they were doing. Fill the $1/15$ table (one division per row),
+work the 10th-grade block, and spend the saved minutes on the word \emph{guarantees}. Four
+minutes. Its second half, \emph{Cluster Sample --- and Maya's Homeroom Draw}, is the crux.
+Define cluster, work $2 \times 30 = 60$, and \textbf{only then reveal the homeroom map}. Fill
+the four short blanks with the room --- both 9th-grade rooms, zero seniors, chance chose, nobody
+counted wrong --- and \textbf{re-take the hook vote} before saying a word. Then land the blue
+callout: a homeroom is alike inside, so it is a stratum; alike inside means \emph{some from
+every group}. Close with the contrast table, and make the class say the one-liner aloud before
+they write it. Six minutes.
+
+\columnbreak
+\textbf{We do (about 15 min).} The Guided Practice box, \emph{Cedar Ridge Apartments}, alone on
+page~4 --- the same moves the homework will ask alone, on an apartment complex instead of a
+school. Read the building layout aloud when you open it: buildings $1$--$6$ studios, $7$--$20$
+one-bedrooms, $21$--$30$ two-bedrooms --- part (c) does not work if students skim past it.
+\textbf{Students hold the pen; you hold the questions.} Part (a) goes on them cold, one row at a
+time. Part (b) is warm-up arithmetic. \textbf{Part (c) is the crux transferred}: the hat gives
+buildings $2$, $5$, and $6$. Take a hand count on \emph{is this sample fine?} before anyone
+writes, and make both sides defend it. Part (d) is PS.DC.2b --- the reason, not the word. Part
+(e) can be said aloud if time is short.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Part (a):} ``How many of the groups did you use --- all of them, or a few?''
+        The group names are not evidence.
+  \item \textbf{Part (b):} ``You wrote $12$ for the studios. Twelve out of how many?''
+  \item \textbf{Part (c):} ``Chance chose the buildings. So what went wrong?'' A student who
+        says \emph{bad luck} has not left the hook vote; the answer is that a building is not
+        a mix of the complex.
+  \item \textbf{Part (d):} ``Finish the sentence --- \emph{because the groups are}\,\ldots''
 \end{itemize}
+While circulating, pick the papers to put up in the debrief --- one part (c) that named the
+building a stratum, and one that said \emph{unlucky draw}. \textbf{Your formative read comes
+twice}: here, and again in the last ten minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\small
-\begin{multicols}{3}
-\textbf{Tier R --- Remediate}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Name the population and sample size for one described study.
-  \item Match five plans to their techniques, including one convenience plan.
-  \item Compute $k = 600 \div 60$ and list the next three picks; count a cluster
-        sample as $3 \times 20$.
-\end{itemize}
-
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (10 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Put Maya's rooms $4$ and $7$ back up} and make a student say the sentence:
+        chance chose, nobody counted wrong, and not one senior was asked --- because a homeroom
+        is a stratum. Then state it as PS.DC.2b: the technique has to match the groups.
+  \item Put up the two Guided Practice part (c)s you picked. The difference between them is
+        not arithmetic --- it is whether the student still believes \emph{random} settles it.
+  \item Circle the third-period row and take the \emph{random-means-unplanned} reflex:
+        \emph{``Who could never have been picked? Then who chose?''}
+  \item Take part (d) last, and insist on the form: \emph{stratified, because the groups are
+        alike inside and differ on the very thing being asked}.
+\end{enumerate}
 \columnbreak
-\textbf{Tier A --- Approaching Proficiency}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Complete a proportional stratified allocation to $60$ of $600$.
-  \item Explain why unit type is a good choice of strata for a parking question.
-  \item The periodicity trap: interval $20$ on a list of $20$-unit buildings
-        selects every corner unit.
-\end{itemize}
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Bayside Middle School:
+$750$ students in three grades, homerooms grouped by grade, $30$ to survey. Plan~1 draws $2$
+of the $30$ homerooms and asks everyone in them. Plan~2 takes a random $10$ from each grade.
+Name each technique. Which one guarantees all three grades are heard --- and why doesn't the
+other, even though it is random?''} Hands down, thirty seconds of think time, then cold-call
+three students. Correct answer: Plan~1 is \textbf{cluster}, Plan~2 is \textbf{stratified};
+only Plan~2 guarantees it, because chance can land both of Plan~1's rooms in one grade --- a
+homeroom is alike inside, so it is a stratum, not a mix of the school. \emph{This replaces the
+exit ticket.}
 
-\columnbreak
-\textbf{Tier E --- Extension}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Decide which techniques survive when only a list of buildings exists.
-  \item Explain why Cedar Ridge's single-type buildings break the cluster
-        assumption.
-  \item Fill a buys/costs table for all four techniques at the same $n$.
-\end{itemize}
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} named both and said
+\emph{alike inside}; \textbf{(b)} named both and said Plan~1 ``might get unlucky''; \textbf{(c)}
+said Plan~1 is fine because it is random, or swapped the names. Pile (b) is the teachable one
+--- it is the right instinct with the wrong lever (the procedure, not luck). \textbf{If pile
+(c) runs past a third of the room, open Lesson~1.4 by re-running section~2's second half}, and
+say so plainly.
+
+\textbf{If the debrief runs short}, cut items 3 and~4 --- item~1 is the one that cannot be
+cut. \textbf{Do not let the debrief eat the last ten minutes} --- the homework start is not
+optional padding, it is your second formative read.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
-$750$ students in three grades, surveying $30$.
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Name the technique in three plans --- one cluster, one stratified, one
-        convenience.
-  \item Compute $k = 750 \div 30 = 25$ and list the next two selections from a
-        random start of $6$ ($31$ and $56$).
-  \item \textbf{Conceptual / justification check:} which technique
-        \emph{guarantees} all three grades appear in proportion (stratified),
-        and why does a perfectly fair SRS not guarantee it? Correct answer:
-        fairness is a statement about each student's \emph{chance}, not about
-        how the sample turns out --- a fair draw can still land mostly on one
-        grade. Grade this one first.
-\end{enumerate}
-\textbf{Using the results:} sort into three piles --- (a) said the SRS is fair
-but makes no promise about the outcome, (b) said an SRS \emph{does} guarantee
-proportion because it is fair, (c) answered ``stratified'' to both parts without
-addressing chance. Pile (b) is the productive one and will be the largest; it is
-the same confusion between a procedure and its outcome that Unit 7 formalizes,
-so name it rather than marking it wrong.
+\begin{skillbox}[Homework --- scored, started in class, due after two study halls]{goldbox}
+Six exercises replanning the \textbf{Harbor Point Community Pool} study ($1{,}500$ members,
+$100$ to survey; the board threw out 1.2's Tuesday-evening sample): \textbf{1} the
+Tuesday-evening study --- population, sample, \emph{convenience}, and who had no chance
+(\emph{the spiral to Lesson 1.2}); \textbf{2} Plan A, the generator table, with one
+out-of-range value and one repeat --- two different reasons to discard; \textbf{3} Plan B, the
+stratified allocation at $1/15$; \textbf{4} Plan C, $k = 15$ from a start of $9$; \textbf{5}
+Plans B and D named side by side --- the \textbf{contrast pair} --- then the four sessions
+drawn are three lap-swim hours: \emph{the crux head-on}, a random draw of clusters that are
+alike inside; \textbf{6} the board's requirement that seniors be heard --- choose the plan and
+justify it (PS.DC.2b). Capped at \textbf{two pages} (user decision 2026-09-06); the old
+``name the technique'' matching table and the extension are gone.
+
+\textbf{Start it in the last ten minutes of the period, in class and alone.} \textbf{Scoring:}
+12 points --- 2 per item. \textbf{Item~5 is where the misconception shows}: a student who
+explains the lap-swim draw by ``they got unlucky'' or ``the sample was too small'' has the
+wrong lever. \textbf{Item~2 carries the second check}: ``no'' in both discard rows without
+distinguishing out-of-range from repeat is half the skill.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom has random-sampling simulations, but nothing that asks a student to decide
+whether a group is a stratum or a cluster and justify a technique from it --- the items this
+lesson exists for --- so \textbf{1.3 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~1.4.} Every technique today assumed the people chosen actually
+answer, answer honestly, and read the question the same way. Next class drops all three
+assumptions: undercoverage, nonresponse, response bias, question wording --- PS.DC.2c and
+AFDA.DA.2e--g. Do not open it here.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only as
+trustworthy as the study that produced it. \textit{Standards covered:} PS.DC.2a, PS.DC.2b;
+AFDA.DA.2b (with PS.DC.1d carried forward). \textit{Spirals forward to:} bias (1.4, PS.DC.2c),
+observational studies (1.5, PS.DC.2d), randomization in experimental design (1.6,
+PS.DC.3a--b), the full-cycle project (1.8), and --- directly --- sampling distributions and
+margin of error (7.1--7.2). \textit{Reaches back to:} Lesson 1.2's population, sample, and
+sampling variability, and Algebra~1 percent and proportional reasoning.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework --- Harbor Point Community Pool, done properly.} The board
-throws out the Tuesday-evening study and the student plans the replacement:
-name what the original was, run an SRS off generator output (skipping one
-out-of-range and one repeat value), allocate a stratified sample by membership
-type, compute a systematic interval, count a cluster sample of swim sessions,
-match four outside studies to their techniques, choose a plan for a stated board
-requirement and justify it, and close with a words-only item on why a random
-cluster draw can still miss.
-
-\textbf{Extension (optional).} Students pick a population they could really
-study and plan \emph{two} samples of the same size by different techniques, then
-say which they would run and why. Collect these --- with the Lesson 1.2
-extension they are most of a proposal for the Lesson 1.8 class-survey project.
-
-\textbf{Preview of Lesson 1.4.} Every technique today assumed the people chosen
-actually answer, and answer honestly, and understood the question the same way.
-Next class drops all three assumptions: undercoverage, nonresponse, response
-bias, and question wording --- PS.DC.2c and AFDA.DA.2e--g.
-
-\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
-only as trustworthy as the study that produced it. \textit{Standards covered:}
-PS.DC.2a, PS.DC.2b; AFDA.DA.2b. \textit{Spirals forward to:} bias
-(1.4, PS.DC.2c), observational studies (1.5, PS.DC.2d), randomization in
-experimental design (1.6, PS.DC.3a--b), the full-cycle project (1.8), and ---
-directly --- sampling distributions and margin of error (7.1--7.2).
-\textit{Reaches back to:} Lesson 1.2's population/sample and sampling
-variability, and Algebra 1 proportional reasoning.
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``It was random, so it's fine''} (notes~2, GP~(c), HW~5 --- the target
+        misconception). Probe: \emph{``Chance chose the rooms. Is a homeroom a mix of the
+        school, or one grade? Then what did the draw actually sample?''}
+  \item \textbf{Stratified and cluster swapped} (notes~2 table, GP~(a), HW~5). Probe:
+        \emph{``How many of the groups did you use --- all of them, or a few?''} All
+        $\Rightarrow$ stratified. A few $\Rightarrow$ cluster. The group names are not evidence.
+  \item \textbf{``Random'' meaning ``unplanned''} (notes~1 row~3, GP~(a) mailbox row, HW~1).
+        Probe: \emph{``Who could never have been picked?''} If that list is non-empty, chance
+        did not choose.
+  \item \textbf{The interval computed as $n \div N$} (notes~1, HW~4): $60 \div 900$ gives
+        $0.0\overline{6}$ and the student moves on. Probe: \emph{``What are the units of $k$
+        --- names, or fractions?''}
+  \item \textbf{``Skip it'' meaning ``stop''} (notes~1 digit strip, HW~2). The generator keeps
+        running; only that number is discarded. HW~2 has two different discard reasons ---
+        out of range and repeat --- and both must be named.
+  \item \textbf{A technique named with no reason} (GP~(d), HW~6). PS.DC.2b is the
+        justification, not the label. Probe: \emph{``Finish the sentence: because the groups
+        are\,\ldots''}
+\end{itemize}
+Cold-call prompts: \emph{``Who chose that sample?''} \quad \emph{``What list do they have?''}
+\quad \emph{``Is that group alike inside, or a mix of the whole?''}
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
+\boxguard
+\begin{skillbox}[Close \& Assign (10 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+six exercises on paper, scored out of 12, due at the start of the first class after two study
+halls --- and point out that the \emph{Keep in Mind} box on the cover is the page to flip back
+to. Circulate: \textbf{item~5 is the column that tells you whether section~2 landed}, and it is
+on page~2, so put students on 1, 5, and~6 first and let 2, 3, and~4 go home. Sort what you see
+into three piles as you walk --- said \emph{a session is alike inside, not a mix} (ready); said
+\emph{lap swimmers all answer the same} with no rule (ready, needs the language); said
+\emph{unlucky draw} or \emph{too small} (the misconception survived) --- and open Lesson~1.4 by
+re-running section~2's second half if that third pile ran past a third of the room. Then close
+on what changed: \emph{``You walked in able to divide $900$ by $60$. You walk out knowing that
+chance choosing is the price of admission, not the finish line --- the technique has to match
+how the groups are built, and a random draw of groups that are alike inside can miss a whole
+grade without anyone counting wrong.''} \textbf{Preview:} Lesson~1.4, \emph{Bias in Samples and
+Surveys} --- today every chosen student answered; next time we ask what happens when the
+frame is short, the chosen refuse, and the question leans.
+\end{skillbox}
+
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a key with no
+% counterpart in the blank. No note for the debrief or the homework start — both are fully
+% specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    Five minutes, silent, timed. All three items are Algebra 1 arithmetic and
-    should be near-universal --- say so when you assign it, because item 3 looks
-    unfamiliar and is not.
-
-    Item 3 is the one to read while collecting. It is a systematic sample with
-    the name removed: $900 \div 60 = 15$, start at $7$, next are $22$ and $37$.
-    Students who write $22$ and $37$ have already done section 4 of the notes.
-    Students who write $8$ and $9$ read ``next'' as ``the next name'' --- that is
-    the misread to fix at the board, in ten seconds, before the notes begin.
-
-    Do \emph{not} name any of the four techniques here. The warm-up is
-    deliberately wordless about them; the notes name what the class has already
-    computed.
+Five minutes, silent, timed. All three items are Algebra~1 arithmetic and should be near
+universal --- say so when you assign it, because item~3 looks unfamiliar and is not.
+\textbf{Item~3 is the one to read while collecting}: it is a systematic sample with the name
+removed --- $900 \div 60 = 15$, start at $7$, next are $22$ and $37$. Students who write $22$
+and $37$ have already done the second half of section~1; students who write $8$ and $9$ read
+``next'' as ``the next name,'' and that misread is fixed at the board in ten seconds before the
+notes begin. Item~2's $18$ is the stratified allocation without its name; section~2 opens on it.
+Write $900 \div 60 = 15$; $7$, $22$, $37$ on the board and \textbf{leave it up all period}. Do
+\emph{not} name any of the four techniques here --- the warm-up is deliberately wordless about
+them; the notes name what the class has already computed.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    Pace: section 1 in 7 minutes, section 2 in 10, section 3 in 8, section 4 in
-    7, section 5 in 12, guided practice in 8. \textbf{Section 5 is the lesson.}
-    Sections 2--4 are procedures students execute correctly on the first try;
-    the stratified/cluster distinction is the one that does not stick without
-    the contrast table and the spoken one-liner.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 20 / 15, then 10 for the debrief, then 10
+for the homework start.} Section~1 must move: five minutes on the frame and the \emph{who
+chose it?} table, five on the two list techniques. \textbf{Take the hand count on the
+third-period row before anyone writes}; if students fill the row first the trap is gone and the
+red callout becomes a definition to copy. Run the digit strip live, not read: stop at $951$ and
+vote before saying anything --- the skip is the only non-obvious move in an SRS. The systematic
+paragraph is the warm-up with its name; do not re-teach the arithmetic.
 
-    Section 2's digit strip must be run live, not read. Stop at $951$ and take a
-    vote on what to do with it before saying anything. The skip is the only
-    non-obvious move in an SRS.
+\textbf{Spend the time in section~2}, which carries the misconception. The strata table is
+one division per row --- four minutes --- and the minute that matters is the word
+\emph{guarantees}. Then slow down. Define cluster, work $2 \times 30 = 60$, and \textbf{only
+then reveal that homerooms $1$--$9$ are the 9th grade}; if the map is on the board before the
+draw, the crux collapses into a definition. Fill the four short blanks with the room ---
+9th, $0$, Yes, No --- and \textbf{re-take the hook vote before you say a word}. Let the room
+argue; the students who voted \emph{yes} will reach for \emph{bad luck}. Then land the blue
+callout: not luck --- \emph{about one draw in four} lands both rooms in one grade, because a
+homeroom is alike inside, so it is a stratum. Close the section with the contrast table and the
+spoken one-liner: \emph{stratified is some from every group; cluster is everyone from a few}.
 
-    Section 3 is arithmetically trivial and conceptually the opposite. Budget the
-    saved minutes on the word \emph{guarantees} --- stratified guarantees each
-    grade is heard, an SRS only makes it likely. That contrast returns as exit
-    ticket item 3 and is the hardest idea in the lesson.
+\textbf{Guided Practice is where the pen changes hands.} \emph{Cedar Ridge Apartments} runs the
+moves the homework will ask alone --- name the plans, allocate the strata, the cluster draw
+that samples one stratum, choose and justify --- on an apartment complex instead of a school.
+Read the building layout aloud when you open the box. Part~(c) is the crux transferred: a
+building holds one unit type, so it is a stratum wearing a cluster's clothes, and buildings
+$2$, $5$, $6$ are sixty studio households with the car owners never asked. A student who
+defends it with ``but it was random'' has not left the hook vote. If you only get through (a),
+(b), (c), and (d), that is the right trade; (e) can be said aloud.
 
-    If you are short on time, compress section 4 (the warm-up already did the
-    arithmetic) --- never section 5 or the guided practice.
-\end{teachernote}
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice.} Guided Practice is the last thing on the page; the period
+ends with students starting the homework in front of you, which is where your second formative
+read comes from. Item~5 is the one to watch. If the ``unlucky draw'' pile is more than a third
+of the room, \textbf{open Lesson~1.4 by re-running the second half of section~2}, and say so
+plainly.
 
-\begin{teachernote}[Group Activity]
-    Groups of three, 15--18 minutes, tiers assigned rather than chosen. The
-    Cedar Ridge layout in the headline box is load-bearing --- buildings $1$--$6$
-    are studios, $7$--$20$ one-bedrooms, $21$--$30$ two-bedrooms --- and Tier E
-    item 2 does not work if groups skim past it. Read it aloud when you assign.
-
-    Tier R item 2 row 4 (``every $10$th one after it'') is where groups that
-    still have systematic and simple random fused will show it. Circulate there
-    first.
-
-    Tier A item 3 is the periodicity trap and the best item on the page: with
-    $k = 20$ on a list of $20$-household buildings, a start of $1$ selects
-    household \#1 of all $30$ buildings --- every corner unit, every double
-    parking space, in a survey about parking. Groups that get it should present
-    it.
-
-    Tier E item 2 is the payoff for section 5. Cedar Ridge's buildings each hold
-    one unit type, so a building is a \emph{stratum wearing a cluster's clothes}.
-    Pull this to the whole class if two or more groups reach it --- it is worth
-    the last five minutes of the period.
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    Five minutes, notes closed, collected at the door. Item 1 should be near
-    universal; if the cluster row is widely missed, the stratified/cluster
-    contrast did not land and needs two minutes at the start of Lesson 1.4.
-
-    Item 2(a) catches the inverted interval --- a student who writes
-    $30 \div 750$ has the ratio upside down. Item 2(b) catches the student who
-    adds $1$ instead of $k$.
-
-    Grade item 3(b) first and only 3(b) if time is short. ``Stratified'' with no
-    explanation is half credit; the reason --- a fair draw can still come out
-    lopsided, because fairness is about each student's chance, not about the
-    result --- is what Lesson 1.4 and all of Unit 7 build on. Watch for
-    ``because an SRS is not fair,'' which inverts the point entirely and is worth
-    correcting in writing rather than with a mark.
+\textbf{Debrief (10 min), spoken.} Maya's rooms back on the board with a student saying
+\emph{chance chose, and it still missed, because a homeroom is a stratum}; it is the one move
+that cannot be cut. \textbf{Do not let the debrief eat the last ten minutes} --- the homework
+start is not optional padding.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    Assign all eight items; about $30$ minutes. Items 7 and 8 cannot be answered
-    by computing anything --- flag both when assigning, because students who
-    treat this as a calculation sheet will skip exactly those two.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls.} The ten minutes at the end of the period are a \emph{start}, not a completion: put
+students on 1, 5, and~6 while you can still catch a wrong start, and let 2, 3, and~4 go home.
+Item~5 is the one to read first when scoring --- the sessions were drawn \emph{at random}, so
+the answer cannot be ``they picked badly'' or ``too small''; it has to be that a swim session
+is not a small mix of the membership, so four clusters can all lean one way. Ask a student who
+reaches for size what would happen if the four sessions held $500$ people. Item~2's table has
+two different reasons for discarding a number --- $1587$ is out of range and the second $0412$
+is a repeat --- and ``no'' in both rows without distinguishing them is half the skill. Item~6 is
+PS.DC.2b: \emph{stratified} with no reason is half credit; the reason is that the senior stratum
+is sampled separately, so $25$ seniors are guaranteed a place, which no other plan promises.
+Score items 1--4 for correctness and items 5--6 for the \emph{reason}, not the verdict.
+\textbf{When you score the page, sort item~5 into three piles} --- named \emph{alike inside}
+(ready); said lap swimmers all answer the same with no rule (ready, needs the language); said
+unlucky or too small (the misconception survived). If more than a third land in the last pile,
+reopen Maya's homerooms in the Lesson~1.4 warm-up debrief rather than letting it ride.
 
-    Item 2's table has two different reasons for discarding a number: $1587$ is
-    out of range and the second $0412$ is a repeat. Students who write ``no'' in
-    both rows without distinguishing them have missed half the skill.
-
-    Item 8 is the transfer item and closes the arc the lesson opened with. The
-    sessions were drawn \emph{at random} --- so the answer cannot be ``they
-    picked badly.'' It has to be that a swim session is not a small mix of the
-    membership: lap swimmers fill lap hours, so four clusters can all lean the
-    same way and leave families and seniors out. Students who reach for
-    ``the sample was too small'' have the wrong lever; ask them what would happen
-    if the four sessions held $500$ people.
-
-    The \textbf{remindbox} hands off to Lesson 1.4 deliberately: every technique
-    here assumed the chosen individuals answer, answer honestly, and read the
-    question the same way. Do not open that here.
+\textbf{Packet is the call for 1.3.} Desmos carries sampling simulations and none of the
+stratum-or-cluster reasoning in this set; do not swap it in. The \textbf{spiralbox} hands off to
+Lesson~1.4 deliberately: every technique here assumed the chosen members answer, answer
+honestly, and read the question the same way. Do not open that here.
 \end{teachernote}
 \end{document}

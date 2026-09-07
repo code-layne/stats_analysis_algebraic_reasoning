@@ -1,311 +1,328 @@
-%! Choosing a Sample — Unit 1, Lesson 1.3 — Guided Notes
-\documentclass[10pt]{article}
+%! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Guided Notes & Practice
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THE in-class document. The notes carry the whole gradual release, closed by a SPOKEN debrief.
+% They run SHORT on purpose: the period ends with students starting the homework, which is
+% where the individual practice lives.
+%   I DO   : the vocabulary box and notes sections 1-2.                              (~20 min)
+%   WE DO  : the practicebox ("Guided Practice") — Cedar Ridge Apartments, together.  (~15 min)
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period.
+% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
+% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
+% with a \wordbank{}. No closing practice set, no extension.
+% Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: "chance
+% chose" is not enough — a cluster sample only works when each cluster is a small mix of the
+% whole, and a Riverbend homeroom is alike inside (a stratum), so Maya's two random homerooms
+% are 60 ninth graders and zero seniors (PS.DC.2a-b). The second half of section 1 carries the
+% second trap: "random" does not mean "unplanned" — the test is WHO COULD NEVER HAVE BEEN PICKED.
+%
+% THE DATA
+%   Riverbend HS: 900 students, the council surveys 60. Grades 270/240/210/180 -> at 1/15:
+%     18/16/14/12. Digit strip 7 1 4 0 2 8 9 5 1 3 6 6 -> students 714, 28, (skip 951), 366.
+%     Systematic k = 900/60 = 15, start 7 -> 7, 22, 37, 52 (the warm-up's numbers).
+%     30 homerooms of 30: homerooms 1-9 hold the 9th grade, 10-17 the 10th, 18-24 the 11th,
+%     25-30 the 12th. Maya draws homerooms 4 and 7 -> 2 x 30 = 60 students, all 9th graders.
+%     About one draw in four (200/870 = 23%) lands both rooms in a single grade.
+%   Guided Practice, Cedar Ridge Apartments: 600 households in 30 buildings of 20; buildings
+%     1-6 studios (120), 7-20 one-bedrooms (280), 21-30 two-bedrooms (200); 60 households at
+%     1/10 -> 12/28/20; a cluster draw of buildings 2, 5, 6 -> 60 studio households.
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
+% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
+% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
+% answers so the two files wrap alike.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.3}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.3}{Guided Notes \& Practice}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item say whether \textbf{chance} or \textbf{convenience} chose a sample;
-  \item describe and carry out a \textbf{simple random}, \textbf{stratified},
-        \textbf{systematic}, and \textbf{cluster} sample;
-  \item compute a stratified allocation and a systematic interval;
-  \item tell a \textbf{stratum} from a \textbf{cluster} and explain the
-        difference;
-  \item choose the best technique for a given context and \emph{justify} the
-        choice.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\termblanklong{Sampling frame}
-\termblanklong{Simple random sample (SRS)}
-\termblanklong{Stratified sample}
-\termblanklong{Systematic sample}
-\termblanklong{Cluster sample}
-\termblanklong{Convenience sample}
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Sampling frame}
+\vterm{Simple random sample (SRS)}
+\vterm{Stratified sample}
+\vterm{Systematic sample}
+\vterm{Cluster sample}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-Last night's pool study asked $75$ members who arrived on a \emph{Tuesday
-evening} --- and $36\%$ of them said they mainly swim laps. The board is about to
-reserve a lane for all $1{,}500$ members based on that number.
+The student council needs opinions from $60$ of Riverbend's $900$ students about the late bus.
+Maya puts the $30$ homeroom numbers in a hat, draws two --- homerooms $4$ and $7$ --- and
+surveys every one of the $30$ students in each room. Pure chance picked those rooms.
 
-\vspace{2pt}
-\textbf{Who at Harbor Point had no chance of being asked at all?} Name two
-kinds of members.
-\writelines{2}
+\vspace{3pt}
+\textbf{Is Maya's sample as trustworthy as drawing $60$ student names out of the hat?} Circle
+one: \quad yes \qquad no \qquad it depends \quad --- and say why you think so. We vote again
+at the end of section~2.
+\par\writelines{2}
 \end{hookbox}
 
-\boxguard[30]
-\begin{notesbox}{1. Who Chose the Sample --- Chance, or Convenience?}
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+% Page 2: section 1 (page 1 is the vocab box + hook).
+\newpage
+\begin{notesbox}{1. Who Chooses the Sample --- and How to Let Chance Do It}
 \small
-Every study you have seen so far had a sample. None of them said \emph{how} the
-sample was picked. That decision is what this lesson is about.
+Every study so far had a sample. None of them said \emph{how} it was picked. That decision is
+made before any data exist, and it decides what the statistic will be worth.
+\wordbank{chance \;\textbullet\; convenience \;\textbullet\; could not \;\textbullet\; yes \;\textbullet\; no --- skip it \;\textbullet\; student 28 \;\textbullet\; student 366 \;\textbullet\; none \;\textbullet\; three \;\textbullet\; start \;\textbullet\; 15 \;\textbullet\; 22 \;\textbullet\; 37 \;\textbullet\; 52}
+The \textbf{sampling frame} is the list of individuals a study can actually choose from --- at
+Riverbend, the office's list of all $900$ students. Once you have a frame there are two ways to
+choose. In a \textbf{probability sample}, \blank{1.6cm} does the choosing: every individual on
+the frame has a known chance of being picked. In a \blank{2.6cm} sample, the researcher takes
+whoever is easiest to reach.
 
-\vspace{2pt}
-The \textbf{sampling frame} is the list of individuals you can actually choose
-from. Once you have a frame, there are two very different ways to choose:
-
-\vspace{2pt}
-In a \textbf{probability sample}, \textbf{chance} does the choosing --- every
-individual on the frame has a known chance of being picked. In a
-\textbf{convenience sample}, the researcher simply takes whoever is easiest to
-reach.
+\vspace{3pt}
+Who chose each sample --- chance, or convenience?
+\nopagebreak
 
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X p{3.1cm} @{}}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} X p{2.9cm} @{}}
 \toprule
 \textbf{How the sample was taken} & \textbf{Who chose it?} \\
 \midrule
-A staff member asks the members who arrive Tuesday evening.
-  & \blank{2.7cm} \\
-All $900$ students are numbered, and a computer picks $60$ numbers.
-  & \blank{2.7cm} \\
-A teacher surveys her own third-period class.
-  & \blank{2.7cm} \\
-The $36$ homeroom numbers go in a hat and $3$ are drawn.
-  & \blank{2.7cm} \\
+A pool staff member asks the $75$ members who arrive on Tuesday evening. & \blank{2.5cm} \\
+All $900$ students are numbered and a computer picks $60$ numbers. & \blank{2.5cm} \\
+A teacher surveys her own third-period class. & \blank{2.5cm} \\
+The $30$ homeroom numbers go in a hat and $2$ are drawn. & \blank{2.5cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 \vspace{3pt}
-All four techniques in today's lesson are \textbf{probability samples} --- chance
-does the choosing in every one of them. What makes them different is \emph{what}
-chance gets to choose from.
-
-\vspace{2pt}
-\textit{A convenience sample is not a technique you may use and defend. It is the
-thing the other four exist to replace.}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{2. Simple Random Sample (SRS)}
-\small
-In a \textbf{simple random sample} of size $n$, every individual has an equal
-chance of being chosen --- and so does every possible group of $n$ individuals.
-
-\vspace{2pt}
-\textbf{How to take one:} number the frame $1$ to $N$; run a random number
-generator; read numbers off, \emph{skipping} any that are out of range or already
-used; stop when you have $n$ different individuals.
-
-\vspace{3pt}
-Riverbend's $900$ students are numbered $001$ through $900$. A random digit
-generator returns this run of digits:
-
 \begin{center}
-\ttfamily\large 7 1 4 0 2 8 9 5 1 3 6 6
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{Careful --- \emph{random} does not mean \emph{unplanned}.} The teacher did not pick
+favorites, but a fourth-period student \blank{1.8cm} have been chosen, so chance did not do
+the choosing. The test for every sample: \emph{who could never have been picked?} If that list
+is not empty, it is a \blank{2.6cm} sample --- and no size fixes it.}}
 \end{center}
 
-\vspace{2pt}
-Read them in groups of three, then decide each group.
+\vspace{6pt}
+\textbf{\textcolor{cerulean}{Simple Random Sample --- and the Systematic Shortcut.}}
+In a \textbf{simple random sample} of size $n$, every individual --- and every possible group
+of $n$ individuals --- has an equal chance of being chosen. \textbf{How:} number the frame $1$
+to $N$, run a random number generator, and read numbers off, \textbf{skipping} any that are out
+of range or already used, until you have $n$ different individuals.
+
+\vspace{3pt}
+Riverbend's students are numbered $001$--$900$. The generator returns
+{\ttfamily 7\,1\,4\;\;0\,2\,8\;\;9\,5\,1\;\;3\,6\,6}. Read the digits three at a time and decide each group.
+\nopagebreak
 
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.95\linewidth}{@{} c p{3.6cm} X @{}}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} c p{3.6cm} X @{}}
 \toprule
 \textbf{Digits} & \textbf{In range $001$--$900$?} & \textbf{Student chosen} \\
 \midrule
 714 & yes & student 714 \\
-028 & \blank{2.2cm} & \blank{3.6cm} \\
-951 & \blank{2.2cm} & \blank{3.6cm} \\
-366 & \blank{2.2cm} & \blank{3.6cm} \\
+028 & \blank{2.4cm} & \blank{3cm} \\
+951 & \blank{2.4cm} & \blank{3cm} \\
+366 & \blank{2.4cm} & \blank{3cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 \vspace{3pt}
-Why read the digits three at a time? Because the largest number on the frame,
-$900$, has \blank{1.6cm} digits.
-
-\vspace{2pt}
-\textit{An SRS is the fairest of the four, and the one the others are measured
-against. Its price: you need a complete list of the population, and the
-individuals it picks may be scattered anywhere.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{3. Stratified Sample --- Some From Every Group}
-\small
-Some populations split into groups whose members are \emph{alike inside} the
-group and \emph{different between} groups. Those groups are called
-\textbf{strata} (just one is a \emph{stratum}).
-
-\vspace{2pt}
-In a \textbf{stratified sample} you take a separate random sample from
-\textbf{every} stratum, sized so each stratum keeps its share of the population.
+Why read three digits at a time? Because the largest number on the frame, $900$, has
+\blank{1.3cm} digits. An SRS is the fairest of the four and the one the others are measured
+against. Its price: you need a complete list, and the $60$ it picks are scattered across the
+building.
 
 \vspace{3pt}
-The council wants $60$ of Riverbend's $900$ students, stratified by grade. The
-sample is $60/900 = 1/15$ of the school, so take $1/15$ of each grade.
+If the frame is already an ordered list, a \textbf{systematic sample} skips the $60$ separate
+draws: compute the interval $k = N \div n$, pick a random \blank{1.3cm} between $1$ and $k$,
+then take every $k$th individual. For Riverbend, $k = 900 \div 60 =$ \blank{1cm} (the
+warm-up), the start lands on $7$, and the picks are $7$, \blank{1cm}, \blank{1cm},
+\blank{1cm}, \dots\ Only the \textbf{start} is random --- after that the list decides, which is
+fine as long as the order of the list has nothing to do with the interval.
+
+\end{notesbox}
+
+% Page 3: section 2.
+\newpage
+\begin{notesbox}{2. Sampling in Groups --- Some From Every Group, or Everyone From a Few}
+\small
+Most populations come in groups: grades, homerooms, buildings. Two techniques use the groups
+--- the two everybody mixes up, because \emph{which one you may use depends on how the groups
+are built}.
+\wordbank{every \;\textbullet\; all \;\textbullet\; a few \;\textbullet\; everyone \;\textbullet\; a random sample \;\textbullet\; mix \;\textbullet\; alike \;\textbullet\; stratum \;\textbullet\; stratified \;\textbullet\; 9th \;\textbullet\; 0 \;\textbullet\; Yes \;\textbullet\; No \;\textbullet\; 16 \;\textbullet\; 14 \;\textbullet\; 12 \;\textbullet\; 60}
+Groups whose members are \textbf{alike inside} and \textbf{different from group to group} are
+called \textbf{strata} (one is a \emph{stratum}). In a \textbf{stratified sample} you take a
+separate random sample from \blank{1.3cm} stratum, sized so each keeps its share of the
+population. Seniors drive, so grade is a natural set of strata for a late-bus question. The
+council wants $60$ of $900$, so take $60/900 = 1/15$ of each grade.
+\nopagebreak
 
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
 \toprule
 \textbf{Grade} & \textbf{Students} & \textbf{Number to survey} \\
 \midrule
 9th   & 270 & $270 \div 15 = 18$ \\
-10th  & 240 & \blank{4.2cm} \\
-11th  & 210 & \blank{4.2cm} \\
-12th  & 180 & \blank{4.2cm} \\
+10th  & 240 & \blank{3.6cm} \\
+11th  & 210 & \blank{3.6cm} \\
+12th  & 180 & \blank{3.6cm} \\
 \midrule
-\textbf{Total} & \textbf{900} & \blank{4.2cm} \\
+\textbf{Total} & \textbf{900} & \blank{3.6cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
-
-\vspace{3pt}
-Show the work for the \textbf{10th grade} row:
 
 \begin{work}
   \dfrac{60}{900} &= \dfrac{1}{15} \\
   \dfrac{1}{15} \times 240 &= 16 \text{ students}
 \end{work}
 
-\vspace{2pt}
-\textbf{Why go to the trouble?} Ninth graders and twelfth graders do not feel the
-same way about a late bus --- most seniors drive. Stratifying
-\emph{guarantees} every grade is heard, in the right proportion. An SRS might, by
-bad luck, pick hardly any seniors at all.
-\end{notesbox}
+Stratifying \textbf{guarantees} every grade is heard, in proportion. A fair SRS only makes that
+\emph{likely} --- by chance it could land on very few seniors.
 
-\boxguard[26]
-\begin{notesbox}{4. Systematic Sample --- Every $k$th One Down the List}
-\small
-If the population is already in a list, you can skip the $60$ random draws and
-take every $k$th individual instead.
-
-\vspace{2pt}
-\textbf{How to take one:} put the population in a list of $N$; compute the
-interval $k = N \div n$; randomly choose a starting point between $1$ and $k$;
-then take every $k$th individual from there.
-
-\vspace{3pt}
-Riverbend's list has $N = 900$ names and the council wants $n = 60$.
+\vspace{5pt}
+\textbf{\textcolor{cerulean}{Cluster Sample --- and Maya's Homeroom Draw.}}
+When there is no list of individuals, only a list of groups, a \textbf{cluster sample} draws
+\blank{1.3cm} whole groups at random and collects data from \blank{1.7cm} in them. It is the
+cheapest of the four --- and it works only when each cluster is a small \blank{1.1cm} of the
+whole. Riverbend's $900$ students sit in $30$ homerooms of $30$; Maya drew rooms $4$ and $7$.
 
 \begin{work}
-  k &= 900 \div 60 \\
-    &= 15
+  2 \times 30 &= 60 \text{ students}
 \end{work}
 
-\vspace{2pt}
-The random start comes out at the $7$th name. Fill in the rest of the picks:
+Now the fact Maya did not check: \textbf{homerooms $1$--$9$ hold the 9th grade, $10$--$17$
+the 10th, $18$--$24$ the 11th, $25$--$30$ the 12th.} Rooms $4$ and $7$ are both
+\blank{1cm}-grade rooms, so the number of seniors in Maya's sample is \blank{0.8cm}. Did
+chance choose? \blank{1cm} \quad Did anyone count wrong? \blank{1cm} \quad \textbf{Vote again.}
 
+\vspace{3pt}
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.9\linewidth}{@{} l X @{}}
-\toprule
-\textbf{Pick} & \textbf{Position on the list} \\
-\midrule
-1st & 7 \\
-2nd & \blank{2.4cm} \\
-3rd & \blank{2.4cm} \\
-4th & \blank{2.4cm} \\
-\bottomrule
-\end{tabularx}
+\fcolorbox{cerulean}{frost}{\parbox{0.94\linewidth}{\small
+\textbf{``Chance chose'' is not enough --- the technique has to match the groups.} A Riverbend
+homeroom is \blank{1.2cm} inside, so it is really a \blank{1.6cm}, and drawing a few whole
+strata can miss a whole grade --- about one draw in four lands both rooms in one grade. Alike
+inside means \emph{some from \blank{1.2cm} group} --- a \blank{1.8cm} sample. Cluster sampling
+belongs to groups that are each a small mix of the whole.}}
 \end{center}
 
-\vspace{3pt}
-Notice that only the \textbf{start} is random --- after that, the list decides.
-That is still enough to make it a probability sample, \emph{as long as} the order
-of the list has nothing to do with the interval.
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{5. Cluster Sample --- Everyone From a Few Groups}
-\small
-Sometimes there is no list of individuals at all, but the population already
-comes in natural groups: homerooms, apartment buildings, city blocks, flights.
-Those groups are called \textbf{clusters}, and each one is meant to be a small
-mixed version of the whole population.
-
 \vspace{2pt}
-In a \textbf{cluster sample} you randomly choose a few whole clusters and collect
-data from \textbf{everyone} in them.
-
-\vspace{3pt}
-Riverbend's $900$ students sit in $36$ homerooms of $25$. The council draws
-$3$ homeroom numbers at random and surveys every student in those three rooms.
-How many students is that?
-
-\begin{work}
-  3 \times 25 &= 75 \text{ students}
-\end{work}
-
-\vspace{3pt}
-\textbf{Stratified and cluster are the two everybody mixes up.} Fill in the
-contrast:
-
+\nopagebreak
 \begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} p{3.5cm} X X @{}}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} p{3.4cm} X X @{}}
 \toprule
  & \textbf{Stratified} & \textbf{Cluster} \\
 \midrule
-The groups are\dots & alike inside, different from each other
-                    & each a small mix of the whole \\
-You use\dots        & \blank{2.6cm} of the groups & \blank{2.6cm} of the groups \\
-From each group you take\dots & \blank{2.6cm} & \blank{2.6cm} \\
+The groups are\dots & alike inside, different from each other & each a small mix of the whole \\
+You use\dots & \blank{1.4cm} of the groups & \blank{1.4cm} of the groups \\
+From each you take\dots & \blank{2.8cm} & \blank{2.8cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\vspace{3pt}
-\textit{Say it this way:} \textbf{stratified is some from every group; cluster is
-everyone from a few groups.}
-
-\vspace{2pt}
-Cluster sampling is the cheapest of the four and the riskiest. If the clusters
-really do differ from one another, three of them can miss the population badly.
 \end{notesbox}
 
-\boxguard
+% Page 4: the Guided Practice, alone.
+\newpage
 \begin{practicebox}
 \small
-Name the technique that fits each context best, and give the reason. Choose from
-\emph{simple random}, \emph{stratified}, \emph{systematic}, and \emph{cluster}.
+\textbf{Cedar Ridge Apartments --- we work this one together.} Cedar Ridge has $600$
+households in $30$ buildings of $20$; management wants to survey $60$ about parking. Buildings
+$1$--$6$ are studios ($120$ households), $7$--$20$ one-bedrooms ($280$), $21$--$30$
+two-bedrooms ($200$) --- and two-bedroom households own the most cars.
+\wordbank{simple random \;\textbullet\; stratified \;\textbullet\; systematic \;\textbullet\; cluster \;\textbullet\; convenience \;\textbullet\; 12 \;\textbullet\; 28 \;\textbullet\; 20 \;\textbullet\; 60 \;\textbullet\; studio \;\textbullet\; stratum}
+\textbf{(a)} Name the technique in each plan.
+\nopagebreak
 
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.98\linewidth}{@{} X p{2.5cm} p{4cm} @{}}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X p{2.9cm} @{}}
 \toprule
-\textbf{Context} & \textbf{Technique} & \textbf{Why} \\
+\textbf{The plan} & \textbf{Technique} \\
 \midrule
-A factory checks quality by pulling every $50$th cereal box off the line all day.
-  & \blank{2.1cm} & \blank{3.6cm} \\
-A county wants opinions from $1{,}200$ households spread over $400$ square miles,
-and has no list of residents --- only a map of blocks.
-  & \blank{2.1cm} & \blank{3.6cm} \\
-A district must be certain that elementary, middle, and high school teachers are
-each represented in proportion.
-  & \blank{2.1cm} & \blank{3.6cm} \\
+Number all $600$ households and let a computer draw $60$ numbers. & \blank{2.5cm} \\
+Draw $3$ building numbers from a hat; survey all $20$ households in each. & \blank{2.5cm} \\
+A random sample from each unit type --- studios, one-, two-bedrooms --- in proportion. & \blank{2.5cm} \\
+Start at a random household on the resident list, then take every $10$th one. & \blank{2.5cm} \\
+Stand by the mailboxes after work and ask the first $60$ people who walk past. & \blank{2.5cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 \vspace{3pt}
-The pool board is redoing last night's study. Which technique would you tell them
-to use, and what does it fix about asking whoever showed up Tuesday evening?
-\writelines{2}
+\textbf{(b)} The stratified plan: $60$ of $600$ is $1/10$, so take $1/10$ of each unit type.
+Show the one-bedroom row.
+\nopagebreak
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\toprule
+\textbf{Unit type} & \textbf{Households} & \textbf{Number to survey} \\
+\midrule
+Studio      & 120 & \blank{3.6cm} \\
+One-bedroom & 280 & \blank{3.6cm} \\
+Two-bedroom & 200 & \blank{3.6cm} \\
+\midrule
+\textbf{Total} & \textbf{600} & \blank{3.6cm} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{work}
+  \dfrac{60}{600} &= \dfrac{1}{10} \\
+  \dfrac{1}{10} \times 280 &= 28 \text{ households}
+\end{work}
+
+\vspace{3pt}
+\textbf{(c)} Suppose management had run the cluster plan and the hat gave buildings $2$, $5$,
+and $6$. Every one of the $60$ households surveyed is a \blank{1.4cm}. Is a building a small
+mix of the complex, or really a \blank{1.6cm}? Explain what the draw got wrong even though
+chance chose the buildings.
+\par\writelines{2}
+
+\vspace{3pt}
+\textbf{(d)} Which plan should management run, and why does it deliver what a parking survey
+needs? Write the reason as \emph{``\dots because the groups are \dots''}
+\par\writelines{2}
+
+\vspace{3pt}
+\textbf{(e)} Management has a list of \emph{buildings} but has never kept a list of
+\emph{residents}. Which of the four techniques can they still run without building that list?
+\par\writeline
 \end{practicebox}
 
 \end{document}
