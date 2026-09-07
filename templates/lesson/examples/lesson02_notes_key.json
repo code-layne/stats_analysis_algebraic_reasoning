@@ -58,9 +58,9 @@
   "416",
   "800",
   "No",
-  "416 is an estimate, not a count",
+  "estimate, not a count",
   "No",
-  "residents were never the population",
+  "wrong population",
   "Riverbend's 900 students",
   "50",
   "the 50 students she asked",
@@ -70,11 +70,11 @@
  ],
  "lines": [
   [
-   "No. Neither miscounted --- two different samples of 50 give two different statistics.",
-   "Neither found the true percent; there is one parameter, and both 40\\% and 46\\% estimate it."
+   "No. Two different samples of 50 give two different statistics.",
+   "Neither found it --- there is one parameter, and both estimate it."
   ],
   [
-   "Time --- asking all 900 would take class periods nobody can spare (also accept cost or access)."
+   "Time --- three class periods nobody can spare (also cost or access)."
   ]
  ]
 }

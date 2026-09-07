@@ -24,7 +24,7 @@
 % an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \termblank{} a
 % \vocabans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
 % answers so the two files wrap alike.
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -65,8 +65,8 @@ Fill in each term \textbf{as we name it} in the notes below.
 \end{vocabbox}
 
 % ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Guarded at 20 in BOTH files: the key's \vocabans{} runs shorter than the blank's rules.
-\boxguard[20]
+% Guarded at 12 in BOTH files (the vocab rows match in height, so no float-early risk).
+\boxguard[12]
 \begin{notesbox}{1. Two Groups --- and the Two Kinds of Numbers They Produce}
 \small
 Last night's homework asked $50$ shoppers and then talked about all $800$. Those two groups
@@ -264,14 +264,14 @@ a Saturday.''}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} X p{2cm} >{\raggedright\arraybackslash}p{4.6cm} @{}}
+\begin{tabularx}{\linewidth}{@{} X p{2cm} >{\raggedright\arraybackslash}p{5.2cm} @{}}
 \toprule
 \textbf{Claim} & \textbf{Allowed?} & \textbf{Why} \\
 \midrule
 ``Exactly $416$ Saturday shoppers drove to the market.''
-  & \ans{No} & \ans{416 is an estimate, not a count} \\
+  & \ans{No} & \ans{estimate, not a count} \\
 ``$52\%$ of Lakeside residents drive to the market.''
-  & \ans{No} & \ans{residents were never the population} \\
+  & \ans{No} & \ans{wrong population} \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -313,13 +313,13 @@ same question. In that group, $23$ have a part-time job.
 
 One survey says $40\%$; the other says $46\%$. Did one of them make a mistake? Which survey
 found the true percent for all $900$ students? Explain.
-\par\ansline{No. Neither miscounted --- two different samples of 50 give two different statistics.}
-\ansline{Neither found the true percent; there is one parameter, and both 40\% and 46\% estimate it.}
+\par\ansline{No. Two different samples of 50 give two different statistics.}
+\ansline{Neither found it --- there is one parameter, and both estimate it.}
 
 \vspace{3pt}
 \textbf{(d)} Name one constraint that kept the principal from asking all $900$ students, and say
 which of the five it is.
-\par\ansline{Time --- asking all 900 would take class periods nobody can spare (also accept cost or access).}
+\par\ansline{Time --- three class periods nobody can spare (also cost or access).}
 \end{practicebox}
 
 \end{document}

@@ -1,5 +1,5 @@
 %! @@TITLE@@ — Unit @@UNITINT@@, Lesson @@LESSONID@@ — @@DOCTITLE@@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{@@PREFIX@@-article}
 \usepackage{@@PREFIX@@-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -25,7 +25,8 @@
 % HOMEWORK: a remindbox ("This is your graded homework..."), a scenariobox context, ~6 items in a
 % notesbox (split into a "..., continued" box where the pages fall — never strand a lead-in from
 % its table), a contrast pair, the crux head-on, one spiral item, and a closing \begin{spiralbox}
-% preview. Scored; started in class in the last ten minutes.
+% preview. Scored; started in class in the last ten minutes. Practice boxes at full 12pt size.
+% NOTES: \small inside every box (objectivebox, vocabbox, notesbox, practicebox), as the stats model.
 % GENERATE THE KEY from the blank: python3 templates/lesson/mkkey.py blank key answers.json
 % (see templates/lesson/examples/). Never hand-edit a key.
 % \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
