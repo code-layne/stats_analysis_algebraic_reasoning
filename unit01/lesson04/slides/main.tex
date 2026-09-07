@@ -1,6 +1,13 @@
 %! Bias in Samples and Surveys — Unit 1, Lesson 1.4 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (unresolved) → I DO divider → two or
+% three frames per notes section → WE DO (a live surface, un-answered) → spoken debrief → close &
+% START THE HOMEWORK, which is the individual practice. No group activity, no practice launch,
+% no exit ticket. There is no spoiler rule: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,224 +24,304 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{You did everything right}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.4}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item explain what makes a study \textbf{biased} and tell bias apart from \textbf{sampling
+          variability} --- a direction, not bad luck.
+    \item identify \textbf{sampling bias} in a plan --- \textbf{undercoverage} and
+          \textbf{nonresponse} --- by asking \emph{could that person have been chosen?}
+    \item name the forms of \textbf{response bias}, including \textbf{question order bias}, and
+          say which \textbf{direction} a plan pushes the estimate.
+    \item explain why a \textbf{larger sample does not fix bias}, and describe a change that
+          removes it.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one survey we diagnose as a class} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{Harbor Point Community Pool: 1,500 members}
+  \vspace{0.3cm}
   \begin{center}
     \begin{minipage}{0.86\textwidth}
-      Last class you replanned the pool study properly --- a numbered frame,
-      chance doing the choosing, every membership type in proportion. The board
-      runs it, and hands out the surveys at the front desk\dots\ with the
-      \textbf{pool director standing beside the table, watching}.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item The office's records: $300$ of the $1{,}500$ members mainly swim laps. What percent?
+        \item The study we threw out last class: $27$ of the $75$ asked on a Tuesday evening said
+              laps. What percent of those $75$?
+        \item Use the $36\%$ to predict the whole membership. How many members? The records say
+              $300$ --- off by how many, and too high or too low?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.8cm}
+  \vspace{0.4cm}
   \begin{center}
-    {\color{goldacc}\bfseries The sample was perfect. Why might the answers
-    still be wrong?}
+    {\color{cerulean}\bfseries Algebra 1 arithmetic. Keep the page --- section 1 opens on these
+    four numbers.}
   \end{center}
 \end{frame}
 
-% ── BIAS IS A DIRECTION ──────────────────────────────────────────────────────
+% ── HOOK — leave it UNRESOLVED; the second half of section 2 settles it ──────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.2cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small THE TUESDAY-EVENING STUDY SAID 36\%. THE RECORDS SAY 20\%.}\\[0.7cm]
+    {\color{white}\bfseries\Large The staff member says the problem was size. She will run the
+    same Tuesday-evening survey for ten weeks and ask 750 members instead of 75.}\\[0.9cm]
+    {\color{goldacc}\bfseries\large Will her new number land closer to the truth?}\\[0.5cm]
+    {\color{frostmid}\small Vote: yes, no, or it depends. Write one line of reason in the hook
+    box. We settle this at the end of section 2.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
+    name it --- not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── 1a. BIAS IS A DIRECTION ──────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Bias is a direction, not bad luck}
-  \sectionlabel{variability vs.\ bias}
-
-  \vspace{0.2cm}
+  \sectionlabel{notes section 1 $\cdot$ variability scatters around the truth; bias leans}
+  \vspace{2pt}
+  The office's records: $20\%$ of all $1{,}500$ members mainly swim laps. Three samples of $75$, two ways:
   \begin{center}
     \small
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l c c c c @{}}
     \hline
-    \textbf{How the 75 were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd}
-      & \textbf{Average} \\
+    \textbf{How the 75 were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{Average} \\
     \hline
-    At random from the full member list & 19\% & 22\% & 19\% & \textbf{20\%} \\
-    From whoever arrived Tuesday evening & 35\% & 36\% & 37\% & \textbf{36\%} \\
+    At random from the full membership list & $19\%$ & $22\%$ & $19\%$ & $20\%$ \\
+    From whoever arrived Tuesday evening    & $35\%$ & $36\%$ & $37\%$ & \redink{36\%} \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    The office's records say the truth is \textbf{20\%}.
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Both rows wobble. Only one row is wrong the same
-    way every time.}
-  \end{center}
+  \vspace{4pt}
+  \begin{block}{Before you see the averages: which row would you trust?}
+    Both rows wobble --- \textbf{variability}, unavoidable. Only the Tuesday row misses the truth
+    \emph{every time}, and it misses \redink{too high}: Tuesday evening is lap-swim time, so lap
+    swimmers are over-counted. \textbf{Consistent is not the same as correct} --- the tighter row
+    is the wrong one.
+  \end{block}
 \end{frame}
 
-% ── SAMPLING BIAS ────────────────────────────────────────────────────────────
+% ── 1b. SAMPLING BIAS ────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Sampling bias --- who never had a chance}
-  \sectionlabel{before anyone speaks}
-
-  \vspace{0.3cm}
+  \ceruleanheader{Sampling bias: who never had a chance}
+  \sectionlabel{notes section 1 $\cdot$ before anyone speaks}
+  \vspace{2pt}
   \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Undercoverage}
-        Part of the population is left off the \textbf{frame} entirely. Morning
-        swimmers cannot be asked at a Tuesday-evening table.
+        Part of the population is left \textbf{off the frame}, so those members can never be
+        chosen. Tuesday evening, email-only, the social media page.
       \end{block}
     \end{column}
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.47\textwidth}
       \begin{block}{Nonresponse}
-        The frame was perfect and the draw was fair --- but the chosen people
-        \textbf{never answer}. Mail 1,500 cards, get 200 back.
+        Members are chosen properly and \textbf{never answer}. All $1{,}500$ got a card;
+        $200$ mailed it back --- the frame is perfect, and the study is still broken.
       \end{block}
     \end{column}
   \end{columns}
-
-  \vspace{0.7cm}
+  \vspace{12pt}
   \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \small Nobody off the frame can be sampled, and nobody who stays silent
-      can be counted. \textbf{Neither one shows up in your arithmetic.}
-    \end{minipage}
+    {\large The test that separates them: \redink{could that person have been chosen?}}\\[6pt]
+    {\small\color{slate} No $\Rightarrow$ undercoverage. \quad Yes, but silent $\Rightarrow$
+    nonresponse. \quad Neither one shows up in your arithmetic.}
   \end{center}
 \end{frame}
 
-% ── SIZE DOES NOT FIX BIAS ───────────────────────────────────────────────────
+% ── 2a. RESPONSE BIAS ────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{A bigger sample does not fix bias}
-  \sectionlabel[goldacc]{the line to memorize}
+  \ceruleanheader{Response bias: after the right person is chosen}
+  \sectionlabel{notes section 2 $\cdot$ who asks, how it is worded, what order}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \footnotesize
+      \setlength{\tabcolsep}{4pt}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{@{} l l @{}}
+      \hline
+      \textbf{Kind} & \textbf{The respondent\ldots} \\
+      \hline
+      Demand & answers what the study wants \\
+      Social desirability & answers what looks good \\
+      Dissent & says no to everything \\
+      Acquiescence & agrees with everything \\
+      Extreme responses & always ``strongly'' \\
+      Neutral responding & always the middle box \\
+      Question order & is moved by the last question \\
+      \hline
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item The lifeguard hands it out and waits; last week's complainers say ``excellent'' ---
+              \redink{social desirability}.
+        \item ``No opinion'' fifteen times --- \redink{neutral responding}.
+        \item Agrees with two statements that contradict --- \redink{acquiescence}.
+        \item Titled \emph{``Help us show the pool needs longer hours''} --- \redink{demand}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    {\small\color{slate} No sampling method prevents any of these. They happen after the right
+    person has been chosen.}
+  \end{center}
+\end{frame}
 
-  \vspace{0.2cm}
+% ── 2b. QUESTION ORDER ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Same words, different order}
+  \sectionlabel{notes section 2 $\cdot$ question order bias}
+  \vspace{0.3cm}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.35}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{@{} c l c @{}}
+    \hline
+    \textbf{Version} & \textbf{Asked first} & \textbf{Said yes to the \$40,000 lane} \\
+    \hline
+    A & ``Are the lap lanes overcrowded?'' & $62\%$ \\
+    B & ``Should the town spend \$40,000 to add a lane?'' & $41\%$ \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{0.6cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Identical questions. Same membership. \redink{21 points apart.}}\\[8pt]
+    {\small\color{slate} Ask about the crowding first and the money question inherits the
+    complaint. The order of survey questions is a decision --- make it on purpose.}
+  \end{center}
+\end{frame}
+
+% ── 2c. THE CRUX ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The fix that is not a fix}
+  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  Ten Tuesdays instead of one: $750$ asked, $270$ say laps. \quad $270 \div 750 = {}$\redink{36\%}.
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.15}
     \begin{tabular}{@{} c c c c @{}}
     \hline
-    \textbf{Members asked} & \textbf{Study says} & \textbf{Truth}
-      & \textbf{Off by} \\
+    \textbf{Members asked} & \textbf{Study says} & \textbf{Truth} & \textbf{Off by} \\
     \hline
-    75  & 36\% & 20\% & 16 points \\
-    750 & 36\% & 20\% & 16 points \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    Ten weeks of Tuesday evenings. $270 \div 750 = 36\%$. Same answer.
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{goldacc}\bfseries A bigger biased sample is a more confident wrong
-    answer.}
-  \end{center}
-\end{frame}
-
-% ── RESPONSE BIAS ────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Response bias --- seven ways to get a false answer}
-  \sectionlabel{after the right person is chosen}
-
-  \vspace{0.2cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.25}
-    \begin{tabular}{@{} l l @{}}
-    \hline
-    \textbf{Demand} & guesses what the study wants, answers to match \\
-    \textbf{Social desirability} & gives the answer that looks good to others \\
-    \textbf{Dissent} & answers negatively to everything \\
-    \textbf{Acquiescence} & answers positively to everything \\
-    \textbf{Extreme responses} & always ``strongly agree'' or ``strongly disagree'' \\
-    \textbf{Neutral responding} & always the middle, no-opinion box \\
-    \textbf{Question order} & an earlier question changes a later answer \\
+    $75$  & $36\%$ & $20\%$ & $16$ points \\
+    $750$ & $36\%$ & $20\%$ & \redink{16 points} \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \small Response bias does not care how you drew the sample.
-  \end{center}
+  \textbf{Ten times the work, the same answer. Vote again.}
+  \begin{block}{A larger sample makes an estimate more \emph{precise}, not more \emph{correct}}
+    Size shrinks \textbf{variability}; nothing about size touches \textbf{direction}. A bigger
+    biased sample is a more confident wrong answer. Only a better \emph{procedure} removes bias,
+    one fix per bias: a complete frame $\to$ undercoverage; calling back the silent $\to$
+    nonresponse; neutral, anonymous questions $\to$ response bias.
+  \end{block}
 \end{frame}
 
-% ── QUESTION ORDER ───────────────────────────────────────────────────────────
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Same questions. Different order.}
-  \sectionlabel[goldacc]{question order bias}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item \textbf{Version A:} ``Are the lap lanes overcrowded?'' \emph{then}
-              ``Should the town spend \$40,000?'' \hfill $\rightarrow$
-              \textbf{62\% yes}
-        \item \textbf{Version B:} ``Should the town spend \$40,000?''
-              \emph{then} ``Are the lap lanes overcrowded?'' \hfill
-              $\rightarrow$ \textbf{41\% yes}
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    {\color{cerulean}\bfseries 21 percentage points --- same question, same
-    members, same words.}\\[6pt]
-    \small Only the order changed.
-  \end{center}
+  \ceruleanheader{Guided Practice: Cedar Ridge Apartments}
+  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  $600$ households, \emph{every} one mailed a parking survey; $150$ cards come back, and $96$
+  say parking is a problem. Management is about to ask the owners for a bigger lot.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[(a)] What share answered? What share of \emph{those} complained?
+    \item[(b)] Every household got a card. Which bias --- and could a silent household have been chosen?
+    \item[(c)] Scale $64\%$ to $600$; the census says $240$ of $600$. Off by how much, which way?
+    \item[(d)] Twice the cards, $64\%$ again; the car owners answered at twice the rate. Why didn't
+          more cards help?
+    \item[(e)] \emph{``Don't you agree the lot is dangerously overcrowded?''} Name the bias; rewrite it neutral.
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If your answer to (d) is ``they still need more cards,'' you are still at the hook vote.
+  \end{block}
 \end{frame}
 
-% ── REDUCING BIAS ────────────────────────────────────────────────────────────
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Four ways to reduce bias}
-  \sectionlabel{what each one fixes}
+  \ceruleanheader{Debrief: more of a biased sample is still biased}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item The ten Tuesdays back on the board. Say the sentence: \emph{$750$ is not closer than
+          $75$, because size shrinks variability and this study's problem is direction.}
+    \item The $200$ cards that came back. Could a silent card holder have been chosen? Then
+          which bias is it?
+    \item Cedar Ridge (d): the direction and the reason --- \emph{too high, because}\,\ldots
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Bayside Middle School, $750$ students. The principal asks $30$ students in the library at
+    lunch whether lunch is too short: $24$ say yes ($80\%$). Told the sample was too small, she
+    asks $60$ library students: $48$ say yes --- $80\%$ again. \textbf{Name the bias in her plan.
+    Did the larger sample fix it? Why not?}
+  \end{block}
+\end{frame}
 
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item Build the frame from the \textbf{complete} list, not from whoever
-              shows up. \hfill \emph{fixes undercoverage}
-        \item Go back to the people who \textbf{did not answer}. \hfill
-              \emph{fixes nonresponse}
-        \item Word every question \textbf{neutrally} --- never ``Don't you agree
-              that\dots'' \hfill \emph{fixes demand \& acquiescence}
-        \item Let people answer \textbf{anonymously}, nobody watching. \hfill
-              \emph{fixes social desirability}
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Millbrook Public Library, two studies and two answers} --- a front-desk pile
+          that says $80\%$ and a proper phone sample that says $45\%$.
+    \item Population, sample, who chose it; both percents and both predictions; the gap in
+          points and in card holders.
+    \item \textbf{Item 4:} four weeks at the desk versus the phone sample --- which is bigger,
+          which is closer, and what the $360$ would have said.
+    \item Four response biases to name; a $21$-point order effect; a random draw where only $78$
+          of $120$ pick up.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 4, and 6}. Item 4 is the one I am reading over your shoulder --- if
+    your answer to ``what would the $360$ say'' is anywhere near $45\%$, flag me before you
+    leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item A study is \textbf{biased} when its procedure misses the truth the
-              \textbf{same way every time}.
-        \item \textbf{Undercoverage}: left off the frame. \textbf{Nonresponse}:
-              chosen, but silent.
-        \item \textbf{Response bias}: who asks, how it is worded, what order it
-              comes in.
-        \item A larger sample makes an estimate more \textbf{precise}, never more
-              \textbf{correct}.
-        \item You fix bias in the \textbf{plan} --- and you have to say what each
-              change fixes.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Bias is a direction, not bad luck. A larger sample makes an
+    estimate more precise, not more correct --- only a better procedure removes the lean. Ask
+    who could never have been chosen, who stayed silent, and what the question told them to
+    say.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.5 --- every study in this unit so far has only
+    \emph{watched}. Observational studies: what they can and cannot prove.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

@@ -1,0 +1,58 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Bias": "A study is biased when its procedure systematically overestimates or underestimates the population value --- every sample leans the same direction.",
+  "Sampling bias": "Bias from how the sample was chosen: some members of the population are systematically more likely to be picked than others.",
+  "Undercoverage": "Part of the population is left off the sampling frame, so those members can never be chosen at all.",
+  "Nonresponse": "Members are chosen properly but never answer, so the data is missing exactly the people who stayed silent.",
+  "Response bias": "Anything about the survey itself --- who asks, the wording, the order --- that pushes a respondent away from their true answer."
+ },
+ "blanks": [
+  "direction",
+  "20\\%",
+  "36\\%",
+  "Tuesday",
+  "too high",
+  "lap swimmers",
+  "undercoverage",
+  "undercoverage",
+  "undercoverage",
+  "nonresponse",
+  "could not",
+  "could",
+  "social desirability",
+  "neutral responding",
+  "acquiescence",
+  "demand",
+  "question order",
+  "16",
+  "36\\%",
+  "16",
+  "precise",
+  "correct",
+  "variability",
+  "direction",
+  "undercoverage",
+  "nonresponse",
+  "undercoverage",
+  "nonresponse",
+  "yes",
+  "24",
+  "144",
+  "too high",
+  "acquiescence"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most of the room says yes (``more people, better answer'').",
+   "(Settled at the end of section 2: no --- 270 of 750 is 36\\% again. Same Tuesday, same lean.)"
+  ],
+  [
+   "More cards from the same procedure: still only the households that chose to answer, and",
+   "the car owners answered at twice the rate --- so the 64\\% is too high no matter how many cards."
+  ],
+  [
+   "``Do you think the amount of parking at Cedar Ridge is too little, about right, or too much?''"
+  ]
+ ]
+}

@@ -1,17 +1,20 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-09-07 — **LESSON 1.3 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
-regenerate 1.3`): the pre-EFFL legacy lesson (notes + activity + exit ticket) was rebuilt as
-`cover` + `warmup` + `notes` + `homework` + `slides` on the 1.2 model — two long notes sections,
-one Guided Practice, spoken debrief, homework started in class, 5 / 35 / 10 / 10, 12pt student
-components, `\vterm` vocab rows, word banks, keys generated with `mkkey.py`. `activity/`,
-`activity_key/`, `exit_ticket/`, `exit_ticket_key/` were `git rm`'d. **The crux was re-engineered
-on the notes' own data**: Riverbend's 30 homerooms of 30 are grouped by grade (1–9 ninth, 10–17
-tenth, 18–24 eleventh, 25–30 twelfth), so Maya's random draw of homerooms 4 and 7 is 60 ninth
-graders and no seniors — "chance chose" is not enough; a homeroom is a stratum wearing a
-cluster's clothes (the old activity's Tier E payoff, now the second half of section 2). The old
-36 × 25 / 3-drawn cluster numbers are gone. Details in the Lesson 1.3 entry below. **Next
-conversion: 1.1 (notes-only recipe) or 1.4 (pre-EFFL recipe) — one at a time.**
+**Last updated:** 2026-09-07 — **LESSON 1.4 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
+regenerate lesson 1.4`): the pre-EFFL legacy lesson (5 notes sections + activity + exit ticket)
+was rebuilt as `cover` + `warmup` + `notes` + `homework` + `slides` on the 1.2/1.3 model — two
+long notes sections, one Guided Practice, spoken debrief, homework started in class,
+5 / 35 / 10 / 10, 12pt student components, `\vterm` vocab rows, word banks, keys generated with
+`mkkey.py`. `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` were `git rm`'d.
+**The target misconception is "the sample was too small"**: the hook asks whether ten Tuesdays
+(750 members) will land closer to the truth than one (75); the vote is left open until the second
+half of section 2, where 270/750 = 36% — the same 16-point miss — and the blue callout lands
+*precise, not correct*. The old activity's Cedar Ridge cards became the Guided Practice; the exit
+ticket's Bayside library survey became the debrief's cold check. Details in the Lesson 1.4 entry
+below. **Next conversion: 1.1 (notes-only recipe) or 1.5 (pre-EFFL recipe) — one at a time.**
+
+**Previous run (2026-09-07) — LESSON 1.3 REGENERATED IN THE PILOT SHAPE** (the first pre-EFFL
+conversion; the worked example for 1.5–1.8). Details in the Lesson 1.3 entry below.
 
 **Previous run (2026-09-06) — LESSON 1.2 REGENERATED AS THE PILOT SHAPE, MODELED ON AP
 STATISTICS LESSON 1.4 MINUS ITS AP PRACTICE PAGE. IT IS THE MODEL FOR EVERY FUTURE LESSON.**
@@ -151,9 +154,9 @@ start the homework → close (dark).
   format fixes carry into the pilot. Convert it with the notes-only recipe in `LESSON_SHAPE.md`
   section 7 once the pilot is confirmed in the classroom.
 - **Lesson 1.0** still carries `activity/` + `activity_key/`. Not a model.
-- **Lesson 1.3 is CURRENT** — regenerated in the pilot shape 2026-09-07 (the second lesson in
-  the shape; mirror 1.2 first, 1.3 second).
-- **Lessons 1.4–1.8** are pre-EFFL: both `exit_ticket/` and `activity/`.
+- **Lessons 1.3 and 1.4 are CURRENT** — regenerated in the pilot shape 2026-09-07 (mirror 1.2
+  first, then 1.3 / 1.4).
+- **Lessons 1.5–1.8** are pre-EFFL: both `exit_ticket/` and `activity/`.
 - **Units 2–8** (57 lesson dirs) are empty EFFL skeletons.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
@@ -342,37 +345,56 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     item. At 12pt a section page holds roughly: intro (2 lines) + 2-line word bank + 4-line
     paragraph + 5-row table + 2-line work block + 2-line paragraph + run-in + 4-line paragraph +
     1-line work block + 3-line paragraph + 4-line callout + 3-row table — nothing more.
-- **Lesson 1.4 — "Bias in Samples and Surveys" — is COMPLETE.** All components authored,
-  built, and passing the gate.
-  - Standards: **PS.DC.2c; AFDA.DA.2e, 2f, 2g**.
-  - Scope: **bias is a direction, not bad luck** — the lesson's pivot, taught by contrasting
-    1.2's honest samples (which scatter *around* the parameter) with a biased procedure that
-    misses the same way every time. Then **sampling bias** split into **undercoverage** (off
-    the frame) and **nonresponse** (chosen but silent), with the test question *could that
-    person have been chosen?* separating them; the standard's line that **a large sample size
-    does not make up for bias**, carried by arithmetic rather than assertion; the seven named
-    **response biases** (demand, social desirability, dissent, acquiescence, extreme responses,
-    neutral responding, question order) as a pre-filled reference table plus four diagnostic
-    rows; and closing on **AFDA.DA.2g** — four ways to reduce bias, each attached to the bias
-    it removes. Students are asked for the **direction** of the error throughout, not just the
-    label.
-  - Contexts: Harbor Point Community Pool carried from 1.2/1.3 (warm-up + notes; census truth
-    $300/1500 = 20\%$, Tuesday-evening sample $27/75 = 36\%$ scaled to $0.36 \times 1500 = 540$,
-    off by $240$ members; the ten-week repeat $270/750 = 36\%$ — same answer, same $16$-point
-    error; three honest samples 19/22/19 average exactly $20\%$ against three Tuesday samples
-    35/36/37 averaging $36\%$; question-order pair $62\%$ vs. $41\%$, a $21$-point gap), Cedar
-    Ridge Apartments carried from 1.3 (activity; $600$ households mailed, $150$ return =
-    $25\%$, $96/150 = 64\%$ scaled to $384$, census truth $240/600 = 40\%$ → $24$ points and
-    $144$ households too many; the double-size re-run $192/300 = 64\%$ is the "size doesn't
-    fix it" payoff), Bayside Middle School carried from 1.3 (exit ticket; $24/30 = 80\%$, then
-    $48/60 = 80\%$), Millbrook Public Library carried from 1.2 (homework; front-desk pile
-    $72/90 = 80\%$ → $960$ of $1{,}200$, against a proper phone sample $54/120 = 45\%$ → $540$,
-    a gap of $35$ points and $420$ card holders; order effect $68\%$ vs. $47\%$; a $78/120 =
-    65\%$ response rate as the closing transfer item). All arithmetic verified in Python
-    before authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 6pp, slides 9 frames. `make -C unit01/lesson04 all` and `check` both exit 0; PDFs
-    eyeballed for stranded boxes (see the Tier E note under "Gotchas").
+- **Lesson 1.4 — "Bias in Samples and Surveys" — is CURRENT (pilot shape, regenerated
+  2026-09-07).** `cover` + `warmup` + `notes` + `homework` + `slides`; `activity/` and
+  `exit_ticket/` (and keys) removed. `make -C unit01/lesson04 all` and `check` both exit 0.
+  - Standards: **PS.DC.2c; AFDA.DA.2e, 2f, 2g** (PS.DC.1d–e, PS.DC.2a carried forward).
+  - Scope: **bias is a direction, not bad luck** (section 1, first half — three honest samples
+    19/22/19 average 20% against three Tuesday samples 35/36/37 averaging 36%; *consistent is
+    not correct*); **sampling bias** split into **undercoverage** and **nonresponse** with the
+    test *could that person have been chosen?* (section 1, second half; the red callout is the
+    second trap — the 200 returned cards have a perfect frame and a broken study); the seven
+    named **response biases** as a pre-filled reference table plus a five-row diagnostic table
+    that includes the 62% / 41% question-order pair (section 2, first half); and **the crux —
+    "the sample was too small"** (section 2, second half): ten Tuesdays, 270/750 = 36%, the
+    same 16-point miss; the blue callout — *a larger sample makes an estimate more precise, not
+    more correct; size shrinks variability, nothing about size touches direction* — closes with
+    each fix attached to the bias it removes (AFDA.DA.2g).
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** the staff member says the problem
+    was size and will run the Tuesday survey for ten weeks — *will 750 land closer to 20% than
+    75 did?* Circle yes / no / it depends; the 750 result is withheld until the second half of
+    section 2, where the vote is re-taken.
+  - Contexts: Harbor Point Community Pool (warm-up + notes; census 300/1500 = 20%, Tuesday
+    27/75 = 36% → 540, off by 240; 270/750 = 36%), **Cedar Ridge Apartments (Guided Practice —
+    the old activity's context; 600 households all mailed, 150/600 = 25%, 96/150 = 64% → 384
+    vs. census 240/600 = 40%, 24 points and 144 households too high; 192/300 = 64% again is the
+    crux transferred; part (e) names acquiescence in "Don't you agree…" and rewrites it)**,
+    Millbrook Public Library (homework; 72/90 = 80% → 960 vs. phone 54/120 = 45% → 540, gap 35
+    points / 420; order effect 68 vs 47 = 21; response rate 78/120 = 65%). Bayside Middle School
+    (24/30 = 80%, then 48/60 = 80%) survives only as the debrief's **cold check** — name the
+    bias (undercoverage), did doubling fix it (no), why not. All arithmetic verified in Python.
+  - Homework: 6 items, 12 points — item 1 the spiral to 1.2/1.3 (population, sample,
+    convenience, undercoverage); 2–3 the core procedure and interpret-in-context; **item 4 =
+    the contrast pair (Plan A four weeks at the desk / Plan B the phone sample: bigger vs.
+    closer) then the crux head-on (what the 360 would report — about 80%)**; item 5 four
+    response biases + the order effect; item 6 the 65% response rate — explain and name the fix
+    (AFDA.DA.2g). Two pages (items 1–2 / 3–6 + spiralbox). Packet night.
+  - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page headings identical: p3 ends on the
+    blue callout, p4 is the Guided Practice), homework 2/2, cover 1; plan 7pp, deck 14 frames,
+    student and key packets 10pp each. Zero overfull boxes in the plan and deck; the components'
+    only log noise is the known 6pt `\pageheader` and the cover's 16pt name-row line. Every
+    page rendered and eyeballed — no stranded boxes.
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson04_{warmup,notes,homework}_key.json`.
+  - **Fitting lesson:** the first compile ran notes 5/5, homework 3/3, plan 7pp with two stubs.
+    Notes: section 2's bold `Kind` column at 3.3cm wrapped five labels to two lines — widening it
+    to 4.1cm and folding the question-order sentence into the diagnostic table as a fifth row
+    recovered the page; the crux's comparison table became a one-sentence fill-in. Homework:
+    page 2 needed ~8 lines for the spiralbox — one-line table headers (`Kind`), single-line rows,
+    item 3's two-line work block collapsed to one, item 4 on one line. Plan: the Guided Notes box
+    (a page-long `multicols` block) printed two lines as a stub at the foot of page 3 under the
+    default guard **and** under `\boxguard[24]`; `\boxguard[40]` moved it over. The Homework box
+    then tailed three lines onto the next page — trimmed the box by four lines instead.
 - **Lesson 1.5 — "Observational Studies" — is COMPLETE.** All components authored, built,
   and passing the gate.
   - Standards: **PS.DC.2d** (PS.DC.1a–b carried forward in the cycle and conclusion items).
@@ -606,9 +628,9 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 2. **Convert 1.1 to the pilot shape** (notes-only recipe, `LESSON_SHAPE.md` section 7) once the
    pilot is confirmed — fold six sections into two, merge the We Do and the practice box into one
    Guided Practice, `\termblank` vocab, 5/35/10/10, three cover rows renamed, deck reordered.
-3. **Convert 1.0** (group-activity recipe) and **1.4–1.8** (pre-EFFL recipe — 1.3's regeneration on
-   2026-09-07 is the worked example), one at a time, each with `make all` + `make check` +
-   per-page heading comparison.
+3. **Convert 1.0** (group-activity recipe) and **1.5–1.8** (pre-EFFL recipe — the 1.3 and 1.4
+   regenerations on 2026-09-07 are the worked examples), one at a time, each with `make all` +
+   `make check` + per-page heading comparison.
 4. **Units 2–8**: scaffold `notes` (only) into each lesson as authored and delete
    `experience`/`experience_key`; confirm the Unit 2 lesson map with the user before authoring.
 5. **Reuse the Unit 1 assessment set as the template for U2–U8** (blueprint 14/16/40/30, 33 items,
@@ -619,7 +641,7 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
-   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07).
+   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07); **the 1.4 regeneration is the PR opened from `claude/lesson-planning-094839`** (2026-09-07).
 
 ## Gotchas found this session
 

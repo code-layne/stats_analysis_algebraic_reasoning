@@ -1,38 +1,53 @@
 %! Bias in Samples and Surveys — Unit 1, Lesson 1.4 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt, so each
+% item gets real handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up rehearses, WITHOUT naming bias, the three moves the notes run
+% on. Item 1 is the census truth as a percent (300/1500 = 20%). Item 2 is the Tuesday-evening
+% sample as a percent (27/75 = 36%) — the study 1.3 threw out. Item 3 scales 36% to 540 and
+% puts it beside the truth: off by 240, too high — the first time in Unit 1 a statistic sits
+% beside a KNOWN parameter. Section 1 of the notes opens on these numbers; the hook asks whether
+% ten times the sample would fix it.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- Harbor Point Community Pool}
-\small
-Harbor Point Community Pool has $1{,}500$ members. The office keeps a record of
-what every member says they mainly come to do.
+\normalsize
+Harbor Point Community Pool has $1{,}500$ members. The office keeps a record of what
+every member says they mainly come to do.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, topsep=4pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
-  \item The office's records show that $300$ of the $1{,}500$ members mainly
-        swim laps. What \textbf{percent} of the membership is that?
+  \item The office's records show that $300$ of the $1{,}500$ members mainly swim laps.
+        What \textbf{percent} of the membership is that?
 
         \begin{work}
           \dfrac{300}{1500} &= 0.20 \\
                             &= 20\%
         \end{work}
 
-  \item A staff member asked $75$ members one evening, and $27$ of them said
-        they mainly swim laps. What \textbf{percent} of those $75$ is that?
+  \item Last class the board threw out this study: a staff member asked the $75$ members
+        who arrived one Tuesday evening, and $27$ of them said they mainly swim laps. What
+        \textbf{percent} of those $75$ is that?
 
         \begin{work}
-          \dfrac{27}{75} &= 0.36 \\
-                         &= 36\%
+          \dfrac{27}{75} &= 0.36 = 36\%
         \end{work}
 
   \item The staff member uses her $36\%$ to describe the whole membership.
@@ -43,10 +58,11 @@ what every member says they mainly come to do.
           0.36 \times 1500 &= 540 \text{ members}
         \end{work}
 
-        \textbf{(b)} The records in item 1 say the real number is $300$. By how
-        many members is the prediction off, and is it too high or too low?
+        \textbf{(b)} The records in item 1 say the real number is $300$. By how many
+        members is the prediction off, and is it too high or too low?
+        \wordbank{16 \;\textbullet\; 240 \;\textbullet\; 300 \;\textbullet\; too high \;\textbullet\; too low}
 
-        \ans{off by 240} \qquad \ans{too high}
+        Off by \ans{240} members \qquad The prediction is \ans{too high}
 
 \end{enumerate}
 \end{notesbox}

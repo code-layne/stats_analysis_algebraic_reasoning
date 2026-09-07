@@ -1,0 +1,16 @@
+{"blanks": [
+  "all 1,200 card holders", "the 90 who filled one out",
+  "convenience", "undercoverage",
+  "35", "420",
+  "A", "B", "about 80\\%",
+  "acquiescence", "demand", "social desirability", "neutral responding",
+  "21", "question order",
+  "65\\%"
+ ],
+ "lines": [
+  ["Anyone who did not visit the library that week --- weekend-only or online-only card holders."],
+  ["Same desk, same visitors, more of them: four weeks of the same procedure still reaches only",
+   "the people who come in and bother to write, so the lean is the same --- about 80\\%, not 45\\%."],
+  ["Nonresponse: the 42 who never picked up may use the library differently from the 78 who",
+   "did, so the answering group leans. Fix: keep calling back until every one of the 120 answers."]
+ ]}
