@@ -641,7 +641,7 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
-   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07); **the 1.4 regeneration is the PR opened from `claude/lesson-planning-094839`** (2026-09-07).
+   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07); **the 1.4 regeneration is PR #27** (2026-09-07).
 
 ## Gotchas found this session
 
