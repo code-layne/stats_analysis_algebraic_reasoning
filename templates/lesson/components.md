@@ -140,13 +140,13 @@ the second is introduced by a bold run-in heading, `\textbf{\textcolor{cerulean}
 by a third box. **The crux lives in the second half of section 2.**
 - `objectivebox` — the "By the end of these notes I will be able to…" targets, **printed**, worded
   exactly as the cover's learning targets. No `\writeline`s here; the key carries identical text.
-- `vocabbox` — one `\termblank{Term}` per key term (4–5 of them). The box says **"Fill in each term
-  as we name it in the notes below"** — filled during instruction, never front-loaded. The key uses
-  `\vocabans{Term}{definition}` with the definition written long enough to **wrap to two lines**, so
-  the blank's row (term + inline blank + one write-line) and the key's row are the same height and
-  section 1 starts on the same page in both files. (`\termblanklong` runs three lines against the
-  key's one and floats section 1 a page early in the key — avoid it.) Write the intro sentence
-  plainly; the term macros carry their own `\par`.
+- `vocabbox` — one `\vterm{Term}` per key term (4–5 of them): a **fixed-height 1.6cm row** with the
+  term and one full-width blank and **no rule line**, as the stats course does. The box says
+  **"Fill in each term as we name it in the notes below"** — filled during instruction, never
+  front-loaded. The key uses `\vtermans{Term}{definition}`, which fills exactly the same height
+  (keep definitions to two lines), so the box cannot drift blank vs. keyed. The `\vterm` /
+  `\vtermans` pair is defined in the notes preamble — copy the block from lesson 1.2; `mkkey.py`
+  maps one to the other. Do not use `\termblank` / `\termblanklong` / `\vocabans` in a new lesson.
 - **No `hookbox`.** The hook is a dark slide and a plan box, left unresolved.
 - Two `notesbox{N. Title}` sections. Each opens in the warm-up's own context, carries a short piece
   of exposition, a **pre-drawn** table or display with `\blank{W}` fills at the points where students

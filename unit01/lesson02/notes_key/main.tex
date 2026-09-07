@@ -21,13 +21,32 @@
 %     a second 50 asked, 23 have one -> 46%
 %
 % PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
-% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \termblank{} a
-% \vocabans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
+% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
+% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
 % answers so the two files wrap alike.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Vocabulary rows follow the stats course: a FIXED-HEIGHT row carrying the term and one
+% full-width blank — no rule line — and the key fills exactly the same height, so the box
+% cannot drift blank vs. keyed. saar-article's \termblank adds a rule line, so the pair is
+% defined here (the key is generated from this file and inherits both). 1.6cm per row gives
+% students two handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{1.6cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newlength{\termwd}
+\newcommand{\vterm}[1]{%
+  \settowidth{\termwd}{\textbf{#1:}}%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\blank{\dimexpr\linewidth-\termwd-1.6em\relax}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
@@ -57,11 +76,11 @@ By the end of these notes I will be able to\dots
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
-\vocabans{Population}{The entire group the question is about --- every individual you would like the conclusion to describe. Decided by the question, not by who is available.}
-\vocabans{Sample}{The part of the population you actually collected data from. The number of individuals in it is the sample size, $n$.}
-\vocabans{Parameter}{A number that describes the population. Usually unknown --- and there is exactly one of it, whether or not anyone has ever computed it.}
-\vocabans{Statistic}{A number computed from the sample. Known, because you collected the data --- and it changes from one sample to the next.}
-\vocabans{Sampling variability}{The change in a statistic from one sample to the next, even though the population did not change. Not a mistake --- it is what samples do.}
+\vtermans{Population}{The entire group the question is about --- every individual you would like the conclusion to describe. Decided by the question, not by who is available.}
+\vtermans{Sample}{The part of the population you actually collected data from. The number of individuals in it is the sample size, $n$.}
+\vtermans{Parameter}{A number that describes the population. Usually unknown --- and there is exactly one of it, whether or not anyone has ever computed it.}
+\vtermans{Statistic}{A number computed from the sample. Known, because you collected the data --- and it changes from one sample to the next.}
+\vtermans{Sampling variability}{The change in a statistic from one sample to the next, even though the population did not change. Not a mistake --- it is what samples do.}
 \end{vocabbox}
 
 % ── I DO: section 1 ──────────────────────────────────────────────────────────

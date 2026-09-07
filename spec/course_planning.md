@@ -17,7 +17,12 @@ was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
 - **Keys are generated, not hand-edited.** `templates/lesson/mkkey.py` takes the blank plus a JSON
   list of answers in order (`templates/lesson/examples/lesson02_*_key.json`) and writes the key;
   it refuses to run if the blank count and answer count differ. Three keys, zero drift.
-- **Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.** With `\termblanklong` (three
+- **Vocab rows are fixed-height stats-style rows** (user request 2026-09-06): `\vterm{}` ↔
+  `\vtermans{}{}`, a 1.6cm minipage pair defined in the notes preamble — term + one full-width
+  blank, no rule line, the key filling the same height. Supersedes the earlier `\termblank` ↔
+  two-line `\vocabans` rule. **Worth promoting into `saar-article.sty` / `saar-key.sty`** with the
+  cover banner, on a run allowed to touch `shared/`.
+- ~~Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.~~ With `\termblanklong` (three
   lines) the notes ran 4pp blank / 3pp key with section 1 on different pages; with `\termblank`
   and definitions long enough to wrap to two lines the boxes match and both files are 3pp with
   identical per-page headings. This is now the profile's rule.

@@ -15,6 +15,10 @@ import json, re, sys
 blank, key, spec = sys.argv[1:4]
 S = json.load(open(spec))
 t = open(blank).read()
+# Substitute only in the document BODY: a \blank{} inside a preamble macro definition (e.g. the
+# fixed-height \vterm row) is not an answer slot.
+pre, sep, body = t.partition('\\begin{document}')
+assert sep, "no \\begin{document}"
 ans = iter(S["blanks"])
 # Only substitute on non-comment lines; a \blank{} mentioned in a % comment must not count.
 def code_sub(pattern, repl, text):
@@ -25,22 +29,25 @@ def code_sub(pattern, repl, text):
         else:
             out.append(re.sub(pattern, repl, line))
     return '\n'.join(out)
-n_blank = sum(len(re.findall(r'\\blank\{[^}]*\}', l)) for l in t.split('\n') if not l.lstrip().startswith('%'))
+n_blank = sum(len(re.findall(r'\\blank\{[^}]*\}', l)) for l in body.split('\n') if not l.lstrip().startswith('%'))
 assert n_blank == len(S["blanks"]), f"{n_blank} blanks in file, {len(S['blanks'])} answers given"
-t = code_sub(r'\\blank\{[^}]*\}', lambda m: '\\ans{' + next(ans) + '}', t)
+body = code_sub(r'\\blank\{[^}]*\}', lambda m: '\\ans{' + next(ans) + '}', body)
 lines = iter(S.get("lines", []))
 def wl(m):
     n = int(m.group(1)) if m.group(1) else 1
     a = next(lines)
     assert len(a) == n, f"writelines{{{n}}} but {len(a)} answers: {a}"
     return '\\par\\ansline{' + a[0] + '}' + ''.join('\n\\ansline{' + x + '}' for x in a[1:])
-t = code_sub(r'\\par\\writelines\{(\d+)\}|\\par\\writeline(?![a-z])', lambda m: wl(m), t)
+body = code_sub(r'\\par\\writelines\{(\d+)\}|\\par\\writeline(?![a-z])', lambda m: wl(m), body)
+t = pre + sep + body
 assert next(lines, None) is None, "unused writeline answers"
 for term, d in S.get("vocab", {}).items():
+    if '\\vterm{' + term + '}' in t:      # fixed-height stats-style row (defined in the blank)
+        t = t.replace('\\vterm{' + term + '}', '\\vtermans{' + term + '}{' + d + '}'); continue
     hits = [o for o in ('\\termblanklong{' + term + '}', '\\termblank{' + term + '}') if o in t]
     assert hits, term
     t = t.replace(hits[0], '\\vocabans{' + term + '}{' + d + '}')
-assert not any('\\termblank' in l for l in t.split('\n') if not l.lstrip().startswith('%')), "unfilled termblanklong"
+assert not any(('\\termblank' in l or '\\vterm{' in l) for l in t.split('\n') if not l.lstrip().startswith('%')), "unfilled termblanklong"
 t = t.replace('\\usepackage{saar-boxes}', '\\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes', 1)
 t = re.sub(r'(\\pageheader\{[^}]*\}\{[^}]*)\}', r'\1 --- Answer Key}', t, count=1)
 t = re.sub(r'^(%!.*)$', r'\1 (Answer Key)', t, count=1, flags=re.M)

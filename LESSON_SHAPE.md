@@ -279,10 +279,13 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   `\componenttable` do not exist here.
 - **Key macros (`saar-key.sty`): `\ans{}`, `\ansline{}`, and `\vocabans{Term}{definition}`.**
   **`\termans` is undefined in this course** — the shared skill's `\termblank` ↔ `\termans` pair is
-  **`\termblank{Term}` (term + inline blank + one write-line) ↔ `\vocabans{Term}{def}`** here, with
-  the key's definition written long enough to wrap to **two lines**, so the blank and key vocab
-  boxes are the same height and the first `notesbox` starts on the same page in both (**the pilot's
-  rule**; 1.2 proves it). `\termblanklong{Term}` (term + two write-lines) still exists, but it runs
+  **a fixed-height row pair defined in the notes' own preamble — `\vterm{Term}` ↔
+  `\vtermans{Term}{def}`** (user decision 2026-09-06: the vocab box follows the stats course — a
+  1.6cm row carrying the term and one full-width blank, **no rule line**, the key filling exactly
+  the same height, definitions two lines at most). `saar-article` does not carry the pair, so
+  every notes file copies the block from `unit01/lesson02/notes/main.tex` (worth promoting into
+  `shared/` on a run allowed to touch it). `\termblank` / `\vocabans` remain in the package but
+  add a rule line and drift in height — do not use them in a new lesson. `\termblanklong{Term}` (term + two write-lines) still exists, but it runs
   three lines against the key's one or two and floats the first section a page early in the key —
   if you use it, guard the first `notesbox` with `\boxguard[40]` in both files and re-verify. **vocabpar is
   automatic**: `\termblank`, `\termblanklong`, and `\vocabans` each open with their own `\par`, so
