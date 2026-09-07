@@ -90,7 +90,7 @@ second context; the homework on a third.
   is a **tool the notes pick up again**; the plan's Warm-Up box says what each item *seeds* and
   which notes section reuses it. Often the same numbers the notes open with.
 - **`notes`** — as above. Two sections, one Guided Practice, nothing after it.
-- **`homework`** — authored for **every** lesson, 2–3 pages at 12pt, and it is **the individual
+- **`homework`** — authored for **every** lesson, **two pages maximum** at 12pt (user decision 2026-09-06), and it is **the individual
   practice**: opens with a `remindbox` ("This is your graded homework…", identical in blank and
   key), then a context `scenariobox`, then ~6 items in a `notesbox` — the core procedure, a
   **deliberate contrast pair** (the pair that surfaces the target misconception), the crux head-on,
@@ -233,8 +233,8 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   model does, and the homework's practice boxes at full size. That is the frontmatter's
   `point_size: 12`. **The lesson plan stays 10pt and the deck 11pt** — they are not student
   work. The unit tests were authored at 10pt and have not been resized (not part of the pilot).
-  At 12pt the notes run **4 pages** and the homework **3** (three boxes, no item breaking across a
-  page); `\boxguard` counts are baselines, so the same numbers reserve more at 12pt (12 before
+  At 12pt the notes run **4 pages** and the homework **2** (two boxes, items 1–2 / 3–6, no item breaking across a
+  page; cut an item or a part before letting it reach a third page); `\boxguard` counts are baselines, so the same numbers reserve more at 12pt (12 before
   the first `notesbox` after the vocab box; 30 before a box opening with an unbreakable
   TikZ/pgfplots figure or `tabularx`).
 - **Palette — cerulean with gold accents** (`cerulean` #0B6FA4 is the dominant color, the third
