@@ -25,7 +25,7 @@ keyed component with a `_key`), `slides`, and the lesson plan (`main.tex`).
 model (two long notes sections, a Guided Practice worked together, a spoken debrief, the homework
 started in class; 5 / 35 / 10 / 10) — **and is the model every future lesson follows.** Lesson 1.1
 is in the previous notes-only shape (2026-08-31); lesson 1.0 still carries `activity/`; lessons
-1.3 was regenerated in the pilot shape 2026-09-07; 1.4–1.8 are pre-EFFL legacy (`notes`/`activity`/`exit_ticket`) with authored content; units 2–8
+1.3 and 1.4 were regenerated in the pilot shape 2026-09-07; 1.5–1.8 are pre-EFFL legacy (`notes`/`activity`/`exit_ticket`) with authored content; units 2–8
 (57 lesson dirs) are empty EFFL skeletons. Convert one lesson at a time per section 7 of
 `LESSON_SHAPE.md`.
 
@@ -45,7 +45,7 @@ assessments and cover pair ✅
 | 1.1 | The Statistical Cycle and Types of Data | PS.DC.1a–c; AFDA.DA.2a | ✅ |
 | 1.2 | Populations, Samples, Parameters, and Statistics | PS.DC.1d–e | ✅ **pilot shape** |
 | 1.3 | Choosing a Sample — Four Sampling Techniques | PS.DC.2a–b; AFDA.DA.2b | ✅ pilot shape (2026-09-07) |
-| 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ |
+| 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ pilot shape (2026-09-07) |
 | 1.5 | Observational Studies | PS.DC.2d | ✅ |
 | 1.6 | Principles of Experimental Design | PS.DC.3a–b; AFDA.DA.2c | ✅ |
 | 1.7 | Comparing Studies and Choosing a Method | PS.DC.3c–e | ✅ |

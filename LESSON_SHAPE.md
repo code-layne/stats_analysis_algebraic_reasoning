@@ -524,8 +524,8 @@ authoring each unit, never as a sweep):
    Active Monitoring, **Independent Practice**, **Debrief**, Reinforcement; three teacher notes),
    and the deck.
 
-**From the pre-EFFL legacy shape** (1.4–1.8, which carry both `exit_ticket/` and `activity/`; 1.2's
-and 1.3's regenerations are the worked examples):
+**From the pre-EFFL legacy shape** (1.5–1.8, which carry both `exit_ticket/` and `activity/`; 1.3's
+and 1.4's regenerations are the worked examples):
 delete `exit_ticket/` + `exit_ticket_key/` (and their stamps/target dirs); drop the Exit Ticket
 cover row and its teacher note; replace the plan's *Individual Work & Assessment* box with a
 **Debrief (7 min)** box that folds the exit ticket's conceptual item in as the whole-class cold
@@ -540,12 +540,12 @@ target dir. Finish with the evidence per lesson: `make -C unitXX/lessonYY all` *
 `make -C unitXX/lessonYY check` exit 0, blank and key verified page-for-page by per-page heading,
 the PDF eyeballed for stranded boxes, then the planning-log update.
 
-**Scoreboard (2026-09-07):** 66 lesson directories. **2 current — the pilot and its first
-conversion** (`unit01/lesson02`, the model; `unit01/lesson03`, regenerated from the pre-EFFL
-shape 2026-09-07 — the worked example for 1.4–1.8); **1 notes-only** (`unit01/lesson01`,
-complete, the next conversion once the pilot is confirmed in the classroom); **1
-group-activity** (`unit01/lesson00`, authored and complete); **5 pre-EFFL legacy**
-(`unit01/lesson04`–`lesson08`, authored, built, and gated in their old shape); **57 EFFL** (units
+**Scoreboard (2026-09-07):** 66 lesson directories. **3 current — the pilot and its first two
+conversions** (`unit01/lesson02`, the model; `unit01/lesson03` and `unit01/lesson04`, regenerated
+from the pre-EFFL shape 2026-09-07 — the worked examples for 1.5–1.8); **1 notes-only**
+(`unit01/lesson01`, complete, the next conversion once the pilot is confirmed in the classroom);
+**1 group-activity** (`unit01/lesson00`, authored and complete); **4 pre-EFFL legacy**
+(`unit01/lesson05`–`lesson08`, authored, built, and gated in their old shape); **57 EFFL** (units
 02–08, empty skeletons). The five conventions are already clean tree-wide: no live
 `\namedateperiod` off the cover, no live `teachernote` in any `_key`, and every lesson has a
 deck — the shape conversions are what remain. Unit 1's assessments and cover pair are complete;

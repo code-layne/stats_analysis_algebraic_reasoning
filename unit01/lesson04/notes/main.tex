@@ -1,297 +1,279 @@
-%! Bias in Samples and Surveys — Unit 1, Lesson 1.4 — Guided Notes
-\documentclass[10pt]{article}
+%! Bias in Samples and Surveys — Unit 1, Lesson 1.4 — Guided Notes & Practice
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THE in-class document. The notes carry the whole gradual release, closed by a SPOKEN debrief.
+% They run SHORT on purpose: the period ends with students starting the homework, which is
+% where the individual practice lives.
+%   I DO   : the vocabulary box and notes sections 1-2.                              (~20 min)
+%   WE DO  : the practicebox ("Guided Practice") — Cedar Ridge Apartments, together.  (~15 min)
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period.
+% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
+% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
+% with a \wordbank{}. No closing practice set, no extension.
+% Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: "the
+% sample was too small" — a larger sample makes an estimate more PRECISE, not more CORRECT;
+% size shrinks variability and does nothing to direction (PS.DC.2c, AFDA.DA.2e). The second
+% half of section 1 carries the second trap: undercoverage and nonresponse fused — the test is
+% COULD THAT PERSON HAVE BEEN CHOSEN?
+%
+% THE DATA
+%   Harbor Point Community Pool (warm-up + notes): 1,500 members; census truth 300/1500 = 20%
+%     mainly swim laps. Tuesday-evening sample 27/75 = 36% -> 540 predicted, off by 240.
+%     Three honest samples 19/22/19 average 20%; three Tuesday samples 35/36/37 average 36%.
+%     Ten Tuesdays: 270/750 = 36% — the same 16-point miss. Question order: 62% vs 41% = 21.
+%   Guided Practice, Cedar Ridge Apartments (the old activity's context): 600 households ALL
+%     mailed a card; 150 return (25%); 96/150 = 64% -> 384 predicted; census 240/600 = 40%,
+%     so 24 points and 144 households too many; re-run 192/300 = 64% again.
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
+% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
+% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
+% answers so the two files wrap alike.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.4}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.4}{Guided Notes \& Practice}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item explain what makes a study \textbf{biased}, and tell bias apart from
-        ordinary sampling variability;
-  \item identify \textbf{sampling bias} in a plan by naming who the frame leaves
-        out;
-  \item explain why a \textbf{larger sample does not fix bias};
-  \item name the forms of \textbf{response bias}, including
-        \textbf{question order bias};
-  \item describe \emph{ways to reduce bias} in a study plan and justify each one.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\termblanklong{Bias}
-\termblanklong{Sampling bias}
-\termblanklong{Undercoverage}
-\termblanklong{Nonresponse}
-\termblanklong{Response bias}
-\termblanklong{Question order bias}
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Bias}
+\vterm{Sampling bias}
+\vterm{Undercoverage}
+\vterm{Nonresponse}
+\vterm{Response bias}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-In Lesson 1.3 you replanned the pool study properly: a numbered frame, chance
-doing the choosing, every membership type in proportion. The board runs it --- and
-hands the surveys out at the front desk with the pool director standing beside
-the table, watching.
+Last class the board threw out the Tuesday-evening study: $27$ of the $75$ members asked said
+they mainly swim laps --- $36\%$ --- while the office's own records say $20\%$. The staff
+member says the problem was \emph{size}. She will run the same Tuesday-evening survey for
+ten weeks and ask $750$ members instead of $75$.
 
-\vspace{2pt}
-\textbf{The sample was chosen perfectly. Name one reason the answers still might
-not be true.}
-\writelines{2}
+\vspace{3pt}
+\textbf{Will her new number land closer to the truth, $20\%$?} Circle one: \quad yes \qquad
+no \qquad it depends \quad --- and say why you think so. We vote again at the end of
+section~2.
+\par\writelines{2}
 \end{hookbox}
 
-\boxguard[30]
+% ── I DO: section 1 ──────────────────────────────────────────────────────────
+% Page 2: section 1 (page 1 is the vocab box + hook).
+\newpage
 \begin{notesbox}{1. Bias Is a Direction, Not Bad Luck}
 \small
 Lesson 1.2 said that honest random samples disagree with each other --- that is
-\textbf{sampling variability}, and nobody is wrong. Those samples scatter
-\emph{around} the true value.
-
-\vspace{2pt}
-A study is \textbf{biased} when its procedure \emph{systematically} overestimates
-or underestimates the population value. Every sample it takes leans the
-\textbf{same direction}.
-
-\vspace{3pt}
-The pool office's own records say $20\%$ of all $1{,}500$ members mainly swim
-laps. Here are two ways of taking three samples of $75$:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X c c c p{2.1cm} @{}}
-\toprule
-\textbf{How the $75$ were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd}
-  & \textbf{Average} \\
-\midrule
-At random from the full membership list & $19\%$ & $22\%$ & $19\%$
-  & \blank{1.7cm} \\
-From whoever arrived Tuesday evening & $35\%$ & $36\%$ & $37\%$
-  & \blank{1.7cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Both rows disagree with themselves --- that is variability, and it is unavoidable.
-Only one row disagrees with the \emph{truth} every single time.
-
-\vspace{2pt}
-The biased row is the \blank{4cm} row, and it misses \blank{2.2cm}
-(too high / too low).
-
-\vspace{3pt}
-\textit{Variability is noise: it shrinks when the sample grows. Bias is a
-direction: it does not.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{2. Sampling Bias --- Who Never Had a Chance}
-\small
-The \textbf{sampling frame} is the list a study can actually choose from.
-\textbf{Sampling bias} happens when some members of the population are
-systematically more likely to be chosen than others.
-
-\vspace{2pt}
-Two ways it gets in:
-
-\vspace{2pt}
-\textbf{Undercoverage} --- part of the population is left off the frame entirely,
-so those members can never be chosen. \textbf{Nonresponse} --- members are chosen
-properly but do not answer, so the data that comes back is missing exactly the
-people who stayed silent.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} X p{4.3cm} @{}}
-\toprule
-\textbf{The plan} & \textbf{Who is missing?} \\
-\midrule
-Ask the members who arrive Tuesday evening. & \blank{3.8cm} \\
-Email the survey only to members with an address on file. & \blank{3.8cm} \\
-Post the survey on the pool's social media page. & \blank{3.8cm} \\
-Mail a card to all $1{,}500$ members; $200$ mail it back. & \blank{3.8cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The first three rows are \textbf{undercoverage} --- the frame itself is too
-small. The last row has a perfect frame and still has a problem: it is
-\blank{3.6cm}.
-
-\vspace{2pt}
-\textit{Nobody left off the frame can ever be sampled, and nobody who stays
-silent can ever be counted. Neither one shows up in your arithmetic.}
-\end{notesbox}
-
-\boxguard[26]
-\begin{notesbox}{3. A Bigger Sample Does Not Fix Bias}
-\small
-The staff member is told her sample was too small, so she runs the same Tuesday
-evening survey every week for ten weeks. She ends up asking $750$ members, and
-$270$ of them say they mainly swim laps.
-
-\begin{work}
-  \dfrac{270}{750} &= 0.36 \\
-                   &= 36\%
-\end{work}
-
-\vspace{2pt}
-Ten times the work, and the same answer. Fill in the comparison:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.95\linewidth}{@{} c c c X @{}}
-\toprule
-\textbf{Members asked} & \textbf{Study says} & \textbf{Truth}
-  & \textbf{Off by how many percentage points?} \\
-\midrule
-$75$  & $36\%$ & $20\%$ & \blank{4cm} \\
-$750$ & $36\%$ & $20\%$ & \blank{4cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-A larger sample makes an estimate more \blank{2.6cm}, but it cannot make a
-biased procedure \blank{2.6cm}. Sample size fixes
-\blank{3.4cm}; it does nothing to bias.
-
-\vspace{2pt}
-\textit{Said plainly: a bigger biased sample is a more confident wrong answer.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{4. Response Bias --- When the Answer Is Not the Truth}
-\small
-Everything so far went wrong before anyone spoke. \textbf{Response bias} is
-anything about the survey itself --- who is asking, how it is worded, what order
-it comes in --- that pushes a respondent away from their real answer.
+\textbf{sampling variability}, and nobody is wrong. Those samples scatter \emph{around} the
+truth. Today's studies are wrong the \emph{same way every time}.
+\wordbank{direction \;\textbullet\; 20\% \;\textbullet\; 36\% \;\textbullet\; Tuesday \;\textbullet\; too high \;\textbullet\; too low \;\textbullet\; lap swimmers \;\textbullet\; undercoverage \;\textbullet\; nonresponse \;\textbullet\; could \;\textbullet\; could not}
+A study is \textbf{biased} when its procedure \emph{systematically} overestimates or
+underestimates the population value. Every sample it takes leans the same \blank{1.9cm}.
+The office's records say $20\%$ of all $1{,}500$ members mainly swim laps (the warm-up).
+Here are two ways of taking three samples of $75$:
+\nopagebreak
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{0.98\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+\begin{tabularx}{\linewidth}{@{} X c c c p{1.9cm} @{}}
+\toprule
+\textbf{How the $75$ were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{Average} \\
+\midrule
+At random from the full membership list & $19\%$ & $22\%$ & $19\%$ & \blank{1.5cm} \\
+From whoever arrived Tuesday evening    & $35\%$ & $36\%$ & $37\%$ & \blank{1.5cm} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{2pt}
+Both rows disagree with themselves --- that is variability, and it is unavoidable. Only the
+\blank{1.9cm} row misses the \emph{truth} every single time, and it misses \blank{1.9cm}.
+Tuesday evening is lap-swim time, so \blank{2.8cm} are over-counted. \textit{Consistent
+is not the same as correct: the tighter row is the wrong one.}
+
+\vspace{5pt}
+\textbf{\textcolor{cerulean}{Sampling Bias --- Who Never Had a Chance.}}
+\textbf{Sampling bias} gets in when some members of the population are systematically more
+likely to be chosen than others. It arrives two ways, both before anyone speaks.
+\textbf{Undercoverage:} part of the population is left off the sampling frame, so those
+members can never be chosen. \textbf{Nonresponse:} members are chosen properly but never
+answer, so the data is missing exactly the people who stayed silent.
+\nopagebreak
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X p{3.9cm} p{2.9cm} @{}}
+\toprule
+\textbf{The plan} & \textbf{Who is missing?} & \textbf{Which bias?} \\
+\midrule
+Ask the members who arrive Tuesday evening. & morning and weekend swimmers & \blank{2.6cm} \\
+Email the survey only to members with an address on file. & members with no email on file & \blank{2.6cm} \\
+Post the survey on the pool's social media page. & members who do not follow the page & \blank{2.6cm} \\
+Mail a card to all $1{,}500$ members; $200$ mail it back. & the $1{,}300$ who never mailed it back & \blank{2.6cm} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{3pt}
+\begin{center}
+\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
+\textbf{Careful --- the last row's frame is perfect.} All $1{,}500$ got a card, and the
+study is still broken. The test that separates the two: \emph{could that person have been
+chosen?} A morning swimmer \blank{1.8cm} have been chosen on Tuesday evening ---
+undercoverage. A silent card holder \blank{1.4cm} have been --- nonresponse. Both leave
+people out, and neither one shows up in your arithmetic.}}
+\end{center}
+
+\end{notesbox}
+
+% Page 3: section 2.
+\newpage
+\begin{notesbox}{2. Response Bias --- After the Right Person Is Chosen}
+\small
+\textbf{Response bias} is anything about the survey itself --- who is asking, how it is worded,
+what order it comes in --- that pushes a respondent away from their true answer. It happens
+\emph{after} the right person has been chosen. The standard names seven kinds; read them once,
+then diagnose.
+\wordbank{social desirability \;\textbullet\; neutral responding \;\textbullet\; acquiescence \;\textbullet\; demand \;\textbullet\; question order \;\textbullet\; 36\% \;\textbullet\; 16 \;\textbullet\; precise \;\textbullet\; correct \;\textbullet\; variability \;\textbullet\; direction \;\textbullet\; undercoverage \;\textbullet\; nonresponse}
+\nopagebreak
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{4.1cm} X @{}}
 \toprule
 \textbf{\normalfont Kind} & \textbf{What the respondent does} \\
 \midrule
 Demand bias & Guesses what the study wants to hear and answers to match. \\
 Social desirability & Gives the answer that looks good to other people. \\
-Dissent bias & Answers negatively to everything, often without understanding
-  the questions. \\
-Acquiescence bias & Answers positively to everything --- agrees with it all. \\
-Extreme responses & Always picks ``strongly agree'' or ``strongly disagree.'' \\
-Neutral responding & Always picks the middle, no-opinion choice. \\
+Dissent bias & Answers negatively to everything, often without understanding the questions. \\
+Acquiescence bias & Agrees with everything --- every answer positive. \\
+Extreme responses & Always ``strongly agree'' or ``strongly disagree.'' \\
+Neutral responding & Always the middle, no-opinion choice. \\
 Question order bias & An earlier question changes the answer to a later one. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\vspace{3pt}
-Name the kind of response bias in each situation:
-
+\nopagebreak
 \begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} X p{3.6cm} @{}}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{} X p{3.4cm} @{}}
 \toprule
-\textbf{At the pool} & \textbf{Kind of response bias} \\
+\textbf{At the pool} & \textbf{Kind} \\
 \midrule
-The head lifeguard hands out the survey and waits. Members who complained last
-week now rate the staff ``excellent.'' & \blank{3.1cm} \\
+The lifeguard hands it out and waits; last week's complainers rate the staff ``excellent.'' & \blank{3.1cm} \\
 A member marks ``no opinion'' on all fifteen questions. & \blank{3.1cm} \\
-A member marks ``strongly agree'' on every question, including two that
-contradict each other. & \blank{3.1cm} \\
-The survey is titled \emph{``Help us show the pool needs longer hours.''}
-& \blank{3.1cm} \\
+A member agrees with every statement, even two that contradict each other. & \blank{3.1cm} \\
+The survey is titled \emph{``Help us show the pool needs longer hours.''} & \blank{3.1cm} \\
+Asked \emph{``Are the lap lanes overcrowded?''} first, $62\%$ say yes to a \$40,000 lane;
+asked the money question first, $41\%$ do --- same words, $21$ points apart. & \blank{3.1cm} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\vspace{2pt}
-\textit{Response bias does not care how you drew the sample. It happens after
-the right person has already been chosen.}
-\end{notesbox}
+\vspace{4pt}
+\textbf{\textcolor{cerulean}{The Fix That Is Not a Fix.}}
+Told her sample was too small, the staff member runs the same Tuesday-evening survey for ten
+weeks. She asks $750$ members, and $270$ of them say they mainly swim laps. Show the work:
 
-\boxguard[30]
-\begin{notesbox}{5. Question Order --- and How to Reduce Bias}
-\small
-The board sends out two versions of the same two-question survey. The questions
-are word-for-word identical; only the \textbf{order} is different.
+\begin{work}
+  \dfrac{270}{750} &= 0.36 = 36\%
+\end{work}
 
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} p{1.9cm} X c @{}}
-\toprule
-\textbf{Version} & \textbf{Order of the two questions}
-  & \textbf{Said yes to the \$40,000} \\
-\midrule
-A & ``Are the lap lanes overcrowded?'' \emph{then} ``Should the town spend
-    \$40,000 to add a lane?'' & $62\%$ \\
-B & ``Should the town spend \$40,000 to add a lane?'' \emph{then} ``Are the lap
-    lanes overcrowded?'' & $41\%$ \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-The two versions differ by \blank{2.6cm} percentage points, on the same
-question, from the same membership. This is \blank{4cm}.
+One Tuesday: $75$ asked, $36\%$, off by \blank{1.1cm} points. Ten Tuesdays: $750$ asked,
+\blank{1.3cm}, off by \blank{1.1cm} points. Ten times the work, the same answer.
+\textbf{Vote again.}
 
 \vspace{3pt}
-\textbf{Four ways to reduce bias in a plan.} Fill in what each one fixes:
+\begin{center}
+\fcolorbox{cerulean}{frost}{\parbox{0.94\linewidth}{\small
+\textbf{A larger sample makes an estimate more \blank{1.7cm}, not more \blank{1.7cm}.} Size
+shrinks \blank{2.1cm}; nothing about size touches \blank{1.8cm}. The $750$ are still
+Tuesday-evening lap swimmers --- a bigger biased sample is a more confident wrong answer. Only
+a better \emph{procedure} removes bias, and each fix removes one: a complete frame removes
+\blank{2.6cm}; calling back the silent removes \blank{2.4cm}; neutral wording and anonymous
+answers remove response bias.}}
+\end{center}
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt]
-  \item Build the frame from the \emph{complete} membership list, not from
-        whoever shows up. \\ Fixes: \blank{5.5cm}
-  \item Go back to the members who did not answer the first time. \\
-        Fixes: \blank{5.5cm}
-  \item Word every question neutrally --- never ``Don't you agree that\dots'' \\
-        Fixes: \blank{5.5cm}
-  \item Let members answer anonymously, with nobody watching. \\
-        Fixes: \blank{5.5cm}
-\end{enumerate}
 \end{notesbox}
 
-\boxguard
+% Page 4: the Guided Practice, alone.
+\newpage
 \begin{practicebox}
 \small
-For each plan, name the main source of bias and give one change that would fix
-it.
+\textbf{Cedar Ridge Apartments --- we work this one together.} Cedar Ridge has $600$
+households. Management mails a parking survey to \emph{every} household; $150$ cards come
+back, and $96$ of those say parking is a problem. Management is about to tell the owners that
+Cedar Ridge needs a bigger lot.
+\wordbank{undercoverage \;\textbullet\; nonresponse \;\textbullet\; yes \;\textbullet\; no \;\textbullet\; 24 \;\textbullet\; 144 \;\textbullet\; too high \;\textbullet\; too low \;\textbullet\; acquiescence \;\textbullet\; demand}
+\textbf{(a)} What share of the households answered at all, and what share of \emph{those}
+said parking is a problem?
 
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.98\linewidth}{@{} X p{2.8cm} p{3.5cm} @{}}
-\toprule
-\textbf{The plan} & \textbf{Source of bias} & \textbf{One fix} \\
-\midrule
-A gym surveys members about closing early by asking people working out at
-$9$~p.m.
-  & \blank{2.4cm} & \blank{3.1cm} \\
-A principal asks students, by name and out loud in class, whether they have ever
-skipped a class.
-  & \blank{2.4cm} & \blank{3.1cm} \\
-A town mails a survey to all $4{,}000$ households and $310$ send it back.
-  & \blank{2.4cm} & \blank{3.1cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
+\begin{work}
+  \dfrac{150}{600} &= 0.25 = 25\% \\
+  \dfrac{96}{150}  &= 0.64 = 64\%
+\end{work}
 
 \vspace{3pt}
-The pool board says: ``Fine --- next time we'll survey \emph{four times as many}
-people the same way.'' Explain, in one or two sentences, why that will not help.
-\writelines{2}
+\textbf{(b)} Every household got a card, so nobody was left off the frame --- this is not
+\blank{2.8cm}. The $450$ households that threw the card away are \blank{2.6cm}. Could one
+of them have been chosen? \blank{1cm}
+
+\vspace{3pt}
+\textbf{(c)} Management scales $64\%$ to all $600$ households. A year later the office asks
+\emph{every} household, and $240$ of the $600$ say parking is a problem. Show both.
+
+\begin{work}
+  0.64 \times 600 &= 384 \text{ households} \\
+  \dfrac{240}{600} &= 0.40 = 40\%
+\end{work}
+
+The mail-in study was off by \blank{1.2cm} percentage points --- \blank{1.4cm} households
+--- and it was \blank{2cm}.
+
+\vspace{3pt}
+\textbf{(d)} Management says the first study just needed more cards. They mail again, get
+$300$ back, and $192$ of those say parking is a problem: $192 \div 300 = 64\%$ again.
+Two-bedroom households own the most cars \emph{and} mailed their cards back at twice the
+rate of studio households. Explain why twice the cards did not help, and why the miss is in
+the direction you named in (c).
+\par\writelines{2}
+
+\vspace{3pt}
+\textbf{(e)} The card asked: \emph{``Don't you agree that Cedar Ridge's parking lot is
+dangerously overcrowded?''} Name the response bias that wording invites: \blank{3cm}. Then
+rewrite the question so it pushes neither way.
+\par\writeline
 \end{practicebox}
 
 \end{document}
