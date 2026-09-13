@@ -6,7 +6,8 @@ list the answers IN ORDER in a JSON spec, and generate. Re-run after every edit 
 
 Usage:  python3 templates/lesson/mkkey.py unitXX/lessonYY/notes/main.tex \
             unitXX/lessonYY/notes_key/main.tex answers.json
-SPEC: {"blanks": [...], "lines": [[...],[...]], "vocab": {"Term": "def"}, "title": "Guided Notes"}
+SPEC: {"blanks": [...], "lines": [[...],[...]], "vocab": {"Term": "def"}, "title": "Guided Notes",
+       "cells": {"1": "answer", ...}, "spaces": [...], "labels": [...]}   (table slots, 2026-09-12)
 Replaces, in order: every \\blank{W} -> \\ans{a}; every \\par\\writelines{n} / \\par\\writeline
 -> \\par\\ansline{..} + \\ansline{..}; \\termblanklong{T} -> \\vocabans{T}{def};
 -boxes -> -key; the pageheader title gets " --- Answer Key"; the %! header line too.
@@ -39,6 +40,20 @@ def wl(m):
     assert len(a) == n, f"writelines{{{n}}} but {len(a)} answers: {a}"
     return '\\par\\ansline{' + a[0] + '}' + ''.join('\n\\ansline{' + x + '}' for x in a[1:])
 body = code_sub(r'\\par\\writelines\{(\d+)\}|\\par\\writeline(?![a-z])', lambda m: wl(m), body)
+# Main Ideas / Notes table slots (2026-09-12): \\pcell answers keyed by problem number, then
+# \\writespace and \\labelbox answers in order of appearance.
+cells = {str(k): v for k, v in S.get("cells", {}).items()}
+def pc(m):
+    n = m.group(1); assert n in cells, f"no answer for \\pcell {n}"
+    return '\\pcell{' + n + '}{' + m.group(2) + '}{' + m.group(3) + '}{' + cells.pop(n) + '}'
+body = code_sub(r'\\pcell\{(\d+)\}\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}\{([^}]*)\}\{\}', pc, body)
+assert not cells, f"unused cell answers: {sorted(cells)}"
+spaces = iter(S.get("spaces", []))
+body = code_sub(r'\\writespace\{([^}]*)\}\{\}', lambda m: '\\writespace{' + m.group(1) + '}{' + next(spaces) + '}', body)
+assert next(spaces, None) is None, "unused writespace answers"
+labels = iter(S.get("labels", []))
+body = code_sub(r'\\labelbox\{([^}]*)\}\{\}', lambda m: '\\labelbox{' + m.group(1) + '}{' + next(labels) + '}', body)
+assert next(labels, None) is None, "unused labelbox answers"
 t = pre + sep + body
 assert next(lines, None) is None, "unused writeline answers"
 for term, d in S.get("vocab", {}).items():

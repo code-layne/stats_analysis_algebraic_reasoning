@@ -8,77 +8,46 @@
   "Sampling variability": "The change in a statistic from one sample to the next, even though the population did not change. Not a mistake --- it is what samples do."
  },
  "blanks": [
-  "800",
-  "50",
-  "50",
-  "all 800 shoppers",
-  "the 50 asked",
-  "50",
-  "all 900 students",
-  "the 45 asked",
-  "45",
-  "the 12,000 boxes",
-  "the 30 boxes",
-  "30",
-  "census",
-  "parameter",
-  "statistic",
-  "sample",
-  "statistic",
-  "population",
-  "parameter",
-  "sample",
-  "statistic",
-  "population",
-  "parameter",
-  "all",
-  "population",
-  "parameter",
-  "who",
-  "statistic",
-  "parameter",
   "destruction",
   "change",
   "time",
   "cost",
-  "access",
-  "$24/50 = 0.48 = 48\\%$",
-  "$29/50 = 0.58 = 58\\%$",
-  "3",
-  "1",
-  "No",
-  "none of them",
-  "sampling variability",
-  "do",
-  "moves",
-  "stays put",
-  "closer",
-  "Riverbend's 900 students",
-  "50",
-  "the 50 students she asked",
-  "statistic",
-  "estimate",
-  "parameter",
-  "50",
-  "40",
-  "360",
-  "900",
-  "No"
+  "access"
  ],
  "lines": [
   [
    "Answers vary --- most of the room picks a volunteer, or says the truth is ``in between.''",
-   "(Settled at the end of section 2: nobody --- three samples, three statistics, one parameter.)"
-  ],
-  [
-   "No. Two different samples of 50 give two different statistics.",
-   "Neither found it --- there is one parameter, and both estimate it."
-  ],
-  [
-   "Time --- three class periods nobody can spare (also cost or access)."
-  ],
-  [
-   "360 was computed from the 40\\%, not counted --- it is an estimate of the parameter."
+   "(Settled at problem 14: nobody --- three samples, three statistics, one parameter.)"
   ]
- ]
+ ],
+ "labels": [
+  "population",
+  "sample",
+  "50",
+  "statistic",
+  "parameter"
+ ],
+ "spaces": [
+  "Each asked a different 50 shoppers, so each got a different statistic. The one parameter never moved."
+ ],
+ "cells": {
+  "1": "Population: all 800 Saturday shoppers. Sample: the 50 asked. $n = 50$.",
+  "2": "Population: all 900 Riverbend students. Sample: the 45 asked. $n = 45$.",
+  "3": "Population: the 12,000 boxes filled Tuesday. Sample: the 30 weighed. $n = 30$.",
+  "4": "Population: all 800 shoppers. Sample: the same 800 --- the sample is the whole population: a census.",
+  "5": "Describes the 50 asked --- a statistic.",
+  "6": "Describes all 800 shoppers --- a parameter (a count, and still a parameter).",
+  "7": "Describes the 8 asked --- a statistic.",
+  "8": "Describes all 900 students --- a parameter, even though it is a percent.",
+  "10": "Access (or time) --- shoppers leave before she can reach them.",
+  "11": "Run a census --- ask all 800. Time and access forbid it.",
+  "12": "Ben: $24/50 = 0.48 = 48\\%$ \\par Cleo: $29/50 = 0.58 = 58\\%$",
+  "13": "Three statistics --- one from each sample. One true percent: there is exactly one parameter for all 800.",
+  "14": "Nobody. Nobody counted wrong, and none found the true percent --- three estimates of one parameter.",
+  "15": "Usually closer, but not exactly on it every time --- it is still a statistic.",
+  "16": "Population: Riverbend's 900 students. Sample: the 50 she asked; $n = 50$. Constraint: time (or cost, access).",
+  "17": "$20/50 = 0.40 = 40\\%$ --- a statistic. \\par $0.40 \\times 900 = 360$ --- an estimate of the parameter.",
+  "18": "$23/50 = 0.46 = 46\\%$. No mistake --- two samples, two statistics. Neither found it: one parameter, both estimate it.",
+  "19": "No --- 360 was computed from the 40\\%, not counted. ``Of the 50 asked, 40\\% have a job; that is about 360 of the 900.''"
+ }
 }
