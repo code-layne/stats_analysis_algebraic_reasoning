@@ -130,51 +130,47 @@ you collect it.
 
 ## Guided notes & practice
 
-`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 35 minutes**, in two moves.
-`\pageheader{Unit X, Lesson Y.Z}{Guided Notes \& Practice}` — **no name row** (namestrip). Target
-**4 pages** at 12pt, blank and key, `\small` inside every box as the stats model does. **It runs short on purpose**: the period ends with students
-starting the homework, which is where the individual practice lives.
+`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
+Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; density rules of
+2026-09-12). `\pageheader{...}` (no name row — Namestrip), the `vocabbox`, the `hookbox` (it stays), then **one
+`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **3–4 pages** at
+12pt, **12–19 numbered problems**. The page belongs to the student's pen.
 
-**I do (~20 min)** — **exactly two** numbered notes sections. Each is long, carrying two moves:
-the second is introduced by a bold run-in heading, `\textbf{\textcolor{cerulean}{Its Title.}}`, not
-by a third box. **The crux lives in the second half of section 2.**
-- **Page plan (fixed):** page 1 = `vocabbox` + `hookbox`; page 2 = section 1; page 3 = section 2 (`\newpage` before each section); page 4 = the Guided Practice alone. **No `objectivebox`** — the cover carries the targets.
-- Every fill-in cluster opens with a `\wordbank{…}` strip (defined in the preamble; copy from 1.2) listing every word and number its blanks take.
-- `vocabbox` — one `\vterm{Term}` per key term (4–5 of them): a **fixed-height 2.3cm row** with the
-  term label and open writing space — **no inline blank and no rule line** (user correction
-  2026-09-06: the black answer line crowded the row). The box says
-  **"Fill in each term as we name it in the notes below"** — filled during instruction, never
-  front-loaded. The key uses `\vtermans{Term}{definition}`, which fills exactly the same height
-  (keep definitions to two lines), so the box cannot drift blank vs. keyed. The `\vterm` /
-  `\vtermans` pair is defined in the notes preamble — copy the block from lesson 1.2; `mkkey.py`
-  maps one to the other. Do not use `\termblank` / `\termblanklong` / `\vocabans` in a new lesson.
-- `hookbox` on page 1, under the vocab box: the claim, a circle-one vote, `\par\writelines{2}` for the reason — **left unresolved**; the same hook is a dark slide and a plan box.
-- Two `notesbox{N. Title}` sections. Each opens in the warm-up's own context, carries a short piece
-  of exposition, a **pre-drawn** table or display with `\blank{W}` fills at the points where students
-  record the definition or the conclusion, and any computation in a `work` block (byte-identical in
-  the key). Put a trap where it is broken in a `\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{…}}`
-  callout (section 1's second half may carry a second trap; section 2's second half carries the
-  target misconception in a `\fcolorbox{cerulean}{frost}` rule box). Sequence them so the crux is
-  earned: the hook plants it and takes a vote, section 1 builds the vocabulary, the second half of
-  section 2 re-takes the vote and settles it with a correct computation. Reuse one data set across
-  both sections.
-
-**We do (~15 min)**
-- One `practicebox` — **takes no argument**, its title is fixed as "Guided Practice". Open with "**Title — we work this one together**" in a **second context**, alone on page 4. Four or five lettered parts: the
-  setup/identification move, the computation with its labels (`work` block), **the part that is the
-  point of the box** — the one that tests the misconception on new ground — and optionally one
-  short closing part. `\par\writelines{n}` for prose answers (the key: `\par\ansline{}` on the first
-  line of a run only). Students hold the pen; the questions the teacher asks belong in the plan.
-
-**The notes end at Guided Practice.** No solo practice box, no *Putting It Together*, no
-`extensionbox`, no `reflectionbox`. The debrief is spoken and lives in the plan; the individual
-practice is `homework/`, started in class in the last ten minutes.
-
-**Page lockstep:** generate the key from the blank with `templates/lesson/mkkey.py` and an
-answers-in-order JSON spec (`templates/lesson/examples/` holds lesson 1.2's); it refuses to run if
-the blank count and the answer count disagree. **Size each `\blank{}` close to its answer** — a
-4.4cm blank replaced by a 2cm answer rewraps the paragraph and silently costs a page. Verify by
-comparing **per-page headings** of the compiled blank and key, not just totals.
+- `vocabbox` — one `\vterm{Term}` per key term (4–6): the fixed-height row pair `\vterm` /
+  `\vtermans` defined in the notes preamble (copy from the reference lesson). The box says **"Fill in
+  each term as we name it in the notes below"** — filled during instruction, never front-loaded.
+  Then the `hookbox`, ending on a circle-one vote left unresolved.
+- **No `objectivebox`** — the targets are on the cover. No `notesbox`, no `practicebox`.
+- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*, **four to five
+  rows**, each `\mainidea[small lead]{Label} & ... \\ \hline`. The label is one short word or
+  two (uppercased by the macro; a single word over ten letters overflows). The Notes cell holds,
+  in order:
+  1. **One or two complete printed sentences** — the definition, read. Never a sentence with
+     words punched out. A `\stepnum{n}` list for a procedure.
+  2. **One large pre-drawn display** (TikZ, `scale` 0.8–1.0) the student reads — or annotates
+     with `\labelbox{W}{}` ("This is a ___", an arrow's label). Where the idea deserves it, an
+     *In your own words* line with a `\writespace{1.6cm}{}`.
+  3. `\notesprompt{…}` and a **two-across `probgrid`** (`|Y|Y|`, never three across) of
+     `\pcell{n}{statement}{H}{}` cells, **H = 1.8–2.6 cm** of answer space each, 2–4 problems
+     per row.
+- **Blanks:** a `\blank{}` only where a single word or number *is* the answer — a table to fill,
+  a display to name. Budget a handful per lesson. Mid-sentence blanks are banned.
+- **The I do / we do split is row by row**: the teacher reads the definition, marks up the
+  display, and works the first problem of each grid; the class works the rest with the pen in
+  their hand. **The trap and the crux are problems in a grid**, in the last instruction row.
+  **The last row is Guided Practice**: `\mainidea[Guided practice]{Its Title}`, one new example
+  in a second context, four problems worked *with* the class, prompt `We work these together.`
+- **Packing** (a table row cannot break across pages): the figure gets its own sub-row (`\\`
+  then `& …`), and **each grid row is its own sub-row** — close the `probgrid`, `\\ &`, reopen
+  as `probgrid*` (no top rule). `\\` inside a cell ends the row: break lines with `\par`.
+- **Every display is pre-drawn** and read; students construct only by filling a table.
+- **Generate the key with `templates/lesson/mkkey.py`** — its JSON spec now takes `"cells"`
+  (`{"n": "answer"}` per `\pcell`), `"spaces"` (`\writespace` answers in order) and `"labels"`
+  (`\labelbox` labels in order) beside `"blanks"`, `"lines"`, `"vocab"`. **The key mirrors the
+  blank byte for byte** except `-key` for `-boxes`, the header's
+  `--- Answer Key`, `\vterm`→`\vtermans`, `\blank`→`\ans`, and the answer argument of each
+  `\pcell`, `\writespace`, `\labelbox`. Keep every answer shorter than its space. Prove the
+  page counts match.
 
 ## Homework
 

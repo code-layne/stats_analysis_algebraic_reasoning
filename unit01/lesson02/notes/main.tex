@@ -1,36 +1,47 @@
 %! Populations, Samples, Parameters, and Statistics — Unit 1, Lesson 1.2 — Guided Notes & Practice
-% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
-% THE in-class document. The notes carry the whole gradual release, closed by a SPOKEN debrief.
-% They run SHORT on purpose: the period ends with students starting the homework, which is
-% where the individual practice lives.
-%   I DO   : the objective box, the vocabulary box, and notes sections 1-2.          (~20 min)
-%   WE DO  : the practicebox ("Guided Practice") — the Riverbend job survey, together. (~15 min)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.8–2.6cm of writing room. Problems run 1..19.
+% DENSITY: a \blank{} only where a word IS the answer (the five cells of the constraint table
+% in row 3 — the one \wordbank strip sits above it); no mid-sentence blanks; every display is
+% pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 10, 12).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (16–19), is worked entirely together on Riverbend instead of
+%            the market.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last ten minutes of the period.
-% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
-% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
-% with a \wordbank{}. No closing practice set, no extension.
-% Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: a
-% statistic that differs from another statistic is not a mistake — the parameter is one fixed
-% number and statistics vary by sample (PS.DC.1d-e). The second half of section 1 carries the
-% second trap: a percent computed from records of EVERYONE is a parameter, not a statistic.
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 8 (61% from the records of all 900 — a percent that is a parameter).
+% THE CRUX is problem 14 (row 4, "One Parameter"): three honest samples, three statistics,
+% one parameter that never moved — the hook vote is re-taken there (PS.DC.1d–e). Problem 18
+% is the crux transferred to Riverbend; problem 19 is the over-claim (an estimate is not a
+% count).
 %
 % THE DATA
 %   Lakeside Farmers Market: 800 Saturday shoppers; 50 asked, 26 drove -> 52%; 0.52 x 800 = 416
 %   Three volunteers, a different 50 shoppers each: Ana 26 (52%), Ben 24 (48%), Cleo 29 (58%)
-%   District records: 61% of all 900 Riverbend students ride a bus  (a PARAMETER — the trap row)
+%   District records: 61% of all 900 Riverbend students ride a bus  (a PARAMETER — the trap)
 %   Guided Practice, Riverbend HS: 900 students; 50 asked, 20 have a job -> 40%; 0.40 x 900 = 360;
 %     a second 50 asked, 23 have one -> 46%
 %
-% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
-% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
-% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
-% answers so the two files wrap alike.
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson02_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% Word bank strip — ONLY above a table the student fills (row 3). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
 \newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 % Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
@@ -80,231 +91,210 @@ $48\%$. Cleo found $58\%$.
 
 \vspace{3pt}
 \textbf{Who made the mistake?} Circle one: \quad Ana \qquad Ben \qquad Cleo \qquad nobody
-\quad --- and say why you think so. We vote again at the end of section~2.
+\quad --- and say why you think so. We vote again at problem~14.
 \par\writelines{2}
 \end{hookbox}
 
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Page 2: section 1 (page 1 is the vocab box + hook).
-\newpage
-\begin{notesbox}{1. Two Groups --- and the Two Kinds of Numbers They Produce}
 \small
-Last night's homework asked $50$ shoppers and then talked about all $800$. Those two groups
-have names, and so do the numbers computed from them.
-\wordbank{population \;\textbullet\; sample \;\textbullet\; parameter \;\textbullet\; statistic \;\textbullet\; census \;\textbullet\; who \;\textbullet\; all \;\textbullet\; 50 \;\textbullet\; 800}
-The \textbf{population} is the entire group the question is about --- every individual you
-would like the conclusion to describe. At Lakeside, that is all \blank{1.2cm} Saturday
-shoppers. The \textbf{sample} is the part of the population you actually collected data from
---- the \blank{1.2cm} shoppers the manager asked. The number of individuals in the sample is
-the \textbf{sample size}, $n = $ \blank{1.2cm}.
-
-\vspace{3pt}
-Name the two groups in each study --- \emph{the population first; the sample is chosen out of it.}
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} X p{3.3cm} p{2.8cm} c @{}}
-\toprule
-\textbf{Study} & \textbf{Population} & \textbf{Sample} & \textbf{Size} \\
-\midrule
-The manager asks $50$ of the market's $800$ Saturday shoppers how they traveled.
-  & \blank{2.9cm} & \blank{2.4cm} & \blank{1cm} \\
-The principal asks $45$ of Riverbend's $900$ students how many hours a week they work.
-  & \blank{2.9cm} & \blank{2.4cm} & \blank{1cm} \\
-A cereal plant weighs $30$ of the $12{,}000$ boxes it filled on Tuesday.
-  & \blank{2.9cm} & \blank{2.4cm} & \blank{1cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Collecting data from \emph{every} individual in the population is called a \blank{2cm}. The
-U.S. Census is one; almost nothing else you meet in this course will be.
-
-\vspace{6pt}
-\textbf{\textcolor{cerulean}{Parameter and Statistic.}}
-Both groups produce numbers, and the two kinds are not interchangeable.
-
-\vspace{3pt}
-A number that describes the \textbf{population} is a \blank{2.4cm}. \quad
-A number that describes the \textbf{sample} is a \blank{2.4cm}.
-
-\vspace{2pt}
-\textit{Memory hook:} \textbf{p}opulation--\textbf{p}arameter, \textbf{s}ample--\textbf{s}tatistic. To sort a number, ask: \textbf{who does it describe?}
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{\linewidth}{@{} X p{2.6cm} p{2.6cm} @{}}
-\toprule
-\textbf{The number} & \textbf{Describes\dots} & \textbf{So it is a\dots} \\
-\midrule
-$52\%$ of the $50$ shoppers asked drove to the market.
-  & \blank{2.2cm} & \blank{2.2cm} \\
-The market had $800$ shoppers on Saturday morning.
-  & \blank{2.2cm} & \blank{2.2cm} \\
-The $8$ shoppers asked traveled a mean of $4$ miles.
-  & \blank{2.2cm} & \blank{2.2cm} \\
-District records show $61\%$ of Riverbend's $900$ students ride a bus.
-  & \blank{2.2cm} & \blank{2.2cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{4pt}
-\begin{center}
-\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
-\textbf{Careful --- a percent is not automatically a statistic.} The $61\%$ was computed from
-the records of \blank{1.6cm} $900$ students --- every individual in the population. It
-describes the \blank{1.8cm}, so it is a \blank{1.8cm}, even though it is a percent and even
-though somebody had to compute it. The question is never \emph{what does the number look
-like}; it is \emph{\blank{1.1cm} does it describe}.}}
-\end{center}
-
-\vspace{4pt}
-Which kind do you almost always \emph{know}? The \blank{1.8cm}. \quad Which kind do you actually \emph{want}? The \blank{1.8cm}. You use the number you have to \textbf{estimate} the number you want --- that gap is the whole reason this course exists.
-
-\end{notesbox}
-
-% Page 3: section 2.
-\newpage
-\begin{notesbox}{2. Why We Sample at All --- and What Happens When We Do}
-\small
-If the manager wants a parameter, why not just ask all $800$? A \textbf{constraint} is a real-world limit on how a study can be run --- the reason a census is usually off the table.
-\wordbank{time \;\textbullet\; cost \;\textbullet\; access \;\textbullet\; destruction \;\textbullet\; change \;\textbullet\; sampling variability \;\textbullet\; moves \;\textbullet\; stays put \;\textbullet\; do \;\textbullet\; closer \;\textbullet\; 1 \;\textbullet\; 3 \;\textbullet\; No \;\textbullet\; none of them}
-\nopagebreak
-
-\begin{multicols}{2}
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item \textbf{Time} --- reaching everyone takes longer than you have.
-  \item \textbf{Cost} --- reaching everyone costs more than the budget.
-  \item \textbf{Access} --- some individuals cannot be found, reached, or made to answer.
-  \item \textbf{Destruction} --- measuring the individual ruins it.
-  \item \textbf{Change} --- the population keeps changing while you collect.
-\end{itemize}
-\end{multicols}
-
-\vspace{3pt}
-Name the constraint that stands in the way in each situation.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} X p{2.8cm} @{}}
+\begin{guidednotes}
+% ── ROW 1: the two groups ────────────────────────────────────────────────────
+\mainidea[Two groups]{Population \& Sample} &
+The \textbf{population} is the entire group the question is about --- everyone the conclusion
+should describe. The \textbf{sample} is the part you actually collected data from; its
+\textbf{sample size} is $n$. \textbf{The population is decided by the question, not by who was handy.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.72]
+  % the population: a box of 800 shoppers (each dot stands for a few)
+  \fill[frost, rounded corners=6pt] (-0.5,-0.55) rectangle (10.5,3.1);
+  \draw[cerulean, thick, rounded corners=6pt] (-0.5,-0.55) rectangle (10.5,3.1);
+  \node[anchor=west, font=\small\bfseries\color{cerulean}] at (-0.3,2.72)
+    {Lakeside Farmers Market, Saturday morning --- $800$ shoppers};
+  % the sample: an oval of 50, drawn under the dots
+  \fill[goldbg] (3.5,1.0) ellipse (1.55 and 0.95);
+  \draw[goldacc, very thick] (3.5,1.0) ellipse (1.55 and 0.95);
+  \foreach \i in {0,...,20} { \foreach \j in {0,...,4} {
+    \fill[slate] ({\i*0.5},{\j*0.5}) circle (0.075); }}
+  \node[font=\scriptsize\bfseries\color{goldacc}, fill=goldbg, inner sep=1.5pt] at (3.5,2.15)
+    {$50$ asked --- $26$ drove};
+  \node[font=\tiny, anchor=east] at (10.35,-0.3) {\emph{each dot: a few shoppers}};
+\end{tikzpicture}\par\vspace{5pt}
+Box: the \labelbox{2.2cm}{}\quad Oval: the \labelbox{1.8cm}{}\quad $n = $ \labelbox{1cm}{}\par}
+\\
+& \notesprompt{Name the two groups and the sample size --- \emph{the population first; the sample is chosen out of it.}}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{The manager asks $50$ of the market's $800$ Saturday shoppers how they traveled.}{1.6cm}{} & \pcell{2}{The principal asks $45$ of Riverbend's $900$ students how many hours a week they work.}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{A cereal plant weighs $30$ of the $12{,}000$ boxes it filled on Tuesday.}{1.6cm}{} & \pcell{4}{Data from \emph{every} individual is a \textbf{census}. Suppose the manager asked all $800$. Name the population and the sample now.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the two kinds of numbers ──────────────────────────────────────────
+\mainidea[Two kinds of numbers]{Parameter \& Statistic} &
+A number that describes the \textbf{population} is a \textbf{parameter}. A number computed
+from the \textbf{sample} is a \textbf{statistic}. \textit{Memory hook:}
+\textbf{p}opulation--\textbf{p}arameter, \textbf{s}ample--\textbf{s}tatistic. To sort a
+number, ask one question: \textbf{who does it describe?}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.8]
+  % left panel: the sample and its statistic
+  \fill[goldbg, rounded corners=5pt] (0,0) rectangle (4.8,2.9);
+  \draw[goldacc, thick, rounded corners=5pt] (0,0) rectangle (4.8,2.9);
+  \node[font=\footnotesize\bfseries\color{goldacc}] at (2.4,2.5) {SAMPLE --- the $50$ asked};
+  \node[font=\scriptsize] at (2.4,2.0) {$26$ of them drove};
+  \node[font=\normalsize\bfseries] at (2.4,1.15) {$\dfrac{26}{50} = 52\%$};
+  \node[font=\tiny\itshape] at (2.4,0.35) {known --- you counted it};
+  % right panel: the population and its parameter
+  \fill[frost, rounded corners=5pt] (6.8,0) rectangle (11.6,2.9);
+  \draw[cerulean, thick, rounded corners=5pt] (6.8,0) rectangle (11.6,2.9);
+  \node[font=\footnotesize\bfseries\color{cerulean}] at (9.2,2.5) {POPULATION --- all $800$};
+  \node[font=\scriptsize] at (9.2,2.0) {the true percent who drove};
+  \node[font=\normalsize\bfseries] at (9.2,1.15) {$?\,\%$};
+  \node[font=\tiny\itshape] at (9.2,0.35) {unknown --- and there is only one};
+  % the arrow between them
+  \draw[->, very thick, charcoal] (4.9,1.3) -- (6.7,1.3);
+  \node[font=\tiny\bfseries, above] at (5.8,1.35) {estimates};
+\end{tikzpicture}\par\vspace{5pt}
+The $52\%$ is a \labelbox{2.4cm}{}\qquad the true percent for all $800$ is a \labelbox{2.4cm}{}\par}
+You \emph{have} the statistic; you \emph{want} the parameter; you use the one to \textbf{estimate} the other.
+\\
+& \notesprompt{Parameter or statistic? Say who the number describes.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{$52\%$ of the $50$ shoppers asked drove to the market.}{1.2cm}{} & \pcell{6}{The market had $800$ shoppers on Saturday morning.}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{The $8$ shoppers asked traveled a mean of $4$ miles.}{1.2cm}{} & \pcell{8}{District records show $61\%$ of Riverbend's $900$ students ride a bus. \textbf{Vote first, then decide.}}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: constraints — why we sample at all ────────────────────────────────
+\mainidea[Why we sample at all]{Constraints} &
+If the manager wants a parameter, why not just ask all $800$? A \textbf{constraint} is a
+real-world limit on how a study can be run --- the reason a census is usually off the table.
+\\
+& {\centering
+\begin{tikzpicture}
+  \foreach \i/\cname/\cdesc in {
+      0/Time/{longer than\\you have},
+      1/Cost/{more than\\the budget},
+      2/Access/{can't be found,\\reached, or\\made to answer},
+      3/Destruction/{measuring it\\ruins it},
+      4/Change/{the population\\keeps changing}} {
+    \fill[frost, rounded corners=4pt] ({\i*2.35},0) rectangle ({\i*2.35+2.2},1.7);
+    \draw[cerulean, thick, rounded corners=4pt] ({\i*2.35},0) rectangle ({\i*2.35+2.2},1.7);
+    \node[font=\small\bfseries\color{cerulean}] at ({\i*2.35+1.1},1.38) {\cname};
+    \node[font=\tiny, align=center] at ({\i*2.35+1.1},0.62) {\cdesc};
+  }
+\end{tikzpicture}\par}
+\\
+& \textbf{9.} Name the constraint that stands in the way in each situation.
+\footnotesize\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{} X p{2.4cm} @{}}
 \toprule
 \textbf{Situation} & \textbf{Constraint} \\
 \midrule
-To check a cereal box's weight you must open it, and $12{,}000$ were filled Tuesday.
-  & \blank{2.4cm} \\
-A different set of shoppers comes to the market every Saturday.
-  & \blank{2.4cm} \\
-Surveying all $900$ Riverbend students would take three class periods nobody can spare.
-  & \blank{2.4cm} \\
-Reaching every household in the county would mean mailing $40{,}000$ letters.
-  & \blank{2.4cm} \\
-Many shoppers pay and leave before anyone can get near them with a clipboard.
-  & \blank{2.4cm} \\
+Weighing a cereal box means opening it ($12{,}000$ filled).
+  & \blank{1.9cm} \\
+A different set of shoppers comes every Saturday.
+  & \blank{1.9cm} \\
+Asking all $900$ students takes three class periods.
+  & \blank{1.9cm} \\
+Reaching every county household means $40{,}000$ letters.
+  & \blank{1.9cm} \\
+Shoppers pay and leave before a clipboard reaches them.
+  & \blank{1.9cm} \\
 \bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{6pt}
-\textbf{\textcolor{cerulean}{The Statistic Moves. The Parameter Does Not.}}
+\end{tabularx}\small
+\\
+& \notesprompt{A constraint is not an excuse --- it is why sampling exists.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{One manager, one clipboard, one morning, $800$ shoppers. Which constraint kept her from a census?}{1.6cm}{} & \pcell{11}{What would she have to do to get the \emph{parameter} itself --- and why is that off the table?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — three samples, one parameter ───────────────────────────
+\mainidea[Three samples,]{One Parameter} &
 Three volunteers each asked a \emph{different} $50$ shoppers on the \emph{same} Saturday
-morning. Here is how many in each group said they drove.
-\nopagebreak
+morning. Ana's $50$: $26$ drove. Ben's $50$: $24$ drove. Cleo's $50$: $29$ drove.
+\textbf{The $800$ shoppers did not change between them.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.8]
+  % the population with three samples inside it
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (5.2,3.2);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (5.2,3.2);
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (2.6,2.9) {all $800$ shoppers};
+  \node[font=\scriptsize\color{cerulean}] at (2.6,2.55) {true percent who drove: $?$};
+  \foreach \x/\y/\who/\c in {1.0/1.3/Ana/26, 2.6/0.8/Ben/24, 4.2/1.5/Cleo/29} {
+    \fill[goldbg] (\x,\y) ellipse (0.8 and 0.62);
+    \draw[goldacc, very thick] (\x,\y) ellipse (0.8 and 0.62);
+    \node[font=\scriptsize\bfseries] at (\x,{\y+0.15}) {\who};
+    \node[font=\tiny] at (\x,{\y-0.2}) {$\c$ of $50$};
+  }
+  % the number line of statistics
+  \draw[->, thick] (6.2,1.2) -- (11.7,1.2);
+  \foreach \p/\lab in {6.4/40, 7.6/45, 8.8/50, 10.0/55, 11.2/60} {
+    \draw (\p,1.12) -- (\p,1.28); \node[below, font=\tiny] at (\p,1.08) {\lab\%}; }
+  \foreach \p/\who in {8.32/Ben, 9.28/Ana, 10.72/Cleo} {
+    \fill[goldacc] (\p,1.2) circle (0.11);
+    \node[above, font=\tiny\bfseries] at (\p,1.35) {\who}; }
+  \node[font=\scriptsize\bfseries, align=center] at (8.9,2.5) {three statistics};
+  \node[font=\tiny\itshape\color{cerulean}, align=center] at (8.9,0.3)
+    {the one parameter is somewhere here --- nobody knows where};
+  \draw[->, goldacc, thick] (5.35,1.6) -- (6.25,1.4);
+\end{tikzpicture}\par}
+\\
+& The change in a statistic from one sample to the next is called \textbf{sampling
+variability}. It is not a mistake --- nobody miscounted; it is what samples do. \textbf{The
+statistic moves; the parameter stays put.} Each statistic is an \textbf{estimate} of the one
+parameter.\par
+\textbf{In your own words:} why did three honest volunteers get three different numbers?
+\writespace{1.4cm}{}
+\\
+& \notesprompt{Now settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{Compute Ben's and Cleo's statistics the way Ana's was computed: $26/50 = 0.52 = 52\%$.}{1.4cm}{} & \pcell{13}{How many statistics did the three volunteers produce? How many true percents are there for all $800$ shoppers?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{\textbf{Vote again:} Ana \; Ben \; Cleo \; nobody. Did one of them count wrong? Which one found the true percent for all $800$?}{2.0cm}{} & \pcell{15}{A fourth volunteer asks $200$ shoppers, not $50$. Would her statistic land closer to the true percent? Exactly on it?}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Riverbend Jobs} &
+The Riverbend principal wants to know what fraction of the school's $900$ students hold a
+part-time job. She asks $50$ students; $20$ of them have one. The same week, the assistant
+principal asks a \emph{different} $50$ students the same question; $23$ have one.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.8]
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (11.2,2.7);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (11.2,2.7);
+  \node[font=\small\bfseries\color{cerulean}] at (5.6,2.4) {Riverbend High School --- all $900$ students};
+  \node[font=\scriptsize\color{cerulean}] at (5.6,2.05) {true percent with a part-time job: $?$};
+  \foreach \x/\who/\c in {3.0/principal's $50$/20, 8.2/assistant principal's $50$/23} {
+    \fill[goldbg] (\x,0.85) ellipse (2.1 and 0.65);
+    \draw[goldacc, very thick] (\x,0.85) ellipse (2.1 and 0.65);
+    \node[font=\scriptsize\bfseries] at (\x,1.05) {\who};
+    \node[font=\scriptsize] at (\x,0.65) {$\c$ have a job};
+  }
+  \node[font=\large\bfseries\color{slate}] at (5.6,0.85) {vs.};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{Name the population, the sample, and $n$ --- and one constraint that kept her from asking all $900$.}{2.0cm}{} & \pcell{17}{What percent of those she asked have a job, and about how many of the $900$ is that? Label each number: statistic, parameter, or estimate.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{One survey says $40\%$; the other $46\%$. Did one make a mistake? Which survey found the true percent for all $900$? Explain.}{2.0cm}{} & \pcell{19}{Her draft report: \emph{``Exactly $360$ Riverbend students have a part-time job.''} Allowed? Rewrite it to claim only what her sample allows.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l c X @{}}
-\toprule
-\textbf{Volunteer} & \textbf{Drove} & \textbf{Percent of that sample} \\
-\midrule
-Ana   & 26 & $26/50 = 0.52 = 52\%$ \\
-Ben   & 24 & \blank{4.5cm} \\
-Cleo  & 29 & \blank{4.5cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\begin{work}
-  \text{Cleo: } \dfrac{29}{50} &= 0.58 = 58\%
-\end{work}
-
-\vspace{2pt}
-How many different statistics did the three volunteers produce? \blank{1.4cm} \qquad
-How many true percents are there for all $800$ Saturday shoppers? \blank{1.4cm}
-
-\vspace{3pt}
-Did one of the volunteers count wrong? \blank{1.2cm} \quad Which of the three found the true
-percent for all $800$? \blank{3.2cm}
-
-\vspace{5pt}
-\begin{center}
-\fcolorbox{cerulean}{frost}{\parbox{0.94\linewidth}{\small
-\textbf{A different answer is not a wrong answer.} This change from one sample to the next
-is called \blank{3.4cm}. It is not a mistake --- nobody miscounted. It is what samples
-\blank{1cm}. The statistic \blank{1.4cm} from sample to sample; the parameter
-\blank{2cm}, because the $800$ shoppers did not change. Each statistic is an \textbf{estimate} of the one parameter; a larger sample usually lands \blank{1.6cm} to it, but none lands exactly on it every time.}}
-\end{center}
-
-\end{notesbox}
-
-% Page 4: the Guided Practice, alone.
-\newpage
-\begin{practicebox}
-\small
-\textbf{The Riverbend Job Survey --- we work this one together.} The Riverbend principal wants
-to know what fraction of the school's $900$ students hold a part-time job. She asks $50$
-students; $20$ of them have one.
-\wordbank{Riverbend's 900 students \;\textbullet\; the 50 students she asked \;\textbullet\; statistic \;\textbullet\; estimate \;\textbullet\; parameter \;\textbullet\; 50 \;\textbullet\; 40 \;\textbullet\; 360 \;\textbullet\; 900 \;\textbullet\; No}
-\textbf{(a)} Name the groups.
-
-Population: \blank{5.4cm} \hfill Sample size: \blank{1.4cm}
-
-Sample: \blank{5.4cm}
-
-\vspace{3pt}
-\textbf{(b)} What percent of the students she asked have a part-time job, and about how many of
-Riverbend's $900$ students would that be?
-
-\begin{work}
-  \dfrac{20}{50}  &= 0.40 = 40\% \\
-  0.40 \times 900 &= 360 \text{ students}
-\end{work}
-
-The $40\%$ is a \blank{1.8cm}. The $360$ is an \blank{1.8cm} of a \blank{1.8cm}.
-
-\vspace{3pt}
-\textbf{(c)} The same week, the assistant principal asks a \emph{different} $50$ students the
-same question. In that group, $23$ have a part-time job.
-
-\begin{work}
-  \dfrac{23}{50} &= 0.46 = 46\%
-\end{work}
-
-One survey says $40\%$; the other says $46\%$. Did one of them make a mistake? Which survey
-found the true percent for all $900$ students? Explain.
-\par\writelines{2}
-
-\vspace{3pt}
-\textbf{(d)} Name one constraint that kept the principal from asking all $900$ students, and say
-which of the five it is.
-\par\writeline
-
-\vspace{3pt}
-\textbf{(e)} Fill in the principal's report sentence from her own sample:
-
-\textit{``Of the \blank{1.2cm} students we asked, \blank{1.2cm}\% have a part-time job. If our
-sample represents the school, that is about \blank{1.2cm} of Riverbend's \blank{1.2cm}
-students.''}
-
-\vspace{2pt}
-Her draft says instead: \textit{``Exactly $360$ Riverbend students have a part-time job.''}
-Allowed? \blank{1.2cm} \quad Why not?
-\par\writeline
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

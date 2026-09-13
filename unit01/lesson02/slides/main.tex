@@ -1,7 +1,7 @@
 %! Populations, Samples, Parameters, and Statistics — Unit 1, Lesson 1.2 — Slides (Beamer)
 % PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
-% GRADUAL RELEASE deck: title → targets → hook (unresolved) → I DO divider → two frames per
-% notes section → WE DO (a live surface, un-answered) → spoken debrief → close & START THE
+% GRADUAL RELEASE deck: title → targets → hook (unresolved) → I DO divider → one frame per
+% notes row → WE DO (a live surface, un-answered) → spoken debrief → close & START THE
 % HOMEWORK, which is the individual practice. No group activity, no practice launch, no exit
 % ticket. There is no spoiler rule: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
@@ -66,7 +66,7 @@
   \end{center}
 \end{frame}
 
-% ── HOOK — leave it UNRESOLVED; the second half of section 2 settles it ──────
+% ── HOOK — leave it UNRESOLVED; problem 14 (row 4, One Parameter) settles it ─
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
@@ -75,8 +75,7 @@
     {\color{frostmid}\bfseries\small THREE VOLUNTEERS. THE SAME SATURDAY MORNING. 50 SHOPPERS EACH.}\\[0.8cm]
     {\color{white}\bfseries\Large Ana got 52\%. \quad Ben got 48\%. \quad Cleo got 58\%.}\\[0.9cm]
     {\color{goldacc}\bfseries\large Who made the mistake?}\\[0.5cm]
-    {\color{frostmid}\small Vote: Ana, Ben, Cleo, or nobody. We settle this at the end of
-    section 2.}
+    {\color{frostmid}\small Vote: Ana, Ben, Cleo, or nobody. We settle this at problem 14.}
   \end{center}
 \end{frame}
 }
@@ -88,8 +87,8 @@
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
-    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
-    name it --- not before.}\\[0.9cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
     {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
     moment we use it.}
   \end{minipage}
@@ -99,7 +98,7 @@
 % ── 1a. TWO GROUPS ───────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Two groups}
-  \sectionlabel{notes section 1 $\cdot$ population, sample, sample size}
+  \sectionlabel{notes row 1 $\cdot$ Population \& Sample $\cdot$ problems 1--4}
   \vspace{4pt}
   \begin{columns}[t]
     \begin{column}{0.47\textwidth}
@@ -128,7 +127,7 @@
 % ── 1b. PARAMETER AND STATISTIC ──────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Two kinds of numbers}
-  \sectionlabel{notes section 1 $\cdot$ parameter and statistic}
+  \sectionlabel{notes row 2 $\cdot$ Parameter \& Statistic $\cdot$ problems 5--8}
   \vspace{4pt}
   \begin{itemize}\setlength{\itemsep}{6pt}
     \item A number that describes the \textbf{p}opulation is a \textbf{\color{cerulean}parameter}.
@@ -138,7 +137,7 @@
     \item To sort a number, ask one question: \redink{who does it describe?}
   \end{itemize}
   \vspace{8pt}
-  \begin{block}{Vote first: ``District records show 61\% of Riverbend's 900 students ride a bus.''}
+  \begin{block}{Problem 8 --- vote first: ``District records show 61\% of Riverbend's 900 students ride a bus.''}
     Parameter or statistic? --- It is a percent. Somebody computed it. And it describes
     \textbf{all 900}. So it is a \redink{parameter}. What the number looks like never decides.
   \end{block}
@@ -147,7 +146,7 @@
 % ── 2a. CONSTRAINTS ──────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Why not just ask all 800?}
-  \sectionlabel{notes section 2 $\cdot$ constraints}
+  \sectionlabel{notes row 3 $\cdot$ Constraints $\cdot$ problems 9--11}
   \vspace{2pt}
   \begin{center}
     \small
@@ -174,7 +173,7 @@
 % ── 2b. THE CRUX ─────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{The statistic moves. The parameter does not.}
-  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ One Parameter $\cdot$ problems 12--15 $\cdot$ the whole point of today}
   \vspace{4pt}
   \begin{center}
     \small
@@ -191,7 +190,7 @@
   \end{center}
   \vspace{6pt}
   \begin{itemize}\setlength{\itemsep}{4pt}
-    \item Three samples. Three statistics. \textbf{Vote again --- who made the mistake?}
+    \item Three samples. Three statistics. \textbf{Problem 14 --- vote again: who made the mistake?}
     \item How many true percents are there for all 800 shoppers? \redink{One.} Did it move? \redink{No.}
   \end{itemize}
   \begin{block}{Sampling variability (PS.DC.1e)}
@@ -202,27 +201,26 @@
 
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Guided Practice: The Riverbend Job Survey}
-  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
+  \ceruleanheader{Guided Practice: Riverbend Jobs}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 16--19 $\cdot$ you hold the pen}
   The principal wants to know what fraction of Riverbend's \textbf{900} students hold a
   part-time job. She asks \textbf{50}; \textbf{20} have one.
   \begin{itemize}\setlength{\itemsep}{5pt}
-    \item[(a)] Population, sample, sample size.
-    \item[(b)] The percent, and about how many of the 900 --- then \emph{label} both numbers.
-    \item[(c)] The assistant principal asks a \emph{different} 50; \textbf{23} have a job.
+    \item[16.] Population, sample, $n$ --- and one constraint that kept her from asking all 900.
+    \item[17.] The percent, and about how many of the 900 --- then \emph{label} both numbers.
+    \item[18.] The assistant principal asks a \emph{different} 50; \textbf{23} have a job.
           Did somebody make a mistake? Which survey found the true percent?
-    \item[(d)] One constraint that kept her from asking all 900.
-    \item[(e)] Her report sentence --- then her draft: ``\emph{Exactly} 360 students have a job.''
+    \item[19.] Her draft: ``\emph{Exactly} 360 students have a job.'' Allowed? Rewrite it.
   \end{itemize}
   \begin{block}{The question behind the question}
-    If you picked a survey in (c), you are still at the hook vote.
+    If you picked a survey in 18, you are still at the hook vote.
   \end{block}
 \end{frame}
 
-% ── GUIDED PRACTICE (e) — shown AFTER the class has worked it ─────────────────
+% ── GUIDED PRACTICE problem 19 — shown AFTER the class has worked it ──────────
 \begin{frame}[t, plain]
   \ceruleanheader{What a sample lets you say --- and what it does not}
-  \sectionlabel[goldacc]{Guided Practice (e) $\cdot$ estimate, not count}
+  \sectionlabel[goldacc]{Guided Practice, problem 19 $\cdot$ estimate, not count}
   \vspace{4pt}
   \begin{block}{The principal's sentence}
     ``Of the \textbf{50} students we asked, \textbf{40\%} have a part-time job. If our sample
