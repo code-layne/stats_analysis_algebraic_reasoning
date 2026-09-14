@@ -1,0 +1,16 @@
+{"blanks": [
+  "observational study", "experiment", "the card holders",
+  "24",
+  "Generator splits 300 volunteers 150/150.", "A table: each group's count and percent.", "Compare 64\\% vs.\\ 40\\%; say it in context.",
+  "yes", "--- experiment",
+  "no", "impossible",
+  "content analysis", "survey", "interview", "observation", "focus group"
+ ],
+ "lines": [
+  ["The weekly book club caused more card holders to read at least 10 books ---",
+   "a generator built the two groups, so the club is the only difference."],
+  ["Method: observation. Design: experiment --- a generator built the 150/150 groups.",
+   "The classmate is wrong: how the data were recorded never decides the design."],
+  ["The 48-point gap --- the card holders who signed themselves up were already the",
+   "heavy readers, so the gap measures who signed up, not what the program did."]
+ ]}

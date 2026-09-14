@@ -1,32 +1,54 @@
 %! The Statistical Cycle and Types of Data — Unit 1, Lesson 1.1 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06), Main Ideas / Notes table (2026-09-12).
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on the Riverbend Student Council's bike-rack survey, the
+% Guided Practice runs on the council's SECOND survey, and these items are on the Lakeside
+% Farmers Market — recall is not the skill. Lakeside is also Lesson 1.2's teaching context,
+% so the set doubles as the hand-off.
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-2 on page 1, items 3-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 4 rows (i) and (ii) are the deliberate CONTRAST PAIR: the SAME shoppers, two questions,
+% two types — the target misconception (that the data, not the question, decide the type).
+% Item 6 is the crux head-on: every number in the sentence is correct and the conclusion
+% still does not follow, and the problem entered at stage 1.
+% THE DATA — Lakeside Farmers Market: about 800 Saturday shoppers; 50 asked on one Saturday ->
+%   26 drove (52%), 12 walked (24%), 7 biked (14%), 5 bus (10%); 0.10 x 800 = 80.
+% PAGE LOCKSTEP: the key is generated from this file by templates/lesson/mkkey.py (spec:
+% templates/lesson/examples/lesson01_homework_key.json); every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[Lakeside Farmers Market]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-The Lakeside Farmers Market draws about $800$ shoppers on a Saturday morning. The
-market manager is deciding whether to ask the town for a free shuttle from the
-library parking lot, so she runs a study.
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the
+first class after two study halls. You will start it in the last minutes of the period, so ask about anything that stalls
+you before you leave, then finish it on your own.
+\end{remindbox}
 
-\begin{enumerate}[leftmargin=*, labelindent=0pt, align=left, labelsep=0.6em,
-                  itemsep=3pt, topsep=3pt, label=\textbf{Stage \arabic*.}]
-  \item She asks: \emph{``How do Lakeside Farmers Market shoppers travel to the
-        market on a Saturday?''}
-  \item One Saturday she asks $50$ shoppers as they arrive.
-  \item She counts the answers by travel method.
-  \item She writes up what the market should do next.
-\end{enumerate}
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Lakeside Farmers Market]{cerulean}
+About $800$ shoppers come to the Lakeside Farmers Market on a Saturday morning. The manager is
+deciding whether to ask the town for a free shuttle from the library parking lot, so she asks
+$50$ shoppers one Saturday: \emph{``How did you travel to the market today?''}
 
 \vspace{2pt}
 Her $50$ answers: $26$ drove, $12$ walked, $7$ biked, $5$ rode the bus.
@@ -35,132 +57,107 @@ Her $50$ answers: $26$ drove, $12$ walked, $7$ biked, $5$ rode the bus.
 \vspace{0.08in}
 
 \boxguard
-\begin{notesbox}{Practice}
-\small
+\begin{notesbox}{The Data Cycle at the Market}
+Every answer names the group it is about --- the $50$ shoppers she asked, or all $800$.
+\wordbank{categorical \;\textbullet\; quantitative \;\textbullet\; how the shopper traveled \;\textbullet\; 50 \;\textbullet\; 52\% \;\textbullet\; 24\% \;\textbullet\; 14\% \;\textbullet\; 10\% \;\textbullet\; 100\%}
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
-  \item Name the \textbf{variable of interest} --- what the manager recorded for
-        each shopper.
+  \item Name the \textbf{variable of interest} --- what she records for each shopper --- and
+        its type.
 
-        \par\vspace{6pt}
-        Variable: \ans{how that shopper traveled} \hfill Type: \ans{categorical}
-        \par\vspace{10pt}
-        How do you know? \ans{drove, walked, biked, bus are labels --- no mean}
+        \par\vspace{4pt}
+        Variable: \ans{how the shopper traveled} \hfill Type: \ans{categorical}
+        \par\vspace{8pt}
+        How do you know? \ans{the answers are labels --- no arithmetic on them means anything}
 
-  \item Complete the manager's frequency table.
+  \item Complete her frequency table, then show your work for the \textbf{bus} row.
 
         \begin{center}
         \renewcommand{\arraystretch}{1.45}
         \begin{tabularx}{\linewidth}{@{} l c X @{}}
         \toprule
-        \textbf{How they traveled} & \textbf{Count} &
-        \textbf{Relative frequency (percent)} \\
+        \textbf{How they traveled} & \textbf{Count} & \textbf{Relative frequency (percent)} \\
         \midrule
-        Drove & 26 & \ans{$26/50 = 0.52 = 52\%$} \\
+        Drove  & 26 & \ans{$26/50 = 0.52 = 52\%$} \\
         Walked & 12 & \ans{$12/50 = 0.24 = 24\%$} \\
-        Biked &  7 & \ans{$7/50 = 0.14 = 14\%$} \\
-        Bus   &  5 & \ans{$5/50 = 0.10 = 10\%$} \\
+        Biked  &  7 & \ans{$7/50 = 0.14 = 14\%$} \\
+        Bus    &  5 & \ans{$5/50 = 0.10 = 10\%$} \\
         \midrule
-        \textbf{Total} & \ans{50} & \ans{$50/50 = 1.00 = 100\%$} \\
+        \textbf{Total} & \ans{$50$} & \ans{$50/50 = 1.00 = 100\%$} \\
         \bottomrule
         \end{tabularx}
         \end{center}
-
-        Show your work for the \textbf{Bus} row.
 
         \begin{work}
           \dfrac{5}{50} &= 0.10 \\
                         &= 10\%
         \end{work}
 
-  \item About $800$ shoppers come on a Saturday. Based on the survey, predict how
-        many of them ride the bus to the market.
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{The Data Cycle at the Market, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt, start=3]
+
+  \item Estimate how many of the market's $800$ Saturday shoppers ride the bus.
 
         \begin{work}
           0.10 \times 800 &= 80 \text{ shoppers}
         \end{work}
 
-        Write that result as one sentence the manager could put in her report.
-        Name the group and the number.
-        \par\ansline{About 80 of the market's 800 Saturday shoppers ride the bus to the market.}
+        Write that result as one sentence for the manager's report: name the group she asked,
+        the number, and what was measured.
+        \par\ansline{Of the 50 shoppers asked one Saturday, 10\% travel to the market by bus. If they are}
+\ansline{typical, that is about 80 of the market's 800 Saturday shoppers.}
 
-  \item The manager also asked eight of the shoppers how many miles they traveled
-        to reach the market: $3, \; 5, \; 1, \; 8, \; 2, \; 6, \; 4, \; 3$.
 
-        \textbf{(a)} Find the mean distance traveled.
-
-        \begin{work}
-          \bar{x} &= \dfrac{3+5+1+8+2+6+4+3}{8} \\
-                  &= \dfrac{32}{8} \\
-                  &= 4 \text{ miles}
-        \end{work}
-
-        \textbf{(b)} Write one sentence interpreting that number. Name the group
-        and the units.
-        \par\ansline{These eight shoppers traveled a mean of 4 miles.}
-
-        \textbf{(c)} Distance is quantitative, so a mean is available. Explain why
-        the manager cannot report a ``mean travel method'' the same way.
-        \par\ansline{Labels cannot be added, so no mean exists --- only counts.}
-
-\end{enumerate}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{Practice, continued}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt, start=5]
-
-  \item For each question, decide whether data could answer it as written. If not,
-        name the test it fails and repair it.
+  \item The manager could ask her $50$ shoppers either question below. \textbf{Decide the type
+        from the question alone} --- nothing has been collected yet.
 
         \begin{center}
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabularx}{\linewidth}{@{} p{5.2cm} p{2cm} >{\raggedright\arraybackslash}X @{}}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} >{\raggedright\arraybackslash}p{3.4cm} @{}}
         \toprule
-        \textbf{Question} & \textbf{Ready?} & \textbf{If not, repair it} \\
+        \textbf{The question} & \textbf{Type} & \textbf{Summarize with\dots} \\
         \midrule
-        Is the market popular?              & \ans{no} & \ans{How many shoppers visit on a Saturday morning?} \\
-        How far did Mr.\ Ruiz drive today?  & \ans{no} & \ans{How far do Saturday shoppers drive to the market?} \\
-        How many miles do Saturday shoppers travel to the market?
-                                            & \ans{yes} & \ans{already passes all three tests} \\
+        (i) ``How did you travel to the market today?''
+          & \ans{categorical} & \ans{counts and percents} \\
+        (ii) ``How many miles did you travel to the market today?''
+          & \ans{quantitative} & \ans{a mean} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
-  \item Each mistake below happens at one stage of the data cycle. Write the
-        stage number.
+        Same $50$ shoppers, same Saturday. Explain what made the two types different.
+        \par\ansline{The question did --- one records a label, the other records a number of miles.}
+
+  \item Each mistake below broke the study at one stage. Write the number of the stage the
+        problem \textbf{entered} at --- not the stage where the bad sentence showed up.
 
         \begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt, label=(\alph*)]
-          \item The manager asked only shoppers arriving in the parking lot.
-                \hfill \ans{2}
-          \item The 50 answers were never counted by travel method, so nobody
-                could tell which group was biggest. \hfill \ans{3}
-          \item The report says shoppers ``want a shuttle,'' but no one was ever
-                asked about a shuttle. \hfill \ans{4}
-          \item The original question never said \emph{which} shoppers or
-                \emph{which} day. \hfill \ans{1}
+          \item The original question never said \emph{which} shoppers or \emph{which} day.
+                \hfill \ans{1}
+          \item She asked only shoppers walking in from the parking lot. \hfill \ans{2}
+          \item The $50$ answers were never counted by travel method. \hfill \ans{3}
+          \item The write-up reports $70\%$ drove when the table says $52\%$.
+                \hfill \ans{4}
         \end{enumerate}
 
-  \item The manager's final report says: \textit{``Only $10\%$ of our shoppers
-        ride the bus, so a free shuttle would be used by very few people.''}
-
-        Every number in that sentence is correct. Explain why the conclusion still
-        does not follow, and name the stage she should return to.
-        \par\ansline{The survey recorded how shoppers travel now, not whether they would use a shuttle,}
-        \ansline{and it missed anyone kept away by the trip. Go back to stage 1 and ask that.}
+  \item Her report says: \textit{``Only $10\%$ of our shoppers ride the bus, so a free shuttle
+        would be used by very few people.''} \textbf{Every number in that sentence is
+        correct.} Explain why the conclusion still does not follow, and name the stage the
+        problem entered at.
+        \par\ansline{Nobody was ever asked about a shuttle, so the survey cannot say who would use one; 10\%}
+\ansline{of 800 is still about 80 shoppers. It entered at stage 1 --- the wrong question.}
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
-
-\begin{remindbox}
-\small
-\textbf{Next class (Lesson 1.2):} the survey asked $50$ shoppers but the report
-talks about all $800$. Those two groups have names --- \emph{sample} and
-\emph{population} --- and so do the numbers computed from them. Bring today's
-frequency table.
-\end{remindbox}
+\boxguard[3]   % the two-line spiralbox needs about three baselines; a larger guard pushes it to a third page
+\begin{spiralbox}
+\textbf{Next lesson: Populations, Samples, Parameters, and Statistics.} She asked $50$ shoppers
+and then wrote about all $800$. Both groups have names --- and so do the numbers from each.
+\end{spiralbox}
 
 \end{document}

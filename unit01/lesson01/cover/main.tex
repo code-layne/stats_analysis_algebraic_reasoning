@@ -1,43 +1,67 @@
 %! The Statistical Cycle and Types of Data — Unit 1, Lesson 1.1 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06), Main Ideas / Notes table (2026-09-12): regenerated from the
+% notes-only shape. THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The
+% homework is the individual practice, started in class, and it is SCORED, so its cell is a
+% \blank{}, never NA. The Guided Practice has no row of its own: it is the last row of the
+% notes table and has no separate handout.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.1 \quad The Statistical Cycle and Types of Data}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.1 \quad The Statistical Cycle and Types of Data}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DC.1a-c; AFDA.DA.2a) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} name the four stages of the \textbf{data cycle} and explain what
-        each stage hands to the next one.
-  \item \ldots{} write a \textbf{statistical question} --- one whose answers vary,
-        that names the group, and that says what will be measured.
-  \item \ldots{} decide from the question alone whether the data I need are
-        \textbf{categorical} or \textbf{quantitative}.
-  \item \ldots{} organize counts into a \textbf{frequency table} and turn them
-        into percents.
-  \item \ldots{} write a conclusion in context, and say what the data do
-        \emph{not} tell me.
-  \item \ldots{} name the \textbf{stage} at which a flawed study broke down.
+  \item \ldots{} name the four stages of the \textbf{data cycle} and say what each stage
+        \emph{hands to the next one}.
+  \item \ldots{} test a question against three checks --- the answers \textbf{vary}, the
+        \textbf{group} is named, the \textbf{measurement} is named --- and repair one that
+        fails, naming the \textbf{variable of interest}.
+  \item \ldots{} decide from the \emph{question alone}, before any data exist, whether the
+        data will be \textbf{categorical} or \textbf{quantitative}, and build a
+        \textbf{frequency table} with \textbf{relative frequencies}.
+  \item \ldots{} write a \textbf{conclusion in context}, say what the data do \emph{not}
+        allow anyone to claim, and name the \textbf{stage the problem entered at} when a
+        study goes wrong.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -50,12 +74,18 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & Percents, scaling a sample up, and classifying two variables & \blank{1.2cm} \\
-2 & Guided Notes & The four stages, writing questions, frequency tables, and where a study breaks --- ending in practice you work alone & \blank{1.2cm} \\
-% Homework IS scored, so the score cell carries a \blank{}. Whether it is assigned from
-% this packet or swapped for an equivalent Desmos activity is decided at Close & Assign;
-% the pages are authored either way, so the row and its score cell never change.
-3 & Homework     & Lakeside Farmers Market: organize, scale, interpret & \blank{1.2cm} \\
+1 & Warm-Up & The council's bus riders: the percent, the prediction, and two variables to
+             classify & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & The four stages and what each hands on; the three tests a
+             question must pass; the frequency table; why a correct percent can still fail to
+             support a claim --- then the council's second survey, worked together
+             & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Lakeside Farmers Market: name and classify the variable, organize and scale,
+             and judge a report whose arithmetic is right ---
+             \textbf{scored, started in class, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -63,13 +93,18 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-The four stages run in order: \textbf{formulate the question}, \textbf{collect the
-data}, \textbf{organize and represent}, \textbf{analyze and communicate} --- and
-then the answer raises the next question. A conclusion may only describe the group
-you actually collected data from, and it may only answer the question you actually
-asked.
+The four stages run in order --- \textbf{formulate}, \textbf{collect}, \textbf{organize},
+\textbf{analyze and communicate} --- and each stage can use only what the stage before it
+handed over. \textbf{The question decides the type of data}, before anything is collected: if
+what you record is a label, the variable is \textbf{categorical} and you summarize with
+\textbf{relative frequencies}; if it is a number you can do arithmetic on, it is
+\textbf{quantitative} and a mean is available. \textbf{Watch out:} a conclusion may answer
+only the question that was asked, about only the group that was asked. When a study goes
+wrong, name the stage the problem \emph{entered} at --- not stage 4, where the bad sentence
+finally showed up.
 \end{remindbox}
 
 \end{document}

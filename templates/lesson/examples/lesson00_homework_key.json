@@ -1,0 +1,14 @@
+{"blanks": [
+  "8", "5",
+  "categorical", "a label written with digits; a mean ID means nothing",
+  "categorical", "Family / Student / Senior are group names",
+  "quantitative", "a count of visits --- an amount; a mean makes sense",
+  "quantitative", "an amount measured in years"
+ ],
+ "lines": [
+  ["These eight Northgate members made a mean of 6 visits to the center last month."],
+  ["Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes."],
+  ["About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed."],
+  ["Nothing. Member ID is categorical --- a label that tells members apart, not an amount ---",
+   "so its mean is not a measurement of anything; no member is ``number 140.5.''"]
+ ]}

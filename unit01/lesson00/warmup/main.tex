@@ -1,54 +1,63 @@
 %! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Warm-Up
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items at 12pt (the stats-model size), \workrowsep 50pt, item
+% spacing 22pt, so each item gets real handwriting room and still fits. Do not add a fourth
+% item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. All three are
+% Algebra 1 tools the notes pick up again: item 1 (a percent from a part and a whole) is the
+% summary a CATEGORICAL variable gets — problem 6 (50% captains); item 2 (scaling 18/50 up to
+% 900) is sample -> population, which Lesson 1.2 formalizes and homework item 5 spirals; item 3
+% (a mean, then a sentence naming the group and the units) is the "a number needs a context"
+% idea row 1 turns on — problem 1 asks for exactly this sentence again.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- Percents, Proportions, and the Mean}
-\small
-Everything below returns this unit. Show your work.
+\normalsize
+Everything below comes back this unit. Show your work.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, topsep=2pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
   \item Riverbend High School has $240$ seniors. Of those seniors, $84$ ride the
         bus to school. What \textbf{percent} of the seniors ride the bus?
 
         \begin{work}
-          \dfrac{84}{240} &= 0.35 \\
-                          &= 35\%
+          \dfrac{84}{240} &= 0.35 = 35\%
         \end{work}
 
-  \item A survey of $50$ Riverbend students found that $18$ of them walk to
-        school. Riverbend has $900$ students in all. Based on this survey,
-        \textbf{predict} how many of the $900$ students walk to school.
+  \item A survey of $50$ Riverbend students found that $18$ of them walk to school.
+        Riverbend has $900$ students in all. Based on this survey, \textbf{predict}
+        how many of the $900$ students walk to school.
 
         \begin{work}
           \dfrac{18}{50} &= 0.36 \\
           0.36 \times 900 &= 324 \text{ students}
         \end{work}
 
-  \item Five students recorded how many minutes they spent on homework last
-        night: $12$, $15$, $9$, $20$, $14$.
+  \item Five students recorded how many minutes they spent on homework last night:
+        $12$, $15$, $9$, $20$, $14$.
 
         \textbf{(a)} Find the \textbf{mean} number of minutes.
 
         \begin{work}
-          \bar{x} &= \dfrac{12+15+9+20+14}{5} \\
-                  &= \dfrac{70}{5} \\
-                  &= 14 \text{ minutes}
+          \bar{x} &= \dfrac{12+15+9+20+14}{5} = \dfrac{70}{5} = 14 \text{ minutes}
         \end{work}
 
         \textbf{(b)} Write one sentence that says what your answer in part (a)
-        describes. Name the group and the units.
-        \writeline
+        describes. Name the \emph{group} and the \emph{units}.
+        \par\writeline
 
 \end{enumerate}
 \end{notesbox}

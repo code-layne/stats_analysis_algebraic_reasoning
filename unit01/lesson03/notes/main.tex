@@ -1,20 +1,29 @@
 %! Choosing a Sample: Four Sampling Techniques — Unit 1, Lesson 1.3 — Guided Notes & Practice
-% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
-% THE in-class document. The notes carry the whole gradual release, closed by a SPOKEN debrief.
-% They run SHORT on purpose: the period ends with students starting the homework, which is
-% where the individual practice lives.
-%   I DO   : the vocabulary box and notes sections 1-2.                              (~20 min)
-%   WE DO  : the practicebox ("Guided Practice") — Cedar Ridge Apartments, together.  (~15 min)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12; 1.3 converted 2026-09-13 from the pilot's boxed sections): the
+% vocabulary box, the hook, then ONE two-column guidednotes table. Each row is one idea — a
+% label on the left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn
+% display the student reads or names, then a bold prompt and a two-across grid of numbered
+% problems with 1.3–1.8cm of writing room. Problems run 1..14 (rows 1–4: 1–2, 3–4, 5–6, 7–10).
+% DENSITY: no \blank{} at all this lesson — the skip verdict for 951 is a \labelbox name under
+% the row-2 display; no mid-sentence blanks; every display is pre-drawn; the page belongs to
+% the student's pen. (\wordbank is defined but unused; a fill table was cut 2026-09-14, and on
+% 2026-09-14 the displays were tightened and rows 3's four problems merged into two, to hold
+% the notes to four pages.)
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 5, 7) and reads the digit strip aloud, stopping at 951.
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (11–14), is worked entirely together on Cedar Ridge Apartments
+%            instead of Riverbend.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last ten minutes of the period.
-% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
-% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
-% with a \wordbank{}. No closing practice set, no extension.
-% Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: "chance
-% chose" is not enough — a cluster sample only works when each cluster is a small mix of the
-% whole, and a Riverbend homeroom is alike inside (a stratum), so Maya's two random homerooms
-% are 60 ninth graders and zero seniors (PS.DC.2a-b). The second half of section 1 carries the
-% second trap: "random" does not mean "unplanned" — the test is WHO COULD NEVER HAVE BEEN PICKED.
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 2 (the teacher's own third period — "random" does not mean "unplanned";
+% the test is WHO COULD NEVER HAVE BEEN PICKED).
+% THE CRUX is problem 9 (row 4, "Cluster"): Maya's two random homerooms are 60 ninth graders
+% and zero seniors, nobody counted wrong — the hook vote is re-taken there (PS.DC.2a–b).
+% Problem 13 is the crux transferred to Cedar Ridge; problem 14 is the choose-and-justify
+% (PS.DC.2b) plus the list-of-buildings question.
 %
 % THE DATA
 %   Riverbend HS: 900 students, the council surveys 60. Grades 270/240/210/180 -> at 1/15:
@@ -22,21 +31,27 @@
 %     Systematic k = 900/60 = 15, start 7 -> 7, 22, 37, 52 (the warm-up's numbers).
 %     30 homerooms of 30: homerooms 1-9 hold the 9th grade, 10-17 the 10th, 18-24 the 11th,
 %     25-30 the 12th. Maya draws homerooms 4 and 7 -> 2 x 30 = 60 students, all 9th graders.
-%     About one draw in four (200/870 = 23%) lands both rooms in a single grade.
+%     About one draw in four (100/435 = 23%) lands both rooms in a single grade (C(30,2)=435;
+%     same-grade pairs 36+28+21+15 = 100).
 %   Guided Practice, Cedar Ridge Apartments: 600 households in 30 buildings of 20; buildings
 %     1-6 studios (120), 7-20 one-bedrooms (280), 21-30 two-bedrooms (200); 60 households at
 %     1/10 -> 12/28/20; a cluster draw of buildings 2, 5, 6 -> 60 studio households.
 %
-% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
-% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
-% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
-% answers so the two files wrap alike.
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson03_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
-% the key inherits it and prints the same strip, so heights match.
+% Word bank strip — ONLY above a table the student fills. Defined per document (copied from
+% 1.2) and currently unused here; the key inherits it either way.
 \newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 % Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
 % no underline beside the term and no rule line (user correction 2026-09-06: the black
@@ -79,250 +94,202 @@ Fill in each term \textbf{as we name it} in the notes below.
 \boxguard[12]
 \begin{hookbox}
 \small
-The student council needs opinions from $60$ of Riverbend's $900$ students about the late bus.
-Maya puts the $30$ homeroom numbers in a hat, draws two --- homerooms $4$ and $7$ --- and
-surveys every one of the $30$ students in each room. Pure chance picked those rooms.
+The council needs $60$ of Riverbend's $900$ students. Maya puts the $30$ homeroom numbers in a
+hat, draws two --- rooms $4$ and $7$ --- and surveys all $30$ students in each. Pure chance.
 
 \vspace{3pt}
 \textbf{Is Maya's sample as trustworthy as drawing $60$ student names out of the hat?} Circle
 one: \quad yes \qquad no \qquad it depends \quad --- and say why you think so. We vote again
-at the end of section~2.
+at problem~9.
 \par\writelines{2}
 \end{hookbox}
 
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Page 2: section 1 (page 1 is the vocab box + hook).
-\newpage
-\begin{notesbox}{1. Who Chooses the Sample --- and How to Let Chance Do It}
 \small
-Every study so far had a sample. None of them said \emph{how} it was picked. That decision is
-made before any data exist, and it decides what the statistic will be worth.
-\wordbank{chance \;\textbullet\; convenience \;\textbullet\; could not \;\textbullet\; yes \;\textbullet\; no --- skip it \;\textbullet\; student 28 \;\textbullet\; student 366 \;\textbullet\; none \;\textbullet\; three \;\textbullet\; start \;\textbullet\; 15 \;\textbullet\; 22 \;\textbullet\; 37 \;\textbullet\; 52}
-The \textbf{sampling frame} is the list of individuals a study can actually choose from --- at
-Riverbend, the office's list of all $900$ students. Once you have a frame there are two ways to
-choose. In a \textbf{probability sample}, \blank{1.6cm} does the choosing: every individual on
-the frame has a known chance of being picked. In a \blank{2.6cm} sample, the researcher takes
-whoever is easiest to reach.
+\begin{guidednotes}
+% ── ROW 1: the frame, and who chooses ────────────────────────────────────────
+\mainidea[Chance or convenience]{Who Chooses?} &
+The \textbf{sampling frame} is the list a study can choose from. In a \textbf{probability
+sample} chance chooses; in a \textbf{convenience sample} the researcher takes whoever is
+easiest to reach. \textbf{The test: who could never have been picked?}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.68]
+  % the frame: the office list (node fonts do NOT scale with `scale=`, so every
+  % label here is \tiny and short enough to sit inside its own box)
+  \fill[frost, rounded corners=4pt] (0,2.85) rectangle (11.5,3.75);
+  \draw[cerulean, thick, rounded corners=4pt] (0,2.85) rectangle (11.5,3.75);
+  \node[font=\tiny\bfseries\color{cerulean}] at (5.75,3.52) {THE OFFICE LIST --- all $900$ students, numbered $001$--$900$};
+  \foreach \i in {0,...,21} { \fill[slate] ({1.7+\i*0.38},3.12) circle (0.06); }
+  % left panel: convenience (the pool's Tuesday evening, from 1.2)
+  \fill[goldbg, rounded corners=4pt] (0,0) rectangle (5.4,2.3);
+  \draw[goldacc, thick, rounded corners=4pt] (0,0) rectangle (5.4,2.3);
+  \node[font=\tiny\bfseries\color{goldacc}] at (2.7,2.05) {THE RESEARCHER CHOOSES};
+  \node[font=\tiny, align=center] at (2.7,1.32) {``Ask whoever shows up\\ Tuesday evening.''\\ the schedule chose};
+  \node[font=\tiny\itshape, align=center] at (2.7,0.42) {who could never be picked?\\ anyone who swims another night};
+  % right panel: chance
+  \fill[frost, rounded corners=4pt] (6.1,0) rectangle (11.5,2.3);
+  \draw[cerulean, thick, rounded corners=4pt] (6.1,0) rectangle (11.5,2.3);
+  \node[font=\tiny\bfseries\color{cerulean}] at (8.8,2.05) {CHANCE CHOOSES};
+  \node[font=\tiny, align=center] at (8.8,1.32) {number the list, let a\\ generator draw $60$\\ every name had a chance};
+  \node[font=\tiny\itshape, align=center] at (8.8,0.42) {who could never be picked?\\ nobody on the list};
+  \draw[->, very thick, goldacc] (2.7,2.38) -- (2.7,2.8);
+  \draw[->, very thick, cerulean] (8.8,2.38) -- (8.8,2.8);
+\end{tikzpicture}\par\vspace{4pt}
+Frame: \labelbox{3.0cm}{}\quad Left: \labelbox{2.1cm}{}\quad Right: \labelbox{2.1cm}{}\par}
+\\
+& \notesprompt{Who chose each sample --- chance, or convenience? Name someone who could never have been picked.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{A pool staff member asks the $75$ members who arrive on Tuesday evening. Then: all $900$ students are numbered and a computer picks $60$. Who chose each?}{1.6cm}{} & \pcell{2}{A teacher surveys her own third-period class --- she picked no favorites. \textbf{Vote first, then decide.}}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the two list techniques ───────────────────────────────────────────
+\mainidea[Number the frame, then draw]{SRS \& Systematic} &
+In a \textbf{simple random sample} of size $n$, every individual --- and every group of $n$
+--- has an equal chance. \stepnum{1}\ Number the frame $1$ to $N$. \stepnum{2}\ Read the
+generator's digits in groups as long as $N$. \stepnum{3}\ \textbf{Skip} any group out of range
+or already used.\par
+From an ordered list, a \textbf{systematic sample} takes every $k$th individual after a random
+\textbf{start}, where $k = N \div n$.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.60]
+  % top: the digit strip, read three at a time
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0,3.35) {THE GENERATOR'S DIGITS, read three at a time --- $900$ has three digits};
+  \foreach \g/\a/\b/\c/\lab in {0/7/1/4/{student 714}, 1/0/2/8/{student 28}, 2/9/5/1/{}, 3/3/6/6/{}} {
+    \draw[fill=white, thick] ({\g*2.9},2.45) rectangle ++(0.7,0.7);
+    \draw[fill=white, thick] ({\g*2.9+0.7},2.45) rectangle ++(0.7,0.7);
+    \draw[fill=white, thick] ({\g*2.9+1.4},2.45) rectangle ++(0.7,0.7);
+    \node[font=\ttfamily\large] at ({\g*2.9+0.35},2.8) {\a};
+    \node[font=\ttfamily\large] at ({\g*2.9+1.05},2.8) {\b};
+    \node[font=\ttfamily\large] at ({\g*2.9+1.75},2.8) {\c};
+    \node[font=\tiny\bfseries\color{goldacc}] at ({\g*2.9+1.05},2.17) {\lab};
+  }
+  % bottom: the ordered list with every 15th name
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0,1.80) {THE LIST IN ORDER --- a random start, then every $k$th name};
+  \draw[thick] (0.2,0.80) -- (11.2,0.80);
+  \foreach \i in {1,...,60} { \draw ({0.2+\i*0.18},0.72) -- ({0.2+\i*0.18},0.88); }
+  \foreach \p in {7,22,37,52} { \fill[goldacc] ({0.2+\p*0.18},0.80) circle (0.12); \node[below, font=\tiny\bfseries] at ({0.2+\p*0.18},0.63) {\p}; }
+  \node[font=\tiny, anchor=west] at (11.25,0.80) {\dots\ $900$};
+  \draw[<->, goldacc, thick] ({0.2+7*0.18},1.22) -- ({0.2+22*0.18},1.22);
+  \node[right, font=\tiny\bfseries\color{goldacc}] at ({0.2+22*0.18+0.18},1.22) {$k = 900 \div 60 = 15$};
+\end{tikzpicture}\par\vspace{4pt}
+Top: \labelbox{2.6cm}{}\quad Bottom: \labelbox{2.2cm}{}\quad $951$: \labelbox{2.0cm}{}\par}
+\\
+& \notesprompt{Run both techniques on Riverbend.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Students are numbered $001$--$900$. What do you do with $951$ --- \emph{skip} it, or \emph{stop}? What does the generator do next?}{1.4cm}{} & \pcell{4}{Systematic: $k = 900 \div 60 = {}$? The random start lands on $7$. Write the next three names taken --- and circle the one number chance chose.}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: stratified — some from every group ────────────────────────────────
+\mainidea[Some from every group]{Stratified} &
+\textbf{Strata} are groups \textbf{alike inside} and \textbf{different from group to group}
+(one is a \emph{stratum}). A \textbf{stratified sample} takes a separate random sample from
+\emph{every} stratum, sized to its share --- so it \textbf{guarantees} every grade is heard,
+in proportion. Seniors drive, so grade is a natural set of strata.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.66]
+  % the school as four strata, widths in proportion to 270/240/210/180
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0,3.25) {ALL $900$ --- four strata, then $60/900 = 1/15$ of \emph{every} one};
+  \foreach \x/\w/\g/\c/\col in {0/3.3/9th/270/frost, 3.45/2.93/10th/240/goldbg, 6.53/2.57/11th/210/greenbg, 9.25/2.2/12th/180/plumbg} {
+    \fill[\col, rounded corners=3pt] (\x,1.95) rectangle ++(\w,1.0);
+    \draw[cerulean, thick, rounded corners=3pt] (\x,1.95) rectangle ++(\w,1.0);
+    \node[font=\tiny\bfseries] at ({\x+\w/2},2.68) {\g};
+    \node[font=\tiny] at ({\x+\w/2},2.25) {$\c$ students};
+    \draw[->, thick, charcoal] ({\x+\w/2},1.88) -- ({\x+\w/2},1.25);
+    \node[font=\tiny, right] at ({\x+\w/2+0.05},1.58) {$\div 15$};
+    \draw[goldacc, thick, fill=white, rounded corners=3pt] ({\x+\w/2-0.5},0.42) rectangle ++(1.0,0.78);
+  }
+  \node[font=\small\bfseries] at (1.65,0.81) {$18$};
+  \node[font=\small\bfseries] at (4.915,0.81) {?};
+  \node[font=\small\bfseries] at (7.815,0.81) {?};
+  \node[font=\small\bfseries] at (10.35,0.81) {?};
+  \node[font=\tiny\itshape, anchor=west] at (0,0.05) {the sample: some from every grade, in proportion --- $60$ in all};
+\end{tikzpicture}\par\vspace{4pt}
+Each grade is one \labelbox{2cm}{}\quad it reaches \labelbox{1.5cm}{} grades\par}
+\\
+& \notesprompt{Finish the allocation the warm-up started.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{The warm-up found $270 \div 15 = 18$ ninth graders. Compute the other three shares --- then add all four. Do they total $60$?}{1.6cm}{} & \pcell{6}{Stratifying \emph{guarantees} every grade is heard; a fair SRS of $60$ names only makes it \emph{likely}. Why?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — cluster, and Maya's homeroom draw ──────────────────────
+\mainidea[Everyone from a few groups]{Cluster} &
+When there is no list of individuals, only a list of groups, a \textbf{cluster sample} draws a
+few whole groups at random and collects data from \emph{everyone} in them.
+\textbf{It works only when each cluster is a small mix of the whole.} Riverbend's $900$
+students sit in $30$ homerooms of $30$; Maya drew rooms $4$ and $7$.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.62]
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0,3.62) {RIVERBEND'S $30$ HOMEROOMS OF $30$ --- Maya's draw is circled};
+  \foreach \n in {1,...,9}   { \fill[frost]   ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {10,...,17} { \fill[goldbg]  ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {18,...,24} { \fill[greenbg] ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {25,...,30} { \fill[plumbg]  ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {1,...,30}  {
+    \draw[cerulean] ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75);
+    \node[font=\scriptsize\bfseries] at ({mod(\n-1,10)*1.1+0.5},{2.4-int((\n-1)/10)*1.0+0.375}) {\n}; }
+  \draw[redacc, very thick] (3.8,2.775) circle (0.55);
+  \draw[redacc, very thick] (7.1,2.775) circle (0.55);
+  % legend --- one entry every 2.9 units; keep each label under ~14 characters
+  \foreach \x/\col/\lab in {0/frost/{9th: 1--9}, 2.9/goldbg/{10th: 10--17}, 5.8/greenbg/{11th: 18--24}, 8.7/plumbg/{12th: 25--30}} {
+    \fill[\col] (\x,-0.2) rectangle ++(0.32,0.28); \draw[cerulean] (\x,-0.2) rectangle ++(0.32,0.28);
+    \node[font=\tiny, anchor=west] at ({\x+0.38},-0.06) {\lab}; }
+\end{tikzpicture}\par}
+\\
+& \textbf{``Chance chose'' is not enough --- the technique has to match the groups.} Alike
+inside $\Rightarrow$ some from \emph{every} group (stratified); a small mix of the whole
+$\Rightarrow$ everyone from a \emph{few} (cluster).\par
+\textbf{In your own words:} why can a random draw of two homerooms miss every senior?
+\writespace{1.0cm}{}
+\\
+& \notesprompt{Now settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Maya drew rooms $4$ and $7$ and surveyed everyone in both. How many students is that, and which technique is it?}{1.3cm}{} & \pcell{8}{Now read the map. Which grade is room $4$? Room $7$? How many seniors are in Maya's $60$?}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{\textbf{Vote again:} yes \; no \; it depends. Did chance choose? Did anyone count wrong? Then what went wrong?}{1.7cm}{} & \pcell{10}{Is a Riverbend homeroom a stratum or a cluster? Which technique matches groups like that, and what does it take from each?}{1.7cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Cedar Ridge} &
+Cedar Ridge Apartments has $600$ households in $30$ buildings of $20$, and management wants to
+survey $60$ about parking. Buildings $1$--$6$ are studios ($120$), $7$--$20$ one-bedrooms
+($280$), $21$--$30$ two-bedrooms ($200$) --- and two-bedroom households own the most cars.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.64]
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0,3.62) {CEDAR RIDGE --- $30$ buildings of $20$; the hat drew $2$, $5$, $6$};
+  \foreach \n in {1,...,6}   { \fill[frost]   ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {7,...,20}  { \fill[goldbg]  ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {21,...,30} { \fill[greenbg] ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75); }
+  \foreach \n in {1,...,30}  {
+    \draw[cerulean] ({mod(\n-1,10)*1.1},{2.4-int((\n-1)/10)*1.0}) rectangle ++(1.0,0.75);
+    \node[font=\scriptsize\bfseries] at ({mod(\n-1,10)*1.1+0.5},{2.4-int((\n-1)/10)*1.0+0.375}) {\n}; }
+  \draw[redacc, very thick] (1.6,2.775) circle (0.55);
+  \draw[redacc, very thick] (4.9,2.775) circle (0.55);
+  \draw[redacc, very thick] (6.0,2.775) circle (0.55);
+  % legend --- the counts live in the printed sentence above, so the labels stay short
+  \foreach \x/\col/\lab in {0/frost/{studios: 1--6}, 3.7/goldbg/{one-bed: 7--20}, 7.4/greenbg/{two-bed: 21--30}} {
+    \fill[\col] (\x,-0.2) rectangle ++(0.32,0.28); \draw[cerulean] (\x,-0.2) rectangle ++(0.32,0.28);
+    \node[font=\tiny, anchor=west] at ({\x+0.38},-0.06) {\lab}; }
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Name the technique in each plan: (i)~a computer draws $60$ of the numbered $600$; (ii)~$3$ buildings from a hat, all $20$ in each; (iii)~a random sample from each unit type, in proportion; (iv)~every $10$th name on the resident list after a random start.}{1.8cm}{} & \pcell{12}{The stratified plan: $60$ of $600$ is $1/10$. Compute all three shares and check the total.}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{The hat gives buildings $2$, $5$, and $6$. Who is in the sample? Is a building a mix of the complex, or a stratum? What did the draw get wrong, even though chance chose?}{1.7cm}{} & \pcell{14}{Which plan should management run --- \emph{because the groups are}\,\dots? And with only a list of \emph{buildings}, never of residents, which technique still runs?}{1.7cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{3pt}
-Who chose each sample --- chance, or convenience?
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\linewidth}{@{} X p{2.9cm} @{}}
-\toprule
-\textbf{How the sample was taken} & \textbf{Who chose it?} \\
-\midrule
-A pool staff member asks the $75$ members who arrive on Tuesday evening. & \blank{2.5cm} \\
-All $900$ students are numbered and a computer picks $60$ numbers. & \blank{2.5cm} \\
-A teacher surveys her own third-period class. & \blank{2.5cm} \\
-The $30$ homeroom numbers go in a hat and $2$ are drawn. & \blank{2.5cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\begin{center}
-\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
-\textbf{Careful --- \emph{random} does not mean \emph{unplanned}.} The teacher did not pick
-favorites, but a fourth-period student \blank{1.8cm} have been chosen, so chance did not do
-the choosing. The test for every sample: \emph{who could never have been picked?} If that list
-is not empty, it is a \blank{2.6cm} sample --- and no size fixes it.}}
-\end{center}
-
-\vspace{6pt}
-\textbf{\textcolor{cerulean}{Simple Random Sample --- and the Systematic Shortcut.}}
-In a \textbf{simple random sample} of size $n$, every individual --- and every possible group
-of $n$ individuals --- has an equal chance of being chosen. \textbf{How:} number the frame $1$
-to $N$, run a random number generator, and read numbers off, \textbf{skipping} any that are out
-of range or already used, until you have $n$ different individuals.
-
-\vspace{3pt}
-Riverbend's students are numbered $001$--$900$. The generator returns
-{\ttfamily 7\,1\,4\;\;0\,2\,8\;\;9\,5\,1\;\;3\,6\,6}. Read the digits three at a time and decide each group.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\linewidth}{@{} c p{3.6cm} X @{}}
-\toprule
-\textbf{Digits} & \textbf{In range $001$--$900$?} & \textbf{Student chosen} \\
-\midrule
-714 & yes & student 714 \\
-028 & \blank{2.4cm} & \blank{3cm} \\
-951 & \blank{2.4cm} & \blank{3cm} \\
-366 & \blank{2.4cm} & \blank{3cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Why read three digits at a time? Because the largest number on the frame, $900$, has
-\blank{1.3cm} digits. An SRS is the fairest of the four and the one the others are measured
-against. Its price: you need a complete list, and the $60$ it picks are scattered across the
-building.
-
-\vspace{3pt}
-If the frame is already an ordered list, a \textbf{systematic sample} skips the $60$ separate
-draws: compute the interval $k = N \div n$, pick a random \blank{1.3cm} between $1$ and $k$,
-then take every $k$th individual. For Riverbend, $k = 900 \div 60 =$ \blank{1cm} (the
-warm-up), the start lands on $7$, and the picks are $7$, \blank{1cm}, \blank{1cm},
-\blank{1cm}, \dots\ Only the \textbf{start} is random --- after that the list decides, which is
-fine as long as the order of the list has nothing to do with the interval.
-
-\end{notesbox}
-
-% Page 3: section 2.
-\newpage
-\begin{notesbox}{2. Sampling in Groups --- Some From Every Group, or Everyone From a Few}
-\small
-Most populations come in groups: grades, homerooms, buildings. Two techniques use the groups
---- the two everybody mixes up, because \emph{which one you may use depends on how the groups
-are built}.
-\wordbank{every \;\textbullet\; all \;\textbullet\; a few \;\textbullet\; everyone \;\textbullet\; a random sample \;\textbullet\; mix \;\textbullet\; alike \;\textbullet\; stratum \;\textbullet\; stratified \;\textbullet\; 9th \;\textbullet\; 0 \;\textbullet\; Yes \;\textbullet\; No \;\textbullet\; 16 \;\textbullet\; 14 \;\textbullet\; 12 \;\textbullet\; 60}
-Groups whose members are \textbf{alike inside} and \textbf{different from group to group} are
-called \textbf{strata} (one is a \emph{stratum}). In a \textbf{stratified sample} you take a
-separate random sample from \blank{1.3cm} stratum, sized so each keeps its share of the
-population. Seniors drive, so grade is a natural set of strata for a late-bus question. The
-council wants $60$ of $900$, so take $60/900 = 1/15$ of each grade.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\linewidth}{@{} l c X @{}}
-\toprule
-\textbf{Grade} & \textbf{Students} & \textbf{Number to survey} \\
-\midrule
-9th   & 270 & $270 \div 15 = 18$ \\
-10th  & 240 & \blank{3.6cm} \\
-11th  & 210 & \blank{3.6cm} \\
-12th  & 180 & \blank{3.6cm} \\
-\midrule
-\textbf{Total} & \textbf{900} & \blank{3.6cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\begin{work}
-  \dfrac{60}{900} &= \dfrac{1}{15} \\
-  \dfrac{1}{15} \times 240 &= 16 \text{ students}
-\end{work}
-
-Stratifying \textbf{guarantees} every grade is heard, in proportion. A fair SRS only makes that
-\emph{likely} --- by chance it could land on very few seniors.
-
-\vspace{5pt}
-\textbf{\textcolor{cerulean}{Cluster Sample --- and Maya's Homeroom Draw.}}
-When there is no list of individuals, only a list of groups, a \textbf{cluster sample} draws
-\blank{1.3cm} whole groups at random and collects data from \blank{1.7cm} in them. It is the
-cheapest of the four --- and it works only when each cluster is a small \blank{1.1cm} of the
-whole. Riverbend's $900$ students sit in $30$ homerooms of $30$; Maya drew rooms $4$ and $7$.
-
-\begin{work}
-  2 \times 30 &= 60 \text{ students}
-\end{work}
-
-Now the fact Maya did not check: \textbf{homerooms $1$--$9$ hold the 9th grade, $10$--$17$
-the 10th, $18$--$24$ the 11th, $25$--$30$ the 12th.} Rooms $4$ and $7$ are both
-\blank{1cm}-grade rooms, so the number of seniors in Maya's sample is \blank{0.8cm}. Did
-chance choose? \blank{1cm} \quad Did anyone count wrong? \blank{1cm} \quad \textbf{Vote again.}
-
-\vspace{3pt}
-\begin{center}
-\fcolorbox{cerulean}{frost}{\parbox{0.94\linewidth}{\small
-\textbf{``Chance chose'' is not enough --- the technique has to match the groups.} A Riverbend
-homeroom is \blank{1.2cm} inside, so it is really a \blank{1.6cm}, and drawing a few whole
-strata can miss a whole grade --- about one draw in four lands both rooms in one grade. Alike
-inside means \emph{some from \blank{1.2cm} group} --- a \blank{1.8cm} sample. Cluster sampling
-belongs to groups that are each a small mix of the whole.}}
-\end{center}
-
-\vspace{2pt}
-\nopagebreak
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} p{3.4cm} X X @{}}
-\toprule
- & \textbf{Stratified} & \textbf{Cluster} \\
-\midrule
-The groups are\dots & alike inside, different from each other & each a small mix of the whole \\
-You use\dots & \blank{1.4cm} of the groups & \blank{1.4cm} of the groups \\
-From each you take\dots & \blank{2.8cm} & \blank{2.8cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\end{notesbox}
-
-% Page 4: the Guided Practice, alone.
-\newpage
-\begin{practicebox}
-\small
-\textbf{Cedar Ridge Apartments --- we work this one together.} Cedar Ridge has $600$
-households in $30$ buildings of $20$; management wants to survey $60$ about parking. Buildings
-$1$--$6$ are studios ($120$ households), $7$--$20$ one-bedrooms ($280$), $21$--$30$
-two-bedrooms ($200$) --- and two-bedroom households own the most cars.
-\wordbank{simple random \;\textbullet\; stratified \;\textbullet\; systematic \;\textbullet\; cluster \;\textbullet\; convenience \;\textbullet\; 12 \;\textbullet\; 28 \;\textbullet\; 20 \;\textbullet\; 60 \;\textbullet\; studio \;\textbullet\; stratum}
-\textbf{(a)} Name the technique in each plan.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\linewidth}{@{} X p{2.9cm} @{}}
-\toprule
-\textbf{The plan} & \textbf{Technique} \\
-\midrule
-Number all $600$ households and let a computer draw $60$ numbers. & \blank{2.5cm} \\
-Draw $3$ building numbers from a hat; survey all $20$ households in each. & \blank{2.5cm} \\
-A random sample from each unit type --- studios, one-, two-bedrooms --- in proportion. & \blank{2.5cm} \\
-Start at a random household on the resident list, then take every $10$th one. & \blank{2.5cm} \\
-Stand by the mailboxes after work and ask the first $60$ people who walk past. & \blank{2.5cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\textbf{(b)} The stratified plan: $60$ of $600$ is $1/10$, so take $1/10$ of each unit type.
-Show the one-bedroom row.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\linewidth}{@{} l c X @{}}
-\toprule
-\textbf{Unit type} & \textbf{Households} & \textbf{Number to survey} \\
-\midrule
-Studio      & 120 & \blank{3.6cm} \\
-One-bedroom & 280 & \blank{3.6cm} \\
-Two-bedroom & 200 & \blank{3.6cm} \\
-\midrule
-\textbf{Total} & \textbf{600} & \blank{3.6cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\begin{work}
-  \dfrac{60}{600} &= \dfrac{1}{10} \\
-  \dfrac{1}{10} \times 280 &= 28 \text{ households}
-\end{work}
-
-\vspace{3pt}
-\textbf{(c)} Suppose management had run the cluster plan and the hat gave buildings $2$, $5$,
-and $6$. Every one of the $60$ households surveyed is a \blank{1.4cm}. Is a building a small
-mix of the complex, or really a \blank{1.6cm}? Explain what the draw got wrong even though
-chance chose the buildings.
-\par\writelines{2}
-
-\vspace{3pt}
-\textbf{(d)} Which plan should management run, and why does it deliver what a parking survey
-needs? Write the reason as \emph{``\dots because the groups are \dots''}
-\par\writelines{2}
-
-\vspace{3pt}
-\textbf{(e)} Management has a list of \emph{buildings} but has never kept a list of
-\emph{residents}. Which of the four techniques can they still run without building that list?
-\par\writeline
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

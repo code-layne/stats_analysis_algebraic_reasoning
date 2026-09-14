@@ -1,0 +1,14 @@
+{"blanks": [
+  "observational", "the card holders themselves",
+  "signed up for the program", "read at least 10 books",
+  "the program", "48",
+  "yes", "That is what was seen: $80\\%$ vs. $32\\%$, a $48$-point gap --- an association.",
+  "no", "Causal (``doubles''). Nobody was assigned; the readers may have signed up.",
+  "$63/90 = 70\\%$", "$30/150 = 20\\%$"
+ ],
+ "lines": [
+  ["The arrow backwards --- the card holders who already read a lot are the ones who sign up.",
+   "It makes the program look better than it is: most of the 48-point gap was there before it."],
+  ["Bias is about whether the sample looks like the population; it does. Causation is about why",
+   "the two groups differ, and the card holders sorted themselves --- no sampling method fixes that."]
+ ]}

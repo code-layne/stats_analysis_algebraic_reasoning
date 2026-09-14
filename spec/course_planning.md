@@ -1,100 +1,87 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-09-14 — **QUIZ 1 AUTHORED FOR LESSONS 1.0–1.3: STUDY PACKET +
-SAMPLE QUIZ** (`unit01/quiz01/`). A new deliverable type for this course, and a new
-`LESSON_SHAPE.md` section-6 subsection describing it. It is built on the **`finals/` model, not
-the `tests/` one**: a self-contained `unit01/quiz01/Makefile` globbing `*/main.tex` into
-`target/unit01/quiz01/`, with **no `drop` step and no entry in `shared/unit.mk` or
-`shared/root.mk`** — a mid-unit quiz must not reflow unit 1's already-verified student and key
-packets, and nothing outside `unit01/quiz01/` was touched. Four documents: `study_packet` (5pp)
-+ its key, `sample_quiz` (4pp) + its key, page-for-page verified by per-page heading. Both are
-standalone handouts with no cover behind them, so both keep `\namedateperiod`, and both are
-**10pt** on the unit-test model (`\parthead` strips, `\workrowsep` 5pt) — they are assessment
-family, not lesson components.
+**Last updated:** 2026-09-14 — **ALL OF UNIT 1 CONVERTED TO THE MAIN IDEAS / NOTES TABLE
+SHAPE** (`/lesson-planning regenerate unit 1 with the guided notes redesign`). The 2026-09-12
+redesign that commit `bdee5ae` applied to lesson 1.2 is now applied to the other eight lessons:
+**1.0, 1.1, 1.3, 1.4, 1.5, 1.6, 1.7 and 1.8**. Each was brought to `cover` + `warmup` + `notes` +
+`homework` + `slides`, 12pt student components, one `guidednotes` table of four instruction rows
+plus a Guided Practice row, 14–18 numbered problems two across, every display pre-drawn, and a
+plan and deck voiced by **row and problem number**. Eight lessons were converted in parallel by
+one subagent each; the coordinator verified everything below independently of their reports.
 
-**The sample quiz** is a parallel form: $19$ items, $50$ points ($8/12/20/10$) across the unit
-tests' four parts scaled down, sampling only 1.0–1.3. Contexts are deliberately new
-(**Millbrook** High School $720$, **Stonebridge** Recreation Center $1{,}200$) because
-Riverbend, Lakeside, Harbor Point, Northgate, Cedar Ridge, and Bayside are all spent in unit 1's
-lessons and its unit test. The crux is Part D: Millbrook's $30$ advisory groups are **built by
-grade**, so a random draw of two of them is a stratum, not a cluster — the teacher's $30/48 =
-62.5\%$ and $0.625 \times 720 = 450$ are correct arithmetic on a sample that represents one or
-two grades. **Part B carries an `Answer:` `\blank{}` on every item**: the unit tests park MC
-answers in a `teachernote` on page 2 of `unit_cover_key/`, and a standalone quiz has no cover to
-park them on. **The study packet** is terms table → five worked moves (each closing on that
-lesson's target misconception as a named trap) → keyed practice, one item per lesson → readiness
-checklist; its worked examples use `\[ \]` displays, never `work` blocks, which are invisible
-without `-key`. Every number verified in pure Python before authoring. Two parity traps found,
-both now in the profile — see Gotchas. **The graded `actual_quiz` was added the same day, on user request**, mirroring the sample's
-file structure exactly so its pagination needed no separate guard sweep — it came out 4/4 on the
-first build. **Next: the lesson conversions (1.1, then 1.0 and 1.5–1.8) are the main queue.**
+**Unit 1 is now uniform: nine lessons, one shape.** `activity/`, `activity_key/`, `exit_ticket/`
+and `exit_ticket_key/` are gone from 1.0, 1.5, 1.6, 1.7 and 1.8 — **no `activity`, `experience`
+or `exit_ticket` directory survives anywhere in unit 1.**
 
-**Previous run (2026-09-07) — LESSON 1.4 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
-regenerate lesson 1.4`): the pre-EFFL legacy lesson (5 notes sections + activity + exit ticket)
-was rebuilt as `cover` + `warmup` + `notes` + `homework` + `slides` on the 1.2/1.3 model — two
-long notes sections, one Guided Practice, spoken debrief, homework started in class,
-5 / 35 / 10 / 10, 12pt student components, `\vterm` vocab rows, word banks, keys generated with
-`mkkey.py`. `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` were `git rm`'d.
-**The target misconception is "the sample was too small"**: the hook asks whether ten Tuesdays
-(750 members) will land closer to the truth than one (75); the vote is left open until the second
-half of section 2, where 270/750 = 36% — the same 16-point miss — and the blue callout lands
-*precise, not correct*. The old activity's Cedar Ridge cards became the Guided Practice; the exit
-ticket's Bayside library survey became the debrief's cold check. Details in the Lesson 1.4 entry
-below. **Next conversion: 1.1 (notes-only recipe) or 1.5 (pre-EFFL recipe) — one at a time.**
+**Verified by the coordinator, not taken on report:**
 
-**Previous run (2026-09-07) — LESSON 1.3 REGENERATED IN THE PILOT SHAPE** (the first pre-EFFL
-conversion; the worked example for 1.5–1.8). Details in the Lesson 1.3 entry below.
+- `make -C unit01/lessonNN all` **and** `check` exit 0 for **all nine** lessons, after
+  `rm -rf .stamps/unit01 target/unit01` and a full rebuild.
+- **Page-for-page parity holds everywhere**: warm-ups 1/1, homework 2/2, notes 4/4 except **1.7
+  and 1.8 at 5/5**; every lesson's student and key packet match (10pp each, 12pp for 1.7/1.8).
+- **All 24 keys regenerate byte-identically** from their blanks with `mkkey.py` — proof that
+  none was hand-edited and none can have drifted.
+- **Zero overfull `\vbox`** anywhere in the unit. The only `\hbox` over 15pt is the cover's
+  16.24pt `\namedateperiod` line, **identical in the untouched reference lesson 1.2** — it comes
+  from `shared/` and is pre-existing.
+- No `\ans{}` inside math and no bare math command inside an `\ans{}` (checked by parser, not
+  grep); no `teachernote` in any key; no `\namedateperiod` off a cover; no key loading
+  `-boxes`; no three-across `probgrid`; no `\answerspace`, `\extensionbox`, `\termans`,
+  `\termblanklong`, DeltaMath, or a foreign palette name anywhere in unit 1.
+- Every plan carries *Lesson at a Glance* at **5 / 35 / 10 / 10** and exactly three teacher
+  notes in packet order; no retired plan box survives.
+- `shared/`, every Makefile, `LESSON_SHAPE.md`, the skeletons, `mkkey.py` and **lesson 1.2**
+  were not touched by this run.
 
-**Previous run (2026-09-06) — LESSON 1.2 REGENERATED AS THE PILOT SHAPE, MODELED ON AP
-STATISTICS LESSON 1.4 MINUS ITS AP PRACTICE PAGE. IT IS THE MODEL FOR EVERY FUTURE LESSON.**
-The user asked for 1.2 rebuilt on the most recent stats lesson (`~/Mathematics/stats`
-`unit01/lesson04`, 2026-09-06) without the `ap_practice` component. What that shape is:
-**5 warm-up · 35 guided notes & practice (I do two long sections ≈ 20, we do one Guided Practice
-≈ 15) · 10 spoken debrief · 10 close & START THE HOMEWORK in class.** The homework *is* the
-individual practice; there is no solo practice box in the notes, no `hookbox` (the hook is a dark
-slide), no extension, no exit ticket. `LESSON_SHAPE.md` (sections 1, 2, 4, 5, 7 and the
-frontmatter — `reference_lesson: unit01/lesson02`, notes doc title *Guided Notes \& Practice*),
-`templates/lesson/components.md`, and the four skeletons were rewritten to match, and the scaffolder
-was smoke-tested against them (`unit08/lesson99`, compiled clean, deleted).
+**TWO OPEN ITEMS FOR THE USER — both page-budget overruns, neither a defect:**
 
-**What 1.2 proves, and what to copy:**
+1. **1.7's notes are 5pp** against the profile's 3–4pp. Closing the ~18cm gap means deleting a
+   standards-bearing row — PS.DC.3d's cycle row or half of PS.DC.3e's methods row. The content
+   was kept and the overrun flagged.
+2. **1.8's notes are 5pp** for a structural reason: it is the project lesson, and its Guided
+   Practice row must carry a live instrument card *and* a tally table. 1.8 also runs **26
+   `\blank{}`s** against the "handful per lesson" rule — every one is a table cell, the
+   instrument the class writes, or the tally, and none is mid-sentence, which is exactly what
+   the density rule permits; a project lesson is where students construct rather than classify.
 
-- **Keys are generated, not hand-edited.** `templates/lesson/mkkey.py` takes the blank plus a JSON
-  list of answers in order (`templates/lesson/examples/lesson02_*_key.json`) and writes the key;
-  it refuses to run if the blank count and answer count differ. Three keys, zero drift.
-- **Notes page plan and word banks (user requests 2026-09-06):** page 1 = vocab box + hook (no
-  objective box — the cover carries the targets); pages 2–3 = the two sections, `\newpage` before
-  each, unlabeled on the page; page 4 = the Guided Practice alone. Section 2's report sentence and
-  over-claim moved into Guided Practice part (e) to make section 2 fit its page. **Every fill-in
-  cluster opens with a `\wordbank{}` strip** (gold, defined per document) in the notes, the Guided
-  Practice, the warm-up, and the homework.
-- **Vocab rows are fixed-height stats-style rows** (user request 2026-09-06): `\vterm{}` ↔
-  `\vtermans{}{}`, a 2.3cm minipage pair defined in the notes preamble — term label + open
-  writing space, no inline blank, no rule line (user correction 2026-09-06), the key filling
-  the same height. Supersedes the earlier `\termblank` ↔
-  two-line `\vocabans` rule. **Worth promoting into `saar-article.sty` / `saar-key.sty`** with the
-  cover banner, on a run allowed to touch `shared/`.
-- ~~Vocab rows are `\termblank{}` ↔ two-line `\vocabans{}`.~~ With `\termblanklong` (three
-  lines) the notes ran 4pp blank / 3pp key with section 1 on different pages; with `\termblank`
-  and definitions long enough to wrap to two lines the boxes match and both files are 3pp with
-  identical per-page headings. This is now the profile's rule.
-- **Never strand an item's lead-in from its table.** Homework item 4's sentence sat at the foot of
-  page 1 with its table on page 2; moving items 4–6 into the `…, continued` box fixed it.
-- **`\boxguard[24]` before a `multicols` box** — the plan's Debrief box opened as a two-line
-  sliver at the foot of a page with the default guard.
-- **The cover banner is measured, not fixed.** At 12pt the three-line title overran the old
-  0.9in tikz band. The cover (and its skeleton) now defines `\coverbanner{}{}` locally — the stats
-  course's measured banner, savebox + tikz sized to it — since `saar-article.sty` has no such macro
-  and `shared/` is off-limits to lesson authoring. **Worth promoting into `saar-article.sty`** on a
-  run that is allowed to touch `shared/`; every future cover copies the block until then.
-- **Student components are 12pt** (user decision 2026-09-06, matching stats 1.4): cover, warm-up,
-  notes, homework and keys; `\small` inside the notes' and cover's boxes, homework practice boxes
-  at full size. Plan 10pt, deck 11pt. Notes 4/4, homework 3/3 (three boxes, one per page, no item
-  breaking across a page), warm-up 1/1. Three of the key's answers had to be shortened to one line
-  at 12pt — the generator makes that a one-word edit in the JSON.
-- **Three user decisions (2026-09-06), now in the profile:** the phases total 60 — **5 / 35 / 10 /
-  10**; **no extension box anywhere**, course-wide; homework is **due at the start of the first
-  class after two study halls** (the stats convention), never "due next class".
+**Either raise the budget for these two, or say which row to cut.** Until then the profile's
+3–4pp line and the 5pp reality disagree for 2 of 9 lessons.
+
+**ALSO LANDED 2026-09-14 — QUIZ 1 FOR LESSONS 1.0–1.3: STUDY PACKET + BOTH QUIZ FORMS**
+(`unit01/quiz01/`, open as PR #29; independent of the conversion above, which it does not
+touch). A new deliverable type for this course, with a new `LESSON_SHAPE.md` section-6
+subsection describing it. Built on the **`finals/` model, not the `tests/` one**: a
+self-contained `unit01/quiz01/Makefile` globbing `*/main.tex` into `target/unit01/quiz01/`,
+with **no `drop` step and no entry in `shared/unit.mk` or `shared/root.mk`** — a mid-unit quiz
+must not reflow a unit's already-verified student and key packets. Six documents, each keyed and
+verified page-for-page by per-page heading: `study_packet` 5/5, `sample_quiz` 4/4,
+`actual_quiz` 4/4. All are standalone handouts with no cover behind them, so all keep
+`\namedateperiod`, and all are **10pt on the unit-test model** (`\parthead` strips,
+`\workrowsep` 5pt) — assessment family, not lesson components, so the 12pt rule does not reach
+them (see the open item on test point size below).
+
+**The two quiz forms are parallel:** $19$ items, $50$ points ($8/12/20/10$) across the unit
+tests' four parts scaled down, sampling only 1.0–1.3, and differing in every number, context,
+vocabulary letter, and correct MC letter (vocab `DGAFBHCE` vs `GCEBHADF`; MC `BBCCDA` vs
+`ACDABC`). Contexts are fresh per form because Riverbend, Lakeside, Harbor Point, Northgate,
+Cedar Ridge and Bayside are spent in unit 1's lessons and its unit test: the sample runs on
+**Millbrook** ($720$, $30$ advisory groups of $24$) and **Stonebridge** ($1{,}200$), the graded
+form on **Westbrook** ($840$, $30$ homerooms of $28$) and **Clearwater** ($1{,}400$). Both put
+the 1.3 crux in Part D — the groups are built by grade, so a random draw of two is a stratum,
+not a cluster, and the teacher's arithmetic ($30/48 = 62.5\%$, $0.625 \times 720 = 450$; graded
+$42/56 = 75\%$, $0.75 \times 840 = 630$) is correct on a sample reaching one or two grades.
+**Only `sample_quiz` is ever handed out.** **Part B carries an `Answer:` `\blank{}` on every
+item**: the unit tests park MC answers in a `teachernote` on page 2 of `unit_cover_key/`, and a
+standalone quiz has no cover to park them on. **The study packet** is terms table → five worked
+moves (each closing on that lesson's target misconception as a named trap) → keyed practice, one
+item per lesson → readiness checklist; its worked examples use `\[ \]` displays, never `work`
+blocks, which are invisible without `-key`. Every number verified in pure Python before
+authoring, both forms. Two parity traps found — see Gotchas.
+
+**Open, user's call:** three page bottoms run light — study packet p1 (~40% empty, the second
+terms table cannot split), sample quiz p2 (~55%, Part C starts on a forced page), and study
+packet p4–p5 (~25% each). Tightening them is a re-verification of every pair, and `\boxguard`
+proved to be a knife edge in this directory.
 
 **The agreed period shape (user-confirmed 2026-08-31, second revision):**
 **5 warm-up · 30 guided notes · 10 independent practice · 7 debrief · 3 close & assign.**
@@ -136,22 +123,30 @@ Unit 1's assessment set and unit cover pair authored and hand-verified. 2026-08-
 
 ## Current state
 
-### THE PILOT SHAPE — the current design (2026-09-06)
+### THE CURRENT DESIGN — Main Ideas / Notes table (2026-09-12), gradual release (2026-09-06)
 
-*I do → we do → you do*, on the AP Statistics 1.4 model minus AP Practice. **`unit01/lesson02` is
-the reference implementation; mirror it.** `LESSON_SHAPE.md` section 1 is the spec.
+*I do → we do → you do*, on the AP Statistics model. **`unit01/lesson02` is the reference
+implementation; mirror it.** `LESSON_SHAPE.md` section 1 is the spec.
 
 **Components.** `cover` + `warmup` + `notes` (*Guided Notes & Practice*) + `homework` + `slides`,
 each with a `_key` where keyed. `shared/lesson.mk`'s `STUDENT_ORDER` is unchanged and still merges
-the retired `activity`/`experience`/`exit_ticket` dirs, so every older lesson keeps building.
+the retired `activity`/`experience`/`exit_ticket` dirs, so a lesson in another unit that still has
+one keeps building — **but no unit-1 lesson has one any more.**
 
 **Phases.** 5 / 35 / 10 / 10. The plan's *Lesson at a Glance* `fixedskillbox` carries that table.
 
-**The notes:** `objectivebox` (printed) → `vocabbox` of `\termblank{}` (key: two-line
-`\vocabans{}`) → **exactly two** `notesbox{N. Title}` sections, each in two moves, the second
-move under a `\textbf{\textcolor{cerulean}{Title.}}` run-in heading, the crux in the second half of
-section 2 → one `practicebox` ("Guided Practice", 3–4 lettered parts, worked together) → **end**.
-3–4pp. No hookbox, no solo practice box, no extension.
+**The notes (2026-09-12 — this replaced the sectioned notes):** `\pageheader` → `vocabbox` of
+4–5 fixed-height `\vterm{}` rows (key: `\vtermans{}{}`), filled *as each term is named* →
+`hookbox` — the claim, a circle-one vote, two lines of reason, **left unresolved** → **ONE
+two-column `guidednotes` table**: four instruction rows then the **Guided Practice row**. Each
+row is one idea — a `\mainidea[lead]{Label}` on the left; on the right one or two **complete
+printed sentences**, **one large pre-drawn display** read or annotated with `\labelbox`, then
+`\notesprompt` and a **two-across `probgrid`** of `\pcell` problems with 1.0–2.6cm of answer
+space. Problems run 1..N continuously, **14–18 across the lesson, never three across**. The
+**last instruction row carries the crux as problems** and re-takes the hook vote at a named
+problem number. **No `objectivebox`, no `notesbox`, no `practicebox`, no `\newpage`.** A
+`\blank{}` only where a word or number *is* the answer — a table to fill, a display to name —
+and a `\wordbank{}` strip above each such cluster. 3–4pp (see the two 5pp exceptions above).
 
 **The homework is the individual practice**: `remindbox` ("This is your graded homework"),
 `scenariobox` (third context), ~6 items in a `notesbox` + `…, continued`, closing `spiralbox`.
@@ -162,31 +157,34 @@ after two study halls.
 Understandings → Vocabulary → Lesson at a Glance → Warm-Up (seeds / running it) → Hook →
 Guided Notes & Practice (I do | we do, `multicols`) → Debrief, spoken (walk | cold check +
 formative read) → Homework → Watch For → Close & Assign → three teacher notes (`[Warm-Up]`,
-`[Guided Notes \& Practice]`, `[Homework]`).
+`[Guided Notes \& Practice]`, `[Homework]`). **Everything is voiced by ROW and PROBLEM NUMBER** —
+"row 4, problems 12–15", "the crux is problem 13" — never by section or lettered part.
 
-**Deck (~14 frames):** title → targets → warm-up → hook (dark, unresolved) → I-do divider (dark)
-→ 2–3 frames per section → Guided Practice (live, un-answered) → debrief + cold check → You do:
+**Deck (14–16 frames):** title → targets → warm-up → hook (dark, unresolved) → I-do divider
+(dark) → 2–3 frames per notes row, each labelled with its row and problem range (the crux frame
+`\sectionlabel[redacc]{}`) → Guided Practice (live, un-answered) → debrief + cold check → You do:
 start the homework → close (dark).
 
 **Cover packet table is THREE rows** — Warm-Up · Guided Notes & Practice · Homework.
 
 **Student components are 12pt** (cover, warm-up, notes, homework, keys); plan 10pt, deck 11pt.
 
+**Keys are GENERATED, never hand-edited** — `templates/lesson/mkkey.py` plus a JSON spec of
+answers in order (`blanks`, `lines`, `vocab`, `cells`, `spaces`, `labels`). Re-run it after every
+edit to a blank. Proof the rule is holding: all 24 unit-1 keys regenerate byte-identically.
+
 > The old 55-vs-60 mismatch is **closed** (2026-09-06): the phase table now allocates the whole
 > 60-minute period, 5 / 35 / 10 / 10.
 
-### Lesson 1.2 is the current model; everything else is in an older shape
+### Unit 1 is uniform — all nine lessons in the current shape (2026-09-14)
 
-- **Lesson 1.2 is the PILOT (2026-09-06) and the model to mirror.**
-- **Lesson 1.1** is in the 2026-08-31 notes-only shape (4–6 sections, a We Do, a 10-minute solo
-  practice box, 5/30/10/7/3). Complete and classroom-revised; its warm-up sizing and homework
-  format fixes carry into the pilot. Convert it with the notes-only recipe in `LESSON_SHAPE.md`
-  section 7 once the pilot is confirmed in the classroom.
-- **Lesson 1.0** still carries `activity/` + `activity_key/`. Not a model.
-- **Lessons 1.3 and 1.4 are CURRENT** — regenerated in the pilot shape 2026-09-07 (mirror 1.2
-  first, then 1.3 / 1.4).
-- **Lessons 1.5–1.8** are pre-EFFL: both `exit_ticket/` and `activity/`.
-- **Units 2–8** (57 lesson dirs) are empty EFFL skeletons.
+- **Lesson 1.2 is the reference implementation** (the pilot, 2026-09-06; converted to the table
+  2026-09-12 in commit `bdee5ae`). **Mirror it.**
+- **Lessons 1.0, 1.1, 1.3, 1.4, 1.5, 1.6, 1.7 and 1.8 are CURRENT** — all converted 2026-09-14.
+  1.3 and 1.4 came from the pilot shape (notes, plan and deck only); 1.0 from the
+  group-activity shape; 1.1 from the notes-only shape; 1.5–1.8 from the pre-EFFL legacy shape.
+- **No `activity/`, `experience/` or `exit_ticket/` directory remains in unit 1.**
+- **Units 2–8** (57 lesson dirs) are still empty EFFL skeletons.
 
 ### Palette — CHANGED 2026-08-05 (user decision)
 
@@ -220,76 +218,88 @@ user redirected to a third blue. No burgundy remains in the tree.)*
 
 - `spec/statistical_analysis_algebraic_reasoning.md` is the **confirmed** course map: 8 units,
   58 content lessons + one Lesson 0 per unit (66 lesson dirs), semester split after Unit 4.
-- **Lesson 1.0 — "Unit Launch: Study Design" — is COMPLETE but is NO LONGER A MODEL.** It was
-  converted 2026-08-31 from EFFL to the group-activity gradual-release shape, and that shape was
-  retired the same day. It still carries `activity/` + `activity_key/`. **Do not mirror it**;
-  convert it with the group-activity recipe when it next comes up. Its content below is still
-  accurate and the arithmetic is still verified — only the shape is stale.
+- **Lesson 1.0 — "Unit Launch: Study Design" — is CURRENT** (regenerated 2026-09-14 in the
+  Main Ideas / Notes table shape, from the retired group-activity shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`.
+    `activity/` + `activity_key/` deleted; `experience/` was already gone.
   - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e, PS.DC.2, PS.DC.3).
   - Scope: data-in-context (who/what/units), individuals vs. variables, **categorical vs.
     quantitative**, and the **digit test** for numbers that are really labels (jersey #, ZIP,
     grade level), plus statistical questions.
-  - Contexts: Riverbend Athletics roster + the sports-blog jersey claim (**guided notes**),
-    Riverbend HS Student Life Survey (**practice box**), the Riverbend cross-country meet card
-    + a recap-blog bib-number claim (**group activity**, a deliberately fresh context),
-    Northgate Recreation Center (homework). All arithmetic verified: points mean $72/6=12$,
-    jersey mean $84/6=14$, height mean $420/6=70$, captains $3/6=50\%$, commute mean
-    $108/6=18$, grade mean $63/6=10.5$; meet card — bib mean $115/5=23$, finish mean
-    $120/5=24$, medaled $2/5=40\%$.
-  - Notes sections: 1. Data are numbers with a context · 2. Individuals and variables ·
-    3. Two types of variables · 4. **The digit test** (the crux) · 5. Statistical questions ·
-    Guided Practice. Budget 3/3/5/5/3 + 2 = 20 min.
-  - **The crux is earned, not announced:** section 3 classifies Jersey \# *last*, takes a hand
-    vote, records the split, and **does not settle it**; section 4 settles it by producing a
-    correct mean that describes nobody. Settling it early collapses the lesson into a
-    definition to copy.
-  - Components: `cover`, `warmup`(+key), `notes`(+key), `activity`(+key), `homework`(+key),
-    `slides`. `experience/` and `experience_key/` are deleted.
-  - Page counts: warmup 1/1, **notes 4/4**, **activity 2/2**, homework 2/2; plan 6pp, deck 13
-    frames, student and key packets 12pp each.
-  - `make -C unit01/lesson00 all` exits 0; `make -C unit01/lesson00 check` **passes**; every
-    page eyeballed — no stranded boxes, and blank/key aligned heading-for-heading.
-- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is COMPLETE and CONVERTED
-  (2026-08-31). It is the project's FIRST CURRENT MODEL — mirror it.** The group activity was
-  folded into the guided notes and `activity/` + `activity_key/` deleted.
-  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. No
-    `activity/`, no `exit_ticket/`, no `experience/`.
-  - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e in the 1.2 hand-off).
-  - Scope: the four stages and what each *hands to the next*; the three tests for a question and
-    repairing one that fails; **the question decides the data type** (the crux — 1.0 classified
-    variables in a finished table, 1.1 decides the type before any data exist); frequency and
-    relative frequency; conclusion in context; and **diagnosing which stage a flawed study broke
-    at** (restored this run — it had been cut to the activity when the notes were squeezed into
-    20 minutes).
-  - **Notes pacing, 4 + 4 + 6 + 3 + 3 + 4 + 6 = 30 min:** §1 four stages (+ sort the council's
-    own four actions into stages), §2 the three tests, §3 *the lesson* — the question decides the
-    type, §4 stages 2–3 frequency table, §5 stage 4 conclusion + the "would bike" trap that
-    settles the hook, §6 where a study breaks down (four failed reports, **one per stage** —
-    row 4 is the only true stage-4 failure, so "stage 4" means something), §7 **We Do**.
-  - **The We Do is the council's second survey** (80 asked, 24 would ride → 30% → 270 of 900),
-    and it runs the *same five moves* the practice box releases: variable + type, percent,
-    scale-up, conclusion sentence, diagnose the stage.
-  - **Practice box (10 min, alone) is the Riverbend breakfast cart** — the old activity's context,
-    kept because it is the same school, a different study. 3 items: (1) variable + type, on-ramp;
-    (2) 35% and 315-of-900 **pre-worked in a `work` block** so the time goes to a conclusion that
-    names *the 40 she asked*; (3) **the crux** — the newspaper's arithmetically-correct sentence,
-    which stage it entered at (**2**) and *two* claims the data cannot support. Plus an
-    `extensionbox` (write a question that passes all three tests).
-  - Where the old activity went: item 1 → §1's sort table; item 2 → practice item 2; item 3 →
-    practice item 1; item 4 → §2's repair table; item 5 → the We Do; item 6 → §6's diagnosis
-    table; extension 1 → practice item 3; extension 2 → §3's closing paragraph.
-  - Contexts: Riverbend Student Council bike-rack survey (warm-up + notes §1–§6; 60 students —
-    bus 27, car 15, walk 12, bike 6, scaled to 900), the council's follow-up (We Do; 80 → 24),
-    the Riverbend breakfast cart (practice; 40 students — bagel 14, fruit cup 10, muffin 12,
-    nothing 4), Lakeside Farmers Market (homework; 50 shoppers, 800 Saturday total). **All
-    arithmetic re-verified in Python this run.**
-  - Page counts: warmup 1/1, **notes 5/5**, homework 2/2; plan 6pp, deck 14 frames, student and
-    key packets 12pp each. `make -C unit01/lesson01 all` and `check` both exit 0; **notes blank
-    and key verified page-for-page by comparing per-page headings**, not just totals; every page
-    eyeballed — no stranded boxes, no overfull vbox in the deck.
-  - Homework was **not** reshaped (the recipe says it needs none). DeltaMath → **Desmos** across
-    the cover comment, the plan, and the deck; 1.1 stays a **packet** night, because item 7's
-    correct-arithmetic / wrong-conclusion reasoning has no Desmos equivalent.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** a sports blog writes *"the
+    Riverbend roster's mean jersey number is 14 --- a young, inexperienced team."* The
+    arithmetic is correct. Circle yes / no / can't tell; the vote is re-taken at **problem 10**,
+    where the digit test settles it.
+  - **Notes rows (17 problems):** 1. Data in Context (1--2) · 2. Individual \& Variable (3--4) ·
+    3. Two Types (5--9) · 4. **The Digit Test** (10--13, the crux row) · 5. Guided Practice ---
+    *Student Life Survey* (14--17). The teacher works problems 1, 3, 6, 11; the class works the
+    rest. **The trap is problem 9** (Jersey \#, classified last, voted, left open);
+    **the crux is problem 10**; **13 is the counterweight** (Height, $420/6 = 70$ --- a mean that
+    does describe somebody); **15 is the crux transferred** (Grade, $63/6 = 10.5$).
+  - Where the retired activity went: the cross-country **meet-card bib claim** ($115/5 = 23$) is
+    now the debrief's **cold check**; the **Student Life Survey** is the Guided Practice row.
+  - Contexts: Riverbend Athletics roster + the sports-blog jersey claim (warm-up + notes),
+    Riverbend HS Student Life Survey (Guided Practice), Northgate Recreation Center (homework;
+    8 members). All arithmetic re-verified in Python this run: points $72/6=12$, jersey
+    $84/6=14$, height $420/6=70$, captains $3/6=50\%$, grades $42/4=10.5$, ZIP mean
+    $22{,}115.5$, commute $108/6=18$, GP grade $63/6=10.5$, bibs $115/5=23$; homework ---
+    visits $48/8=6$, group class $5/8=62.5\%$, spiral $45/300=15\%$ scaled to $300$, and the
+    crux Member ID mean $1{,}124/8=140.5$.
+  - Homework: 6 items, 12 points --- 1 individuals \& variables; 2 classify four columns with
+    reasons (**the contrast pair**: Member ID vs. Age); 3 mean visits as data; 4 a percent
+    ($62.5\%$) and why it is one; 5 the spiral item; 6 **the crux head-on** (the mean Member
+    ID). Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4**, homework 2/2; plan 7pp, deck 13
+    frames, student and key packets 10pp each. `make -C unit01/lesson00 all` and `check` both
+    exit 0; per-page headings compared blank↔key on every component.
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson00_{warmup,notes,homework}_key.json`.
+  - **Fitting lesson:** the first draft ran **5pp** with four TikZ displays whose labels
+    collided. Rescaling all four to the 12.2cm notes column (real column positions; the jersey
+    number line staggers the \#21/\#23 labels), trimming the hook lead-in to two lines and the
+    Guided Practice intro, and shaving `\pcell` answer heights brought it to 4/4. Eight key
+    answers then overflowed their fixed cells and were shortened in the JSON --- **a `\pcell`
+    answer longer than its height overflows silently, so render the key and look.**
+- **Lesson 1.1 — "The Statistical Cycle and Types of Data" — is CURRENT** (regenerated
+  2026-09-14 in the Main Ideas / Notes table shape, from the retired notes-only shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. No legacy
+    dirs existed to delete. The `practicebox` and the `extensionbox` are gone.
+  - Standards: **PS.DC.1a–c; AFDA.DA.2a** (previews PS.DC.1d–e).
+  - Scope: the four stages and what each *hands to the next*; the three tests for a statistical
+    question and repairing one that fails; **the question decides the data type** (the crux);
+    frequency and relative frequency; the conclusion in context; and diagnosing **which stage a
+    flawed study broke at**.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** the Student Council's bike-rack
+    claim --- 60 asked, 6 said bike, therefore *"10\% bike now, so a lot more would if there
+    were racks."* **The arithmetic is right.** Circle yes / no / can't tell; re-voted at
+    **problem 14**.
+  - **Notes rows (19 problems):** 1. Data Cycle --- four stages in order (1--4) · 2. Three Tests
+    --- stage 1 (5--8) · 3. Frequency Table --- stages 2 and 3 (9--11; problem 9 is the fill
+    table and carries the lesson's one `\wordbank`) · 4. **The Question Decides** (12--15, the
+    crux row) · 5. Guided Practice --- *The Cycle Turns* (16--19). The teacher works 1, 5,
+    problem 9's bus row, and 12.
+  - **The trap is problem 8** --- a question that already passes all three tests; a student who
+    "repairs" it has learned to rewrite rather than to test. **The crux is problem 14** ---
+    correct arithmetic ($6/60 = 10\%$, about 90 of 900) behind a claim the data cannot support,
+    entered at **stage 1**. **Problem 15 is the counterweight** (the breakfast cart: correct
+    $35\%$, but entered at **stage 2**), and **problem 19 is the crux transferred**.
+  - Contexts: Riverbend Student Council bike-rack survey (warm-up + notes; 60 students --- bus
+    27, car 15, walk 12, bike 6, scaled to 900), **the council's second survey (Guided
+    Practice; "would you ride if there were racks?", 80 asked, 24 yes → $30\%$ → about 270 of
+    900 --- the cycle visibly turns)**, Lakeside Farmers Market (homework; about 800 Saturday
+    shoppers, 50 asked → drove 26, walked 12, biked 7, bus 5). All arithmetic re-verified in
+    Python this run.
+  - Homework: 6 items, 12 points --- 1 variable, type and reason; 2 the frequency table with
+    relative frequencies (spiral to 1.0) in a `work` block; 3 scale to 800 and write the
+    conclusion; 4 **the contrast pair** (the same 50 shoppers, two questions, two types, decided
+    before collection); 5 four failures, one per stage; 6 **the crux head-on** (right numbers,
+    a conclusion that does not follow, entered at stage 1). Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4**, homework 2/2; plan 7pp, deck 15
+    frames, student and key packets 10pp each. `make -C unit01/lesson01 all` and `check` both
+    exit 0; per-page opening headings compared blank↔key on every component, and every page
+    rendered and inspected.
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson01_{warmup,notes,homework}_key.json`.
 - **Lesson 1.2 — "Populations, Samples, Parameters, and Statistics" — is COMPLETE and is THE
   PILOT (regenerated 2026-09-06 on the AP Statistics 1.4 model minus AP Practice). Mirror it.**
   - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. `activity/`,
@@ -320,274 +330,307 @@ user redirected to a third blue. No burgundy remains in the tree.)*
     `check` both exit 0; every page rendered and eyeballed.
   - Keys generated with `templates/lesson/mkkey.py` from
     `templates/lesson/examples/lesson02_{warmup,notes,homework}_key.json`.
-- **Lesson 1.3 — "Choosing a Sample: Four Sampling Techniques" — is COMPLETE and CURRENT
-  (regenerated in the PILOT shape 2026-09-07 from the pre-EFFL legacy shape).**
-  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. `activity/`,
-    `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted (`git rm`).
-  - Standards: **PS.DC.2a, PS.DC.2b; AFDA.DA.2b** (PS.DC.1d carried forward in the
-    population/sample items).
+- **Lesson 1.3 — "Choosing a Sample: Four Sampling Techniques" — is CURRENT** (converted
+  2026-09-14 to the Main Ideas / Notes table shape; regenerated into the pilot shape
+  2026-09-07 before that).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. `activity/`
+    and `exit_ticket/` were already gone.
+  - Standards: **PS.DC.2a, PS.DC.2b; AFDA.DA.2b** (PS.DC.1d carried forward).
   - Scope: the **sampling frame**; **probability vs. convenience** decided by *who could never
-    have been picked* (second trap, section 1's first half: the teacher's own third period is
-    convenience, however fair it felt); **SRS** off the digit strip 714 028 951 366 (skip 951)
-    and the **systematic** shortcut $k = 900 \div 60 = 15$, start 7 → 22, 37, 52 (the warm-up
-    with its name) — both in section 1's second half; **stratified** allocation 270/240/210/180
-    at 1/15 → 18/16/14/12 (section 2's first half, opening on the warm-up's 18); and **the
-    target misconception in section 2's second half — "chance chose, so it is fine"**: a cluster
-    sample works only when each cluster is a small mix of the whole. Riverbend's 30 homerooms of
-    30 are grouped by grade (1–9 ninth, 10–17 tenth, 18–24 eleventh, 25–30 twelfth); Maya's
-    random draw of rooms 4 and 7 is $2 \times 30 = 60$ ninth graders and 0 seniors, nobody
-    counted wrong, and about one draw in four (200/870 = 23%) lands both rooms in one grade. Rule:
-    alike inside → some from every group (stratified); a mix of the whole → everyone from a few
-    (cluster). Closes on the stratified/cluster contrast table and PS.DC.2b (choose and justify
-    from how the groups are built).
-  - **Hook (notes page 1 + dark slide + plan, unresolved):** Maya's hat draw — *is that as
-    trustworthy as drawing 60 names out of the hat?* Circle yes / no / it depends; the homeroom
-    map is withheld until the second half of section 2, where the vote is re-taken.
+    have been picked* (the teacher's own third period is convenience, however fair it felt);
+    **SRS** off the digit strip and the **systematic** shortcut $k = 900 \div 60 = 15$;
+    **stratified** allocation 270/240/210/180 at $1/15$ → 18/16/14/12; and **the target
+    misconception --- "chance chose, so it is fine"**: a cluster sample works only when each
+    cluster is a small mix of the whole. Riverbend's 30 homerooms of 30 are grouped by grade, so
+    Maya's random draw of rooms 4 and 7 is $2 \times 30 = 60$ ninth graders and no seniors ---
+    nobody counted wrong, and about one draw in four lands both rooms in one grade. Rule: alike
+    inside → some from every group (stratified); a mix of the whole → everyone from a few
+    (cluster).
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** Maya draws 2 of the 30 homerooms
+    from a hat and surveys all 30 students in each --- *is that as trustworthy as drawing 60
+    names out of the hat?* Circle yes / no / it depends; the homeroom map is withheld until
+    **problem 9**, where the vote is re-taken.
+  - **Notes rows (14 problems):** 1. **Who Chooses?** --- frame, chance against convenience
+    (1--2) · 2. **SRS \& Systematic** (3--4) · 3. **Stratified** (5--6) · 4. **Cluster** (7--10,
+    the crux row) · 5. Guided Practice --- **Cedar Ridge** (11--14). The teacher works 1, 3, 5
+    and 7.
+  - **The trap is problem 2** --- the teacher's own third period: *random* is not *unplanned*.
+    **The crux is problem 9** (vote again: chance chose, nobody miscounted, and both rooms are
+    ninth grade); **problem 13 is it transferred**, and 14 is choose-and-justify (PS.DC.2b).
   - Contexts: Riverbend HS (warm-up + notes; 900 → 60), **Cedar Ridge Apartments (Guided
-    Practice; 600 households in 30 buildings × 20, buildings 1–6 studios / 7–20 one-bed / 21–30
-    two-bed → strata 120/280/200 → 12/28/20 at 1/10; the cluster draw of buildings 2, 5, 6 = 60
-    studio households — the crux transferred; part (e): with only a list of buildings, only
-    cluster survives)**, Harbor Point Community Pool (homework; 1.2's Tuesday-evening study
-    replanned — 1,500 → 100; generator 0412/1587/0973/0412/0288 → members 412, 973, 288; strata
-    600/525/375 → 40/35/25 at 1/15; $k = 15$ from start 9 → 24, 39, 54; 4 of 25 swim sessions ×
-    25 = 100). Bayside Middle School (750 → 30, homerooms by grade) survives only as the
-    debrief's **cold check** (Plan 1 cluster vs. Plan 2 stratified — which *guarantees* all three
-    grades). All arithmetic verified in Python before authoring.
-  - Homework: 6 items, 12 points — the Tuesday-evening study (spiral to 1.2); Plan A generator
-    table (out-of-range vs. repeat); Plan B allocation; Plan C interval; **item 5 = the contrast
-    pair (Plan B stratified / Plan D cluster) then the crux head-on (three lap-swim hours drawn
-    at random)**; item 6 = the board's "seniors must be heard" justification (PS.DC.2b). Two
-    pages (items 1–2 / 3–6 + spiralbox). Packet night (Desmos has sampling simulations but no
-    stratum-or-cluster reasoning). The old 8-item set's matching table and extension are gone.
-  - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page last lines identical: p3 ends on the
-    contrast table, p4 is the Guided Practice), homework 2/2, cover 1; plan 6pp, deck 14 frames,
-    student and key packets 10pp each. `make -C unit01/lesson03 all` and `check` both exit 0;
-    every page rendered and eyeballed — no stranded boxes; zero overfull boxes in the plan and
-    deck (the cover's 16pt overfull banner line is the course name at `\LARGE`, identical in
-    1.2).
+    Practice; 600 households in 30 buildings of 20 --- studios 1--6/120, one-bed 7--20/280,
+    two-bed 21--30/200 → strata 12/28/20 at $1/10$; the hat draw of buildings 2, 5 and 6 is 60
+    studio households)**, Harbor Point Community Pool (homework; 1,500 → 100). Bayside Middle
+    School survives only as the debrief's **cold check**. All arithmetic re-verified in Python
+    this run, including $\binom{30}{2} = 435$ with 100 same-grade pairs (about 23\%).
+  - Homework: unchanged from 2026-09-07 --- 6 items, 12 points, item 5 the contrast pair plus
+    the crux head-on, item 6 the choose-and-justify. Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4**, homework 2/2; plan 6pp, deck 14
+    frames. `make -C unit01/lesson03 all` and `check` both exit 0; blank↔key parity verified by
+    per-page content, not totals (p1 ends at row 1's definition, p2 at row 3's, p3 at problems
+    7--8, p4 at problems 13--14 in both files).
   - Keys generated with `templates/lesson/mkkey.py` from
     `templates/lesson/examples/lesson03_{warmup,notes,homework}_key.json`.
-  - **Fitting lesson:** the first compile ran notes 6/5, homework 3/3, cover 2 — section 2's
-    contrast table, the Guided Practice's part (e), the homework's spiralbox, and the cover's
-    Keep in Mind each spilled by a few lines. Trimming prose (one line per paragraph, table
-    `\arraystretch` 1.3 → 1.2, homework `itemsep` 6 → 4pt) fixed all four without cutting an
-    item. At 12pt a section page holds roughly: intro (2 lines) + 2-line word bank + 4-line
-    paragraph + 5-row table + 2-line work block + 2-line paragraph + run-in + 4-line paragraph +
-    1-line work block + 3-line paragraph + 4-line callout + 3-row table — nothing more.
-- **Lesson 1.4 — "Bias in Samples and Surveys" — is CURRENT (pilot shape, regenerated
-  2026-09-07).** `cover` + `warmup` + `notes` + `homework` + `slides`; `activity/` and
-  `exit_ticket/` (and keys) removed. `make -C unit01/lesson04 all` and `check` both exit 0.
+  - **Fitting lesson:** the first table draft ran 5pp with **every key answer overflowing its
+    `\pcell` box** and TikZ labels colliding in three displays. All display labels were set
+    `\tiny` and shortened, the framed row-4 callout replaced with plain emphasis, and rows 1 and
+    3 folded from four problems to two each --- the cut items ("a computer picks 60", the hat
+    draw) were already duplicated by problems 3 and 7. Result 4/4 with 14 problems.
+- **Lesson 1.4 — "Bias in Samples and Surveys" — is CURRENT** (converted 2026-09-14 to the
+  Main Ideas / Notes table shape; regenerated into the pilot shape 2026-09-07 before that).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`. `activity/`
+    and `exit_ticket/` were already gone.
   - Standards: **PS.DC.2c; AFDA.DA.2e, 2f, 2g** (PS.DC.1d–e, PS.DC.2a carried forward).
-  - Scope: **bias is a direction, not bad luck** (section 1, first half — three honest samples
-    19/22/19 average 20% against three Tuesday samples 35/36/37 averaging 36%; *consistent is
-    not correct*); **sampling bias** split into **undercoverage** and **nonresponse** with the
-    test *could that person have been chosen?* (section 1, second half; the red callout is the
-    second trap — the 200 returned cards have a perfect frame and a broken study); the seven
-    named **response biases** as a pre-filled reference table plus a five-row diagnostic table
-    that includes the 62% / 41% question-order pair (section 2, first half); and **the crux —
-    "the sample was too small"** (section 2, second half): ten Tuesdays, 270/750 = 36%, the
-    same 16-point miss; the blue callout — *a larger sample makes an estimate more precise, not
-    more correct; size shrinks variability, nothing about size touches direction* — closes with
-    each fix attached to the bias it removes (AFDA.DA.2g).
-  - **Hook (notes page 1 + dark slide + plan, unresolved):** the staff member says the problem
-    was size and will run the Tuesday survey for ten weeks — *will 750 land closer to 20% than
-    75 did?* Circle yes / no / it depends; the 750 result is withheld until the second half of
-    section 2, where the vote is re-taken.
-  - Contexts: Harbor Point Community Pool (warm-up + notes; census 300/1500 = 20%, Tuesday
-    27/75 = 36% → 540, off by 240; 270/750 = 36%), **Cedar Ridge Apartments (Guided Practice —
-    the old activity's context; 600 households all mailed, 150/600 = 25%, 96/150 = 64% → 384
-    vs. census 240/600 = 40%, 24 points and 144 households too high; 192/300 = 64% again is the
-    crux transferred; part (e) names acquiescence in "Don't you agree…" and rewrites it)**,
-    Millbrook Public Library (homework; 72/90 = 80% → 960 vs. phone 54/120 = 45% → 540, gap 35
-    points / 420; order effect 68 vs 47 = 21; response rate 78/120 = 65%). Bayside Middle School
-    (24/30 = 80%, then 48/60 = 80%) survives only as the debrief's **cold check** — name the
-    bias (undercoverage), did doubling fix it (no), why not. All arithmetic verified in Python.
-  - Homework: 6 items, 12 points — item 1 the spiral to 1.2/1.3 (population, sample,
-    convenience, undercoverage); 2–3 the core procedure and interpret-in-context; **item 4 =
-    the contrast pair (Plan A four weeks at the desk / Plan B the phone sample: bigger vs.
-    closer) then the crux head-on (what the 360 would report — about 80%)**; item 5 four
-    response biases + the order effect; item 6 the 65% response rate — explain and name the fix
-    (AFDA.DA.2g). Two pages (items 1–2 / 3–6 + spiralbox). Packet night.
-  - Page counts (12pt): warmup 1/1, **notes 4/4** (per-page headings identical: p3 ends on the
-    blue callout, p4 is the Guided Practice), homework 2/2, cover 1; plan 7pp, deck 14 frames,
-    student and key packets 10pp each. Zero overfull boxes in the plan and deck; the components'
-    only log noise is the known 6pt `\pageheader` and the cover's 16pt name-row line. Every
-    page rendered and eyeballed — no stranded boxes.
+  - Scope: **bias is a direction, not bad luck** (three honest samples 19/22/19 averaging 20\%
+    against three Tuesday samples 35/36/37 averaging 36\% --- *consistent is not correct*);
+    **sampling bias** split into **undercoverage** and **nonresponse** with the test *could that
+    person have been chosen?*; the seven named **response biases** as a pre-filled reference
+    table plus a five-row diagnostic fill table carrying the 62\% / 41\% question-order pair;
+    and **the crux --- "the sample was too small"**: ten Tuesdays, $270/750 = 36\%$, the same
+    16-point miss. *A larger sample makes an estimate more precise, not more correct; size
+    shrinks variability, and nothing about size touches direction.* Closes with each fix
+    attached to the bias it removes (AFDA.DA.2g).
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** the staff member blames *size* and
+    will run the Tuesday survey for ten weeks --- 750 members instead of 75. *Will her new
+    number land closer to 20\%?* Circle yes / no / it depends; **settled at problem 13.**
+  - **Notes rows (19 problems, 5 blanks, 6 `\labelbox`):** 1. **Bias** --- *a direction, not bad
+    luck* (1--4) · 2. **Sampling Bias** --- *who never had a chance* (5--8) · 3. **Response
+    Bias** --- *after the right person is chosen* (9--11; problem 9 is the word-bank fill table)
+    · 4. **Bigger Is Not Better** --- *ten Tuesdays* (12--15, the crux row) · 5. Guided Practice
+    --- **Cedar Ridge** (16--19).
+  - **Problem 4 is the small trap** (the tighter Tuesday row --- consistent is not correct);
+    **problem 8 is the main trap** (all 1,500 mailed a card, 200 back --- a perfect frame and a
+    broken study: nonresponse); **problem 13 is the crux** and re-takes the hook vote; problem
+    14 attaches each fix to its bias; problem 15 is the counterweight; **problem 18 is the crux
+    transferred** and 19 is the AFDA.DA.2g rewrite.
+  - Contexts: Harbor Point Community Pool (warm-up + notes; census $300/1500 = 20\%$, Tuesday
+    $27/75 = 36\%$ → 540, off by 240; $270/750 = 36\%$), **Cedar Ridge Apartments (Guided
+    Practice; 600 households all mailed, $150/600 = 25\%$ returned, $96/150 = 64\%$ → 384
+    against the census $240/600 = 40\%$ --- 24 points and 144 households too high; $192/300 =
+    64\%$ again is the crux transferred)**, Millbrook Public Library (homework). Bayside Middle
+    School survives only as the debrief's **cold check**.
+  - Homework: unchanged from 2026-09-07 --- 6 items, 12 points, item 4 the contrast pair plus
+    the crux head-on, item 6 the 65\% response rate and its fix. Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4** (per-page first *and* last lines
+    identical blank↔key), homework 2/2; plan 7pp, deck 14 frames. `make -C unit01/lesson04 all`
+    and `check` both exit 0.
+  - Keys generated with `templates/lesson/mkkey.py`; the notes spec is
+    `templates/lesson/examples/lesson04_notes_key.json`.
+  - **Fitting lesson:** the first table draft ran 5pp. All 18 `\pcell` heights were resized to
+    1.0--1.4cm, four TikZ scales dropped to 0.65--0.70, five sentences shortened and the
+    diagnostic table's `\arraystretch` cut to 1.05 --- 4pp without losing a problem. The key's
+    first pass overflowed its cells: **a keyred line holds about 28 characters in a half-column
+    `\pcell`**, so every answer was re-cut to two lines or fewer.
+- **Lesson 1.5 — "Observational Studies" — is CURRENT** (regenerated 2026-09-14 in the
+  Main Ideas / Notes table shape, from the pre-EFFL legacy shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`.
+    `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted.
+  - Standards: **PS.DC.2d** (PS.DC.1a–b carried forward; previews PS.DC.3a–b).
+  - Scope: the one-word definition --- you measure or survey **without assigning**, so the
+    groups formed themselves (a survey is one type of observational study, which makes every
+    Unit 1 study so far one); using the statistical cycle to plan and conduct the study
+    (PS.DC.2d); **explanatory vs. response** variable; and the pivot --- **association is not
+    causation**, taught as *three live stories for one table*: the claim, the same arrow
+    **backwards**, and a **lurking variable** outside the study moving both. Closes on which
+    statements the study licenses, the banned verbs (*causes, makes, raises, improves*), and the
+    fact that a prediction about switching groups is a causal claim in disguise.
+  - **Deliberate placement after 1.4:** every scenario here is drawn at random with a 100\%
+    response rate, so bias is off the table and what remains is visible. The homework's closing
+    item is exactly that --- *no bias at all, and still no causation*.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** a random sample of 200, every count
+    correct --- $70\%$ of morning swimmers get 7+ hours of sleep against $45\%$ of evening
+    swimmers --- and the director's flyer: *"Swim in the morning --- sleep better!"* Circle
+    **safe / not safe**; re-voted at **problem 13**.
+  - **Notes rows (18 problems):** 1. One word: **Assign** (1--4) · 2. The plan, again: **The
+    Cycle** (5--8) · 3. Explanatory \& response: **Two Variables** (9--10) · 4. Association is:
+    **Not Causation** (11--14, the crux row) · 5. Guided Practice --- **Study Center** (15--18).
+    The teacher works 1, 5, 9 and 11.
+  - **The trap is problem 3** --- the director *assigns* swim times, the one non-observational
+    plan, which students sort by "is it a survey." **The crux is problem 13** (the hook vote
+    re-taken: only *morning swimmers report more sleep* is supported); problem 12 is the lurking
+    variable (retirement, $60/80 = 75\%$ against $18/120 = 15\%$) and **problem 14 is the
+    prediction about switching groups --- a causal claim in disguise**.
+  - Contexts: Harbor Point Community Pool (warm-up + notes; SRS of 200 from 1,500, 80 morning /
+    120 evening, $56/80 = 70\%$ against $54/120 = 45\%$), **Riverbend Study Center (Guided
+    Practice; random 150 records, users $39/60 = 65\%$ against non-users $72/90 = 80\%$ --- the
+    association runs backwards; problem 17 is the crux transferred, 18 the arrow backwards with
+    $45/60 = 75\%$ against $9/90 = 10\%$ having already failed a class)**, Millbrook Public
+    Library (homework; 1,200 card holders, unbiased phone sample of 240). Bayside Middle School
+    ($90/150 = 60\%$ against $240/600 = 40\%$, band "raises" math grades) survives only as the
+    debrief's **cold check**, folded in from the deleted exit ticket.
+  - Homework: 6 items, 12 points --- 1 individuals and variables; 2 the two rates ($72/90 = 80\%$
+    against $48/150 = 32\%$, a 48-point gap); 3 pool and scale ($120/240 = 50\%$ → about 600,
+    spiral to 1.2); 4 **the contrast pair** (association against "more than doubles"); 5 the
+    previous summer ($63/90 = 70\%$ against $30/150 = 20\%$ --- the arrow backwards); 6 **the
+    crux head-on** --- no bias at all, and still no causation. Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4**, homework 2/2; plan 7pp, deck 16
+    frames. `make -C unit01/lesson05 all` and `check` both exit 0; per-page first lines compared
+    blank↔key on every component.
   - Keys generated with `templates/lesson/mkkey.py` from
-    `templates/lesson/examples/lesson04_{warmup,notes,homework}_key.json`.
-  - **Fitting lesson:** the first compile ran notes 5/5, homework 3/3, plan 7pp with two stubs.
-    Notes: section 2's bold `Kind` column at 3.3cm wrapped five labels to two lines — widening it
-    to 4.1cm and folding the question-order sentence into the diagnostic table as a fifth row
-    recovered the page; the crux's comparison table became a one-sentence fill-in. Homework:
-    page 2 needed ~8 lines for the spiralbox — one-line table headers (`Kind`), single-line rows,
-    item 3's two-line work block collapsed to one, item 4 on one line. Plan: the Guided Notes box
-    (a page-long `multicols` block) printed two lines as a stub at the foot of page 3 under the
-    default guard **and** under `\boxguard[24]`; `\boxguard[40]` moved it over. The Homework box
-    then tailed three lines onto the next page — trimmed the box by four lines instead.
-- **Lesson 1.5 — "Observational Studies" — is COMPLETE.** All components authored, built,
-  and passing the gate.
-  - Standards: **PS.DC.2d** (PS.DC.1a–b carried forward in the cycle and conclusion items).
-  - Scope: the one-word definition — you measure or survey **without assigning**, so the
-    groups formed themselves (and a **survey is one type of observational study**, which
-    makes every Unit 1 study so far one); **using the statistical cycle to plan and conduct**
-    the study, which is what PS.DC.2d actually asks and is the section not to skip; comparing
-    two already-existing groups with two different denominators; **explanatory vs. response**
-    variable; and the lesson's pivot — **association is not causation**, taught as *three live
-    stories for one table*: the claim, the same arrow **backwards**, and a **lurking
-    variable** outside the study moving both. Closes on which statements the study licenses,
-    a banned-verb list (*causes, makes, raises, improves*), and the fact that a prediction
-    about switching groups is a causal claim in disguise. Experiments are named only as the
-    1.6 hand-off.
-  - **Deliberate placement after 1.4:** every scenario in 1.5 is drawn at random with a 100%
-    response rate, so bias is off the table and what remains is visible. The homework's
-    closing item is exactly this — *no bias at all, and still no causation*.
-  - Contexts: Harbor Point Community Pool carried from 1.2/1.3/1.4 (warm-up + notes; SRS of
-    $200$ from $1{,}500$, $80$ morning / $120$ evening, sleep $7+$ hrs $56/80 = 70\%$ against
-    $54/120 = 45\%$, a $25$-point gap; pooled $110/200 = 55\%$ scaled to $825$; the lurking
-    variable is retirement, $60/80 = 75\%$ against $18/120 = 15\%$), Riverbend HS carried from
-    1.0–1.3 (activity; $900$ students, sample of $150$, Study Center users $39/60 = 65\%$
-    against non-users $72/90 = 80\%$ — the association runs **backwards**, and Tier E proves
-    it with the previous quarter's records, $45/60 = 75\%$ had already failed a class against
-    $9/90 = 10\%$; pooled $111/150 = 74\%$ scaled to $666$), Bayside Middle School carried
-    from 1.3/1.4 (exit ticket; band $90/150 = 60\%$ against $240/600 = 40\%$, a $20$-point
-    gap), Millbrook Public Library carried from 1.2/1.4 (homework; $1{,}200$ card holders,
-    unbiased phone sample of $240$, Summer Reading Program $72/90 = 80\%$ against $48/150 =
-    32\%$, a $48$-point gap; pooled $120/240 = 50\%$ scaled to $600$; previous-summer records
-    $63/90 = 70\%$ against $30/150 = 20\%$). All arithmetic verified in Python before
-    authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 6pp, slides 9 frames. `make -C unit01/lesson05 all` and `check` both exit 0; every
-    page of both packets was rendered and eyeballed (see "Gotchas" for the two boxguard
-    repairs that took).
-- **Lesson 1.6 — "Principles of Experimental Design" — is COMPLETE.** All components authored,
-  built, and passing the gate.
-  - Standards: **PS.DC.3a (i–iv), PS.DC.3b; AFDA.DA.2c** (PS.DC.1b carried forward in the
-    conclusion items).
-  - Scope: the same one-word pivot as 1.5, from the other side — the researcher
-    **assigns** and **imposes a treatment**; naming **experimental units / subjects**,
-    **treatment**, and **control group** (the baseline, not a wasted group); the four
-    principles **comparison, randomization, replication, control** evaluated *in context*
-    (PS.DC.3b), with **confounding variable** taught as 1.5's lurking variable that got
-    *inside* the experiment because the groups were not treated alike; the **placebo
-    effect** in a school setting (*being chosen* is itself a treatment) and single- vs.
-    **double-blind**; and **completely randomized / randomized block / matched pairs**,
-    with block allocation done as arithmetic. Closes on the payoff the unit has been
-    building since 1.5 — random assignment is what buys the verb *caused*.
-  - **The lesson is 1.5's answer, deliberately on the same contexts.** Riverbend's
-    observational study made the Study Center look *harmful* ($65\%$ users vs. $80\%$
-    non-users, arrow reversed); the experiment makes it look *helpful* ($75\%$ vs. $55\%$).
-    Same school, same Study Center, opposite conclusions — that pair is the hook, and every
-    other component repeats the shape: a self-selected gap that was too big, replaced by an
-    assigned gap that is smaller and true. Harbor Point $25 \to 20$ points; Millbrook
-    $48 \to 30$ points. **A smaller gap as the stronger evidence** is the closing item of
-    both the activity and the homework.
-  - Contexts: Riverbend HS carried from 1.0–1.5 (warm-up + notes; $120$ volunteers split
-    $60/60$ by generator, $45/60 = 75\%$ against $33/60 = 55\%$, gap $20$ points, pooled
-    $78/120 = 65\%$; block on last quarter's grades $80 \to 40/40$ and $40 \to 20/20$),
-    Cedar Ridge Apartments carried from 1.3/1.4 (guided practice; $100$ households,
-    $50/50$, four altered plans mapping one-to-one onto the four principles), Harbor Point
-    Community Pool carried from 1.2–1.5 (activity; $90$ volunteers, $45/45$, $27/45 = 60\%$
-    against $18/45 = 40\%$, pooled $45/90 = 50\%$ scaled to $750$ of $1{,}500$; block on
-    retirement $30 \to 15/15$, $60 \to 30/30$; the double-blind item is the honest limit —
-    subjects cannot be blinded, the sleep-log scorers can), Bayside Middle School carried
-    from 1.3–1.5 (exit ticket; $80$ volunteers, $40/40$, $28/40 = 70\%$ against
-    $16/40 = 40\%$, gap $30$), Millbrook Public Library carried from 1.2/1.4/1.5 (homework;
-    $200$ volunteers, $100/100$, $65\%$ against $35\%$, pooled $100/200 = 50\%$ scaled to
-    $600$ of $1{,}200$; block on age $120 \to 60/60$, $80 \to 40/40$). All arithmetic
-    verified in Python before authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 6pp, slides 10 frames. `make -C unit01/lesson06 all` and `check` both exit 0;
-    every page of both packets was rendered and eyeballed (see "Gotchas" for the two
-    layout repairs that took).
-- **Lesson 1.7 — "Comparing Studies and Choosing a Method" — is COMPLETE.** All components
-  authored, built, and passing the gate.
-  - Standards: **PS.DC.3c, PS.DC.3d, PS.DC.3e** (PS.DC.1b carried forward in the conclusion
-    items).
-  - Scope: the two study types **side by side** in one four-row table whose first row
-    (*who decides which group each individual is in*) produces every other row, and the
-    sentence each design earns (*is associated with* vs.\ *caused*); **when you cannot run
-    an experiment** --- **unethical / impossible / impractical**, with the test question
-    *can you hand this out to a person?*, and the rule that an unavailable experiment is a
-    reason for a **weaker verb**, not an excuse for a stronger one; **PS.DC.3d** --- the
-    statistical cycle used to plan a *well-designed experiment*, authored as the same table
-    shape as 1.5's so only the **Collect** row changes (from *sampled* to *assigned*); and
-    **PS.DC.3e** --- the five collection methods (survey, interview, focus group,
-    observation, content analysis) as a pre-filled reference table plus five diagnostic
-    rows. The lesson's named trap is **observation the method vs.\ observational study the
-    design** --- an experiment can collect its data by observation. The four principles are
-    assumed, not re-taught.
-  - **Built on the 1.5/1.6 pairs rather than new scenarios**, as planned: every context has
-    already been run both ways, so the comparison is between studies students themselves
-    computed. Riverbend $65/80$ watched vs.\ $75/55$ assigned; Harbor Point $25$-point gap
-    vs.\ $20$; Millbrook $48$ vs.\ $30$.
-  - Contexts: Riverbend HS carried from 1.0--1.6 (warm-up + notes; $39/60 = 65\%$ and
-    $72/90 = 80\%$, a $15$-point gap, against the assigned $75\%$/$55\%$ and $20$ points ---
-    the warm-up's real item is *why one study's groups are $60/90$ and the other's $60/60$*;
-    notes §3 plans a new weekly-check-in experiment through the cycle), Cedar Ridge
-    Apartments carried from 1.3/1.4/1.6 (guided practice; three questions --- one
-    assignable, two not --- each matched to a study type **and** a collection method),
-    Harbor Point Community Pool carried from 1.2--1.6 (activity; the two earlier studies
-    labelled, then a new water-aerobics experiment, $120$ volunteers $60/60$,
-    $42/60 = 70\%$ against $30/60 = 50\%$, gap $20$, pooled $72/120 = 60\%$ scaled to $900$
-    of $1{,}500$; Tier E is the arthritis question, which cannot be assigned), Bayside
-    Middle School carried from 1.3--1.6 (exit ticket; $90/150 = 60\%$, Study A/Study B
-    sorting, the long-bus-ride question, and a method choice), Millbrook Public Library
-    carried from 1.2/1.4/1.5/1.6 (homework; a **third** study --- $300$ volunteers
-    $150/150$, $96/150 = 64\%$ against $60/150 = 40\%$, gap $24$, pooled $156/300 = 52\%$
-    scaled to $624$ of $1{,}200$ --- plus the cycle table, three assignability rows, all
-    five methods, and the closer: the $48$-point gap is the biggest number and the weakest
-    evidence). All arithmetic verified in Python before authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 6pp, slides 10 frames. `make -C unit01/lesson07 all` and `check` both exit 0;
-    every page of both packets and the plan was rendered and eyeballed (see "Gotchas" for
-    the three repairs that took).
-- **Lesson 1.8 — "Project: Design and Conduct a Survey" — is COMPLETE**, and with it
-  **Unit 1 is finished**. All components authored, built, and passing the gate.
-  - Standards: **AFDA.DA.2d, 2h, 2i, 2j; PS.DC.2d** (AFDA.DA.2a–c and 2e–g exercised
-    throughout the planning rather than taught fresh).
-  - Scope: the unit **run forwards** — students build a study instead of taking one apart. The
-    four-stage cycle as a *deliverables checklist* (third column: what you hand in); the three
-    tests for a statistical question and 1.3's stratified allocation, both reused unchanged;
-    **the survey instrument**, which is the lesson's only genuinely new content — four rules
-    (one idea per item, neutral wording, choices that cover everyone without overlapping,
-    short) taught by repairing three broken items that students met in 1.4 as response bias;
-    **relative frequency** and a **bar graph** completed on pre-drawn, pre-scaled axes
-    (AFDA.DA.2h — no sketching from a blank page); scaling a sample percent to a population;
-    and the **four-sentence report** whose fourth sentence is what the project is graded on.
+    `templates/lesson/examples/lesson05_{warmup,notes,homework}_key.json`.
+  - **Two documented deviations:** `\termrowheight` is **2.1cm** here, not the usual 2.3cm (the
+    file says so in a comment) --- needed so the table's first sub-row starts on page 1 and the
+    notes land at four pages; and the lesson carries **18 problems, not 19** (one was cut from
+    row 4 for the same reason).
+- **Lesson 1.6 — "Principles of Experimental Design" — is CURRENT** (regenerated 2026-09-14 in
+  the Main Ideas / Notes table shape, from the pre-EFFL legacy shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`.
+    `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted.
+  - Standards: **PS.DC.3a (i–iv), PS.DC.3b; AFDA.DA.2c** (PS.DC.1b carried forward).
+  - Scope: 1.5's pivot from the other side --- the researcher **assigns** and **imposes a
+    treatment**; **experimental units / subjects**, **treatment**, **control group** (the
+    baseline, not a wasted group); the four principles **comparison, randomization,
+    replication, control** evaluated in context (PS.DC.3b); **confounding variable** taught as
+    1.5's lurking variable that got *inside* the experiment; the **placebo effect** in a school
+    setting (*being chosen* is itself a treatment) and single- vs. **double-blind**; and
+    completely randomized / randomized block / matched pairs, with block allocation done as
+    arithmetic. Closes on the payoff --- random assignment is what buys the verb *caused*.
+  - **The lesson is 1.5's answer, deliberately on the same contexts.** Riverbend's observational
+    study made the Study Center look *harmful* ($65\%$ users against $80\%$ non-users); the
+    experiment makes it look *helpful* ($75\%$ against $55\%$). Same school, same Study Center,
+    opposite conclusions --- and **a smaller gap as the stronger evidence** is the closing item.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** two quarters of the same Study
+    Center --- *watched* $65\%$ against $80\%$ (looked harmful) against *assigned* $75\%$
+    against $55\%$ (looks helpful). Which should the counselor believe? Circle one; re-voted at
+    **problem 12**.
+  - **Notes rows (17 problems):** 1. *Assign, don't watch* --- **Experiment** (1--4) · 2. *Four*
+    --- **Principles** (5--7; problem 5 is the Cedar Ridge fill table and the lesson's one
+    `\wordbank` / `\blank` cluster) · 3. *Two refinements* --- **Blinding \& Blocking** (8--9) ·
+    4. *What buys the verb* --- **Caused** (10--13, the crux row) · 5. Guided Practice ---
+    **Harbor Point Swim Times** (14--17). The teacher works 1, 6, 8 and 10.
+  - **The trap is problem 4** --- new app against old packet: the packet group *is* the control
+    group. **The crux is problem 13** --- a *watched* 35-point gap still earns only
+    "association"; **problem 17 is it transferred** (25 watched points against 20 assigned).
+  - Contexts: Riverbend HS (warm-up + notes; 120 volunteers split 60/60 by generator,
+    $45/60 = 75\%$ against $33/60 = 55\%$, gap 20; block on last quarter's grades), **Harbor
+    Point Community Pool (Guided Practice; 90 volunteers 45/45, $27/45 = 60\%$ against
+    $18/45 = 40\%$, gap 20 against 1.5's watched gap of 25)**, Millbrook Public Library
+    (homework; 1,200 card holders, 200 volunteers → 100/100). Bayside survives only as the
+    debrief's **cold check**.
+  - Homework: 6 items, 12 points --- 1 name the parts; 2 the two rates and the gap
+    ($65\%$/$35\%$, 30); 3 pool and scale ($50\%$ → 600 as an estimate, spiral to 1.2);
+    4 **the contrast pair** (watched against assigned --- association against caused); 5 block
+    on age (120 → 60/60, 80 → 40/40) and why; 6 **the crux head-on** (a 48-point gap against
+    30). Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 4/4**, homework 2/2; plan 7pp, deck 15
+    frames. `make -C unit01/lesson06 all` and `check` both exit 0; per-page last lines compared
+    blank↔key off the built PDFs for all three keyed components.
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson06_{warmup,notes,homework}_key.json`.
+  - **One documented deviation:** `\termrowheight` is **2.15cm**, not 1.2's 2.3cm --- the 0.75cm
+    it frees is what lets the table's first row start on page 1 and the notes close at four
+    pages.
+  - **Fitting lesson:** the inherited draft had never been compiled and ran **6pp**, with the
+    row-3 and row-4 displays overflowing the Notes column (panel headers colliding,
+    `\normalsize` rate lines spilling out of their boxes). Both displays were rebuilt, every
+    figure rescaled, row 3's two grid sub-rows merged into one, prose and answer heights cut ---
+    4pp, and the problem count fell 19 → 17. The **homework key ran 3pp against a 2pp blank**
+    (long answers pushed the `spiralbox` over), fixed by shortening answers in the JSON.
+- **Lesson 1.7 — "Comparing Studies and Choosing a Method" — is CURRENT** (regenerated
+  2026-09-14 in the Main Ideas / Notes table shape, from the pre-EFFL legacy shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`.
+    `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted.
+  - Standards: **PS.DC.3c, PS.DC.3d, PS.DC.3e** (PS.DC.1b carried forward).
+  - Scope: the two study types **side by side**, the first row (*who decides which group each
+    individual is in*) producing every other row, and the sentence each design earns (*is
+    associated with* against *caused*); **when you cannot run an experiment** ---
+    unethical / impossible / impractical, with the test *can you hand this out to a person?*,
+    and the rule that an unavailable experiment is a reason for a **weaker verb**, not an excuse
+    for a stronger one; **PS.DC.3d** --- the cycle used to plan a well-designed experiment, only
+    the *Collect* row changing from *sampled* to *assigned*; and **PS.DC.3e** --- the five
+    collection methods as a pre-filled reference table plus diagnostic rows.
+  - **Built on the 1.5/1.6 pairs rather than new scenarios**: every context has already been run
+    both ways, so the comparison is between studies students themselves computed.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** a generator split 120 volunteers
+    60/60, then the counselor *sat in the Study Center and watched*. A classmate says: "she just
+    watched, so this quarter's study was an observational study." Circle agree / disagree;
+    re-voted at **problem 15**.
+  - **Notes rows (19 problems; problem 1 is the side-by-side fill table):** 1. Side by side ---
+    **Two Designs** (1--5) · 2. When you cannot --- **Experiment** (6--9) · 3. Planning an
+    experiment --- **The Cycle** (10--11) · 4. Five ways to collect --- **The Method** (12--15,
+    the crux row) · 5. Guided Practice --- **Harbor Point** (16--19).
+  - **The trap is problem 8** --- the 45-minute bus ride is *impossible*, not *unethical*; take
+    a hand count before anyone writes. **The crux is problem 15** --- observation the *method*
+    inside an experiment the *design*; the hook vote is re-taken there, and **problem 19** is it
+    transferred.
+  - Contexts: Riverbend HS (warm-up + notes; watched $65\%$/$80\%$ against assigned
+    $75\%$/$55\%$), **Harbor Point Community Pool (Guided Practice; the 1.5 survey of 200 and
+    the 1.6 experiment of 90 labelled, then a new water-aerobics experiment --- 120 volunteers
+    60/60, $42/60 = 70\%$ against $30/60 = 50\%$, gap 20)**, Millbrook Public Library (homework;
+    a third study --- 300 volunteers 150/150, $96/150 = 64\%$ against $60/150 = 40\%$, gap 24).
+    Bayside Middle School (Study A / Study B, $90/150 = 60\%$) survives only as the debrief's
+    **cold check**.
+  - Homework: 6 items, 12 points --- 1 sort the two earlier designs; 2 rates, gap and the verb;
+    3 the cycle (spiral to 1.5); 4 **the contrast pair** (a late fee is assignable, being read to
+    as a toddler is impossible); 5 all five methods; 6(a) **the crux head-on** and 6(b) the
+    48-point gap as the *weakest* evidence. Two pages. Packet night.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 5/5**, homework 2/2; plan 7pp, deck 15
+    frames. `make -C unit01/lesson07 all` and `check` both exit 0; per-page correspondence
+    verified blank↔key, and every page of both packets, the plan and the deck rendered and
+    inspected.
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson07_{warmup,notes,homework}_key.json`.
+  - **OPEN — the notes are 5pp against the profile's 3--4pp budget.** Vocab rows were cut to
+    1.7cm, every `\pcell` height reduced, all five figures rebuilt narrower, and the prose
+    tightened throughout; reaching 4pp needs about 18cm more, which means **losing a
+    standards-bearing row** --- either PS.DC.3d's cycle row or half of PS.DC.3e's methods row.
+    The content was kept and the overrun flagged instead. **This is a decision for the user:**
+    cut a row (and drop a standard's coverage in the notes), or raise the budget for a
+    three-standard lesson. Twelve key answers also overflowed their `\pcell` boxes silently on
+    the first pass and were shortened in the JSON.
+- **Lesson 1.8 — "Project: Design and Conduct a Survey" — is CURRENT** (regenerated 2026-09-14
+  in the Main Ideas / Notes table shape, from the pre-EFFL legacy shape).
+  - Components: `cover`, `warmup`(+key), `notes`(+key), `homework`(+key), `slides`.
+    `activity/`, `activity_key/`, `exit_ticket/`, `exit_ticket_key/` deleted. The project
+    deliverable is **homework item 6**, not an `extensionbox` (retired course-wide).
+  - Standards: **AFDA.DA.2d, 2h, 2i, 2j; PS.DC.2d**.
+  - Scope: the unit **run forwards** --- students build a study instead of taking one apart. The
+    four-stage cycle as a *deliverables checklist*; **the survey instrument**, the lesson's only
+    genuinely new content, taught by repairing three broken items students met in 1.4 as
+    response bias; **relative frequency** and a **pre-drawn, pre-scaled bar graph** read and
+    annotated with `\labelbox` (AFDA.DA.2h --- nothing is sketched); scaling a sample percent to
+    a population; and the **four-sentence report** the project is graded on.
   - **The lesson's pivot is that the class is a convenience sample.** The Student Council's
-    stratified $60$ may speak about all $900$ students; the class of $25$ may not. The two
-    results are deliberately built to *nearly agree* ($35\%$ vs. $36\%$ on the top choice) so
-    that activity Tier E can make the hardest point in the unit: near-agreement is luck, not
-    evidence, because chance never chose this class. Naming the limit is scored as part of the
-    answer, not as an apology.
-  - **Packet budgeted as a project**, per the plan left by 1.7: the activity is a planning page
-    (Tier R), an instrument the class actually builds plus a live tally (Tier A), and a
-    reporting/validity page (Tier E). The homework's `extensionbox` is **the project
-    deliverable** — the four-sentence report on the class's own data.
-  - **The activity key is a worked exemplar, not the only right answer** (flagged in its
-    teacher note): a class of $25$ answering the grant question $9$/$7$/$6$/$3$ →
-    $36\%$/$28\%$/$24\%$/$12\%$, scaling to $324$. Real class data will differ; mark against
-    the class's own totals. The `work` blocks carry the shape of the computation.
-  - Contexts: Riverbend HS carried from 1.0–1.7 (warm-up + notes + activity; Student Council
-    \$$3{,}000$ grant, stratified $60$ from $900$ at $1/15$ → $18$/$16$/$14$/$12$; counts
-    $21$/$18$/$15$/$6$ → $35\%$/$30\%$/$25\%$/$10\%$, scaled $315$/$270$/$225$/$90$), Bayside
-    Middle School carried from 1.3–1.7 (exit ticket; homeroom of $30$, $12$/$9$/$6$/$3$ →
-    $40$/$30$/$20$/$10$, the trap being $0.40 \times 750 = 300$ computed correctly off a
-    convenience sample), Millbrook Public Library carried from 1.2/1.4/1.5/1.6/1.7 (homework;
-    a proper SRS of $80$ → $28$/$24$/$20$/$8$ = $35$/$30$/$25$/$10$, scaled $420$ and $300$,
-    against a front-desk clipboard where $30$ of $50$ = $60\%$ chose story hour — a $35$-point
-    gap worth about $420$ card holders, the same size as the entire top result; plus a $40\%$
-    response rate). All arithmetic verified in Python before authoring.
-  - Page counts: warmup 1/1, notes 4/4, activity 2/2, exit ticket 1/1, homework 2/2;
-    plan 6pp, slides 10 frames; student and key packets both 14pp.
-    `make -C unit01/lesson08 all` and `check` both exit 0; `make -C unit01 check` passes all
-    **9 lessons**. Every page of both packets and the plan was rendered and eyeballed (see
-    "Gotchas" for the four repairs that took).
-- **All other 57 lesson dirs are unmodified skeletons** (now cerulean). **U2–U8 unit tests and
-  test keys are still skeletons**, and none of them has a `unit_cover` pair.
-- Per-unit progress: **U1: 9 of 9 lessons + full assessment set + cover pair — COMPLETE**;
-  U2–U8 scaffolded, 0 authored.
-
+    stratified 60 may speak about all 900 students; the class of 25 may not. The two results are
+    built to *nearly agree* so that near-agreement can be named as luck, not evidence --- chance
+    never chose this class. Naming the limit is scored as part of the answer, not as an apology.
+  - **Hook (notes page 1 + dark slide + plan, unresolved):** last spring's class of 25 in this
+    room got $36\%$ for club funding against the council's stratified-60 result of $35\%$, and a
+    student wrote *"we matched the council, so our class can speak for all 900 students too."*
+    Circle agree / disagree; re-voted at **problem 13**.
+  - **Notes rows (19 problems):** 1. **The Cycle** --- the deliverables checklist (1--4) ·
+    2. **The Instrument** --- four rules taught by repair (5--6 plus the fill table) ·
+    3. **Relative Frequency** --- the pre-drawn bar graph (7--11) · 4. **The Limit** (12--15,
+    the crux row) · 5. Guided Practice --- **Our Class Survey** (16--19).
+  - **The trap is problem 9** --- $9/25 = 36\%$ and $0.36 \times 900 = 324$ are both
+    arithmetically right and the claim is still illegal. **The crux is problem 13** (the hook
+    re-vote), **transferred to the class's own live data at problem 18**.
+  - **The Guided Practice is the class's own survey**: the instrument is built live in a card of
+    `\blank{}`s, then a tally table is filled from the room. **The key's 9/7/6/3 →
+    $36$/$28$/$24$/$12\%$ is a worked exemplar** --- real class data will differ, and that
+    warning is in the plan's `[Guided Notes \& Practice]` teacher note, never in the key.
+  - Contexts: Riverbend Student Council \$3,000 grant (warm-up + notes; stratified 60 from 900
+    at $1/15$ → 18/16/14/12), the class's own survey (Guided Practice), Millbrook Public Library
+    (homework; an SRS of 80 by phone → 28/24/20/8 = $35$/$30$/$25$/$10\%$, $0.35 \times 1200 =
+    420$, against a front-desk clipboard of 50 where 30 chose story hour = $60\%$). Bayside
+    Middle School (homeroom of 30, 12/9/6/3, $0.40 \times 750 = 300$) survives only as the
+    debrief's **cold check**.
+  - Homework: 6 items, 12 points --- 1 relative frequencies; 2 read the bar graph and spiral to
+    variable type; 3 **the contrast pair** (scale the SRS, the clipboard percent, which may be
+    scaled at all); 4 **the crux head-on** (the clipboard's $13/50 = 26\%$ beside the SRS's
+    $25\%$); 5 justification and instrument repair, spiralling to 1.4; **6 the project
+    deliverable** --- the four-sentence report on the class's own tally. Two pages.
+  - Page counts (12pt): cover 1, warmup 1/1, **notes 5/5**, homework 2/2; plan 6pp, deck 15
+    frames, student and key packets 12pp each. `make -C unit01/lesson08 all` and `check` both
+    exit 0; per-page headings compared blank↔key, and every page rendered and inspected (four
+    figure overlaps found and fixed that way).
+  - Keys generated with `templates/lesson/mkkey.py` from
+    `templates/lesson/examples/lesson08_{warmup,notes,homework}_key.json`.
+  - **OPEN — the notes are 5pp against the profile's 3--4pp budget**, as in 1.7. This is a
+    project lesson whose Guided Practice row must carry a live instrument card *and* a tally
+    table. After four trimming passes (vocab rows to 1.85cm, every figure rescaled, answer
+    spaces to 1.6--1.8cm, prose compressed) 5pp was the floor without cutting problems below the
+    shape's density rules. **The user's call**, together with 1.7's overrun.
 ### Unit 1 assessments and cover pair — COMPLETE (2026-08-07)
 
 **Blueprint, both forms** (parallel: same structure, different numbers, reshuffled vocab
@@ -648,39 +691,45 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 
 ## Next steps
 
-0. **Confirm the pilot in the classroom.** Teach 1.2; bring back what worked and what did not. The
-   shape is written into `LESSON_SHAPE.md` as the course rule already, so a correction to 1.2 is a
-   correction to the rule — change the profile first, then the lesson.
-1. ~~Open questions for the user~~ — **all three decided 2026-09-06**: phases total 60
-   (5 / 35 / 10 / 10; the old 55-vs-60 mismatch is closed); no `extensionbox` course-wide; homework
-   due at the start of the first class after two study halls.
-2. **Convert 1.1 to the pilot shape** (notes-only recipe, `LESSON_SHAPE.md` section 7) once the
-   pilot is confirmed — fold six sections into two, merge the We Do and the practice box into one
-   Guided Practice, `\termblank` vocab, 5/35/10/10, three cover rows renamed, deck reordered.
-3. **Convert 1.0** (group-activity recipe) and **1.5–1.8** (pre-EFFL recipe — the 1.3 and 1.4
-   regenerations on 2026-09-07 are the worked examples), one at a time, each with `make all` +
-   `make check` + per-page heading comparison.
+0. **Decide the two 5pp notes** — 1.7 and 1.8 (see the two open items at the top). Either raise
+   the profile's 3–4pp budget for a three-standard lesson and for the project lesson, or name the
+   row to cut. **Nothing else in unit 1 is waiting on a decision.**
+1. **Teach the shape and bring back what worked.** All nine unit-1 lessons are now in it, so a
+   correction is a correction to the rule: **change `LESSON_SHAPE.md` first, then the lessons.**
+   A change to the notes table now costs nine conversions, not one.
+2. ~~Open questions for the user~~ — **all three decided 2026-09-06**: phases total 60
+   (5 / 35 / 10 / 10); no `extensionbox` course-wide; homework due at the start of the first
+   class after two study halls.
+3. ~~Convert 1.0, 1.1, 1.3–1.8~~ — **done 2026-09-14.** Unit 1 is uniform.
 4. **Units 2–8**: scaffold `notes` (only) into each lesson as authored and delete
    `experience`/`experience_key`; confirm the Unit 2 lesson map with the user before authoring.
+   **Author them straight into the table shape** — there is no longer an older shape to convert
+   from, and `templates/lesson/notes.tex` already emits it.
 5. **Reuse the Unit 1 assessment set as the template for U2–U8** (blueprint 14/16/40/30, 33 items,
    6 pages; `\setlength{\workrowsep}{5pt}` in every test preamble; unit cover pair with scoring on
-   the key's page 2). The tests were untouched by every redesign.
-6. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
-6a. **Quiz 1 for lessons 1.0–1.3 is COMPLETE** (`unit01/quiz01/`, 2026-09-14): study packet
-   (5pp), sample quiz (4pp), and the graded `actual_quiz` (4pp), each with its generated key and
-   each verified page-for-page by per-page heading. The two quiz forms share a blueprint and
-   differ in every number, context, vocabulary letter, and correct MC letter — sample runs on
-   Millbrook / Stonebridge, graded on **Westbrook** ($840$ students, $30$ homerooms of $28$) and
-   **Clearwater Aquatic Center** ($1{,}400$ members). Graded Part D: $42/56 = 75\%$ and
-   $0.75 \times 840 = 630$, correct arithmetic on two homerooms that are one or two grades.
-   **Only `sample_quiz` is handed out.** The same `quizNN/` pattern covers a second unit-1 quiz
-   for 1.4–1.8 and mid-unit quizzes in units 2–8; the Makefile globs `*/main.tex`, so adding a
-   form needs no build change.
-7. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
+   the key's page 2). The tests were untouched by every redesign, including this one.
+6. **The unit-1 tests are still 10pt** while every lesson component is 12pt. Not a defect — the
+   tests were never part of the pilot — but worth a decision the next time they are opened.
+7. **Quiz 1 for lessons 1.0–1.3 is COMPLETE** (`unit01/quiz01/`, 2026-09-14, PR #29): study
+   packet (5pp), `sample_quiz` (4pp) and the graded `actual_quiz` (4pp), each with its generated
+   key and each verified page-for-page. **Only `sample_quiz` is handed out.** The same `quizNN/`
+   pattern covers a second unit-1 quiz for 1.4–1.8 and mid-unit quizzes in units 2–8; the
+   Makefile globs `*/main.tex`, so adding a form needs no build change. Quizzes are 10pt for the
+   same reason the tests are — see item 6 if that decision is revisited.
+8. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
+9. **Promote into `shared/` on a run allowed to touch it:** the measured `\coverbanner` block and
+   the `\vterm`/`\vtermans` pair, which every lesson currently copies into its own preamble, and
+   the `\wordbank` strip. Three copies per lesson × nine lessons is the current cost. Doing so
+   would also let the cover's 16.24pt overfull `\namedateperiod` line be fixed once.
+10. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
-   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07); **the 1.4 regeneration is PR #27** (2026-09-07).
+   PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot +
+   profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3
+   regeneration is PR #26** and **the 1.4 regeneration PR #27** (2026-09-07). **The Main Ideas /
+   Notes table + 1.2's conversion is PR #28** (2026-09-13). **The whole of unit 1 into the table
+   shape is PR #30** (2026-09-14).
 
 ## Gotchas found this session
 
@@ -703,6 +752,48 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
 **Also:** a `tabularx` cannot break across a page, so a $24$-row reference table is pushed off
 page 1 whole and strands half a page. Split it at a natural boundary (the study packet's terms
 table is two tables, 1.0–1.1 and 1.2–1.3) rather than reaching for `ltablex`.
+
+### Converting eight lessons at once — what actually bit (found 2026-09-14)
+
+Eight subagents, one lesson each, one shared brief. Every one of them hit the same three
+problems, so these are properties of the table shape rather than of any lesson:
+
+- **A `\pcell` answer longer than its fixed height overflows silently — no warning, no overfull
+  box, nothing in the log.** It is invisible until you render the key and look at it. Six of the
+  eight lessons shipped a first key with overflowing cells; 1.3's had **every** answer
+  overflowing. **A keyred line holds about 28 characters in a half-column `\pcell`.** Write the
+  answer first, then size H to it, then render the key and read it. This is the single most
+  common defect in the shape and `make check` cannot see it.
+- **TikZ `scale` shrinks coordinates but NOT font size.** Below about `scale=0.75`, captions
+  stacked above a line, panel headers, and legend entries start colliding — and again nothing
+  appears in the log. Every lesson that rescaled a figure to save a page produced at least one
+  collision. Give nodes a bounded `text width`, set display labels `\tiny`, and re-render.
+- **The first draft of a table always runs long.** Six of eight came in at 5–6pp against a 3–4pp
+  budget. What recovers a page, in the order worth trying: shrink `\pcell` answer heights;
+  rescale and rebuild the figures; cut `\termrowheight` from 2.3cm to ~2.1cm (this alone often
+  decides whether the table's first row starts on page 1); trim printed prose; merge two grid
+  sub-rows into one; and last, fold four problems into two — usually there is a duplicate pair.
+  **Cutting problems is the last resort, not the first.**
+
+**Two structural limits found.** A lesson carrying three standards (1.7: PS.DC.3c/3d/3e) and the
+project lesson (1.8, whose Guided Practice needs a live instrument card *and* a tally table)
+**cannot reach 4pp without dropping a standard's coverage**. The budget is a density rule, not a
+physical law; where it and the standards disagree, flag it rather than quietly cutting.
+
+**The homework key can run long while the blank does not** (found in 1.6): long key answers push
+the closing `spiralbox` onto a third page against a two-page blank. Page-for-page is checked on
+the **compiled components**, never on the merged packets — the pagination pass pads a mismatch
+silently, so the packets agree while the components do not.
+
+**Regenerating every key and diffing it against disk is a cheap, total proof** that no key was
+hand-edited and none has drifted:
+
+```
+python3 templates/lesson/mkkey.py <blank> /tmp/out.tex <spec> && diff /tmp/out.tex <key>
+```
+
+Run it across the unit before opening a PR. All 24 unit-1 keys pass it as of 2026-09-14.
+
 
 ### Blank/key page alignment is NOT what `make check` verifies (found 2026-08-31)
 

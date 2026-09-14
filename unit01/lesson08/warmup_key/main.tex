@@ -1,64 +1,71 @@
 %! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items at 12pt (the stats-model size), \workrowsep 50pt,
+% item spacing 22pt, so each item gets real handwriting room and still fits. Do not add a
+% fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Items 1
+% and 2 are the arithmetic spine of the whole project, run once on a study that is already
+% finished — the Student Council's stratified 60 — so the numbers the notes open with
+% (35%, 315) are already on the page. Item 3 separates the two groups WITHOUT the
+% vocabulary and lands the 100% check that row 2 names as instrument rule 3.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.8}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- A Study That Is Already Finished}
-\small
-The Riverbend Student Council has a \textbf{\$3{,}000} activities grant to spend
-and asked the school which one thing it should fund. It drew a
-\textbf{stratified sample of $60$} from the $900$ students and got one answer
-from every student it drew.
+\normalsize
+The Riverbend Student Council has a \$$3{,}000$ grant and asked the school which
+one thing it should fund. It drew a \textbf{stratified sample of $60$} of the
+$900$ students and got one answer from each: club funding $21$, field trips
+$18$, gym equipment $15$, longer lunch $6$.
 
-\vspace{3pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{0.9\linewidth}{@{} X c c c c @{}}
-\toprule
-\textbf{Choice} & Club funding & Field trips & Gym equipment & Longer lunch \\
-\midrule
-\textbf{Students} & $21$ & $18$ & $15$ & $6$ \\
-\bottomrule
-\end{tabularx}
-\end{center}
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, topsep=5pt]
-
-  \item What \textbf{percent} of the $60$ students chose club funding?
+  \item What \textbf{percent} of the $60$ students asked chose club funding?
 
         \begin{work}
           \dfrac{21}{60} &= 0.35 \\
                          &= 35\%
         \end{work}
 
-  \item What \textbf{percent} chose a longer lunch?
-
-        \begin{work}
-          \dfrac{6}{60} &= 0.10 \\
-                        &= 10\%
-        \end{work}
-
-  \item Use the sample to speak about the whole school.
-
-        \textbf{(a)} About how many of all $900$ students would choose club
-        funding?
+  \item Based on that survey, \textbf{predict} how many of all $900$ Riverbend
+        students would choose club funding.
 
         \begin{work}
           0.35 \times 900 &= 315 \text{ students}
         \end{work}
 
-        \textbf{(b)} The four percents add to $100\%$. What does that tell you
-        about the survey question the council asked?
-        \ansline{Every student picked exactly one choice --- the options covered everyone and did not overlap.}
+  \item Two different groups of students appear in the paragraph above. Write how many are in each group.
+        \wordbank{60 \;\textbullet\; 900 \;\textbullet\; 315 \;\textbullet\; exactly one \;\textbullet\; more than one}
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} X p{3.4cm} @{}}
+        \toprule
+        \textbf{Group} & \textbf{How many} \\
+        \midrule
+        The group the council actually collected data from & \ans{60} \\
+        The whole group its report is about                 & \ans{900} \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{10pt}
+        The four percents ($35$, $30$, $25$, $10$) add to $100\%$. How many
+        choices did each student pick? \ans{exactly one}
 
 \end{enumerate}
 \end{notesbox}

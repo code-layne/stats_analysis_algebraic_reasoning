@@ -1,42 +1,62 @@
 %! Observational Studies — Unit 1, Lesson 1.5 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, started in class, and it is SCORED, so its cell is a \blank{}, never NA.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.5 \quad Observational Studies}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.5 \quad Observational Studies}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard code (PS.DC.2d) stays in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
   \item \ldots{} explain what makes a study \textbf{observational} --- nobody is
-        assigned to a group.
-  \item \ldots{} use the \textbf{statistical cycle} to plan an observational
-        study that answers a question.
-  \item \ldots{} compare two groups that already exist and describe the
-        \textbf{association} between two variables.
-  \item \ldots{} explain why an association \textbf{does not} show causation,
-        and name a \textbf{lurking variable} that could explain it instead.
-  \item \ldots{} decide which conclusions an observational study \emph{does} and
-        \emph{does not} support, and \emph{justify} the decision.
+        \emph{assigned} to a group --- and plan one with the \textbf{statistical cycle}.
+  \item \ldots{} compare two groups that already exist, name the \textbf{explanatory} and
+        \textbf{response} variables, and describe the \textbf{association} between them.
+  \item \ldots{} explain why an association does \emph{not} show causation, and name a
+        \textbf{lurking variable} or a reversed arrow that could explain it instead.
+  \item \ldots{} decide which conclusions an observational study \emph{does} and \emph{does
+        not} support, and \emph{justify} the decision.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -49,11 +69,17 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Two group rates, and the gap between them & \blank{1.2cm} \\
-2 & Guided Notes   & Watching a population, and what watching can prove & \blank{1.2cm} \\
-3 & Group Activity & Cancel the Study Center? Riverbend High School & \blank{1.2cm} \\
-4 & Exit Ticket    & Band and math grades at Bayside Middle School & \blank{1.2cm} \\
-5 & Homework       & Millbrook Library: does the reading program work? & \blank{1.2cm} \\
+1 & Warm-Up & The Harbor Point sleep survey: two group rates with two different
+             denominators, the gap between them, and the whole sample put back together & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & One word that makes a study observational; the cycle as a plan;
+             two groups that built themselves; three stories for one table --- then
+             Riverbend's Study Center worked together & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Millbrook Public Library: does the Summer Reading Program work? Two rates, two
+             sentences, and a study with no bias that still proves nothing ---
+             \textbf{scored, started in class, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -61,15 +87,16 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-\textbf{In an observational study you watch --- you do not assign.} The groups
-already exist, because the people in them chose. That is why a perfectly
-unbiased observational study can still fail to prove a claim: when two variables
-move together they are \textbf{associated}, and an association has at least three
-possible explanations --- the claim, the same arrow \emph{backwards}, or a
-\textbf{lurking variable} outside the study that moves both. Report what you
-saw. Never write \emph{causes}, \emph{makes}, or \emph{improves}.
+In an \textbf{observational study} you watch --- you do not \emph{assign}. The groups already
+exist because the people in them chose. To test a claim, ask \emph{who decided the groups?}
+When two variables move together they are \textbf{associated}, and an association has three
+live explanations: the claim, the same arrow \emph{backwards}, or a \textbf{lurking variable}
+outside the study that moves both. \textbf{Watch out:} a random sample with no bias at all
+still cannot say \emph{why} two groups differ. Report both percents and the gap; never write
+\emph{causes}, \emph{makes}, \emph{raises}, or \emph{improves}.
 \end{remindbox}
 
 \end{document}

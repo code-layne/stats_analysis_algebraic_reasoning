@@ -1,8 +1,18 @@
 %! Observational Studies — Unit 1, Lesson 1.5 — Lesson Plan
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / spoken debrief / close and START
+% THE HOMEWORK). The guided notes carry the release ROW BY ROW in one Main Ideas / Notes table
+% (2026-09-12 shape): I do / we do in rows 1-4 (problems 1-14) -> we do the Guided Practice row
+% (problems 15-18). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the homework is the
+% individual practice, and the period ends with students starting it. Teacher-facing. Breakable
+% boxes are `skillbox` with a \boxguard ahead; the two tabularx boxes are `fixedskillbox`.
+% Regenerated 2026-09-14 from the PRE-EFFL LEGACY shape: activity/ + exit_ticket/ removed, the
+% activity's Riverbend Study Center became the Guided Practice row, the exit ticket's Bayside
+% item became the debrief's whole-class cold check, and the tiers were cut, not concatenated.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
@@ -16,440 +26,456 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will explain what makes a study
-    \emph{observational}, use the statistical cycle to plan and carry out an
-    observational study, compute and compare rates for two groups that already
-    exist, describe the result as an \emph{association}, and justify which
-    conclusions the study does and does not support --- naming a lurking
-    variable or a reversed arrow when it does not.
+    \textbf{Primary Objective:} Students will explain what makes a study \emph{observational}
+    --- nobody was \emph{assigned} to a group --- plan one with the statistical cycle, compute
+    and compare rates for two groups that already exist, name the explanatory and response
+    variables, state the result as an \textbf{association}, and justify which conclusions the
+    study does and does not support, naming a reversed arrow or a \textbf{lurking variable}
+    when it does not.
+    \\[2pt]
+    \textbf{Standards:} PS.DC.2d \quad$\cdot$\quad PS.DC.1a--b carried forward in the cycle and
+    the conclusion items \quad$\cdot$\quad previews PS.DC.3a--b (Lesson 1.6)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity and no exit ticket. The notes name the
+    vocabulary as they teach it and deliver the instruction \textbf{row by row in one Main
+    Ideas / Notes table} (four rows, problems 1--14: you read the definition, mark up the
+    display, and work the first problem of each grid; the class works the rest); the Guided
+    Practice row (problems 15--18) is worked together with students holding the pen;
+    \textbf{the homework is the individual practice}, and students start it in class while you
+    circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Note on placement:} every scenario today is a random sample with a $100\%$
+    response rate. Bias was Lesson~1.4's job and it is deliberately off the table, so the only
+    thing left to explain the gap is that \emph{the groups built themselves}. Do not let
+    ``the study was biased'' pass as an answer.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 \boxguard
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-    \textbf{Skills for this lesson}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item Identify a study as \textbf{observational} by asking whether anyone
-            \emph{assigned} the groups. \hfill \textit{PS.DC.2d}
-      \item Use the \textbf{statistical cycle} to plan an observational study:
-            formulate, collect, represent, analyze.
-            \hfill \textit{PS.DC.2d; PS.DC.1a}
-      \item Compute a rate for each of two existing groups and report the
-            \textbf{gap in percentage points}. \hfill \textit{PS.DC.2d}
-      \item Name the \textbf{explanatory} and \textbf{response} variables in a
-            reported finding. \hfill \textit{PS.DC.2d}
-      \item State a result as an \textbf{association}, using no causal verb.
-            \hfill \textit{PS.DC.2d; PS.DC.1b}
-      \item Explain why an association does not establish \textbf{causation},
-            naming a reversed arrow or a \textbf{lurking variable}.
-            \hfill \textit{PS.DC.2d}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item \emph{Observational studies examine relationships and patterns in a
-            population} --- and a survey is one type of them, so every study in
-            Unit 1 so far has been observational.
-      \item In an observational study the researcher \textbf{does not assign the
-            treatment}. The groups formed themselves, which is the entire reason
-            causation is out of reach.
-      \item \textbf{An unbiased study is not the same as a conclusive one.}
-            Lesson 1.4 removed bias; a perfectly clean sample still cannot say
-            \emph{why} two groups differ.
-      \item The cycle does not change from study to study. What changes is what
-            you are licensed to write at the end of stage four.
-      \item Every association has three live explanations: the claim, the same
-            arrow \emph{backwards}, and a \textbf{lurking variable} moving both.
-            Ruling any of them out requires assigning --- Lesson 1.6.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can tell an \textbf{observational study} from an experiment by asking \emph{who
+        decided the groups}. \hfill \textit{PS.DC.2d}
+  \item I can plan an observational study with the \textbf{statistical cycle} --- formulate,
+        collect, represent, analyze. \hfill \textit{PS.DC.2d; 1a}
+  \item I can compute a rate for each of two existing groups, report the \textbf{gap in
+        percentage points}, and name the \textbf{explanatory} and \textbf{response}
+        variables. \hfill \textit{PS.DC.2d}
+  \item I can state a finding as an \textbf{association} with no causal verb, and explain why
+        an association does not show \textbf{causation} --- naming a reversed arrow or a
+        \textbf{lurking variable}. \hfill \textit{PS.DC.2d; 1b}
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item \emph{A survey is one type of observational study}, so every study in Unit~1 so far
+        has been one. The name is new; the thing is not.
+  \item \textbf{Target misconception:} that a clean study proves the claim --- \emph{association
+        is causation}. The same $56/80$ against $54/120$ table is produced by three live
+        stories: the claim, the same arrow \textbf{backwards}, and a \textbf{lurking variable}
+        (retirement, $75\%$ against $15\%$) moving both. Ruling any of them out requires
+        \emph{assigning} --- Lesson~1.6.
+  \item \textbf{An unbiased study is not a conclusive one.} Lesson~1.4 removed bias; a
+        perfectly clean sample still cannot say \emph{why} two groups differ.
+  \item \textbf{Second misconception:} that a prediction is safer than a claim. \emph{``If the
+        evening swimmers switched\ldots''} is a causal claim in disguise (problem~14).
+  \item The cycle does not change from study to study. What changes is what you are licensed
+        to write at the end of stage four.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
 \boxguard[24]
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \small
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
-Observational study & A study in which you measure or survey the members of a
-       sample without trying to affect them. The researcher does not assign
-       anyone to a group. \\
-Survey & One type of observational study: the members of a sample are asked
-       questions and their answers are recorded. \\
-Explanatory variable & The variable we think might explain or account for the
-       other one --- the tail of the arrow in the claim being tested. \\
-Response variable & The variable we measure to see what happens --- the head of
-       the arrow. \\
-Association & Two variables move together: knowing which group an individual is
-       in changes what you expect for the other variable. \\
-Causation & One variable actually produces the change in the other. A far
-       stronger claim than association. \\
-Lurking variable & A variable outside the study that affects both variables in
-       it, and can create an association all by itself. \\
-Reversed arrow & The response variable is what put individuals into their group
-       in the first place, so the association runs the other way. \\
+Observational study & A study in which you measure or survey a sample without trying to affect
+       anyone. The researcher does not assign anybody to a group. \\
+Survey & One type of observational study: the members of a sample are asked questions and
+       their answers are recorded. \\
+Explanatory variable & The variable we think might explain the other one --- the tail of the
+       arrow in the claim being tested. \\
+Response variable & The variable we measure to see what happens --- the head of the arrow. \\
+Association & Two variables move together: knowing which group an individual is in changes
+       what you expect for the other variable. \\
+Causation & One variable actually produces the change in the other. A far stronger claim than
+       association, and out of reach without assigning. \\
+Lurking variable & A variable outside the study that affects both variables in it, and can
+       create an association all by itself. \\
+Reversed arrow & The response variable is what put individuals into their group in the first
+       place, so the association runs the other way. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review. It rehearses the two moves every
-            component of this lesson runs on:
-            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
-              \item Writing a part of a whole as a percent --- \textbf{twice,
-                    with two different denominators}, once per group.
-              \item Subtracting two percents to get a \textbf{gap in percentage
-                    points}, and pooling both groups back into one sample rate.
-            \end{itemize}
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-            \small
-            All three items sit on the Harbor Point sample the notes open with,
-            so $70\%$, $45\%$, $25$ points, and $55\%$ are already on the board
-            before the word \emph{observational} is spoken. Item 3(b) is the
-            one to check: the two group denominators are $80$ and $120$, and a
-            student who averages $70$ and $45$ to get $57.5\%$ has merged two
-            unequal groups.
-        \end{minipage}
-    \end{tabularx}
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 35 / 10 / 10 — the I do is ~20 of the 35 and the Guided
+% Practice ~15; the debrief is spoken; the homework start is the second formative read.
+\begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & The two Harbor Point group rates and the pooled rate --- silent & Debrief item~3
+  aloud; leave $70\%$, $45\%$, $25$ points, and $55\%$ on the board all period \\
+Guided Notes \& Practice & 35 & Fill the vocabulary box as each term is named; work rows 1--4
+  of the table (problems 1--14) with the pen in their hand; then the Guided Practice row,
+  \emph{Study Center} (15--18), together & \textbf{I do / we do, row by row}: read the
+  definition, mark up the display, work problems 1, 5, 9, 11; the class works the rest (20)
+  $\to$ \textbf{we do} Guided Practice 15--18 (15) \\
+Debrief & 10 & Pens down, papers up --- answer aloud, nothing to fill in & Put the three
+  stories back on the board, then take the Bayside cold check and the banned-verb list \\
+Close \& Assign & 10 & \textbf{Start the homework in class}, alone and silent & Announce the
+  homework and its form (packet or Desmos), circulate for the second formative read, preview
+  Lesson~1.6 \\
+\end{tabularx}
 \end{fixedskillbox}
 
-\boxguard
-\begin{skillbox}[Hook]{frost}
-    Put the warm-up's two percents on the board and add the director's flyer:
-    \emph{``Swim in the morning --- sleep better!''} Then close every door the
-    class has learned to open. \textbf{The sample was random. Nobody was left
-    off the list. Everyone answered. Every count is correct.} \textbf{Ask: is
-    the flyer safe?} Expect a long pause, then a split room --- and that split
-    is the lesson. Students spent Lesson 1.4 learning that a clean procedure is
-    the fix, and this is the first time a clean procedure is not enough. Do not
-    resolve it. Write both sides of the room on the board and say only: today we
-    find out what a study that \emph{watches} is allowed to claim.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Lesson]{frost}
-\begin{multicols}{2}
-\textbf{1. One word: assign.} Run the four-plan table fast --- it is a sorting
-task, not a thinking task, and the only row that matters is row 3, where the
-director assigns swim times. \textbf{Ask on every row: who decided which group
-that person is in?} Land the definition from the standard's own words: you
-measure or survey without trying to affect anyone. Then the line students should
-write down: \emph{a survey is one type of observational study}, so every study
-in Unit 1 has been one.
-
-\textbf{2. The cycle, again.} This is PS.DC.2d proper and it should feel like
-review, because it is --- the same four stages from Lesson 1.1, with 1.3's
-sampling plan in the Collect row and 1.4's bias check standing behind it.
-\textbf{Ask what is missing from the plan.} Nothing tells a member when to swim.
-That absence is the whole definition, written as a plan.
-
-\textbf{3. The table.} Two group rates with two different denominators, from the
-warm-up. Keep it quick --- the arithmetic is done. Spend the time on
-explanatory/response, which is new vocabulary and pays forward to scatterplots
-in Unit 5. The $825$ computation is there to keep the ``scale a sample up to the
-population'' skill alive from 1.2.
-
-\textbf{4. Three stories.} The heart of the lesson, and it needs the full block.
-Give story 1, then \textbf{ask the class for a way the arrow could run
-backwards} before offering one --- somebody always finds it. Then reveal the
-retirement row: $75\%$ against $15\%$. Let them sit with it. Working a job
-changes both when you can swim and how long you sleep, and it was never in the
-study at all.
-
-\textbf{5. What you may claim.} Three statements, one supported. The third
-(``if they switched\dots'') is the subtle one --- a prediction about a change is
-a causal claim wearing different clothes. Close on the two write-up rules and
-the banned verbs: \emph{causes, makes, raises, improves}.
-
-\textbf{Guided practice.} Firefighters and fire damage is the row that gets a
-laugh and does the most work; shoe size and reading is on the homework as its
-twin. End on the sports-and-grades write --- it is the exit ticket in miniature.
-\end{multicols}
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Explicit Instruction: Reading a Claim from an Observational Study]{frost}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Steps --- give these verbatim}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Did anyone assign the groups?} No $\Rightarrow$ observational.
-        Yes $\Rightarrow$ experiment (Lesson 1.6).
-  \item \textbf{Name the two variables.} Explanatory (the suspected cause),
-        response (what was measured).
-  \item \textbf{Compute a rate for each group} --- watch the denominators, they
-        are different on purpose.
-  \item \textbf{Report the gap} in percentage points.
-  \item \textbf{Write the association sentence:} both percents, the gap, and no
-        causal verb.
-  \item \textbf{Test the claim three ways.} Could the arrow run backwards?
-        Could a lurking variable move both? Only then, could the claim be true?
-  \item \textbf{Say what would settle it:} someone would have to \emph{assign}
-        the groups.
-\end{enumerate}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $56$ of $80$ as a percent. \textbf{Seeds:} the morning rate, $70\%$ ---
+            read straight off the two-way table at problem~9 in row~3.
+      \item \textbf{2.} $54$ of $120$ as a percent. \textbf{Seeds:} the evening rate, $45\%$,
+            and \emph{a second, different denominator}. The two wholes are the whole
+            difficulty of this lesson.
+      \item \textbf{3.} The gap and the pooled rate. \textbf{Seeds:} the $25$-point gap the
+            hook argues about, and the $55\%$ problem~10 scales to all $1{,}500$ members ---
+            the ``scale a sample up'' skill from Lesson~1.2.
+    \end{itemize}
 \end{minipage}
 &
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Worked example --- ``Riverbend samples $150$ records. Of the $60$ who
-used the Study Center, $39$ passed every class; of the $90$ who did not, $72$
-did. The principal writes: the Study Center is hurting grades.''}
-\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-  \item[1.] Nobody was assigned --- students walked in. Observational.
-  \item[2.] Explanatory: using the center. Response: passing every class.
-  \item[3.] $39/60 = 65\%$ and $72/90 = 80\%$.
-  \item[4.] A gap of $15$ points, with the \emph{non}-users higher.
-  \item[5.] \textit{At Riverbend, $65\%$ of Study Center users passed every
-        class against $80\%$ of non-users --- using the center is associated
-        with a lower pass rate.}
-  \item[6.] The arrow runs backwards: struggling students are the ones who go.
-        The records prove it --- $75\%$ of users had already failed a class,
-        against $10\%$ of non-users.
-  \item[7.] Assign students to attend at random, or compare each student to
-        their own previous quarter.
-\end{itemize}
-\textit{The memo has the direction of the arrow exactly reversed. The center
-did not lower the grades; the low grades sent the students to the center.}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and leave $70\%$, $45\%$, $25$ points, and $55\%$
+            on the board \emph{all period}. The hook needs them thirty seconds after the
+            warm-up is collected, and row~3 reads them back.
+      \item \textbf{Item~3's third row is the tell.} The wrong answer is $(70+45)\div 2 =
+            57.5\%$, which averages two unequal groups; the right path is $110\div 200 =
+            55\%$. A student who averages will merge the denominators again on homework~3.
+      \item Items 1--2 are Algebra~1 percent work the class has done in 1.2 and 1.4 --- say
+            so, so nobody thinks they are being retested. Do not let them expand.
+    \end{itemize}
 \end{minipage}
 \end{tabularx}
+\end{fixedskillbox}
+
+\boxguard
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``A random sample of $200$ members. Everyone answered. Every count correct. $70\%$ of
+morning swimmers get $7$+ hours of sleep; only $45\%$ of evening swimmers do. The director
+prints a flyer: `Swim in the morning --- sleep better!'\,''} \textbf{Ask: is the flyer's claim
+safe?} Students circle \emph{safe} or \emph{not safe} and write one line of reason in the hook
+box \emph{before} anyone speaks; then take the hand vote and write the split on the board.
+\textbf{Close every door the class has learned to open first} --- the sample was random, nobody
+was left off the list, everyone answered, every count is correct. Most rooms vote \emph{safe},
+because Lesson~1.4 taught them that a clean procedure is the fix, and this is the first time a
+clean procedure is not enough.
+\textbf{Do not settle it.} Say only that the answer is problem~13, in the \emph{Not Causation}
+row, and that they will vote again there. The vote is what makes the crux land: students have
+to have committed to \emph{safe} before the notes take it away.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Watch for ``the study was biased'' as the all-purpose answer.}
-        It is Lesson 1.4's tool applied to a lesson that deliberately removed
-        bias from every scenario. Redirect: \emph{the sample was random and
-        everyone answered --- so what is left?}
-  \item \textbf{Watch for causal verbs sneaking into a written answer.} Circle
-        \emph{causes, makes, raises, improves, helps, hurts} wherever they
-        appear and hand the paper back. The banned-verb list is the fastest
-        formative check on the page.
-  \item \textbf{Watch for a lurking variable that is really one of the two
-        variables.} ``Study Center users study less'' is not a third variable.
-        Test: \emph{is it in the table? If yes, it is not lurking.}
-  \item \textbf{Watch for the reversed arrow being missed entirely.} Most
-        students accept the direction they are handed. Prompt: \emph{which one
-        came first?}
-  \item \textbf{Watch for ``no'' with no reason.} Half credit. The standard is
-        met when the student names a specific alternative explanation for
-        \emph{this} context.
-  \item \textbf{Cold-call prompts:} ``Who decided the groups?'' ``Which came
-        first?'' ``What is in this study, and what is outside it?'' ``What would
-        you have to do to settle it?'' ``Say that again without the word
-        \emph{causes}.''
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (35 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are \textbf{one Main Ideas / Notes table}: four instruction rows (problems 1--14),
+then the Guided Practice row (15--18). \textbf{The rhythm in every row is the same}: read the
+definition aloud, mark up the display, work the first problem of the grid yourself, then hand
+the rest to the room with the pen in their hand. The vocabulary box on page~1 is filled
+\emph{as each term is named}, never in advance. There are no fill-in blanks on the page --- every
+answer is written in a problem's own space or in a small framed label box under a display.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 20 min).}
+
+\emph{Row 1, Assign (problems 1--4).} The whole lesson is one word. Read the definition, then
+have the class name the two panels --- left is \emph{watch}, right is \emph{assign}, and the
+observational one is the left. Work problem~1 yourself; the class does 2--4. \textbf{Problem~3
+is the trap}, and it is the only plan on the page where the director \emph{assigns} swim times:
+take a hand count before anyone writes, because students sort by \emph{is it a survey} instead
+of \emph{who decided the groups}. Problem~4 is the census --- still observational. Four minutes.
+
+\emph{Row 2, The Cycle (problems 5--8).} This is PS.DC.2d proper, and it should feel like
+review because it is: Lesson~1.1's four stages, with 1.3's sampling plan in Collect and 1.4's
+bias check standing behind it. \textbf{Do not skip it.} Work problem~5 yourself (the frame, the
+random $200$, the $100\%$ response); the class does 6--7. \textbf{Problem~8 is the point of the
+row}: nothing in the plan tells a member when to swim, and that one absence is the definition,
+written as a plan. Five minutes.
+
+\emph{Row 3, Two Variables (problems 9--10).} The arithmetic is already done --- it is the
+warm-up --- so keep it quick and spend the time on \emph{explanatory} and \emph{response},
+which is new vocabulary and pays forward to scatterplots in Unit~5. Have the class label the
+arrow under the table: tail is the explanatory variable, head is the response. Work problem~9
+yourself, the class does~10 ($55\%$ scaled to $825$, \emph{an estimate}). Four minutes.
+
+\emph{Row 4, Not Causation (problems 11--14) --- the crux.} Give story~1, then \textbf{ask the
+class to invent story~2 --- the arrow backwards --- before you offer it}; somebody reliably says
+``maybe they get up early \emph{because} they sleep well.'' Work problem~11 live. Only then
+reveal story~3's retirement row and let the class do problem~12: $60/80 = 75\%$ against
+$18/120 = 15\%$, a variable that was never in the study at all. \textbf{Then re-take the hook
+vote at problem~13 before you say anything.} Land the printed sentence word by word: an
+observational study shows \emph{association}; it cannot show \emph{causation}, because nobody
+assigned the groups. Problem~14 is the subtle one --- a prediction about switching is a causal
+claim wearing different clothes. Seven minutes.
+
+\columnbreak
+\textbf{We do (about 15 min).} The Guided Practice row, \emph{Study Center} (problems 15--18)
+--- the same moves the homework will ask alone, on a school instead of a pool, and built so the
+obvious reading of the data is not merely unsupported but exactly \emph{backwards}.
+\textbf{Students hold the pen; you hold the questions.} Problem~15 goes on them cold (who
+decided the groups, and the two variables). Problem~16 is the arithmetic, and the surprise is
+the direction: $39/60 = 65\%$ against $72/90 = 80\%$, a $15$-point gap with the \emph{non}-users
+higher. \textbf{Problem~17 is the crux transferred} --- the association sentence with no causal
+verb, and the verdict on the memo. Problem~18 is the payoff: last quarter, before the Center
+opened, $45/60 = 75\%$ of the users had already failed a class against $9/90 = 10\%$ of the
+non-users. The low grades sent the students to the Center; the Center did not lower the grades.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 15:} ``Who put each student in their group?'' (They walked in.)
+  \item \textbf{Problem 16:} ``Which whole goes with which count --- $60$ or $90$?'' A student
+        who divides by $150$ has merged the two groups.
+  \item \textbf{Problem 17:} circle \emph{hurts, lowers, causes} wherever they appear and hand
+        the paper back. Do not explain --- just circle.
+  \item \textbf{Problem 18:} ``Which came first?'' Then: ``So does the Center look better or
+        worse than it really is?''
 \end{itemize}
+While circulating, pick the papers to put up in the debrief --- one problem~17 that wrote a
+clean association sentence, and one that still has a causal verb in it. \textbf{Your formative
+read comes twice}: here, and again in the last ten minutes as students start the homework.
+\end{multicols}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\small
-\begin{multicols}{3}
-\textbf{Tier R --- Remediate}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Name the population, the sample, and both group sizes.
-  \item Decide it is observational and say who decided the groups.
-  \item Compute $39 \div 60 = 65\%$ and $72 \div 90 = 80\%$.
-  \item Say which group is higher, and by how many points.
-\end{itemize}
-
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (10 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in and no exit ticket, so it lives entirely on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Put the three stories back up} and make a student say the sentence: the claim,
+        the arrow backwards, and retirement --- three stories, one table, and the study cannot
+        tell them apart. Then state it as PS.DC.2d: an observational study shows association,
+        never causation, because nobody assigned the groups.
+  \item Put up the two problem~17s you picked. The difference between them is not arithmetic
+        --- it is one verb. Read both aloud and ask which one the principal could act on.
+  \item Take problem~18 next: which came first, and does the Center look better or worse than
+        it is? This is the one that makes ``backwards'' real rather than a slogan.
+  \item Close on the \textbf{banned verbs} --- \emph{causes, makes, raises, improves, helps,
+        hurts} --- and problem~14: a prediction about switching groups is a causal claim.
+\end{enumerate}
 \columnbreak
-\textbf{Tier A --- Approaching Proficiency}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Pool the sample: $111/150 = 74\%$, scaled to $666$ of $900$.
-  \item Name the explanatory and response variables.
-  \item Write the association sentence with no causal verb.
-  \item Explain why the principal's memo is not supported.
-\end{itemize}
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Bayside Middle School.
+Of the $150$ students in band, $90$ earned an A or B in math; of the $600$ who are not in band,
+$240$ did. The principal concludes that band \emph{raises} math grades and wants it required
+for everyone. Is the principal right?''} Hands down, thirty seconds of think time, then
+cold-call three students. Correct answer: $90/150 = 60\%$ against $240/600 = 40\%$, a
+$20$-point gap --- \textbf{an association, and nothing more}. Nobody was placed in band;
+students signed up. A concrete alternative: students who sign up for band may already study
+more, or families with time for band have time for homework. \emph{This replaces the exit
+ticket.}
 
-\columnbreak
-\textbf{Tier E --- Extension}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Compute $75\%$ against $10\%$ on the previous quarter's records.
-  \item Reason to the \emph{direction}: the center looks worse than it is.
-  \item Weigh two better designs --- what each fixes and what it costs.
-\end{itemize}
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} said \emph{no} and
+named a concrete alternative for \emph{this} context; \textbf{(b)} said \emph{no} because ``you
+can't prove causation,'' with nothing attached to the context; \textbf{(c)} said \emph{yes}, or
+said the study was biased. Pile (b) is the teachable one and will be large --- it is a slogan,
+not a justification, and those students abandon it the first time a causal story sounds
+plausible. \textbf{If pile (c) runs past a third of the room, open Lesson~1.6 by re-running the
+\emph{Not Causation} row (problems 11--14)}, and say so plainly.
+
+\textbf{If the debrief runs short}, cut items 3 and~4 --- item~1 is the one that cannot be cut.
+\textbf{Do not let the debrief eat the last ten minutes} --- the homework start is not optional
+padding, it is your second formative read.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
-$750$ students, band and math grades.
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Identify the study as observational and say how they know (nobody was
-        placed in band --- students signed up).
-  \item Compute $90 \div 150 = 60\%$ and $240 \div 600 = 40\%$, then the
-        $20$-point gap. The two denominators are the whole difficulty.
-  \item \textbf{Conceptual / justification check:} the principal concludes band
-        \emph{raises} math grades and wants it required. Full credit says no
-        \emph{and} names a specific alternative --- students who sign up may
-        already study more, or families with time for band have time for
-        homework. Grade this one first.
-\end{enumerate}
-\textbf{Using the results:} sort into three piles --- (a) said no and named a
-concrete alternative explanation, (b) said no because ``you can't prove
-causation'' with nothing attached to this context, (c) said yes. Pile (b) is the
-one to watch: they have the slogan without the reasoning, and they will lose it
-the moment a context looks convincing. Open Lesson 1.6 by handing pile (b) the
-same table and asking what would have to change about \emph{how students got
-into band} for the conclusion to hold.
+\begin{skillbox}[Homework --- scored, started in class, due after two study halls]{goldbox}
+Six exercises on the \textbf{Millbrook Public Library} ($1{,}200$ card holders; an unbiased
+phone sample of $240$, everyone reached): \textbf{1} name the kind of study, who decided the
+groups, and the explanatory and response variables; \textbf{2} the two rates with two different
+denominators --- $72/90 = 80\%$ against $48/150 = 32\%$, a $48$-point gap; \textbf{3} pool the
+sample and scale it up ($120/240 = 50\%$, about $600$ of $1{,}200$ --- \emph{the spiral to
+Lesson~1.2}); \textbf{4} two sentences on the same data, one supported and one not --- \textbf{the
+contrast pair}, the association against the newsletter's \emph{``more than doubles''};
+\textbf{5} the previous summer's records ($63/90 = 70\%$ against $30/150 = 20\%$) --- the arrow
+backwards, and which direction the error runs; \textbf{6} \emph{the crux head-on}: the sample
+was random, everyone answered, every count is right, so explain why it \emph{still} cannot show
+the program caused the extra reading. The homework is capped at \textbf{two pages}.
+
+\textbf{Start it in the last ten minutes of the period, in class and alone.} \textbf{Scoring:}
+12 points --- 2 per item. \textbf{Item~6 is where the misconception shows}: a student who
+answers ``the sample was too small'' or ``it was biased'' is reaching for Lesson~1.4's tool.
+\textbf{Item~4's second row carries the second check} --- the causal verb.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom's study-design coverage is thin, and nothing there asks a student to name a
+lurking variable or rewrite a causal sentence --- the items this lesson exists for --- so
+\textbf{1.5 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~1.6.} An observational study cannot reach causation because the
+groups build themselves. So build them instead --- treatment and control, \emph{assigned} at
+random --- with the four principles: comparison, randomization, replication, control.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only as
+trustworthy as the study that produced it. \textit{Standards covered:} PS.DC.2d (with
+PS.DC.1a--b carried forward in the cycle and the conclusion items). \textit{Spirals forward
+to:} experimental design (1.6, PS.DC.3a--b), comparing experiments with observational studies
+(1.7, PS.DC.3c--e), the class-survey project (1.8), two-way tables (3.1), and --- directly ---
+association versus causation with scatterplots and regression in Unit~5 (PS.DS.5, PS.DS.6).
+\textit{Reaches back to:} Lesson~1.1's statistical cycle, Lesson~1.3's sampling plan, and
+Lesson~1.4's bias, which this lesson removes on purpose so that what remains is visible.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework --- Millbrook Public Library, does the reading program work?}
-An unbiased phone study of $240$ card holders: $80\%$ of the $90$ who signed up
-for the Summer Reading Program read at least $10$ books, against $32\%$ of the
-$150$ who did not. Students identify the study as observational, compute both
-rates and the $48$-point gap, pool the sample ($120/240 = 50\%$, scaled to $600$
-of $1{,}200$), name the explanatory and response variables, write the
-association sentence, give two non-causal explanations for the gap, match four
-associations to lurking variables, compute the previous-summer rates ($70\%$
-against $20\%$) and argue the direction of the error, and close by explaining
-why a study with \emph{no bias at all} still cannot establish causation.
-
-\textbf{Extension (optional).} Students find a real headline claiming causation,
-name the explanatory and response variables, say whether the evidence came from
-watching or assigning, name a lurking variable, and rewrite the headline so it
-claims only what the study supports. Collect these --- with the 1.2, 1.3, and
-1.4 extensions they are nearly a full proposal for the Lesson 1.8 project.
-
-\textbf{Preview of Lesson 1.6.} An observational study cannot reach causation
-because the groups build themselves. So build them instead: treatment and
-control, assigned at random, with the four principles --- comparison,
-randomization, replication, control (PS.DC.3a--b).
-
-\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
-only as trustworthy as the study that produced it. \textit{Standards covered:}
-PS.DC.2d (with PS.DC.1a--b carried forward in the cycle and the conclusion
-items). \textit{Spirals forward to:} experimental design (1.6, PS.DC.3a--b),
-comparing experiments with observational studies and choosing a collection
-method (1.7, PS.DC.3c--e), the class-survey project (1.8, PS.DC.2d), two-way
-tables (3.1), and --- directly --- association versus causation with
-scatterplots and regression in Unit 5 (PS.DS.5, PS.DS.6). \textit{Reaches back
-to:} Lesson 1.1's statistical cycle, Lesson 1.3's sampling plan, and Lesson
-1.4's bias, which this lesson removes on purpose so that what remains is
-visible.
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``The study was biased''} as the all-purpose answer (problems~13 and~17, HW~6).
+        It is Lesson~1.4's tool applied to a lesson that deliberately removed bias. Probe:
+        \emph{``The sample was random and everyone answered --- so what is left?''}
+  \item \textbf{Association read as causation} (problem~13, problem~17, HW~4 --- the target
+        misconception). Probe: \emph{``How many different stories fit this one table? Name the
+        other two.''}
+  \item \textbf{A causal verb sneaking into a written answer} (problems~14 and~17, HW~4).
+        Circle \emph{causes, makes, raises, improves, helps, hurts} and hand the paper back
+        without explaining. Most students fix it themselves on the second pass.
+  \item \textbf{A ``lurking'' variable that is really one of the two variables} (problem~12,
+        HW~5). ``Study Center users study less'' is not a third variable. Test: \emph{``Is it
+        in the table? If yes, it is not lurking.''}
+  \item \textbf{The reversed arrow missed entirely} (problems~11 and~18, HW~5). Most students
+        accept the direction they are handed. Probe: \emph{``Which came first?''}
+  \item \textbf{Two denominators merged into one} (problems~9 and~16, warm-up item~3, HW~2):
+        $39\div 150$ instead of $39 \div 60$, or averaging $70$ and $45$. Probe: \emph{``Which
+        whole goes with that count?''}
+  \item \textbf{Sorting by ``is it a survey'' instead of ``who assigned''} (problem~3, the
+        trap). Probe: \emph{``Who put that person in their group?''}
+  \item \textbf{``No'' with no reason} (the cold check, HW~6). Half credit. The standard is met
+        when the student names a specific alternative explanation for \emph{this} context.
+\end{itemize}
+Cold-call prompts: \emph{``Who decided the groups?''} \quad \emph{``Which came first?''} \quad
+\emph{``What is in this study, and what is outside it?''} \quad \emph{``Say that again without
+the word \emph{causes}.''}
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
+\boxguard
+\begin{skillbox}[Close \& Assign (10 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+six exercises on paper, scored out of 12, due at the start of the first class after two study
+halls --- and point out that the \emph{Keep in Mind} box on the cover is the page to flip back
+to, because it carries the banned-verb list. Circulate: \textbf{item~6 is the column that tells
+you whether the \emph{Not Causation} row landed}, and it is at the bottom of page~2, so put
+students on 1, 2, and~4 first and let 3, 5, and~6 go home. Sort what you see into three piles
+as you walk --- named a concrete alternative explanation (ready); said \emph{no} with only the
+slogan (ready, needs the language); said the study was biased or accepted the claim (the
+misconception survived) --- and open Lesson~1.6 by re-running problems 11--14 if that third
+pile ran past a third of the room. Then close on what changed: \emph{``You walked in able to
+turn $56$ of $80$ into a percent. You walk out knowing that a $25$-point gap between two groups
+that built themselves is an \textbf{association} --- and that a random sample, a $100\%$
+response rate, and perfect arithmetic still do not buy you the word \emph{causes}.''}
+\textbf{Preview:} Lesson~1.6, \emph{Experimental Design} --- today nobody assigned the groups,
+so we could not tell three stories apart. Next time we assign them ourselves.
+\end{skillbox}
+
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a key with no
+% counterpart in the blank. No note for the debrief or the homework start — both are fully
+% specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    Five minutes, silent, timed. All three items are Algebra 1 percent work and
-    the class has done the identical moves in 1.2 and 1.4, so this should be
-    near-universal.
+Five minutes, silent, timed. All three items are Algebra~1 percent work and the class has run
+the identical moves in 1.2 and 1.4, so this should be near-universal --- say so, so nobody
+thinks they are being retested.
 
-    The one thing to watch is the denominators. Item 1 divides by $80$ and item
-    2 divides by $120$ --- different groups, different wholes. Item 3(b) then
-    asks for the pooled rate, and the wrong answer is $(70 + 45) \div 2 =
-    57.5\%$, which averages two unequal groups as if they were the same size.
-    The right path is $110 \div 200 = 55\%$. Catch that one at the collection,
-    because section 3 of the notes and the entire homework depend on students
-    keeping two denominators straight.
+\textbf{The one thing to watch is the denominators.} Item~1 divides by $80$ and item~2 divides
+by $120$ --- different groups, different wholes. Item~3's third row then asks for the pooled
+rate, and the wrong answer is $(70+45)\div 2 = 57.5\%$, which averages two unequal groups as if
+they were the same size; the right path is $110 \div 200 = 55\%$. Catch it at the collection,
+because row~3 of the notes and the entire homework depend on students keeping two denominators
+straight.
 
-    Leave $70\%$, $45\%$, and $25$ points on the board. The hook needs them
-    thirty seconds after the warm-up is collected.
+\textbf{Leave $70\%$, $45\%$, $25$ points, and $55\%$ on the board and do not erase them.} The
+hook needs them thirty seconds after the warm-up is collected, problem~9 reads them back off
+the two-way table, and problem~10 scales the $55\%$ to $825$ of all $1{,}500$ members.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    Pace: section 1 in 7 minutes, section 2 in 8, section 3 in 8, section 4 in
-    14, section 5 in 10, guided practice in 8. \textbf{Section 4 is the lesson};
-    sections 1 and 2 are definition and review and should move fast.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 20 / 15, then 10 for the debrief, then 10
+for the homework start.} It is one table, and every row runs the same way: you read the
+definition, mark up the display, and work the first problem of the grid (1, 5, 9, 11); the
+class works the rest with the pen in their hand. Rows 1--3 must move: four, five, and four
+minutes. \textbf{Take the hand count on problem~3 before anyone writes} --- it is the trap, the
+one plan where the director assigns, and students who write first sort by ``is it a survey''
+and never feel it.
 
-    Section 2 is where PS.DC.2d is actually met --- the standard asks students
-    to \emph{use the statistical cycle to plan and conduct an observational
-    study}, and this table is that plan. Do not skip it because it looks like
-    review of 1.1. The Collect row should come back word-for-word from Lesson
-    1.3 (a random sample of $200$ from the full membership list), and it is
-    worth saying out loud that the plan is 1.3's and the bias check is 1.4's,
-    so everything the class already knows is still standing.
+\textbf{Row~2 is where PS.DC.2d is actually met} --- the standard asks students to \emph{use the
+statistical cycle to plan and conduct an observational study}, and that row is the plan. Do not
+skip it because it looks like review of 1.1. The Collect stage should come back word-for-word
+from Lesson~1.3 (a random sample of $200$ from the full membership list), and it is worth
+saying out loud that the plan is 1.3's and the bias check is 1.4's, so everything the class
+already knows is still standing. Problem~8 is the row's punchline: the absence of any
+instruction about when to swim \emph{is} the definition.
 
-    Section 4 fails if you reveal the retirement row too early. Give story 1,
-    then ask the class to invent story 2 --- the reversed arrow --- before you
-    offer it. Somebody reliably says ``maybe they get up early because they
-    sleep well,'' and the lesson is much stronger when it comes from the room.
-    Only then show $75\%$ against $15\%$.
+\textbf{Spend the time in row~4, \emph{Not Causation}}, which carries the misconception, and do
+not reveal the retirement row too early. Give story~1, then ask the class to invent story~2
+before you offer it; somebody reliably says ``maybe they get up early because they sleep
+well,'' and the lesson is much stronger when it comes from the room. \emph{Only then} show
+$75\%$ against $15\%$ and let the class compute it at problem~12. \textbf{Re-take the hook vote
+at problem~13 before you say anything.} Let the room argue, then land the printed sentence word
+by word. \textbf{Do not skip problem~14} --- the prediction about switching is the version of
+this error that survives the lesson and resurfaces in every conclusion they write.
 
-    If time runs short, compress section 5 (the homework re-teaches it with a
-    four-row table and two written items) --- never section 4.
-\end{teachernote}
+\textbf{Guided Practice (15--18) is where the pen changes hands.} \emph{Study Center} runs the
+four moves the homework will ask alone --- identify, compute, write the association sentence,
+test the direction --- on a school instead of a pool. It is built so that the obvious reading
+is exactly backwards, and the class needs to feel the pull of the wrong answer first: let the
+memo sit unchallenged until problem~17. Problem~18 is the best item on the page, and the answer
+--- \emph{the Center looks worse than it is} --- requires chaining last quarter's $75\%$ against
+$10\%$ to the comparison. If you only get through 15, 16, 17, and~18's verdict, that is the
+right trade; what would settle it can be said aloud and is Lesson~1.6.
 
-\begin{teachernote}[Group Activity]
-    Groups of three, 15--18 minutes, tiers assigned rather than chosen. Read the
-    headline box aloud, especially the principal's memo. The activity is built
-    so that the obvious reading of the data is not just unsupported but exactly
-    backwards, and groups need to feel the pull of the wrong answer first.
-
-    Tier R item 3 and item 4 have different denominators ($60$ and $90$) on
-    purpose. A group that divides $39$ by $150$ has merged the two groups; catch
-    it at the table, since Tier A item 1 then \emph{does} want the pooled $150$
-    and the two must stay distinct.
-
-    Tier A item 3 is the writing item and it is where the banned verbs go. If a
-    group writes ``the Study Center hurts grades,'' hand it back with the verb
-    circled --- do not explain, just circle. Most groups fix it themselves on
-    the second pass.
-
-    Tier E item 1 is the best item on the page: $75\%$ of users had already
-    failed a class, against $10\%$ of non-users. Item 2 then asks for the
-    \emph{direction}, and the answer --- the center looks worse than it is ---
-    requires chaining that fact to the comparison. Pull it to the whole class if
-    two or more groups reach it. Item 3 is a first taste of Lesson 1.6: option
-    (b) is a randomized experiment in everything but name, and the cost line
-    (you must deny half the students help) is the ethical objection that recurs
-    all through the next lesson. Insist on both halves of each line.
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    Five minutes, notes closed, collected at the door. Item 1 should be near
-    universal; if it is not, section 1 did not land and it is worth three
-    minutes at the start of Lesson 1.6.
-
-    Item 2 is the arithmetic check and the denominators are $150$ and $600$ ---
-    the same trap as the warm-up, so a student who missed it twice needs the
-    reteach more than the concept.
-
-    Grade item 3 first and only item 3 if time is short. Full credit needs both
-    halves: \emph{no}, and a concrete alternative explanation tied to this
-    context. Watch for the answer that says ``correlation is not causation'' and
-    stops --- it is a slogan, not a justification, and those students will
-    abandon it the first time a causal story sounds plausible. Write the missing
-    half on the paper: \emph{name one other reason band students might already
-    have higher grades.}
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice.} Guided Practice is the last row; the period ends with
+students starting the homework in front of you, which is where your second formative read comes
+from. \textbf{Do not let the debrief eat the last ten minutes.}
 \end{teachernote}
 
 \boxguard[26]
 \begin{teachernote}[Homework]
-    Assign all eight items; about $30$ minutes. Items 4, 5, 7(b), and 8 cannot
-    be answered by computing anything --- flag them when assigning, because
-    students who treat this as a calculation sheet will skip exactly those.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls.} The ten minutes at the end of the period are a \emph{start}, not a completion: put
+students on 1, 2, and~4 while you can still catch a wrong start, and let 3, 5, and~6 go home.
 
-    Items 2 and 3 are the arithmetic spine and are designed to be done in order:
-    $80\%$, $32\%$, the $48$-point gap, then the pooled $50\%$ and $600$. The
-    predictable error is $120/1200$ or averaging $80$ and $32$; both come from
-    losing track of which whole is which.
+Items 2 and~3 are the arithmetic spine and are designed to be done in order: $80\%$, $32\%$,
+the $48$-point gap, then the pooled $50\%$ and $600$. The predictable error is $120/1200$ or
+averaging $80$ and $32$; both come from losing track of which whole is which --- the same error
+the warm-up screens for.
 
-    Item 6's four rows escalate. Ice cream and sunburn is the giveaway (hot
-    weather); shoe size and reading level is the classic (age); the online
-    catalog row is the hardest because the lurking variable is a habit rather
-    than a thing, and ``the kind of person who plans ahead'' is full credit.
+\textbf{Item~4 is the fullest diagnostic in the set.} The first row is the association and is
+supported; the second is the newsletter's \emph{``more than doubles how much our members
+read''} and is not. Score the \emph{reason}, not the verdict --- a student who marks both
+correctly and writes ``you can't prove causation'' for the second has the slogan without the
+justification and will lose it on the unit test.
 
-    Item 8 is the closer and the whole point of putting this lesson after 1.4.
-    The sample was random, everyone answered, every count is right --- so the
-    answer cannot be ``the study was biased.'' It has to be that the card
-    holders sorted \emph{themselves}, and no sampling method fixes that.
-    Students who answer ``the sample was too small'' or ``it was biased'' are
-    reaching for the previous lesson's tool; write the correction rather than
-    marking it, because the same reflex will cost them on the unit test.
+\textbf{Item~6 is the closer and the whole point of putting this lesson after 1.4.} The sample
+was random, everyone answered, every count is right --- so the answer cannot be ``the study was
+biased.'' It has to be that the card holders sorted \emph{themselves}, and no sampling method
+fixes that. Write the correction on the paper rather than just marking it wrong; the same
+reflex costs them on the unit test. \textbf{Sort item~6 into three piles when you score} ---
+named a concrete alternative (ready); the slogan alone (ready, needs the language); blamed bias
+or the sample size (the misconception survived). If more than a third land in the last pile,
+reopen the three stories in the Lesson~1.6 warm-up debrief rather than letting it ride.
 
-    The \textbf{remindbox} hands off to Lesson 1.6 and names all four principles
-    of experimental design. Do not teach them here.
+\textbf{Packet is the call for 1.5.} Desmos carries percent arithmetic and nothing in this set
+that matters; do not swap it in. The closing \textbf{spiralbox} hands off to Lesson~1.6 and
+names the four principles of experimental design --- do not teach them here.
 \end{teachernote}
 \end{document}

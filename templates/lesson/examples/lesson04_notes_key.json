@@ -1,58 +1,51 @@
 {
  "title": "Guided Notes",
  "vocab": {
-  "Bias": "A study is biased when its procedure systematically overestimates or underestimates the population value --- every sample leans the same direction.",
-  "Sampling bias": "Bias from how the sample was chosen: some members of the population are systematically more likely to be picked than others.",
-  "Undercoverage": "Part of the population is left off the sampling frame, so those members can never be chosen at all.",
+  "Bias": "A study is biased when its procedure systematically misses the population value the same way every time --- a direction, not bad luck.",
+  "Sampling bias": "Bias from how the sample was chosen: some members of the population are more likely to be picked than others.",
+  "Undercoverage": "Part of the population is left off the sampling frame, so those members have no chance at all of being chosen.",
   "Nonresponse": "Members are chosen properly but never answer, so the data is missing exactly the people who stayed silent.",
-  "Response bias": "Anything about the survey itself --- who asks, the wording, the order --- that pushes a respondent away from their true answer."
+  "Response bias": "Anything about the survey itself --- who asks, the wording, the order --- that pushes a respondent off their true answer."
  },
  "blanks": [
-  "direction",
-  "20\\%",
-  "36\\%",
-  "Tuesday",
-  "too high",
-  "lap swimmers",
-  "undercoverage",
-  "undercoverage",
-  "undercoverage",
-  "nonresponse",
-  "could not",
-  "could",
   "social desirability",
   "neutral responding",
   "acquiescence",
   "demand",
-  "question order",
-  "16",
-  "36\\%",
-  "16",
-  "precise",
-  "correct",
-  "variability",
-  "direction",
-  "undercoverage",
-  "nonresponse",
-  "undercoverage",
-  "nonresponse",
-  "yes",
-  "24",
-  "144",
-  "too high",
-  "acquiescence"
+  "question order"
  ],
  "lines": [
   [
-   "Answers vary --- most of the room says yes (``more people, better answer'').",
-   "(Settled at the end of section 2: no --- 270 of 750 is 36\\% again. Same Tuesday, same lean.)"
-  ],
-  [
-   "More cards from the same procedure: still only the households that chose to answer, and",
-   "the car owners answered at twice the rate --- so the 64\\% is too high no matter how many cards."
-  ],
-  [
-   "``Do you think the amount of parking at Cedar Ridge is too little, about right, or too much?''"
+   "Answers vary --- most of the room votes yes: more people must mean a better number.",
+   "(Settled at problem 13: no --- $270/750 = 36\\%$, the same 16-point miss.)"
   ]
- ]
+ ],
+ "labels": [
+  "variability",
+  "bias",
+  "undercoverage",
+  "nonresponse",
+  "variability",
+  "bias"
+ ],
+ "cells": {
+  "1": "Random $20\\%$; Tuesday $36\\%$.",
+  "2": "The Tuesday row --- always too high.",
+  "3": "Lap swimmers: Tuesday evening is lap-swim time.",
+  "4": "No --- consistent is not correct.",
+  "5": "Undercoverage --- daytime members are off the frame.",
+  "6": "Undercoverage --- no email, no chance.",
+  "7": "Undercoverage --- non-users cannot be chosen.",
+  "8": "Nonresponse --- the frame was perfect.",
+  "10": "$21$ points; crowding first.",
+  "11": "No --- the title is response bias.",
+  "12": "$270/750 = 36\\%$; off by $16$ --- so was one Tuesday.",
+  "13": "No. Ten Tuesdays shrank the spread, not the lean.",
+  "14": "(a) undercoverage (b) nonresponse (c) response bias",
+  "15": "Yes --- a random $75$ has no lean.",
+  "16": "$25\\%$ answered; $64\\%$ of those; $384$ of $600$.",
+  "17": "Yes --- nonresponse. $24$ points, $144$ households high.",
+  "18": "Same procedure, more of it --- the same households.",
+  "19": "Acquiescence. ``Is parking a problem for you?''"
+ }
 }

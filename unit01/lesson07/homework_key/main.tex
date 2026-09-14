@@ -1,194 +1,164 @@
 %! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on Riverbend, the Guided Practice runs on Harbor Point, and
+% these items are on the Millbrook Public Library — recall is not the skill.
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-3 on page 1, items 4-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 4 rows (i) and (ii) are the deliberate CONTRAST PAIR: a treatment the library can hand
+% out by chance against one nobody can hand out. Item 6(a) is the target misconception head-on
+% (observation the method inside an experiment); 6(b) is the 48-point gap — the biggest number
+% and the weakest evidence.
+% THE DATA — Millbrook Public Library: 1,200 card holders; watched (1.5): 80% vs 32%, gap 48;
+%   assigned (1.6): 200 volunteers 100/100, 65% vs 35%, gap 30; NEW: 300 volunteers 150/150,
+%   96/150 = 64% vs 60/150 = 40%, gap 24.
+% PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[Millbrook Public Library --- The Third Study]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-Millbrook has $1{,}200$ card holders and has now studied its Summer Reading
-Program twice. \textbf{Last summer it watched:} of the card holders who had
-signed themselves up, $80\%$ read at least $10$ books against $32\%$ of those
-who had not --- a $48$-point gap. \textbf{This summer it assigned:} $200$
-volunteers split $100$/$100$ by a generator, $65\%$ against $35\%$ --- a
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the first
+class after two study halls. You start it in the last minutes of the period --- ask about
+anything that stalls you before you leave, then finish it on your own.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Millbrook Public Library --- The Third Study]{cerulean}
+Millbrook has $1{,}200$ card holders and has studied its Summer Reading Program twice.
+\textbf{Last summer it watched:} of the card holders who signed themselves up, $80\%$ read at
+least $10$ books, against $32\%$ of those who had not --- a $48$-point gap. \textbf{This summer
+it assigned:} a generator split $200$ volunteers $100$/$100$; $65\%$ against $35\%$ --- a
 $30$-point gap.
 
 \vspace{2pt}
-\textbf{This fall the director runs a third study.} Does a weekly evening book
-club raise how many card holders read at least $10$ books in a semester? She
-takes \textbf{$300$ volunteers} and lets a generator send \textbf{$150$ to the
-book club} and \textbf{$150$ to no club}, keeping borrowing limits the same for
-everyone. By December, \textbf{$96$} of the club group and \textbf{$60$} of the
-no-club group had read at least $10$ books.
+\textbf{This fall: a third study.} Does a weekly evening book club raise how many card holders
+read at least $10$ books in a semester? A generator sends $150$ of $300$ volunteers to the club
+and $150$ to no club. By December, $96$ of the club group and $60$ of the no-club group had
+read at least $10$ books.
 \end{scenariobox}
 
 \vspace{0.08in}
 
 \boxguard
 \begin{notesbox}{Practice}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt]
+Every answer names the design, the reason, or the method --- and the verb the study earns.
+\wordbank{observational study \;\textbullet\; experiment \;\textbullet\; the card holders themselves \;\textbullet\; yes \;\textbullet\; no \;\textbullet\; impossible \;\textbullet\; unethical \;\textbullet\; impractical \;\textbullet\; survey \;\textbullet\; interview \;\textbullet\; focus group \;\textbullet\; observation \;\textbullet\; content analysis}
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=2pt]
 
-  \item Sort the two earlier studies.
+  \item Sort the two earlier studies by design.
 
-        \textbf{(a)} Last summer's is a(n) \ans{observational study} \hfill This
-        summer's is a(n) \ans{experiment}
+        \par\vspace{3pt}
+        Last summer's: \ans{observational study} \hfill This summer's: \ans{experiment}
+        \par\vspace{6pt}
+        Who decided which group each card holder was in \emph{last} summer? \ans{the card holders}
 
-        \textbf{(b)} Who decided which group each card holder was in last
-        summer? \ans{the card holders themselves}
-
-  \item Compute the book-club rates.
-
-        \textbf{(a)} What percent of the $150$ in the club read at least $10$
-        books?
+  \item Compute the book-club rates, then find the gap.
 
         \begin{work}
-          \dfrac{96}{150} &= 0.64 \\
-                          &= 64\%
+          \dfrac{96}{150} &= 0.64 = 64\% \\
+          \dfrac{60}{150} &= 0.40 = 40\%
         \end{work}
 
-        \textbf{(b)} What percent of the $150$ with no club did?
-
-        \begin{work}
-          \dfrac{60}{150} &= 0.40 \\
-                          &= 40\%
-        \end{work}
-
-        \textbf{(c)} The club group is higher by \ans{$24$} percentage points.
-
-  \item Now use all $300$ volunteers.
-
-        \textbf{(a)} How many read at least $10$ books, and what percent is
-        that?
-
-        \begin{work}
-          96 + 60 &= 156 \text{ card holders} \\
-          \dfrac{156}{300} &= 0.52 = 52\%
-        \end{work}
-
-        \textbf{(b)} About how many of all $1{,}200$ card holders does that
-        predict?
-
-        \begin{work}
-          0.52 \times 1200 &= 624 \text{ card holders}
-        \end{work}
-
-  \item Fill in the plan the director followed for the book-club study.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabularx}{0.93\linewidth}{@{} p{2.4cm} X @{}}
-        \toprule
-        \textbf{Stage} & \textbf{The book-club study} \\
-        \midrule
-        Formulate & Does a weekly evening book club raise how many card holders
-          read at least $10$ books? \\
-        Collect & \ans{Take $300$ volunteers; a generator assigns $150$ to the
-          weekly club and $150$ to no club for one semester.} \\
-        Represent & \ans{A two-row table --- each group's size, how many read
-          $10$ or more books, and each group's percent.} \\
-        Analyze \& report & \ans{$64\%$ against $40\%$, a $24$-point gap; say
-          what the club did for these card holders.} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-  \tcbbreak   % keep item 5's prompt with its table — mirrored in homework_key
-  \item The board sends three more questions. For each, decide whether the
-        director could assign the groups.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.45}
-        \begin{tabularx}{0.97\linewidth}{@{} X c p{4cm} @{}}
-        \toprule
-        \textbf{The question} & \textbf{Assign?} & \textbf{If not, why --- and
-          what instead?} \\
-        \midrule
-        Does a $\$5$ late fee reduce overdue books? & \ans{Yes}
-          & \ans{Nothing stops her --- run the experiment.} \\
-        Do card holders who never finished high school borrow fewer books?
-          & \ans{No} & \ans{Schooling cannot be assigned. Observational study.} \\
-        Do children who were read to as toddlers read more at age $12$?
-          & \ans{No} & \ans{It already happened; nobody can go back.
-            Observational.} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-  \item Name the collection method that fits each job best.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.45}
-        \begin{tabularx}{0.97\linewidth}{@{} X p{3.6cm} @{}}
-        \toprule
-        \textbf{What the library needs} & \textbf{Best method} \\
-        \midrule
-        Which titles were borrowed most over the past five years
-          & \ans{Content analysis} \\
-        How many of the $1{,}200$ card holders want Sunday hours
-          & \ans{Survey} \\
-        Why one long-time member stopped coming in, in her own words
-          & \ans{Interview} \\
-        How many visitors actually use the new self-checkout machine
-          & \ans{Observation} \\
-        Six teens talking together about what the teen room needs
-          & \ans{Focus group} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-  \item Millbrook now has three results: a $48$-point gap, a $30$-point gap, and
-        a $24$-point gap. Which one is the \emph{weakest} evidence that the
-        library's programs work, and why is it the one with the biggest number?
-        \ansline{The $48$-point gap. The card holders signed themselves up, so the heavy readers}
-        \ansline{were already in one group --- self-selection inflated a gap the program did not earn.}
-
-  \item A local paper runs the headline \emph{``Millbrook study proves the
-        Summer Reading Program makes children read more,''} citing last
-        summer's study. Rewrite the headline so that it is honest, and say what
-        the library would have to do to earn the original wording.
-        \ansline{``Millbrook readers who joined the program read more'' --- an association only.}
-        \ansline{To say ``makes,'' it would have to assign card holders to the program by chance.}
+        The club group is higher by \ans{24} percentage points. Write the strongest
+        sentence this study earns.
+        \par\ansline{The weekly book club caused more card holders to read at least 10 books ---}
+\ansline{a generator built the two groups, so the club is the only difference.}
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
+\boxguard[30]
+\begin{notesbox}{Practice, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt, start=3]
 
-\boxguard
-\begin{extensionbox}
-\small
-Go back to the study you proposed for Lesson 1.6's extension and finish planning
-it:
+  \item Fill in the plan the director followed for the book-club study.
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item Can it actually be run as an experiment, or does something stop you from
-        assigning? Name which of the three reasons applies if so.
-  \item Write your plan as the four stages of the statistical cycle, one line
-        each.
-  \item Which of the five collection methods will you use, and why that one?
-  \item Write, in advance, the strongest sentence your design will let you say
-        --- before you know how the numbers come out.
+        \nopagebreak
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{3.5cm} X @{}}
+        \toprule
+        \textbf{Stage} & \textbf{The book-club study} \\
+        \midrule
+        Formulate & Does the club raise how many card holders read $10$ books? \\
+        Collect & \ans{Generator splits 300 volunteers 150/150.} \\
+        Represent & \ans{A table: each group's count and percent.} \\
+        Analyze \& report & \ans{Compare 64\% vs.\ 40\%; say it in context.} \\
+        \bottomrule
+        \end{tabularx}
+
+
+  \item The board sends two more questions. For each, decide whether the director could
+        assign the groups --- and if not, say which reason.
+
+        \nopagebreak
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabularx}{\linewidth}{@{} X p{1.4cm} p{3.6cm} @{}}
+        \toprule
+        \textbf{The question} & \textbf{Assign?} & \textbf{If not, why?} \\
+        \midrule
+        Does a $\$5$ late fee reduce overdue books? & \ans{yes} & \ans{--- experiment} \\
+        Do children read to as toddlers read more at $12$? & \ans{no} & \ans{impossible} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Name the collection method that fits each job best.
+
+        \nopagebreak
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabularx}{\linewidth}{@{} X p{4.2cm} @{}}
+        \toprule
+        \textbf{What the library needs} & \textbf{Best method} \\
+        \midrule
+        Which titles were borrowed most over the past five years & \ans{content analysis} \\
+        How many of the $1{,}200$ card holders want Sunday hours & \ans{survey} \\
+        Why one long-time member stopped coming in, in her own words & \ans{interview} \\
+        How many visitors actually use the new self-checkout machine & \ans{observation} \\
+        Six teens talking together about what the teen room needs & \ans{focus group} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Two claims about the three studies.
+
+        \textbf{(a)} She collected the book-club data by sitting in on the meetings and
+        recording who actually came, so a classmate calls it an observational study. Name the
+        method and the design, and say whether the classmate is right.
+        \par\ansline{Method: observation. Design: experiment --- a generator built the 150/150 groups.}
+\ansline{The classmate is wrong: how the data were recorded never decides the design.}
+
+        \textbf{(b)} Millbrook now has a $48$-point gap, a $30$-point gap, and a $24$-point
+        gap. Which is the \emph{weakest} evidence that the programs work --- and why is it the
+        one with the biggest number?
+        \par\ansline{The 48-point gap --- the card holders who signed themselves up were already the}
+\ansline{heavy readers, so the gap measures who signed up, not what the program did.}
+
 \end{enumerate}
-\end{extensionbox}
+\end{notesbox}
 
-\vspace{0.08in}
-
-\begin{remindbox}
-\small
-\textbf{Next class (Lesson 1.8):} you run the study. Working from a question your
-class chooses, you will plan the whole cycle, pick a sampling technique and a
-collection method, collect real data from real classmates, and report a
-conclusion your design actually earns.
-\end{remindbox}
+\boxguard[3]   % the spiralbox needs about three baselines; a larger guard pushes it to a third page
+\begin{spiralbox}
+\textbf{Next lesson: Lesson 1.8 --- You Run the Study.} From a question your class chooses,
+you will decide whether it can be an experiment at all, plan the cycle, pick a sampling
+technique and a collection method, and report a conclusion your design earns.
+\end{spiralbox}
 
 \end{document}

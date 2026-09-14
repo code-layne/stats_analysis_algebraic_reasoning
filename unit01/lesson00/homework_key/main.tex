@@ -1,24 +1,54 @@
 %! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on the Riverbend basketball roster, the Guided Practice runs
+% on the Student Life Survey, and these items are on the Northgate Recreation Center — recall
+% is not the skill.
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-2 on page 1, items 3-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 2's Member ID and Age rows are the deliberate CONTRAST PAIR: two columns of digits, one
+% a label and one an amount. Item 6 is the target misconception head-on (the mean Member ID).
+% THE DATA — Northgate Recreation Center, 8 members: Member ID 104,118,127,133,145,152,166,179
+%   -> 1124/8 = 140.5; visits 6,2,9,4,14,1,8,4 -> 48/8 = 6; group class 5/8 = 62.5%;
+%   pool survey 45/300 = 15%; 0.15 x 2000 = 300.
+% PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[30]
-\begin{scenariobox}[Northgate Community Recreation Center]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-Northgate keeps a record of every member. Here are eight of them.
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the
+first class after two study halls. You will start it in the last minutes of the period, so ask about anything that stalls
+you before you leave, then finish it on your own.
+\end{remindbox}
 
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Northgate Recreation Center]{cerulean}
+Northgate keeps a record on every member. Here are eight of them.
+
+\vspace{2pt}
 \begin{center}
-\renewcommand{\arraystretch}{1.2}
+\small
+\renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{} l c l c c c @{}}
 \toprule
 \textbf{Member} & \textbf{Member ID} & \textbf{Membership} &
@@ -40,137 +70,84 @@ Nash  & 179 & Senior  &  4 & 71 & Yes \\
 \vspace{0.08in}
 
 \boxguard
-\begin{notesbox}{Check Your Understanding}
-\small
+\begin{notesbox}{Practice}
+Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reasons.
+\wordbank{8 \;\textbullet\; 5 \;\textbullet\; categorical \;\textbullet\; quantitative}
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
-  \item How many \textbf{individuals} does this table describe? \ans{8}
-
+  \item How many \textbf{individuals} does the table describe? \ans{8} \hfill
         How many \textbf{variables} does it record? \ans{5}
+        \par\vspace{2pt}
+        \emph{(``Member'' names the individuals --- it is not a variable being studied.)}
 
-        (Remember: the ``Member'' column names the individuals --- it is not a
-        variable being studied.)
-
-  \item Classify each variable, and give the reason you used.
+  \item Classify each variable, and say \textbf{how you know}.
 
         \begin{center}
         \renewcommand{\arraystretch}{1.5}
-        \begin{tabularx}{0.96\linewidth}{@{} p{3.2cm} p{3cm} X @{}}
+        \begin{tabularx}{\linewidth}{@{} p{3.2cm} p{3cm} X @{}}
         \toprule
         \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
         \midrule
-        Member ID          & \ans{categorical}  & \ans{a label written with digits; a mean ID means nothing} \\
-        Membership         & \ans{categorical}  & \ans{Family / Student / Senior are group names} \\
-        Visits last month  & \ans{quantitative} & \ans{a count of visits; a mean makes sense} \\
+        Member ID          & \ans{categorical} & \ans{a label written with digits; a mean ID means nothing} \\
+        Membership         & \ans{categorical} & \ans{Family / Student / Senior are group names} \\
+        Visits last month  & \ans{quantitative} & \ans{a count of visits --- an amount; a mean makes sense} \\
         Age                & \ans{quantitative} & \ans{an amount measured in years} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
-  \item Find the mean number of visits last month.
-
-        \begin{work}
-          \bar{x} &= \dfrac{6+2+9+4+14+1+8+4}{8} \\
-                  &= \dfrac{48}{8} \\
-                  &= 6 \text{ visits}
-        \end{work}
-
-        Now write one sentence interpreting that number. Name the group and the
-        units.
-        \ansline{These eight Northgate members made a mean of 6 visits during last month.}
-
-  \item ``Group class?'' is categorical, so a mean is not available. Find the
-        \textbf{percent} of these eight members who take a group class.
-
-        \begin{work}
-          \dfrac{5}{8} &= 0.625 \\
-                       &= 62.5\%
-        \end{work}
-
-        Explain why a percent, and not a mean, is the right summary here.
-        \ansline{The values are Yes and No labels, which cannot be added --- they can only be counted.}
-
 \end{enumerate}
 \end{notesbox}
 
 \boxguard[30]
-\begin{notesbox}{Check Your Understanding, continued}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt, start=5]
+\begin{notesbox}{Practice, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt, start=3]
 
-  \item \textbf{Spiral --- Algebra 1 percent and proportion.} Northgate has
-        $2000$ members in all. A survey of $300$ of them found that $45$ use
-        the swimming pool.
-
-        \textbf{(a)} What percent of the members surveyed use the pool?
+  \item Find the mean number of visits last month, then write it as \emph{data} ---
+        one sentence naming the group and the units.
 
         \begin{work}
-          \dfrac{45}{300} &= 0.15 \\
-                          &= 15\%
+          \bar{x} &= \dfrac{6+2+9+4+14+1+8+4}{8} = \dfrac{48}{8} = 6 \text{ visits}
         \end{work}
+        \par\ansline{These eight Northgate members made a mean of 6 visits to the center last month.}
 
-        \textbf{(b)} Based on the survey, predict how many of the $2000$ members
-        use the pool.
+  \item ``Group class?'' is categorical, so a mean is not available. Find the
+        \textbf{percent} of these eight members who take a group class, then explain
+        why a percent --- and not a mean --- is the right summary here.
 
         \begin{work}
+          \dfrac{5}{8} &= 0.625 = 62.5\%
+        \end{work}
+        \par\ansline{Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes.}
+
+  \item \textbf{Spiral --- Algebra 1.} The director asks, \emph{``How many of our $2000$ members
+        use the pool?''} --- a statistical question, because the answer varies from member to
+        member. A survey of $300$ members found that $45$ use the pool. Find the percent of
+        those surveyed who use it, predict how many of all $2000$ do, and write the
+        prediction as one sentence for the director.
+
+        \begin{work}
+          \dfrac{45}{300} &= 0.15 = 15\% \\
           0.15 \times 2000 &= 300 \text{ members}
         \end{work}
+        \par\ansline{About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed.}
 
-        \textbf{(c)} Write the result as one sentence the recreation center could
-        put in a report.
-        \ansline{About 300 of Northgate's 2000 members use the swimming pool.}
-
-  \item Mark each question \textbf{S} (statistical) or \textbf{N} (not
-        statistical).
-
-        \begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt, label=(\alph*)]
-          \item What time does Northgate open on Saturday? \hfill \ans{N}
-          \item How old are Northgate's members? \hfill \ans{S}
-          \item How many visits did Tam make last month? \hfill \ans{N}
-          \item How many visits do Northgate members make in a month?
-                \hfill \ans{S}
-        \end{enumerate}
-
-        Rewrite part (c) so that it becomes a statistical question.
-        \ansline{How many visits do Northgate's student members make in a month?}
-
-  \item A staff member computes the mean of the Member ID column and gets
-        $140.5$. She writes: \textit{``The average Northgate member is number
-        $140.5$.''}
-
-        What does that number actually tell you about Northgate's members?
-        Explain.
-        \ansline{Nothing. Member ID is a label used to tell members apart, not an amount,}
-        \ansline{so its mean is not a measurement of anything about the members.}
+  \item A staff member computes the mean of the Member ID column --- correctly --- and gets
+        $140.5$. She writes: \textit{``The average Northgate member is number $140.5$.''}
+        What does that number actually tell you about Northgate's members? Use the type you
+        gave Member ID in item~2 to explain.
+        \par\ansline{Nothing. Member ID is categorical --- a label that tells members apart, not an amount ---}
+\ansline{so its mean is not a measurement of anything; no member is ``number 140.5.''}
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
-
-\boxguard
-\begin{extensionbox}
-\small
-Find one real claim about a group of people --- a headline, an advertisement, a
-poll on social media. Write it down, then answer three questions about it:
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item What group does the claim say it describes?
-  \item What variable was recorded to produce it?
-  \item Is that variable categorical or quantitative?
-\end{enumerate}
-
-Bring the claim to class --- we will come back to these when we study bias.
-\end{extensionbox}
-
-\vspace{0.08in}
-
+\boxguard[5]   % the two-line spiralbox needs about five baselines; a larger guard pushes it to a third page
 \begin{spiralbox}
-\small
-\textbf{Next class (Lesson 1.1):} we name the four stages of the data cycle
-formally, write questions a data set can actually answer, and sort variables by
-type at speed. Today's words --- \emph{individual}, \emph{variable},
-\emph{categorical}, \emph{quantitative} --- are assumed from here on.
+\textbf{Next lesson: The Data Cycle.} We name the four stages of the data cycle formally,
+write questions a data set can actually answer, and organize collected answers into a
+frequency table. Today's words --- \emph{individual}, \emph{variable}, \emph{categorical},
+\emph{quantitative} --- are assumed from here on.
 \end{spiralbox}
 
 \end{document}

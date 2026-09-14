@@ -1,10 +1,19 @@
 %! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (unresolved) → I DO divider → two or
+% three frames per notes row → WE DO (the class's own survey — a LIVE surface, un-answered) →
+% spoken debrief with the cold check → close & START THE HOMEWORK, whose item 6 is the project
+% deliverable. No group activity, no practice launch, no exit ticket. There is no spoiler rule:
+% the notes frames ARE the direct instruction.
+% \CourseName is NOT defined in beamer — the course name is written literally.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
@@ -17,241 +26,307 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Two people arguing about \$3,000}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.8 $\cdot$ the unit, run forwards}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item plan a survey through the four stages of the \textbf{statistical cycle}, and say what
+          each stage hands in.
+    \item write a \textbf{survey instrument} whose \textbf{closed-response items} ask one thing,
+          in neutral words, with choices that cover everyone.
+    \item turn a tally into \textbf{relative frequencies} and read them off a \textbf{bar graph}.
+    \item report a conclusion about \emph{the people my design actually covers}.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{we build and run our own survey} $\to$
+    debrief $\to$ \textbf{you start the homework here, alone}. Item 6 of the homework is your
+    project report.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{the Student Council's finished survey}
+  \vspace{0.25cm}
   \begin{center}
     \begin{minipage}{0.88\textwidth}
-      One council member: \emph{``everybody wants longer lunch.''}
-      Another: \emph{``nobody I know does.''}
-
-      \vspace{0.35cm}
-      A stratified sample of 60 says: club funding \textbf{35\%}, field trips
-      \textbf{30\%}, gym equipment \textbf{25\%}, longer lunch \textbf{10\%}.
+      A \$3{,}000 grant. The council drew a \textbf{stratified sample of 60} of Riverbend's
+      \textbf{900} students: club funding \textbf{21}, field trips 18, gym equipment 15, longer
+      lunch 6.
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item What percent of the 60 chose club funding?
+        \item Predict how many of all 900 would choose it.
+        \item Two groups are hiding in that paragraph --- how many in each? And how many choices
+              did each student pick?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.6cm}
+  \vspace{0.3cm}
   \begin{center}
-    {\color{goldacc}\bfseries What does the council have that the two arguing
-    members do not?}
+    {\color{cerulean}\bfseries 60 asked. 900 reported on. That line stays on the board all period.}
   \end{center}
 \end{frame}
 
-% ── THE PROJECT ON ONE PAGE ──────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Your project, on one page}
-  \sectionlabel[goldacc]{PS.DC.2d}
+% ── HOOK — leave it UNRESOLVED; problem 13 (row 4, The Limit) settles it ─────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small LAST SPRING, A CLASS OF 25 IN THIS ROOM ASKED ITSELF THE SAME QUESTION.}\\[0.7cm]
+    {\color{white}\bfseries\Large The class got 36\%. \quad The council got 35\%.}\\[0.6cm]
+    {\color{white}\small ``We matched the council, so our class can speak for all 900 students too.''}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Is that student right?}\\[0.4cm]
+    {\color{frostmid}\small Vote: agree or disagree. We settle this at problem 13.}
+  \end{center}
+\end{frame}
+}
 
-  \vspace{0.3cm}
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by row
+    --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms today. The last row is \emph{our} survey --- we build it,
+    we answer it, we tally it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── 1. THE CYCLE ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Your project is the cycle, run forwards}
+  \sectionlabel{notes row 1 $\cdot$ The Cycle $\cdot$ problems 1--4}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l l @{}}
     \hline
-    \textbf{Formulate} & a question naming a group and a measurement \\
-    \textbf{Collect} & a sampling plan, then a written instrument \\
-    \textbf{Represent} & a frequency table, then a bar graph \\
-    \textbf{Analyze \& report} & percents, in context, with the limits named \\
+    \textbf{Stage} & \textbf{What you hand in} \\
+    \hline
+    1. Formulate        & one statistical question, and the population it is about \\
+    2. Collect          & a sampling plan, and the finished instrument \\
+    3. Represent        & a frequency table, and a bar graph \\
+    4. Analyze \& report & a written report with its limits named \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small Nobody is assigned to anything, so what you are running is an
-      \textbf{observational study} --- the same cycle you have used since 1.1.
-    \end{minipage}
-  \end{center}
+  \vspace{8pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item A survey is an \textbf{observational study} --- nobody is assigned anything.
+    \item \textbf{Problem 4:} our class will ask only this room. Who chose that sample ---
+          chance, or the schedule? \redink{A convenience sample.}
+  \end{itemize}
 \end{frame}
 
-% ── THE QUESTION ─────────────────────────────────────────────────────────────
+% ── 2a. THE INSTRUMENT — the four rules ──────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Stage 1: does your question pass?}
-  \sectionlabel{three tests}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item The answers \textbf{vary} --- otherwise you already know.
-        \item A \textbf{group} is named --- whom is this about?
-        \item A \textbf{measurement} is named --- what exactly gets recorded?
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{goldacc}\bfseries ``How should we spend the grant?'' fails two of
-    the three. Repair it before you ask anyone.}
-  \end{center}
+  \ceruleanheader{The instrument is the wording, and the wording is the data}
+  \sectionlabel{notes row 2 $\cdot$ The Instrument $\cdot$ problems 5--6}
+  \vspace{2pt}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Rule 1 --- one idea per item.} Two ideas cannot be answered by one person.
+    \item \textbf{Rule 2 --- neutral wording.} The item must not tell the person what you want.
+    \item \textbf{Rule 3 --- choices cover everyone and do not overlap.} Then, and only then, the
+          percents add to 100\%.
+    \item \textbf{Rule 4 --- short.} A person answers what they finish reading.
+  \end{itemize}
+  \vspace{6pt}
+  \begin{block}{Why this row is the one that cannot be fixed later}
+    A biased instrument is wrong \emph{in a direction}. \redink{No arithmetic done afterwards
+    pulls it back} --- you are dividing the wrong counts by the right total.
+  \end{block}
 \end{frame}
 
-% ── THE INSTRUMENT ───────────────────────────────────────────────────────────
+% ── 2b. THE INSTRUMENT — repair the three broken items ───────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Stage 2: writing the instrument}
-  \sectionlabel[goldacc]{AFDA.DA.2d}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{7pt}
-        \item \textbf{One idea per item.} ``Clubs \emph{and} field trips?''
-              cannot be answered.
-        \item \textbf{Neutral wording.} ``Don't you agree\dots'' tells them the
-              answer.
-        \item \textbf{Choices cover everyone, no overlap.} Then percents add to
-              100\%.
-        \item \textbf{Short.} People answer what they finish reading.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{cerulean}\bfseries A biased instrument is wrong in a direction ---
-    and arithmetic cannot pull it back.}
-  \end{center}
-\end{frame}
-
-% ── REPRESENT ────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Stage 3: counts, percents, picture}
-  \sectionlabel[goldacc]{AFDA.DA.2h}
-
-  \vspace{0.3cm}
+  \ceruleanheader{Three broken items --- you met all three in Lesson 1.4}
+  \sectionlabel{notes row 2 $\cdot$ the fill table $\cdot$ problems 5--6}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{@{} p{7.2cm} l l @{}}
+    \hline
+    \textbf{The item as written} & \textbf{Rule} & \textbf{Its 1.4 name} \\
+    \hline
+    ``Don't you agree that our underfunded clubs deserve the grant?''
+      & \redink{rule 2} & \redink{leading} \\
+    ``Should the council fund clubs and field trips?''
+      & \redink{rule 1} & \redink{double-barrelled} \\
+    ``How old are you: 14--16, 16--18, or 18+?''
+      & \redink{rule 3} & \redink{overlapping} \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \begin{center}
+    {\color{cerulean}\bfseries Where does a 16-year-old check? Now add the percents.}
+  \end{center}
+\end{frame}
+
+% ── 3. RELATIVE FREQUENCY ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Counts $\to$ percents $\to$ picture}
+  \sectionlabel{notes row 3 $\cdot$ Relative Frequency $\cdot$ problems 7--11}
+  \vspace{2pt}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.25}
     \begin{tabular}{@{} l c c @{}}
     \hline
     \textbf{Choice} & \textbf{Frequency} & \textbf{Relative frequency} \\
     \hline
-    Club funding & 21 & 35\% \\
-    Field trips & 18 & 30\% \\
-    Gym equipment & 15 & 25\% \\
-    Longer lunch & 6 & 10\% \\
+    Club funding  & 21 & $21/60 =$ \redink{35\%} \\
+    Field trips   & 18 & $18/60 =$ \redink{30\%} \\
+    Gym equipment & 15 & $15/60 =$ \redink{25\%} \\
+    Longer lunch  & \phantom{0}6 & $6/60 =$ \redink{10\%} \\
     \hline
-    \textbf{Total} & 60 & 100\% \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small Categorical data $\Rightarrow$ \textbf{bar graph}: one bar per
-      category, bars separated, height $=$ relative frequency.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── ANALYZE ──────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Stage 4: the four-sentence report}
-  \sectionlabel[goldacc]{AFDA.DA.2i, 2j}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{8pt}
-        \item What we asked, and of whom.
-        \item How the sample was chosen, and how many answered.
-        \item What we found --- the two largest categories, as percents.
-        \item What it means, and \textbf{about whom}.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{goldacc}\bfseries $0.35 \times 900 = 315$ students. The arithmetic
-    is easy; sentence four is the hard one.}
-  \end{center}
-\end{frame}
-
-% ── VALIDITY ─────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Whom are you allowed to describe?}
-  \sectionlabel{the one that decides the grade}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.45}
-    \begin{tabular}{@{} l l l @{}}
-    \hline
-    \textbf{Study} & \textbf{How chosen} & \textbf{May describe} \\
-    \hline
-    Council, $n=60$ & stratified, by chance & all 900 students \\
-    This class, $n\approx25$ & the schedule chose it & this class only \\
+    \textbf{Total} & 60 & \redink{100\%} \\
     \hline
     \end{tabular}
   \end{center}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item ``Choice'' is \textbf{categorical}, so the display is a \textbf{bar graph} --- bars
+          separated, \textbf{height $=$ relative frequency}.
+    \item \textbf{Problem 10:} 42 of 120 is \emph{also} 35\%. The bar does not move. \redink{A
+          height is a share, not a count.}
+  \end{itemize}
+\end{frame}
 
-  \vspace{0.6cm}
+% ── 3b. THE TRAP ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The arithmetic is right. The claim is not.}
+  \sectionlabel{notes row 3 $\cdot$ problem 9 $\cdot$ the trap --- vote before you write}
+  \vspace{4pt}
   \begin{center}
     \begin{minipage}{0.86\textwidth}
-      Your class is a \textbf{convenience sample}. Naming that limit is part of
-      the answer --- not an apology for it.
+      Last spring's class of \textbf{25}: \textbf{9} chose club funding.
+      \[ \frac{9}{25} = 0.36 = 36\% \qquad\qquad 0.36 \times 900 = 324 \]
     \end{minipage}
+  \end{center}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Is either computation wrong? \redink{No. Both are correct.}
+    \item May the class report that 324 about the school? \redink{No.}
+    \item Who does 324 describe? \redink{Nobody.} The schedule chose the class, not chance.
+  \end{itemize}
+\end{frame}
+
+% ── 4. THE CRUX ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Near-agreement is luck, not evidence}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ The Limit $\cdot$ problems 12--15 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{The council --- 60 of 900}
+        Stratified by grade. \textbf{Chance} chose them. \\[3pt]
+        $21/60 = 35\%$ \\[3pt]
+        May describe: \textbf{all 900 students.}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{The class --- 25 of 900}
+        One room. The \textbf{schedule} chose them. \\[3pt]
+        $9/25 = 36\%$ \\[3pt]
+        May describe: \redink{this class only.}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{center}
+    {\large \textbf{Problem 13 --- vote again: agree or disagree?}}\\[5pt]
+    {\small\color{slate} Chance never chose the class, so it could have missed by twenty points
+    --- and nothing in its method would have told anyone. \textbf{The match happened; it was not
+    earned.}}
   \end{center}
 \end{frame}
 
-% ── THE ACTIVITY SETUP ───────────────────────────────────────────────────────
+% ── WE DO — a LIVE surface: the class's own survey, un-answered ──────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Your turn: run it}
-  \sectionlabel{group activity}
+  \ceruleanheader{Guided Practice: Our Class Survey}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 16--19 $\cdot$ you hold the pen}
+  \vspace{2pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[] \textbf{3 min:} agree on \emph{one} item and four choices. Check it against all four
+            rules before anyone writes it down.
+    \item[] \textbf{4 min:} ask every student in this room. Tally. Divide each count by the total.
+    \item[16.] Population, sample, $n$ --- and who chose the sample?
+    \item[17.] Our largest category: show the division, then write our sentence 4.
+    \item[18.] The council's 60 and us: whose result may be reported about all 900? If ours lands
+          near theirs, what does that prove?
+    \item[19.] Which limit would you fix first --- and what would fixing it cost?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If you said the match proves something in 18, you are still at the hook vote.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      One class question. Every group asks it of every student in this room.
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief: whom may this report describe?}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{2pt}
+  \begin{enumerate}\setlength{\itemsep}{4pt}
+    \item The two panels --- say the sentence: near-agreement is luck, not evidence.
+    \item ``$0.36 \times 900 = 324$.'' Is it wrong? Then who does 324 describe?
+    \item ``Don't you agree\ldots'' --- which rule, which 1.4 name, and why no later arithmetic
+          repairs it.
+  \end{enumerate}
+  \vspace{4pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    A homeroom of \textbf{30} at Bayside Middle School surveyed itself about spirit week:
+    decades 12, color wars 9, movie characters 6, sports teams 3. It told the whole school of
+    \textbf{750}: ``Bayside students want a decades theme.'' The arithmetic checks out ---
+    $12/30 = 40\%$ and $0.40 \times 750 = 300$. \textbf{Is the report honest? What would you
+    change?}
+  \end{block}
+\end{frame}
 
-      \vspace{0.3cm}
-      \textbf{Tier R} plans the cycle. \textbf{Tier A} writes the instrument
-      and runs the tally. \textbf{Tier E} reports it and says what it is worth.
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Instrument checked against all four rules
-    \emph{before} anyone is asked.}
-  \end{center}
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Millbrook Public Library} --- 1{,}200 card holders. A phone \textbf{SRS of 80},
+          and a front-desk \textbf{clipboard of 50}.
+    \item Relative frequencies; read the bar graph; scale one of the two percents to all 1{,}200
+          --- and say which one you may not scale.
+    \item A clipboard at 26\% beside the survey's 25\%. Does the near-match earn it the library?
+    \item \textbf{Item 6 is your project report} --- four sentences on \emph{our} tally. Take your
+          notes page home; you need the numbers.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 3, and 4}. Sentence 4 of item 6 is the one I am grading hardest ---
+    its subject has to be the people we actually asked.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Unit 1 in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{8pt}
-        \item A survey is an \textbf{observational study} --- plan it with the
-              cycle.
-        \item The \textbf{instrument} decides the data; bias written into it
-              stays in.
-        \item Categorical data $\Rightarrow$ frequency table $\Rightarrow$
-              \textbf{bar graph}.
-        \item A percent scales to the population only if \textbf{chance} chose
-              the sample.
-        \item A conclusion is only as trustworthy as the study that produced
-              it.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large You walked in able to take somebody else's study apart. You
+    walk out having built one --- and knowing that the last sentence of your report is the part
+    your design has to pay for.}\\[0.9cm]
+    {\color{frostmid}\small Unit 1 ends here. Next: the unit review, then the test. Then Unit 2
+    --- one \emph{quantitative} variable, where the bar graph gives way to a dot plot and the
+    bars start to touch.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

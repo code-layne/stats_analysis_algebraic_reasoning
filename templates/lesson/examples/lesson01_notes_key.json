@@ -1,0 +1,50 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Data cycle": "The four repeating stages of a study --- formulate, collect, organize, analyze and communicate. Each stage can use only what the stage before it handed over.",
+  "Statistical question": "A question whose answers vary from one individual to the next, that names the group it is about, and that says what will be recorded for each one.",
+  "Variable of interest": "The characteristic the question says you will record for each individual. The question names it before any data exist.",
+  "Relative frequency": "A count divided by the total, written as a decimal or a percent --- the share of the whole that one category makes up."
+ },
+ "blanks": [
+  "$15/60 = 0.25 = 25\\%$",
+  "$12/60 = 0.20 = 20\\%$",
+  "$6/60 = 0.10 = 10\\%$",
+  "$60$",
+  "$60/60 = 1.00 = 100\\%$"
+ ],
+ "lines": [
+  [
+   "Answers vary --- many vote yes because the 10\\% checks out. (Settled at problem 14: the",
+   "question asked how students travel NOW, so the claim entered at stage 1.)"
+  ]
+ ],
+ "labels": [
+  "stage 1",
+  "how a student travels",
+  "the question"
+ ],
+ "spaces": [
+  "The percent is right, but it answers a different question --- how students travel now, not what they would do."
+ ],
+ "cells": {
+  "1": "Stage 2 --- collect. Hands on 60 raw answers.",
+  "2": "Stage 4 --- analyze. Hands on a conclusion.",
+  "3": "Stage 1 --- formulate. Hands on the question.",
+  "4": "Stage 3 --- organize. Hands on the table.",
+  "5": "Fails \\emph{vary}. Repair: ``How do Riverbend students get to school?''",
+  "6": "Fails \\emph{group}. Repair: ``What percent of Riverbend students bike?''",
+  "7": "Fails \\emph{record} --- ``good'' is not something you write down.",
+  "8": "It passes all three. Nothing to repair.",
+  "10": "$100\\%$. Bike is smallest ($10\\%$) --- invisible in 60 raw answers.",
+  "11": "$0.10 \\times 900 = 90$. ``Of the 60 asked, 10\\% bike --- about 90 of our 900.''",
+  "12": "The bike's age in years. Quantitative --- use a mean.",
+  "13": "The answers are labels; no arithmetic on them. Counts and percents instead.",
+  "14": "No --- the question asked how they travel NOW, not what they would do. Entered at stage 1.",
+  "15": "Stage 2. (1) Only cart customers, not Riverbend students. (2) One morning, not every morning.",
+  "16": "Would they ride --- yes or no. Categorical.",
+  "17": "$24/80 = 30\\%$; $0.30 \\times 900 = 270$.",
+  "18": "``Of the 80 Riverbend students asked, 30\\% would ride if there were racks.''",
+  "19": "Stage 2 --- only riders stand at the rack. It cannot describe all students."
+ }
+}
