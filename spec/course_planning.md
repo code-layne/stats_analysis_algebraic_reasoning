@@ -686,8 +686,8 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot +
    profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3
    regeneration is PR #26** and **the 1.4 regeneration PR #27** (2026-09-07). **The Main Ideas /
-   Notes table + 1.2's conversion is PR #28** (2026-09-13). **This run — the whole of unit 1 into
-   the table shape — is the PR opened 2026-09-14.**
+   Notes table + 1.2's conversion is PR #28** (2026-09-13). **The whole of unit 1 into the table
+   shape is PR #30** (2026-09-14).
 
 ## Gotchas found this session
 
