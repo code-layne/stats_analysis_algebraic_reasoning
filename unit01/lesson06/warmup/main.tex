@@ -1,26 +1,41 @@
 %! Principles of Experimental Design — Unit 1, Lesson 1.6 — Warm-Up
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt, so each
+% item gets real handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up rehearses the arithmetic every row of the notes runs on, on the
+% very experiment the notes open with. Items 1 and 2 are the two group rates (45/60 = 75%,
+% 33/60 = 55%) — equal denominators, because a generator built the groups. Item 3(a) is the
+% 20-point gap; item 3(b) reaches back to Lesson 1.5's WATCHED result on the same Study Center
+% (65% vs 80%, a 15-point gap the other way), so both gaps are on the board before the hook
+% asks which study to believe — and problem 14 (the crux) can ask whether gap size is the reason.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-\begin{notesbox}{Spiral Review --- Riverbend High School}
-\small
-Riverbend High School asked for volunteers to test its after-school Study
-Center. \textbf{$120$ students volunteered.} A random number generator split
-them into \textbf{two groups of $60$}: one group was told to attend twice a
-week, the other group was told not to attend at all. At the end of the quarter
-the counselor counted how many students in each group passed every class.
+\begin{notesbox}{Spiral Review --- Riverbend High School, This Time They Assign}
+\normalsize
+Riverbend High School asked for volunteers to test its after-school Study Center.
+\textbf{$120$ students volunteered.} A random number generator split them into
+\textbf{two groups of $60$}: one group attended twice a week, the other did not
+attend at all. At the end of the quarter the counselor counted how many in each
+group passed every class.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, topsep=4pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
   \item $45$ of the $60$ students who attended passed every class. What
         \textbf{percent} of that group is it?
@@ -38,19 +53,19 @@ the counselor counted how many students in each group passed every class.
                          &= 55\%
         \end{work}
 
-  \item Compare the two groups.
+  \item Compare the two studies of the same Study Center.
 
-        \textbf{(a)} How many \textbf{percentage points} higher is the group
-        that attended?
+        \textbf{(a)} This quarter, how many \textbf{percentage points} higher is
+        the group that attended?
 
         \begin{work}
           75 - 55 &= 20 \text{ percentage points}
         \end{work}
 
-        \textbf{(b)} How many of the $120$ volunteers passed every class in
-        total, and what percent of all $120$ is that?
-
-        \blank{2.4cm} \qquad \blank{2.4cm}
+        \textbf{(b)} Last quarter (Lesson 1.5) the counselor only \emph{watched}:
+        $65\%$ of the students who used the Study Center passed every class,
+        against $80\%$ of the students who never went. Which group was higher
+        then, and by how many percentage points? \blank{4.6cm}
 
 \end{enumerate}
 \end{notesbox}

@@ -1,43 +1,65 @@
 %! Principles of Experimental Design — Unit 1, Lesson 1.6 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, started in class, and it is SCORED, so its cell is a \blank{}, never NA.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.6 \quad Principles of Experimental Design}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.6 \quad Principles of Experimental Design}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DC.3a-b, AFDA.DA.2c) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} explain what makes a study an \textbf{experiment} --- the
-        researcher assigns the groups and imposes a treatment.
-  \item \ldots{} name the \textbf{experimental units}, the \textbf{treatment},
-        and the \textbf{control group} in a described experiment.
-  \item \ldots{} explain \textbf{blinding} and the \textbf{placebo effect}, and
-        say who is blinded in a design.
-  \item \ldots{} tell apart a \textbf{completely randomized} design, a
-        \textbf{block} design, and \textbf{matched pairs}.
-  \item \ldots{} evaluate a design against \textbf{comparison, randomization,
-        replication,} and \textbf{control}, and \emph{justify} which conclusions
-        it supports.
+  \item \ldots{} tell an \textbf{experiment} from an observational study by asking who
+        built the groups, and name the \textbf{experimental units}, the
+        \textbf{treatment}, and the \textbf{control group}.
+  \item \ldots{} check a design against the four principles ---
+        \textbf{comparison, randomization, replication, control} --- and name the
+        principle a changed plan breaks.
+  \item \ldots{} explain the \textbf{placebo effect}, say who is \textbf{blinded} in a
+        design, and split the units of a \textbf{randomized block design} into its
+        blocks.
+  \item \ldots{} justify why \textbf{random assignment} lets an experiment say
+        \emph{caused} --- and why the size of the gap is not what earns that word.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -50,11 +72,18 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Two assigned groups, and the gap between them & \blank{1.2cm} \\
-2 & Guided Notes   & Building the groups, and what building them proves & \blank{1.2cm} \\
-3 & Group Activity & Settle it: the Harbor Point swim-time experiment & \blank{1.2cm} \\
-4 & Exit Ticket    & A reading block at Bayside Middle School & \blank{1.2cm} \\
-5 & Homework       & Millbrook Library runs the experiment this time & \blank{1.2cm} \\
+1 & Warm-Up & Riverbend's Study Center experiment: the two group rates, the gap, and
+             last quarter's gap the other way & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Assigning instead of watching; the four principles; blinding
+             and blocking; what buys the word \emph{caused} --- then the Harbor Point
+             swim-time experiment worked together & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Millbrook Public Library runs the experiment this time: name the parts, check
+             the principles, block on age, and explain why a smaller gap is the stronger
+             evidence --- \textbf{scored, started in class, due the first class after two
+             study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -62,16 +91,19 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-\textbf{In an experiment you assign --- you do not just watch.} The researcher
-puts the experimental units into groups by \textbf{chance} and imposes a
-\textbf{treatment} on at least one of them, while a \textbf{control group} shows
-what happens without it. Four principles make the result worth trusting:
-\textbf{comparison} (at least two groups), \textbf{randomization} (chance picks,
-not people), \textbf{replication} (many units per group), and \textbf{control}
-(everything else held the same). Because chance built the groups, this is the
-one kind of study that earns the word \emph{caused}.
+\textbf{In an experiment you assign --- you do not just watch.} Chance puts the
+\textbf{experimental units} into groups and the researcher imposes a \textbf{treatment}
+on at least one of them, while a \textbf{control group} shows what happens without it.
+Check four principles: \textbf{comparison} (at least two groups), \textbf{randomization}
+(chance picks, not people), \textbf{replication} (many units per group), and
+\textbf{control} (everything else the same, so no \textbf{confounding variable} sneaks in).
+Because chance built the groups, this is the one kind of study that earns the word
+\emph{caused}. \textbf{Watch out:} a bigger gap is not stronger evidence. A gap between
+groups that chose themselves is inflated by whoever chose; a smaller gap between groups
+chance built is the treatment by itself.
 \end{remindbox}
 
 \end{document}

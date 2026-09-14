@@ -1,0 +1,76 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Survey instrument": "The exact wording read to every person in the sample, in order, plus its choices --- the tool that turns a statistical question into data.",
+  "Closed-response item": "A question offering a fixed set of choices, so every answer lands in one category and the answers can be counted.",
+  "Relative frequency": "A category's count divided by the total number of responses, as a decimal or a percent. All the categories' relative frequencies add to 100\\%.",
+  "Bar graph": "The display for categorical data: one bar per category, bars separated, height equal to the frequency or the relative frequency.",
+  "Convenience sample": "A sample chosen because it was available --- a class surveying itself, every time. Chance had no turn, so its result describes only itself."
+ },
+ "blanks": [
+  "rule 2",
+  "leading",
+  "rule 1",
+  "double-barrelled",
+  "rule 3",
+  "overlapping",
+  "$21/60 = 35\\%$",
+  "$18/60 = 30\\%$",
+  "$15/60 = 25\\%$",
+  "$6/60 = 10\\%$",
+  "$100\\%$",
+  "Which one of these should the \\$3,000 grant fund?",
+  "Clubs",
+  "Field trips",
+  "Gym gear",
+  "Lunch",
+  "9",
+  "$9/25 = 36\\%$",
+  "7",
+  "$7/25 = 28\\%$",
+  "6",
+  "$6/25 = 24\\%$",
+  "3",
+  "$3/25 = 12\\%$",
+  "25",
+  "$100\\%$"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most of the room agrees: ``we matched, so our survey worked.''",
+   "(Settled at problem 13: disagree --- chance never chose the class.)"
+  ]
+ ],
+ "labels": [
+  "Formulate",
+  "Collect",
+  "Represent",
+  "Analyze \\& report",
+  "club funding",
+  "categorical",
+  "this class only"
+ ],
+ "spaces": [
+  "Chance never chose the class, so the match was luck, not method. A different room could have missed by twenty points."
+ ],
+ "cells": {
+  "1": "Observational --- nobody was assigned; the council asked and recorded.",
+  "2": "No --- no group and no measurement. Repair: ``Which option would the most Riverbend students choose?''",
+  "3": "$270 \\times 1/15 = 18$ ninth graders; $180 \\times 1/15 = 12$ twelfth graders.",
+  "4": "The schedule chose it, not chance --- a convenience sample.",
+  "5": "``Which one option should the grant fund?'' A leading item bends every answer one way; arithmetic cannot undo that.",
+  "6": "``$14$--$15$, $16$--$17$, $18$ or older.'' The $100\\%$ check: overlapping boxes push the total past $100$.",
+  "8": "$0.25 \\times 900 = 225$ students. Yes --- chance chose the $60$, every grade represented.",
+  "9": "$9/25 = 36\\%$; $0.36 \\times 900 = 324$. No --- the schedule chose the class, so $324$ describes nobody.",
+  "10": "$42/120 = 35\\%$ --- the bar does not move. A height is a share, not a count.",
+  "11": "Each student picked exactly one box, so the counts add to the total. Rule 3.",
+  "12": "``Club funding leads --- about $315$ of the $900$ students back it.''",
+  "13": "Disagree. Chance never chose the class, so the match is luck --- it could have missed by twenty.",
+  "14": "``Of the $25$ students in this class, $36\\%$ chose club funding.''",
+  "15": "Draw a stratified $60$ by chance. It costs class time and a roster.",
+  "16": "All $900$ students; the $25$ here, $n = 25$. The schedule chose it --- convenience.",
+  "17": "$9/25 = 36\\%$. ``Of the $25$ in this class, $36\\%$ chose club funding.''",
+  "18": "Only the council's --- chance chose it. Ours proves nothing; near $35\\%$ is luck.",
+  "19": "The sample --- draw it by chance from all $900$. Costs a roster and time."
+ }
+}

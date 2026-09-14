@@ -1,43 +1,64 @@
 %! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, started in class, and it is SCORED, so its cell is a \blank{}, never NA.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.7 \quad Comparing Studies and Choosing a Method}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.7 \quad Comparing Studies and Choosing a Method}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DC.3c-e) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} compare an \textbf{observational study} with a
-        \textbf{controlled experiment}, point by point.
-  \item \ldots{} state the strongest conclusion each one earns, and
-        \emph{justify} the difference.
-  \item \ldots{} decide when an experiment is \textbf{impossible or unethical}
-        to run, and say what to run instead.
-  \item \ldots{} use the \textbf{statistical cycle} to plan a well-designed
-        experiment.
-  \item \ldots{} choose a \textbf{data collection method} --- survey,
-        interview, focus group, observation, or content analysis --- that fits
-        a given context.
+  \item \ldots{} compare an \textbf{observational study} with a \textbf{controlled
+        experiment} side by side, and write the strongest sentence each design earns.
+  \item \ldots{} decide whether an experiment can be run at all --- or whether assigning the
+        treatment is \textbf{unethical}, \textbf{impossible}, or \textbf{impractical} --- and
+        say what to run instead.
+  \item \ldots{} plan a well-designed experiment through the four stages of the
+        \textbf{statistical cycle}.
+  \item \ldots{} choose the \textbf{collection method} a question needs --- survey, interview,
+        focus group, observation, or content analysis --- and keep the \emph{method} separate
+        from the \emph{design}.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -50,11 +71,17 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Two studies, one Study Center, two gaps & \blank{1.2cm} \\
-2 & Guided Notes   & Which study, which claim, which method & \blank{1.2cm} \\
-3 & Group Activity & Three studies on the Harbor Point director's desk & \blank{1.2cm} \\
-4 & Exit Ticket    & Sorting two studies at Bayside Middle School & \blank{1.2cm} \\
-5 & Homework       & Millbrook Library's third study & \blank{1.2cm} \\
+1 & Warm-Up & Riverbend's two Study Center studies side by side: two percents, two gaps, and
+             the tell in the group sizes & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & The two designs and the sentence each earns; when you cannot
+             assign; planning an experiment through the cycle; five ways to collect the data
+             --- then Harbor Point's third study worked together & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Millbrook Public Library's third study: sort the designs, plan the cycle,
+             pick the methods, and rank three gaps ---
+             \textbf{scored, started in class, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -62,16 +89,17 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-\textbf{The design decides the verb.} An \textbf{observational study} watches
-groups that already exist, so it may report an \emph{association} --- never a
-cause. A \textbf{controlled experiment} assigns the groups by chance, so it may
-say \emph{caused}. An experiment is the stronger design, but you can only run
-one when you are actually able to \textbf{assign} the treatment --- not when
-doing so would be unethical, impossible, or impractical. Once the study type is
-settled, the question still has to be matched to a \textbf{collection method}:
-survey, interview, focus group, observation, or content analysis.
+\textbf{The design decides the verb.} An \textbf{observational study} watches groups that
+already exist, so it may report an \emph{association} --- never a cause. A \textbf{controlled
+experiment} assigns the groups by chance, so it may say \emph{caused}. You can only run an
+experiment when you can actually \textbf{assign} the treatment --- ask \emph{can you hand this
+out to a person?} --- and when you cannot, you weaken the verb, not the data. \textbf{Watch
+out:} \emph{observation} is a collection \emph{method}; an \emph{observational study} is a
+\emph{design}. Who built the groups decides the design; how the answers were recorded decides
+the method --- an experiment can collect its data by observation.
 \end{remindbox}
 
 \end{document}

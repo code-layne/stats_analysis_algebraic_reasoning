@@ -1,278 +1,336 @@
-%! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Guided Notes (Answer Key)
-\documentclass[10pt]{article}
+%! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Guided Notes & Practice (Answer Key)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.4–2.2cm of writing room. Problems run 1..19.
+% THIS IS THE UNIT'S PROJECT LESSON, kept as one: the unit run forwards. Rows 1–4 rebuild the
+% cycle on the Student Council's finished survey; the Guided Practice row IS the class's own
+% survey — the instrument the class builds and a tally table filled live.
+% DENSITY: a \blank{} only where a word or number IS the answer — the fill table of row 2
+% (three broken items, the one \wordbank strip naming the bias each carries), the relative
+% frequency column of row 3, problem 7 (its \wordbank), and the instrument card + tally table of the
+% Guided Practice row (live data, no bank). No mid-sentence blanks; every display is
+% pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 8, 12).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (16–19), is the class's own survey, worked entirely together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period. Its last item is the project deliverable.
+% THE TRAP is problem 9 (0.36 x 900 = 324 computed correctly off a convenience sample — the
+% arithmetic is right and the statistics are wrong).
+% THE CRUX is problem 13 (row 4, "The Limit"): the class's 36% lands next to the council's
+% 35%, and that near-agreement is luck, not evidence, because chance never chose the class —
+% the hook vote is re-taken there (AFDA.DA.2j). Problem 18 is the crux transferred to the
+% class's own live data.
+%
+% THE DATA
+%   Riverbend Student Council: $3,000 grant; stratified 60 of 900 at 1/15 -> 18/16/14/12 by
+%     grade (270/240/210/180); counts 21/18/15/6 -> 35%/30%/25%/10%; 0.35 x 900 = 315,
+%     0.25 x 900 = 225; 42 of 120 = 35% (problem 10)
+%   Last spring's class of 25 (the hook, problems 9, 13, 14): 9 club funding -> 36%;
+%     0.36 x 900 = 324 — computed correctly, reported wrongly
+%   Guided Practice: THIS class's live data. The key is a WORKED EXEMPLAR on a class of 25
+%     answering the grant question 9/7/6/3 -> 36%/28%/24%/12% (the plan's teacher note says
+%     so; the key does not).
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson08_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (rows 2 and 3). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{1.85cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.8}{Guided Notes --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
+\pageheader{Unit 1, Lesson 1.8}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item plan a survey through all four stages of the \textbf{statistical
-        cycle};
-  \item build a \textbf{survey instrument} whose items are neutral and whose
-        choices can be counted;
-  \item \textbf{collect} real data from a real sample and organize it into a
-        frequency table;
-  \item choose and complete a \textbf{visual representation} that fits
-        categorical data;
-  \item report a conclusion \emph{in context} and judge its \textbf{validity}
-        --- what my design does and does not let me claim.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\vocabans{Survey instrument}{The actual list of questions, in the order they
-  will be asked, that every person in the sample answers. It is the tool that
-  turns a statistical question into data.}
-\vocabans{Closed-response item}{A question offering a fixed set of choices, so
-  every answer falls into one category and the answers can be counted. An
-  open-response item is answered in the person's own words instead.}
-\vocabans{Relative frequency}{The count in one category divided by the total
-  number of responses, written as a decimal or a percent. The relative
-  frequencies of all the categories add to $1$, or $100\%$.}
-\vocabans{Bar graph}{A display for categorical data in which the height of each
-  bar is the frequency or the relative frequency of one category. The bars are
-  drawn separated, and the categories may be placed in any order.}
-\vocabans{Validity of a conclusion}{Whether the study's design actually supports
-  the claim being made --- who was sampled, how they were chosen, and therefore
-  whom the result is allowed to describe.}
+Fill in each term \textbf{as we name it} in the notes below.
+\vtermans{Survey instrument}{The exact wording read to every person in the sample, in order, plus its choices --- the tool that turns a statistical question into data.}
+\vtermans{Closed-response item}{A question offering a fixed set of choices, so every answer lands in one category and the answers can be counted.}
+\vtermans{Relative frequency}{A category's count divided by the total number of responses, as a decimal or a percent. All the categories' relative frequencies add to 100\%.}
+\vtermans{Bar graph}{The display for categorical data: one bar per category, bars separated, height equal to the frequency or the relative frequency.}
+\vtermans{Convenience sample}{A sample chosen because it was available --- a class surveying itself, every time. Chance had no turn, so its result describes only itself.}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-The Student Council has \$$3{,}000$ and two members are arguing. One says
-\emph{``everybody wants longer lunch.''} The other says \emph{``nobody I know
-does.''} Both of them are describing the people they happen to sit with.
+Last spring a class of $25$ in this room asked itself the Student Council's grant question and
+got $36\%$ for club funding; the council's stratified sample of $60$ had said $35\%$. One student
+wrote: \emph{``We matched the council, so our class can speak for all $900$ students too.''}
 
-\vspace{2pt}
-The council's stratified sample of $60$ students says something neither of them
-said: club funding $35\%$, field trips $30\%$, gym equipment $25\%$, longer
-lunch $10\%$.
-
-\vspace{2pt}
-\textbf{What does the council have that the two arguing members do not? Name it
-in one word, and then say what it cost them to get it.}
-\ansline{Data --- and it cost them a plan: naming the population, choosing $60$ students by chance, and asking all of them the same question.}
+\vspace{3pt}
+\textbf{Is the student right?} Circle one: \quad agree \qquad disagree \quad --- and say why
+you think so. We vote again at problem~13.
+\par\ansline{Answers vary --- most of the room agrees: ``we matched, so our survey worked.''}
+\ansline{(Settled at problem 13: disagree --- chance never chose the class.)}
 \end{hookbox}
 
-\boxguard[24]
-\begin{notesbox}{1. Your Project, on One Page}
 \small
-Today you run a study of your own. Nobody is assigned to anything --- you ask
-and you record --- so what you are running is an \textbf{observational study},
-and the plan is the same four-stage cycle you have used since Lesson 1.1.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} p{2.7cm} p{5.3cm} X @{}}
+\begin{guidednotes}
+% ── ROW 1: the cycle as a deliverables checklist ─────────────────────────────
+\mainidea[Your project,]{The Cycle} &
+A survey is an \textbf{observational study} --- you ask and you record --- so the plan is Lesson
+1.1's four-stage cycle. Today it is a checklist: \textbf{each stage hands in one thing.}
+\par\vspace{3pt}
+\stepnum{1}\ \textbf{Formulate} --- a statistical question and its population.\quad
+\stepnum{2}\ \textbf{Collect} --- a sampling plan and the finished instrument.\par
+\stepnum{3}\ \textbf{Represent} --- a frequency table and a bar graph.\quad
+\stepnum{4}\ \textbf{Analyze \& report} --- a report with its limits named.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.76]
+  % the council's survey, one box per stage; the student names each stage below
+  \foreach \i/\txt in {
+      0/{``Which of four options would the most Riverbend students choose for the \$3{,}000?''\\ Population: all 900},
+      1/{A stratified sample of 60 from 900, 18/16/14/12 by grade; one item, four choices},
+      2/{Counts 21 / 18 / 15 / 6 in a frequency table, then a bar graph of the percents},
+      3/{``Club funding leads at 35\% --- about 315 of the 900. Chance chose the sample.''}} {
+    \fill[frost, rounded corners=5pt] ({\i*3.05},0) rectangle ({\i*3.05+2.8},2.2);
+    \draw[cerulean, thick, rounded corners=5pt] ({\i*3.05},0) rectangle ({\i*3.05+2.8},2.2);
+    \node[font=\tiny, align=center, text width=2.0cm] at ({\i*3.05+1.4},1.1) {\txt};
+  }
+  \foreach \i in {0,1,2} { \draw[->, very thick, goldacc] ({\i*3.05+2.82},1.1) -- ({\i*3.05+3.03},1.1); }
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (5.95,2.5) {The Student Council's survey, stage by stage};
+\end{tikzpicture}\par\vspace{3pt}
+{\scriptsize\itshape Name the stage under each box.}\par\vspace{2pt}
+\labelbox{2.2cm}{Formulate}\hspace{0.30cm}\labelbox{2.2cm}{Collect}\hspace{0.30cm}\labelbox{2.2cm}{Represent}\hspace{0.30cm}\labelbox{2.2cm}{Analyze \& report}\par}
+\\
+& \notesprompt{Run the council's plan --- then look at your own.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Nobody in the council's survey was assigned to anything --- students were asked, and answers recorded. Observational study or experiment? How do you know?}{1.4cm}{Observational --- nobody was assigned; the council asked and recorded.} & \pcell{2}{Does \emph{``How should the council spend the grant?''} pass the three tests --- answers vary, a group is named, a measurement is named? Repair it if not.}{1.8cm}{No --- no group and no measurement. Repair: ``Which option would the most Riverbend students choose?''} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Stage 2: the council stratified by grade at $60 \div 900 = 1/15$. How many of the $270$ ninth graders and the $180$ twelfth graders does that call for?}{1.6cm}{$270 \times 1/15 = 18$ ninth graders; $180 \times 1/15 = 12$ twelfth graders.} & \pcell{4}{Your class will ask only the students in this room. Who chose that sample --- chance, or the schedule? What is a sample like that called?}{1.6cm}{The schedule chose it, not chance --- a convenience sample.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the instrument — four rules, taught by repair ─────────────────────
+\mainidea[Writing]{The Instrument} &
+The \textbf{survey instrument} is the exact wording read to every person, plus its choices. A
+\textbf{closed-response item} offers a fixed set of choices, so every answer lands in one
+category and can be counted. \textbf{Four rules:}
+\par\vspace{3pt}
+\stepnum{1}\ \textbf{One idea per item.}\quad \stepnum{2}\ \textbf{Neutral wording.}\par
+\stepnum{3}\ \textbf{Choices cover everyone, without overlapping} --- then the percents add to
+$100\%$.\quad \stepnum{4}\ \textbf{Short.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.76]
+  % the council's finished instrument card, annotated with the four rules
+  \fill[white, rounded corners=5pt] (0,0) rectangle (8.7,3.4);
+  \draw[charcoal, thick, rounded corners=5pt] (0,0) rectangle (8.7,3.4);
+  \node[anchor=north west, font=\scriptsize\bfseries] at (0.25,3.22) {Student Council Grant Survey};
+  \node[anchor=north west, font=\scriptsize, inner sep=1pt] at (0.25,2.72)
+    {Which \textbf{one} should the grant fund? Check one.};
+  \foreach \i/\txt in {0/Club funding, 1/Field trips, 2/Gym equipment, 3/Longer lunch} {
+    \draw[charcoal] (0.45,{1.62-\i*0.42}) rectangle (0.70,{1.87-\i*0.42});
+    \node[anchor=west, font=\scriptsize] at (0.86,{1.745-\i*0.42}) {\txt};
+  }
+  % callouts: the four rules, pointed at the part of the card that obeys each
+  \node[font=\tiny\bfseries\color{cerulean}, anchor=west] at (9.3,3.0) {rule 1: one idea};
+  \node[font=\tiny\bfseries\color{cerulean}, anchor=west] at (9.3,2.5) {rule 2: no ``don't you agree''};
+  \node[font=\tiny\bfseries\color{cerulean}, anchor=west] at (9.3,2.0) {rule 4: one line long};
+  \node[font=\tiny\bfseries\color{cerulean}, anchor=west, align=left, text width=2.6cm] at (9.3,1.1)
+    {rule 3: four boxes --- every student fits exactly one};
+  \draw[goldacc, thick, ->] (9.2,3.0) -- (8.8,2.95);
+  \draw[goldacc, thick, ->] (9.2,2.5) -- (8.8,2.55);
+  \draw[goldacc, thick, ->] (9.2,2.0) -- (8.8,2.35);
+  \draw[goldacc, thick, ->] (9.2,1.1) -- (8.8,1.0);
+\end{tikzpicture}\par}
+\\
+& Each item below breaks one rule. Name the rule --- and the name Lesson 1.4 gave that bias.
+\wordbank{rule 1 \;\textbullet\; rule 2 \;\textbullet\; rule 3 \;\textbullet\; leading \;\textbullet\; double-barrelled \;\textbullet\; overlapping}
+\footnotesize\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} X p{1.9cm} p{3.4cm} @{}}
 \toprule
-\textbf{Stage} & \textbf{What the stage asks} & \textbf{What you hand in} \\
-\midrule
-Formulate & What do we want to know, and about whom?
-  & \ans{One statistical question and the population it is about.} \\
-Collect & Who do we ask, how does chance choose them, and how do the answers
-  arrive? & \ans{A sampling plan and the finished instrument.} \\
-Represent & How do we organize what came back?
-  & \ans{A frequency table and a bar graph.} \\
-Analyze \& report & What do the numbers say \emph{in context} --- and what do
-  they \emph{not} say? & \ans{A written report with its limits named.} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-\textit{Every stage hands something to the next one. A bad question cannot be
-repaired by good arithmetic later.}
-\end{notesbox}
-
-\boxguard[26]
-\begin{notesbox}{2. Stage 1 and Stage 2 --- The Question and the Sample}
-\small
-A \textbf{statistical question} passes three tests: the answers \emph{vary}, a
-\emph{group} is named, and a \emph{measurement} is named. Check each candidate.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X c p{4.3cm} @{}}
-\toprule
-\textbf{Candidate question} & \textbf{Passes?} & \textbf{If not, repair it} \\
-\midrule
-How should the council spend the grant? & \ans{No} & \ans{No group and no
-  measurement named --- it asks for an opinion, not data.} \\
-Which of four options would the most Riverbend students choose for the grant?
-  & \ans{Yes} & \ans{---} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Now stage 2. The council wants $60$ answers from $900$ students and wants every
-grade represented, so it uses a \textbf{stratified} sample at the rate
-$60 \div 900 = \frac{1}{15}$.
-
-\vspace{2pt}
-How many $9$th graders (there are $270$) does that rate call for?
-
-\begin{work}
-  270 \times \dfrac{1}{15} &= 18 \text{ students}
-\end{work}
-
-How many $12$th graders (there are $180$)?
-
-\begin{work}
-  180 \times \dfrac{1}{15} &= 12 \text{ students}
-\end{work}
-
-\vspace{2pt}
-The $240$ tenth graders give $16$ and the $210$ eleventh graders give $14$, so
-the four allocations total \ans{$60$}. Finally, the answers have to
-\emph{arrive} somehow: of the five methods from Lesson 1.7, the one that fits
-``a fixed question answered by many people'' is a \ans{survey}.
-
-\vspace{2pt}
-\textbf{Careful --- this is about you.} When your class surveys only the
-students in this room, chance did not choose them; the schedule did. That makes
-your sample a \ans{convenience sample}, and you will owe your reader a weaker
-sentence because of it.
-\end{notesbox}
-
-\boxguard[26]
-\begin{notesbox}{3. Building the Instrument}
-\small
-The \textbf{instrument} is the actual list of questions you will read out, word
-for word, to every person. Four rules:
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=1pt, topsep=3pt]
-  \item \textbf{One idea per item.} Two ideas in one item cannot be answered by
-        one person.
-  \item \textbf{Neutral wording.} The item must not tell the person which
-        answer you want.
-  \item \textbf{Choices that cover everyone and do not overlap.} Then the
-        percents add to $100\%$.
-  \item \textbf{Short.} A person answers what they finish reading.
-\end{enumerate}
-
-\vspace{3pt}
-Each item below breaks one rule. Name the problem --- you met all three of these
-as \textbf{response bias} in Lesson 1.4 --- and repair the item.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} X p{2.8cm} p{4cm} @{}}
-\toprule
-\textbf{The item as written} & \textbf{Which rule?} & \textbf{Your repair} \\
+\textbf{The item as written} & \textbf{Rule} & \textbf{Its 1.4 name} \\
 \midrule
 ``Don't you agree that our underfunded clubs deserve the grant?''
-  & \ans{Rule 2 --- leading} & \ans{``Which one option should the grant
-  fund?''} \\
+  & \ans{rule 2} & \ans{leading} \\
 ``Should the council fund clubs and field trips?''
-  & \ans{Rule 1 --- two ideas} & \ans{Ask about clubs and field trips as
-  separate choices.} \\
+  & \ans{rule 1} & \ans{double-barrelled} \\
 ``How old are you: $14$--$16$, $16$--$18$, or $18+$?''
-  & \ans{Rule 3 --- overlap} & \ans{``$14$--$15$, $16$--$17$, $18$ or
-  older.''} \\
+  & \ans{rule 3} & \ans{overlapping} \\
 \bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-\textit{A biased instrument produces data that are wrong in a direction. No
-amount of arithmetic afterwards can pull them back.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{4. Represent, Then Analyze}
-\small
-The council's $60$ answers came back. Complete the \textbf{relative frequency}
-column --- each count divided by $60$, written as a percent.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{0.86\linewidth}{@{} X c c @{}}
+\end{tabularx}\small
+\\
+& \notesprompt{A biased instrument is wrong in a direction --- and no arithmetic afterwards can pull it back.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Repair the leading item so it is neutral. Then say why no arithmetic done later can undo a leading item.}{1.8cm}{``Which one option should the grant fund?'' A leading item bends every answer one way; arithmetic cannot undo that.} & \pcell{6}{Repair the age item so a $16$-year-old has exactly one box to check. Which check on the finished percents would have caught the overlap?}{1.8cm}{``$14$--$15$, $16$--$17$, $18$ or older.'' The $100\%$ check: overlapping boxes push the total past $100$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: counts → percents → picture ───────────────────────────────────────
+\mainidea[Counts to percents to picture]{Relative Frequency} &
+A category's \textbf{relative frequency} is its count divided by the total, written as a percent;
+the four add to $100\%$. ``Choice'' is \emph{categorical}, so its display is a \textbf{bar graph}:
+one bar per category, bars separated, \textbf{height $=$ relative frequency}.
+\par\vspace{3pt}
+\textbf{7.} The council's $60$ answers came back. Complete the relative frequency column --- each count divided by $60$.
+\wordbank{35\% \;\textbullet\; 30\% \;\textbullet\; 25\% \;\textbullet\; 10\% \;\textbullet\; 100\%}
+\footnotesize\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{} X c p{3.2cm} @{}}
 \toprule
 \textbf{Choice} & \textbf{Frequency} & \textbf{Relative frequency} \\
 \midrule
-Club funding   & $21$ & \ans{$35\%$} \\
-Field trips    & $18$ & \ans{$30\%$} \\
-Gym equipment  & $15$ & \ans{$25\%$} \\
-Longer lunch   & $6$  & \ans{$10\%$} \\
+Club funding   & $21$ & \ans{$21/60 = 35\%$} \\
+Field trips    & $18$ & \ans{$18/60 = 30\%$} \\
+Gym equipment  & $15$ & \ans{$15/60 = 25\%$} \\
+Longer lunch   & $6$  & \ans{$6/60 = 10\%$} \\
 \midrule
 \textbf{Total} & $60$ & \ans{$100\%$} \\
 \bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The variable ``choice'' is \ans{categorical}, so the display that fits is a
-\textbf{bar graph}: one bar per category, bars separated, height $=$ relative
-frequency. The axes are drawn and scaled for you --- draw the four bars.
-
-\begin{center}
-\begin{tikzpicture}[x=1cm, y=0.088cm]
-  \foreach \y in {5,15,25,35}
-    \draw[linegray, very thin] (0,\y) -- (10.4,\y);
+\end{tabularx}\small
+\\
+& {\centering
+\begin{tikzpicture}[x=0.88cm, y=0.050cm]
+  % the council's bar graph, pre-drawn and pre-scaled; the student reads it
   \foreach \y in {10,20,30,40}
     \draw[linegray] (0,\y) -- (10.4,\y);
   \foreach \y in {0,10,20,30,40}
     \node[left, font=\scriptsize] at (-0.05,\y) {\y\%};
-  \foreach \x in {2.6,5.2,7.8}
-    \draw[linegray, dashed] (\x,0) -- (\x,42);
-  \foreach \i/\lab in {1/Club funding, 2/Field trips, 3/Gym equipment,
-                       4/Longer lunch}
-    \node[below, font=\scriptsize, align=center, text width=2.4cm]
-      at ({2.6*\i-1.3},-0.5) {\lab};
-  \draw[cerulean, thick] (0,42) -- (0,0) -- (10.4,0);
-  % Key only: the four correct bars, drawn to the heights answered above.
   \foreach \i/\h in {1/35, 2/30, 3/25, 4/10}
-    \fill[keyred, opacity=0.55] ({2.6*\i-2.0},0) rectangle ({2.6*\i-0.6},\h);
-\end{tikzpicture}
-\end{center}
+    \fill[ceruleanlight] ({2.6*\i-2.0},0) rectangle ({2.6*\i-0.6},\h);
+  \foreach \i/\h in {1/35, 2/30, 3/25, 4/10}
+    \node[above, font=\scriptsize\bfseries] at ({2.6*\i-1.3},\h) {\h\%};
+  \foreach \i/\lab in {1/Club funding, 2/Field trips, 3/Gym equipment, 4/Longer lunch}
+    \node[below, font=\scriptsize, align=center, text width=2.2cm] at ({2.6*\i-1.3},-0.5) {\lab};
+  \draw[cerulean, thick] (0,42) -- (0,0) -- (10.4,0);
+  \node[font=\scriptsize\bfseries\color{cerulean}, rotate=90] at (-1.3,21) {relative frequency};
+\end{tikzpicture}\par\vspace{5pt}
+Tallest bar: \labelbox{2.4cm}{club funding}\quad Gaps because ``choice'' is \labelbox{2.2cm}{categorical}\par}
+\\
+& \notesprompt{Analyze --- and ask who chose the sample before you multiply.}
+\begin{probgrid}{|Y|Y|}
+\pcell{8}{About how many of all $900$ students would choose gym equipment? Is the council allowed to say so about the school? Why?}{1.8cm}{$0.25 \times 900 = 225$ students. Yes --- chance chose the $60$, every grade represented.} & \pcell{9}{Last spring's class of $25$: $9$ chose club funding. Compute the percent, then $0.36 \times 900$. \textbf{Vote first:} may the class report that second number about the school?}{1.8cm}{$9/25 = 36\%$; $0.36 \times 900 = 324$. No --- the schedule chose the class, so $324$ describes nobody.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{10}{Suppose the council had asked $120$ students and $42$ chose club funding. Does the club-funding bar move? What does a bar's height tell a reader --- a count, or a share?}{1.8cm}{$42/120 = 35\%$ --- the bar does not move. A height is a share, not a count.} & \pcell{11}{\textbf{In your own words:} why must the four percents add to $100\%$ --- and which instrument rule makes that happen?}{1.8cm}{Each student picked exactly one box, so the counts add to the total. Rule 3.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — whom may the report describe? ──────────────────────────
+\mainidea[Whom may you describe?]{The Limit} &
+A report is four sentences: \textbf{what we asked, and of whom; how the sample was chosen, and how
+many answered; what we found; what it means --- and about whom.} Sentence 4 may describe the
+population only if \textbf{chance} chose the sample; a class surveying itself is a
+\textbf{convenience sample}, so its sentence 4 is about the class.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.74]
+  % left: the council's stratified 60
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (5.9,3.0);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (5.9,3.0);
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (2.95,2.7) {THE COUNCIL --- $60$ of $900$};
+  \node[font=\tiny, align=center, text width=4.1cm] at (2.95,2.25) {stratified by grade, \textbf{chance} chose them};
+  \node[font=\normalsize\bfseries] at (2.95,1.45) {$21/60 = 35\%$};
+  \node[font=\tiny\itshape] at (2.95,0.8) {may describe:};
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (2.95,0.38) {all $900$ students};
+  % right: last spring's class of 25
+  \fill[goldbg, rounded corners=6pt] (8.4,0) rectangle (14.3,3.0);
+  \draw[goldacc, thick, rounded corners=6pt] (8.4,0) rectangle (14.3,3.0);
+  \node[font=\scriptsize\bfseries\color{goldacc}] at (11.35,2.7) {THE CLASS --- $25$ of $900$};
+  \node[font=\tiny, align=center, text width=4.1cm] at (11.35,2.25) {one room, the \textbf{schedule} chose them};
+  \node[font=\normalsize\bfseries] at (11.35,1.45) {$9/25 = 36\%$};
+  \node[font=\tiny\itshape] at (11.35,0.8) {may describe:};
+  \node[font=\scriptsize\bfseries\color{goldacc}] at (11.35,0.38) {?};
+  % the near-agreement, in the gap between the two panels
+  \node[font=\scriptsize\bfseries\color{redacc}] at (7.15,1.75) {$36\% \approx 35\%$};
+  \node[font=\tiny\itshape\color{redacc}] at (7.15,1.2) {luck?};
+\end{tikzpicture}\par\vspace{4pt}
+The class's sentence 4 may describe: \labelbox{3.2cm}{this class only}\par}
+\\
+& \textbf{Near-agreement is luck, not evidence. Chance never chose the class, so it could have
+missed by twenty points and nobody could tell.}
+\par\vspace{2pt}
+\textbf{In your own words:} why does landing next to the council's $35\%$ not earn the class the right to talk about all $900$?
+\writespace{1.3cm}{Chance never chose the class, so the match was luck, not method. A different room could have missed by twenty points.}
+\\
+& \notesprompt{Now settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{Write the council's sentence 4 --- what it means for the \$$3{,}000$, and about whom.}{1.6cm}{``Club funding leads --- about $315$ of the $900$ students back it.''} & \pcell{13}{\textbf{Vote again:} agree \; disagree. Does matching the council's $35\%$ make the class's $36\%$ trustworthy for all $900$? Explain.}{1.8cm}{Disagree. Chance never chose the class, so the match is luck --- it could have missed by twenty.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{Write last spring's class's sentence 4. Its subject must be the people the design actually covers.}{1.6cm}{``Of the $25$ students in this class, $36\%$ chose club funding.''} & \pcell{15}{Name one change to the \emph{sample} that would let the class speak about all $900$ --- and one thing that change would cost.}{1.6cm}{Draw a stratified $60$ by chance. It costs class time and a roster.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — the class's own survey, worked live ─────────────
+\mainidea[Guided practice]{Our Class Survey} &
+Now we run one. The class agrees on \emph{one} question, checks it against the four rules, asks
+every student in this room, and tallies. Write the item and the choices exactly as agreed.
+\\
+& \fcolorbox{charcoal}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Our instrument} --- read word for word to every person.\par\vspace{3pt}
+Item: \ans{Which one of these should the \$3,000 grant fund?}\par\vspace{5pt}
+(A) \ans{Clubs}\ (B) \ans{Field trips}\ (C) \ans{Gym gear}\ (D) \ans{Lunch}}}
+\\
+& \textbf{Tally.} Ask everyone in the room; count; then divide each count by the total.
+\par\vspace{2pt}
+\footnotesize\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{} p{1.4cm} X p{1.6cm} p{2.0cm} @{}}
+\toprule
+\textbf{Choice} & \textbf{Tally} & \textbf{Count} & \textbf{Percent} \\
+\midrule
+(A) & & \ans{9} & \ans{$9/25 = 36\%$} \\
+(B) & & \ans{7} & \ans{$7/25 = 28\%$} \\
+(C) & & \ans{6} & \ans{$6/25 = 24\%$} \\
+(D) & & \ans{3} & \ans{$3/25 = 12\%$} \\
+\midrule
+\textbf{Total} & & \ans{25} & \ans{$100\%$} \\
+\bottomrule
+\end{tabularx}\small
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{Name the population, the sample, and $n$. Who chose it --- chance, or the schedule? What kind of sample is that?}{1.6cm}{All $900$ students; the $25$ here, $n = 25$. The schedule chose it --- convenience.} & \pcell{17}{Show the division for our largest category, then write our sentence 4 --- its subject is this class, not the school.}{1.6cm}{$9/25 = 36\%$. ``Of the $25$ in this class, $36\%$ chose club funding.''} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{Whose result may be reported about all $900$ --- the council's $60$, or ours? If ours lands near theirs, what does that prove?}{1.6cm}{Only the council's --- chance chose it. Ours proves nothing; near $35\%$ is luck.} & \pcell{19}{Name the limit you would fix first in our design, and what fixing it would cost.}{1.6cm}{The sample --- draw it by chance from all $900$. Costs a roster and time.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{4pt}
-Finally, \textbf{analyze}: about how many of all $900$ Riverbend students would
-choose gym equipment?
-
-\begin{work}
-  0.25 \times 900 &= 225 \text{ students}
-\end{work}
-\end{notesbox}
-
-\boxguard
-\begin{practicebox}
-\small
-\textbf{Stage 4 --- say it, then check that you are allowed to say it.} A report
-is four sentences. Write them for the council's survey.
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item \textbf{What we asked, and of whom.}
-        \ansline{We asked which of four options Riverbend's $900$ students would most want the \$$3{,}000$ grant to fund.}
-  \item \textbf{How the sample was chosen, and how many answered.}
-        \ansline{A stratified sample of $60$ students, $18$/$16$/$14$/$12$ by grade; all $60$ answered.}
-  \item \textbf{What we found} --- the two largest categories, as percents.
-        \ansline{Club funding led at $35\%$, followed by field trips at $30\%$.}
-  \item \textbf{What it means for the \$$3{,}000$}, and about whom.
-        \ansline{Club funding is the single choice most Riverbend students support --- about $315$ of the $900$.}
-\end{enumerate}
-
-\vspace{2pt}
-Now the \textbf{validity} check. The council may write sentence 4 about all
-$900$ students. Name the one feature of its design that earns it that right,
-and say what would have happened to that right if it had surveyed only the
-$60$ students in the cafeteria at noon.
-\ansline{Chance chose the sample, and every grade was represented in proportion. A noon cafeteria group is a convenience sample, so the result would describe only those $60$ students --- and a longer-lunch question asked at lunch invites bias on top of that.}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

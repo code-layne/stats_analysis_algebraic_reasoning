@@ -1,283 +1,302 @@
-%! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Guided Notes
-\documentclass[10pt]{article}
+%! Unit Launch: Study Design — Unit 1, Lesson 1.0 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.2–1.8cm of writing room. Problems run 1..17.
+% DENSITY: a \blank{} only where a word IS the answer (the four cells of the classify table
+% in row 3, problem 5 — the one \wordbank strip sits above it); no mid-sentence blanks; every
+% display is pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 6, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (14–17), is worked entirely together on the Student Life Survey
+%            instead of the basketball roster.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 9 (row 3, "Two Types"): Jersey # is classified LAST, by hand vote, and
+% NOT settled — the digit reflex says quantitative. THE CRUX is problem 10 (row 4, "The Digit
+% Test"): the blog's mean of 14 is arithmetically correct and describes nobody — the hook vote
+% is re-taken there (PS.DC.1c). Problem 15 is the crux transferred to the survey's Grade
+% column (63/6 = 10.5); problem 13 is the counterweight (Height is digits and averages fine).
+%
+% THE DATA (all verified in Python 2026-09-14)
+%   Riverbend varsity roster, 6 players: Jersey 12,7,23,4,17,21 -> 84/6 = 14 (nobody wears 14);
+%     Points 14,9,6,19,11,13 -> 72/6 = 12; Height 64,71,75,68,70,72 -> 420/6 = 70; captains 3/6 = 50%
+%   Grade levels 9,10,11,12 -> 42/4 = 10.5; ZIPs 22030, 22201 -> 22115.5; siblings 2,0,3,1,2,4 -> 12/6 = 2
+%   Guided Practice, Student Life Survey (6 students): Commute 20,8,35,15,5,25 -> 108/6 = 18 min;
+%     Grade 10,11,9,12,10,11 -> 63/6 = 10.5
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson00_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 3, problem 5). Defined per
+% document; the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.0}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.0}{Guided Notes \& Practice}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item explain why a number means nothing until I know \emph{who} was measured,
-        \emph{what} was measured, and in \emph{what units};
-  \item read a data table and name the \textbf{individuals} and the
-        \textbf{variables};
-  \item classify a variable as \textbf{categorical} or \textbf{quantitative}, and
-        justify the call;
-  \item apply the \textbf{digit test} to a column written with digits that still
-        cannot be averaged;
-  \item recognize and write a \textbf{statistical question}.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\termblanklong{Data}
-\termblanklong{Individual}
-\termblanklong{Variable}
-\termblanklong{Categorical variable}
-\termblanklong{Quantitative variable}
-\termblanklong{Statistical question}
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Data}
+\vterm{Individual}
+\vterm{Variable}
+\vterm{Categorical variable}
+\vterm{Quantitative variable}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-A sports blog wrote this about the Riverbend varsity basketball team:
+\textit{``The Riverbend roster's mean jersey number is $14$. That is low for a varsity squad
+--- this is a young, inexperienced team.''} --- a sports blog. The arithmetic is \textbf{correct}.
 
-\begin{center}
-\textit{``The Riverbend roster's mean jersey number is 14. That is low for a
-varsity squad --- this is a young, inexperienced team.''}
-\end{center}
-
-The arithmetic in that sentence is \textbf{correct}. Is the conclusion?
-\writelines{2}
+\vspace{3pt}
+\textbf{Is the conclusion correct?} Circle one: \quad yes \qquad no \qquad can't tell
+\quad --- and say why you think so. We vote again at problem~10.
+\par\writelines{2}
 \end{hookbox}
 
-\boxguard[20]
-\begin{notesbox}{1. Data Are Numbers With a Context}
 \small
-Write the number $12$ on your paper. What does it tell you? \blank{4.5cm}
-
-\vspace{3pt}
-Nothing --- and it never will, until three things come with it. \textbf{Data} are
-numbers or labels together with the context that gives them meaning:
-
-\vspace{2pt}
-\textbf{Who:} \blank{9.6cm}
-
-\textbf{What:} \blank{9.4cm}
-
-\textbf{Units:} \blank{9.4cm}
-
-\vspace{3pt}
-\textbf{Say it as a sentence:} ``The six players on the Riverbend varsity roster
-scored a mean of \blank{1.4cm} \blank{2cm} per player.'' \emph{That} is data.
-The bare $12$ is not.
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{2. Individuals and Variables}
-\small
-Here is the roster the blog was reading.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{} l c l c c c @{}}
+\begin{guidednotes}
+% ── ROW 1: data are numbers with a context ───────────────────────────────────
+\mainidea[Numbers with a]{Data in Context} &
+\textbf{Data} are numbers or labels together with the context that gives them meaning ---
+\textbf{who} was measured, \textbf{what} was measured, and in what \textbf{units}. A bare
+number answers nothing. \textbf{A number is not data until it comes with all three.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.9]
+  % the bare number
+  \fill[goldbg, rounded corners=5pt] (0,0) rectangle (2.0,2.5);
+  \draw[goldacc, thick, rounded corners=5pt] (0,0) rectangle (2.0,2.5);
+  \node[font=\Huge\bfseries] at (1.0,1.5) {12};
+  \node[font=\tiny\itshape, align=center] at (1.0,0.45) {a number\\by itself};
+  \draw[->, very thick, charcoal] (2.15,1.25) -- (3.05,1.25);
+  \node[font=\tiny\bfseries, above, align=center] at (2.6,1.3) {add the\\context};
+  % A: who
+  \fill[frost, rounded corners=4pt] (3.2,1.4) rectangle (12.4,2.5);
+  \draw[cerulean, thick, rounded corners=4pt] (3.2,1.4) rectangle (12.4,2.5);
+  \node[font=\footnotesize] at (7.8,1.95) {``The \textbf{six players on the Riverbend varsity roster}};
+  \node[font=\scriptsize\bfseries\color{cerulean}, fill=white, inner sep=1.5pt] at (3.55,2.5) {A};
+  % B: what
+  \fill[goldbg, rounded corners=4pt] (3.2,0) rectangle (7.6,1.1);
+  \draw[goldacc, thick, rounded corners=4pt] (3.2,0) rectangle (7.6,1.1);
+  \node[font=\footnotesize] at (5.4,0.55) {scored a \textbf{mean of $12$}};
+  \node[font=\scriptsize\bfseries\color{goldacc}, fill=white, inner sep=1.5pt] at (3.55,1.1) {B};
+  % C: units
+  \fill[greenbg, rounded corners=4pt] (7.8,0) rectangle (12.4,1.1);
+  \draw[greenacc, thick, rounded corners=4pt] (7.8,0) rectangle (12.4,1.1);
+  \node[font=\footnotesize] at (10.1,0.55) {\textbf{points} per player.''};
+  \node[font=\scriptsize\bfseries\color{greenacc}, fill=white, inner sep=1.5pt] at (8.15,1.1) {C};
+\end{tikzpicture}\par\vspace{5pt}
+A is the \labelbox{1.5cm}{}\qquad B is the \labelbox{1.5cm}{}\qquad C is the \labelbox{1.5cm}{}\par}
+\\
+& \notesprompt{Turn a bare number into data --- name the who, the what, and the units.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Warm-up item 3 gave you $14$. Write it as data: a sentence with a who, a what, and units.}{1.6cm}{} & \pcell{2}{The blog's $14$ has a who (six players) and a what (jersey number). What are its \emph{units}? Is $14$ an amount of anything?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: individuals and variables ─────────────────────────────────────────
+\mainidea[Reading a table]{Individual \& Variable} &
+An \textbf{individual} is one person, animal, or object that data are collected about ---
+one \textbf{row} of a data table. A \textbf{variable} is a characteristic recorded for each
+individual --- one \textbf{column}. \textbf{The name column only tells the rows apart; it is
+not a variable we study.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=1.0]
+  % the roster the blog was reading; Nia's row and the Points column are shaded
+  \fill[frost] (0,-0.9) rectangle (12.2,-0.45);
+  \fill[goldbg] (5.9,-3.15) rectangle (7.3,0);
+  \draw[cerulean, thick] (0,-0.9) rectangle (12.2,-0.45);
+  \draw[goldacc, thick] (5.9,-3.15) rectangle (7.3,0);
+  \draw[thick] (0,-0.45) -- (12.2,-0.45);
+  \draw[thick] (0,-3.15) -- (12.2,-3.15);
+  \foreach \r/\pa/\pb/\pc/\pd/\pe/\pf in {
+      0/\textbf{Player}/\textbf{Jersey \#}/\textbf{Position}/\textbf{Points}/\textbf{Height (in)}/\textbf{Captain},
+      1/Nia/12/Guard/14/64/Yes,
+      2/Ruben/7/Forward/9/71/No,
+      3/Sasha/23/Center/6/75/No,
+      4/Marcus/4/Guard/19/68/Yes,
+      5/Talia/17/Forward/11/70/Yes,
+      6/Devon/21/Guard/13/72/No} {
+    \node[anchor=west, font=\footnotesize] at (0.1,{-0.45*\r-0.225}) {\pa};
+    \node[font=\footnotesize] at (2.6,{-0.45*\r-0.225}) {\pb};
+    \node[anchor=west, font=\footnotesize] at (3.7,{-0.45*\r-0.225}) {\pc};
+    \node[font=\footnotesize] at (6.6,{-0.45*\r-0.225}) {\pd};
+    \node[font=\footnotesize] at (8.9,{-0.45*\r-0.225}) {\pe};
+    \node[font=\footnotesize] at (11.2,{-0.45*\r-0.225}) {\pf};
+  }
+\end{tikzpicture}\par\vspace{5pt}
+The shaded row is one \labelbox{2.0cm}{}\qquad the shaded column is one \labelbox{2.0cm}{}\par}
+\\
+& \notesprompt{Read the roster. Count, and say what you counted.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{How many individuals does the roster describe? How many variables does it record? (Is ``Player'' one of them?)}{1.6cm}{} & \pcell{4}{The athletic director adds a column, \emph{Free throws made}, and a seventh player, Jo. Individuals now? Variables now?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: two types of variables — the TRAP is problem 9 ────────────────────
+\mainidea[Categorical or quantitative]{Two Types} &
+A \textbf{quantitative variable} records a measured \textbf{amount}, with units --- summarize
+it with a \textbf{mean}. A \textbf{categorical variable} records a \textbf{label} or group
+name --- summarize it with \textbf{counts and percents}. \textbf{The type decides what you are
+allowed to do with the column.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=1.0]
+  % left panel: quantitative
+  \fill[goldbg, rounded corners=5pt] (0,0) rectangle (5.9,2.6);
+  \draw[goldacc, thick, rounded corners=5pt] (0,0) rectangle (5.9,2.6);
+  \node[font=\footnotesize\bfseries\color{goldacc}] at (2.95,2.25) {QUANTITATIVE --- an amount};
+  \node[font=\scriptsize] at (2.95,1.75) {Points: $14,\ 9,\ 6,\ 19,\ 11,\ 13$};
+  \node[font=\small\bfseries] at (2.95,1.05) {mean $= \dfrac{72}{6} = 12$ points};
+  \node[font=\tiny\itshape] at (2.95,0.3) {you can add them --- so a mean means something};
+  % right panel: categorical
+  \fill[frost, rounded corners=5pt] (6.3,0) rectangle (12.2,2.6);
+  \draw[cerulean, thick, rounded corners=5pt] (6.3,0) rectangle (12.2,2.6);
+  \node[font=\footnotesize\bfseries\color{cerulean}] at (9.25,2.25) {CATEGORICAL --- a label};
+  \node[font=\scriptsize] at (9.25,1.75) {Position: Guard, Forward, Center, \ldots};
+  \node[font=\footnotesize\bfseries] at (9.25,1.05) {$3$ Guards, $2$ Forwards, $1$ Center};
+  \node[font=\tiny\itshape] at (9.25,0.3) {you cannot add labels --- so count them instead};
+\end{tikzpicture}\par\vspace{5pt}
+Height (in) is \labelbox{2.8cm}{}\qquad Captain is \labelbox{2.8cm}{}\par}
+\\
+& \textbf{5.} Classify each column of the roster. \emph{(Jersey \# is problem~9 --- leave it for last.)}
+\wordbank{categorical \;\textbullet\; quantitative}
+\footnotesize\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{} X p{3.4cm} X p{3.4cm} @{}}
 \toprule
-\textbf{Player} & \textbf{Jersey \#} & \textbf{Position} & \textbf{Points} &
-\textbf{Height (in)} & \textbf{Captain} \\
+\textbf{Variable} & \textbf{Type} & \textbf{Variable} & \textbf{Type} \\
 \midrule
-Nia    & 12 & Guard   & 14 & 64 & Yes \\
-Ruben  &  7 & Forward &  9 & 71 & No  \\
-Sasha  & 23 & Center  &  6 & 75 & No  \\
-Marcus &  4 & Guard   & 19 & 68 & Yes \\
-Talia  & 17 & Forward & 11 & 70 & Yes \\
-Devon  & 21 & Guard   & 13 & 72 & No  \\
+Position & \blank{2.9cm} & Points      & \blank{2.9cm} \\
+Captain  & \blank{2.9cm} & Height (in) & \blank{2.9cm} \\
 \bottomrule
-\end{tabular}
-\end{center}
+\end{tabularx}\small
+\\
+& \notesprompt{Summarize each kind the way its type allows --- and say how you decided, not ``it's words'' or ``it's numbers.''}
+\begin{probgrid}{|Y|Y|}
+\pcell{6}{A mean is not available for Captain. Summarize it the other way: what percent of the six players are captains?}{1.4cm}{} & \pcell{7}{Find the mean of Points, then say it as data --- who, what, units.}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{8}{A survey records each student's number of siblings: $2, 0, 3, 1, 2, 4$. Which type? How do you know?}{1.4cm}{} & \pcell{9}{\textbf{Jersey \#. Vote first:} categorical or quantitative? Record the class split, then your reason. \textbf{We settle it at problem~10.}}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the digit test settles the hook ────────────────────────
+\mainidea[Settle the vote:]{The Digit Test} &
+The blog's arithmetic is right: $\dfrac{12+7+23+4+17+21}{6} = \dfrac{84}{6} = 14$.
+\textbf{Now find the player who wears $14$ on average.} There is none --- the mean of a
+column of labels describes nobody and measures nothing.
+\\
+& {\centering
+\begin{tikzpicture}[scale=1.0]
+  % the six jersey numbers on a number line, and the mean that lands on nobody
+  \draw[->, thick] (-0.3,0) -- (12.2,0);
+  \foreach \p in {0,5,...,25} { \draw ({\p*0.44},-0.1) -- ({\p*0.44},0.1); \node[below, font=\tiny] at ({\p*0.44},-0.12) {\p}; }
+  % labels alternate high/low so the two closest jerseys (21 and 23) do not collide
+  \foreach \p/\who/\hi in {4/Marcus/0.16, 7/Ruben/0.62, 12/Nia/0.16, 17/Talia/0.62, 21/Devon/0.16, 23/Sasha/0.62} {
+    \fill[cerulean] ({\p*0.44},0) circle (0.11);
+    \node[above, font=\tiny\bfseries, align=center] at ({\p*0.44},\hi) {\who\\\#\p}; }
+  \draw[redacc, very thick] ({14*0.44},-0.35) -- ({14*0.44},1.45);
+  \node[font=\scriptsize\bfseries\color{redacc}, fill=white, inner sep=1.5pt] at ({14*0.44},1.68) {mean $= 14$};
+  \node[font=\tiny\itshape\color{redacc}, anchor=west] at (7.4,1.68) {nobody wears it --- and it is not an amount};
+\end{tikzpicture}\par}
+\\
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The test is not} ``does it look like a number?'' \textbf{The test is:} \emph{does arithmetic on this variable mean anything?}}}
+\par\vspace{3pt}
+\textbf{In your own words:} why is a correct mean of the jersey numbers still a worthless number?
+\writespace{1.4cm}{}
+\\
+& \notesprompt{Now settle the hook vote --- and run the test on three more columns of digits.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{\textbf{Vote again:} is the blog's conclusion correct? \; yes \; no. What type is Jersey \#, and what does the $14$ tell you about the team?}{1.7cm}{} & \pcell{11}{A school lists grade levels $9, 10, 11, 12$; the mean is $42/4 = 10.5$. Who is in grade $10.5$? What type is Grade level?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{12}{Two ZIP codes, $22030$ and $22201$, have a mean of $22115.5$. What place is that? What type is ZIP code?}{1.2cm}{} & \pcell{13}{Height (in) is digits too: $420/6 = 70$. Who or what does $70$ inches describe? What type is Height?}{1.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Student Life Survey} &
+Six Riverbend students filled out the Student Life Survey. Theo says \emph{``Grade is
+quantitative --- it's numbers.''} A \textbf{statistical question} is one whose answers
+\emph{vary} from individual to individual, so it takes data to answer.
+\\
+& {\centering
+\begin{tikzpicture}[scale=1.0]
+  \fill[goldbg] (1.75,-3.15) rectangle (2.65,0);
+  \draw[goldacc, thick] (1.75,-3.15) rectangle (2.65,0);
+  \draw[thick] (0,-0.45) -- (12.2,-0.45);
+  \draw[thick] (0,-3.15) -- (12.2,-3.15);
+  \foreach \r/\pa/\pb/\pc/\pd/\pe/\pf in {
+      0/\textbf{Student}/\textbf{Grade}/\textbf{Commute (min)}/\textbf{Lunch}/\textbf{Siblings}/\textbf{Club member},
+      1/Alina/10/20/Home/2/Yes,
+      2/Devon/11/8/Cafeteria/0/No,
+      3/Marisol/9/35/Home/3/Yes,
+      4/Theo/12/15/Cafeteria/1/Yes,
+      5/Priya/10/5/Off campus/2/No,
+      6/Jamal/11/25/Cafeteria/4/Yes} {
+    \node[anchor=west, font=\footnotesize] at (0.1,{-0.45*\r-0.225}) {\pa};
+    \node[font=\footnotesize] at (2.2,{-0.45*\r-0.225}) {\pb};
+    \node[font=\footnotesize] at (4.4,{-0.45*\r-0.225}) {\pc};
+    \node[anchor=west, font=\footnotesize] at (6.1,{-0.45*\r-0.225}) {\pd};
+    \node[font=\footnotesize] at (9.0,{-0.45*\r-0.225}) {\pe};
+    \node[font=\footnotesize] at (11.1,{-0.45*\r-0.225}) {\pf};
+  }
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{How many individuals does the table describe, and how many variables? Name one of each.}{1.4cm}{} & \pcell{15}{Classify Commute, Lunch, and Grade. Then run the digit test on Grade ($63/6 = 10.5$) and fix Theo's reason.}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{16}{Find the mean commute, then say it as data --- who, what, units.}{1.4cm}{} & \pcell{17}{\emph{How long is Priya's commute?} \emph{How long are Riverbend students' commutes?} Which takes data? Rewrite the other.}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{4pt}
-Every data table is built the same way:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.95\linewidth}{@{} p{2.4cm} p{4.1cm} X @{}}
-\toprule
-\textbf{Each row} & is one \blank{2.6cm} & \blank{5.2cm} \\
-\textbf{Each column} & is one \blank{2.6cm} & \blank{5.2cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-This table has \blank{1.4cm} individuals. Not counting the ``Player'' column,
-which only names them, it records \blank{1.4cm} variables.
-
-\vspace{2pt}
-\textit{``Player'' is a label that tells the rows apart. It is not a
-characteristic we are studying, so we do not count it as a variable.}
-\end{notesbox}
-
-\boxguard[36]
-\begin{notesbox}{3. Two Types of Variables}
-\small
-The \textbf{type} of a variable decides what you are allowed to do with it.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.97\linewidth}{@{} p{3.1cm} X p{3.2cm} @{}}
-\toprule
-\textbf{Type} & \textbf{Records} & \textbf{Summarize with} \\
-\midrule
-\textbf{Quantitative} & a measured \blank{3.4cm} with units & \blank{2.6cm} \\
-\textbf{Categorical}  & a \blank{3.4cm} or group name & counts and \blank{1.8cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{4pt}
-Classify each recorded column of the roster. In the last column, say \emph{how you
-decided} --- not ``it's words'' or ``it's numbers.''
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.97\linewidth}{@{} p{2.6cm} p{3.2cm} X @{}}
-\toprule
-\textbf{Variable} & \textbf{Type} & \textbf{How I decided} \\
-\midrule
-Jersey \#   & \blank{2.6cm} & \blank{4.4cm} \\
-Position    & \blank{2.6cm} & \blank{4.4cm} \\
-Points      & \blank{2.6cm} & \blank{4.4cm} \\
-Height (in) & \blank{2.6cm} & \blank{4.4cm} \\
-Captain     & \blank{2.6cm} & \blank{4.4cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{4pt}
-A mean is not available for ``Captain,'' so summarize it the other way. What
-percent of these six players are captains?
-
-\begin{work}
-  \dfrac{3}{6} &= 0.50 \\
-               &= 50\%
-\end{work}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{4. The Digit Test}
-\small
-The blog averaged the jersey numbers. Check it:
-
-\begin{work}
-  \bar{x} &= \dfrac{12+7+23+4+17+21}{6} \\
-          &= \dfrac{84}{6} \\
-          &= 14
-\end{work}
-
-\vspace{2pt}
-The arithmetic is right. Now find me the player who wears $14$ on average.
-\blank{4cm}
-
-\vspace{3pt}
-\textbf{The test is not} ``does it look like a number?'' \textbf{The test is:}
-
-\begin{center}
-\fbox{\parbox{0.86\linewidth}{\centering \vspace{2pt}
-Does \blank{7cm} on this variable mean anything? \vspace{2pt}}}
-\end{center}
-
-\vspace{4pt}
-Three classic columns of digits that fail the test:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.9\linewidth}{@{} p{3.4cm} X @{}}
-\toprule
-\textbf{Column of digits} & \textbf{Why the mean is worthless} \\
-\midrule
-Jersey number & \blank{6.6cm} \\
-ZIP code      & \blank{6.6cm} \\
-Grade level   & \blank{6.6cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\textit{Digits are not the enemy. Meaningless arithmetic is: ``Points'' and
-``Height'' are digits too, and both of them average just fine.}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{5. Questions That Take Data to Answer}
-\small
-A \textbf{statistical question} is one whose answers are expected to
-\blank{2.4cm} from individual to individual --- so it takes data from
-\emph{many} individuals to answer.
-
-\vspace{4pt}
-The athletic director has four questions. Mark each \textbf{O} if \emph{one}
-look-up answers it, or \textbf{M} if it takes answers from \emph{many} players.
-
-\begin{enumerate}[leftmargin=1.8em, itemsep=4pt, topsep=3pt, label=(\roman*)]
-  \item What number does Sasha wear? \hfill \blank{1.4cm}
-  \item How many points do Riverbend players score in a game? \hfill \blank{1.4cm}
-  \item How tall is Marcus? \hfill \blank{1.4cm}
-  \item How tall are the players on the Riverbend roster? \hfill \blank{1.4cm}
-\end{enumerate}
-
-\vspace{4pt}
-The ones you marked \textbf{M} are the statistical questions. Take one you marked
-\textbf{O} and rewrite it so that answering it would take data from many players.
-\writeline
-\end{notesbox}
-
-\boxguard
-\begin{practicebox}
-\small
-Six Riverbend students filled out the Student Life Survey.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{@{} l c c l c c @{}}
-\toprule
-\textbf{Student} & \textbf{Grade} & \textbf{Commute (min)} & \textbf{Lunch} &
-\textbf{Siblings} & \textbf{Club member} \\
-\midrule
-Alina   & 10 & 20 & Home       & 2 & Yes \\
-Devon   & 11 &  8 & Cafeteria  & 0 & No  \\
-Marisol &  9 & 35 & Home       & 3 & Yes \\
-Theo    & 12 & 15 & Cafeteria  & 1 & Yes \\
-Priya   & 10 &  5 & Off campus & 2 & No  \\
-Jamal   & 11 & 25 & Cafeteria  & 4 & Yes \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\vspace{3pt}
-\textbf{(a)} This table has \blank{1.4cm} individuals and \blank{1.4cm}
-variables.
-
-\vspace{2pt}
-\textbf{(b)} Classify: Commute is \blank{2.8cm}; Lunch is \blank{2.8cm};
-Grade is \blank{2.8cm}, even though it is written with digits.
-
-\vspace{2pt}
-\textbf{(c)} Find the mean commute time for these six students.
-
-\begin{work}
-  \bar{x} &= \dfrac{20+8+35+15+5+25}{6} \\
-          &= \dfrac{108}{6} \\
-          &= 18 \text{ minutes}
-\end{work}
-
-\vspace{2pt}
-\textbf{(d)} Write one sentence interpreting your answer to (c). Name the group
-and the units.
-\writeline
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

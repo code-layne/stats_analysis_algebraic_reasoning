@@ -1,0 +1,52 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Data": "Numbers or labels collected about individuals, together with the context --- who, what, and the units --- that gives them meaning.",
+  "Individual": "One person, animal, or object that data are collected about --- one row of a data table.",
+  "Variable": "A characteristic recorded for each individual --- one column of a data table. The name column is not one.",
+  "Categorical variable": "A variable that records a label or group name (position, lunch, yes/no). Summarize it with counts and percents --- a mean means nothing.",
+  "Quantitative variable": "A variable that records a measured amount with units (points, inches, minutes). Summarize it with a mean."
+ },
+ "blanks": [
+  "categorical",
+  "quantitative",
+  "categorical",
+  "quantitative"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most of the room says yes or can't tell; a few say ``jersey numbers don't mean anything.''",
+   "(Settled at problem 10: no --- a jersey number is a label, so its mean describes nobody.)"
+  ]
+ ],
+ "labels": [
+  "who",
+  "what",
+  "units",
+  "individual",
+  "variable",
+  "quantitative",
+  "categorical"
+ ],
+ "spaces": [
+  "Jersey numbers are labels, not amounts. Adding labels means nothing, so their mean describes no player and measures nothing."
+ ],
+ "cells": {
+  "1": "The five students surveyed spent a mean of 14 minutes on homework last night.",
+  "2": "None --- 14 is not measured in anything. It is not an amount, so the 14 is not really data.",
+  "3": "6 individuals (the players); 5 variables. No --- Player only names the rows.",
+  "4": "7 individuals; 6 variables. Player still is not one.",
+  "6": "$3/6 = 0.50 = 50\\%$ of the six players are captains.",
+  "7": "$72/6 = 12$. The six players on the roster scored a mean of 12 points per player.",
+  "8": "Quantitative --- a count, an amount. Mean: 2 siblings.",
+  "9": "Split recorded (answers vary). Settled at 10: categorical --- a label written with digits.",
+  "10": "No. Jersey \\# is categorical --- a label in digits --- so 14 describes no player.",
+  "11": "Nobody. Grade level is categorical --- a label in digits.",
+  "12": "No place at all --- a ZIP code identifies an area. Categorical.",
+  "13": "A typical player's height, in inches. Quantitative.",
+  "14": "6 individuals; 5 variables --- e.g., Alina and Commute.",
+  "15": "Commute: quantitative. Lunch: categorical. Grade: categorical --- nobody is 10.5.",
+  "16": "$108/6 = 18$ minutes, for the six surveyed.",
+  "17": "The second --- answers vary. Rewrite: \\emph{How long are Riverbend commutes?}"
+ }
+}

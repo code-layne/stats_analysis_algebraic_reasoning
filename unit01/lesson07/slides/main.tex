@@ -1,6 +1,14 @@
 %! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06), notes in the MAIN IDEAS / NOTES table shape (2026-09-12).
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (unresolved) → I DO divider → two or
+% three frames per notes ROW, labelled by row name and PROBLEM NUMBERS → WE DO Guided Practice
+% (a live surface, un-answered) → spoken debrief with the cold check → close & START THE
+% HOMEWORK, which is the individual practice. No group activity, no practice launch, no exit
+% ticket. There is no spoiler rule: the notes frames ARE the direct instruction.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,240 +25,329 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{A question she cannot settle}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.7}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item compare an \textbf{observational study} with a \textbf{controlled experiment}, and
+          write the strongest sentence each design earns.
+    \item decide whether an experiment can be run at all --- or name it \textbf{unethical},
+          \textbf{impossible}, or \textbf{impractical}.
+    \item plan an experiment through the four stages of the \textbf{statistical cycle}.
+    \item choose the \textbf{collection method} a question needs --- and keep the \emph{method}
+          separate from the \emph{design}.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together, row by row} $\to$ \textbf{one pool study we work as a
+    class} $\to$ debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{back to Riverbend's Study Center}
+  \vspace{0.2cm}
   \begin{center}
     \begin{minipage}{0.88\textwidth}
-      The Study Center is settled. Watching said \textbf{65\%} vs.\
-      \textbf{80\%}; assigning said \textbf{75\%} vs.\ \textbf{55\%}, and you
-      know which one she believes.
-
-      \vspace{0.35cm}
-      Now the principal asks: \emph{do students who ride the bus more than
-      45~minutes each way score lower on the state test?}
+      \textbf{Last quarter she watched:} 150 records --- 60 used the Study Center (39 passed
+      every class), 90 did not (72 passed). \textbf{This quarter she assigned:} a generator
+      split 120 volunteers 60/60 --- 75\% against 55\%.
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item What percent of the 60 users passed every class?
+        \item What percent of the 90 non-users passed?
+        \item Both studies side by side: the two gaps, the group sizes --- and who put each
+              student in a group \emph{last} quarter?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.6cm}
+  \vspace{0.3cm}
   \begin{center}
-    {\color{goldacc}\bfseries What exactly would she have to assign?}
+    {\color{cerulean}\bfseries 60 and 90 \quad versus \quad 60 and 60. That stays on the board
+    all period.}
   \end{center}
 \end{frame}
 
-% ── SIDE BY SIDE ─────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Two study types, side by side}
-  \sectionlabel[goldacc]{PS.DC.3c}
+% ── HOOK — leave it UNRESOLVED; problem 15 (row 4, The Method) settles it ────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.2cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small A GENERATOR SPLIT 120 VOLUNTEERS 60/60. THEN SHE SAT IN THE
+    STUDY CENTER AND WATCHED.}\\[0.8cm]
+    {\color{white}\bfseries\Large ``She just watched. So this quarter's study was an
+    observational study, the same as last quarter's.''}\\[0.9cm]
+    {\color{goldacc}\bfseries\large Is the classmate right?}\\[0.5cm]
+    {\color{frostmid}\small Vote: agree or disagree. We settle this at problem 15.}
+  \end{center}
+\end{frame}
+}
 
-  \vspace{0.3cm}
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1a. TWO DESIGNS ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two designs, one question}
+  \sectionlabel{notes row 1 $\cdot$ Two Designs $\cdot$ problems 1--3}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Observational study}
+        Measures or asks \textbf{without assigning} anyone to a group --- the groups already
+        exist.
+      \end{block}
+      \vspace{4pt}
+      {\small Riverbend, last quarter: 60 used it, 90 did not. \textbf{They} sorted themselves.}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Controlled experiment}
+        \textbf{Assigns} the groups by chance and imposes a treatment on at least one of them.
+      \end{block}
+      \vspace{4pt}
+      {\small Riverbend, this quarter: a generator split 120 into 60/60.}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  \begin{center}
+    {\large One question sorts them: \redink{who decided which group each individual is in?}}\\[6pt]
+    {\small\color{slate} Every other row of the table --- treatment, groups alike, the verb ---
+    follows from that answer.}
+  \end{center}
+\end{frame}
+
+% ── ROW 1b. THE VERB EACH DESIGN EARNS ───────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The design decides the verb}
+  \sectionlabel{notes row 1 $\cdot$ problems 2--5 $\cdot$ two studies, opposite results}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l l l @{}}
     \hline
-    \textbf{Ask} & \textbf{Observational} & \textbf{Experiment} \\
+    \textbf{The study} & \textbf{What it found} & \textbf{What it may say} \\
     \hline
-    Who builds the groups? & the people themselves & chance \\
-    Treatment imposed? & no --- you only measure & yes \\
-    Alike at the start? & not necessarily & yes \\
-    Strongest claim & an association & cause and effect \\
+    Watched 150 records & 65\% of users vs.\ 80\% of non-users & \emph{is associated with} \\
+    Assigned 120 volunteers & 75\% treated vs.\ 55\% control & \emph{caused} \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small One row does all the work. Everything else on this slide follows
-      from \textbf{who built the groups}.
-    \end{minipage}
-  \end{center}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Same school, same Study Center, \textbf{opposite conclusions}. Which one do you
+          believe? \redink{This quarter's.}
+    \item Chance built two groups that started out alike, so the treatment is the only
+          difference left to explain the gap.
+    \item Problem 5: 60 and 90 against 60 and 60. \redink{The sizes give away who built the
+          groups.}
+  \end{itemize}
 \end{frame}
 
-% ── WHAT EACH MAY CLAIM ──────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Riverbend, both ways}
-  \sectionlabel{the sentence each study earns}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.45}
-    \begin{tabular}{@{} l l l @{}}
-    \hline
-    \textbf{Study} & \textbf{Found} & \textbf{May say} \\
-    \hline
-    1.5 --- watched 150 records & 65\% vs.\ 80\% & ``is associated with'' \\
-    1.6 --- assigned 120 people & 75\% vs.\ 55\% & ``caused'' \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Banned in the top row: \emph{causes, makes, raises, improves}. The data
-      are not the problem --- the design is.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── WHEN YOU CANNOT ASSIGN ───────────────────────────────────────────────────
+% ── ROW 2. WHEN YOU CANNOT RUN AN EXPERIMENT (the trap) ──────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{When you cannot run an experiment}
-  \sectionlabel[goldacc]{three reasons}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item \textbf{Unethical} --- assigning it would harm someone. You
-              cannot assign anyone to smoke.
-        \item \textbf{Impossible} --- the treatment is something a person
-              already \emph{is} or \emph{has}: retired, arthritic, a
-              45-minute bus ride.
-        \item \textbf{Impractical} --- too costly, too slow, or nobody would
-              agree to be assigned.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Then you run the best observational study you
-    can --- and you weaken the verb.}
-  \end{center}
-\end{frame}
-
-% ── THE CYCLE, FOR AN EXPERIMENT ─────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Planning an experiment with the cycle}
-  \sectionlabel[goldacc]{PS.DC.3d}
-
-  \vspace{0.3cm}
+  \sectionlabel{notes row 2 $\cdot$ Experiment $\cdot$ problems 6--9 $\cdot$ problem 8 is the trap}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l l @{}}
     \hline
-    \textbf{Formulate} & the question, and about whom \\
-    \textbf{Collect} & \textbf{assign} the units by chance --- the new part \\
-    \textbf{Represent} & organize the counts into percents \\
-    \textbf{Analyze \& report} & compare, then say it in context \\
+    \textbf{Reason} & \textbf{What it means} \\
+    \hline
+    Unethical   & Assigning the treatment would harm someone. \\
+    Impossible  & The treatment is something a person already \emph{is} or \emph{has}. \\
+    Impractical & Too costly, too slow, or nobody would agree to be assigned. \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.7cm}
+  \vspace{6pt}
+  \begin{block}{Problem 8 --- vote first: the 45-minute bus ride}
+    A classmate says \emph{``unethical.''} Who is harmed by studying it? Nobody. You simply
+    \redink{cannot assign where a family lives} --- the reason is \redink{impossible}.
+  \end{block}
+  \vspace{4pt}
   \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small Same four stages as Lesson 1.5. Stage two is where the four
-      principles get checked --- and where the assigning happens.
-    \end{minipage}
+    {\color{cerulean}\bfseries ``We could not run an experiment'' is the reason for a weaker
+    verb --- never an excuse for a stronger one.}
   \end{center}
 \end{frame}
 
-% ── FIVE METHODS ─────────────────────────────────────────────────────────────
+% ── ROW 3. THE CYCLE — fast ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Planning an experiment: the same four stages}
+  \sectionlabel{notes row 3 $\cdot$ The Cycle $\cdot$ problems 10--11}
+  \vspace{4pt}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Stage} & \textbf{The weekly check-in study} \\
+    \hline
+    Formulate         & Does a weekly check-in raise assignments turned in? \\
+    \textbf{Collect}  & \textbf{The units are the volunteers; a generator \emph{assigns} them} \\
+    Represent         & A table: each group's count and percent \\
+    Analyze \& report & Compare the two percents; use the verb the design earns \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \begin{center}
+    {\large Lesson 1.5 \emph{sampled} the units. Today we \redink{assign} them.}\\[4pt]
+    {\small\color{slate} One word changes. The other three stages are the ones you already
+    know.}
+  \end{center}
+\end{frame}
+
+% ── ROW 4a. FIVE WAYS TO COLLECT ─────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Five ways to collect the data}
-  \sectionlabel[goldacc]{PS.DC.3e}
-
-  \vspace{0.3cm}
+  \sectionlabel{notes row 4 $\cdot$ The Method $\cdot$ problems 12--14}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{@{} l l @{}}
     \hline
-    \textbf{Survey} & counts and attitudes from many people \\
-    \textbf{Interview} & depth from one person --- the \emph{why} \\
-    \textbf{Focus group} & a small group building on each other \\
-    \textbf{Observation} & what people do, not what they say \\
-    \textbf{Content analysis} & records that already exist \\
+    \textbf{Method} & \textbf{Best when you need\ldots} \\
+    \hline
+    Survey           & the same fixed questions from many people \\
+    Interview        & depth from one person --- the reasons, the \emph{why} \\
+    Focus group      & a small group building on each other's answers \\
+    Observation      & what people actually \emph{do}, not what they say they do \\
+    Content analysis & records that already exist --- change over time \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.6cm}
+  \vspace{8pt}
   \begin{center}
-    {\color{cerulean}\bfseries Match the method to what the question needs.}
+    {\color{cerulean}\bfseries The question picks the method. The method never picks the
+    design.}
   \end{center}
 \end{frame}
 
-% ── THE TRAP ─────────────────────────────────────────────────────────────────
+% ── ROW 4b. THE CRUX ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Observation is not ``observational study''}
-  \sectionlabel{the one to get wrong}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{10pt}
-        \item \textbf{Observation} is a \emph{method} --- how the data get
-              recorded.
-        \item An \textbf{observational study} is a \emph{design} --- nobody
-              assigned the groups.
-        \item Bayside's reading experiment collected its data by observation.
-              It was still an experiment.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Study type: who built the groups. Method: what
-    the question needs.}
-  \end{center}
+  \ceruleanheader{The method is not the design}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problem 15 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Who built the groups?}
+        A random number generator, 60/60. \\[3pt]
+        $\Rightarrow$ the \textbf{design} is a \redink{controlled experiment}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{How were the answers recorded?}
+        She sat in the Study Center and watched. \\[3pt]
+        $\Rightarrow$ the \textbf{method} is \redink{observation}.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Problem 15 --- vote again: is the classmate right?}
+    \item \emph{Observation} is a method. An \emph{observational study} is a design. They are
+          not the same word twice.
+  \end{itemize}
+  \begin{block}{PS.DC.3e}
+    \textbf{An experiment can collect its data by observation.} How the data arrived
+    \redink{never} decides who built the groups.
+  \end{block}
 \end{frame}
 
-% ── THE ACTIVITY SETUP ───────────────────────────────────────────────────────
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Your turn: three studies, one desk}
-  \sectionlabel{group activity}
+  \ceruleanheader{Guided Practice: Harbor Point Community Pool}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 16--19 $\cdot$ you hold the pen}
+  1{,}500 members. Two studies already on the desk (1.5: surveyed 200; 1.6: assigned 90).
+  \textbf{Now:} 120 volunteers, a generator sends 60 to a weekly water-aerobics class and 60 to
+  no class for six weeks. \textbf{42} of the class group and \textbf{30} of the others report
+  less joint pain.
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item[16.] Label the two earlier studies by design --- and who built the groups in each?
+    \item[17.] The two rates, the gap, and the strongest sentence this study earns.
+    \item[18.] New question: \emph{do members who already have arthritis sleep worse?} Can she
+          assign it? Which reason? What does she run, with which verb?
+    \item[19.] She asked all 120 the same three questions; she also wants to know \emph{why}
+          some quit. Name both methods --- does either change the design?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If 19 changed your answer to ``observational study,'' you are still at the hook vote.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      Harbor Point's director has a survey (25-point gap), an experiment
-      (20-point gap), and a new question: does a weekly water-aerobics class
-      reduce reported joint pain? She assigns 120 volunteers, 60 and 60.
-    \end{minipage}
-  \end{center}
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief: who built the groups?}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item The counselor watched --- and a generator built her groups. Say the sentence.
+    \item Problem 8: who could hand out a 45-minute bus ride? Then what is the reason?
+    \item Problems 2 and 3: same Study Center, two verbs. What bought \emph{caused}?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Bayside Middle School. \textbf{Study A:} the counselor compared the 150 students in band
+    with the 600 who are not --- 90 of the band students had a B average. \textbf{Study B:} 80
+    sixth-graders volunteered; a generator sent 40 to a silent reading block and 40 to homeroom
+    --- 70\% improved against 40\%. \textbf{Which study may say the program \emph{caused} the
+    difference --- and what percent of the band students had a B average?}
+  \end{block}
+\end{frame}
 
-  \vspace{0.7cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Which sentence does each study earn --- and what
-    do you do with the question she cannot assign?}
-  \end{center}
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Millbrook Public Library} --- 1{,}200 card holders, and now a \emph{third}
+          study: 300 volunteers, 150/150, a weekly evening book club.
+    \item Sort the two earlier studies; compute the book-club rates and the gap.
+    \item Plan the study through the cycle; decide two new questions --- assign or not?
+    \item Match all five collection methods to five jobs.
+    \item Then the two claims: she \emph{watched} the book club --- and the 48-point gap.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 2, and 6}. Item 6 is the one I am reading over your shoulder --- if
+    you called the book-club study observational, flag me before you leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item Observational: groups already exist $\Rightarrow$
-              \textbf{association}.
-        \item Experiment: chance assigns $\Rightarrow$ \textbf{cause and
-              effect}.
-        \item You can only assign when it is ethical, possible, and practical.
-        \item The \textbf{statistical cycle} plans an experiment too --- the
-              assigning lives in \emph{Collect}.
-        \item Then choose the \textbf{method}: survey, interview, focus group,
-              observation, content analysis.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Who built the groups decides the design. How the answers were
+    recorded decides the method. The biggest gap in this unit is the one you should trust
+    least.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.8 --- \emph{You Run the Study}. Today you judged
+    other people's designs. Next time the question is yours, and every decision on this page is
+    one you have to make.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

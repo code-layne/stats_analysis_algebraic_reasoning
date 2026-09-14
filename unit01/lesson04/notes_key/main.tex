@@ -1,39 +1,52 @@
 %! Bias in Samples and Surveys — Unit 1, Lesson 1.4 — Guided Notes & Practice (Answer Key)
-% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
-% THE in-class document. The notes carry the whole gradual release, closed by a SPOKEN debrief.
-% They run SHORT on purpose: the period ends with students starting the homework, which is
-% where the individual practice lives.
-%   I DO   : the vocabulary box and notes sections 1-2.                              (~20 min)
-%   WE DO  : the practicebox ("Guided Practice") — Cedar Ridge Apartments, together.  (~15 min)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.0–1.4cm of writing room. Problems run 1..19.
+% DENSITY: a \blank{} only where a word IS the answer (the five cells of the diagnostic table
+% in row 3 — the one \wordbank strip sits above it); no mid-sentence blanks; every display is
+% pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 10, 12).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (16–19), is worked entirely together on Cedar Ridge Apartments
+%            instead of the pool.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
-%            last ten minutes of the period.
-% PAGE PLAN: p1 = vocab box + hook (no objective box — the cover carries the targets);
-% p2 = section 1; p3 = section 2; p4 = the Guided Practice alone. Every fill-in cluster opens
-% with a \wordbank{}. No closing practice set, no extension.
-% Vocabulary is GIVEN here, not discovered. THE CRUX is the second half of section 2: "the
-% sample was too small" — a larger sample makes an estimate more PRECISE, not more CORRECT;
-% size shrinks variability and does nothing to direction (PS.DC.2c, AFDA.DA.2e). The second
-% half of section 1 carries the second trap: undercoverage and nonresponse fused — the test is
-% COULD THAT PERSON HAVE BEEN CHOSEN?
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 8 (row 2: all 1,500 got a card, 200 mailed it back — a perfect frame and
+% a broken study: nonresponse, not undercoverage). Problem 4 is the smaller trap (the tighter
+% Tuesday row is the wrong one — consistent is not correct).
+% THE CRUX is problem 13 (row 4, "Bigger Is Not Better"): ten Tuesdays, 270/750 = 36%, the
+% same 16-point miss — a larger sample is more PRECISE, not more CORRECT; size shrinks
+% variability and does nothing to direction (PS.DC.2c, AFDA.DA.2e). The hook vote is re-taken
+% there. Problem 18 is the crux transferred to Cedar Ridge; problem 19 is AFDA.DA.2g (name the
+% bias in the wording, rewrite it balanced).
 %
 % THE DATA
 %   Harbor Point Community Pool (warm-up + notes): 1,500 members; census truth 300/1500 = 20%
 %     mainly swim laps. Tuesday-evening sample 27/75 = 36% -> 540 predicted, off by 240.
 %     Three honest samples 19/22/19 average 20%; three Tuesday samples 35/36/37 average 36%.
 %     Ten Tuesdays: 270/750 = 36% — the same 16-point miss. Question order: 62% vs 41% = 21.
-%   Guided Practice, Cedar Ridge Apartments (the old activity's context): 600 households ALL
-%     mailed a card; 150 return (25%); 96/150 = 64% -> 384 predicted; census 240/600 = 40%,
-%     so 24 points and 144 households too many; re-run 192/300 = 64% again.
+%   Guided Practice, Cedar Ridge Apartments: 600 households ALL mailed a card; 150 return
+%     (25%); 96/150 = 64% -> 384 predicted; census 240/600 = 40%, so 24 points and 144
+%     households too many; re-run 192/300 = 64% again.
 %
-% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file — every \blank{} becomes
-% an \ans{}, every \par\writelines{n} becomes n \ansline{} calls, every \vterm{} a
-% \vtermans{}{}. Every \begin{work} block is byte-identical. Blank widths are sized to their
-% answers so the two files wrap alike.
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson04_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% Word bank strip — ONLY above a table the student fills (row 3). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
 \newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 % Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
@@ -67,11 +80,11 @@
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
-\vtermans{Bias}{A study is biased when its procedure systematically overestimates or underestimates the population value --- every sample leans the same direction.}
-\vtermans{Sampling bias}{Bias from how the sample was chosen: some members of the population are systematically more likely to be picked than others.}
-\vtermans{Undercoverage}{Part of the population is left off the sampling frame, so those members can never be chosen at all.}
+\vtermans{Bias}{A study is biased when its procedure systematically misses the population value the same way every time --- a direction, not bad luck.}
+\vtermans{Sampling bias}{Bias from how the sample was chosen: some members of the population are more likely to be picked than others.}
+\vtermans{Undercoverage}{Part of the population is left off the sampling frame, so those members have no chance at all of being chosen.}
 \vtermans{Nonresponse}{Members are chosen properly but never answer, so the data is missing exactly the people who stayed silent.}
-\vtermans{Response bias}{Anything about the survey itself --- who asks, the wording, the order --- that pushes a respondent away from their true answer.}
+\vtermans{Response bias}{Anything about the survey itself --- who asks, the wording, the order --- that pushes a respondent off their true answer.}
 \end{vocabbox}
 
 \boxguard[12]
@@ -84,198 +97,221 @@ ten weeks and ask $750$ members instead of $75$.
 
 \vspace{3pt}
 \textbf{Will her new number land closer to the truth, $20\%$?} Circle one: \quad yes \qquad
-no \qquad it depends \quad --- and say why you think so. We vote again at the end of
-section~2.
-\par\ansline{Answers vary --- most of the room says yes (``more people, better answer'').}
-\ansline{(Settled at the end of section 2: no --- 270 of 750 is 36\% again. Same Tuesday, same lean.)}
+no \qquad it depends \quad --- and say why you think so. We vote again at problem~13.
+\par\ansline{Answers vary --- most of the room votes yes: more people must mean a better number.}
+\ansline{(Settled at problem 13: no --- $270/750 = 36\%$, the same 16-point miss.)}
 \end{hookbox}
 
-% ── I DO: section 1 ──────────────────────────────────────────────────────────
-% Page 2: section 1 (page 1 is the vocab box + hook).
-\newpage
-\begin{notesbox}{1. Bias Is a Direction, Not Bad Luck}
 \small
-Lesson 1.2 said that honest random samples disagree with each other --- that is
-\textbf{sampling variability}, and nobody is wrong. Those samples scatter \emph{around} the
-truth. Today's studies are wrong the \emph{same way every time}.
-\wordbank{direction \;\textbullet\; 20\% \;\textbullet\; 36\% \;\textbullet\; Tuesday \;\textbullet\; too high \;\textbullet\; too low \;\textbullet\; lap swimmers \;\textbullet\; undercoverage \;\textbullet\; nonresponse \;\textbullet\; could \;\textbullet\; could not}
+\begin{guidednotes}
+% ── ROW 1: bias is a direction, not bad luck ─────────────────────────────────
+\mainidea[A direction, not bad luck]{Bias} &
 A study is \textbf{biased} when its procedure \emph{systematically} overestimates or
-underestimates the population value. Every sample it takes leans the same \ans{direction}.
-The office's records say $20\%$ of all $1{,}500$ members mainly swim laps (the warm-up).
-Here are two ways of taking three samples of $75$:
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} X c c c p{1.9cm} @{}}
-\toprule
-\textbf{How the $75$ were chosen} & \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{Average} \\
-\midrule
-At random from the full membership list & $19\%$ & $22\%$ & $19\%$ & \ans{20\%} \\
-From whoever arrived Tuesday evening    & $35\%$ & $36\%$ & $37\%$ & \ans{36\%} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-Both rows disagree with themselves --- that is variability, and it is unavoidable. Only the
-\ans{Tuesday} row misses the \emph{truth} every single time, and it misses \ans{too high}.
-Tuesday evening is lap-swim time, so \ans{lap swimmers} are over-counted. \textit{Consistent
-is not the same as correct: the tighter row is the wrong one.}
-
-\vspace{5pt}
-\textbf{\textcolor{cerulean}{Sampling Bias --- Who Never Had a Chance.}}
-\textbf{Sampling bias} gets in when some members of the population are systematically more
-likely to be chosen than others. It arrives two ways, both before anyone speaks.
-\textbf{Undercoverage:} part of the population is left off the sampling frame, so those
-members can never be chosen. \textbf{Nonresponse:} members are chosen properly but never
-answer, so the data is missing exactly the people who stayed silent.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} X p{3.9cm} p{2.9cm} @{}}
-\toprule
-\textbf{The plan} & \textbf{Who is missing?} & \textbf{Which bias?} \\
-\midrule
-Ask the members who arrive Tuesday evening. & morning and weekend swimmers & \ans{undercoverage} \\
-Email the survey only to members with an address on file. & members with no email on file & \ans{undercoverage} \\
-Post the survey on the pool's social media page. & members who do not follow the page & \ans{undercoverage} \\
-Mail a card to all $1{,}500$ members; $200$ mail it back. & the $1{,}300$ who never mailed it back & \ans{nonresponse} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\begin{center}
-\fcolorbox{redacc}{redbg}{\parbox{0.94\linewidth}{\small
-\textbf{Careful --- the last row's frame is perfect.} All $1{,}500$ got a card, and the
-study is still broken. The test that separates the two: \emph{could that person have been
-chosen?} A morning swimmer \ans{could not} have been chosen on Tuesday evening ---
-undercoverage. A silent card holder \ans{could} have been --- nonresponse. Both leave
-people out, and neither one shows up in your arithmetic.}}
-\end{center}
-
-\end{notesbox}
-
-% Page 3: section 2.
-\newpage
-\begin{notesbox}{2. Response Bias --- After the Right Person Is Chosen}
-\small
-\textbf{Response bias} is anything about the survey itself --- who is asking, how it is worded,
-what order it comes in --- that pushes a respondent away from their true answer. It happens
-\emph{after} the right person has been chosen. The standard names seven kinds; read them once,
-then diagnose.
-\wordbank{social desirability \;\textbullet\; neutral responding \;\textbullet\; acquiescence \;\textbullet\; demand \;\textbullet\; question order \;\textbullet\; 36\% \;\textbullet\; 16 \;\textbullet\; precise \;\textbullet\; correct \;\textbullet\; variability \;\textbullet\; direction \;\textbullet\; undercoverage \;\textbullet\; nonresponse}
-\nopagebreak
-\begin{center}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{4.1cm} X @{}}
+underestimates the population value --- every sample leans the \textbf{same way}. Honest
+random samples (Lesson 1.2) only \emph{scatter around} the truth. The records say $20\%$
+mainly swim laps; three samples of $75$, two ways:
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.70]
+  % percent axis: x = (p - 10) * 0.32, so 10% -> 0 and 45% -> 11.2
+  \draw[->, thick] (-0.2,0) -- (11.6,0);
+  \foreach \p in {10,15,...,45} {
+    \draw ({(\p-10)*0.32},-0.1) -- ({(\p-10)*0.32},0.1);
+    \node[below, font=\tiny] at ({(\p-10)*0.32},-0.1) {\p\%}; }
+  % the truth: 20%
+  \draw[cerulean, very thick, dashed] (3.2,-0.05) -- (3.2,2.45);
+  \node[font=\scriptsize\bfseries\color{cerulean}, above] at (3.2,2.45) {truth: $20\%$ (the records)};
+  % row A: random from the full list — 19, 22, 19
+  \node[anchor=east, font=\scriptsize\bfseries] at (-0.3,1.8) {random from the list};
+  \draw[linegray] (0,1.8) -- (4.5,1.8);
+  \fill[goldacc] (2.88,1.67) circle (0.13);
+  \fill[goldacc] (2.88,1.95) circle (0.13);
+  \fill[goldacc] (3.84,1.8) circle (0.13);
+  \node[font=\tiny, anchor=west] at (4.75,1.8) {$19\%$, $22\%$, $19\%$};
+  % row B: whoever arrived Tuesday evening — 35, 36, 37
+  \node[anchor=east, font=\scriptsize\bfseries] at (-0.3,0.95) {Tuesday evening};
+  \draw[linegray] (0,0.95) -- (8.85,0.95);
+  \fill[redacc] (8.0,0.95) circle (0.13);
+  \fill[redacc] (8.32,0.95) circle (0.13);
+  \fill[redacc] (8.64,0.95) circle (0.13);
+  \node[font=\tiny, anchor=west] at (9.1,0.95) {$35\%$, $36\%$, $37\%$};
+  % the gap
+  \draw[<->, redacc, thick] (3.2,0.4) -- (8.32,0.4);
+  \node[font=\tiny\bfseries\color{redacc}, above] at (5.76,0.42) {$16$ points, every time};
+\end{tikzpicture}\par\vspace{3pt}
+Scatter around it: \labelbox{2.4cm}{variability}\qquad Same miss every time: \labelbox{1.3cm}{bias}\par}
+\\
+& \notesprompt{Read the display. \emph{Consistent is not the same as correct.}}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Average each row: random ($19$, $22$, $19$) and Tuesday ($35$, $36$, $37$).}{1.0cm}{Random $20\%$; Tuesday $36\%$.} & \pcell{2}{Both rows wobble. Which row misses the truth \emph{every} time --- too high or too low?}{1.0cm}{The Tuesday row --- always too high.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Tuesday evening is lap-swim time. Who is over-counted, and why does that push the number up?}{1.2cm}{Lap swimmers: Tuesday evening is lap-swim time.} & \pcell{4}{The Tuesday row agrees with itself better. Is it the row to trust? Explain.}{1.2cm}{No --- consistent is not correct.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: sampling bias — undercoverage and nonresponse ─────────────────────
+\mainidea[Who never had a chance]{Sampling Bias} &
+\textbf{Sampling bias} gets in when some members are more likely to be chosen than others ---
+it arrives \emph{before anyone speaks}. \textbf{Undercoverage:} part of the population is left
+off the \textbf{sampling frame} and can never be chosen. \textbf{Nonresponse:} members are
+chosen properly but never answer.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.70]
+  % the population
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (13.0,3.0);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (13.0,3.0);
+  \node[anchor=west, font=\scriptsize\bfseries\color{cerulean}] at (0.2,2.7) {Harbor Point --- all $1{,}500$ members};
+  % the frame: who could be chosen
+  \fill[white, rounded corners=4pt] (0.3,0.3) rectangle (8.6,2.3);
+  \draw[cerulean, thick, rounded corners=4pt] (0.3,0.3) rectangle (8.6,2.3);
+  \node[anchor=west, font=\tiny\bfseries\color{cerulean}] at (0.45,2.05) {the frame: members who \emph{could} be chosen};
+  % the chosen: an oval inside the frame; filled dots answered, hollow dots silent
+  \fill[goldbg] (4.45,1.15) ellipse (3.0 and 0.72);
+  \draw[goldacc, very thick] (4.45,1.15) ellipse (3.0 and 0.72);
+  \node[font=\tiny\bfseries\color{goldacc}, fill=goldbg, inner sep=1pt] at (4.45,1.63) {chosen};
+  \foreach \x in {2.2,2.7,3.2,3.7,4.2} { \fill[slate] (\x,1.2) circle (0.1); }
+  \foreach \x in {4.9,5.4,5.9,6.4,6.9} { \draw[slate, thick] (\x,1.2) circle (0.1); }
+  \node[font=\tiny, anchor=north] at (3.2,1.0) {\emph{answered}};
+  \node[font=\tiny, anchor=north] at (5.9,1.0) {\emph{silent}};
+  % off the frame
+  \foreach \x in {9.3,9.9,10.5,11.1,11.7,12.3} { \foreach \y in {0.55,1.05} { \fill[slate!50] (\x,\y) circle (0.09); }}
+  \node[font=\tiny\bfseries\color{redacc}, align=center] at (10.8,1.85) {off the frame:\\could \emph{never} be chosen};
+\end{tikzpicture}\par\vspace{3pt}
+Off the frame: \labelbox{2.9cm}{undercoverage}\quad Chosen but silent: \labelbox{2.4cm}{nonresponse}\par}
+\textbf{The test: \emph{could that person have been chosen?}} No $\Rightarrow$ undercoverage.
+Yes, but silent $\Rightarrow$ nonresponse.
+\\
+& \notesprompt{Who is missing, and which bias? Ask the test question.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Ask the members who arrive on a Tuesday evening.}{1.0cm}{Undercoverage --- daytime members are off the frame.} & \pcell{6}{Email the survey only to members with an email address on file.}{1.0cm}{Undercoverage --- no email, no chance.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{Post the survey on the pool's social media page.}{1.0cm}{Undercoverage --- non-users cannot be chosen.} & \pcell{8}{Mail a card to \emph{all} $1{,}500$; $200$ mail it back. \textbf{Careful: the frame is perfect.}}{1.2cm}{Nonresponse --- the frame was perfect.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: response bias — after the right person is chosen ──────────────────
+\mainidea[After the right person is chosen]{Response Bias} &
+\textbf{Response bias} is anything about the survey itself --- who asks, the wording, the
+order --- that pushes a respondent from their true answer. It comes \emph{after} the right
+person is chosen, so no sampling method prevents it. Seven kinds:
+\\
+& \footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.5cm} X @{}}
 \toprule
 \textbf{\normalfont Kind} & \textbf{What the respondent does} \\
 \midrule
-Demand bias & Guesses what the study wants to hear and answers to match. \\
-Social desirability & Gives the answer that looks good to other people. \\
-Dissent bias & Answers negatively to everything, often without understanding the questions. \\
-Acquiescence bias & Agrees with everything --- every answer positive. \\
+Demand & Guesses what the study wants to hear and says it. \\
+Social desirability & Gives the answer that looks good to others. \\
+Dissent & Says no to everything, often without reading. \\
+Acquiescence & Agrees with everything --- every answer positive. \\
 Extreme responses & Always ``strongly agree'' or ``strongly disagree.'' \\
 Neutral responding & Always the middle, no-opinion choice. \\
-Question order bias & An earlier question changes the answer to a later one. \\
+Question order & An earlier question changes a later answer. \\
 \bottomrule
-\end{tabularx}
-\end{center}
-
-\nopagebreak
-\begin{center}
-\renewcommand{\arraystretch}{1.15}
+\end{tabularx}\small
+\\
+& \textbf{9.} Name the kind of response bias in each situation at the pool.
+\wordbank{demand \;\textbullet\; social desirability \;\textbullet\; dissent \;\textbullet\; acquiescence \;\textbullet\; extreme responses \;\textbullet\; neutral responding \;\textbullet\; question order}
+\footnotesize\renewcommand{\arraystretch}{1.05}
 \begin{tabularx}{\linewidth}{@{} X p{3.4cm} @{}}
 \toprule
 \textbf{At the pool} & \textbf{Kind} \\
 \midrule
-The lifeguard hands it out and waits; last week's complainers rate the staff ``excellent.'' & \ans{social desirability} \\
-A member marks ``no opinion'' on all fifteen questions. & \ans{neutral responding} \\
-A member agrees with every statement, even two that contradict each other. & \ans{acquiescence} \\
-The survey is titled \emph{``Help us show the pool needs longer hours.''} & \ans{demand} \\
-Asked \emph{``Are the lap lanes overcrowded?''} first, $62\%$ say yes to a \$40,000 lane;
-asked the money question first, $41\%$ do --- same words, $21$ points apart. & \ans{question order} \\
+The lifeguard hands it out and waits; the staff is rated ``excellent.'' & \ans{social desirability} \\
+``No opinion'' on all fifteen questions. & \ans{neutral responding} \\
+Agrees with every statement, even two that conflict. & \ans{acquiescence} \\
+Titled \emph{``Help us show the pool needs longer hours.''} & \ans{demand} \\
+Crowding asked first: $62\%$ back a lane. Money first: $41\%$. & \ans{question order} \\
 \bottomrule
-\end{tabularx}
-\end{center}
+\end{tabularx}\small
+\\
+& \notesprompt{Say which way it pushes.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Same words, two orders: $62\%$ versus $41\%$. How many points apart --- and which order would a member who \emph{wants} the lane ask?}{1.0cm}{$21$ points; crowding first.} & \pcell{11}{Choose the $75$ at random from the full list, but keep the title \emph{``Help us show the pool needs longer hours.''} Fixed? Explain.}{1.0cm}{No --- the title is response bias.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — bigger is not better ───────────────────────────────────
+\mainidea[Ten Tuesdays]{Bigger Is Not Better} &
+Told her sample was too small, the staff member runs the \emph{same} Tuesday survey for ten
+weeks: $750$ asked, and $270$ say they mainly swim laps.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.65]
+  % percent axis: x = (p - 10) * 0.32
+  \draw[->, thick] (-0.2,0) -- (11.6,0);
+  \foreach \p in {10,15,...,45} {
+    \draw ({(\p-10)*0.32},-0.1) -- ({(\p-10)*0.32},0.1);
+    \node[below, font=\tiny] at ({(\p-10)*0.32},-0.1) {\p\%}; }
+  \draw[cerulean, very thick, dashed] (3.2,-0.05) -- (3.2,2.35);
+  \node[font=\scriptsize\bfseries\color{cerulean}, above] at (3.2,2.35) {truth: $20\%$};
+  % one Tuesday: 75 asked — a wide bracket of where it could land, centred at 36.
+  % Captions sit to the RIGHT of each bracket, never above it: TikZ scales coordinates
+  % but NOT font size, so a caption stacked above a line collides at scale < 0.75.
+  \node[anchor=east, font=\scriptsize\bfseries] at (-0.3,2.0) {one Tuesday, $75$};
+  \draw[redacc, thick, |-|] (6.4,2.0) -- (10.24,2.0);
+  \fill[redacc] (8.32,2.0) circle (0.14);
+  \node[font=\tiny, anchor=west] at (10.4,2.0) {wide};
+  % ten Tuesdays: 750 asked — a narrow bracket, still centred at 36
+  \node[anchor=east, font=\scriptsize\bfseries] at (-0.3,1.1) {ten Tuesdays, $750$};
+  \draw[redacc, thick, |-|] (7.84,1.1) -- (8.8,1.1);
+  \fill[redacc] (8.32,1.1) circle (0.14);
+  \node[font=\tiny, anchor=west] at (8.95,1.1) {tighter --- still $36\%$};
+  % the gap that does not move
+  \draw[<->, redacc, thick] (3.2,0.40) -- (8.32,0.40);
+  \node[font=\tiny\bfseries\color{redacc}, above] at (5.60,0.42) {$16$ points --- unchanged};
+\end{tikzpicture}\par\vspace{3pt}
+The bracket shrinks: \labelbox{2.4cm}{variability}\qquad The gap stays: \labelbox{1.3cm}{bias}\par}
+\\
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{A larger sample makes an estimate more \emph{precise}, not more \emph{correct}.}\par
+Size shrinks \textbf{variability}; nothing about size touches \textbf{direction}. Only a better \emph{procedure} removes bias.}}
+\\
+& \notesprompt{Now settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{Compute $270$ of $750$ as a percent. Off by how many points from $20\%$? One Tuesday was off by how many?}{1.2cm}{$270/750 = 36\%$; off by $16$ --- so was one Tuesday.} & \pcell{13}{\textbf{Vote again:} yes \; no \; it depends. Did $750$ land closer than $75$? What did ten times the work change --- and not change?}{1.4cm}{No. Ten Tuesdays shrank the spread, not the lean.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{Name the bias each fix removes: (a) a complete list as the frame; (b) calling back the silent; (c) neutral, anonymous wording.}{1.2cm}{(a) undercoverage (b) nonresponse (c) response bias} & \pcell{15}{The board offers a random sample of just $75$ from the full list. Smaller than $750$ --- is it better? Why?}{1.2cm}{Yes --- a random $75$ has no lean.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Cedar Ridge} &
+Cedar Ridge Apartments has $600$ households. Management mails a parking survey to
+\emph{every} household; $150$ cards come back, $96$ of those say parking is a problem --- and
+management is about to ask the owners for a bigger lot.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.65]
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (13.0,2.4);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (13.0,2.4);
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (6.5,2.1) {all $600$ households --- \emph{every} one mailed a card};
+  % the 150 who answered
+  \fill[goldbg] (3.3,0.95) ellipse (3.1 and 0.72);
+  \draw[goldacc, very thick] (3.3,0.95) ellipse (3.1 and 0.72);
+  \node[font=\scriptsize\bfseries\color{goldacc}] at (3.3,1.22) {$150$ mailed it back};
+  \node[font=\tiny] at (3.3,0.78) {$96$ say parking is a problem};
+  % the silent
+  \node[font=\scriptsize\bfseries\color{slate}] at (9.9,1.3) {$450$ threw the card away};
+  \node[font=\tiny\itshape] at (9.9,0.75) {a census later: $240$ of $600$ complain};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{What share of the $600$ answered at all? What share of \emph{those} said parking is a problem? Scale that percent to all $600$.}{1.3cm}{$25\%$ answered; $64\%$ of those; $384$ of $600$.} & \pcell{17}{Every household got a card. Could a silent one have been chosen --- so which bias? The census says $40\%$: off by how many points, how many households, which way?}{1.4cm}{Yes --- nonresponse. $24$ points, $144$ households high.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{Management mails again: $300$ back, $192$ complain --- $64\%$ again. Two-bedroom households own the most cars \emph{and} answer at twice the rate. Why did twice the cards not help?}{1.2cm}{Same procedure, more of it --- the same households.} & \pcell{19}{The card asked: \emph{``Don't you agree that Cedar Ridge's parking lot is dangerously overcrowded?''} Name the response bias it invites, then rewrite it to push neither way.}{1.2cm}{Acquiescence. ``Is parking a problem for you?''} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{4pt}
-\textbf{\textcolor{cerulean}{The Fix That Is Not a Fix.}}
-Told her sample was too small, the staff member runs the same Tuesday-evening survey for ten
-weeks. She asks $750$ members, and $270$ of them say they mainly swim laps. Show the work:
-
-\begin{work}
-  \dfrac{270}{750} &= 0.36 = 36\%
-\end{work}
-
-One Tuesday: $75$ asked, $36\%$, off by \ans{16} points. Ten Tuesdays: $750$ asked,
-\ans{36\%}, off by \ans{16} points. Ten times the work, the same answer.
-\textbf{Vote again.}
-
-\vspace{3pt}
-\begin{center}
-\fcolorbox{cerulean}{frost}{\parbox{0.94\linewidth}{\small
-\textbf{A larger sample makes an estimate more \ans{precise}, not more \ans{correct}.} Size
-shrinks \ans{variability}; nothing about size touches \ans{direction}. The $750$ are still
-Tuesday-evening lap swimmers --- a bigger biased sample is a more confident wrong answer. Only
-a better \emph{procedure} removes bias, and each fix removes one: a complete frame removes
-\ans{undercoverage}; calling back the silent removes \ans{nonresponse}; neutral wording and anonymous
-answers remove response bias.}}
-\end{center}
-
-\end{notesbox}
-
-% Page 4: the Guided Practice, alone.
-\newpage
-\begin{practicebox}
-\small
-\textbf{Cedar Ridge Apartments --- we work this one together.} Cedar Ridge has $600$
-households. Management mails a parking survey to \emph{every} household; $150$ cards come
-back, and $96$ of those say parking is a problem. Management is about to tell the owners that
-Cedar Ridge needs a bigger lot.
-\wordbank{undercoverage \;\textbullet\; nonresponse \;\textbullet\; yes \;\textbullet\; no \;\textbullet\; 24 \;\textbullet\; 144 \;\textbullet\; too high \;\textbullet\; too low \;\textbullet\; acquiescence \;\textbullet\; demand}
-\textbf{(a)} What share of the households answered at all, and what share of \emph{those}
-said parking is a problem?
-
-\begin{work}
-  \dfrac{150}{600} &= 0.25 = 25\% \\
-  \dfrac{96}{150}  &= 0.64 = 64\%
-\end{work}
-
-\vspace{3pt}
-\textbf{(b)} Every household got a card, so nobody was left off the frame --- this is not
-\ans{undercoverage}. The $450$ households that threw the card away are \ans{nonresponse}. Could one
-of them have been chosen? \ans{yes}
-
-\vspace{3pt}
-\textbf{(c)} Management scales $64\%$ to all $600$ households. A year later the office asks
-\emph{every} household, and $240$ of the $600$ say parking is a problem. Show both.
-
-\begin{work}
-  0.64 \times 600 &= 384 \text{ households} \\
-  \dfrac{240}{600} &= 0.40 = 40\%
-\end{work}
-
-The mail-in study was off by \ans{24} percentage points --- \ans{144} households
---- and it was \ans{too high}.
-
-\vspace{3pt}
-\textbf{(d)} Management says the first study just needed more cards. They mail again, get
-$300$ back, and $192$ of those say parking is a problem: $192 \div 300 = 64\%$ again.
-Two-bedroom households own the most cars \emph{and} mailed their cards back at twice the
-rate of studio households. Explain why twice the cards did not help, and why the miss is in
-the direction you named in (c).
-\par\ansline{More cards from the same procedure: still only the households that chose to answer, and}
-\ansline{the car owners answered at twice the rate --- so the 64\% is too high no matter how many cards.}
-
-\vspace{3pt}
-\textbf{(e)} The card asked: \emph{``Don't you agree that Cedar Ridge's parking lot is
-dangerously overcrowded?''} Name the response bias that wording invites: \ans{acquiescence}. Then
-rewrite the question so it pushes neither way.
-\par\ansline{``Do you think the amount of parking at Cedar Ridge is too little, about right, or too much?''}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

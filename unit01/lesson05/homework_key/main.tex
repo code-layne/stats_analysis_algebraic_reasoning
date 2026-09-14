@@ -1,170 +1,148 @@
 %! Observational Studies — Unit 1, Lesson 1.5 — Homework (Answer Key)
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on the Harbor Point pool, the Guided Practice runs on
+% Riverbend's Study Center, and these items are on the Millbrook Public Library — recall is
+% not the skill.
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-2 on page 1, items 3-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 4's two rows are the deliberate CONTRAST PAIR (the association sentence, supported;
+% the newsletter's causal sentence, not). Item 5 is the arrow backwards, from the previous
+% summer's records. Item 6 is the crux head-on: no bias at all, and still no causation.
+% Item 3 is the spiral to 1.2 (pool the sample, scale to the population, call it an estimate).
+% THE DATA — Millbrook Public Library: 1,200 card holders; random phone sample of 240, all
+%   reached; 90 signed up for the Summer Reading Program, 72 read 10+ books -> 72/90 = 80%;
+%   150 did not sign up, 48 read 10+ -> 48/150 = 32%; gap 48 points; pooled 120/240 = 50%;
+%   0.50 x 1,200 = 600; previous summer 63/90 = 70% vs 30/150 = 20%. Verified in Python.
+% PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[Millbrook Public Library --- Does the Summer Reading Program Work?]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-Millbrook Public Library has $1{,}200$ card holders. Every summer it runs a
-free Summer Reading Program that any card holder may sign up for. In September
-the director draws a random sample of $240$ card holders from the full
-membership list and reaches every one of them by phone.
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the
+first class after two study halls. You will start it in the last minutes of the period, so ask about anything that stalls
+you before you leave, then finish it on your own.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Millbrook Public Library --- Does the Summer Reading Program Work?]{cerulean}
+Millbrook Public Library has $1{,}200$ card holders. Every summer it runs a free Summer
+Reading Program that any card holder may sign up for. In September the director draws a
+random sample of $240$ card holders from the full membership list and reaches every one of
+them by phone.
 
 \vspace{2pt}
-Of the $240$, \textbf{$90$ had signed up for the program} and \textbf{$150$ had
-not}. Of the $90$ who signed up, $72$ read at least $10$ books over the summer.
-Of the $150$ who did not, $48$ did.
+Of the $240$, $90$ had signed up for the program and $150$ had not. Of the $90$ who signed
+up, $72$ read at least $10$ books over the summer. Of the $150$ who did not, $48$ did.
 \end{scenariobox}
 
 \vspace{0.08in}
 
 \boxguard
 \begin{notesbox}{Practice}
-\small
+Every answer names the group it is about --- the $90$ who signed up, the $150$ who did not,
+or all $1{,}200$ card holders.
+\wordbank{observational \;\textbullet\; the card holders themselves \;\textbullet\; signed up for the program \;\textbullet\; read at least 10 books \;\textbullet\; 48 \;\textbullet\; the program group}
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
-  \item The director did not put anybody into the program --- card holders
-        signed themselves up.
+  \item The director did not put anybody into the program --- card holders signed themselves up.
 
-        \textbf{(a)} Is this an observational study? \ans{yes}
+        \par\vspace{4pt}
+        What kind of study is this? \ans{observational} \hfill Who decided the groups? \ans{the card holders themselves}
+        \par\vspace{8pt}
+        Explanatory variable: \ans{signed up for the program} \hfill Response variable: \ans{read at least 10 books}
 
-        \textbf{(b)} Who decided which card holders were in each group?
-        \ans{the card holders themselves}
-
-  \item Compute the reading rate for each group.
-
-        \textbf{(a)} What percent of the $90$ who signed up read at least $10$
-        books?
+  \item Compute the reading rate for each group --- watch the two denominators --- then the
+        gap.
 
         \begin{work}
-          \dfrac{72}{90} &= 0.80 \\
-                         &= 80\%
+          \dfrac{72}{90} &= 0.80 = 80\% \text{ of the program group} \\
+          \dfrac{48}{150} &= 0.32 = 32\% \text{ of the others}
         \end{work}
 
-        \textbf{(b)} What percent of the $150$ who did not sign up read at least
-        $10$ books?
+        \par\vspace{2pt}
+        The \ans{the program} group is higher by \ans{48} percentage points.
+
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{Practice, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt, start=3]
+
+  \item Now use the whole sample. How many of the $240$ read at least $10$ books, what
+        percent of the sample is that, and about how many of all $1{,}200$ card holders does
+        that predict?
 
         \begin{work}
-          \dfrac{48}{150} &= 0.32 \\
-                          &= 32\%
+          \dfrac{72 + 48}{240} &= \dfrac{120}{240} = 0.50 = 50\% \\
+          0.50 \times 1200 &= 600 \text{ card holders --- an estimate}
         \end{work}
 
-        \textbf{(c)} The program group is higher by \ans{$48$} percentage
-        points.
-
-  \item Now use the whole sample.
-
-        \textbf{(a)} How many of the $240$ card holders read at least $10$
-        books, and what percent is that?
-
-        \begin{work}
-          72 + 48 &= 120 \text{ card holders} \\
-          \dfrac{120}{240} &= 0.50 = 50\%
-        \end{work}
-
-        \textbf{(b)} About how many of all $1{,}200$ card holders does that
-        predict?
-
-        \begin{work}
-          0.50 \times 1200 &= 600 \text{ card holders}
-        \end{work}
-
-  \item Name the two variables, then write the finding the safe way.
-
-        Explanatory: \ans{signing up for the program} \hfill Response: \ans{reading $10$ or more books}
-
-        Write one sentence reporting the result as an \emph{association}, using
-        both percents and no causal words.
-        \ansline{Among Millbrook card holders, $80\%$ of those who signed up read at least $10$ books,}
-        \ansline{against $32\%$ of those who did not --- signing up is associated with more reading.}
-
-  \item The director's newsletter says: \emph{``The Summer Reading Program more
-        than doubles how much our members read.''} Give \emph{two} explanations
-        for the $48$-point gap other than the program itself.
-        \ansline{(1) The arrow runs backwards: people who already read a lot are the ones who sign up.}
-        \ansline{(2) A lurking variable --- families with free time both sign up and read more anyway.}
-
-  \tcbbreak   % keep item 6's prompt with its table — mirrored in homework_key
-  \item Each row below reports a real association somebody found by watching.
-        Name one lurking variable that could explain it instead.
+  \item Same data, two sentences. Decide which one the study supports, and say why.
 
         \begin{center}
-        \renewcommand{\arraystretch}{1.45}
-        \begin{tabularx}{0.97\linewidth}{@{} X p{3.7cm} @{}}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} X p{2.2cm} >{\raggedright\arraybackslash}p{4.6cm} @{}}
         \toprule
-        \textbf{What was observed} & \textbf{A lurking variable} \\
+        \textbf{Statement} & \textbf{Supported?} & \textbf{Why / why not} \\
         \midrule
-        On days when more ice cream is sold, more people get sunburned.
-          & \ans{hot, sunny weather} \\
-        Children with larger shoe sizes read at a higher level.
-          & \ans{the child's age} \\
-        Card holders who use the online catalog return books on time more often.
-          & \ans{how organized the person is} \\
-        Students who own a graphing calculator score higher on the state test.
-          & \ans{the courses they are in} \\
+        Card holders who signed up read more books than card holders who did not.
+          & \ans{yes} & \ans{That is what was seen: $80\%$ vs. $32\%$, a $48$-point gap --- an association.} \\
+        The Summer Reading Program more than doubles how much our members read.
+          & \ans{no} & \ans{Causal (``doubles''). Nobody was assigned; the readers may have signed up.} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
   \item The director checks one more record: how much each card holder read the
-        \emph{previous} summer, before the program existed. Of the $90$ who
-        signed up, $63$ had already read $10$ or more books. Of the $150$ who did
-        not sign up, $30$ had.
+        \emph{previous} summer, before the program existed. Of the $90$ who signed up, $63$
+        had already read $10$ or more books. Of the $150$ who did not, $30$ had.
 
-        \textbf{(a)} Signed up: \ans{$70\%$} \qquad Did not sign up: \ans{$20\%$}
+        \par\vspace{4pt}
+        Signed up: \ans{$63/90 = 70\%$} \qquad Did not sign up: \ans{$30/150 = 20\%$}
 
-        \textbf{(b)} What does that say about who signs up, and does it make the
-        program look better or worse than it is?
-        \ansline{Heavy readers sign up: $70\%$ of them already read $10$ books, against $20\%$ of the}
-        \ansline{others. The group started far ahead, so the program looks better than it really is.}
+        \par\vspace{6pt}
+        Which of the three stories is this --- and does it make the program look
+        \emph{better} or \emph{worse} than it really is?
+        \par\ansline{The arrow backwards --- the card holders who already read a lot are the ones who sign up.}
+\ansline{It makes the program look better than it is: most of the 48-point gap was there before it.}
 
-  \item The sample was drawn at random from the full card-holder list, every
-        person answered, and every count is correct --- so there is no bias in
-        this study.
-
-        Explain why it \emph{still} cannot show that the program caused the
-        extra reading.
-        \ansline{A fair sample tells you the two groups really do differ; it does not tell you why. The}
-        \ansline{card holders sorted themselves, so no random draw can rule out the other explanations.}
+  \item The sample was drawn at random from the full list, every person answered, and every
+        count is correct --- there is \emph{no bias} in this study. Explain why it
+        \emph{still} cannot show that the program caused the extra reading.
+        \par\ansline{Bias is about whether the sample looks like the population; it does. Causation is about why}
+\ansline{the two groups differ, and the card holders sorted themselves --- no sampling method fixes that.}
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
-
-\boxguard
-\begin{extensionbox}
-\small
-Find a real headline that claims one thing causes another --- a news story, an
-ad, a social media post. Copy it down exactly, then:
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item Name the explanatory variable and the response variable.
-  \item Say whether the evidence behind it came from watching or from assigning.
-  \item Name one lurking variable that could explain the association instead.
-  \item Rewrite the headline so it claims only what the study can support.
-\end{enumerate}
-\end{extensionbox}
-
-\vspace{0.08in}
-
-\begin{remindbox}
-\small
-\textbf{Next class (Lesson 1.6):} an observational study cannot show causation
-because the groups build themselves --- so what if we build them instead? Next
-class is \textbf{experimental design}: assigning subjects to treatment and
-control groups on purpose, and the four principles (comparison, randomization,
-replication, and control) that make an experiment worth trusting.
-\end{remindbox}
+\boxguard[5]   % the two-line spiralbox needs about five baselines; a larger guard pushes it to a third page
+\begin{spiralbox}
+\textbf{Next lesson: Experimental Design.} An observational study cannot reach causation
+because the groups build themselves. Next class we build them instead --- treatment and
+control, \emph{assigned} at random --- and meet the four principles that make an experiment
+worth trusting.
+\end{spiralbox}
 
 \end{document}

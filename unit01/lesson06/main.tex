@@ -1,8 +1,17 @@
 %! Principles of Experimental Design — Unit 1, Lesson 1.6 — Lesson Plan
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL-RELEASE plan (warm-up / guided notes and practice / spoken debrief / close and START
+% THE HOMEWORK). The guided notes carry the release ROW BY ROW in one Main Ideas / Notes table
+% (2026-09-12 shape): I do / we do in rows 1-4 (problems 1-13) -> we do the Guided Practice row
+% (problems 14-17). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the homework is the
+% individual practice, and the period ends with students starting it. Teacher-facing. Breakable
+% boxes are `skillbox` with a \boxguard ahead; the two tabularx boxes are `fixedskillbox`
+% (never splits). No group activity, no tier boxes, no exit ticket — the legacy activity/ and
+% exit_ticket/ directories were folded in and removed on the 2026-09-14 regeneration.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 1: Asking Questions with Data: Study Design \quad}
@@ -16,474 +25,459 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will explain what makes a study an
-    \emph{experiment}, name the experimental units, treatment, and control group
-    in a described design, plan an assignment that is completely randomized or
-    blocked, explain blinding and the placebo effect, and evaluate a design
-    against \emph{comparison, randomization, replication,} and \emph{control} ---
-    justifying why an experiment, unlike an observational study, can support a
-    cause-and-effect conclusion.
+    \textbf{Primary Objective:} Students will tell an \emph{experiment} from an observational
+    study by asking who built the groups, name the experimental units, the treatment, and the
+    control group in a described design, check that design against \emph{comparison,
+    randomization, replication,} and \emph{control} and name the principle a changed plan
+    breaks, split units into blocks and say who is blinded --- and justify why random
+    assignment, not the size of the gap, is what lets a study say \emph{caused}.
+    \\[2pt]
+    \textbf{Standards:} PS.DC.3a (i--iv), PS.DC.3b \quad$\cdot$\quad AFDA.DA.2c
+    \quad$\cdot$\quad PS.DC.1b carried forward in the conclusion items
+    \quad$\cdot$\quad answers Lesson 1.5 (PS.DC.2d)
+    \\[2pt]
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} There is no group activity and no exit ticket. The notes name the
+    vocabulary as they teach it and deliver the instruction \textbf{row by row in one Main
+    Ideas / Notes table} (four rows, problems 1--13: you read the definition, mark up the
+    display, and work the first problem of each grid; the class works the rest); the Guided
+    Practice row (problems 14--17) is worked together with students holding the pen;
+    \textbf{the homework is the individual practice}, and students start it in class while you
+    circulate. The whole-class debrief is \emph{spoken}.
+    \\[2pt]
+    \textbf{Note on scope:} no inference, no significance, no $P$-values. ``Is $20$ points big
+    enough to be real?'' is Unit~7. Today the question is only whether the \emph{design} lets
+    anyone say \emph{caused} --- say so and move on.
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.4}
 \boxguard
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
-    \textbf{Skills for this lesson}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item Identify a study as an \textbf{experiment} by asking whether the
-            researcher \emph{assigned} the groups. \hfill \textit{PS.DC.3a}
-      \item Name the \textbf{experimental units / subjects}, the
-            \textbf{treatment}, and the \textbf{control group}.
-            \hfill \textit{PS.DC.3a.i, a.iii}
-      \item Explain the \textbf{placebo effect} and say who is
-            \textbf{blinded} --- single- vs.\ double-blind.
-            \hfill \textit{PS.DC.3a.ii}
-      \item Distinguish \textbf{completely randomized}, \textbf{randomized
-            block}, and \textbf{matched pairs} designs, and allocate units to
-            blocks. \hfill \textit{PS.DC.3a.iv}
-      \item Evaluate a design against \textbf{comparison, randomization,
-            replication, control} and name the principle a flawed plan breaks.
-            \hfill \textit{PS.DC.3b; AFDA.DA.2c}
-      \item Justify why random assignment licenses a \textbf{causal}
-            conclusion that watching does not.
-            \hfill \textit{PS.DC.3b; PS.DC.1b}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}
-    \begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-      \item \emph{Experiments must be well designed to detect a
-            cause-and-effect relationship.} The design is what buys the
-            conclusion --- not the size of the gap.
-      \item In an experiment the researcher \textbf{assigns} the units and
-            \textbf{imposes} the treatment. That is the exact thing Lesson 1.5
-            said was missing.
-      \item \textbf{Random assignment} makes the two groups alike
-            \emph{before} the treatment; \textbf{control} keeps them alike
-            \emph{during} it. A \textbf{confounding variable} is a 1.5 lurking
-            variable that got inside the experiment.
-      \item The control group is not wasted --- without it there is nothing to
-            compare against, and comparison is principle one.
-      \item Blinding does not change who was treated. It removes the part of
-            the response that comes from \emph{knowing}.
-      \item A smaller gap can be the stronger evidence: self-selection
-            inflates an observed gap, and randomization deflates it to the
-            truth.
-    \end{itemize}
-\end{minipage}
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X|X@{}}
+\textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
+\hline
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item I can tell an \textbf{experiment} from an observational study by asking who built the
+        groups, and name the \textbf{experimental units} (\textbf{subjects}), the
+        \textbf{treatment}, and the \textbf{control group}.
+        \hfill \textit{PS.DC.3a.i, a.iii}
+  \item I can check a design against \textbf{comparison, randomization, replication,} and
+        \textbf{control}, and name the principle a changed plan breaks --- including the
+        \textbf{confounding variable} that control keeps out.
+        \hfill \textit{PS.DC.3b; AFDA.DA.2c}
+  \item I can explain the \textbf{placebo effect}, say who is \textbf{blinded}
+        (\textbf{single-} vs.\ \textbf{double-blind}), and split units into the blocks of a
+        \textbf{randomized block design}. \hfill \textit{PS.DC.3a.ii, a.iv}
+  \item I can justify why \textbf{random assignment} lets an experiment say \emph{caused}
+        when watching could only say \emph{associated}. \hfill \textit{PS.DC.3b; 1b}
+\end{itemize}
+&
+\vspace{-6pt}
+\begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
+  \item \emph{An experiment assigns; an observational study watches.} That one word is the
+        whole difference, and it is exactly the thing Lesson~1.5 said was missing.
+  \item \textbf{Target misconception:} that a bigger gap is stronger evidence. Riverbend's
+        \emph{watched} study gave a $15$-point gap and its \emph{assigned} experiment gives
+        $20$; Harbor Point's watched gap was $25$ and its assigned gap is $20$; Millbrook's
+        was $48$ and is now $30$. \emph{The design buys the verb --- not the gap.} A
+        self-selected gap is inflated by whoever did the selecting.
+  \item \textbf{Second misconception:} that a control group is a wasted group, and that a
+        group which gets \emph{something else} is not a control. Without it there is nothing
+        to compare against, and comparison is principle one (notes problem~4).
+  \item \textbf{Randomization} makes the groups alike \emph{before} the treatment;
+        \textbf{control} keeps them alike \emph{during} it. A \textbf{confounding variable} is
+        1.5's lurking variable that got \emph{inside} the experiment.
+  \item Blinding does not change who was treated --- it removes the part of the response that
+        comes from \emph{knowing} you were picked.
+  \item \textbf{Blocking} does not replace chance; it applies chance inside groups of similar
+        units so a variable you already suspect cannot land unevenly.
+\end{itemize}
+\end{tabularx}
 \end{skillbox}
 
 \boxguard[24]
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
 \small
 \renewcommand{\arraystretch}{1.35}
 \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
-Experiment & A study in which the researcher assigns the experimental units to
-       groups and imposes a treatment on at least one group. \\
-Experimental unit & The individual or object a treatment is applied to. When the
-       units are people they are called \textbf{subjects}. \\
+Experiment & A study in which the researcher assigns the units to groups and imposes a
+       treatment on at least one group. \\
+Experimental unit & The individual or object a treatment is applied to. When the units are
+       people they are \textbf{subjects}. \\
 Treatment & The condition the researcher applies to a group. \\
-Control group & The group that does not receive the treatment; it gives the
-       baseline the treatment group is compared against. \\
-Random assignment & Using chance --- a generator, a coin, drawn slips --- to
-       decide which group each unit goes in. \\
-Placebo effect & A subject responds to the \emph{idea} of being treated rather
-       than to the treatment itself. A \textbf{placebo} is a fake treatment
-       built to look real. \\
+Control group & The group that does not get the treatment --- the baseline the treatment
+       group is compared against. It is not a wasted group. \\
+Random assignment & Using chance --- a generator, a coin, drawn slips --- to decide which
+       group each unit goes in, so the groups start out alike. \\
+Four principles & \textbf{Comparison} (at least two groups), \textbf{randomization} (chance
+       decides), \textbf{replication} (many units per group), \textbf{control} (everything
+       else the same). \\
+Confounding variable & A variable that differs between the groups \emph{and} affects the
+       response, so the two explanations cannot be told apart. \\
+Placebo effect & A subject responds to the \emph{idea} of being treated. A \textbf{placebo}
+       is a fake treatment built to look real. \\
 Blinding & Keeping someone from knowing which group a subject is in.
-       \textbf{Single-blind:} the subjects, or the measurers. \textbf{Double-blind:}
-       both. \\
-Confounding variable & A variable that differs between the groups and also
-       affects the response, so the two explanations cannot be told apart. \\
-Completely randomized & Every unit is assigned to a treatment purely by chance. \\
-Randomized block & Units are first sorted into blocks of similar units, then
-       randomized \emph{within} each block. \textbf{Matched pairs} is the case
-       where the block is a pair. \\
+       \textbf{Single-blind:} the subjects, or the measurers. \textbf{Double-blind:} both. \\
+Completely randomized & Every unit is assigned purely by chance (Riverbend's $60/60$). \\
+Randomized block & Units are sorted into \textbf{blocks} of similar units first, then
+       randomized \emph{within} each block. \textbf{Matched pairs} is the block of two. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review. It rehearses the arithmetic
-            every component of this lesson runs on:
-            \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
-              \item Writing a part of a whole as a percent, once per group ---
-                    this time with the \textbf{same} denominator in both
-                    groups, because the researcher built them that way.
-              \item Subtracting two percents to get a \textbf{gap in
-                    percentage points}, and pooling both groups back into one
-                    rate.
-            \end{itemize}
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}
-            \small
-            All three items sit on the Riverbend experiment the notes open
-            with, so $75\%$, $55\%$, $20$ points, and $65\%$ are already on the
-            board before the word \emph{experiment} is spoken. Point out the
-            equal denominators --- $60$ and $60$. Lesson 1.5's groups were $60$
-            and $90$ because the students chose; these are equal because a
-            generator split them.
-        \end{minipage}
-    \end{tabularx}
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 35 / 10 / 10 — the I do is ~20 of the 35 and the Guided
+% Practice ~15; the debrief is spoken; the homework start is the second formative read.
+\begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l c X X@{}}
+\textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
+\hline
+Warm-Up & 5 & The two Riverbend group rates, the $20$-point gap, and last quarter's $15$-point
+  gap the other way --- silent & Debrief item~3 aloud; write \emph{assigned: $75$ vs.\ $55$
+  \quad watched: $65$ vs.\ $80$} on the board and leave it up all period \\
+Guided Notes \& Practice & 35 & Fill the vocabulary box as each term is named; work rows 1--4
+  of the table (problems 1--13) with the pen in their hand; then the Guided Practice row,
+  \emph{Harbor Point Swim Times} (14--17), together & \textbf{I do / we do, row by row}: read
+  the definition, mark up the display, work problems 1, 6, 8, 10; the class works the rest
+  (20) $\to$ \textbf{we do} Guided Practice 14--17 (15) \\
+Debrief & 10 & Pens down, papers up --- answer aloud, nothing to fill in & Put the two
+  Riverbend studies back up and take the ``the bigger gap wins'' reflex, then the
+  ``a control group is wasted'' reflex; cold check on Bayside \\
+Close \& Assign & 10 & \textbf{Start the homework in class}, alone and silent & Announce the
+  homework and its form (packet or Desmos), circulate for the second formative read, preview
+  Lesson~1.7 \\
+\end{tabularx}
 \end{fixedskillbox}
 
-\boxguard
-\begin{skillbox}[Hook]{frost}
-    Put both of Riverbend's studies on the board side by side, with no comment.
-    \textbf{Last quarter, watching:} Study Center users $65\%$, non-users
-    $80\%$. \textbf{This quarter, assigning:} Study Center group $75\%$, control
-    group $55\%$. Same school, same Study Center, opposite conclusions.
-    \textbf{Ask: which one should the counselor believe?} Take a vote before any
-    reasoning --- the split is worth seeing. Then ask the only question that
-    matters: \emph{what is different about how the two groups were built?}
-    Somebody will say ``she picked this time.'' Correct them once, precisely:
-    \emph{chance} picked. That distinction is the whole lesson, and everything
-    after it is machinery for making chance's choice trustworthy.
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Lesson]{frost}
-\begin{multicols}{2}
-\textbf{1. Assign.} The four-plan table is a sorting task and should move fast
---- it is deliberately the same table shape as 1.5's, with the answers flipped.
-\textbf{Ask on every row: who decided which group that person is in?} Land the
-three names (units/subjects, treatment, control) on the Riverbend design
-immediately, while the context is warm. The control group is the one students
-undervalue; say out loud that it is not a wasted group.
-
-\textbf{2. The four principles.} This is PS.DC.3b and it carries the most
-weight. Give the definitions from the middle column, then have students fill the
-Riverbend column --- each answer is one short phrase and every one is already on
-the board. Close on \emph{confounding}: it is 1.5's lurking variable, except it
-got \emph{inside} the experiment because the two groups were not treated alike.
-Control is the principle that keeps it out.
-
-\textbf{3. Blinding.} Keep this to eight minutes. The placebo effect is easy in
-this context --- \emph{being picked for a special program} is itself a
-treatment. The three-row table escalates cleanly; row 3 is where the quiet study
-hall appears, and it is worth naming out loud that the placebo is what lets you
-blind the \emph{students}, not just the graders.
-
-\textbf{4. Three designs.} Name all three, then spend the time on the block
-allocation table: $80$ splits $40/40$, $40$ splits $20/20$. \textbf{Ask why she
-did not simply hope randomization would even it out} --- chance usually does,
-but blocking makes it certain, and the variable she fears is exactly the one
-that ruined 1.5.
-
-\textbf{5. The payoff.} Two rows, two verdicts. This is the moment the unit has
-been building toward since 1.5, so do not rush it. The last fill-in --- because
-\emph{chance assigned the groups} --- is the sentence students should be able to
-produce on demand for the rest of the year.
-
-\textbf{Guided practice.} Cedar Ridge. The four flawed plans map one-to-one onto
-the four principles; do the first with the class and let them finish. The
-closing write is the exit ticket in miniature, and this time the answer is
-\emph{yes} --- which surprises students who spent 1.5 learning to say no.
-\end{multicols}
-\end{skillbox}
-
-\boxguard
-\begin{skillbox}[Explicit Instruction: Evaluating an Experimental Design]{frost}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Steps --- give these verbatim}
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Did the researcher assign the groups?} Yes $\Rightarrow$
-        experiment. No $\Rightarrow$ observational (Lesson 1.5).
-  \item \textbf{Name the pieces:} experimental units, treatment, control group,
-        response variable.
-  \item \textbf{Comparison?} Is there a group that did \emph{not} get the
-        treatment?
-  \item \textbf{Randomization?} Did \emph{chance} do the assigning --- not the
-        researcher's judgment, not the subject's preference, not the sign-up
-        order?
-  \item \textbf{Replication?} Are there many units per group, or just a few?
-  \item \textbf{Control?} Is anything else different between the groups? Name
-        it --- that is the confounding variable.
-  \item \textbf{Blinding?} Who could be kept from knowing, and who could not?
-  \item \textbf{Then write the conclusion:} with all four principles met, a
-        causal verb is allowed. With one broken, name which one and stop.
-\end{enumerate}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $45$ of $60$ as a percent ($75\%$). \textbf{Seeds:} the treatment
+            group's rate --- it is the number in row~1's display and in problem~6's
+            \emph{replication} check.
+      \item \textbf{2.} $33$ of $60$ ($55\%$). \textbf{Seeds:} the \emph{control} group's
+            rate. Note aloud that both denominators are $60$ --- \emph{because a generator
+            built the groups}. That is row~1.
+      \item \textbf{3(a).} $75 - 55 = 20$ percentage points. \textbf{Seeds:} the gap row~4
+            argues about.
+      \item \textbf{3(b).} Last quarter's \emph{watched} result: non-users higher, by $15$
+            points. \textbf{Seeds:} the hook --- both gaps are on the board before anyone
+            votes, and problem~12 asks whether gap size was ever the reason.
+    \end{itemize}
 \end{minipage}
 &
 \begin{minipage}[t]{\linewidth}\vspace{0pt}
-\textbf{Worked example --- ``Riverbend takes $120$ volunteers, lets a random
-number generator send $60$ to the Study Center twice a week and $60$ nowhere,
-and keeps everything else about the quarter the same. $45$ of the $60$ treated
-passed every class; $33$ of the $60$ controls did.''}
-\begin{itemize}[leftmargin=1.1em, itemsep=2pt, topsep=2pt]
-  \item[1.] The generator assigned the groups. Experiment.
-  \item[2.] Units: the $120$ volunteers. Treatment: attending twice a week.
-        Control: the $60$ kept out. Response: passed every class or not.
-  \item[3.] Comparison: yes --- $60$ untreated students.
-  \item[4.] Randomization: yes --- a generator, not the sign-up sheet.
-  \item[5.] Replication: yes --- $60$ per group, not $1$.
-  \item[6.] Control: same quarter, same classes, same teachers. Nothing else
-        differs.
-  \item[7.] Students cannot be blinded here; the graders can be.
-  \item[8.] $45/60 = 75\%$ against $33/60 = 55\%$, a $20$-point gap.
-        \textit{Attending the Study Center caused a higher pass rate.}
-\end{itemize}
-\textit{Contrast with 1.5's memo on the same Study Center, which had the arrow
-backwards. The data did not get better --- the design did.}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief 3(b) aloud} and write both studies on the board ---
+            \emph{assigned: $75$ vs.\ $55$ \quad watched: $65$ vs.\ $80$}. Leave it up all
+            period; the hook, row~4, and the debrief all point back at it.
+      \item 3(b) is the tell. A student who says the Study Center is harmful has read the
+            watched study as proof and needs row~4 slowly. A student who asks \emph{which one
+            is right} has already found today's question.
+      \item Items 1--2 are one division each --- say so, so nobody thinks they are being
+            retested. Do not let them expand.
+      \item No vocabulary here on purpose. The words \emph{treatment} and \emph{control
+            group} arrive in row~1, hung on these two numbers.
+    \end{itemize}
 \end{minipage}
 \end{tabularx}
+\end{fixedskillbox}
+
+\boxguard
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``Last quarter the counselor watched: $65\%$ of Study Center users passed every class
+against $80\%$ of the students who never went --- the Study Center looked harmful. This
+quarter she assigned: $120$ volunteers split by a generator, $75\%$ against $55\%$ --- now it
+looks helpful.''} \textbf{Ask: same school, same Study Center, opposite conclusions --- which
+study should she believe?} Students circle \emph{last quarter's}, \emph{this quarter's}, or
+\emph{neither} and write one line of reason \emph{before} anyone speaks; then take the hand
+vote and write the split on the board. Most rooms pick this quarter's --- and most of them
+pick it for the wrong reason (``it is newer,'' ``the gap is bigger'').
+\textbf{Do not settle it.} Say only that the answer is problem~12, in the \emph{Caused} row,
+and that they will vote again there. The reason matters more than the verdict, and you cannot
+show that until they have committed to one.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt, topsep=2pt]
-  \item \textbf{Watch for ``association is not causation'' applied to an
-        experiment.} It is Lesson 1.5's tool, and this is the one lesson where
-        the causal verb is allowed. Redirect: \emph{who built these groups?}
-  \item \textbf{Watch for ``random'' meaning random \emph{selection}.} Choosing
-        who is in the study (1.3) and choosing who gets the treatment are two
-        different randomizations. Ask which one the sentence is about.
-  \item \textbf{Watch for ``the researcher picked'' as an answer to who decided
-        the groups.} Half credit --- the researcher ran the generator; chance
-        made the choice. The distinction is the lesson.
-  \item \textbf{Watch for control confused with control group.} Control is a
-        principle (hold everything else equal); the control group is a group.
-        A design can have a control group and still fail control.
-  \item \textbf{Watch for a confounding variable that is really the treatment.}
-        Test: \emph{would it still differ between the groups if nobody had been
-        treated?}
-  \item \textbf{Cold-call prompts:} ``Who assigned?'' ``What does the control
-        group get?'' ``Which principle is missing?'' ``What else is different
-        between these two groups?'' ``Say the conclusion, and tell me what
-        earns you that verb.''
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (35 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, started in class.
+The notes are \textbf{one Main Ideas / Notes table}: four instruction rows (problems 1--13),
+then the Guided Practice row (14--17). \textbf{The rhythm in every row is the same}: read the
+definition aloud, mark up the display, work the first problem of the grid yourself, then hand
+the rest to the room with the pen in their hand. The vocabulary box on page~1 is filled
+\emph{as each term is named}, never in advance. The only blanks are the four cells of the
+Cedar Ridge table (problem~5); every other answer is written in a problem's own space.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 20 min).}
+
+\emph{Row 1, Experiment (problems 1--4).} Open on the two lines already on the board. Read the
+definition, then name the parts of the flow diagram --- the $120$ volunteers are the
+\emph{subjects}, twice-a-week attendance is the \emph{treatment}, the other $60$ are the
+\emph{control group}. Work problem~1 yourself; the class does 2--4. \textbf{Problem~4 is the
+trap}: a new tutoring app against the old worksheet packet. Take a hand count before anyone
+writes --- half the room will say there is no control group because \emph{everybody gets
+something}. The packet group \emph{is} the control: it is the baseline. Five minutes.
+
+\emph{Row 2, Principles (problems 5--7).} Give the four cards from the display, then take the
+four Cedar Ridge plans of problem~5 from the class --- one altered plan per principle, in
+order. Work problem~6 yourself on Riverbend's own design so the four words attach to numbers
+they already have. Problem~7 is the confounding variable (the new bins) and it is the row's
+real content --- do not let it get cut. Six minutes.
+
+\emph{Row 3, Blinding \& Blocking (problems 8--9).} Read the two refinements and mark the
+two-panel display. Work problem~8 yourself (the placebo effect, and how Room~B removes it);
+the class does problem~9, which is the block arithmetic --- $80 \to 40/40$, $40 \to 20/20$,
+$60$ per group --- plus the reason to block at all. Four minutes; this row moves.
+
+\emph{Row 4, Caused (problems 10--13) --- the crux.} Put the two studies side by side on the
+display and work problem~10 live (where the struggling students went this quarter). The class
+does 11, the conclusion sentence with the verb the design earns. Then \textbf{re-take the hook
+vote at problem~12 before you say anything} --- and take the classmate's reason in the problem
+(``$20$ points beats $15$'') head-on. \textbf{Problem~13 is the crux}: a \emph{watched} study
+with a $35$-point gap, bigger than the experiment's $20$. It still earns only
+\emph{association}. Land the printed sentence word by word. Five minutes.
+
+\columnbreak
+\textbf{We do (about 15 min).} The Guided Practice row, \emph{Harbor Point Swim Times}
+(problems 14--17) --- the same four moves the homework will ask alone, on a pool instead of a
+school. \textbf{Students hold the pen; you hold the questions.} Problem~14 goes on them cold
+(units, treatment, control, who decided). Problem~15 is warm-up arithmetic on new numbers
+($27/45 = 60\%$, $18/45 = 40\%$, a $20$-point gap). Problem~16 is the four principles plus the
+honest limit of blinding --- the swimmers cannot be blinded, the sleep-log scorers can.
+\textbf{Problem~17 is the crux transferred}: watching gave $25$ points, assigning gives $20$.
+Take a hand count on \emph{which is stronger} before anyone writes.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 14:} ``Who decided which slot you swam in? Then what is the $7$~p.m.\
+        group called?''
+  \item \textbf{Problem 15:} ``Both groups have $45$. Why is that not an accident?''
+  \item \textbf{Problem 16:} ``You wrote \emph{double-blind}. Can a swimmer not know what time
+        she swam?''
+  \item \textbf{Problem 17:} ``Last lesson $75\%$ of the morning swimmers were retired. Where
+        are the retired members this time?'' (Split across both groups by chance.)
 \end{itemize}
+While circulating, pick the papers to put up in the debrief --- one problem~17 that said
+\emph{the 20, because chance built the groups}, and one that picked the $25$. \textbf{Your
+formative read comes twice}: here, and again in the last ten minutes as students start the
+homework.
+\end{multicols}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\small
-\begin{multicols}{3}
-\textbf{Tier R --- Remediate}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Name the volunteer counts and the two group sizes.
-  \item Decide it is an experiment and say that \emph{chance} assigned.
-  \item Compute $27 \div 45 = 60\%$ and $18 \div 45 = 40\%$.
-  \item Say which group is higher, and by how many points.
-\end{itemize}
-
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (10 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
+\begin{multicols}{2}
+\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
+  \item \textbf{Put the two Riverbend studies back up} and make a student say the sentence:
+        the experiment may say \emph{caused} because chance built the groups --- not because
+        $20$ beats $15$. Then state it as PS.DC.3b: a well-designed experiment is what detects
+        a cause-and-effect relationship.
+  \item Put up the two problem~17s you picked. The difference between them is not arithmetic
+        --- it is whether the student still believes the bigger gap wins. Read both aloud.
+  \item Put problem~4 back up and take the \emph{a-control-group-is-wasted} reflex:
+        \emph{``The packet group got something. Is it still the control group?''}
+  \item Take problem~7 last: the reminder group also got new bins. \emph{Name the confounding
+        variable} --- and say why the manager cannot tell which one worked.
+\end{enumerate}
 \columnbreak
-\textbf{Tier A --- Approaching Proficiency}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Pool the volunteers: $45/90 = 50\%$, scaled to $750$ of $1{,}500$.
-  \item Name units, treatment, and control group.
-  \item Say how the design meets all four principles, one phrase each.
-  \item Explain why the $20$-point gap beats 1.5's $25$-point gap.
-\end{itemize}
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Bayside Middle School:
+$80$ volunteers, a generator sends $40$ to a daily reading block and $40$ to regular homeroom.
+Afterward $28$ of the reading-block students improved and $16$ of the homeroom students did. A
+teacher says: `Next year, just give the reading block to the students who want it.' Name the
+principle that change breaks, and say what could go wrong.''} Hands down, thirty seconds of
+think time, then cold-call three students. Correct answer: it breaks \textbf{randomization}
+--- the students would choose their own groups, the groups would no longer start alike, and
+whatever made them volunteer (a parent, a study habit, a reading level) would be a
+\textbf{confounding variable}; the school could no longer say the block \emph{caused}
+anything. \emph{(Rates, if asked: $70\%$ against $40\%$, a $30$-point gap.)} \emph{This
+replaces the exit ticket.}
 
-\columnbreak
-\textbf{Tier E --- Extension}
-\begin{itemize}[leftmargin=1em, itemsep=1pt, topsep=2pt]
-  \item Block on retirement: $30 \to 15/15$, $60 \to 30/30$.
-  \item Name the principle each of two altered plans breaks.
-  \item Decide whether the study can be double-blind, and say who cannot be
-        blinded.
-\end{itemize}
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} named
+randomization and said the groups would stop being alike; \textbf{(b)} said ``that's not fair''
+or ``it's biased'' with no principle; \textbf{(c)} said it would be fine, or thought a bigger
+gap next year would prove more. Pile (b) is the teachable one and will be large --- give it
+the word. \textbf{If pile (c) runs past a third of the room, open Lesson~1.7 by re-running the
+\emph{Caused} row (problems 10--13)}, and say so plainly.
+
+\textbf{If the debrief runs short}, cut items 3 and~4 --- item~1 is the one that cannot be
+cut. \textbf{Do not let the debrief eat the last ten minutes} --- the homework start is not
+optional padding, it is your second formative read.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit ticket (3 items, no notes).} One context: Bayside Middle School,
-$80$ sixth-grade volunteers, a $10$-minute silent reading block.
-\begin{enumerate}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]
-  \item Identify it as an experiment, say chance assigned the groups, and name
-        the treatment and the control group.
-  \item Compute $28 \div 40 = 70\%$ and $16 \div 40 = 40\%$, then the
-        $30$-point gap. Equal denominators this time --- a student who still
-        divides by $80$ has not noticed that the groups were built.
-  \item \textbf{Conceptual / justification check:} a teacher proposes giving
-        the reading block to whoever wants it. Full credit names
-        \emph{randomization} \emph{and} says what goes wrong --- the students
-        who want it may already be the stronger readers. Grade this one first.
-\end{enumerate}
-\textbf{Using the results:} sort into three piles --- (a) named randomization
-and attached a concrete consequence, (b) named a principle with no consequence
-attached or named the wrong one, (c) said the change was fine. Pile (c) is the
-one to catch: they have not connected self-selection to the arithmetic, and
-Lesson 1.7 asks them to weigh the two study types against each other. Open 1.7
-by handing pile (c) the Riverbend pair again --- $65\%$ vs.\ $80\%$ against
-$75\%$ vs.\ $55\%$ --- and asking which sentence each study earns.
+\begin{skillbox}[Homework --- scored, started in class, due after two study halls]{goldbox}
+Six exercises on the \textbf{Millbrook Public Library} ($1{,}200$ card holders; $200$
+volunteers split $100/100$ by a generator into the Summer Reading Program and a fall waiting
+list): \textbf{1} name the units, treatment, control group, and who decided; \textbf{2} the
+two rates and the gap ($65\%$, $35\%$, $30$ points); \textbf{3} pool the $200$ and scale
+$50\%$ to $1{,}200$ as an \emph{estimate} (\emph{the spiral to Lesson 1.2}); \textbf{4} the
+\textbf{contrast pair} --- the same library watched last summer ($80\%$ vs.\ $32\%$) and
+assigned this summer, one may claim an \emph{association} and the other \emph{caused it};
+\textbf{5} block on age ($120$ adults $\to 60/60$, $80$ children $\to 40/40$) and say why she
+blocked; \textbf{6} \emph{the crux head-on} --- last summer's $48$-point gap against this
+summer's $30$, and why the \emph{smaller} gap is the stronger evidence. The homework is capped
+at \textbf{two pages} (user decision 2026-09-06).
+
+\textbf{Start it in the last ten minutes of the period, in class and alone.} \textbf{Scoring:}
+12 points --- 2 per item. \textbf{Item~6 is where the misconception shows}: a student who
+answers ``the $48$ is bigger so it is better'' has learned the words and not the rule.
+\textbf{Item~4's two rows carry the second check} --- if both rows say \emph{caused it}, the
+student never heard row~4.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom's study-design coverage is thin: there is nothing that asks a student to name
+the principle a changed plan breaks or to explain why a smaller gap is stronger --- the items
+this lesson exists for --- so \textbf{1.6 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~1.7.} Millbrook could run an experiment. A study of smoking and lung
+disease cannot assign anyone to smoke. Do not resolve that here; it is 1.7's opening --- when
+an experiment is worth the cost, and when it is impossible or wrong to run one.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is only as
+trustworthy as the study that produced it. \textit{Standards covered:} PS.DC.3a (i--iv),
+PS.DC.3b, AFDA.DA.2c (with PS.DC.1b carried forward in the conclusion items).
+\textit{Spirals forward to:} experiments vs.\ observational studies (1.7), the full-cycle
+project (1.8), and --- directly --- inference and significance (7.1--7.3, PS.IS.1).
+\textit{Reaches back to:} Lesson 1.5's lurking variable and association-not-causation, and
+Lesson 1.2's statistic-as-estimate.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework --- Millbrook Public Library, this time they assign.} The same
-Summer Reading Program students studied observationally in Lesson 1.5, now run
-as an experiment: $200$ volunteers, a generator sends $100$ to the program and
-$100$ to a fall waiting list. $65$ and $35$ read at least $10$ books. Students
-identify it as an experiment, compute $65\%$ and $35\%$ and the $30$-point gap,
-pool the volunteers ($100/200 = 50\%$, scaled to $600$ of $1{,}200$), name units
-/ treatment / control / response, say how the design meets each of the four
-principles, match four altered plans to the principle each breaks, allocate a
-block design on age ($120 \to 60/60$, $80 \to 40/40$), and close by explaining
-why this year's \emph{smaller} $30$-point gap is stronger evidence than last
-year's $48$.
-
-\textbf{Extension (optional).} Students take the causal headline they found for
-Lesson 1.5's extension and design the experiment that would actually test it ---
-units, treatment, control, the exact randomization, one variable held constant,
-and who could be blinded. With the 1.2--1.5 extensions this is now a complete
-study proposal, which is precisely what Lesson 1.8's project asks for.
-
-\textbf{Preview of Lesson 1.7.} Both study types side by side: what each one
-lets you conclude, when an experiment is impossible or unethical to run, and how
-to choose a data collection method for a given context (PS.DC.3c--e).
-
-\textbf{Connections \& Big Ideas.} \textit{Unit 1 core idea:} a conclusion is
-only as trustworthy as the study that produced it. \textit{Standards covered:}
-PS.DC.3a (i--iv), PS.DC.3b; AFDA.DA.2c --- with PS.DC.1b carried forward in
-every conclusion item. \textit{Spirals forward to:} comparing experiments with
-observational studies and choosing a collection method (1.7, PS.DC.3c--e), the
-class study project (1.8), comparing two distributions (2.7), two-way tables
-(3.1), and inference, where the whole point of a $p$-value is deciding whether a
-treatment gap like $20$ points is bigger than chance alone would give
-(7.5--7.6, 8.4--8.5). \textit{Reaches back to:} Lesson 1.3's randomization
-machinery, Lesson 1.4's bias, and Lesson 1.5's lurking variable, which reappears
-here as a confounding variable the design is built to defeat.
+\begin{skillbox}[Watch For (while circulating)]{redbox}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{``The bigger gap is the better evidence''} (problems 12, 13, 17; HW~6 --- the
+        target misconception). Probe: \emph{``Who built the two groups in the study with the
+        bigger gap? Then what else could explain it?''}
+  \item \textbf{``There is no control group --- everybody got something''} (problem~4, the
+        trap; HW~1). Probe: \emph{``Which group is the baseline you compare against?''}
+  \item \textbf{Calling an observational study an experiment} (problems 1 and~3; HW~4 row~i):
+        random \emph{selection} mistaken for random \emph{assignment}. Probe: \emph{``Did
+        anyone decide which group you were in, or only who got asked?''}
+  \item \textbf{Confounding named as ``bias''} (problem~7; HW~4). Probe: \emph{``Name the
+        variable. Which group had more of it, and does it affect the response?''}
+  \item \textbf{Blinding claimed where it is impossible} (problem~16): swimmers ``can be
+        double-blinded.'' Probe: \emph{``Can you not know what time you swam?''}
+  \item \textbf{Blocking read as skipping chance} (problem~9; HW~5): ``she put the adults in
+        the program.'' Probe: \emph{``What happens \emph{inside} each block?''}
+  \item \textbf{The verb} (problems 11 and~17; HW~4, HW~6): \emph{caused} written under a
+        watched study, or \emph{associated} written under an experiment. Probe: \emph{``Who
+        built the groups?''}
+\end{itemize}
+Cold-call prompts: \emph{``Give me a treatment that is not a pill.''} \quad \emph{``Name
+something about this class you would block on before an experiment.''}
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
+\boxguard
+\begin{skillbox}[Close \& Assign (10 min)]{goldbox}
+\textbf{Students start the homework here, in class, alone and silent --- this is the individual
+practice, and the first minutes of it are your best formative read.} Hand the launch first ---
+six exercises on paper, scored out of 12, due at the start of the first class after two study
+halls --- and point out that the \emph{Keep in Mind} box on the cover is the page to flip back
+to. Circulate: \textbf{item~6 is the column that tells you whether the \emph{Caused} row
+landed}, and it is on page~2, so put students on 1, 4, and~6 first and let 2, 3, and~5 go home.
+Sort what you see into three piles as you walk --- chose the $30$ and said chance built the
+groups (ready); chose the $30$ with no reason (ready, needs the language); chose the $48$, or
+explained the difference by the librarians trying harder (the misconception survived) --- and
+open Lesson~1.7 by re-running problems 10--13 if that third pile ran past a third of the room.
+Then close on what changed: \emph{``You walked in able to say two things move together. You
+walk out able to say one \textbf{caused} the other --- but only when chance, not a person and
+not the volunteers themselves, built the groups. And you know that the study with the biggest
+gap is usually the one that earned it least.''} \textbf{Preview:} Lesson~1.7, \emph{Experiments
+and Observational Studies Side by Side} --- Millbrook could assign; nobody can assign a person
+to smoke for thirty years. Next time: when an experiment is worth the cost, and when it is
+impossible or wrong to run one.
+\end{skillbox}
+
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a key with no
+% counterpart in the blank. No note for the debrief or the homework start — both are fully
+% specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    Five minutes, silent, timed. Every move is one the class has run in 1.2,
-    1.4, and 1.5, so this should be near-universal --- and it is easier than
-    1.5's warm-up on purpose, because both denominators are $60$.
+Five minutes, silent, timed. Items 1 and~2 are one division each --- say so, so nobody thinks
+they are being retested. The point worth making aloud is that \textbf{both denominators are
+$60$}: nobody chose a group, so the groups came out the same size. That is the first crack of
+today's door.
 
-    Say that out loud at the collection. In Lesson 1.5 the two groups were $60$
-    and $90$ because the students sorted themselves; here they are $60$ and $60$
-    because a generator split them. Equal group sizes are a \emph{symptom} of
-    assignment, and noticing it is worth more than the arithmetic.
-
-    Item 3(b) is the only place to lose anyone: the pooled rate is $78 \div 120
-    = 65\%$, not the average of $75$ and $55$. Here the average happens to give
-    $65\%$ too, because the groups are equal --- do not let that pass as a
-    method. Ask why it worked this time and not in 1.5.
-
-    Leave $75\%$, $55\%$, and $20$ points on the board. The hook needs them
-    thirty seconds later, beside 1.5's $65\%$ and $80\%$.
+\textbf{Item 3(b) is the one to read while collecting.} It reaches back to Lesson~1.5's
+watched study of the same Study Center, where the non-users were $15$ points \emph{higher}.
+Students who write that down and look uneasy have found the hook themselves. Students who
+write ``the Study Center is bad'' have taken the watched study as proof and will need row~4
+slowly. Write both studies on the board in a student's own words ---
+\emph{assigned: $75$ vs.\ $55$ \quad watched: $65$ vs.\ $80$} --- and \textbf{leave them up all
+period}; you will point at that line in the hook, in row~4, and twice in the debrief. Do
+\emph{not} supply the words \emph{treatment} and \emph{control group} here --- the warm-up is
+deliberately wordless about them.
 \end{teachernote}
 
-\begin{teachernote}[Guided Notes]
-    Pace: section 1 in 8 minutes, section 2 in 12, section 3 in 8, section 4 in
-    10, section 5 in 9, guided practice in 8. \textbf{Sections 2 and 5 are the
-    lesson.} Section 1 is a definition and a sorting table and should move.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 20 / 15, then 10 for the debrief, then 10
+for the homework start.} It is one table, and every row runs the same way: you read the
+definition, mark up the display, and work the first problem of the grid (1, 6, 8, 10); the
+class works the rest with the pen in their hand. Rows 1 and~2 must move: five minutes on
+assigning-versus-watching, six on the four principles.
 
-    Section 2 is where PS.DC.3b is met and where students will need the most
-    talk time. The middle column is given because it is the standard's own
-    language; the work is the right-hand column, and every answer is a short
-    phrase already visible on the board. The confounding-variable sentence at
-    the bottom is the bridge from 1.5 --- say it as \emph{same variable, new
-    name, because it got inside}.
+\textbf{Take the hand count on problem~4 before anyone writes.} A new tutoring app against the
+old worksheet packet: half the room will say there is no control group because both sides got
+something. If they write first the trap is gone; if they commit to \emph{no control group} and
+\emph{then} hear that the control is whatever you compare against, the definition arrives as
+the answer to a question they already have.
 
-    Section 3 lands best if you make the placebo concrete before the table:
-    ask what would happen if the treatment group were told they had been
-    ``selected for an academic excellence program.'' Somebody always says they
-    would try harder. That \emph{is} the placebo effect, and the quiet study
-    hall in row 3 is the fix.
+\textbf{Spend the time in row~4, \emph{Caused}}, which carries the misconception. Row~3
+(blinding and blocking) is four minutes and no more --- give the two refinements, work
+problem~8, hand problem~9's arithmetic to the room, move. Then slow down: work problem~10 live
+(the struggling students are spread across both groups this quarter), let the class do~11, and
+\textbf{re-take the hook vote at problem~12 before you say anything}. Take the classmate's
+reason in the problem seriously --- ``$20$ points beats $15$'' is what most of the room voted
+on. Then \textbf{problem~13} does the work: a \emph{watched} study with a $35$-point gap, and
+it still earns only \emph{association}. Do not resolve it by repeating the definition; ask who
+built the groups, twice.
 
-    Section 5 is the payoff of two lessons and deserves its full nine minutes.
-    Do not fill in the final blank for them. Wait for \emph{chance assigned the
-    groups}; anything vaguer than that is not yet the idea.
+\textbf{Guided Practice (14--17) is where the pen changes hands.} \emph{Harbor Point Swim
+Times} runs the four moves the homework will ask alone --- name the parts, compute the rates,
+check the principles, judge the two gaps --- on the pool the class has seen since 1.2.
+Problem~16 carries the honest limit: you \emph{cannot} blind a swimmer to the time of day, and
+saying so is the right answer, not a dodge. Problem~17 is the crux transferred. If you only
+get through 14, 15, and~17, that is the right trade; problem~16's principle list can be said
+aloud.
 
-    If time runs short, compress section 4 to naming the three designs and the
-    block table --- the homework re-teaches blocking with its own allocation.
-    Never compress section 5.
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice.} Guided Practice is the last row; the period ends with
+students starting the homework in front of you, which is where your second formative read
+comes from. Item~6 is the one to watch. If the ``bigger gap wins'' pile is more than a third of
+the room, \textbf{open Lesson~1.7 by re-running problems 10--13}, and say so plainly.
+
+\textbf{Debrief (10 min), spoken.} The two Riverbend studies back on the board with a student
+saying why the experiment earns the verb; it is the one move that cannot be cut. \textbf{Do not
+let the debrief eat the last ten minutes.}
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    Groups of three, 15--18 minutes, tiers assigned rather than chosen. Read the
-    headline box aloud, especially the first sentence: this is the experiment
-    that finally settles the question 1.5 left open, and groups should feel that
-    they are closing a loop rather than starting a new context.
-
-    Tier R is deliberately gentler than 1.5's --- both denominators are $45$.
-    The item to watch is 2(b): ``the director'' is half credit, ``chance'' or
-    ``the random generator'' is full. Insist on it here, because the exit
-    ticket asks the same question.
-
-    Tier A item 3 is the four-principle sweep and is the item most groups
-    under-answer. A phrase per principle is enough, but it has to be a
-    \emph{Harbor Point} phrase --- ``randomization: the generator split them,''
-    not ``randomization: it was random.'' Item 4 is the interpretive item and
-    the best answer in the activity: the $25$-point gap was inflated by
-    retirement, and random assignment spread the retired members across both
-    groups, so $20$ points is the swim time by itself. Pull it to the whole
-    class if two groups reach it.
-
-    Tier E item 1's block table is $15/15$ and $30/30$ --- the arithmetic is
-    trivial and the follow-up question is the point: chance usually evens
-    retirement out, but blocking makes it certain, and retirement is exactly
-    the variable that ruined the previous study. Item 3 is the honest limit of
-    the design: a volunteer obviously knows whether they swam at $6$~a.m., so
-    the subjects cannot be blinded, but the staff scoring the sleep logs can be.
-    Accept ``single-blind'' as the label; insist on the reason.
-\end{teachernote}
-
-\begin{teachernote}[Exit Ticket]
-    Five minutes, notes closed, collected at the door. Items 1 and 2 should be
-    near-universal after the activity; if 1(a) is not, section 1 did not land
-    and it is worth three minutes at the start of Lesson 1.7.
-
-    Item 1(b) asks for treatment and control group by name. A student who
-    writes ``the reading block'' and ``the other students'' has it; a student
-    who writes the two group sizes has not answered the question asked.
-
-    Both denominators are $40$, so the arithmetic is a gift --- which is the
-    point. A student who divides by $80$ has carried over 1.5's habit of
-    hunting for a shared whole and has not registered that the researcher built
-    two equal groups.
-
-    Grade item 3 first and only item 3 if time is short. Full credit needs both
-    halves: \emph{randomization}, and a consequence tied to \emph{this} context
-    --- the students who want the reading block are probably already the
-    stronger readers, so their group would improve more even if the block did
-    nothing. A bare ``it wouldn't be random'' is half credit; write the missing
-    half on the paper.
-\end{teachernote}
-
-\boxguard[26]
 \begin{teachernote}[Homework]
-    Assign all eight items; about $30$ minutes. Items 4, 5, 6, 7(b), and 8
-    cannot be answered by computing anything --- flag them when assigning,
-    because students who treat this as a calculation sheet will skip exactly
-    those.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls.} The ten minutes at the end of the period are a \emph{start}, not a completion: put
+students on 1, 4, and~6 while you can still catch a wrong start, and let 2, 3, and~5 go home.
+Item~6 is the one to read first when scoring --- any student who says the $48$-point gap is
+better evidence has learned the words and not the rule. Item~4 is the fullest diagnostic in
+the set: the same library, two summers, and only one of the two rows may say \emph{caused it};
+a student who writes it twice is still sorting by how big the numbers are. Item~5 catches the
+other half of blocking --- a student who assigns all $120$ adults to the program has read
+blocking as sorting rather than as randomizing \emph{inside} a block. Score items 1--5 for
+correctness and item~6 for the \emph{reason}, not the verdict. \textbf{When you score the page,
+sort item~6 into three piles} --- chose the $30$ and named random assignment (ready); chose the
+$30$ vaguely (ready, needs the language); chose the $48$ or blamed the librarians (the
+misconception survived). If more than a third land in the last pile, reopen the two Riverbend
+studies in the Lesson~1.7 warm-up debrief rather than letting it ride.
 
-    Items 2 and 3 are the arithmetic spine: $65\%$, $35\%$, the $30$-point gap,
-    then the pooled $50\%$ and $600$. With both groups at $100$ the percents
-    read straight off the counts, so any error here is a place-value slip rather
-    than a method problem.
-
-    Item 5 wants a phrase per principle, in context. The most common
-    under-answer is restating the definition (``replication: there are enough
-    people'') instead of citing the design (``$100$ card holders in each
-    group''). Item 6's four rows map one-to-one onto the four principles and are
-    in the same order as item 5, which makes it self-checking --- point that out
-    only if a student is stuck. The last row is the subtle one: living near the
-    library is a confounding variable, and the answer is \emph{control}, not
-    randomization.
-
-    Item 8 is the closer and the reason this homework reuses 1.5's library. Last
-    summer's $48$-point gap was bigger and worth less, because the card holders
-    who signed up were already the heavy readers. This summer's $30$ points
-    belong to the program alone. Students who answer ``a bigger gap is always
-    better evidence'' are reasoning from the number instead of the design ---
-    write the correction rather than marking it, because the same reflex will
-    cost them on the unit test and again in Unit 7.
-
-    The \textbf{remindbox} hands off to Lesson 1.7 and deliberately raises the
-    question of when an experiment is impossible or unethical. Do not resolve it
-    here.
+\textbf{Packet is the call for 1.6.} Desmos has nothing that asks a student to name a broken
+principle or defend a smaller gap; do not swap it in. Reopen Millbrook at the start of
+Lesson~1.7 --- the library \emph{could} assign, and that is exactly what 1.7 contrasts.
 \end{teachernote}
 \end{document}

@@ -1,0 +1,16 @@
+{"blanks": [
+  "how the shopper traveled", "categorical",
+  "the answers are labels --- no arithmetic on them means anything",
+  "$26/50 = 0.52 = 52\\%$", "$12/50 = 0.24 = 24\\%$", "$7/50 = 0.14 = 14\\%$", "$5/50 = 0.10 = 10\\%$",
+  "$50$", "$50/50 = 1.00 = 100\\%$",
+  "categorical", "counts and percents",
+  "quantitative", "a mean",
+  "1", "2", "3", "4"
+ ],
+ "lines": [
+  ["Of the 50 shoppers asked one Saturday, 10\\% travel to the market by bus. If they are",
+   "typical, that is about 80 of the market's 800 Saturday shoppers."],
+  ["The question did --- one records a label, the other records a number of miles."],
+  ["Nobody was ever asked about a shuttle, so the survey cannot say who would use one; 10\\%",
+   "of 800 is still about 80 shoppers. It entered at stage 1 --- the wrong question."]
+ ]}

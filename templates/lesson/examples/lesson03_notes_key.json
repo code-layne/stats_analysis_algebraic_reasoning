@@ -7,74 +7,40 @@
   "Systematic sample": "From an ordered list, take every $k$th individual after a random start, where $k = N \\div n$. Only the start is random.",
   "Cluster sample": "Draw a few whole groups (clusters) at random and collect data from everyone in them. Works only when each cluster is a small mix of the whole."
  },
- "blanks": [
-  "chance",
-  "convenience",
-  "convenience",
-  "chance",
-  "convenience",
-  "chance",
-  "could not",
-  "convenience",
-  "yes",
-  "student 28",
-  "no --- skip it",
-  "none",
-  "yes",
-  "student 366",
-  "three",
-  "start",
-  "15",
-  "22",
-  "37",
-  "52",
-  "every",
-  "$240 \\div 15 = 16$",
-  "$210 \\div 15 = 14$",
-  "$180 \\div 15 = 12$",
-  "$18+16+14+12 = 60$",
-  "a few",
-  "everyone",
-  "mix",
-  "9th",
-  "0",
-  "Yes",
-  "No",
-  "alike",
-  "stratum",
-  "every",
-  "stratified",
-  "all",
-  "a few",
-  "a random sample",
-  "everyone",
-  "simple random",
-  "cluster",
-  "stratified",
-  "systematic",
-  "convenience",
-  "$120 \\div 10 = 12$",
-  "$280 \\div 10 = 28$",
-  "$200 \\div 10 = 20$",
-  "$12+28+20 = 60$",
-  "studio",
-  "stratum"
- ],
+ "blanks": [],
  "lines": [
   [
    "Answers vary --- most of the room says yes (``it was random'') or it depends.",
-   "(Settled at the end of section 2: no --- both rooms are 9th grade; not one senior was asked.)"
-  ],
-  [
-   "A stratum: each building holds one unit type, so it is alike inside, not a mix.",
-   "Drawing three whole strata left every one- and two-bedroom household --- the car owners --- out."
-  ],
-  [
-   "Stratified, because the groups (unit types) are alike inside and differ on cars;",
-   "sampling every stratum in proportion guarantees the two-bedroom households are heard."
-  ],
-  [
-   "Only cluster --- it needs a list of groups. SRS, stratified, and systematic need every household numbered."
+   "(Settled at problem 9: no --- both rooms are 9th grade; not one senior was asked.)"
   ]
- ]
+ ],
+ "labels": [
+  "sampling frame",
+  "convenience",
+  "probability",
+  "simple random",
+  "systematic",
+  "out of range",
+  "stratum",
+  "all"
+ ],
+ "spaces": [
+  "Homerooms are grouped by grade --- a room is alike inside --- so two whole rooms can both be 9th grade and hold no seniors."
+ ],
+ "cells": {
+  "1": "Convenience (the schedule chose), then chance (nobody left out).",
+  "2": "Convenience. A fourth-period student could never be picked.",
+  "3": "Skip it --- $951$ is out of range; $366$ is next.",
+  "4": "$k = 15$; then 22, 37, 52. Only the start, 7.",
+  "5": "16, 14, 12. \\par $18 + 16 + 14 + 12 = 60$ --- yes.",
+  "6": "An SRS might draw few or no seniors; stratifying draws 12 every time.",
+  "7": "$2 \\times 30 = 60$ --- a cluster sample.",
+  "8": "Both are 9th grade. Seniors in Maya's 60: zero.",
+  "9": "No. Chance chose and nobody miscounted --- but both rooms are 9th.",
+  "10": "A stratum --- alike inside. Stratified takes some from every grade.",
+  "11": "(i) SRS; (ii) cluster; (iii) stratified; (iv) systematic.",
+  "12": "Studios 12, one-bed 28, two-bed 20. \\par $12 + 28 + 20 = 60$.",
+  "13": "All 60 studio households: a building is one unit type, a stratum.",
+  "14": "Stratified --- unit types differ on cars. Else cluster."
+ }
 }

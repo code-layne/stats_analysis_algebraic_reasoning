@@ -1,0 +1,52 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Controlled experiment": "A study in which the researcher assigns the units to groups by chance and imposes a treatment on at least one group. It can support a cause-and-effect conclusion.",
+  "Observational study": "A study in which the researcher measures or asks without assigning anyone to a group --- the groups already exist. It can report an association only.",
+  "Collection method": "How the data arrive --- survey, interview, focus group, observation, or content analysis. Chosen by what the question needs, not by the design.",
+  "Observation": "A collection method: recording what people actually do, as it happens. Not a design --- an experiment can collect its data by observation.",
+  "Content analysis": "A collection method: studying records or documents that already exist --- borrowing histories, minutes, past scores. Best for change over time."
+ },
+ "blanks": [
+  "no",
+  "yes",
+  "not necessarily",
+  "yes",
+  "an association",
+  "cause and effect"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most agree: ``she only watched, so it must be observational.''",
+   "(Settled at problem 15: disagree --- the generator built the groups; an experiment.)"
+  ]
+ ],
+ "labels": [
+  "observational study",
+  "experiment",
+  "Collect"
+ ],
+ "spaces": [
+  "Who built the groups decides the design; how the answers were recorded decides the method."
+ ],
+ "cells": {
+  "2": "Using the Study Center is associated with a lower pass rate --- nothing stronger.",
+  "3": "The Study Center caused a higher pass rate --- chance built the groups.",
+  "4": "This quarter's --- chance built two alike groups, so only the treatment differs.",
+  "5": "Self-sorting leaves sizes 60/90; a generator splitting 120 makes 60/60.",
+  "6": "Yes --- you can hand a reading block out by chance. Run the experiment.",
+  "7": "No --- unethical: nobody may be assigned to smoke. Run an observational study.",
+  "8": "No --- impossible, not unethical: you cannot assign where a family lives.",
+  "9": "No. The groups built themselves --- the verb is \\emph{is associated with}.",
+  "10": "Units: student volunteers. A generator sends half to a weekly check-in, half to none.",
+  "11": "Compare each group's percent turning everything in. Verb: \\emph{caused} --- chance built the groups.",
+  "12": "Content analysis --- the records already exist.",
+  "13": "Interviews --- \\emph{why} needs follow-up; a fixed survey cannot.",
+  "14": "Observation --- record what students actually do.",
+  "15": "Disagree. Method: observation; design: experiment --- a generator built the groups.",
+  "16": "1.5: observational (members chose their time). 1.6: experiment (generator built 45/45).",
+  "17": "$42/60 = 70\\%$ vs.\\ $30/60 = 50\\%$, gap $20$ points. The class caused less joint pain.",
+  "18": "No --- impossible: nobody can hand out arthritis. Observational study; verb \\emph{is associated with}.",
+  "19": "Pain: a survey. Why they quit: interviews. Neither changes the design."
+ }
+}

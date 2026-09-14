@@ -1,0 +1,46 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Observational study": "A study in which you measure or survey a sample without trying to affect anyone. Nobody is assigned to a group --- the groups already exist. A survey is one type.",
+  "Explanatory variable": "The variable we think might explain or account for the other one --- the tail of the arrow in the claim being tested.",
+  "Response variable": "The variable we measure to see what happens --- the head of the arrow.",
+  "Association": "Two variables move together: knowing which group an individual is in changes what you expect for the other variable. Not the same as causation.",
+  "Lurking variable": "A variable outside the study that affects both variables in it, and can create an association all by itself."
+ },
+ "blanks": [],
+ "lines": [
+  [
+   "Answers vary --- most say ``safe'': the sample was random and everyone answered.",
+   "(Settled at problem 13: not safe --- no bias, and still no causation.)"
+  ]
+ ],
+ "labels": [
+  "the members",
+  "the director",
+  "WATCH",
+  "explanatory",
+  "response",
+  "lurking variable"
+ ],
+ "spaces": [],
+ "cells": {
+  "1": "Yes --- the members chose when to swim.",
+  "2": "Yes --- watching only.",
+  "3": "No --- the director assigns the groups (an experiment, 1.6).",
+  "4": "Yes --- a census is still observational.",
+  "5": "All $1{,}500$ members; random $200$; all answered.",
+  "6": "Two-way table: swim time by sleep ($7$+ hrs or fewer).",
+  "7": "$70\\%$ vs. $45\\%$ get $7$+ hrs --- a $25$-point gap, morning higher.",
+  "8": "Observational --- nobody assigned a swim time.",
+  "9": "$56/80 = 70\\%$, $54/120 = 45\\%$; gap $25$ points, morning higher.",
+  "10": "$110/200 = 55\\%$; $0.55 \\times 1{,}500 = 825$ --- an estimate.",
+  "11": "People who sleep well can get up for a $6$ a.m.\\ swim.",
+  "12": "$60/80 = 75\\%$ vs. $18/120 = 15\\%$. Outside --- a lurking variable.",
+  "13": "Not safe. Only ``morning swimmers report more sleep'' is supported.",
+  "14": "Not supported --- predicting a switch is a causal claim.",
+  "15": "Yes. Explanatory: Center use. Response: passing.",
+  "16": "$39/60 = 65\\%$, $72/90 = 80\\%$; gap $15$ points --- non-users higher.",
+  "17": "$65\\%$ of users passed vs. $80\\%$ of non-users. Association only --- memo not supported.",
+  "18": "$45/60 = 75\\%$ vs. $9/90 = 10\\%$. Backwards. Assigning would settle it."
+ }
+}

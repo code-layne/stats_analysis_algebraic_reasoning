@@ -1,0 +1,31 @@
+{
+ "blanks": [
+  "$28/80 = 0.35 = 35\\%$",
+  "$24/80 = 0.30 = 30\\%$",
+  "$20/80 = 0.25 = 25\\%$",
+  "$8/80 = 0.10 = 10\\%$",
+  "$80/80 = 1.00 = 100\\%$",
+  "the share of the 80 --- 35\\% chose book club",
+  "categorical"
+ ],
+ "lines": [
+  [
+   "The 35\\% may --- chance chose the 80 from the whole list. The 60\\% may not: the 50",
+   "chose themselves by walking in that week, so it describes only the people who signed."
+  ],
+  [
+   "No. Chance never chose the 50, so a match is luck, not evidence --- the same clipboard",
+   "could have missed by 35 points, as it actually did, and its method could not tell us."
+  ],
+  [
+   "Rule 2, neutral wording --- Lesson 1.4 called it a leading (response-bias) item.",
+   "Repair: ``Which one of these four programs should the grant fund?''"
+  ],
+  [
+   "We asked which one option the \\$3,000 grant should fund, of Riverbend students.",
+   "The sample was the 25 students in this room --- the schedule chose it, not chance; all 25 answered.",
+   "Club funding led at 36\\%, followed by field trips at 28\\%.",
+   "Of the 25 students in this class, most would fund clubs --- this class only, a convenience sample."
+  ]
+ ]
+}
