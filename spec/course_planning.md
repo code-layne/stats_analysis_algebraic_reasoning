@@ -47,6 +47,42 @@ or `exit_ticket` directory survives anywhere in unit 1.**
 **Either raise the budget for these two, or say which row to cut.** Until then the profile's
 3–4pp line and the 5pp reality disagree for 2 of 9 lessons.
 
+**ALSO LANDED 2026-09-14 — QUIZ 1 FOR LESSONS 1.0–1.3: STUDY PACKET + BOTH QUIZ FORMS**
+(`unit01/quiz01/`, open as PR #29; independent of the conversion above, which it does not
+touch). A new deliverable type for this course, with a new `LESSON_SHAPE.md` section-6
+subsection describing it. Built on the **`finals/` model, not the `tests/` one**: a
+self-contained `unit01/quiz01/Makefile` globbing `*/main.tex` into `target/unit01/quiz01/`,
+with **no `drop` step and no entry in `shared/unit.mk` or `shared/root.mk`** — a mid-unit quiz
+must not reflow a unit's already-verified student and key packets. Six documents, each keyed and
+verified page-for-page by per-page heading: `study_packet` 5/5, `sample_quiz` 4/4,
+`actual_quiz` 4/4. All are standalone handouts with no cover behind them, so all keep
+`\namedateperiod`, and all are **10pt on the unit-test model** (`\parthead` strips,
+`\workrowsep` 5pt) — assessment family, not lesson components, so the 12pt rule does not reach
+them (see the open item on test point size below).
+
+**The two quiz forms are parallel:** $19$ items, $50$ points ($8/12/20/10$) across the unit
+tests' four parts scaled down, sampling only 1.0–1.3, and differing in every number, context,
+vocabulary letter, and correct MC letter (vocab `DGAFBHCE` vs `GCEBHADF`; MC `BBCCDA` vs
+`ACDABC`). Contexts are fresh per form because Riverbend, Lakeside, Harbor Point, Northgate,
+Cedar Ridge and Bayside are spent in unit 1's lessons and its unit test: the sample runs on
+**Millbrook** ($720$, $30$ advisory groups of $24$) and **Stonebridge** ($1{,}200$), the graded
+form on **Westbrook** ($840$, $30$ homerooms of $28$) and **Clearwater** ($1{,}400$). Both put
+the 1.3 crux in Part D — the groups are built by grade, so a random draw of two is a stratum,
+not a cluster, and the teacher's arithmetic ($30/48 = 62.5\%$, $0.625 \times 720 = 450$; graded
+$42/56 = 75\%$, $0.75 \times 840 = 630$) is correct on a sample reaching one or two grades.
+**Only `sample_quiz` is ever handed out.** **Part B carries an `Answer:` `\blank{}` on every
+item**: the unit tests park MC answers in a `teachernote` on page 2 of `unit_cover_key/`, and a
+standalone quiz has no cover to park them on. **The study packet** is terms table → five worked
+moves (each closing on that lesson's target misconception as a named trap) → keyed practice, one
+item per lesson → readiness checklist; its worked examples use `\[ \]` displays, never `work`
+blocks, which are invisible without `-key`. Every number verified in pure Python before
+authoring, both forms. Two parity traps found — see Gotchas.
+
+**Open, user's call:** three page bottoms run light — study packet p1 (~40% empty, the second
+terms table cannot split), sample quiz p2 (~55%, Part C starts on a forced page), and study
+packet p4–p5 (~25% each). Tightening them is a re-verification of every pair, and `\boxguard`
+proved to be a knife edge in this directory.
+
 **The agreed period shape (user-confirmed 2026-08-31, second revision):**
 **5 warm-up · 30 guided notes · 10 independent practice · 7 debrief · 3 close & assign.**
 
@@ -674,12 +710,18 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    the key's page 2). The tests were untouched by every redesign, including this one.
 6. **The unit-1 tests are still 10pt** while every lesson component is 12pt. Not a defect — the
    tests were never part of the pilot — but worth a decision the next time they are opened.
-7. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
-8. **Promote into `shared/` on a run allowed to touch it:** the measured `\coverbanner` block and
+7. **Quiz 1 for lessons 1.0–1.3 is COMPLETE** (`unit01/quiz01/`, 2026-09-14, PR #29): study
+   packet (5pp), `sample_quiz` (4pp) and the graded `actual_quiz` (4pp), each with its generated
+   key and each verified page-for-page. **Only `sample_quiz` is handed out.** The same `quizNN/`
+   pattern covers a second unit-1 quiz for 1.4–1.8 and mid-unit quizzes in units 2–8; the
+   Makefile globs `*/main.tex`, so adding a form needs no build change. Quizzes are 10pt for the
+   same reason the tests are — see item 6 if that decision is revisited.
+8. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
+9. **Promote into `shared/` on a run allowed to touch it:** the measured `\coverbanner` block and
    the `\vterm`/`\vtermans` pair, which every lesson currently copies into its own preamble, and
    the `\wordbank` strip. Three copies per lesson × nine lessons is the current cost. Doing so
    would also let the cover's 16.24pt overfull `\namedateperiod` line be fixed once.
-9. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
+10. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
    as PR #17; the drop-the-activity skill rewrite as PR #18; the 1.1 notes-only conversion as
@@ -690,6 +732,26 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    shape is PR #30** (2026-09-14).
 
 ## Gotchas found this session
+
+**Two page-parity traps, found authoring `unit01/quiz01/` (2026-09-14) — both now in
+`LESSON_SHAPE.md` section 6.**
+
+1. **`\par\writelines{n}` costs the key a line at every prose answer.** It reserves $n+1$ line
+   slots (it still ends in `\\`), but `mkkey.py` emits exactly $n$ `\ansline`s — so a document
+   with six two-line prose answers runs a full page shorter in the key. Both keys here did.
+   **Author each prose answer line as its own `\par\writeline`.** Measured with a probe
+   document: `\par\writelines{2}` puts the following marker at $y = 91.96$, while two
+   `\par\writeline`s and two `\par\ansline`s both put it at $y = 80.00$ — identical.
+2. **`\boxguard` is a knife edge between a blank and its key.** After fix 1 the quiz was
+   byte-identical in height through item 16 — every anchor on page 3 measured to the same $y$ in
+   both files — and the key *still* ran a page long, because an `\ansline`'s descender drops the
+   remaining space just under `\boxguard[22]`'s $22\,\times$ baselineskip and only the key broke
+   the page. **Sweep the guard until blank and key agree** ($22 \rightarrow 18$ here) and verify
+   by per-page headings, not page counts. A guard tuned against the blank alone is not tuned.
+
+**Also:** a `tabularx` cannot break across a page, so a $24$-row reference table is pushed off
+page 1 whole and strands half a page. Split it at a natural boundary (the study packet's terms
+table is two tables, 1.0–1.1 and 1.2–1.3) rather than reaching for `ltablex`.
 
 ### Converting eight lessons at once — what actually bit (found 2026-09-14)
 

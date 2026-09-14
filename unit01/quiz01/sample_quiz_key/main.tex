@@ -1,0 +1,339 @@
+%! Unit 1: Asking Questions with Data: Study Design — Quiz 1 — Sample Quiz (Lessons 1.0–1.3) — blank (Answer Key)
+% Standalone assessment on the unit-test model (LESSON_SHAPE.md section 6): 10pt,
+% \parthead{Part …} strips, Part A Vocabulary · B Multiple Choice · C Short Answer &
+% Computation · D Extended Response, \workrowsep 5pt identical in blank and key, and
+% \namedateperiod kept because it is taken in a testing setting. Merged into no packet.
+%
+% BLUEPRINT — 19 items, 50 points, Lessons 1.0–1.3 only:
+%   A vocabulary matching  8 items ×1 =  8   (1.0 ×3, 1.1 ×1, 1.2 ×2, 1.3 ×2)
+%   B multiple choice      6 items ×2 = 12   (1.0, 1.1, 1.2 ×2, 1.3 ×2)
+%   C short answer         4 items ×5 = 20   (C1 1.0/1.1 · C2 1.1 · C3 1.2 · C4 1.3)
+%   D extended response    1 item ×10 = 10   (1.3 crux + 1.2 parameter/statistic)
+% Parallel form to the real quiz: same blueprint and ideas, different numbers and contexts,
+% reshuffled vocabulary letters. Every number verified in Python before authoring.
+% Contexts are deliberately NEW (Millbrook, Stonebridge) — Riverbend, Lakeside, Harbor Point,
+% Northgate, Cedar Ridge, and Bayside all appear in lessons 1.0–1.3 or the unit test.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit01/quiz01/sample_quiz/main.tex \
+%       unit01/quiz01/sample_quiz_key/main.tex unit01/quiz01/sample_quiz_key/answers.json
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Work blocks on a quiz need handwriting room, not typeset spacing. This moves the blank and
+% the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Quiz 1 --- Sample Quiz --- Lessons 1.0--1.3 --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This is a sample quiz.} It mirrors the real Quiz 1 in length, format, and the ideas it
+covers, but the numbers and contexts differ. The quiz covers \textbf{Lessons 1.0--1.3 only}.
+Work every problem with no notes, then check your answers against the key.
+\textbf{50 points:} Part A $8$, Part B $12$, Part C $20$, Part D $10$.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part A --- Vocabulary \hfill 8 questions, 1 point each}
+
+\small
+Write the letter of the matching description next to each term. Each letter is used once.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item \ans{D} Individual
+  \item \ans{G} Categorical variable
+  \item \ans{A} Statistical question
+  \item \ans{F} Population
+  \item \ans{B} Parameter
+  \item \ans{H} Statistic
+  \item \ans{C} Sampling frame
+  \item \ans{E} Cluster sample
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item A question whose answers are expected to vary from individual to individual.
+  \item A number that describes the population. Usually unknown.
+  \item The list of individuals a sample can actually be drawn from.
+  \item One person or object that data are collected about --- one row of a data table.
+  \item A few whole groups are chosen at random, and everyone in them is studied.
+  \item Every individual the study wants to describe.
+  \item A variable that records a label or group name, summarized with counts and percents.
+  \item A number computed from the sample. It changes from sample to sample.
+\end{enumerate}
+\end{minipage}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[8]
+\parthead{Part B --- Multiple Choice \hfill 6 questions, 2 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=9]
+
+\item Millbrook High School records each student's \textbf{advisory group number}, from $1$ to
+$30$. This variable is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item quantitative, because the values are numbers.
+  \item categorical, because the numbers are labels for groups.
+  \item quantitative, because the groups can be put in order.
+  \item neither, because a group number is not really data.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{B}
+
+\item Which of these is a \textbf{statistical question}?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item How many minutes did I spend on homework last night?
+  \item How many minutes do Millbrook students spend on homework on a school night?
+  \item How many seats does the Millbrook gym hold?
+  \item Does Millbrook start classes at 8 a.m.?
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{B}
+
+\item Stonebridge Recreation Center's own membership records show that \textbf{exactly $45\%$
+of all $1{,}200$ members} renew early. That $45\%$ is a
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item statistic, because it is written as a percent.
+  \item statistic, because $1{,}200$ is a large number.
+  \item parameter, because it describes every member of the population.
+  \item parameter, because the records are official.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{C}
+
+\item Two different random samples of $80$ Stonebridge members give $35\%$ and $41\%$ arriving
+before 7 a.m. This result shows
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item that one of the two samples was collected incorrectly.
+  \item that the parameter changed between the two surveys.
+  \item sampling variability --- the parameter did not move, and both are honest estimates.
+  \item that the true value must be exactly halfway between them.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{C}
+
+\item A teacher surveys her own second-period class because it is the easiest group to reach.
+Her sample is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item a simple random sample, because she picked no favorites.
+  \item a systematic sample, because her class list is in order.
+  \item a cluster sample, because she surveyed one whole class.
+  \item a convenience sample, because a student in another period could never be chosen.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{D}
+
+\item Which sentence states the difference between a \textbf{stratum} and a \textbf{cluster}?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item A stratum is alike inside and differs from other strata; a cluster is meant to be a
+        small mix of the whole.
+  \item A stratum is a small mix of the whole; a cluster is alike inside.
+  \item A stratum is chosen by chance; a cluster is chosen by convenience.
+  \item There is no difference --- both mean a group inside the population.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{A}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\newpage
+\parthead{Part C --- Short Answer \& Computation \hfill 4 questions, 5 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=15]
+
+% ---------------------------------------------------------------- C1 (1.0 / 1.1)
+\item \textbf{Millbrook High School} has $720$ students. For each student the office records
+advisory group number, minutes on the bus this morning, whether the student buys lunch, and
+preferred spirit-week theme.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \ans{The 720 Millbrook students}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Advisory group number & \ans{Categorical} \\
+Minutes on the bus this morning & \ans{Quantitative} \\
+Buys lunch (yes / no) & \ans{Categorical} \\
+Preferred spirit-week theme & \ans{Categorical} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) The office's first draft question is \emph{``How long is the bus ride?''} Explain why that
+is not a statistical question, then rewrite it so that it is.
+
+\par\ansline{It names no group and no measurement, so it has one answer, not answers that vary.}
+\par\ansline{``How many minutes is the bus ride for Millbrook students who ride the bus?''}
+
+% ---------------------------------------------------------------- C2 (1.1)
+\boxguard[20]
+\item \textbf{Millbrook's student council} asks $60$ students to name a preferred spirit-week
+theme. The counts are below.
+
+\vspace{2pt}
+(a) Complete the relative frequency column as a percent.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Theme} & \textbf{Frequency} & \textbf{Relative frequency} \\
+\midrule
+Decades     & $24$ & \ans{$40\%$} \\
+Color wars  & $18$ & \ans{$30\%$} \\
+Sports day  & $12$ & \ans{$20\%$} \\
+Movie night & $6$  & \ans{$10\%$} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Write a \textbf{conclusion in context} about the most popular theme, naming the group it
+applies to.
+
+\par\ansline{Of the 60 Millbrook students surveyed, 24 --- or $40\%$ --- chose a decades theme,}
+\par\ansline{more than any other theme.}
+
+\vspace{2pt}
+(c) The council writes: \emph{``Most Millbrook students want a decades theme.''} Give the two
+things that are wrong with that sentence.
+
+\par\ansline{$40\%$ is not ``most'' --- most means more than half. And the survey covers the 60}
+\par\ansline{students asked, not all 720, so the sentence reaches beyond its own group.}
+
+% ---------------------------------------------------------------- C3 (1.2)
+\boxguard[18]
+\item \textbf{Stonebridge Recreation Center} has $1{,}200$ members. The manager surveys $80$
+members chosen at random; $28$ of them arrive before 7 a.m.
+
+\vspace{2pt}
+(a) Population: \ans{All 1,200 members} \quad Sample size: \ans{$80$}
+
+\vspace{3pt}
+Sample: \ans{The 80 members who were surveyed}
+
+\vspace{3pt}
+(b) What percent of the sample arrives before 7 a.m., and about how many of all $1{,}200$
+members does that estimate?
+
+\begin{work}
+  \dfrac{28}{80} &= 0.35 = 35\% \\
+  0.35 \times 1200 &= 420 \text{ members}
+\end{work}
+
+(c) Is the $35\%$ a parameter or a statistic? Say how you know.
+
+\par\ansline{A statistic --- it describes the 80-member sample, not all 1,200 members.}
+
+(d) Name one \textbf{constraint} that keeps the manager from taking a census of all $1{,}200$
+members.
+
+\par\ansline{Time --- reaching every one of 1,200 members would take far too long.}
+
+% ---------------------------------------------------------------- C4 (1.3)
+\newpage
+\item \textbf{Millbrook High School} has $720$ students, a numbered list of all of them, and
+$30$ advisory groups of $24$ students each.
+
+\vspace{2pt}
+(a) Name the sampling technique used in each row.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the researcher did} & \textbf{Technique} \\
+\midrule
+Put all $720$ student numbers in a generator and drew $48$. & \ans{Simple random} \\
+Split the school by grade and drew students at random from every grade, in proportion. &
+  \ans{Stratified} \\
+Ordered the list and took every $15$th student after a random start. & \ans{Systematic} \\
+Drew $2$ advisory groups at random and surveyed everyone in them. & \ans{Cluster} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) For a \textbf{systematic} sample of $48$ students, show why $k = 15$, then list the first
+four students chosen from a random start of $7$.
+
+\begin{work}
+  k &= N \div n = 720 \div 48 = 15
+\end{work}
+
+\vspace{-2pt}
+\ans{$7$} \quad \ans{$22$} \quad \ans{$37$} \quad \ans{$52$}
+
+\vspace{4pt}
+(c) For a \textbf{simple random} sample, a generator gives $471$, $839$, $260$, $554$, $128$.
+One of those numbers cannot be used. Which one, and why?
+
+\par\ansline{$839$ --- it is off the frame of $001$--$720$, so skip it and read the next number.}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[10]
+\parthead{Part D --- Extended Response \hfill 1 question, 10 points}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=19]
+
+\item \textbf{Millbrook} ($720$ students) wants to know whether students would use a late
+activity bus. The office has a numbered list of all $720$ students, the four grades are
+believed to differ a lot in their answers, and the $30$ advisory groups are \textbf{built by
+grade}.
+
+\vspace{2pt}
+(a) Choose \textbf{one} of the four sampling techniques and justify it from what this context
+allows. Your reason must name \emph{how the groups are built}.
+
+\par\ansline{Stratified. The grades differ a lot and a numbered list of all 720 exists, so draw}
+\par\ansline{students at random from every grade, in proportion to grade size.}
+
+\vspace{2pt}
+(b) Instead, a teacher draws $2$ advisory groups at random and surveys all $48$ students in
+them; $30$ say yes. Show her two computations: the percent of her sample saying yes, and the
+number of all $720$ students that percent points to.
+
+\begin{work}
+  \dfrac{30}{48} &= 0.625 = 62.5\% \\
+  0.625 \times 720 &= 450 \text{ students}
+\end{work}
+
+(c) Her arithmetic is correct. Explain what is wrong with her report anyway, and state what
+she \emph{is} allowed to say.
+
+\par\ansline{Advisory groups are built by grade, so each one is alike inside --- a stratum, not a}
+\par\ansline{mix of the whole. Her 48 students are one or two grades, so the $62.5\%$ estimates}
+\par\ansline{nothing about all 720. She may only say $62.5\%$ of those 48 students said yes.}
+
+\vspace{2pt}
+(d) Is her $62.5\%$ a parameter or a statistic? Name one change to her method that would make
+it an estimate worth trusting.
+
+\par\ansline{A statistic. Draw the sample at random from the whole numbered list of 720, or}
+\par\ansline{stratify by grade, so every grade can be chosen.}
+
+\end{enumerate}
+\normalsize
+
+\end{document}

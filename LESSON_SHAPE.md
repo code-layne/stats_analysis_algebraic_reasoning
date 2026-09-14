@@ -396,6 +396,50 @@ and Part D scoring live** (as `\begin{teachernote}[Practice Test --- Part B]` bl
 double-sided sheet. A unit with no `unit_cover_key/` gets the plain cover in both packets. Unit 1's
 pair (authored 2026-08-07) is the pattern.
 
+**Mid-unit quizzes and their study packets** (added 2026-09-14, unit 1 lessons 1.0--1.3 is the
+pattern). A quiz covering only part of a unit is a **standalone deliverable merged into no
+packet**, built on the `finals/` model rather than the `tests/` one: `unitXX/quizNN/` with four
+flat subdirectories each holding a `main.tex` --- `study_packet/`, `study_packet_key/`,
+`sample_quiz/`, `sample_quiz_key/` --- and its own self-contained `Makefile` that globs
+`*/main.tex` into `target/<unit>/quizNN/<name>/main.pdf`. **No `drop`/publish step, and never
+add `quizNN` to `shared/unit.mk` or `shared/root.mk`:** a mid-unit quiz must not reflow the
+pagination of a unit's already-verified student and key packets. `make -C unitXX/quizNN all`
+builds all four. Both documents are standalone handouts with no cover behind them, so both
+**keep `\namedateperiod`**, and both are authored at **10pt** with the unit tests'
+`\parthead{Part …}` strips and `\setlength{\workrowsep}{5pt}` --- they are assessment family,
+not lesson components, so the 12pt student-component rule does not reach them.
+
+- **The quiz ships as two parallel forms**, exactly as the unit tests do: `sample_quiz/` is the
+  study copy students get beforehand, `actual_quiz/` is the graded form, and the two share a
+  blueprint while differing in every number, context, vocabulary letter, and correct multiple-choice
+  letter. **Only `sample_quiz` is ever handed out as study material.** Both carry the unit tests' four parts scaled
+  down: **A Vocabulary (matching) · B Multiple Choice · C Short Answer & Computation · D
+  Extended Response**, with the crux in D. Unit 1's set is $19$ items for $50$ points
+  ($8 / 12 / 20 / 10$), $4$ pages. **Part B needs an `Answer:` `\blank{}` slot on each item**:
+  the unit tests park their MC answers in a `teachernote` on page 2 of `unit_cover_key/`, and a
+  standalone quiz has no cover to park them on. Sample only the lessons the quiz covers, and
+  use **fresh contexts for each form** --- Riverbend, Lakeside, Harbor Point, Northgate, Cedar
+  Ridge, and Bayside are spent in unit 1's lessons and its unit test; Millbrook and Stonebridge
+  in quiz 1's sample form; Westbrook and Clearwater in its graded form. **Author the graded form
+  by mirroring the sample's file structure exactly** --- same parts, same guards, same answer-slot
+  order --- so its pagination behaves the same way and needs no separate guard sweep.
+- **The study packet** is the review handout: a *terms* reference table (definitions printed in
+  both copies, so nothing can drift), a *worked moves* section --- one box per skill the quiz
+  tests, each ending in the target misconception named as a trap --- and a *practice* section of
+  keyed items, one per lesson, closing on a readiness checklist. **Worked examples use ordinary
+  `\[ \]` displays, never a `work` block:** a `work` block is invisible without `-key`, so
+  worked material authored in one disappears from the student's copy.
+- **Author the key with `templates/lesson/mkkey.py`, and author each prose answer line as its
+  own `\par\writeline`.** `\par\writelines{n}` reserves $n+1$ line slots while the generator
+  emits $n$ `\ansline`s, so every multi-line prose answer costs the key a line and the key runs
+  a page short. Measured: `\par\writeline` $\times\,n$ and `\par\ansline` $\times\,n$ land
+  at the same $y$. **`\boxguard` is a knife edge here:** blank and key can be byte-identical in
+  height and still break differently, because an `\ansline`'s descender drops the remaining
+  space just under the guard. Sweep the guard value until blank and key agree (unit 1's item 17
+  needed $22 \rightarrow 18$), and verify by per-page headings, not page counts alone.
+- **Quizzes are outside `make check`** for the same reason the tests are. Verify by hand: page
+  parity per pair, no `\ans` inside math, no `teachernote` in either key.
+
 **Tests are outside `make check`** (the gate walks `unitXX/lessonMM/` only). That is a limit of
 the checker, not an exemption: a test key still carries no `teachernote` and still matches its
 blank page for page — check both by hand. **Verify every number in pure Python before authoring**
