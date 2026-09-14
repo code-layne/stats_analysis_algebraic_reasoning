@@ -1,6 +1,35 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-09-07 — **LESSON 1.4 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
+**Last updated:** 2026-09-14 — **QUIZ 1 AUTHORED FOR LESSONS 1.0–1.3: STUDY PACKET +
+SAMPLE QUIZ** (`unit01/quiz01/`). A new deliverable type for this course, and a new
+`LESSON_SHAPE.md` section-6 subsection describing it. It is built on the **`finals/` model, not
+the `tests/` one**: a self-contained `unit01/quiz01/Makefile` globbing `*/main.tex` into
+`target/unit01/quiz01/`, with **no `drop` step and no entry in `shared/unit.mk` or
+`shared/root.mk`** — a mid-unit quiz must not reflow unit 1's already-verified student and key
+packets, and nothing outside `unit01/quiz01/` was touched. Four documents: `study_packet` (5pp)
++ its key, `sample_quiz` (4pp) + its key, page-for-page verified by per-page heading. Both are
+standalone handouts with no cover behind them, so both keep `\namedateperiod`, and both are
+**10pt** on the unit-test model (`\parthead` strips, `\workrowsep` 5pt) — they are assessment
+family, not lesson components.
+
+**The sample quiz** is a parallel form: $19$ items, $50$ points ($8/12/20/10$) across the unit
+tests' four parts scaled down, sampling only 1.0–1.3. Contexts are deliberately new
+(**Millbrook** High School $720$, **Stonebridge** Recreation Center $1{,}200$) because
+Riverbend, Lakeside, Harbor Point, Northgate, Cedar Ridge, and Bayside are all spent in unit 1's
+lessons and its unit test. The crux is Part D: Millbrook's $30$ advisory groups are **built by
+grade**, so a random draw of two of them is a stratum, not a cluster — the teacher's $30/48 =
+62.5\%$ and $0.625 \times 720 = 450$ are correct arithmetic on a sample that represents one or
+two grades. **Part B carries an `Answer:` `\blank{}` on every item**: the unit tests park MC
+answers in a `teachernote` on page 2 of `unit_cover_key/`, and a standalone quiz has no cover to
+park them on. **The study packet** is terms table → five worked moves (each closing on that
+lesson's target misconception as a named trap) → keyed practice, one item per lesson → readiness
+checklist; its worked examples use `\[ \]` displays, never `work` blocks, which are invisible
+without `-key`. Every number verified in pure Python before authoring. Two parity traps found,
+both now in the profile — see Gotchas. **Next: the real Quiz 1 as a parallel form of the sample,
+if the user wants one; the lesson conversions (1.1, then 1.0 and 1.5–1.8) are still the main
+queue.**
+
+**Previous run (2026-09-07) — LESSON 1.4 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
 regenerate lesson 1.4`): the pre-EFFL legacy lesson (5 notes sections + activity + exit ticket)
 was rebuilt as `cover` + `warmup` + `notes` + `homework` + `slides` on the 1.2/1.3 model — two
 long notes sections, one Guided Practice, spoken debrief, homework started in class,
@@ -637,6 +666,12 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    6 pages; `\setlength{\workrowsep}{5pt}` in every test preamble; unit cover pair with scoring on
    the key's page 2). The tests were untouched by every redesign.
 6. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
+6a. **Quiz 1 for lessons 1.0–1.3 is authored** (`unit01/quiz01/`, 2026-09-14): study packet +
+   sample quiz, both keyed and page-for-page verified. **The real Quiz 1 does not exist yet** —
+   author it as a parallel form of the sample (same blueprint, different numbers and contexts,
+   reshuffled vocabulary letters) as `actual_quiz/` + `actual_quiz_key/` in the same directory
+   when the user asks; the Makefile globs `*/main.tex`, so it needs no build change. The same
+   `quizNN/` pattern covers a second unit-1 quiz for 1.4–1.8 and mid-unit quizzes in units 2–8.
 7. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
@@ -644,6 +679,26 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    PR #19; 1.1's classroom revision as PR #20; the shared-skill move as PR #21. **The 1.2 pilot + profile rewrite merged as PR #22** (2026-09-07); the 12pt follow-up is PR #23. **The 1.3 regeneration in the pilot shape is PR #26** (2026-09-07); **the 1.4 regeneration is PR #27** (2026-09-07).
 
 ## Gotchas found this session
+
+**Two page-parity traps, found authoring `unit01/quiz01/` (2026-09-14) — both now in
+`LESSON_SHAPE.md` section 6.**
+
+1. **`\par\writelines{n}` costs the key a line at every prose answer.** It reserves $n+1$ line
+   slots (it still ends in `\\`), but `mkkey.py` emits exactly $n$ `\ansline`s — so a document
+   with six two-line prose answers runs a full page shorter in the key. Both keys here did.
+   **Author each prose answer line as its own `\par\writeline`.** Measured with a probe
+   document: `\par\writelines{2}` puts the following marker at $y = 91.96$, while two
+   `\par\writeline`s and two `\par\ansline`s both put it at $y = 80.00$ — identical.
+2. **`\boxguard` is a knife edge between a blank and its key.** After fix 1 the quiz was
+   byte-identical in height through item 16 — every anchor on page 3 measured to the same $y$ in
+   both files — and the key *still* ran a page long, because an `\ansline`'s descender drops the
+   remaining space just under `\boxguard[22]`'s $22\,\times$ baselineskip and only the key broke
+   the page. **Sweep the guard until blank and key agree** ($22 \rightarrow 18$ here) and verify
+   by per-page headings, not page counts. A guard tuned against the blank alone is not tuned.
+
+**Also:** a `tabularx` cannot break across a page, so a $24$-row reference table is pushed off
+page 1 whole and strands half a page. Split it at a natural boundary (the study packet's terms
+table is two tables, 1.0–1.1 and 1.2–1.3) rather than reaching for `ltablex`.
 
 ### Blank/key page alignment is NOT what `make check` verifies (found 2026-08-31)
 

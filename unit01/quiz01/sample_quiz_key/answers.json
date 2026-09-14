@@ -1,0 +1,88 @@
+{
+  "blanks": [
+    "D",
+    "G",
+    "A",
+    "F",
+    "B",
+    "H",
+    "C",
+    "E",
+    "B",
+    "B",
+    "C",
+    "C",
+    "D",
+    "A",
+    "The 720 Millbrook students",
+    "Categorical",
+    "Quantitative",
+    "Categorical",
+    "Categorical",
+    "$40\\%$",
+    "$30\\%$",
+    "$20\\%$",
+    "$10\\%$",
+    "All 1,200 members",
+    "$80$",
+    "The 80 members who were surveyed",
+    "Simple random",
+    "Stratified",
+    "Systematic",
+    "Cluster",
+    "$7$",
+    "$22$",
+    "$37$",
+    "$52$"
+  ],
+  "lines": [
+    [
+      "It names no group and no measurement, so it has one answer, not answers that vary."
+    ],
+    [
+      "``How many minutes is the bus ride for Millbrook students who ride the bus?''"
+    ],
+    [
+      "Of the 60 Millbrook students surveyed, 24 --- or $40\\%$ --- chose a decades theme,"
+    ],
+    [
+      "more than any other theme."
+    ],
+    [
+      "$40\\%$ is not ``most'' --- most means more than half. And the survey covers the 60"
+    ],
+    [
+      "students asked, not all 720, so the sentence reaches beyond its own group."
+    ],
+    [
+      "A statistic --- it describes the 80-member sample, not all 1,200 members."
+    ],
+    [
+      "Time --- reaching every one of 1,200 members would take far too long."
+    ],
+    [
+      "$839$ --- it is off the frame of $001$--$720$, so skip it and read the next number."
+    ],
+    [
+      "Stratified. The grades differ a lot and a numbered list of all 720 exists, so draw"
+    ],
+    [
+      "students at random from every grade, in proportion to grade size."
+    ],
+    [
+      "Advisory groups are built by grade, so each one is alike inside --- a stratum, not a"
+    ],
+    [
+      "mix of the whole. Her 48 students are one or two grades, so the $62.5\\%$ estimates"
+    ],
+    [
+      "nothing about all 720. She may only say $62.5\\%$ of those 48 students said yes."
+    ],
+    [
+      "A statistic. Draw the sample at random from the whole numbered list of 720, or"
+    ],
+    [
+      "stratify by grade, so every grade can be chosen."
+    ]
+  ]
+}

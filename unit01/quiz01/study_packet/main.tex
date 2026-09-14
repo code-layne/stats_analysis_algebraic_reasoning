@@ -1,0 +1,458 @@
+%! Unit 1: Asking Questions with Data: Study Design — Quiz 1 Study Packet (Lessons 1.0–1.3) — blank
+% Standalone review handout for the Lessons 1.0–1.3 quiz. Authored on the unit-test model
+% (10pt, \parthead strips, \workrowsep 5pt identical in blank and key) because it sits beside
+% unit01/tests, not inside a lesson packet — it is NOT a lesson component and is merged into
+% no packet. It keeps \namedateperiod: it is a standalone handout with no cover behind it.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit01/quiz01/study_packet/main.tex \
+%       unit01/quiz01/study_packet_key/main.tex unit01/quiz01/study_packet_key/answers.json
+% Re-run it after every edit to this file.
+%
+% Part 2's worked examples are printed in BOTH copies — they are the study material, so they
+% use ordinary \[ \] displays, never a `work` block (a work block is invisible without -key).
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+
+% Work blocks in the practice section need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
+% Part-divider strip (same macro the unit tests define)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Quiz 1 Study Packet --- Lessons 1.0--1.3}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This packet is how you study for Quiz 1.} The quiz covers
+\textbf{Lessons 1.0--1.3 only} --- data and variables, the data cycle, populations and samples,
+and the four sampling techniques. It is worth \textbf{50 points}: Part A vocabulary $8$,
+Part B multiple choice $12$, Part C short answer and computation $20$, Part D extended
+response $10$.
+\textbf{Use it in this order:} read Part 1 and cover the definitions to test yourself, read
+every worked example in Part 2, then work all of Part 3 with your notes closed. Check Part 3
+against the answer key last, not while you work.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part 1 --- Every Term You Have to Know \hfill Lessons 1.0--1.3}
+
+\small
+Cover the right-hand column and say each definition out loud before you check it.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.22}
+% Two tables, not one: a tabularx cannot break across a page, so a single 24-row table is
+% pushed off page 1 whole and strands half of it. Split at the lesson boundary instead.
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{3.0cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.0 & Data & Numbers or labels collected about individuals, together with the
+      context that gives them meaning. \\
+1.0 & Individual & One person, animal, or object data are collected about --- one
+      \emph{row} of a data table. \\
+1.0 & Variable & A characteristic recorded for each individual --- one
+      \emph{column} of a data table. \\
+1.0 & Categorical variable & Records a \emph{label} or group name. Summarize with
+      counts and percents. \\
+1.0 & Quantitative variable & Records a \emph{measured amount} with units.
+      Summarize with a mean or median. \\
+1.0 & Digit test & The check that settles a column written with digits:
+      \emph{does arithmetic on this variable mean anything?} \\
+1.1 & Data cycle & Formulate questions $\rightarrow$ collect or acquire data
+      $\rightarrow$ organize and represent $\rightarrow$ analyze and communicate. \\
+1.1 & Statistical question & A question whose answers are expected to
+      \emph{vary}, that names the group, and that says what will be measured. \\
+1.1 & Frequency & The count of individuals in one category or at one value. \\
+1.1 & Relative frequency & A count divided by the total, as a decimal or a
+      percent --- that group's share of the whole. \\
+1.1 & Conclusion in context & A sentence stating what the data show, naming the
+      group it applies to and the units. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[14]
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{3.0cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.2 & Population & Every individual the question is about --- everyone the
+      conclusion should describe. \\
+1.2 & Sample & The part of the population data were actually collected from.
+      \textbf{Sample size} is how many are in it. \\
+1.2 & Census & A study that collects data from every individual in the
+      population. \\
+1.2 & Parameter & A number that describes the \emph{population}. Usually unknown
+      --- and there is only one. \\
+1.2 & Statistic & A number computed from the \emph{sample}. Known --- and it
+      changes from sample to sample. \\
+1.2 & Constraint & A real-world limit on the study: time, cost, access,
+      destruction, or a changing population. \\
+1.2 & Sampling variability & The change in a statistic from one sample to the
+      next, even though the population has not changed. Not a mistake. \\
+1.3 & Sampling frame & The list a study can actually choose from. Anyone off the
+      frame can never be sampled. \\
+1.3 & Convenience sample & Whoever is easiest to reach --- the schedule chose,
+      not chance. Test: \emph{who could never have been picked?} \\
+1.3 & Simple random sample & Number the frame and draw; every individual has an
+      equal chance. Skip out-of-range and repeated numbers. \\
+1.3 & Systematic sample & From an ordered list, every $k$th individual after a
+      random start, where $k = N \div n$. \\
+1.3 & Stratified sample & Split into \emph{strata} that are alike inside; draw a
+      random sample from \emph{every} stratum, in proportion. \\
+1.3 & Cluster sample & Split into \emph{clusters}, each a small mix of the whole;
+      draw a few whole clusters at random and measure everyone in them. \\
+\end{tabularx}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[14]
+\parthead{Part 2 --- The Five Moves, Worked \hfill study these before you practice}
+
+\small
+Every quiz question is one of these five moves. The work is shown; follow it line by line.
+
+\vspace{4pt}
+\boxguard[12]
+\begin{notesbox}{Move 1 --- Classify a variable (Lesson 1.0)}
+\small
+Riverbend records four things about each student. Ask the \textbf{digit test} of every one:
+\emph{does arithmetic on this mean anything?}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c X @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Type} & \textbf{Why} \\
+\midrule
+Minutes of homework & Quantitative & A mean number of minutes means something. \\
+Grade level ($9$, $10$, $11$, $12$) & Categorical & ``Mean grade level $10.4$'' describes no
+  student. The digits are labels. \\
+Favorite lunch entr\'ee & Categorical & A label; count it and turn it into a percent. \\
+Jersey number & Categorical & Digits, but arithmetic on them is meaningless. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{The trap:} the \emph{digit reflex} --- calling anything written with digits
+quantitative. Grade level, jersey number, ZIP code, and advisory group number are all
+categorical.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[12]
+\begin{notesbox}{Move 2 --- Find the stage a study broke at (Lesson 1.1)}
+\small
+The four stages are ordered because each one consumes the one before it:
+\emph{formulate $\rightarrow$ collect $\rightarrow$ organize $\rightarrow$ analyze and
+communicate}.
+
+\vspace{2pt}
+A council wants to know what all $900$ Riverbend students think of the lunch menu. It surveys
+the $60$ students standing in the lunch line and reports: \emph{``Riverbend students like the
+menu.''}
+
+\vspace{2pt}
+\textbf{Where did the problem enter?} Stage 2, \emph{collect data}. Students who bring lunch
+from home were never in the line, so they could never be surveyed. The bad \emph{sentence}
+appeared at stage 4, but the flaw entered at stage 2.
+
+\vspace{2pt}
+\textbf{The trap:} naming the stage where the bad sentence appeared --- always stage 4 ---
+instead of the stage the problem \emph{entered} at. Ask ``where did it enter?'' every time.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[14]
+\begin{notesbox}{Move 3 --- Parameter or statistic, and estimating with it (Lesson 1.2)}
+\small
+Harbor Point Community Pool has $1{,}500$ members. The manager surveys $75$ chosen at random;
+$27$ of them drive to the pool.
+
+\vspace{2pt}
+\textbf{Population:} all $1{,}500$ members. \quad \textbf{Sample:} the $75$ surveyed. \quad
+\textbf{Sample size:} $75$.
+\[ \frac{27}{75} = 0.36 = 36\% \qquad\text{and}\qquad 0.36 \times 1500 = 540 \text{ members} \]
+The $36\%$ is a \textbf{statistic} --- it describes the $75$-member sample. The percent of all
+$1{,}500$ members who drive is a \textbf{parameter}, and nobody knows it. The $540$ is an
+\textbf{estimate} of how many members that parameter points to.
+
+\vspace{2pt}
+\textbf{Ask who the number describes, never what it looks like.} A percent drawn from the
+records of all $1{,}500$ members would be a parameter; a count taken from $75$ people is a
+statistic.
+
+\vspace{2pt}
+\textbf{The trap:} thinking two samples that disagree mean somebody made a mistake. There is
+\textbf{one} parameter and it did not move --- two honest samples give two honest estimates.
+That is \emph{sampling variability}.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 4 --- Carry out a systematic or stratified sample (Lesson 1.3)}
+\small
+Riverbend High School has $N = 900$ students and wants a sample of $n = 60$.
+
+\vspace{2pt}
+\textbf{Systematic.} Order the list, compute the step, then take every $k$th student after a
+random start:
+\[ k = N \div n = 900 \div 60 = 15 \]
+From a random start of $4$: students $4$, $19$, $34$, $49$, \dots\ Only the \emph{start} is
+random.
+
+\vspace{3pt}
+\textbf{Stratified.} Take the same fraction of every stratum:
+\[ \frac{60}{900} = \frac{1}{15} \qquad\text{so 10th grade gives}\qquad
+   240 \times \frac{1}{15} = 16 \text{ students} \]
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{Total} \\
+\midrule
+Students in the grade & $270$ & $240$ & $210$ & $180$ & $900$ \\
+Number sampled & $18$ & $16$ & $14$ & $12$ & $60$ \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Check your allocation twice:} every row divides by $15$, and the sampled row adds to
+$60$. If it does not add up, the allocation is wrong.
+
+\vspace{3pt}
+\textbf{Simple random.} Number the frame $001$--$900$ and read the generator's digits in
+threes, skipping anything out of range and anything repeated: $384$, $912$, $057$, $384$,
+$266$ gives $384$, $057$, $266$, \dots\ --- $912$ is off the frame and the second $384$ is
+already chosen.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[14]
+\begin{notesbox}{Move 5 --- Choose the technique a context calls for (Lesson 1.3)}
+\small
+``Best'' is not a property of a technique. It is a property of a technique \emph{in a
+context}: what list exists, and \textbf{how the groups are built}.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X X @{}}
+\rowcolor{frost}
+\textbf{Technique} & \textbf{Use it when} & \textbf{How chance is used} \\
+\midrule
+Simple random & You have a numbered list of the whole frame. & Every individual drawn
+  directly at random. \\
+Systematic & The list is ordered and you want an easy sweep of it. & Only the start is
+  random; then every $k$th. \\
+Stratified & The groups are \emph{alike inside} and differ from each other, and you need
+  every group represented. & Some from \emph{every} group, in proportion. \\
+Cluster & The groups are each a \emph{small mix of the whole}, and reaching whole groups is
+  cheaper. & A few whole groups at random; everyone in them. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Say it this way:} \emph{alike inside $\rightarrow$ some from every group}
+(stratified). \emph{A mix of the whole $\rightarrow$ everyone from a few} (cluster).
+
+\vspace{3pt}
+\textbf{The trap:} thinking that ``chance chose'' settles it --- that a random draw of
+\emph{groups} is as good as a random draw of \emph{individuals}. Two randomly drawn homerooms
+are $60$ ninth graders and no seniors, because a homeroom is alike inside: it is a stratum, not
+a cluster. \textbf{Second trap:} thinking \emph{random} means \emph{unplanned}. A teacher who
+surveys her own third period picked no favorites, but a fourth-period student could never have
+been chosen --- that is convenience, however fair it felt.
+\end{notesbox}
+\normalsize
+
+% ======================================================================
+\newpage
+\parthead{Part 3 --- Practice \hfill notes closed; check the key only at the end}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt]
+
+% ---------------------------------------------------------------- P1 (1.0)
+\item \textbf{Ashford Middle School} has $480$ students. For each student the office records
+grade level, minutes spent reading last night, locker number, and whether the student plays a
+sport.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \blank{6.2cm}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Grade level & \blank{4.4cm} \\
+Minutes spent reading last night & \blank{4.4cm} \\
+Locker number & \blank{4.4cm} \\
+Plays a sport (yes / no) & \blank{4.4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) Locker number is written with digits. Apply the \textbf{digit test} in one sentence to
+justify your answer.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P2 (1.1)
+\boxguard[20]
+\item \textbf{Ashford} asks $40$ students how they get to school. The counts are below.
+
+\vspace{2pt}
+(a) Complete the relative frequency column as a percent.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{How they get to school} & \textbf{Frequency} & \textbf{Relative frequency} \\
+\midrule
+Bus   & $18$ & \blank{2.6cm} \\
+Car   & $12$ & \blank{2.6cm} \\
+Walk  & $6$  & \blank{2.6cm} \\
+Bike  & $4$  & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Write a \textbf{conclusion in context} about the most common method, naming the group it
+applies to.
+
+\par\writeline
+\par\writeline
+
+\vspace{2pt}
+(c) All $40$ students were asked while they waited in the bus line. At which \textbf{stage of
+the data cycle} did the problem enter, and why that stage?
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P3 (1.2)
+\boxguard[22]
+\item \textbf{Fairhaven Public Library} has $1{,}000$ cardholders. The director surveys $40$
+cardholders chosen at random; $14$ of them used a study room last month.
+
+\vspace{2pt}
+(a) Population: \blank{4.4cm} \quad Sample size: \blank{1.8cm}
+
+\vspace{3pt}
+Sample: \blank{9.0cm}
+
+\vspace{3pt}
+(b) What percent of the sample used a study room, and about how many of all $1{,}000$
+cardholders does that estimate?
+
+\begin{work}
+  \dfrac{14}{40} &= 0.35 = 35\% \\
+  0.35 \times 1000 &= 350 \text{ cardholders}
+\end{work}
+
+(c) Is the $35\%$ a parameter or a statistic? Say how you know.
+
+\par\writeline
+
+(d) Name one \textbf{constraint} that keeps the director from taking a census of all $1{,}000$
+cardholders.
+
+\par\writeline
+
+% ---------------------------------------------------------------- P4 (1.3)
+\boxguard[26]
+\item \textbf{Ashford Middle School} ($480$ students) wants a \textbf{stratified} random
+sample of $40$, allocated in proportion to the grades.
+
+\vspace{2pt}
+(a) What fraction of the school is being sampled?
+
+\begin{work}
+  \dfrac{40}{480} &= \dfrac{1}{12}
+\end{work}
+
+(b) Show the work for the \textbf{6th grade} row, then complete the table.
+
+\begin{work}
+  180 \times \dfrac{1}{12} &= 15 \text{ students}
+\end{work}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{Total} \\
+\midrule
+Students in the grade & $180$ & $156$ & $144$ & $480$ \\
+Number sampled & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} & \blank{1.7cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) Instead, the office takes a \textbf{systematic} sample of $40$ from its ordered list of all
+$480$ students. Find $k$.
+
+\begin{work}
+  k &= 480 \div 40 = 12
+\end{work}
+
+From a random start of $5$, list the first four students chosen.
+
+\vspace{2pt}
+\blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm}
+
+\vspace{4pt}
+(d) Ashford's $20$ homerooms are grouped by grade. Explain why drawing two homerooms at random
+is \emph{not} a good cluster sample here.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P5 (1.3 / 1.2)
+\boxguard[18]
+\item Name the sampling technique used in each row.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the researcher did} & \textbf{Technique} \\
+\midrule
+Put all $480$ student numbers in a generator and drew $40$. & \blank{3.2cm} \\
+Split the school by grade and drew some students at random from every grade, in proportion. &
+  \blank{3.2cm} \\
+Stood by the front door before school and asked whoever walked in. & \blank{3.2cm} \\
+Ordered the list and took every $12$th student after a random start. & \blank{3.2cm} \\
+\end{tabularx}
+
+\end{enumerate}
+\normalsize
+
+\vspace{6pt}
+\boxguard[12]
+\begin{remindbox}
+\small
+\textbf{You are ready for Quiz 1 when you can, with no notes:}
+name the individuals and classify every variable with the digit test (1.0);
+write a statistical question and name the data-cycle stage a flaw \emph{entered} at (1.1);
+name the population and the sample, label a number a parameter or a statistic by asking who it
+describes, estimate a population count from a sample percent, and name a constraint (1.2);
+compute $k = N \div n$ and a proportional stratified allocation, read a simple random sample
+out of generator digits, and choose a technique with a reason that names \emph{how the groups
+are built} (1.3).
+\end{remindbox}
+
+\end{document}

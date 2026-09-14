@@ -1,0 +1,60 @@
+{
+  "blanks": [
+    "The 480 Ashford students",
+    "Categorical",
+    "Quantitative",
+    "Categorical",
+    "Categorical",
+    "$45\\%$",
+    "$30\\%$",
+    "$15\\%$",
+    "$10\\%$",
+    "All 1,000 cardholders",
+    "$40$",
+    "The 40 cardholders who were surveyed",
+    "$15$",
+    "$13$",
+    "$12$",
+    "$40$",
+    "$5$",
+    "$17$",
+    "$29$",
+    "$41$",
+    "Simple random",
+    "Stratified",
+    "Convenience",
+    "Systematic"
+  ],
+  "lines": [
+    [
+      "Arithmetic on a locker number means nothing --- a ``mean locker number'' describes"
+    ],
+    [
+      "no student. The digits are labels, so locker number is categorical."
+    ],
+    [
+      "Of the 40 Ashford students surveyed, 18 --- or $45\\%$ --- ride the bus to school,"
+    ],
+    [
+      "more than any other method."
+    ],
+    [
+      "Stage 2, collect data. Students who do not ride the bus were never in the bus line,"
+    ],
+    [
+      "so they could never be chosen --- the flaw entered there, not at stage 4."
+    ],
+    [
+      "A statistic --- it describes the 40 cardholders surveyed, not all 1,000."
+    ],
+    [
+      "Time --- surveying every one of 1,000 cardholders would take far too long."
+    ],
+    [
+      "The homerooms are grouped by grade, so a homeroom is alike inside --- a stratum, not"
+    ],
+    [
+      "a mix of the whole. Two homerooms would be one or two grades and miss the rest."
+    ]
+  ]
+}
