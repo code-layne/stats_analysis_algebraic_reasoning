@@ -1,312 +1,294 @@
-%! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Guided Notes (Answer Key)
-\documentclass[10pt]{article}
+%! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Guided Notes & Practice (Answer Key)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.2–2.4cm of writing room. Problems run 1..19.
+% DENSITY: a \blank{} only where a word IS the answer (the six cells of the side-by-side
+% table in row 1 — the one \wordbank strip sits above it); no mid-sentence blanks; every
+% display is pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (2, 6, 10, 12).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (16–19), is worked entirely together on Harbor Point instead of
+%            Riverbend.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 8 (the 45-minute bus ride: "unethical" is the wrong reason — it is
+% IMPOSSIBLE, you cannot assign where a family lives).
+% THE CRUX is problem 15 (row 4, "The Method"): the counselor SAT IN THE STUDY CENTER AND
+% WATCHED who came — observation the METHOD — inside a study whose groups a generator built —
+% an experiment, the DESIGN. The hook vote is re-taken there (PS.DC.3c, 3e). Problem 19 is
+% the crux transferred to Harbor Point; problem 18 is the cannot-assign case transferred.
+%
+% THE DATA (verified in Python before authoring)
+%   Riverbend, watched (1.5): 150 records, 60 users 39 passed -> 65%; 90 non-users 72 -> 80%; gap 15
+%   Riverbend, assigned (1.6): 120 volunteers 60/60; 75% vs 55%; gap 20
+%   Harbor Point (Guided Practice): 1.5 survey 200 members 70% vs 45% (gap 25, members chose
+%     their swim time); 1.6 experiment 90 volunteers 45/45, 60% vs 40% (gap 20); NEW: 120
+%     volunteers 60/60, six weeks, 42/60 = 70% vs 30/60 = 50%, gap 20
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson07_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 1). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{1.7cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.7}{Guided Notes --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
+\pageheader{Unit 1, Lesson 1.7}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item compare an \textbf{observational study} with a \textbf{controlled
-        experiment}, point by point;
-  \item state the strongest conclusion each one earns, and \emph{justify} the
-        difference;
-  \item decide when an experiment is \textbf{impossible or unethical} to run,
-        and say what to run instead;
-  \item use the \textbf{statistical cycle} to plan a well-designed experiment;
-  \item choose a \textbf{data collection method} --- survey, interview, focus
-        group, observation, or content analysis --- that fits a given context.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\vocabans{Controlled experiment}{A study in which the researcher assigns the
-units to groups by chance and imposes a treatment on at least one group, holding
-everything else the same. It can support a cause-and-effect conclusion.}
-\vocabans{Observational study}{A study in which the researcher measures or
-surveys individuals without assigning anyone to a group. The groups already
-exist, so the study can report an association only.}
-\vocabans{Survey}{The same fixed set of questions given to every individual in a
-chosen sample. Best for collecting counts, percents, and attitudes from many
-people at once.}
-\vocabans{Interview}{A one-on-one conversation built on planned questions,
-usually recorded. Best when you need depth --- the reasons behind an answer, in
-the person's own words.}
-\vocabans{Focus group}{A small-group discussion led by a facilitator, where
-members hear and build on each other's answers. Best when the group's shared
-experience says more than any one person's.}
-\vocabans{Content analysis}{A study of records or documents that already exist
---- borrowing histories, minutes, transcripts, past test scores. Best for
-tracking change over time.}
+Fill in each term \textbf{as we name it} in the notes below.
+\vtermans{Controlled experiment}{A study in which the researcher assigns the units to groups by chance and imposes a treatment on at least one group. It can support a cause-and-effect conclusion.}
+\vtermans{Observational study}{A study in which the researcher measures or asks without assigning anyone to a group --- the groups already exist. It can report an association only.}
+\vtermans{Collection method}{How the data arrive --- survey, interview, focus group, observation, or content analysis. Chosen by what the question needs, not by the design.}
+\vtermans{Observation}{A collection method: recording what people actually do, as it happens. Not a design --- an experiment can collect its data by observation.}
+\vtermans{Content analysis}{A collection method: studying records or documents that already exist --- borrowing histories, minutes, past scores. Best for change over time.}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-Riverbend's counselor now has both studies in front of her. Watching $150$
-records said $65\%$ against $80\%$ --- the Study Center looked harmful.
-Assigning $120$ volunteers said $75\%$ against $55\%$ --- it looked helpful. You
-already know which one she should believe.
+This quarter the Riverbend counselor let a random number generator split $120$ volunteers into
+two groups of $60$. To collect her data she handed out no questionnaire --- she sat in the Study
+Center three afternoons a week and \emph{watched}. A classmate says: \emph{``She just watched, so
+this quarter's study was an observational study, the same as last quarter's.''}
 
-\vspace{2pt}
-Now the principal brings a different question: \emph{do students who ride the
-bus more than $45$ minutes each way score lower on the state test?}
-
-\vspace{2pt}
-\textbf{Could the counselor settle this one with an experiment the way she
-settled the Study Center? What exactly would she have to assign?}
-\ansline{No. She would have to assign students a $45$-minute bus ride --- which means}
-\ansline{assigning where their families live. Nobody can do that, so she must watch instead.}
+\vspace{3pt}
+\textbf{Is the classmate right?} Circle one: \quad agree \qquad disagree
+\quad --- and say why you think so. We vote again at problem~15.
+\par\ansline{Answers vary --- most agree: ``she only watched, so it must be observational.''}
+\ansline{(Settled at problem 15: disagree --- the generator built the groups; an experiment.)}
 \end{hookbox}
 
-\boxguard[30]
-\begin{notesbox}{1. The Two Study Types, Side by Side}
 \small
-Both study types compare groups. They differ in exactly one place --- and that
-one place decides everything you are allowed to say at the end.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} p{3.1cm} p{4.5cm} X @{}}
+\begin{guidednotes}
+% ── ROW 1: the two designs, side by side ─────────────────────────────────────
+\mainidea[Side by side]{Two Designs} &
+An \textbf{observational study} measures or asks without assigning anyone to a group --- the
+groups already exist. A \textbf{controlled experiment} assigns the groups by chance and imposes
+a treatment. \textbf{One question sorts them: who decided which group each individual is in?}
+\\
+& {\centering
+\begin{tikzpicture}
+  % left panel: LAST QUARTER — watched 150 records, the students sorted themselves
+  \fill[frost, rounded corners=5pt] (0,0) rectangle (5.4,3.3);
+  \draw[cerulean, thick, rounded corners=5pt] (0,0) rectangle (5.4,3.3);
+  \node[font=\scriptsize\bfseries\color{cerulean}, align=center, text width=4.9cm] at (2.7,2.95) {LAST QUARTER --- watched $150$ records};
+  \fill[goldbg] (1.45,1.55) ellipse (1.0 and 0.6);
+  \draw[goldacc, very thick] (1.45,1.55) ellipse (1.0 and 0.6);
+  \node[font=\scriptsize\bfseries] at (1.45,1.72) {$60$ used it};
+  \node[font=\tiny] at (1.45,1.35) {$65\%$ passed};
+  \fill[goldbg] (3.85,1.55) ellipse (1.15 and 0.7);
+  \draw[goldacc, very thick] (3.85,1.55) ellipse (1.15 and 0.7);
+  \node[font=\scriptsize\bfseries] at (3.85,1.72) {$90$ did not};
+  \node[font=\tiny] at (3.85,1.35) {$80\%$ passed};
+  \node[font=\tiny\itshape, align=center, text width=4.9cm] at (2.7,0.42) {the students sorted themselves --- unequal groups};
+  % right panel: THIS QUARTER — assigned 120 volunteers, chance sorted them
+  \fill[frost, rounded corners=5pt] (5.9,0) rectangle (11.3,3.3);
+  \draw[cerulean, thick, rounded corners=5pt] (5.9,0) rectangle (11.3,3.3);
+  \node[font=\scriptsize\bfseries\color{cerulean}, align=center, text width=4.9cm] at (8.6,2.95) {THIS QUARTER --- assigned $120$ volunteers};
+  \node[draw=cerulean, fill=white, rounded corners=2pt, font=\tiny\bfseries, inner sep=2pt] (gen) at (8.6,2.35) {random number generator};
+  \fill[goldbg] (7.35,1.3) ellipse (1.05 and 0.6);
+  \draw[goldacc, very thick] (7.35,1.3) ellipse (1.05 and 0.6);
+  \node[font=\scriptsize\bfseries] at (7.35,1.47) {$60$ treated};
+  \node[font=\tiny] at (7.35,1.1) {$75\%$ passed};
+  \fill[goldbg] (9.85,1.3) ellipse (1.05 and 0.6);
+  \draw[goldacc, very thick] (9.85,1.3) ellipse (1.05 and 0.6);
+  \node[font=\scriptsize\bfseries] at (9.85,1.47) {$60$ control};
+  \node[font=\tiny] at (9.85,1.1) {$55\%$ passed};
+  \draw[->, thick, cerulean] (gen.south) -- (7.35,1.92);
+  \draw[->, thick, cerulean] (gen.south) -- (9.85,1.92);
+  \node[font=\tiny\itshape, align=center, text width=4.9cm] at (8.6,0.42) {chance sorted them --- equal groups, nothing else changed};
+\end{tikzpicture}\par\vspace{4pt}
+Left: a(n) \labelbox{4.0cm}{observational study}\qquad Right: a(n) \labelbox{2.6cm}{experiment}\par}
+\\
+& \textbf{1.} Complete the side-by-side table. The first row is given --- it produces every other row.
+\wordbank{yes \;\textbullet\; no \;\textbullet\; not necessarily \;\textbullet\; an association \;\textbullet\; cause and effect}
+\footnotesize\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{} X p{3.3cm} p{3.3cm} @{}}
 \toprule
-\textbf{Ask this} & \textbf{Observational study}
-  & \textbf{Controlled experiment} \\
+\textbf{Ask this} & \textbf{Observational study} & \textbf{Controlled experiment} \\
 \midrule
-Who decides which group each individual is in?
-  & The individuals themselves, or something that already happened to them.
-  & \ans{Chance does --- the researcher runs a generator and assigns each unit.} \\
-Does the researcher impose a treatment?
-  & No --- the researcher only measures or asks.
-  & \ans{Yes --- at least one group is given the treatment.} \\
-Are the two groups alike before the study starts?
-  & \ans{Not necessarily. They built themselves, so they may differ in many ways.}
-  & \ans{Yes --- random assignment spreads every other variable evenly.} \\
-Strongest conclusion it earns
-  & \ans{An association only.}
-  & \ans{Cause and effect --- the treatment caused the difference.} \\
+Who decides which group each individual is in? & the individuals themselves & chance --- a generator \\
+Does the researcher impose a treatment? & \ans{no} & \ans{yes} \\
+Are the groups alike before the study starts? & \ans{not necessarily} & \ans{yes} \\
+Strongest conclusion it earns & \ans{an association} & \ans{cause and effect} \\
 \bottomrule
-\end{tabularx}
-\end{center}
+\end{tabularx}\small
+\\
+& \notesprompt{Write the strongest sentence each Riverbend study earns --- the verb is the whole answer.}
+\begin{probgrid}{|Y|Y|}
+\pcell{2}{Watched: $65\%$ of the $60$ users passed, against $80\%$ of the $90$ non-users.}{1.5cm}{Using the Study Center is associated with a lower pass rate --- nothing stronger.} & \pcell{3}{Assigned: $75\%$ of the $60$ treated passed, against $55\%$ of the $60$ control.}{1.5cm}{The Study Center caused a higher pass rate --- chance built the groups.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{4}{Last quarter the Study Center looked \emph{harmful}, this quarter \emph{helpful}. Which result should she believe, and what earns it that trust?}{1.6cm}{This quarter's --- chance built two alike groups, so only the treatment differs.} & \pcell{5}{The warm-up's tell: one study's groups were $60$ and $90$, the other's $60$ and $60$. How do the sizes give away who built them?}{1.6cm}{Self-sorting leaves sizes 60/90; a generator splitting 120 makes 60/60.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: when you cannot assign — three reasons, one test ──────────────────
+\mainidea[When you cannot]{Experiment} &
+To run an experiment you must be able to \textbf{assign} the treatment. Three things stop you:
+\textbf{unethical} --- it would harm someone; \textbf{impossible} --- the treatment is something a
+person already \emph{is} or \emph{has}; \textbf{impractical} --- too costly, too slow, or nobody
+would agree. \textbf{The test: can you hand this out to a person?}
+\\
+& {\centering
+\begin{tikzpicture}
+  \node[draw=cerulean, fill=frost, thick, rounded corners=4pt, font=\small\bfseries, inner sep=5pt, align=center, text width=8.2cm] (q) at (5.3,2.75) {Can you hand the treatment out to a person --- by chance?};
+  \node[draw=greenacc, fill=greenbg, thick, rounded corners=4pt, font=\scriptsize, inner sep=4pt, align=center, text width=4.2cm] (yes) at (2.6,1.05) {\textbf{YES --- run the experiment.}\\ Chance builds the groups, so they start out alike.\\ Strongest verb: \textbf{caused}.};
+  \node[draw=redacc, fill=redbg, thick, rounded corners=4pt, font=\scriptsize, inner sep=4pt, align=center, text width=4.6cm] (no) at (8.1,1.05) {\textbf{NO --- unethical, impossible, or impractical.}\\ Run the best observational study you can.\\ Strongest verb: \textbf{is associated with}.};
+  \draw[->, very thick, greenacc] (q.south) -- (yes.north) node[midway, left=2pt, font=\scriptsize\bfseries\color{greenacc}] {yes};
+  \draw[->, very thick, redacc] (q.south) -- (no.north) node[midway, right=2pt, font=\scriptsize\bfseries\color{redacc}] {no};
+  \node[font=\scriptsize\itshape\color{cerulean}, align=center, text width=10.6cm] at (5.3,-0.62) {``We could not run an experiment'' is the reason for a \textbf{weaker} verb --- never an excuse for a stronger one.};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{Can you assign it? If not, say which reason --- and what you run instead.}
+\begin{probgrid}{|Y|Y|}
+\pcell{6}{Does a $10$-minute silent reading block raise reading scores?}{1.6cm}{Yes --- you can hand a reading block out by chance. Run the experiment.} & \pcell{7}{Do students who smoke have worse lung function at age $30$?}{1.6cm}{No --- unethical: nobody may be assigned to smoke. Run an observational study.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{8}{Do students with bus rides over $45$ minutes score lower on the state test? A classmate says \emph{``unethical.''} Is that the reason?}{1.6cm}{No --- impossible, not unethical: you cannot assign where a family lives.} & \pcell{9}{The long riders \emph{do} score lower. May the report say the ride \emph{lowers} scores? Give the verb it may use, and why.}{1.6cm}{No. The groups built themselves --- the verb is \emph{is associated with}.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: planning an experiment through the cycle ──────────────────────────
+\mainidea[Planning an experiment]{The Cycle} &
+The four stages of the \textbf{statistical cycle} plan an experiment too. Only stage two
+changes: \stepnum{2}\ \textbf{Collect} now asks who the \emph{units} are and how chance
+\textbf{assigns} them to groups --- comparison, randomization, replication, and control are all
+checked here. The counselor's next question: \emph{does a weekly one-on-one check-in raise the
+share of students who turn in every assignment?}
+\\
+& {\centering
+\begin{tikzpicture}
+  \node[draw=cerulean, fill=frost, thick, rounded corners=4pt, minimum width=2.3cm, minimum height=0.9cm, font=\small\bfseries\color{cerulean}] (f) at (1.2,0) {Formulate};
+  \node[draw=goldacc, fill=goldbg, very thick, rounded corners=4pt, minimum width=2.3cm, minimum height=0.9cm, font=\small\bfseries\color{goldacc}] (c) at (3.9,0) {Collect};
+  \node[draw=cerulean, fill=frost, thick, rounded corners=4pt, minimum width=2.3cm, minimum height=0.9cm, font=\small\bfseries\color{cerulean}] (r) at (6.6,0) {Represent};
+  \node[draw=cerulean, fill=frost, thick, rounded corners=4pt, minimum width=2.7cm, minimum height=0.9cm, font=\small\bfseries\color{cerulean}] (a) at (9.5,0) {Analyze \& report};
+  \draw[->, thick] (f) -- (c);
+  \draw[->, thick] (c) -- (r);
+  \draw[->, thick] (r) -- (a);
+  \draw[->, thick, cerulean] (9.5,-0.45) -- (9.5,-0.85) -- (1.2,-0.85) -- (1.2,-0.45);
+  \node[font=\tiny\itshape\color{cerulean}] at (5.35,-1.03) {the cycle runs again with the next question};
+  \node[font=\scriptsize, align=center, text width=5.4cm] at (3.9,1.02) {Lesson 1.5: \emph{sample} the units\\ Lesson 1.7: \emph{assign} them by chance};
+  \draw[->, goldacc, thick] (3.9,0.62) -- (3.9,0.47);
+\end{tikzpicture}\par\vspace{5pt}
+The stage where an experiment's plan differs from 1.5's: \labelbox{2.0cm}{Collect}\par}
+\\
+& \notesprompt{Plan the check-in experiment. Write the stage, not just its name.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{\textbf{Collect.} Name the units, say what the generator does, and name the two groups.}{2.0cm}{Units: student volunteers. A generator sends half to a weekly check-in, half to none.} & \pcell{11}{\textbf{Analyze \& report.} What two numbers do you compare, and which verb may the report use? Why that verb?}{2.0cm}{Compare each group's percent turning everything in. Verb: \emph{caused} --- chance built the groups.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — five methods, and the method is not the design ─────────
+\mainidea[Five ways to collect]{The Method} &
+Once the design is set, you still choose \emph{how the data arrive}. A \textbf{collection
+method} is how each answer gets recorded: \textbf{observation} records what people actually
+\emph{do}, \textbf{content analysis} studies records that already exist. An \textbf{observational
+study} is a \emph{design} --- nobody assigned the groups.
+\\
+& {\centering
+\begin{tikzpicture}
+  \foreach \i/\cname/\cdesc in {
+      0/Survey/{the same fixed\\questions to\\many people},
+      1/Interview/{depth from one\\person --- the\\reasons, the \emph{why}},
+      2/Focus group/{a small group\\building on each\\other's answers},
+      3/Observation/{record what\\people actually\\\emph{do}},
+      4/{Content\\analysis}/{records that\\already exist ---\\change over time}} {
+    \fill[frost, rounded corners=4pt] ({\i*2.25},0) rectangle ({\i*2.25+2.1},1.85);
+    \draw[cerulean, thick, rounded corners=4pt] ({\i*2.25},0) rectangle ({\i*2.25+2.1},1.85);
+    \node[font=\footnotesize\bfseries\color{cerulean}, align=center, text width=1.95cm] at ({\i*2.25+1.05},1.48) {\cname};
+    \node[font=\tiny, align=center, text width=1.95cm] at ({\i*2.25+1.05},0.62) {\cdesc};
+  }
+\end{tikzpicture}\par}
+\\
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Two questions, two answers.} \emph{Who built the groups?} decides the design. \emph{How were the answers recorded?} decides the method. An experiment can collect its data by observation.}}
 
 \vspace{3pt}
-Now put Riverbend's two studies in that frame.
+\textbf{In your own words:} what decides the design, and what decides the method?
+\writespace{1.2cm}{Who built the groups decides the design; how the answers were recorded decides the method.}
+\\
+& \notesprompt{Choose the method the question needs --- then settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{The library wants five years of borrowing records summarized.}{1.2cm}{Content analysis --- the records already exist.} & \pcell{13}{Why did four students stop coming to the Study Center? Name the method, and why a written survey is a poor fit.}{1.5cm}{Interviews --- \emph{why} needs follow-up; a fixed survey cannot.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{Does the cafeteria's fruit actually get \emph{taken} --- not just reported taken?}{1.2cm}{Observation --- record what students actually do.} & \pcell{15}{\textbf{Vote again:} agree \; disagree. She sat and watched who came. Name the \emph{method} and the \emph{design}. Does watching make it an observational study?}{1.9cm}{Disagree. Method: observation; design: experiment --- a generator built the groups.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Harbor Point} &
+The Harbor Point pool director has already run the two studies below on her $1{,}500$ members.
+\textbf{Now the board asks:} does a weekly water-aerobics class reduce reported joint pain? She
+takes $120$ volunteers; a generator sends $60$ to the class and $60$ to no class for six weeks.
+At the end, $42$ of the class group and $30$ of the no-class group report less joint pain.
+\\
+& {\centering
+\begin{tikzpicture}
+  \foreach \i/\ttl/\body in {
+    0/{Lesson 1.5 --- surveyed $200$}/{morning swimmers $70\%$\\evening swimmers $45\%$\\[3pt]\emph{members chose their time}\\gap: $25$ points},
+    1/{Lesson 1.6 --- assigned $90$}/{generator: $45$ / $45$\\$60\%$ vs.\ $40\%$\\[3pt]\emph{chance built the groups}\\gap: $20$ points},
+    2/{NEW --- assigned $120$}/{generator: $60$ / $60$\\class vs.\ no class, six weeks\\[3pt]$42$ vs.\ $30$ report\\less joint pain}} {
+    \fill[frost, rounded corners=5pt] ({\i*3.75},0) rectangle ({\i*3.75+3.5},2.95);
+    \draw[cerulean, thick, rounded corners=5pt] ({\i*3.75},0) rectangle ({\i*3.75+3.5},2.95);
+    \node[font=\scriptsize\bfseries\color{cerulean}, align=center, text width=3.3cm] at ({\i*3.75+1.75},2.62) {\ttl};
+    \node[font=\scriptsize, align=center, text width=3.3cm] at ({\i*3.75+1.75},1.25) {\body};
+  }
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{Label the two earlier studies by design, and say who built the groups in each.}{1.7cm}{1.5: observational (members chose their time). 1.6: experiment (generator built 45/45).} & \pcell{17}{Compute the two rates in the water-aerobics study and the gap, then write the strongest sentence it earns.}{1.9cm}{$42/60 = 70\%$ vs.\ $30/60 = 50\%$, gap $20$ points. The class caused less joint pain.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{Next question: \emph{do members who already have arthritis sleep worse?} Can she assign it? Which reason? What does she run, with which verb?}{2.0cm}{No --- impossible: nobody can hand out arthritis. Observational study; verb \emph{is associated with}.} & \pcell{19}{She measured the pain by asking all $120$ the same three questions; she also wants to know \emph{why} some quit. Name both methods --- does either change the design?}{2.0cm}{Pain: a survey. Why they quit: interviews. Neither changes the design.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} p{4.1cm} p{3.6cm} X @{}}
-\toprule
-\textbf{The study} & \textbf{What it found}
-  & \textbf{The strongest sentence it earns} \\
-\midrule
-Watched $150$ records (1.5) & $65\%$ of users vs.\ $80\%$ of non-users
-  & \ans{Using the Study Center is associated with a lower pass rate.} \\
-Assigned $120$ volunteers (1.6) & $75\%$ treated vs.\ $55\%$ control
-  & \ans{Attending the Study Center caused a higher pass rate.} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-\textit{An experiment is the stronger design. The next section is about why you
-cannot always have one.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{2. When You Cannot Run an Experiment}
-\small
-To run an experiment you must be able to \textbf{assign} the treatment. Three
-things can stop you:
-
-\begin{enumerate}[leftmargin=1.6em, itemsep=2pt, topsep=3pt]
-  \item \textbf{Unethical} --- assigning the treatment would harm someone.
-  \item \textbf{Impossible} --- the ``treatment'' is something a person already
-        \emph{is} or \emph{has}. You cannot hand it out.
-  \item \textbf{Impractical} --- it would cost too much, take too long, or
-        nobody would agree to be assigned.
-\end{enumerate}
-
-\vspace{3pt}
-For each question, decide whether the researcher could assign the groups.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X c p{4.5cm} @{}}
-\toprule
-\textbf{The question} & \textbf{Can you assign?}
-  & \textbf{If not, why --- and what do you run instead?} \\
-\midrule
-Does a $10$-minute silent reading block raise reading scores?
-  & \ans{Yes} & \ans{Nothing stops her --- run the experiment.} \\
-Do students who smoke have worse lung function at $30$?
-  & \ans{No} & \ans{Unethical --- nobody may be assigned to smoke.
-    Observational.} \\
-Do retired pool members sleep more than members who work full time?
-  & \ans{No} & \ans{Impossible --- retirement cannot be handed out.
-    Observational.} \\
-Do students who ride the bus over $45$ minutes score lower?
-  & \ans{No} & \ans{Impossible --- you cannot assign where a family lives.
-    Observational.} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-When you cannot assign, you run the best observational study you can --- and you
-change the \emph{verb}, not the data. A study like that may report
-a(n) \ans{association} but never a \ans{cause-and-effect claim}.
-
-\vspace{2pt}
-\textit{``We could not run an experiment'' is not an excuse for a stronger
-claim. It is the reason for a weaker one.}
-\end{notesbox}
-
-\boxguard[22]
-\begin{notesbox}{3. Planning an Experiment with the Statistical Cycle}
-\small
-Lesson 1.5 walked the four stages for an observational study. Here is the same
-cycle for an \emph{experiment}. The counselor's new question: does a weekly
-one-on-one check-in raise the share of students who turn in every assignment?
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} p{2.6cm} p{4.6cm} X @{}}
-\toprule
-\textbf{Stage} & \textbf{What the stage asks} & \textbf{Our check-in experiment} \\
-\midrule
-Formulate & What do we want to know, and about whom?
-  & Does a weekly check-in raise the share of students who turn in every
-    assignment? \\
-Collect & Who are the units, and how does \emph{chance} put them in groups?
-  & \ans{A generator sends half the volunteers to a weekly check-in and half
-    to none.} \\
-Represent & How will we organize what comes back?
-  & \ans{A two-row table --- each group's count and percent turning in every
-    assignment.} \\
-Analyze \& report & What do the numbers say, \emph{in context}?
-  & \ans{Compare the two percents, find the gap, and say it in context.} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-One stage does something Lesson 1.5's plan never did. Which stage is it, and
-what does it do? \ans{Collect --- it \emph{assigns} the units by chance.}
-
-\vspace{3pt}
-That stage is also where the four principles get checked: two groups
-(\textbf{comparison}), a generator (\textbf{randomization}), plenty of students
-in each group (\textbf{replication}), and everything else held the same
-(\textbf{control}).
-
-\vspace{2pt}
-\textit{Same four stages every time. What an experiment adds is one word inside
-stage two: \emph{assign}.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{4. Five Ways to Collect the Data}
-\small
-Once you know which study you are running, you still have to decide \emph{how}
-the data arrive. These five are the standard menu.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{0.98\linewidth}{@{} p{2.7cm} X @{}}
-\toprule
-\textbf{Method} & \textbf{Best when you want\dots} \\
-\midrule
-Survey & the same fixed questions answered by \emph{many} people --- counts,
-  percents, attitudes across a whole sample. \\
-Interview & \emph{depth} from one person at a time --- the reasons behind an
-  answer, in that person's own words. \\
-Focus group & a small group talking \emph{together}, where one person's answer
-  reminds the next person of theirs. \\
-Observation & to record what people actually \emph{do}, when what they do may
-  not match what they say. \\
-Content analysis & to study records or documents that \emph{already exist} ---
-  useful for change over time. \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Match each context to the method that fits it best.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X p{4cm} @{}}
-\toprule
-\textbf{What the researcher needs} & \textbf{Best method} \\
-\midrule
-The library wants five years of borrowing records summarized.
-  & \ans{Content analysis} \\
-The pool wants to know how many of its $1{,}500$ members would use a
-$6$~a.m.\ lane. & \ans{Survey} \\
-The counselor wants to understand \emph{why} four students stopped coming to
-the Study Center. & \ans{Interviews} \\
-The cafeteria wants to know whether students actually take the fruit --- not
-whether they say they do. & \ans{Observation} \\
-The library wants eight teens to react to three new logos and build on each
-other's comments. & \ans{Focus group} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\textbf{Careful:} \emph{observation} is a way to \emph{collect} data;
-an \emph{observational study} is a kind of \emph{study}. In Bayside's reading
-experiment a teacher watched and recorded how many minutes each student actually
-read, so the method was \ans{observation} --- and the study was still
-a(n) \ans{experiment}, because chance assigned the groups.
-
-\vspace{2pt}
-\textit{The study type is decided by who built the groups. The method is decided
-by what the question needs.}
-\end{notesbox}
-
-\boxguard
-\begin{practicebox}
-\small
-\textbf{Cedar Ridge Apartments.} The manager of a $600$-household complex has
-three questions this month. For each one, decide which study she can run and how
-she should collect the data.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} X p{2.6cm} p{3.1cm} @{}}
-\toprule
-\textbf{Her question} & \textbf{Experiment or observational?}
-  & \textbf{Best collection method} \\
-\midrule
-Does a weekly recycling reminder increase how much a household recycles?
-  & \ans{Experiment} & \ans{Observation --- weigh each bin} \\
-Do households in the renovated building recycle more than households in the old
-building? & \ans{Observational} & \ans{Content analysis of the collection
-  records} \\
-Why do some households never use the recycling bins at all?
-  & \ans{Observational} & \ans{Interviews} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-She finds that the renovated building does recycle more. Write the strongest
-sentence she may publish about that result, and name one other variable that
-could explain the difference instead.
-\ansline{Living in the renovated building is associated with recycling more --- nothing stronger.}
-\ansline{The renovated building also got new bins, and its households may be newer tenants.}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

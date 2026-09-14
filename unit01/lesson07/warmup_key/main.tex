@@ -1,58 +1,71 @@
 %! Comparing Studies and Choosing a Method — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items at 12pt (the stats-model size), \workrowsep 50pt, item
+% spacing 22pt, so each item gets real handwriting room and still fits. Do not add a fourth
+% item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Items 1 and 2
+% are Lesson 1.5's Riverbend arithmetic — the same 39-of-60 and 72-of-90 the notes' row 1
+% display carries, so the two percents are already on the page when the comparison starts.
+% Item 3 puts the two studies side by side WITHOUT the vocabulary: the two gaps, and the tell
+% (60/90 against 60/60) — row 1 names the designs and problem 4 asks which result to believe.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
 \begin{notesbox}{Spiral Review --- Two Studies, One Study Center}
-\small
-Riverbend High School has now studied its after-school Study Center twice.
-\textbf{Last quarter she watched:} the counselor pulled $150$ student records
---- $60$ students had used the Study Center and $90$ had not --- and counted how
-many passed every class. \textbf{$39$} of the users did, and \textbf{$72$} of
-the non-users did. \textbf{This quarter she assigned:} $120$ volunteers, split
-by a random number generator into two groups of $60$, and $75\%$ of the treated
-group against $55\%$ of the control group passed every class.
+\normalsize
+Riverbend High School has studied its after-school Study Center twice.
+\textbf{Last quarter the counselor watched:} she pulled $150$ student records --- $60$
+students had used the Study Center and $90$ had not. $39$ of the users passed every class;
+$72$ of the non-users did. \textbf{This quarter she assigned:} a random number generator
+split $120$ volunteers into two groups of $60$; $75\%$ of the treated group and $55\%$ of the
+control group passed every class.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, topsep=4pt]
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
 
-  \item In last quarter's records, what \textbf{percent} of the $60$ Study
-        Center users passed every class?
+  \item Last quarter, what \textbf{percent} of the $60$ Study Center users passed every class?
 
         \begin{work}
           \dfrac{39}{60} &= 0.65 \\
                          &= 65\%
         \end{work}
 
-  \item In last quarter's records, what \textbf{percent} of the $90$ non-users
-        passed every class?
+  \item Last quarter, what \textbf{percent} of the $90$ non-users passed every class?
 
         \begin{work}
-          \dfrac{72}{90} &= 0.80 \\
-                         &= 80\%
+          \dfrac{72}{90} &= 0.80 = 80\%
         \end{work}
 
-  \item Compare the two studies.
+  \item Put the two studies side by side.
+        \wordbank{15 \;\textbullet\; 20 \;\textbullet\; 60 and 90 \;\textbullet\; 60 and 60 \;\textbullet\; the students themselves \;\textbullet\; a random number generator}
 
-        \textbf{(a)} In last quarter's records, how many \textbf{percentage
-        points} higher is the group that did \emph{not} use the Study Center?
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} p{2.6cm} @{}}
+        \toprule
+        \textbf{The study} & \textbf{Gap (points)} & \textbf{Group sizes} \\
+        \midrule
+        Last quarter --- watched $150$ records  & \ans{15} & \ans{60 and 90} \\
+        This quarter --- assigned $120$ volunteers & \ans{20} & \ans{60 and 60} \\
+        \bottomrule
+        \end{tabularx}
 
-        \begin{work}
-          80 - 65 &= 15 \text{ percentage points}
-        \end{work}
-
-        \textbf{(b)} How many percentage points is this quarter's gap, and which
-        of the two studies had two groups of the \textbf{same size}?
-
-        \ans{$75 - 55 = 20$} \qquad \ans{this quarter's --- $60$ and $60$}
+        \vspace{10pt}
+        Who put each student in a group \emph{last} quarter? \ans{the students themselves}
 
 \end{enumerate}
 \end{notesbox}

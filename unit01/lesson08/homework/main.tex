@@ -1,188 +1,156 @@
 %! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Homework
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on the Student Council's survey, the Guided Practice runs on
+% the class's own survey, and items 1-5 are on the Millbrook Public Library — a proper SRS of
+% 80 against a front-desk clipboard. ITEM 6 IS THE PROJECT DELIVERABLE: the four-sentence
+% report on the class's own data (it replaces the retired extensionbox).
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-2 on page 1, items 3-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 3 is the deliberate CONTRAST PAIR: the same scaling, once on the SRS (allowed) and once
+% on the clipboard (not). Item 4 is the target misconception head-on (a clipboard that
+% happens to match the SRS). Item 5 spirals to 1.4's response bias.
+% THE DATA — Millbrook Public Library: 1,200 card holders; SRS of 80 by phone ->
+%   28 book club (35%), 24 coding lab (30%), 20 story hour (25%), 8 job-search (10%);
+%   0.35 x 1200 = 420; clipboard: 50 signed, 30 story hour -> 60%; 0.60 x 1200 = 720;
+%   a clipboard at 13 of 50 = 26% (item 4).
+% PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.8}{Homework}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[Millbrook Public Library --- Which Program Next?]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-Millbrook has $1{,}200$ card holders and one grant to spend on a new program.
-The director runs the survey properly: she draws a \textbf{simple random sample
-of $80$} card holders from the membership list and reaches every one of them by
-phone. Each is read the same item and picks one of four programs.
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the
+first class after two study halls. You will start it in the last minutes of the period, so ask about anything that stalls
+you before you leave, then finish it on your own. Item~6 is your project report.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Millbrook Public Library]{cerulean}
+Millbrook has $1{,}200$ card holders and one grant to spend on a new program. The director draws
+a \textbf{simple random sample of $80$} card holders from the membership list, reaches every one
+by phone, and reads each the same item with four choices: evening book club $28$, teen coding
+lab $24$, Saturday story hour $20$, job-search help $8$.
 
 \vspace{2pt}
-\textbf{The results:} evening book club $28$, teen coding lab $24$, Saturday
-story hour $20$, job-search help $8$.
-
-\vspace{2pt}
-\textbf{Meanwhile}, a volunteer leaves a sign-up clipboard on the front desk for
-a week. \textbf{$50$} people write something down: book club $10$, coding lab
-$6$, story hour $30$, job-search help $4$.
+\textbf{Meanwhile}, a volunteer leaves a sign-up clipboard on the front desk for a week. $50$
+people write something down: book club $10$, coding lab $6$, story hour $30$, job-search help $4$.
 \end{scenariobox}
 
 \vspace{0.08in}
 
 \boxguard
-\begin{notesbox}{Practice}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=3pt]
+\begin{notesbox}{Represent, Analyze, Report}
+Every answer names the people it is about --- the $80$ phoned, the $50$ who signed, or all
+$1{,}200$ card holders.
+\wordbank{35\% \;\textbullet\; 30\% \;\textbullet\; 25\% \;\textbullet\; 10\% \;\textbullet\; 100\% \;\textbullet\; the share of the 80 \;\textbullet\; categorical}
+\begin{enumerate}[leftmargin=1.6em, itemsep=6pt, topsep=2pt]
 
   \item Complete the relative frequency column for the phone survey.
 
         \begin{center}
-        \renewcommand{\arraystretch}{1.15}
-        \begin{tabularx}{0.86\linewidth}{@{} X c c @{}}
+        \renewcommand{\arraystretch}{1.12}
+        \begin{tabularx}{\linewidth}{@{} X c p{5.4cm} @{}}
         \toprule
         \textbf{Program} & \textbf{Frequency} & \textbf{Relative frequency} \\
         \midrule
-        Evening book club   & $28$ & \blank{2.2cm} \\
-        Teen coding lab     & $24$ & \blank{2.2cm} \\
-        Saturday story hour & $20$ & \blank{2.2cm} \\
-        Job-search help     & $8$  & \blank{2.2cm} \\
+        Evening book club   & $28$ & \blank{4.4cm} \\
+        Teen coding lab     & $24$ & \blank{4.4cm} \\
+        Saturday story hour & $20$ & \blank{4.4cm} \\
+        Job-search help     & $8$  & \blank{4.4cm} \\
         \midrule
-        \textbf{Total}      & $80$ & \blank{2.2cm} \\
+        \textbf{Total}      & $80$ & \blank{4.4cm} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
-  \item Speak about all $1{,}200$ card holders.
-
-        \textbf{(a)} About how many would choose the evening book club?
-
-        \begin{work}
-          0.35 \times 1200 &= 420 \text{ card holders}
-        \end{work}
-
-        \textbf{(b)} About how many would choose Saturday story hour?
-
-        \begin{work}
-          0.25 \times 1200 &= 300 \text{ card holders}
-        \end{work}
-
-  \item The director graphs the phone survey.
+  \item The director's bar graph of the phone survey.
 
         \begin{center}
-        \begin{tikzpicture}[x=1cm, y=0.066cm]
+        \begin{tikzpicture}[x=0.95cm, y=0.046cm]
           \foreach \y in {10,20,30,40}
             \draw[linegray] (0,\y) -- (10.4,\y);
           \foreach \y in {0,10,20,30,40}
             \node[left, font=\scriptsize] at (-0.05,\y) {\y\%};
           \foreach \i/\h in {1/35, 2/30, 3/25, 4/10}
             \fill[ceruleanlight] ({2.6*\i-2.0},0) rectangle ({2.6*\i-0.6},\h);
-          \foreach \i/\lab in {1/Book club, 2/Coding lab, 3/Story hour,
-                               4/Job-search}
+          \foreach \i/\lab in {1/Book club, 2/Coding lab, 3/Story hour, 4/Job-search}
             \node[below, font=\scriptsize, align=center, text width=2.4cm]
               at ({2.6*\i-1.3},-0.5) {\lab};
           \draw[cerulean, thick] (0,42) -- (0,0) -- (10.4,0);
         \end{tikzpicture}
         \end{center}
 
-        \textbf{(a)} What does the height of the first bar tell a reader?
-        \writeline
-
-        \textbf{(b)} Why are the bars drawn with gaps between them rather than
-        touching?
-
-        \writeline
-
-  \item Two items from an early draft of her instrument each break a rule.
-        For each, name the rule it breaks and repair the item.
-
-        \textbf{(a)} ``Wouldn't you love a coding lab for our teens?''
-
-        \writeline
-
-        \textbf{(b)} ``Do you want a book club or story hour on Saturdays?''
-
-        \writeline
-
-  \tcbbreak   % keep item 5's prompt with its table — mirrored in homework_key
-  \item Fill in the plan the director followed for the phone survey.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabularx}{0.93\linewidth}{@{} p{2.5cm} X @{}}
-        \toprule
-        \textbf{Stage} & \textbf{The phone survey} \\
-        \midrule
-        Formulate & Which of four programs would the most Millbrook card
-          holders choose? \\
-        Collect & \blank{7.1cm} \\
-        Represent & \blank{7.1cm} \\
-        Analyze \& report & \blank{7.1cm} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-  \item Now the front-desk clipboard.
-
-        \textbf{(a)} What percent of those $50$ people chose story hour?
-
-        \begin{work}
-          \dfrac{30}{50} &= 0.60 \\
-                         &= 60\%
-        \end{work}
-
-        \textbf{(b)} The phone survey said $25\%$. The clipboard is higher by
-        \blank{2cm} percentage points, a difference of about \blank{2.4cm}
-        card holders once scaled to $1{,}200$.
-
-        \textbf{(c)} Name the bias in the clipboard sample and say which
-        \textbf{direction} it pushed the story-hour number. \writelines{2}
-
-  \item Suppose instead she had mailed the item to $200$ card holders and $80$
-        had mailed it back.
-
-        \textbf{(a)} What is the response rate?
-
-        \begin{work}
-          \dfrac{80}{200} &= 0.40 \\
-                          &= 40\%
-        \end{work}
-
-        \textbf{(b)} Write the strongest honest sentence the \emph{phone}
-        survey earns about all $1{,}200$ card holders, and say why the
-        clipboard earns nothing like it. \writelines{2}
+        The height of the first bar tells a reader \blank{4.4cm}.
+        \par\vspace{6pt}
+        The bars are separated because ``program'' is a \blank{3.4cm} variable.
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
+\boxguard[30]
+\begin{notesbox}{Represent, Analyze, Report, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=0pt, start=3]
 
-\boxguard
-\begin{extensionbox}
-\small
-\textbf{Finish your class's report.} Using the data your class collected today,
-write the four-sentence report from the guided notes:
+  \item Two surveys, one library, the same arithmetic.
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item what you asked, and of whom;
-  \item how the sample was chosen, and how many answered;
-  \item what you found --- your two largest categories, as percents;
-  \item what it means, \emph{about the people your design actually covers}.
+        \textbf{(a)} Scale the phone survey's book-club percent to all $1{,}200$ card holders.
+
+        \begin{work}
+          0.35 \times 1200 &= 420 \text{ card holders}
+        \end{work}
+
+        \textbf{(b)} What percent of the $50$ who signed the clipboard chose story hour?
+
+        \begin{work}
+          \dfrac{30}{50} &= 0.60 = 60\%
+        \end{work}
+
+        \textbf{(c)} One of these percents may be scaled to all $1{,}200$; one may not. Which, and why?
+        \par\writelines{2}
+
+  \item Suppose the clipboard had shown $13$ of $50$ for story hour --- $26\%$, almost exactly the
+        phone survey's $25\%$. Does that near-match make it trustworthy for all $1{,}200$? Explain.
+        \par\writelines{2}
+
+  \item An early draft of the director's item read: \emph{``Wouldn't you love a coding lab for
+        our teens?''} Name the instrument rule it breaks and the name Lesson 1.4 gave that
+        bias, then repair it.
+        \par\writelines{2}
+
+  \item \textbf{Your project report.} From your class's tally in the notes, write the four
+        sentences: what you asked and of whom; how the sample was chosen and how many answered;
+        what you found (the two largest categories, as percents); what it means --- \emph{about
+        the people your design actually covers}.
+        \par\writelines{4}
+
 \end{enumerate}
+\end{notesbox}
 
-Then add one sentence naming the limit you would fix first, and what fixing it
-would cost.
-\end{extensionbox}
-
-\vspace{0.08in}
-
-\begin{remindbox}
-\small
-\textbf{Unit 1 is finished.} Every idea in it answers one question: how much
-should you believe a number somebody hands you? Next class is review, then the
-unit test --- study the practice test in this packet.
-\end{remindbox}
+\boxguard[3]   % the three-line spiralbox just fits the foot of page 2; a larger guard pushes it to a third page
+\begin{spiralbox}
+\textbf{Unit 1 is finished.} Every idea in it answered one question: how much should you believe
+a number somebody hands you? Next: review, the unit test, then Unit 2 --- one \emph{quantitative}
+variable, where the bar graph gives way to a dot plot and the bars start to touch.
+\end{spiralbox}
 
 \end{document}

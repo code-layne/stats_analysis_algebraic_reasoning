@@ -1,0 +1,52 @@
+{
+ "title": "Guided Notes",
+ "vocab": {
+  "Experiment": "A study in which the researcher assigns the units to groups and imposes a treatment on at least one group. The test: who built the groups?",
+  "Control group": "The group that does not get the treatment. It is the baseline the treatment group is compared against --- not a wasted group.",
+  "Random assignment": "Letting chance --- a generator, a coin, drawn slips --- decide which group each unit goes in, so the groups start out alike.",
+  "Confounding variable": "A variable that differs between the groups and also affects the response, so the treatment and it cannot be told apart. 1.5's lurking variable, inside the experiment.",
+  "Blinding": "Keeping the subjects (single-blind), or the subjects and the people measuring the response (double-blind), from knowing who is in which group."
+ },
+ "blanks": [
+  "comparison",
+  "randomization",
+  "replication",
+  "control"
+ ],
+ "lines": [
+  [
+   "Answers vary --- most pick this quarter's, many because ``the gap is bigger.''",
+   "(Settled at problem 12: this quarter's --- chance built the groups, not 20 beats 15.)"
+  ]
+ ],
+ "labels": [
+  "subjects",
+  "treatment",
+  "control",
+  "placebo",
+  "double-blind",
+  "association",
+  "caused"
+ ],
+ "spaces": [
+  "Chance built the groups alike --- only the treatment is left to explain the gap."
+ ],
+ "cells": {
+  "1": "Not an experiment --- the students chose (Lesson 1.5).",
+  "2": "An experiment --- the generator decided the groups.",
+  "3": "Not an experiment --- a survey; members chose.",
+  "4": "An experiment. Yes --- the packet group is the control.",
+  "6": "60 vs.\\ 60; a generator split them; 60 per group; same classes.",
+  "7": "The new bins --- the groups differ two ways, so either could explain it.",
+  "8": "The placebo effect. Room B is a placebo --- both groups now meet.",
+  "9": "80: 40 and 40; 40: 20 and 20; 60 per group. Blocking makes it certain.",
+  "10": "Chance spread them across both groups.",
+  "11": "Attending \\emph{caused} a higher pass rate: 75\\% vs.\\ 55\\%.",
+  "12": "This quarter's --- chance built the groups. No: the design earns the verb.",
+  "13": "No. A self-chosen gap is inflated by whoever chose; it earns only association.",
+  "14": "The 90 volunteers; the 6 a.m.\\ slot; the 45 at 7 p.m. Chance decided.",
+  "15": "$27/45 = 60\\%$; $18/45 = 40\\%$. \\par $60 - 40 = 20$ points.",
+  "16": "Two slots, a generator, 45 each. The log scorers can be.",
+  "17": "The 20 --- the 25 was inflated by retirement."
+ }
+}

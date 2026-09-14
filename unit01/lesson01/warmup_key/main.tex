@@ -1,8 +1,21 @@
 %! The Statistical Cycle and Types of Data — Unit 1, Lesson 1.1 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+% ONE PAGE, blank and key. Three items at 12pt (the stats-model size; replaces the earlier
+% \large-at-10pt trick), \workrowsep 50pt, item spacing 22pt, so each item gets real
+% handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Items 1 and 2
+% are the council's own bike-rack survey — the same 60-of-900 numbers the notes table opens
+% with — so the survey students meet in row 1 is already half-computed. Item 1's 45% is the
+% bus row of the frequency table in row 3 (problem 9), already done for them. Item 2 is the
+% scale-up problem 11 and Guided Practice problem 17 both ask for. Item 3 classifies two
+% variables WITHOUT deciding them from a question: row 4 — the crux — takes that away and
+% makes the QUESTION decide the type before any data exist.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 % Handwriting room inside every \begin{work} block. Moves the blank and the
 % key together, so the two can never drift apart.
 \setlength{\workrowsep}{50pt}
@@ -10,14 +23,14 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-\begin{notesbox}{Spiral Review --- Percents, Scaling, and Types of Data}
-\large
-The Riverbend Student Council asked $60$ students, ``How do you usually get to
+\begin{notesbox}{Spiral Review --- The Student Council's Survey}
+\normalsize
+Last spring the Riverbend Student Council asked $60$ students, ``How do you usually get to
 school?'' Of the $60$ students asked, $27$ said they ride the bus.
 
 \begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
@@ -29,25 +42,24 @@ school?'' Of the $60$ students asked, $27$ said they ride the bus.
                          &= 45\%
         \end{work}
 
-  \item Riverbend has $900$ students in all. Based on this survey,
-        \textbf{predict} how many of the $900$ students ride the bus.
+  \item Riverbend has $900$ students in all. Based on that survey, \textbf{predict}
+        how many of the $900$ ride the bus.
 
         \begin{work}
-          0.45 \times 900 &= 405 \\
-                          &= 405 \text{ students}
+          0.45 \times 900 &= 405 \text{ students}
         \end{work}
 
-  \item The council recorded two things about each student. Classify each
-        variable, and give the reason you used.
+  \item The council recorded two things about each student. Classify each variable.
+        \wordbank{categorical \;\textbullet\; quantitative \;\textbullet\; the values are labels, not amounts \;\textbullet\; the values are amounts you can average}
 
         \vspace{4pt}
-        \renewcommand{\arraystretch}{3.3}
-        \begin{tabularx}{\linewidth}{@{} p{6.2cm} p{3.4cm} >{\raggedright\arraybackslash}X @{}}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} p{5.4cm} p{3.2cm} >{\raggedright\arraybackslash}X @{}}
         \toprule
         \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
         \midrule
-        How the student gets to school & \ans{categorical} & \ans{bus, car, walk, bike are labels} \\
-        Minutes the trip takes         & \ans{quantitative} & \ans{an amount in minutes; a mean makes sense} \\
+        How the student gets to school & \ans{categorical} & \ans{the values are labels, not amounts} \\
+        Minutes the trip takes         & \ans{quantitative} & \ans{the values are amounts you can average} \\
         \bottomrule
         \end{tabularx}
 

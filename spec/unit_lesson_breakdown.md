@@ -21,13 +21,14 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 A current lesson ships `cover`, `warmup`, `notes` (*Guided Notes & Practice*), `homework` (each
 keyed component with a `_key`), `slides`, and the lesson plan (`main.tex`).
 
-**Shape status (2026-09-06):** **Lesson 1.2 is the PILOT** — regenerated on the AP Statistics 1.4
-model (two long notes sections, a Guided Practice worked together, a spoken debrief, the homework
-started in class; 5 / 35 / 10 / 10) — **and is the model every future lesson follows.** Lesson 1.1
-is in the previous notes-only shape (2026-08-31); lesson 1.0 still carries `activity/`; lessons
-1.3 and 1.4 were regenerated in the pilot shape 2026-09-07; 1.5–1.8 are pre-EFFL legacy (`notes`/`activity`/`exit_ticket`) with authored content; units 2–8
-(57 lesson dirs) are empty EFFL skeletons. Convert one lesson at a time per section 7 of
-`LESSON_SHAPE.md`.
+**Shape status (2026-09-14): ALL NINE UNIT-1 LESSONS ARE IN THE CURRENT SHAPE.** The Main
+Ideas / Notes table (2026-09-12) on the gradual-release period (2026-09-06): `cover` + `warmup` +
+`notes` + `homework` + `slides`, 12pt student components, one `guidednotes` table of four
+instruction rows plus a Guided Practice row, 14–18 problems two across, 5 / 35 / 10 / 10.
+**`unit01/lesson02` is the reference implementation** — mirror it. Lessons 1.0, 1.1 and 1.3–1.8
+were converted 2026-09-14; **no `activity/`, `experience/` or `exit_ticket/` directory remains in
+unit 1**. Units 2–8 (57 lesson dirs) are still empty EFFL skeletons — author them straight into
+the table shape; there is no longer an older shape to convert from.
 
 **Status legend:** ✅ authored, built, and gated · ⬜ scaffolded only (EFFL skeletons, builds clean).
 
@@ -41,15 +42,15 @@ assessments and cover pair ✅
 
 | # | Title | Standards | Status |
 |---|---|---|---|
-| 1.0 | Unit Launch: Study Design | PS.DC.1a–c; AFDA.DA.2a | ✅ |
-| 1.1 | The Statistical Cycle and Types of Data | PS.DC.1a–c; AFDA.DA.2a | ✅ |
-| 1.2 | Populations, Samples, Parameters, and Statistics | PS.DC.1d–e | ✅ **pilot shape** |
-| 1.3 | Choosing a Sample — Four Sampling Techniques | PS.DC.2a–b; AFDA.DA.2b | ✅ pilot shape (2026-09-07) |
-| 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ pilot shape (2026-09-07) |
-| 1.5 | Observational Studies | PS.DC.2d | ✅ |
-| 1.6 | Principles of Experimental Design | PS.DC.3a–b; AFDA.DA.2c | ✅ |
-| 1.7 | Comparing Studies and Choosing a Method | PS.DC.3c–e | ✅ |
-| 1.8 | Project: Design and Conduct a Survey | AFDA.DA.2d, h–j; PS.DC.2d | ✅ |
+| 1.0 | Unit Launch: Study Design | PS.DC.1a–c; AFDA.DA.2a | ✅ table shape (2026-09-14) |
+| 1.1 | The Statistical Cycle and Types of Data | PS.DC.1a–c; AFDA.DA.2a | ✅ table shape (2026-09-14) |
+| 1.2 | Populations, Samples, Parameters, and Statistics | PS.DC.1d–e | ✅ **reference lesson** |
+| 1.3 | Choosing a Sample — Four Sampling Techniques | PS.DC.2a–b; AFDA.DA.2b | ✅ table shape (2026-09-14) |
+| 1.4 | Bias in Samples and Surveys | PS.DC.2c; AFDA.DA.2e–g | ✅ table shape (2026-09-14) |
+| 1.5 | Observational Studies | PS.DC.2d | ✅ table shape (2026-09-14) |
+| 1.6 | Principles of Experimental Design | PS.DC.3a–b; AFDA.DA.2c | ✅ table shape (2026-09-14) |
+| 1.7 | Comparing Studies and Choosing a Method | PS.DC.3c–e | ✅ table shape (2026-09-14) |
+| 1.8 | Project: Design and Conduct a Survey | AFDA.DA.2d, h–j; PS.DC.2d | ✅ table shape (2026-09-14) |
 
 ### Unit 2 — Describing One Variable
 Standards: PS.DS.1, PS.DS.2, PS.DS.3 · 7 content lessons

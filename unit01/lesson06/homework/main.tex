@@ -1,52 +1,77 @@
 %! Principles of Experimental Design — Unit 1, Lesson 1.6 — Homework
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Students START IT IN CLASS in the last ten minutes of the period, alone, while the
+% teacher circulates for the second formative read; they finish it at home. Packet pages are
+% the default; a Desmos activity may replace them on a given day (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on Riverbend, the Guided Practice runs on Harbor Point, and
+% these items are on the Millbrook Public Library — recall is not the skill.
+% TWO PAGES MAX (user decision 2026-09-06): two boxes — items 1-2 on page 1, items 3-6 and
+% the spiralbox on page 2 — so no item breaks across a page.
+% Item 4's rows (i) and (ii) are the deliberate CONTRAST PAIR: the same library, watched last
+% summer and assigned this summer — one may claim an association, the other may say caused.
+% Item 6 is the target misconception head-on (48 self-selected points vs 30 assigned points).
+% THE DATA — Millbrook Public Library: 1,200 card holders; 200 volunteers -> 100 program /
+%   100 waiting list; 65/100 = 65%, 35/100 = 35%, gap 30; pooled 100/200 = 50%, 0.50 x 1200 =
+%   600; last summer watched: 80% vs 32%, gap 48; block on age 120 adults -> 60/60, 80
+%   children -> 40/40. All verified in Python.
+% PAGE LOCKSTEP: the key is generated from this file; every work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Homework}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\boxguard[24]
-\begin{scenariobox}[Millbrook Public Library --- This Time They Assign]{cerulean}
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
 \small
-Last summer Millbrook \emph{watched}: of the card holders who had signed
-themselves up for the Summer Reading Program, $80\%$ read at least $10$ books,
-against $32\%$ of those who had not --- a $48$-point gap the director could not
-explain, because the card holders had sorted themselves.
+\textbf{This is your graded homework.} It is scored out of 12 and due at the start of the
+first class after two study halls. You will start it in the last minutes of the period, so ask about anything that stalls
+you before you leave, then finish it on your own.
+\end{remindbox}
 
-\vspace{2pt}
-This summer the library has $1{,}200$ card holders and runs an experiment.
-\textbf{$200$ card holders volunteer.} A random number generator assigns
-\textbf{$100$ to the Summer Reading Program} and \textbf{$100$ to a waiting
-list} that starts in the fall. Everyone keeps the same library card and the same
-borrowing limits. In September, \textbf{$65$} of the program group and
-\textbf{$35$} of the waiting-list group had read at least $10$ books.
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Millbrook Public Library --- This Time They Assign]{cerulean}
+Last summer Millbrook \emph{watched}: of the card holders who had signed themselves up for
+the Summer Reading Program, $80\%$ read at least $10$ books, against $32\%$ of those who had
+not --- a $48$-point gap. This summer the library ($1{,}200$ card holders) runs an experiment.
+$200$ card holders volunteer; a random number generator assigns $100$ to the program and
+$100$ to a waiting list that starts in the fall. Everyone keeps the same card and borrowing
+limits. In September, $65$ of the program group and $35$ of the waiting-list group had read at
+least $10$ books.
 \end{scenariobox}
 
 \vspace{0.08in}
 
 \boxguard
 \begin{notesbox}{Practice}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=8pt, topsep=3pt]
+Every answer names the group it is about --- the $100$ in the program, the $100$ waiting, or
+all $200$ volunteers.
+\wordbank{the 200 volunteers \;\textbullet\; the Summer Reading Program \;\textbullet\; the 100 on the waiting list \;\textbullet\; chance (the generator) \;\textbullet\; the director \;\textbullet\; 65\% \;\textbullet\; 35\% \;\textbullet\; 30}
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
-  \item Nobody let a card holder pick a group this year.
+  \item Name the parts of this experiment.
 
-        \textbf{(a)} Is this an experiment? \blank{2cm}
+        \par\vspace{4pt}
+        Experimental units: \blank{4.2cm} \hfill Treatment: \blank{4.6cm}
+        \par\vspace{8pt}
+        Control group: \blank{4.6cm} \hfill Who decided the groups? \blank{3.4cm}
 
-        \textbf{(b)} Who decided which group each volunteer was in?
-        \blank{5cm}
+  \item Compute the reading rate for each group, then the gap.
 
-  \item Compute the reading rate for each group.
-
-        \textbf{(a)} What percent of the $100$ in the program read at least
-        $10$ books?
+        \textbf{(a)} What percent of the $100$ in the program read at least $10$ books?
 
         \begin{work}
           \dfrac{65}{100} &= 0.65 \\
@@ -60,116 +85,72 @@ borrowing limits. In September, \textbf{$65$} of the program group and
                           &= 35\%
         \end{work}
 
-        \textbf{(c)} The program group is higher by \blank{2cm} percentage
-        points.
-
-  \item Now use all $200$ volunteers.
-
-        \textbf{(a)} How many read at least $10$ books, and what percent is
-        that?
-
-        \begin{work}
-          65 + 35 &= 100 \text{ card holders} \\
-          \dfrac{100}{200} &= 0.50 = 50\%
-        \end{work}
-
-        \textbf{(b)} About how many of all $1{,}200$ card holders does that
-        predict?
-
-        \begin{work}
-          0.50 \times 1200 &= 600 \text{ card holders}
-        \end{work}
-
-  \item Name the parts of this design.
-
-        Experimental units: \blank{4cm} \hfill Treatment: \blank{4cm}
-
-        Control group: \blank{4cm} \hfill Response variable: \blank{4cm}
-
-  \item In a few words each, say how this design meets the four principles.
-
-        Comparison: \blank{3.6cm} \hfill Randomization: \blank{3.6cm}
-
-        Replication: \blank{3.6cm} \hfill Control: \blank{3.6cm}
-
-  \tcbbreak   % keep item 6's prompt with its table — mirrored in homework_key
-  \item Each row is a different plan the director could have used instead. Name
-        the one principle it breaks.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.45}
-        \begin{tabularx}{0.97\linewidth}{@{} X p{3.7cm} @{}}
-        \toprule
-        \textbf{The plan} & \textbf{Principle broken} \\
-        \midrule
-        Enroll all $200$ volunteers in the program and see how much they read.
-          & \blank{3.3cm} \\
-        Enroll the first $100$ volunteers who signed the sheet; the rest wait.
-          & \blank{3.3cm} \\
-        Enroll $1$ volunteer and put $1$ on the waiting list.
-          & \blank{3.3cm} \\
-        Enroll the $100$ volunteers who live near the library; the $100$ who
-        live far away wait. & \blank{3.3cm} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-  \item Of the $200$ volunteers, $120$ are adults and $80$ are children. The
-        director decides to block on that and randomize inside each block.
-
-        \begin{center}
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabularx}{0.9\linewidth}{@{} X c c c @{}}
-        \toprule
-        \textbf{Block} & \textbf{In block} & \textbf{To program}
-          & \textbf{To waiting list} \\
-        \midrule
-        Adults & $120$ & \blank{1.5cm} & \blank{1.5cm} \\
-        Children & $80$ & \blank{1.5cm} & \blank{1.5cm} \\
-        \midrule
-        Total & $200$ & \blank{1.5cm} & \blank{1.5cm} \\
-        \bottomrule
-        \end{tabularx}
-        \end{center}
-
-        Why would the director block on age rather than leave it to chance?
-        \writeline
-
-  \item Last summer's study found a $48$-point gap; this summer's experiment
-        finds only $30$. Explain why the smaller gap is the \emph{stronger}
-        evidence that the program works.
-        \writelines{2}
+        \textbf{(c)} The program group is higher by \blank{2cm} percentage points.
 
 \end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
+\boxguard[30]
+\begin{notesbox}{Practice, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt, start=3]
 
-\boxguard
-\begin{extensionbox}
-\small
-Take a headline you have seen that claims one thing causes another --- yours
-from last lesson's extension will do. Design the experiment that would actually
-test it:
+  \item Put all $200$ volunteers together. How many read at least $10$ books, and what
+        percent is that? Then, if the volunteers represent the library, about how many of
+        all $1{,}200$ card holders would that be?
 
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item Who or what are the experimental units, and how many would you need?
-  \item What is the treatment, and what does the control group get instead?
-  \item How exactly would chance assign the units to the groups?
-  \item Name one variable you would hold the same for both groups, and say what
-        would go wrong if you did not.
-  \item Could anyone be blinded? Say who, or say why nobody could be.
+        \begin{work}
+          65 + 35 &= 100 \text{ card holders}; \quad \dfrac{100}{200} = 0.50 = 50\% \\
+          0.50 \times 1200 &= 600 \text{ card holders --- an estimate}
+        \end{work}
+
+  \item The same library, two summers. Write what each study may claim about the program
+        --- \emph{an association} or \emph{caused it} --- and the reason.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} p{3.6cm} p{2.6cm} >{\raggedright\arraybackslash}X @{}}
+        \toprule
+        \textbf{The study} & \textbf{May claim} & \textbf{Because\dots} \\
+        \midrule
+        Last summer --- watched; $80\%$ vs.\ $32\%$
+          & \blank{2.2cm} & \blank{5.8cm} \\
+        This summer --- assigned; $65\%$ vs.\ $35\%$
+          & \blank{2.2cm} & \blank{5.8cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+  \item Of the $200$ volunteers, $120$ are adults and $80$ are children. The director blocks
+        on age and randomizes inside each block. Fill the table, then say why she blocked
+        rather than leaving age to chance.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabularx}{\linewidth}{@{} X c c c @{}}
+        \toprule
+        \textbf{Block} & \textbf{In block} & \textbf{To program} & \textbf{To waiting list} \\
+        \midrule
+        Adults   & $120$ & \blank{1.6cm} & \blank{1.6cm} \\
+        Children & $80$  & \blank{1.6cm} & \blank{1.6cm} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+        \par\writeline
+
+  \item Last summer's study found a $48$-point gap; this summer's experiment finds only
+        $30$. A board member says the bigger gap is the better evidence. Explain why the
+        \emph{smaller} gap is the stronger evidence that the program works.
+        \par\writelines{2}
+
 \end{enumerate}
-\end{extensionbox}
+\end{notesbox}
 
-\vspace{0.08in}
-
-\begin{remindbox}
-\small
-\textbf{Next class (Lesson 1.7):} both kinds of study side by side. When is an
-experiment worth the cost, and when is it impossible or wrong to run one? You
-will compare what an experiment and an observational study each let you conclude
-and choose the data collection method that fits a given context.
-\end{remindbox}
+\boxguard[5]   % the two-line spiralbox needs about five baselines; a larger guard pushes it to a third page
+\begin{spiralbox}
+\textbf{Next lesson: Experiments and Observational Studies Side by Side.} Millbrook could run
+an experiment; a study of smoking and lung disease cannot assign anyone to smoke. Next class
+is about \emph{when} an experiment is worth the cost --- and when it is impossible or wrong to
+run one.
+\end{spiralbox}
 
 \end{document}

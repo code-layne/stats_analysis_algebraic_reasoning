@@ -1,372 +1,281 @@
-%! The Statistical Cycle and Types of Data — Unit 1, Lesson 1.1 — Guided Notes
-\documentclass[10pt]{article}
+%! The Statistical Cycle and Types of Data — Unit 1, Lesson 1.1 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.2–2.4cm of writing room. Problems run 1..19.
+% DENSITY: a \blank{} only where a word or number IS the answer (the frequency table in row 3,
+% problem 9 — the one \wordbank strip sits above it); no mid-sentence blanks; every display is
+% pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 9's bus row, 12).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (16–19), is worked entirely together on the council's SECOND
+%            survey (the cycle turned).
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 8 (a question that passes all three tests as written — the student who
+% "repairs" it has learned to rewrite, not to test).
+% THE CRUX is problem 14 (row 4, "The Question Decides"): the council's arithmetic is correct
+% (6 of 60 = 10%, about 90 of 900) and the sentence "about 90 students WOULD bike if there
+% were racks" is still unsupported — the question asked how students travel NOW, so the
+% problem entered at stage 1. The hook vote is re-taken there (PS.DC.1a–c). Problem 15 is the
+% breakfast-cart counterweight (a stage-2 entry); problem 19 is the crux transferred.
+%
+% THE DATA
+%   Riverbend Student Council, last spring: 60 students asked how they usually get to school —
+%     bus 27 (45%), car 15 (25%), walk 12 (20%), bike 6 (10%); 900 students; 0.10 x 900 = 90
+%   Breakfast cart (problem 15): 40 students leaving the cart, 14 bought a bagel -> 35%
+%   Guided Practice, the council's second survey: 80 asked "would you ride a bike to school if
+%     there were racks?", 24 yes -> 30%; 0.30 x 900 = 270
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson01_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 3, problem 9). Defined per
+% document; the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.3cm per row gives students three
+% handwritten lines of room; keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{Guided Notes}
+\pageheader{Unit 1, Lesson 1.1}{Guided Notes \& Practice}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item name the four stages of the \textbf{data cycle} and say what each stage
-        produces for the next one;
-  \item write a question that data can actually answer --- one whose answers
-        \emph{vary}, that names the \emph{group}, and that says what will be
-        \emph{measured};
-  \item decide from the question alone whether the data I need are
-        \textbf{categorical} or \textbf{quantitative};
-  \item organize collected data into a frequency table and turn counts into
-        percents;
-  \item write a conclusion that names the group it applies to --- and say what
-        the data do \emph{not} tell me;
-  \item name the stage at which a flawed study \emph{broke down}.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\termblanklong{Data cycle}
-\termblanklong{Statistical question}
-\termblanklong{Variable of interest}
-\termblanklong{Frequency table}
-\termblanklong{Relative frequency}
-\termblanklong{Conclusion in context}
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Data cycle}
+\vterm{Statistical question}
+\vterm{Variable of interest}
+\vterm{Relative frequency}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-The Riverbend Student Council has one hour on the district's agenda. They want to
-ask for \textbf{more bike racks} outside the main entrance.
+The Riverbend Student Council wants \textbf{more bike racks}. Last spring they asked $60$
+students how they usually get to school; $6$ said \emph{bike}. Their claim: \textit{``$10\%$ bike
+now, so a lot more would if there were somewhere to park.''} The arithmetic is right.
 
-\begin{center}
-\textit{``We think a lot of students would bike if there were somewhere to park.''}
-\end{center}
-
-The district will not act on ``we think.'' \textbf{What would the council have to
-do first --- and in what order?} Write the first two steps you would take.
+\vspace{3pt}
+\textbf{Does the survey support the claim?} Circle one: \quad yes \qquad no \qquad can't tell
+\quad --- and say why you think so. We vote again at problem~14.
 \par\writelines{2}
 \end{hookbox}
 
-\boxguard[20]
-\begin{notesbox}{1. The Four Stages of the Data Cycle}
 \small
-Every study in this course runs the same four stages, in order --- and then
-starts over. Fill in the name of each stage as we go.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{0.97\linewidth}{@{} c p{4.3cm} X @{}}
+\begin{guidednotes}
+% ── ROW 1: the four stages ───────────────────────────────────────────────────
+\mainidea[Four stages, in order]{Data Cycle} &
+Every study runs the same four stages, in order, and then starts over: the \textbf{data
+cycle}. \textbf{Each stage can only use what the stage before it handed over} --- if stage 1
+never names the group, stage 4 cannot say who the conclusion is about.
+\\
+& {\centering
+\begin{tikzpicture}
+  % four stage boxes in a loop (real cm; the Notes column is about 12cm wide)
+  \foreach \i/\num/\sname/\hands in {
+      0/1/{Formulate}/{a question naming\\a group and a\\measurement},
+      1/2/{Collect}/{the raw values,\\one row per\\individual},
+      2/3/{Organize}/{a table that\\makes the\\pattern visible},
+      3/4/{Analyze \&\\communicate}/{a conclusion in\\context --- and\\the next question}} {
+    \fill[frost, rounded corners=5pt] ({\i*2.85},0) rectangle ({\i*2.85+2.6},2.05);
+    \draw[cerulean, thick, rounded corners=5pt] ({\i*2.85},0) rectangle ({\i*2.85+2.6},2.05);
+    \node[circle, fill=cerulean, text=white, font=\bfseries\scriptsize, inner sep=1.5pt]
+      at ({\i*2.85+0.3},1.78) {\num};
+    \node[font=\footnotesize\bfseries\color{cerulean}, align=center, anchor=north]
+      at ({\i*2.85+1.4},1.98) {\sname};
+    \node[font=\tiny, align=center] at ({\i*2.85+1.3},0.55) {\hands};
+  }
+  \foreach \i in {0,1,2} { \draw[->, thick, charcoal] ({\i*2.85+2.62},1.0) -- ({\i*2.85+2.83},1.0); }
+  % the loop back to stage 1
+  \draw[->, very thick, goldacc] (9.85,-0.05) -- (9.85,-0.42) -- (1.3,-0.42) -- (1.3,-0.05);
+  \node[font=\tiny\itshape\color{goldacc}, fill=white, inner sep=1pt] at (5.6,-0.42) {the answer raises the next question --- and the cycle turns};
+\end{tikzpicture}\par\vspace{4pt}
+The stage that names the group a conclusion may describe: \labelbox{2.6cm}{}\par}
+\\
+& \notesprompt{Here is what the council did last spring, out of order. Give the stage number, and say what that stage handed on.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Asked $60$ students how they usually get to school.}{1.2cm}{} & \pcell{2}{Told the district what the survey showed.}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Decided to ask how Riverbend students travel to school.}{1.2cm}{} & \pcell{4}{Counted the $60$ answers into a table by travel method.}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: stage 1 — the three tests ─────────────────────────────────────────
+\mainidea[Stage 1]{Three Tests} &
+A \textbf{statistical question} passes three tests: the answers \textbf{vary} from one
+individual to the next, it names the \textbf{group} it is about, and it says what will be
+\textbf{recorded} for each one. \textbf{The thing you record is the variable of interest.}
+\\
+& {\centering
+\begin{tikzpicture}
+  % the council's question passing through three gates (real cm)
+  \node[font=\footnotesize\itshape, anchor=west] at (0,2.75)
+    {``How do \textbf{Riverbend students} usually \textbf{get to school}?''};
+  \draw[->, thick, charcoal] (0.6,2.5) -- (0.6,2.2);
+  \foreach \i/\test/\ask in {
+      0/{1 \; VARY?}/{would two students\\answer differently?},
+      1/{2 \; GROUP?}/{who is it about?},
+      2/{3 \; RECORD?}/{for each one I will\\write down \ldots}} {
+    \fill[goldbg, rounded corners=4pt] ({\i*3.3},0.2) rectangle ({\i*3.3+3.0},2.0);
+    \draw[goldacc, thick, rounded corners=4pt] ({\i*3.3},0.2) rectangle ({\i*3.3+3.0},2.0);
+    \node[font=\small\bfseries\color{goldacc}] at ({\i*3.3+1.5},1.6) {\test};
+    \node[font=\tiny, align=center] at ({\i*3.3+1.5},0.85) {\ask};
+  }
+  \draw[->, thick, charcoal] (3.02,1.1) -- (3.28,1.1);
+  \draw[->, thick, charcoal] (6.32,1.1) -- (6.58,1.1);
+  \draw[->, very thick, greenacc] (9.65,1.1) -- (10.2,1.1);
+  \node[font=\footnotesize\bfseries\color{greenacc}, anchor=west] at (10.2,1.1) {ready};
+\end{tikzpicture}\par\vspace{4pt}
+For this question the variable of interest is \labelbox{4.2cm}{}\par}
+\\
+& \notesprompt{Which test does each question fail? Repair it --- keep the original subject and put back only what was missing.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{``How do I get to school?''}{1.4cm}{} & \pcell{6}{``Do people like biking?''}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{``Is the breakfast cart good?''}{1.4cm}{} & \pcell{8}{``How many minutes is a Riverbend student's trip to school?'' \textbf{Test it before you touch it.}}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: stages 2 and 3 — the frequency table ──────────────────────────────
+\mainidea[Stages 2 and 3]{Frequency Table} &
+Stage 2 collects one answer per individual. Stage 3 organizes them into a \textbf{frequency
+table}: each category, its \textbf{frequency} (the count), and its \textbf{relative frequency}
+(count $\div$ total, as a percent). \textbf{Stage 3 adds nothing new --- it makes the pattern visible.}
+\\
+& \textbf{9.} The council's $60$ answers --- fill in the missing percents and the totals.
+\wordbank{$15/60$ \;\textbullet\; $12/60$ \;\textbullet\; $6/60$ \;\textbullet\; $0.25$ \;\textbullet\; $0.20$ \;\textbullet\; $0.10$ \;\textbullet\; $25\%$ \;\textbullet\; $20\%$ \;\textbullet\; $10\%$ \;\textbullet\; $60$ \;\textbullet\; $100\%$}
+\footnotesize\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
 \toprule
-\textbf{Stage} & \textbf{Name} & \textbf{What it hands to the next stage} \\
+\textbf{How they get to school} & \textbf{Frequency (count)} & \textbf{Relative frequency (percent)} \\
 \midrule
-1 & \blank{3.8cm} & A question that names a group and says what will be measured. \\
-2 & \blank{3.8cm} & The raw values --- one row per individual. \\
-3 & \blank{3.8cm} & A table or display that makes the pattern visible. \\
-4 & \blank{3.8cm} & A conclusion, stated in context, plus the next question. \\
+Bus  & $27$ & $27/60 = 0.45 = 45\%$ \\
+Car  & $15$ & \blank{4.2cm} \\
+Walk & $12$ & \blank{4.2cm} \\
+Bike & $6$  & \blank{4.2cm} \\
+\midrule
+\textbf{Total} & \blank{1.2cm} & \blank{4.2cm} \\
 \bottomrule
-\end{tabularx}
-\end{center}
+\end{tabularx}\small
+\\
+& \notesprompt{Read the table --- then move to stage 4.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Add the four percents. What must they total? Which group is smallest --- and could you see that in the $60$ raw answers?}{1.6cm}{} & \pcell{11}{Riverbend has $900$ students. Scale the bike percent to the school, then write the council's \textbf{conclusion in context}: the group asked, the number, what was measured.}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the question decides the type AND the claim ────────────
+\mainidea[Stage 1 rules the rest]{The Question Decides} &
+\textbf{The question decides the type} --- before any data exist --- and the type decides
+whether you summarize with a mean or with percents. The question also decides what stage 4
+may claim: \textbf{a conclusion answers only the question that was asked, about only the
+group that was asked.}
+\\
+& {\centering
+\begin{tikzpicture}
+  % the same 30 students, two questions, two types (real cm)
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (2.7,2.6);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (2.7,2.6);
+  \node[font=\footnotesize\bfseries\color{cerulean}, align=center] at (1.35,2.15) {the same\\$30$ students};
+  \foreach \i in {0,...,5} { \foreach \j in {0,...,4} {
+    \fill[slate] ({0.45+\i*0.36},{0.35+\j*0.28}) circle (0.06); }}
+  % question A
+  \draw[->, thick, charcoal] (2.8,1.95) -- (3.5,1.95);
+  \fill[goldbg, rounded corners=4pt] (3.6,1.4) rectangle (11.7,2.55);
+  \draw[goldacc, thick, rounded corners=4pt] (3.6,1.4) rectangle (11.7,2.55);
+  \node[font=\scriptsize\itshape, anchor=west] at (3.7,2.25) {``How many mornings a week do you eat breakfast at school?''};
+  \node[font=\scriptsize, anchor=west] at (3.7,1.72) {record a \textbf{count} of mornings \; $\rightarrow$ \; \textbf{quantitative} \; $\rightarrow$ \; a mean};
+  % question B
+  \draw[->, thick, charcoal] (2.8,0.65) -- (3.5,0.65);
+  \fill[frost, rounded corners=4pt] (3.6,0.05) rectangle (11.7,1.2);
+  \draw[cerulean, thick, rounded corners=4pt] (3.6,0.05) rectangle (11.7,1.2);
+  \node[font=\scriptsize\itshape, anchor=west] at (3.7,0.92) {``Do you ever eat breakfast at school?''};
+  \node[font=\scriptsize, anchor=west] at (3.7,0.38) {record \textbf{yes or no} \; $\rightarrow$ \; \textbf{categorical} \; $\rightarrow$ \; percents};
+\end{tikzpicture}\par\vspace{4pt}
+Same students, two types. What decided the type? \labelbox{2.6cm}{}\par}
+\\
+& \textbf{In your own words:} the council's arithmetic is correct. Why can a correct percent
+still fail to support the sentence the council wants to say?
+\writespace{1.2cm}{}
+\\
+& \notesprompt{Type first, from the question alone --- then what the question allows.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{``How old are the bikes Riverbend students ride to school?'' Nothing is collected yet. What gets recorded, what type, summarized how?}{1.4cm}{} & \pcell{13}{``How do Riverbend students usually get to school?'' Why is a \emph{mean travel method} impossible --- and what does the table give instead?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{14}{\textbf{Vote again:} yes \; no \; can't tell. The council's arithmetic is right: $6$ of $60$ is $10\%$, about $90$ of $900$. Does the survey show students \emph{would} bike if there were racks? Which stage did the problem enter at?}{1.8cm}{} & \pcell{15}{Of $40$ students leaving the breakfast cart, $14$ bought a bagel --- $35\%$, correctly. The newspaper prints: \emph{``$35\%$ of Riverbend students buy a bagel every morning.''} Which stage did that enter at? Name \emph{two} claims the data cannot support.}{1.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together: the cycle turns ────────────────
+\mainidea[Guided practice]{The Cycle Turns} &
+The council goes back to stage 1 with the question the first survey could not answer:
+\emph{``Would you ride a bike to school if there were racks?''} They ask $80$ Riverbend
+students; $24$ say \emph{yes}.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.88]
+  % the second survey, drawn in real cm
+  \fill[frost, rounded corners=6pt] (0,0) rectangle (11.4,2.25);
+  \draw[cerulean, thick, rounded corners=6pt] (0,0) rectangle (11.4,2.25);
+  \node[font=\small\bfseries\color{cerulean}] at (5.7,1.95) {Riverbend High School --- $900$ students};
+  \fill[goldbg] (2.7,0.85) ellipse (2.45 and 0.66);
+  \draw[goldacc, very thick] (2.7,0.85) ellipse (2.45 and 0.66);
+  \node[font=\scriptsize\bfseries] at (2.7,1.05) {$80$ asked ``would you ride?''};
+  \node[font=\scriptsize] at (2.7,0.65) {$24$ yes \quad $56$ no};
+  \node[font=\scriptsize, anchor=west] at (5.5,1.2) {\textbf{stage 1} the new question \quad \textbf{stage 2} $80$ answers};
+  \node[font=\scriptsize, anchor=west] at (5.5,0.55) {\textbf{stage 3} yes / no counts \quad \textbf{stage 4} the sentence};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{16}{Name the variable of interest and its type --- \emph{before} looking at the $80$ answers. How do you know?}{1.2cm}{} & \pcell{17}{What percent of the students asked said yes? If they are typical of the school, about how many of the $900$ is that?}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{18}{Write the conclusion the council can hand to the district. Name the group asked, the number, and what was measured.}{1.6cm}{} & \pcell{19}{Suppose the $80$ had all been standing at the bike rack. Which stage would the problem have entered at --- and what could the report no longer claim?}{1.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{3pt}
-\textbf{Why the order matters:} each stage can only use what the stage before it
-handed over. If stage 1 never says \emph{who} the study is about, then stage 4
-cannot say who the conclusion applies to.
-
-\vspace{4pt}
-Here is what the council actually did last spring, out of order. Write the stage
-number beside each one.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{0.95\linewidth}{@{} X c @{}}
-\toprule
-\textbf{What the Student Council did} & \textbf{Stage} \\
-\midrule
-Asked $60$ students how they usually get to school.  & \blank{1.2cm} \\
-Told the district what the survey showed.            & \blank{1.2cm} \\
-Decided to ask how Riverbend students travel.        & \blank{1.2cm} \\
-Counted the answers into a table by travel method.   & \blank{1.2cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{2. Stage 1 --- A Question Data Can Answer}
-\small
-A \textbf{statistical question} has to pass three tests.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{0.95\linewidth}{@{} c X @{}}
-\toprule
-\textbf{Test} & \textbf{Ask yourself} \\
-\midrule
-1 & Do the answers \blank{3cm} from one individual to the next? \\
-2 & Does the question name the \blank{3cm} it is about? \\
-3 & Does it say what will be \blank{3cm} or recorded? \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{4pt}
-Each question below fails at least one test. Say which test it fails, then repair
-it --- \textbf{keep the original subject and put back only what was missing.}
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.97\linewidth}{@{} p{4.4cm} p{1.5cm} X @{}}
-\toprule
-\textbf{Weak question} & \textbf{Fails} & \textbf{Repaired question} \\
-\midrule
-How do I get to school?          & \blank{1cm} & \blank{6cm} \\
-Do people like biking?           & \blank{1cm} & \blank{6cm} \\
-Is the breakfast cart good?      & \blank{1cm} & \blank{6cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{2pt}
-\textit{The council's real question: ``How do Riverbend students usually get to
-school?'' Answers vary, the group is named, and what gets recorded is clear.}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{3. The Question Decides the Type of Data}
-\small
-You do not wait until the data arrive to find out what type they are. The
-\textbf{question} tells you --- and the type tells you how you will be allowed to
-summarize the answers.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.98\linewidth}{@{} X p{3.1cm} p{2.2cm} p{2.4cm} @{}}
-\toprule
-\textbf{Question} & \textbf{What you record} & \textbf{Type} &
-\textbf{Summarize with} \\
-\midrule
-How do Riverbend students usually get to school?
-  & \blank{2.7cm} & \blank{1.8cm} & \blank{2cm} \\
-How many minutes is a Riverbend student's one-way trip?
-  & \blank{2.7cm} & \blank{1.8cm} & \blank{2cm} \\
-How old are the bikes students ride to school?
-  & \blank{2.7cm} & \blank{1.8cm} & \blank{2cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The thing you record is the \textbf{variable of interest}. Naming it out loud is
-the fastest way to catch a question that is not ready:
-if you cannot finish the sentence \emph{``for each student I will
-record \underline{\hspace{2.6cm}},''} the question is not finished either.
-
-\vspace{3pt}
-\textbf{Same students, different question, different type.} Ask $30$ students
-\emph{how many mornings a week} they eat breakfast at school and you record a
-count --- \blank{2.6cm}. Ask the same $30$ students whether they \emph{ever} eat
-breakfast at school and you record yes or no --- \blank{2.6cm}. The
-\emph{question} decided the type, not the students.
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{4. Stages 2 and 3 --- Collect, Then Organize}
-\small
-The council asked $60$ Riverbend students how they usually get to school. That is
-stage 2. Now organize the $60$ answers into a \textbf{frequency table} --- counts
-first, then each count as a percent of the total.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.9\linewidth}{@{} l c X @{}}
-\toprule
-\textbf{How they get to school} & \textbf{Frequency (count)} &
-\textbf{Relative frequency (percent)} \\
-\midrule
-Bus   & 27 & $27/60 = 0.45 = 45\%$ \\
-Car   & 15 & \blank{4.5cm} \\
-Walk  & 12 & \blank{4.5cm} \\
-Bike  &  6 & \blank{4.5cm} \\
-\midrule
-\textbf{Total} & \blank{1.4cm} & \blank{4.5cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Show the work for the \textbf{Bike} row:
-
-\begin{work}
-  \dfrac{6}{60} &= 0.10 \\
-                &= 10\%
-\end{work}
-
-\vspace{2pt}
-\textbf{Check:} the four percents must add to \blank{1.6cm}. If they do not, a
-count is wrong or a student was left out.
-
-\vspace{2pt}
-\textit{Notice what stage 3 did: the counts were already there at stage 2, but
-until they were organized, nobody could see that biking is the smallest group.}
-\end{notesbox}
-
-\boxguard
-\begin{notesbox}{5. Stage 4 --- Analyze and Communicate}
-\small
-A conclusion is not a number. It is a sentence that says \textbf{what the data
-show}, \textbf{who it applies to}, and \textbf{in what units}.
-
-\vspace{3pt}
-Scale the sample percent up to the whole school ($900$ students):
-
-\begin{work}
-  0.10 \times 900 &= 90 \text{ students}
-\end{work}
-
-\vspace{3pt}
-Fill in the council's conclusion:
-
-\vspace{2pt}
-\textit{``Of the \blank{1.4cm} students we surveyed, \blank{1.4cm}\% bike to
-school. If our sample is representative, that is about \blank{1.4cm} of
-Riverbend's \blank{1.4cm} students.''}
-
-\vspace{4pt}
-\textbf{Now the hard part --- what the data do \emph{not} say.} The council wants
-to claim students \emph{would} bike if there were racks. Does this survey support
-that claim? \blank{2cm}
-
-Why not? \writeline
-\end{notesbox}
-
-\boxguard[26]
-\begin{notesbox}{6. Where a Study Breaks Down}
-\small
-When a study goes wrong, ask \textbf{where the problem entered} --- not where the
-bad sentence showed up. Each report below failed at a \emph{different} stage.
-\nopagebreak
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.97\linewidth}{@{} X c p{4.2cm} @{}}
-\toprule
-\textbf{What went into the council's report} & \textbf{Stage} &
-\textbf{What went wrong} \\
-\midrule
-They set out to ask ``Is biking good?'' and could not decide what to write down
-for each student.
-  & \blank{1cm} & \blank{3.8cm} \\
-Only students locking bikes at the rack were asked, and the report says
-``Riverbend students bike to school.''
-  & \blank{1cm} & \blank{3.8cm} \\
-All $60$ answers were written out as a paragraph and never counted by group.
-  & \blank{1cm} & \blank{3.8cm} \\
-The table shows $6$ of $60$ bike, and the report says ``most Riverbend students
-bike.''
-  & \blank{1cm} & \blank{3.8cm} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-\textbf{And the cycle turns.} The council's answer produced a \emph{new} question
---- ``How many students \emph{would} bike if there were racks?'' --- and no data
-on hand can answer it. So they go back to stage \blank{1.2cm} and run the cycle
-again.
-\end{notesbox}
-
-\boxguard[24]
-\begin{notesbox}{7. We Do --- The Council's Second Survey}
-\small
-The council runs the cycle again. New question: \emph{``How many Riverbend
-students would ride a bike to school if there were racks?''} They ask $80$
-students, and $24$ say they would. \textbf{We will run all four stages together.}
-
-\vspace{3pt}
-\textbf{(a)} What is the variable of interest, and what type is it?
-
-Variable: \blank{6.4cm} \hfill Type: \blank{3cm}
-
-\vspace{3pt}
-\textbf{(b)} What percent of the students asked said they would?
-
-\begin{work}
-  \dfrac{24}{80} &= 0.30 \\
-                 &= 30\%
-\end{work}
-
-\textbf{(c)} Riverbend has $900$ students. Predict how many would ride.
-
-\begin{work}
-  0.30 \times 900 &= 270 \text{ students}
-\end{work}
-
-\textbf{(d)} Write the conclusion the council can hand to the district. Name the
-group, the number, and what was measured.
-\par\writelines{2}
-
-\vspace{2pt}
-\textbf{(e)} Suppose the council had asked only the $80$ students already
-standing at the bike rack. Which stage would the problem have entered at, and
-what could the report no longer claim?
-\par\writeline
-\end{notesbox}
-
-\boxguard[20]
-\begin{practicebox}
-\small
-\textbf{Work these on your own.} The Riverbend cafeteria manager put a
-\textbf{breakfast cart} in the main hallway for a week. On Friday she asked the
-$40$ students leaving the cart, \emph{``What did you buy at the cart this
-morning?''} Her answers: bagel $14$, fruit cup $10$, muffin $12$, nothing $4$.
-
-\vspace{3pt}
-\textbf{1.} What was the variable of interest --- what did she record for each
-student? What type is it?
-
-Variable: \blank{6cm} \hfill Type: \blank{3cm}
-
-\vspace{3pt}
-\textbf{2.} What percent of the students she asked bought a bagel? And if cart
-customers were typical of the school, about how many of Riverbend's $900$
-students would that be?
-
-\begin{work}
-  \dfrac{14}{40}  &= 0.35 = 35\% \\
-  0.35 \times 900 &= 315 \text{ students}
-\end{work}
-
-Write the conclusion as one sentence, naming \emph{the group she actually asked},
-the number, and what was measured.
-\par\writelines{2}
-
-\vspace{3pt}
-\textbf{3.} The school newspaper prints: \emph{``$35\%$ of Riverbend students buy
-a bagel every morning.''} The arithmetic behind the $35\%$ is correct.
-
-\textbf{(a)} That sentence describes \emph{all} Riverbend students. Which stage
-did the problem enter at? \blank{2cm}
-
-\textbf{(b)} Name \emph{two} separate things the sentence claims that Friday's
-data cannot support.
-\par\writelines{3}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

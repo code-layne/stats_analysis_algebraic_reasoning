@@ -1,6 +1,16 @@
 %! Principles of Experimental Design — Unit 1, Lesson 1.6 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (unresolved) → I DO divider → two or
+% three frames per notes ROW (labelled by row name and problem numbers) → WE DO (a live
+% surface, un-answered) → spoken debrief with the cold check → close & START THE HOMEWORK,
+% which is the individual practice. No group activity, no practice launch, no exit ticket.
+% There is no spoiler rule: the notes frames ARE the direct instruction.
+% saar-beamer does NOT load saar-article (so \CourseName is undefined — the course name is
+% literal) and does NOT load tcolorbox (use block); beamer itemize takes no [leftmargin=…].
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,252 +27,334 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Same school. Opposite answers.}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.6}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item tell an \textbf{experiment} from an observational study by asking \emph{who built
+          the groups} --- and name the \textbf{units}, the \textbf{treatment}, and the
+          \textbf{control group}.
+    \item check a design against \textbf{comparison, randomization, replication, control} ---
+          and name the principle a changed plan breaks.
+    \item explain the \textbf{placebo effect}, say who is \textbf{blinded}, and split units
+          into \textbf{blocks}.
+    \item justify why \textbf{random assignment} lets a study say \emph{caused} --- and why
+          the size of the gap does not.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together, row by row} $\to$ \textbf{one experiment we work as
+    a class} $\to$ debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{Riverbend High School --- this time they assign}
+  \vspace{0.2cm}
   \begin{center}
     \begin{minipage}{0.88\textwidth}
-      \textbf{Last class she watched.} Of 60 students who used the Study
-      Center, \textbf{65\%} passed every class --- against \textbf{80\%} of the
-      90 who never went. The Study Center looked harmful.
-
-      \vspace{0.35cm}
-      \textbf{This class she assigned.} 120 volunteers, split by a random
-      generator: \textbf{75\%} passed in the Study Center group,
-      \textbf{55\%} in the group kept out. Now it looks helpful.
+      \textbf{120} students volunteered. A random number generator split them into two groups
+      of \textbf{60}: one attended the Study Center twice a week, the other not at all.
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item \textbf{45} of the \textbf{60} who attended passed every class. What percent?
+        \item \textbf{33} of the \textbf{60} who did not attend passed every class. What percent?
+        \item[3(a).] How many \emph{percentage points} higher is the group that attended?
+        \item[3(b).] Last quarter she only \emph{watched}: \textbf{65\%} of Study Center users
+              passed, against \textbf{80\%} of those who never went. Which group was higher
+              then, and by how much?
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.6cm}
+  \vspace{0.3cm}
   \begin{center}
-    {\color{goldacc}\bfseries Which one should she believe --- and why?}
+    {\color{cerulean}\bfseries Both denominators are 60. That is not an accident --- keep the page.}
   \end{center}
 \end{frame}
 
-% ── WATCHING VS ASSIGNING ────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Assigning, not watching}
-  \sectionlabel{what makes it an experiment}
+% ── HOOK — leave it UNRESOLVED; problem 12 (row 4, Caused) settles it ────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small SAME SCHOOL. SAME STUDY CENTER. TWO QUARTERS.}\\[0.7cm]
+    {\color{white}\bfseries\Large Watched: users 65\% \quad vs.\quad non-users 80\%}\\[0.35cm]
+    {\color{white}\bfseries\Large Assigned: treated 75\% \quad vs.\quad control 55\%}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Opposite conclusions. Which study should she believe?}\\[0.45cm]
+    {\color{frostmid}\small Vote: last quarter's, this quarter's, or neither --- and write your
+    reason. We settle it at problem 12.}
+  \end{center}
+\end{frame}
+}
 
-  \vspace{0.3cm}
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1a. ASSIGN, DON'T WATCH ──────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Assign --- don't just watch}
+  \sectionlabel{notes row 1 $\cdot$ Experiment $\cdot$ problems 1--3}
+  \vspace{4pt}
   \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Observational study (1.5)}
-        You measure or survey without affecting anyone. The groups already
-        exist because \textbf{people chose}. You may report an association.
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Observational study (Lesson 1.5)}
+        You \textbf{watch}. The individuals were already in their groups --- they chose.
+      \end{block}
+      \vspace{4pt}
+      {\small Riverbend, last quarter: 150 records, students chose the Study Center.}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Experiment}
+        You \textbf{assign} the units to groups and \textbf{impose a treatment} on at least one.
+      \end{block}
+      \vspace{4pt}
+      {\small Riverbend, this quarter: 120 volunteers, a generator, 60 and 60.}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\large The test is one question: \redink{who built the groups?}}\\[6pt]
+    {\small\color{slate} The 120 volunteers are the \textbf{experimental units}
+    (\textbf{subjects}). Twice-a-week attendance is the \textbf{treatment}. The other 60 are
+    the \textbf{control group}.}
+  \end{center}
+\end{frame}
+
+% ── ROW 1b. THE TRAP — problem 4 ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Problem 4 --- vote before you write}
+  \sectionlabel{notes row 1 $\cdot$ the trap}
+  \vspace{6pt}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      ``Give \textbf{60} randomly chosen volunteers a new tutoring app and the other
+      \textbf{60} the old worksheet packet.''
+      \vspace{6pt}
+      \begin{center}\large Is there a \textbf{control group}?\end{center}
+    \end{minipage}
+  \end{center}
+  \vspace{8pt}
+  \begin{block}{The room usually says no --- everybody got something}
+    The \textbf{control group is the baseline you compare against}, not the group that gets
+    nothing. The packet group \redink{is} the control group. Take away the comparison and the
+    first principle is gone.
+  \end{block}
+\end{frame}
+
+% ── ROW 2. THE FOUR PRINCIPLES ───────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Four principles --- every experiment worth trusting}
+  \sectionlabel{notes row 2 $\cdot$ Principles $\cdot$ problems 5--7}
+  \vspace{2pt}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l l @{}}
+    \hline
+    \textbf{Principle} & \textbf{What it means} \\
+    \hline
+    Comparison     & At least two groups, one of them a control group. \\
+    Randomization  & Chance decides the groups --- not the researcher, not the subject. \\
+    Replication    & Many units in each group, so one person's luck cannot decide it. \\
+    Control        & Every other condition the same for both groups. \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \begin{block}{Problem 7 --- Cedar Ridge}
+    The reminder group also got \textbf{new recycling bins}. That is a
+    \textbf{\color{cerulean}confounding variable}: it differs between the groups \emph{and}
+    affects the response, so nobody can say which one worked.
+    \redink{Randomization makes the groups alike before you start; control keeps them alike
+    while you run.}
+  \end{block}
+\end{frame}
+
+% ── ROW 3. BLINDING AND BLOCKING ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two refinements: blinding and blocking}
+  \sectionlabel{notes row 3 $\cdot$ Blinding \& Blocking $\cdot$ problems 8--9}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Blinding}
+        \textbf{Placebo effect:} a subject responds to the \emph{idea} of being treated.
+        A \textbf{placebo} is a fake treatment built to look real.
+        \textbf{Single-blind:} the subjects don't know. \textbf{Double-blind:} the subjects
+        \emph{and} the people scoring don't know.
+      \end{block}
+      \vspace{3pt}
+      {\small Room A tutoring, Room B quiet study --- \emph{both} meet after school.}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Blocking}
+        Sort the units into \textbf{blocks} of similar units \emph{first}, then randomize
+        \textbf{inside} each block. \textbf{Matched pairs} is the block of two.
+      \end{block}
+      \vspace{3pt}
+      {\small Block on last quarter's grades: 80 passed $\to$ 40 / 40; \quad 40 did not $\to$
+      20 / 20; \quad \textbf{60 per group}.}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\small\color{slate} Riverbend's plain 60/60 split is a \textbf{completely randomized
+    design}. Blocking does not replace chance --- it applies chance \emph{inside} groups of
+    similar units.}
+  \end{center}
+\end{frame}
+
+% ── ROW 4. THE CRUX ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The design buys the verb --- not the gap}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Caused $\cdot$ problems 10--13 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c l @{}}
+    \hline
+    \textbf{Riverbend} & \textbf{Who chose?} & \textbf{Gap} & \textbf{May claim} \\
+    \hline
+    Last quarter --- watched  & the students & 15 points (the wrong way) & an association \\
+    This quarter --- assigned & nobody: chance & 20 points & \textbf{caused} \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Problem 12 --- vote again:} last quarter's, this quarter's, or neither?
+          ``20 points beats 15'' --- is that the reason? \redink{No.}
+    \item \textbf{Problem 13:} suppose the watched study had found 90\% vs.\ 55\% --- a
+          \textbf{35}-point gap. Believe it now? \redink{Still no.}
+  \end{itemize}
+  \begin{block}{Why (PS.DC.3b)}
+    Chance built the two groups, so they were alike \emph{before} the treatment --- the
+    treatment is the only thing left that can explain the gap. A self-chosen gap is inflated
+    by \emph{whoever chose}.
+  \end{block}
+\end{frame}
+
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Guided Practice: Harbor Point Swim Times}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 14--17 $\cdot$ you hold the pen}
+  Last lesson the pool \emph{watched}: 70\% of morning swimmers slept 7+ hours against 45\% of
+  evening swimmers --- but members chose their own times, and 75\% of the morning swimmers were
+  retired. Now the director \emph{assigns}: \textbf{90} volunteers, a generator, \textbf{45} at
+  a reserved 6 a.m.\ slot and \textbf{45} at 7 p.m., four weeks. \textbf{27} and \textbf{18}
+  averaged 7+ hours.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[14.] Units, treatment, control group --- and who decided the slots.
+    \item[15.] The percent for each group, and how many points apart.
+    \item[16.] The four principles, one phrase each. Then: who \emph{can} be blinded here?
+    \item[17.] Watching gave 25 points; assigning gives 20. Which is the stronger evidence?
+  \end{itemize}
+  \begin{block}{The question behind the question}
+    If you picked the 25 in problem 17, you are still at the hook vote.
+  \end{block}
+\end{frame}
+
+% ── GUIDED PRACTICE problem 17 — shown AFTER the class has worked it ─────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Why the smaller gap is the stronger evidence}
+  \sectionlabel[goldacc]{Guided Practice, problem 17}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Watching: 70\% vs.\ 45\% --- 25 points}
+        \redink{Inflated.} 75\% of the morning swimmers were retired --- and retired members
+        sleep more anyway. Part of those 25 points is retirement, not swim time.
       \end{block}
     \end{column}
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Experiment (today)}
-        The researcher \textbf{assigns} units to groups and \textbf{imposes a
-        treatment}. Chance builds the groups, so the groups start out alike.
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Assigning: 60\% vs.\ 40\% --- 20 points}
+        \redink{Earned.} Chance spread the retired members across both groups, so the 20
+        points are the swim time by itself.
       \end{block}
     \end{column}
   \end{columns}
-
-  \vspace{0.7cm}
+  \vspace{10pt}
   \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \small The word is still \textbf{assign}. Last lesson it was missing ---
-      today it is the whole design.
-    \end{minipage}
+    {\large A \redink{smaller} gap, honestly built, beats a bigger gap that somebody
+    self-selected into.}\\[5pt]
+    {\small\color{slate} Also true and worth saying: you cannot blind a swimmer to the time of
+    day. The \emph{sleep-log scorers} can be blinded --- and that is the honest answer to
+    problem 16.}
   \end{center}
 \end{frame}
 
-% ── THE PIECES ───────────────────────────────────────────────────────────────
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Three words name the pieces}
-  \sectionlabel{PS.DC.3a}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{@{} l l @{}}
-    \hline
-    \textbf{Experimental units} & who or what gets treated --- the 120
-      volunteers \\
-    \textbf{(subjects)} & the name for units when they are people \\
-    \textbf{Treatment} & what is applied --- attending twice a week \\
-    \textbf{Control group} & the group with no treatment --- the baseline \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    {\color{cerulean}\bfseries The control group is not wasted. It is what the
-    treatment gets compared to.}
-  \end{center}
+  \ceruleanheader{Debrief: who built the groups?}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{4pt}
+    \item The two Riverbend studies --- say the sentence. Why does the experiment earn
+          \emph{caused}?
+    \item Problem 4: the packet group got something. Is it still the control group?
+    \item Problem 7: name the confounding variable at Cedar Ridge.
+  \end{enumerate}
+  \vspace{4pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Bayside Middle School: 80 volunteers, a generator sends 40 to a daily reading block and 40
+    to regular homeroom. Afterward 28 of the reading-block students improved and 16 of the
+    homeroom students did. A teacher says: \emph{``Next year, just give the reading block to
+    the students who want it.''} \textbf{Which principle does that break, and what could go
+    wrong?}
+  \end{block}
 \end{frame}
 
-% ── THE FOUR PRINCIPLES ──────────────────────────────────────────────────────
+% ── YOU DO — the homework is the individual practice, started in class ───────
 \begin{frame}[t, plain]
-  \ceruleanheader{Four principles}
-  \sectionlabel[goldacc]{PS.DC.3b}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{@{} l l @{}}
-    \hline
-    \textbf{Comparison} & at least two groups, one of them a control \\
-    \textbf{Randomization} & chance decides the groups, not people \\
-    \textbf{Replication} & many units per group, so luck cannot decide \\
-    \textbf{Control} & every other condition held the same \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small A variable that differs between groups \emph{and} moves the
-      response is a \textbf{confounding variable}. Control is what keeps it
-      out.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── BLINDING ─────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Blinding and the placebo effect}
-  \sectionlabel{being chosen is a treatment too}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{8pt}
-        \item \textbf{Placebo effect:} a subject responds to the \emph{idea} of
-              a treatment --- students try harder because they were picked.
-        \item \textbf{Placebo:} a fake treatment built to look real --- a quiet
-              study hall for the control group.
-        \item \textbf{Single-blind:} the subjects, or the people measuring,
-              do not know the groups.
-        \item \textbf{Double-blind:} neither of them does.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    {\color{goldacc}\bfseries Blinding removes the part of the response that
-    comes from knowing.}
-  \end{center}
-\end{frame}
-
-% ── THREE DESIGNS ────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Three ways to assign the units}
-  \sectionlabel{completely randomized $\cdot$ blocks $\cdot$ pairs}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{@{} l l @{}}
-    \hline
-    \textbf{Completely randomized} & chance alone assigns every unit \\
-    \textbf{Randomized block} & sort into similar blocks, randomize inside \\
-    \textbf{Matched pairs} & the block is a pair, one unit to each treatment \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \small Riverbend blocks on last quarter's grades: 80 who passed
-      everything split \textbf{40/40}, and 40 who did not split
-      \textbf{20/20}.
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.4cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Block on the variable you fear. Randomize the
-    rest.}
-  \end{center}
-\end{frame}
-
-% ── WHAT IT MAY CLAIM ────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{What each study may claim}
-  \sectionlabel{the payoff}
-
-  \vspace{0.3cm}
-  \begin{center}
-    \small
-    \renewcommand{\arraystretch}{1.45}
-    \begin{tabular}{@{} l l l @{}}
-    \hline
-    \textbf{Study} & \textbf{Found} & \textbf{May claim} \\
-    \hline
-    1.5 --- watched 150 records & 65\% vs.\ 80\% & an association only \\
-    1.6 --- assigned 120 people & 75\% vs.\ 55\% & the Study Center caused it \\
-    \hline
-    \end{tabular}
-  \end{center}
-
-  \vspace{0.7cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Chance made the two groups alike at the start, so the treatment is the
-      only thing left that can explain the 20-point gap.
-    \end{minipage}
-  \end{center}
-\end{frame}
-
-% ── THE ACTIVITY SETUP ───────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Your turn: settle the swim-time question}
-  \sectionlabel{group activity}
-
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      Harbor Point takes 90 volunteers and lets a generator assign 45 to a
-      6~a.m.\ slot and 45 to a 7~p.m.\ slot for four weeks. Result:
-      \textbf{60\%} of the morning group slept 7+ hours, against
-      \textbf{40\%} of the evening group.
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.8cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Watching said 25 points. Assigning says 20. Why
-    is the smaller number the honest one?}
-  \end{center}
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Millbrook Public Library} --- 1{,}200 card holders; 200 volunteers, a
+          generator, 100 in the Summer Reading Program and 100 on a fall waiting list.
+    \item Name the parts; the two rates and the gap; pool the 200 and scale to 1{,}200
+          \emph{as an estimate}.
+    \item The same library, two summers --- one may claim an association, the other
+          \emph{caused it}. Block on age and say why she blocked.
+    \item Last summer's gap was 48 points; this summer's is 30. Explain why the
+          \textbf{smaller} gap is the stronger evidence.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 4, and 6}. Item 6 is the one I am reading over your shoulder --- if
+    you picked the 48, flag me before you leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item An \textbf{experiment} assigns the units and imposes a
-              \textbf{treatment}.
-        \item Name the pieces: \textbf{units}, \textbf{treatment},
-              \textbf{control group}.
-        \item Four principles: \textbf{comparison, randomization, replication,
-              control}.
-        \item \textbf{Blinding} removes the placebo effect; blocks and pairs
-              tame a feared variable.
-        \item Because \textbf{chance} built the groups, an experiment can say
-              \emph{caused}.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large An observational study watches. An experiment assigns --- and
+    because chance built the groups, it is the one kind of study that earns the word
+    \emph{caused}. The biggest gap is usually the one that earned it least.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.7 --- Millbrook \emph{could} assign. Nobody can
+    assign a person to smoke for thirty years. When is an experiment worth the cost, and when
+    is it impossible or wrong to run one?}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

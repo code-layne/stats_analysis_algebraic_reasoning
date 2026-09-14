@@ -1,328 +1,328 @@
-%! Principles of Experimental Design — Unit 1, Lesson 1.6 — Guided Notes (Answer Key)
-\documentclass[10pt]{article}
+%! Principles of Experimental Design — Unit 1, Lesson 1.6 — Guided Notes & Practice (Answer Key)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1, ported from AP
+% Statistics 2026-09-12): the vocabulary box, the hook, then ONE two-column guidednotes table.
+% Each row is one idea — a label on the left; on the right one or two COMPLETE printed
+% sentences, ONE large pre-drawn display the student reads or names, then a bold prompt and a
+% two-across grid of numbered problems with 1.2–2.0cm of writing room. Problems run 1..17.
+% DENSITY: a \blank{} only where a word IS the answer (the four cells of the Cedar Ridge table
+% in row 2 — the one \wordbank strip sits above it); no mid-sentence blanks; every display is
+% pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 6, 8, 10).
+%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
+%            Guided Practice (14–17), is worked entirely together on Harbor Point instead of
+%            Riverbend.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, started in the
+%            last ten minutes of the period. No independent set, no reflection box, no
+%            objectives box (the cover carries the targets).
+% THE TRAP is problem 4 (a new app against the old packet: an experiment with no "nothing"
+% group — the packet group IS the control group). THE CRUX is problem 13 (row 4, "Caused"): a
+% bigger self-selected gap is NOT stronger evidence — the design buys the verb, not the gap
+% size (PS.DC.3b). The hook vote is re-taken at problem 12. Problem 17 is the crux transferred
+% to Harbor Point (25 watched points vs 20 assigned points).
+%
+% THE DATA (all verified in Python)
+%   Riverbend HS experiment: 120 volunteers, generator -> 60 Study Center twice a week / 60 not;
+%     45/60 = 75% vs 33/60 = 55%, gap 20 points. Lesson 1.5's watched study on the same Study
+%     Center: users 65% vs non-users 80%, gap 15 points the other way.
+%   Blocking on last quarter: 80 passed everything -> 40/40; 40 did not -> 20/20; 60 per group.
+%   Cedar Ridge Apartments (row 2 fill table): 100 households, 50 reminder / 50 nothing.
+%   Guided Practice, Harbor Point pool: 90 volunteers -> 45 at 6 a.m. / 45 at 7 p.m.;
+%     27/45 = 60% vs 18/45 = 40%, gap 20; Lesson 1.5 watched 70% vs 45%, gap 25, members chose
+%     and 75% of the morning swimmers were retired.
+%
+% PAGE LOCKSTEP with notes_key/: the key is GENERATED from this file by templates/lesson/mkkey.py
+% (spec: templates/lesson/examples/lesson06_notes_key.json) — every \blank{} becomes an \ans{},
+% every \vterm{} a \vtermans{}{}, every \par\writelines{n} n \ansline{} calls, and the answer
+% argument of every \pcell, \writespace and \labelbox is filled. Answer spaces are fixed
+% heights, so the two files cannot drift. KEEP EVERY \pcell ON ONE SOURCE LINE — mkkey matches
+% line by line.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
+% sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 2). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06: the black
+% answer line crowded the row; students write beside and below the term). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. saar-article's
+% \termblank adds an inline blank and a rule line, so the pair is defined here (the key is
+% generated from this file and inherits both). 2.15cm per row gives students three
+% handwritten lines of room (trimmed from 1.2's 2.3cm so the table's first row still
+% starts on page 1); keep key definitions to two lines.
+\newcommand{\termrowheight}{2.15cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.6}{Guided Notes --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
+\pageheader{Unit 1, Lesson 1.6}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-\begin{objectivebox}
-\small
-By the end of this lesson, I will be able to\dots
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item explain what makes a study an \textbf{experiment} --- the researcher
-        assigns the groups and imposes a treatment;
-  \item name the \textbf{experimental units}, the \textbf{treatment}, and the
-        \textbf{control group} in a described experiment;
-  \item explain \textbf{blinding} and the \textbf{placebo effect}, and say who
-        is blinded in a design;
-  \item tell apart a \textbf{completely randomized} design, a \textbf{block}
-        design, and \textbf{matched pairs};
-  \item evaluate a design against the four principles ---
-        \textbf{comparison, randomization, replication, control} --- and justify
-        which conclusions it supports.
-\end{enumerate}
-\end{objectivebox}
-
-\boxguard
 \begin{vocabbox}
 \small
-Fill in each term as we build it together.
-\vocabans{Experiment}{A study in which the researcher assigns the experimental
-units to groups and imposes a treatment on at least one group. Because the
-researcher builds the groups, an experiment can support a cause-and-effect
-conclusion.}
-\vocabans{Experimental units (subjects)}{The individuals or objects a treatment
-is applied to --- at Riverbend, the $120$ student volunteers. When the units are
-people they are called subjects.}
-\vocabans{Treatment}{The condition the researcher applies to a group --- at
-Riverbend, attending the Study Center twice a week for the quarter.}
-\vocabans{Control group}{The group that does not receive the treatment. It gives
-a baseline showing what happens without the treatment, so there is something to
-compare the treatment group against.}
-\vocabans{Random assignment}{Using chance --- a generator, a coin, drawn slips
---- to decide which group each unit goes in, so the groups start out alike and
-no one chooses their own group.}
-\vocabans{Blinding}{Keeping someone in the experiment from knowing which group a
-subject is in. Single-blind: the subjects (or the measurers) do not know.
-Double-blind: neither does.}
+Fill in each term \textbf{as we name it} in the notes below.
+\vtermans{Experiment}{A study in which the researcher assigns the units to groups and imposes a treatment on at least one group. The test: who built the groups?}
+\vtermans{Control group}{The group that does not get the treatment. It is the baseline the treatment group is compared against --- not a wasted group.}
+\vtermans{Random assignment}{Letting chance --- a generator, a coin, drawn slips --- decide which group each unit goes in, so the groups start out alike.}
+\vtermans{Confounding variable}{A variable that differs between the groups and also affects the response, so the treatment and it cannot be told apart. 1.5's lurking variable, inside the experiment.}
+\vtermans{Blinding}{Keeping the subjects (single-blind), or the subjects and the people measuring the response (double-blind), from knowing who is in which group.}
 \end{vocabbox}
 
 \boxguard[12]
 \begin{hookbox}
 \small
-Last class the Riverbend counselor \emph{watched}: of $60$ students who used the
-Study Center, $65\%$ passed every class, against $80\%$ of the $90$ who never
-went. The Study Center looked harmful. This quarter she \emph{assigned} instead
---- $120$ volunteers, split by a random number generator --- and got $75\%$
-against $55\%$. The Study Center looks helpful.
-
-\vspace{2pt}
-\textbf{Same school, same Study Center, opposite conclusions. Which study should
-she believe, and what makes it different?}
-\ansline{Answers vary. The second one --- she built the groups by chance, so struggling}
-\ansline{students were not piling into one of them. In the first, the students chose.}
+Last quarter the Riverbend counselor \emph{watched}: $65\%$ of Study Center users passed
+every class, against $80\%$ of those who never went --- it looked \emph{harmful}. This
+quarter she \emph{assigned}: $120$ volunteers split by a generator gave $75\%$ against
+$55\%$ --- now it looks \emph{helpful}. \textbf{Same school, same Study Center, opposite
+conclusions --- which study should she believe?} Circle one: \; last quarter's \quad this
+quarter's \quad neither \; --- and say why. We vote again at problem~12.
+\par\ansline{Answers vary --- most pick this quarter's, many because ``the gap is bigger.''}
+\ansline{(Settled at problem 12: this quarter's --- chance built the groups, not 20 beats 15.)}
 \end{hookbox}
 
-\boxguard[30]
-\begin{notesbox}{1. Building the Groups Instead of Watching Them}
 \small
-In an \textbf{experiment} the researcher does not wait to see what happens. The
-researcher \textbf{assigns} individuals to groups and then \textbf{imposes a
-treatment} on at least one group.
-
-\vspace{3pt}
-Three words name the pieces. The individuals or objects a treatment is applied
-to are the \textbf{experimental units}; when they are people we call them
-\textbf{subjects}. What is applied to a group is the \textbf{treatment}. The
-group that does \emph{not} get the treatment is the \textbf{control group}, and
-it exists to give a baseline --- what happens \emph{without} the treatment.
-
-\vspace{3pt}
-Which of these plans are experiments?
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X c p{3.4cm} @{}}
+\begin{guidednotes}
+% ── ROW 1: assigning, not watching ───────────────────────────────────────────
+\mainidea[Assign, don't watch]{Experiment} &
+In an \textbf{experiment} the researcher \textbf{assigns} the individuals to groups and
+\textbf{imposes a treatment} on at least one. The individuals are the \textbf{experimental
+units} (\textbf{subjects}, when they are people); what is applied is the \textbf{treatment};
+the group that does \emph{not} get it is the \textbf{control group} --- the baseline, not a
+wasted group. \textbf{The test: who built the groups?}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.66]
+  % the 120 volunteers
+  \fill[frost, rounded corners=5pt] (0,0.9) rectangle (2.6,2.3);
+  \draw[cerulean, thick, rounded corners=5pt] (0,0.9) rectangle (2.6,2.3);
+  \node[font=\scriptsize\bfseries\color{cerulean}, align=center] at (1.3,1.6) {$120$\\volunteers};
+  % the generator
+  \draw[->, very thick, charcoal] (2.7,1.6) -- (3.7,1.6);
+  \fill[goldbg, rounded corners=5pt] (3.8,0.9) rectangle (6.6,2.3);
+  \draw[goldacc, very thick, rounded corners=5pt] (3.8,0.9) rectangle (6.6,2.3);
+  \node[font=\scriptsize\bfseries\color{goldacc}, align=center] at (5.2,1.6) {random number\\generator};
+  % the two groups
+  \draw[->, very thick, charcoal] (6.7,1.9) -- (7.7,2.7);
+  \draw[->, very thick, charcoal] (6.7,1.3) -- (7.7,0.5);
+  \fill[goldbg, rounded corners=5pt] (7.8,2.15) rectangle (11.4,3.25);
+  \draw[goldacc, thick, rounded corners=5pt] (7.8,2.15) rectangle (11.4,3.25);
+  \node[font=\scriptsize\bfseries, align=center] at (9.6,2.7) {$60$ --- Study Center\\twice a week};
+  \fill[frost, rounded corners=5pt] (7.8,-0.05) rectangle (11.4,1.05);
+  \draw[cerulean, thick, rounded corners=5pt] (7.8,-0.05) rectangle (11.4,1.05);
+  \node[font=\scriptsize\bfseries, align=center] at (9.6,0.5) {$60$ --- no\\Study Center};
+  % the results
+  \draw[->, thick, charcoal] (11.5,2.7) -- (12.3,2.7);
+  \draw[->, thick, charcoal] (11.5,0.5) -- (12.3,0.5);
+  \node[font=\scriptsize, align=left, anchor=west] at (12.35,2.7) {$45$ passed\\every class: $75\%$};
+  \node[font=\scriptsize, align=left, anchor=west] at (12.35,0.5) {$33$ passed\\every class: $55\%$};
+  \node[font=\tiny\itshape\color{slate}] at (5.2,0.45) {nobody chose --- chance did};
+\end{tikzpicture}\par\vspace{5pt}
+The $120$ are the \labelbox{2cm}{subjects}\quad attending is the \labelbox{2cm}{treatment}\quad the other $60$ are the \labelbox{2.4cm}{control}\par}
+\\
+& \notesprompt{Experiment or not? Say who decided which group each person was in.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Pull $150$ student records and compare the pass rate of students who used the Study Center to those who did not.}{1.2cm}{Not an experiment --- the students chose (Lesson 1.5).} & \pcell{2}{Ask for volunteers, then let a random number generator send $60$ to the Study Center and $60$ nowhere.}{1.2cm}{An experiment --- the generator decided the groups.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Survey a random sample of pool members about what time they swim and how well they sleep.}{1.2cm}{Not an experiment --- a survey; members chose.} & \pcell{4}{Give $60$ randomly chosen volunteers a new tutoring app and the other $60$ the old worksheet packet. \textbf{Vote first:} is there a control group?}{1.5cm}{An experiment. Yes --- the packet group is the control.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the four principles ───────────────────────────────────────────────
+\mainidea[Four]{Principles} &
+Almost every experiment worth trusting does all four of these. A variable that differs
+between the groups \emph{and} also affects the response is a \textbf{confounding variable}
+--- Lesson 1.5's lurking variable, now \emph{inside} the experiment. \textbf{Randomization
+makes the groups alike before you start; control keeps them alike while you run.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.85]
+  \foreach \i/\cname/\cdesc in {
+      0/Comparison/{at least two groups,\\one of them a\\control group},
+      1/Randomization/{chance decides the\\groups --- not the\\researcher, not the\\subject, not the\\sign-up order},
+      2/Replication/{many units in\\each group, so one\\person's luck\\cannot decide it},
+      3/Control/{every other\\condition the same\\for both groups}} {
+    \fill[frost, rounded corners=4pt] ({\i*2.9},0) rectangle ({\i*2.9+2.7},2.2);
+    \draw[cerulean, thick, rounded corners=4pt] ({\i*2.9},0) rectangle ({\i*2.9+2.7},2.2);
+    \node[font=\scriptsize\bfseries\color{cerulean}] at ({\i*2.9+1.35},1.9) {\cname};
+    \node[font=\tiny, align=center] at ({\i*2.9+1.35},0.85) {\cdesc};
+  }
+\end{tikzpicture}\par}
+\\
+& \textbf{5.} \emph{Cedar Ridge Apartments:} $100$ households volunteer; the manager randomly
+assigns $50$ a weekly recycling reminder and $50$ nothing, then weighs their recycling for a
+month. Each row changes the plan --- name the principle it breaks.
+\wordbank{comparison \;\textbullet\; randomization \;\textbullet\; replication \;\textbullet\; control}
+\footnotesize\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{} X p{2.6cm} @{}}
 \toprule
-\textbf{The plan} & \textbf{Experiment?} & \textbf{Who decided the groups?} \\
+\textbf{Instead, the manager\ldots} & \textbf{Principle broken} \\
 \midrule
-Pull $150$ student records and compare the pass rate of students who used the
-Study Center to those who did not. & \ans{no} & \ans{the students did} \\
-Ask for volunteers, then let a random number generator send $60$ to the Study
-Center and $60$ nowhere. & \ans{yes} & \ans{chance, run by the counselor} \\
-Survey a random sample of pool members about what time they swim and how well
-they sleep. & \ans{no} & \ans{the members did} \\
-Give $60$ randomly chosen volunteers a new tutoring app and the other $60$ the
-old worksheet packet. & \ans{yes} & \ans{chance, run by the researcher} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-In Riverbend's experiment, the experimental units are \ans{the $120$ volunteers},
-the treatment is \ans{attending twice a week}, and the control group is
-\ans{the $60$ told not to attend}.
-
-\vspace{2pt}
-\textit{Lesson 1.5 turned on one word --- \emph{assign}. So does this one. What
-changed is which side of it you are standing on.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{2. The Four Principles of Experimental Design}
-\small
-Almost every experiment worth trusting does all four of these. Fill in the last
-column for Riverbend's design.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} p{2.4cm} X p{4.1cm} @{}}
-\toprule
-\textbf{Principle} & \textbf{What the design must do}
-  & \textbf{How Riverbend does it} \\
-\midrule
-Comparison & Use at least two groups, one of them a control group, so there is
-  something to compare against. & \ans{$60$ attend, $60$ do not} \\
-Randomization & Let \emph{chance} --- not the researcher, not the subject ---
-  decide which group each unit goes in. & \ans{a random generator splits the
-  $120$} \\
-Replication & Put enough units in each group that one person's good or bad
-  luck cannot decide the result. & \ans{$60$ students per group, not $1$} \\
-Control & Keep every \emph{other} condition the same for both groups.
-  & \ans{same quarter, classes, teachers} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-A variable that differs between the groups \emph{and} also affects the response
-is a \textbf{confounding variable}. When one is present you cannot tell whether
-the difference came from the treatment or from it. In Lesson 1.5 you called such
-a variable a \ans{lurking} variable, because it sat outside the study; the
-principle that keeps it out of an experiment is \ans{control}.
-
-\vspace{2pt}
-\textit{Randomization makes the two groups alike \emph{before} you start.
-Control keeps them alike \emph{while} you run.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{3. Blinding and the Placebo Effect}
-\small
-Suppose the Study Center students know they were picked for a special program
-and try harder for that reason alone. Then part of the $20$-point gap is not the
-tutoring --- it is \emph{being chosen}. When a subject responds to the
-\emph{idea} of a treatment rather than to the treatment itself, that is the
-\textbf{placebo effect}. A fake treatment built to look real is a
-\textbf{placebo}.
-
-\vspace{3pt}
-\textbf{Blinding} means somebody involved in the experiment is not told which
-group a subject is in.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.98\linewidth}{@{} X c c @{}}
-\toprule
-\textbf{Version of the design} & \textbf{Students blinded?}
-  & \textbf{Graders blinded?} \\
-\midrule
-Only the treatment group meets after school; the teachers who grade see the
-attendance roster. & \ans{no} & \ans{no} \\
-Only the treatment group meets after school; the teachers who grade are never
-told who attended. & \ans{no} & \ans{yes} \\
-\emph{Both} groups meet after school --- one for tutoring, one for a quiet
-study hall --- and the graders are never told which room was which.
-  & \ans{yes} & \ans{yes} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The quiet study hall in the last row is a \ans{placebo}: it keeps the control
-group from knowing it is the control group. A design in which
-\emph{neither} the subjects nor the people measuring the response know is called
-\ans{double-blind}.
-
-\vspace{2pt}
-\textit{Blinding does not change who got the treatment. It removes the part of
-the response that comes from \emph{knowing}.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{4. Three Ways to Assign the Units}
-\small
-\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=3pt]
-  \item \textbf{Completely randomized design} --- every unit is assigned to a
-        treatment purely by chance. Riverbend's design is this one.
-  \item \textbf{Randomized block design} --- first sort the units into
-        \textbf{blocks} of \emph{similar} units, then randomize \emph{inside}
-        each block.
-  \item \textbf{Matched pairs} --- the block is a pair: two very similar units,
-        one sent to each treatment. Sometimes a unit is paired with
-        \emph{itself}, measured before and after.
-\end{enumerate}
-
-\vspace{3pt}
-The counselor worries that strong and struggling students may not land evenly.
-Of the $120$ volunteers, $80$ passed every class last quarter and $40$ did not,
-so she blocks on that and randomizes inside each block.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.95\linewidth}{@{} X c c c @{}}
-\toprule
-\textbf{Block} & \textbf{In block} & \textbf{To Study Center}
-  & \textbf{To control} \\
-\midrule
-Passed every class last quarter & $80$ & \ans{$40$} & \ans{$40$} \\
-Did not pass every class last quarter & $40$ & \ans{$20$} & \ans{$20$} \\
-\midrule
-Total & $120$ & \ans{$60$} & \ans{$60$} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-Blocking does not erase the difference between strong and struggling students.
-What it does is \ans{guarantee each group gets the same mix of them}.
-
-\vspace{2pt}
-\textit{Block on the variable you are most afraid of. Randomize everything
-else.}
-\end{notesbox}
-
-\boxguard[30]
-\begin{notesbox}{5. What This Experiment Can Claim}
-\small
-The quarter ends. Here is the whole experiment in one table --- fill in the
-percents from your warm-up.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{0.95\linewidth}{@{} X c c c @{}}
-\toprule
-\textbf{Group} & \textbf{Size} & \textbf{Passed every class} & \textbf{Percent} \\
-\midrule
-Study Center (treatment) & $60$ & $45$ & \ans{$75\%$} \\
-No Study Center (control) & $60$ & $33$ & \ans{$55\%$} \\
-\midrule
-All volunteers & $120$ & $78$ & \ans{$65\%$} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The treatment group is higher by \ans{$20$} percentage points. Now compare
-what each of Riverbend's two studies is allowed to say:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} p{4.3cm} p{3.5cm} X @{}}
-\toprule
-\textbf{The study} & \textbf{What it found} & \textbf{What it may claim} \\
-\midrule
-Lesson 1.5 --- watched $150$ records & $65\%$ of users vs.\ $80\%$ of non-users
-  & \ans{an association only --- the students chose} \\
-Lesson 1.6 --- assigned $120$ volunteers & $75\%$ treatment vs.\ $55\%$ control
-  & \ans{the Study Center caused the higher pass rate} \\
-\bottomrule
-\end{tabularx}
-\end{center}
-
-\vspace{3pt}
-The reason fits in one sentence: because \ans{chance assigned the groups}, the
-two groups were alike at the start, so the treatment is the only thing left that
-can explain the gap.
-
-\vspace{2pt}
-\textit{Watching earns you an association. Assigning is what buys the word
-\emph{caused}.}
-\end{notesbox}
-
-\boxguard
-\begin{practicebox}
-\small
-\textbf{Cedar Ridge Apartments.} $100$ households volunteer for a study of
-whether a weekly recycling reminder increases recycling. The manager randomly
-assigns $50$ households to receive the reminder and $50$ to receive nothing,
-then weighs each household's recycling for a month.
-
-\vspace{3pt}
-Experimental units: \ans{the $100$ households} \hfill Treatment:
-\ans{the weekly reminder} \hfill Control: \ans{the $50$ with no reminder}
-
-\vspace{3pt}
-Each row changes the plan. Name the principle the change breaks.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.45}
-\begin{tabularx}{0.98\linewidth}{@{} X p{3.6cm} @{}}
-\toprule
-\textbf{Instead, the manager\dots} & \textbf{Principle broken} \\
-\midrule
-sends the reminder to all $100$ households and checks how much they recycle.
+sends the reminder to all $100$ households.
   & \ans{comparison} \\
-sends it to the first $50$ households that signed up. & \ans{randomization} \\
-sends it to $1$ household and nothing to $1$ other household. & \ans{replication} \\
-sends it to the $50$ households in the renovated building, which just got new
-recycling bins, and nothing to the $50$ in the old building. & \ans{control} \\
+sends it to the first $50$ households that signed up.
+  & \ans{randomization} \\
+sends it to $1$ household and nothing to $1$ other household.
+  & \ans{replication} \\
+sends it to the $50$ in the renovated building, which just got new bins.
+  & \ans{control} \\
 \bottomrule
-\end{tabularx}
-\end{center}
+\end{tabularx}\small
+\\
+& \notesprompt{Now check Riverbend's design.}
+\begin{probgrid}{|Y|Y|}
+\pcell{6}{One short phrase each: how does Riverbend's experiment meet comparison, randomization, replication, and control?}{1.5cm}{60 vs.\ 60; a generator split them; 60 per group; same classes.} & \pcell{7}{In Cedar Ridge's last plan the reminder group also got new bins. Name the confounding variable, and say why the manager cannot tell what caused the extra recycling.}{1.5cm}{The new bins --- the groups differ two ways, so either could explain it.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: blinding and blocking ─────────────────────────────────────────────
+\mainidea[Two refinements]{Blinding \& Blocking} &
+A subject who responds to the \emph{idea} of being treated shows the \textbf{placebo
+effect}; a \textbf{placebo} is a fake treatment built to look real. \textbf{Blinding} hides
+who is in which group from the subjects (\textbf{single-blind}), or from them \emph{and} the
+people scoring the response (\textbf{double-blind}). A \textbf{randomized block design}
+sorts the units into \textbf{blocks} of similar units first, then randomizes \emph{inside}
+each block (\textbf{matched pairs} is the block of two); Riverbend's plain $60/60$ split is a
+\textbf{completely randomized design}.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.74]
+  % left panel: blinding
+  \fill[goldbg, rounded corners=5pt] (0,0) rectangle (5.8,3.2);
+  \draw[goldacc, thick, rounded corners=5pt] (0,0) rectangle (5.8,3.2);
+  \node[font=\footnotesize\bfseries\color{goldacc}] at (2.9,2.85) {BLINDING};
+  \draw[charcoal, thick] (0.4,1.45) rectangle (2.8,2.45);
+  \node[font=\scriptsize\bfseries, align=center] at (1.6,1.95) {Room A\\tutoring};
+  \draw[charcoal, thick] (3.0,1.45) rectangle (5.4,2.45);
+  \node[font=\scriptsize\bfseries, align=center] at (4.2,1.95) {Room B\\quiet study};
+  \node[font=\tiny\itshape, align=center] at (2.9,0.95) {students: not told which room is the program\\graders: not told who sat where};
+  \node[font=\tiny\bfseries\color{goldacc}] at (2.9,0.3) {nobody knows who was picked};
+  % right panel: blocking
+  \fill[frost, rounded corners=5pt] (6.6,0) rectangle (13.0,3.2);
+  \draw[cerulean, thick, rounded corners=5pt] (6.6,0) rectangle (13.0,3.2);
+  \node[font=\footnotesize\bfseries\color{cerulean}] at (9.8,2.85) {BLOCKING ON GRADES};
+  \node[font=\scriptsize\bfseries] at (7.1,1.55) {$120$};
+  \draw[->, thick, charcoal] (7.4,1.75) -- (7.9,2.15);
+  \draw[->, thick, charcoal] (7.4,1.35) -- (7.9,0.95);
+  \draw[charcoal, thick] (8.0,1.85) rectangle (10.3,2.55);
+  \node[font=\scriptsize, align=center] at (9.15,2.2) {passed all:\\$80$};
+  \draw[charcoal, thick] (8.0,0.6) rectangle (10.3,1.3);
+  \node[font=\scriptsize, align=center] at (9.15,0.95) {did not:\\$40$};
+  \draw[->, thick, charcoal] (10.4,2.2) -- (10.9,2.2);
+  \draw[->, thick, charcoal] (10.4,0.95) -- (10.9,0.95);
+  \node[font=\tiny, align=left, anchor=west] at (10.9,2.2) {$?$ Center\\$?$ control};
+  \node[font=\tiny, align=left, anchor=west] at (10.9,0.95) {$?$ Center\\$?$ control};
+  \node[font=\tiny\itshape\color{cerulean}] at (9.8,0.25) {chance splits \emph{inside} each block};
+\end{tikzpicture}\par\vspace{4pt}
+Room B is a \labelbox{2cm}{placebo}\quad neither side knows: \labelbox{2.6cm}{double-blind}\par}
+\\
+& \notesprompt{Who knows, and who is in which block?}
+\begin{probgrid}{|Y|Y|}
+\pcell{8}{Students picked for the Study Center try harder simply \emph{because} they were picked. What is that called, and how does Room~B remove it?}{1.5cm}{The placebo effect. Room B is a placebo --- both groups now meet.} & \pcell{9}{Fill the blocking diagram: of the $80$ who passed everything, how many go to each group? Of the $40$ who did not? Why block instead of trusting chance?}{1.5cm}{80: 40 and 40; 40: 20 and 20; 60 per group. Blocking makes it certain.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — what buys the verb ─────────────────────────────────────
+\mainidea[What buys the verb]{Caused} &
+Watching earns an \textbf{association}. Assigning earns more: because chance built the two
+groups, they were alike \emph{before} the treatment, so the treatment is the only thing left
+that can explain the gap. \textbf{That is what buys the word \emph{caused} --- the design,
+not the size of the gap.}
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.78]
+  % left panel: the watched study
+  \fill[frost, rounded corners=5pt] (0,0) rectangle (5.7,3.0);
+  \draw[cerulean, thick, rounded corners=5pt] (0,0) rectangle (5.7,3.0);
+  \node[font=\scriptsize\bfseries\color{cerulean}] at (2.85,2.7) {LAST QUARTER: WATCHED};
+  \node[font=\tiny, align=center] at (2.85,2.15) {$150$ records; the students \textbf{chose}\\whether to use the Study Center};
+  \node[font=\small\bfseries, align=center] at (2.85,1.35) {users $65\%$\\vs.\ non-users $80\%$};
+  \node[font=\tiny\itshape] at (2.85,0.62) {gap: $15$ points --- the wrong way};
+  \node[font=\tiny\itshape\color{slate}] at (2.85,0.27) {who chose? the already struggling};
+  % right panel: the experiment
+  \fill[goldbg, rounded corners=5pt] (6.5,0) rectangle (12.2,3.0);
+  \draw[goldacc, thick, rounded corners=5pt] (6.5,0) rectangle (12.2,3.0);
+  \node[font=\scriptsize\bfseries\color{goldacc}] at (9.35,2.7) {THIS QUARTER: ASSIGNED};
+  \node[font=\tiny, align=center] at (9.35,2.15) {$120$ volunteers; a \textbf{generator} chose\\who used the Study Center};
+  \node[font=\small\bfseries, align=center] at (9.35,1.35) {treated $75\%$\\vs.\ control $55\%$};
+  \node[font=\tiny\itshape] at (9.35,0.62) {gap: $20$ points};
+  \node[font=\tiny\itshape\color{slate}] at (9.35,0.27) {who chose? nobody --- groups started alike};
+\end{tikzpicture}\par\vspace{4pt}
+Last quarter may claim: \labelbox{2.6cm}{association}\qquad This quarter may claim: \labelbox{2.2cm}{caused}\par}
+\\
+& \textbf{In your own words:} why may this quarter say \emph{caused}?
+\writespace{1.0cm}{Chance built the groups alike --- only the treatment is left to explain the gap.}
+\\
+& \notesprompt{Now settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Last quarter's Study Center users were mostly students who were \emph{already struggling}. Where did the struggling volunteers end up this quarter --- and what does that do to the gap?}{1.3cm}{Chance spread them across both groups.} & \pcell{11}{Write this quarter's conclusion in one sentence for the counselor. Use the verb the design earns.}{1.3cm}{Attending \emph{caused} a higher pass rate: 75\% vs.\ 55\%.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{12}{\textbf{Vote again:} last quarter's \; this quarter's \; neither. Give the reason. A classmate says ``this quarter's, because $20$ points beats $15$.'' Is that the reason?}{1.4cm}{This quarter's --- chance built the groups. No: the design earns the verb.} & \pcell{13}{Suppose last quarter's \emph{watched} study had found $90\%$ vs.\ $55\%$ --- a $35$-point gap, bigger than the experiment's $20$. Would that be the study to believe? Explain.}{1.4cm}{No. A self-chosen gap is inflated by whoever chose; it earns only association.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Harbor Point Swim Times} &
+Last lesson the pool \emph{watched}: $70\%$ of morning swimmers slept $7+$ hours against
+$45\%$ of evening swimmers --- but members chose their times, and $75\%$ of the morning
+swimmers were retired. Now the director \emph{assigns}: $90$ volunteers, a generator, $45$ to
+a reserved $6$~a.m.\ slot and $45$ to $7$~p.m.\ for four weeks. Each keeps a sleep log.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.66, every node/.append style={font=\tiny}]
+  \fill[frost, rounded corners=5pt] (0,0.9) rectangle (2.6,2.3);
+  \draw[cerulean, thick, rounded corners=5pt] (0,0.9) rectangle (2.6,2.3);
+  \node[font=\scriptsize\bfseries\color{cerulean}, align=center] at (1.3,1.6) {$90$\\volunteers};
+  \draw[->, very thick, charcoal] (2.7,1.6) -- (3.7,1.6);
+  \fill[goldbg, rounded corners=5pt] (3.8,0.9) rectangle (6.6,2.3);
+  \draw[goldacc, very thick, rounded corners=5pt] (3.8,0.9) rectangle (6.6,2.3);
+  \node[font=\scriptsize\bfseries\color{goldacc}, align=center] at (5.2,1.6) {random number\\generator};
+  \draw[->, very thick, charcoal] (6.7,1.9) -- (7.7,2.7);
+  \draw[->, very thick, charcoal] (6.7,1.3) -- (7.7,0.5);
+  \fill[goldbg, rounded corners=5pt] (7.8,2.15) rectangle (11.4,3.25);
+  \draw[goldacc, thick, rounded corners=5pt] (7.8,2.15) rectangle (11.4,3.25);
+  \node[font=\scriptsize\bfseries, align=center] at (9.6,2.7) {$45$ --- swim at\\$6$~a.m.};
+  \fill[frost, rounded corners=5pt] (7.8,-0.05) rectangle (11.4,1.05);
+  \draw[cerulean, thick, rounded corners=5pt] (7.8,-0.05) rectangle (11.4,1.05);
+  \node[font=\scriptsize\bfseries, align=center] at (9.6,0.5) {$45$ --- swim at\\$7$~p.m.};
+  \draw[->, thick, charcoal] (11.5,2.7) -- (12.3,2.7);
+  \draw[->, thick, charcoal] (11.5,0.5) -- (12.3,0.5);
+  \node[font=\scriptsize, align=left, anchor=west] at (12.35,2.7) {$27$ averaged\\$7+$ hours};
+  \node[font=\scriptsize, align=left, anchor=west] at (12.35,0.5) {$18$ averaged\\$7+$ hours};
+  \node[font=\tiny\itshape\color{slate}] at (5.2,0.45) {last lesson, watching: $70\%$ vs.\ $45\%$};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{Name the experimental units, the treatment, and the control group. Who decided the slots?}{1.4cm}{The 90 volunteers; the 6 a.m.\ slot; the 45 at 7 p.m. Chance decided.} & \pcell{15}{What percent of each group averaged $7+$ hours? How many points apart?}{1.4cm}{$27/45 = 60\%$; $18/45 = 40\%$. \par $60 - 40 = 20$ points.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{16}{One phrase each: how does this design meet the four principles? Who can be blinded here?}{1.3cm}{Two slots, a generator, 45 each. The log scorers can be.} & \pcell{17}{Watching gave $25$ points; assigning gives $20$. Which is the stronger evidence, and why?}{1.3cm}{The 20 --- the 25 was inflated by retirement.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{3pt}
-With the original plan, the reminder group recycles more. May the manager write
-``the reminder increased recycling''? Say why or why not.
-\ansline{Yes. Chance decided which households got the reminder, so the two groups started}
-\ansline{out alike and everything else was kept the same --- the reminder is what is left.}
-\end{practicebox}
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% started in class in the last ten minutes while the teacher circulates.
 
 \end{document}

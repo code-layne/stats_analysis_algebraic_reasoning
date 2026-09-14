@@ -1,6 +1,17 @@
 %! Observational Studies — Unit 1, Lesson 1.5 — Slides (Beamer)
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% GRADUAL RELEASE deck: title → targets → warm-up → hook (dark, unresolved) → I DO divider
+% (dark) → two or three frames per notes ROW, labelled by row name and problem numbers (the
+% crux frame flagged \sectionlabel[redacc]{}) → Guided Practice (a live surface, un-answered)
+% → spoken debrief with the cold check → close & START THE HOMEWORK, which is the individual
+% practice → close (dark). No group activity, no practice launch, no exit ticket. There is no
+% spoiler rule: the notes frames ARE the direct instruction.
+% \CourseName is NOT defined in beamer — the course name is written literally.
+% saar-beamer does not load tcolorbox (use block) and beamer's itemize takes no [leftmargin=].
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -17,220 +28,356 @@
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{A clean study. A dangerous flyer.}
-  \sectionlabel[goldacc]{hook}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 1.5}
+  By the end of today, I can\ldots
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item explain what makes a study \textbf{observational} --- nobody is \emph{assigned} to a
+          group --- and plan one with the \textbf{statistical cycle}.
+    \item compare two groups that already exist and name the \textbf{explanatory} and
+          \textbf{response} variables.
+    \item describe the result as an \textbf{association}, with no causal verb.
+    \item explain why an association is not \textbf{causation} --- naming a reversed arrow or a
+          \textbf{lurking variable}.
+  \end{itemize}
+  \begin{block}{How today works}
+    Warm-up $\to$ \textbf{notes together, row by row} $\to$ \textbf{one study we work as a
+    class} $\to$ debrief $\to$ \textbf{you start the homework here, alone}.
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{back to the Harbor Point Community Pool}
+  \vspace{0.3cm}
   \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Harbor Point surveys a random sample of 200 members --- nobody left off
-      the list, everybody answers. \textbf{70\%} of the morning swimmers get at
-      least 7 hours of sleep. Only \textbf{45\%} of the evening swimmers do.
-      The director prints a flyer: \emph{``Swim in the morning --- sleep
-      better!''}
+    \begin{minipage}{0.88\textwidth}
+      A random sample of \textbf{200} of the pool's \textbf{1{,}500} members --- \textbf{80}
+      swim in the morning, \textbf{120} in the evening. Everyone answered.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item \textbf{56} of the \textbf{80} morning swimmers get 7+ hours of sleep. Percent?
+        \item \textbf{54} of the \textbf{120} evening swimmers do. Percent?
+        \item The gap in percentage points --- then put the whole sample back together.
+      \end{enumerate}
     \end{minipage}
   \end{center}
-
-  \vspace{0.8cm}
+  \vspace{0.35cm}
   \begin{center}
-    {\color{goldacc}\bfseries There is no bias anywhere in this study. Is the
-    flyer safe?}
+    {\color{cerulean}\bfseries Two groups, two different wholes. 70\%, 45\%, 25 points, 55\%
+    --- these stay on the board all period.}
   \end{center}
 \end{frame}
 
-% ── WHAT IS AN OBSERVATIONAL STUDY ───────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Watching, not assigning}
-  \sectionlabel{what makes it observational}
+% ── HOOK — leave it UNRESOLVED; problem 13 (row 4, Not Causation) settles it ─
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small RANDOM SAMPLE OF 200. EVERYONE ANSWERED. EVERY COUNT CORRECT.}\\[0.7cm]
+    {\color{white}\bfseries\Large 70\% of morning swimmers get 7+ hours of sleep.\\[0.25cm]
+    Only 45\% of evening swimmers do.}\\[0.7cm]
+    {\color{goldacc}\bfseries\large The flyer: ``Swim in the morning --- sleep better!''}\\[0.4cm]
+    {\color{white}\bfseries\large Is the claim safe?}\\[0.35cm]
+    {\color{frostmid}\small Circle \emph{safe} or \emph{not safe} in your hook box. We settle
+    this at problem 13.}
+  \end{center}
+\end{frame}
+}
 
-  \vspace{0.3cm}
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1a. ONE WORD: ASSIGN ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{One word: assign}
+  \sectionlabel{notes row 1 $\cdot$ Assign $\cdot$ problems 1--4}
+  \vspace{4pt}
   \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Observational study}
-        You measure or survey a sample \textbf{without trying to affect
-        anyone}. The groups already exist --- the members chose their own swim
-        time. A survey is one type.
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Watch --- observational}
+        The members already swim when they like. You ask 200 of them when they swim and how
+        they sleep. \textbf{The members decided.}
       \end{block}
     \end{column}
-    \begin{column}{0.46\textwidth}
-      \begin{block}{Not observational}
-        ``Assign half the members to 6~a.m.\ and half to 7~p.m.\ for a month.''
-        Somebody \textbf{put people into groups}. That is an experiment ---
-        next class.
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Assign --- an experiment (1.6)}
+        The director \emph{puts} 100 members at 6 a.m.\ and 100 at 7 p.m.\ for a month.
+        \textbf{The director decided.}
       \end{block}
     \end{column}
   \end{columns}
-
-  \vspace{0.7cm}
+  \vspace{10pt}
   \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \small The whole difference is one word: \textbf{assign}. Every study in
-      Unit 1 so far has been observational.
-    \end{minipage}
+    {\large In an \textbf{observational study} you measure or survey \redink{without assigning}
+    anybody to a group.}\\[6pt]
+    {\small\color{slate} \textbf{A survey is one type of observational study} --- so every
+    study in Unit 1 so far has been one.}
   \end{center}
 \end{frame}
 
-% ── THE CYCLE ────────────────────────────────────────────────────────────────
+% ── ROW 1b. THE TRAP ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Problem 3 --- vote first, then decide}
+  \sectionlabel{notes row 1 $\cdot$ the trap $\cdot$ ask \emph{who decided the groups}}
+  \vspace{6pt}
+  \begin{block}{``Assign half the members to swim at 6 a.m.\ and half at 7 p.m.\ for a month, then compare their sleep.''}
+    Observational? --- It is not a survey, but that is not the question. \redink{Somebody
+    assigned the groups}, so it is an experiment. Lesson 1.6.
+  \end{block}
+  \vspace{8pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{2.} Count how many members walk in before 8 a.m.\ every day for a week.
+          \redink{Observational} --- watching only, no questions asked.
+    \item \textbf{4.} Mail the survey to \emph{every} member --- a census. \redink{Still
+          observational.} A census asks everyone; it still assigns nobody.
+  \end{itemize}
+  \vspace{6pt}
+  \begin{center}
+    {\color{cerulean}\bfseries The test is never ``is it a survey.'' It is \emph{who put each
+    person in their group?}}
+  \end{center}
+\end{frame}
+
+% ── ROW 2. THE CYCLE — PS.DC.2d proper ───────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Planning one with the statistical cycle}
-  \sectionlabel{PS.DC.2d}
-
-  \vspace{0.3cm}
+  \sectionlabel{notes row 2 $\cdot$ The Cycle $\cdot$ problems 5--8 $\cdot$ PS.DC.2d}
+  \vspace{2pt}
   \begin{center}
     \small
     \renewcommand{\arraystretch}{1.35}
     \begin{tabular}{@{} l l @{}}
     \hline
-    \textbf{Formulate} & Do morning swimmers sleep more than evening
-      swimmers? \\
-    \textbf{Collect} & Random sample of 200 from the full 1,500-member list \\
-    \textbf{Represent} & Two-way table of swim time vs.\ sleep, one percent
-      per group \\
-    \textbf{Analyze \& report} & Compare 70\% to 45\%; state the gap in
-      context \\
+    \textbf{Stage} & \textbf{What the pool study does} \\
+    \hline
+    1 Formulate & Do morning swimmers report more sleep than evening swimmers? \\
+    2 Collect   & Frame: all 1{,}500 members. Random sample of 200; all 200 answered. \\
+    3 Represent & A two-way table: swim time by sleep (7+ hrs or fewer). \\
+    4 Analyze   & 70\% vs.\ 45\% --- a 25-point gap, morning higher. \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Nowhere in the plan do we tell a single member
-    when to swim.}
-  \end{center}
+  \vspace{8pt}
+  \begin{block}{Problem 8 --- what the plan never says}
+    Nowhere does anybody tell a member \emph{when to swim}. \redink{That one absence is the
+    whole definition}, written as a plan. Lesson 1.3's sampling plan and Lesson 1.4's bias
+    check are both still standing.
+  \end{block}
 \end{frame}
 
-% ── THE TABLE ────────────────────────────────────────────────────────────────
+% ── ROW 3. TWO VARIABLES ─────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Two groups that built themselves}
-  \sectionlabel{the whole study in one table}
-
-  \vspace{0.3cm}
+  \sectionlabel{notes row 3 $\cdot$ Two Variables $\cdot$ problems 9--10}
+  \vspace{2pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.35}
-    \begin{tabular}{@{} l c c c c @{}}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c c @{}}
     \hline
-     & \textbf{At least 7 hrs} & \textbf{Fewer than 7} & \textbf{Total}
-      & \textbf{Percent} \\
+     & \textbf{7+ hrs} & \textbf{Fewer} & \textbf{Total} \\
     \hline
-    Morning swimmers & 56 & 24 & 80 & \textbf{70\%} \\
-    Evening swimmers & 54 & 66 & 120 & \textbf{45\%} \\
+    Morning swimmers & 56 & 24 & \textbf{80} \\
+    Evening swimmers & 54 & 66 & \textbf{120} \\
     \hline
-    Total & 110 & 90 & 200 & 55\% \\
+    Total & 110 & 90 & \textbf{200} \\
     \hline
     \end{tabular}
   \end{center}
+  \vspace{6pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{9.} $56/80 =$ \redink{70\%} \quad $54/120 =$ \redink{45\%} \quad a
+          \redink{25-point} gap, morning higher. \emph{Two counts, two different wholes.}
+    \item \textbf{10.} Pooled: $110/200 =$ \redink{55\%}, so about \redink{825} of all 1{,}500
+          members --- \emph{an estimate}.
+  \end{itemize}
+  \vspace{6pt}
+  \begin{block}{The arrow in the claim}
+    Tail = the \textbf{explanatory} variable (swim time). Head = the \textbf{response}
+    variable (7+ hours of sleep). They are \textbf{associated}: knowing the group changes what
+    you expect. \redink{Nobody built these groups --- the members chose their own swim time.}
+  \end{block}
+\end{frame}
 
-  \vspace{0.6cm}
+% ── ROW 4a. THE CRUX — three stories ─────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Three stories fit this one table}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Not Causation $\cdot$ problems 11--14 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \begin{block}{1 The claim}
+        morning swim $\to$ more sleep
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{block}{2 Backwards}
+        more sleep $\to$ morning swim. \emph{Who can get up at 6 a.m.?} (problem 11)
+      \end{block}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \begin{block}{3 Lurking}
+        \textbf{retired?} moves both. \redink{60/80 = 75\%} of morning vs.\ \redink{18/120 =
+        15\%} of evening (problem 12)
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
   \begin{center}
-    A gap of \textbf{25 percentage points} --- and it is not bias. The sample
-    was random and everyone answered.
+    {\large The 25-point gap is real, and it is \redink{not bias} --- the sample was random and
+    everyone answered.}\\[6pt]
+    {\small\color{slate} A \textbf{lurking variable} sits \emph{outside} the study and affects
+    \emph{both} variables in it. Retirement was never in the table.}
   \end{center}
 \end{frame}
 
-% ── THREE STORIES ────────────────────────────────────────────────────────────
+% ── ROW 4b. THE VOTE AGAIN ───────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Three stories fit this table}
-  \sectionlabel[goldacc]{association is not causation}
-
-  \vspace{0.4cm}
+  \ceruleanheader{Problem 13 --- vote again: is the flyer safe?}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ the crux settles here}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{``Morning swimmers report more sleep.''}
+        \redink{Supported.} It is what was seen --- both percents and the gap.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{``Swimming in the morning makes you sleep longer.''}
+        \redink{Not supported.} \emph{Makes} is causation, and three stories fit the table.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{block}{Problem 14 --- ``If the evening swimmers switched to mornings, they would sleep more.''}
+    \redink{Not supported either.} A prediction about \emph{switching groups} is a causal claim
+    in different clothes --- nobody assigned anyone to switch.
+  \end{block}
+  \vspace{4pt}
   \begin{center}
-    \begin{minipage}{0.88\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item \textbf{The claim:} morning swim $\rightarrow$ more sleep.
-        \item \textbf{The arrow backwards:} people who already sleep well are
-              the ones who can get up at 6~a.m.
-        \item \textbf{Something else moves both:} 75\% of the morning swimmers
-              are retired --- against 15\% of the evening swimmers.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    {\color{goldacc}\bfseries A variable outside the study that moves both
-    variables in it is a lurking variable.}
+    {\color{cerulean}\bfseries An observational study can show \emph{association}. It cannot
+    show \emph{causation}, because nobody assigned the groups.}\\[4pt]
+    {\small\color{slate} Banned verbs: \emph{causes, makes, raises, improves, helps, hurts.}}
   \end{center}
 \end{frame}
 
-% ── WHAT YOU MAY CLAIM ───────────────────────────────────────────────────────
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{What you may say, and what you may not}
-  \sectionlabel{writing it up}
+  \ceruleanheader{Guided Practice: the Riverbend Study Center}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 15--18 $\cdot$ you hold the pen}
+  Riverbend has \textbf{900} students and a Study Center anyone may walk into. A counselor
+  samples \textbf{150} records at random. Of the \textbf{60} who used it weekly, \textbf{39}
+  passed every class; of the \textbf{90} who never did, \textbf{72} did.
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[15.] Observational? Who decided the groups? Explanatory and response variables?
+    \item[16.] Both pass rates and the gap in percentage points. Which group is higher?
+    \item[17.] Write the finding as an \emph{association} sentence --- no causal verb. Does it
+          support the memo?
+    \item[18.] Last quarter, before the Center opened: 45 of the 60 users had already failed a
+          class; 9 of the 90 non-users had. Percents? Which story is this?
+  \end{itemize}
+  \begin{block}{The principal's memo}
+    \emph{``The Study Center is hurting grades. Shut it down.''} --- Which came first?
+  \end{block}
+\end{frame}
 
-  \vspace{0.3cm}
+% ── GUIDED PRACTICE problem 18 — shown AFTER the class has worked it ─────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The arrow was backwards the whole time}
+  \sectionlabel[goldacc]{Guided Practice, problem 18 $\cdot$ shown after you have worked it}
+  \vspace{4pt}
   \begin{center}
     \small
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabular}{@{} l c @{}}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{} l c c @{}}
     \hline
-    \textbf{Statement} & \textbf{Supported?} \\
+    & \textbf{Passed every class} & \textbf{Had already failed a class \emph{last} quarter} \\
     \hline
-    Morning swimmers report more sleep than evening swimmers & \textbf{yes} \\
-    Swimming in the morning makes a person sleep longer & \textbf{no} \\
-    If evening swimmers switched, they would sleep more & \textbf{no} \\
+    Used the Center (60)  & $39/60 = 65\%$ & $45/60 = 75\%$ \\
+    Never used it (90)    & $72/90 = 80\%$ & $9/90 = 10\%$ \\
     \hline
     \end{tabular}
   \end{center}
-
-  \vspace{0.6cm}
-  \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \small Report both percents and the gap, and say the variables are
-      \textbf{associated}. Never write \emph{causes}, \emph{makes},
-      \emph{raises}, or \emph{improves}.
-    \end{minipage}
-  \end{center}
+  \vspace{8pt}
+  \begin{block}{What the study supports}
+    \emph{``At Riverbend, 65\% of Study Center users passed every class against 80\% of
+    non-users --- using the Center is \textbf{associated} with a lower pass rate.''}
+    \redink{The memo is not supported.} The low grades sent the students to the Center; the
+    Center did not lower the grades. \textbf{It looks worse than it is.}
+  \end{block}
 \end{frame}
 
-% ── THE ACTIVITY SETUP ───────────────────────────────────────────────────────
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Your turn: cancel the Study Center?}
-  \sectionlabel{group activity}
+  \ceruleanheader{Debrief: three stories, one table}
+  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{4pt}
+    \item The claim, the arrow backwards, retirement --- say the sentence. The study cannot
+          tell them apart.
+    \item Two problem-17 answers side by side. The difference is one verb.
+    \item Problem 18: which came first, and does the Center look better or worse than it is?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Bayside Middle School. Of the \textbf{150} students in band, \textbf{90} earned an A or B
+    in math; of the \textbf{600} not in band, \textbf{240} did. The principal concludes band
+    \emph{raises} math grades and wants it required. \textbf{Is the principal right?}
+    \quad {\small\color{slate}(60\% vs.\ 40\%, a 20-point gap --- an association. Nobody was
+    placed in band; students signed up.)}
+  \end{block}
+\end{frame}
 
-  \vspace{0.4cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      Riverbend samples 150 student records. Of the 60 who used the after-school
-      Study Center, \textbf{65\%} passed every class. Of the 90 who never used
-      it, \textbf{80\%} did. The principal drafts a memo: \emph{``The Study
-      Center is hurting grades. Shut it down.''}
-    \end{minipage}
-  \end{center}
-
-  \vspace{0.8cm}
-  \begin{center}
-    {\color{cerulean}\bfseries Who walks into a study center in the first
-    place?}
-  \end{center}
+% ── YOU DO — the homework is the individual practice, started in class ───────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: start the homework}
+  \sectionlabel[goldacc]{Last 10 minutes $\cdot$ on your own $\cdot$ finish it at home}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Millbrook Public Library} --- 1{,}200 card holders, an unbiased phone sample
+          of 240, everyone reached. Does the Summer Reading Program work?
+    \item Name the study and the two variables; both rates with \emph{two different}
+          denominators; pool the sample and scale it to 1{,}200.
+    \item Two sentences on the same data --- decide which one the study supports, and why.
+    \item The previous summer's records, and the direction of the error.
+    \item \textbf{No bias at all --- and still no causation.} Explain why.
+  \end{itemize}
+  \begin{block}{Silent and alone --- I am circulating. Packet pages, scored out of 12, due at the start of the first class after two study halls.}
+    Start with \textbf{1, 2, and 4}. Item 6 is the one I am reading over your shoulder --- if
+    your answer is ``the study was biased,'' flag me before you leave.
+  \end{block}
 \end{frame}
 
 % ── CLOSE ────────────────────────────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \ceruleanheader{Today in one line}
-  \sectionlabel[goldacc]{exit ticket next}
-
-  \vspace{0.5cm}
-  \begin{center}
-    \begin{minipage}{0.86\textwidth}
-      \begin{itemize}
-        \setlength{\itemsep}{9pt}
-        \item An \textbf{observational study} watches. Nobody is
-              \textbf{assigned} to a group.
-        \item You plan it with the same \textbf{statistical cycle} --- what
-              changes is what you may conclude.
-        \item Two variables moving together are \textbf{associated}. That is
-              all you may report.
-        \item An association has three explanations: the claim, the arrow
-              backwards, or a \textbf{lurking variable}.
-        \item \textbf{No bias does not mean causation.} A clean study still
-              cannot tell you why.
-      \end{itemize}
-    \end{minipage}
-  \end{center}
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large In an observational study you watch --- you do not assign. A
+    random sample, a 100\% response rate, and perfect arithmetic still do not buy you the word
+    \emph{causes}.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 1.6 --- \emph{Experimental Design}. Today nobody
+    assigned the groups, so three stories fit one table. Next time we assign them ourselves.}
+  \end{minipage}
 \end{frame}
+}
 
 \end{document}

@@ -1,42 +1,66 @@
 %! Project: Design and Conduct a Survey — Unit 1, Lesson 1.8 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+% PILOT SHAPE (2026-09-06): modeled on AP Statistics lesson 1.4 minus its AP Practice page.
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, started in class, and it is SCORED, so its cell is a \blank{}, never NA. This is
+% the unit's project lesson: the Guided Practice row of the notes is the class's own survey,
+% and the homework's last item is the project deliverable (the four-sentence report).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 1}{Lesson 1.8 \quad Project: Design and Conduct a Survey}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 1}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.8 \quad Project: Design and Conduct a Survey}}
-\end{center}
-
-\vspace{0.22in}
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (AFDA.DA.2d, 2h, 2i, 2j; PS.DC.2d) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} plan a survey through all four stages of the
-        \textbf{statistical cycle}.
-  \item \ldots{} build a \textbf{survey instrument} whose items are neutral and
-        whose choices can be counted.
-  \item \ldots{} \textbf{collect} real data from a real sample and organize it
-        into a frequency table.
-  \item \ldots{} choose and complete a \textbf{visual representation} that fits
-        categorical data.
-  \item \ldots{} report a conclusion \emph{in context} and judge its
-        \textbf{validity} --- what my design does and does not let me claim.
+  \item \ldots{} plan a survey through the four stages of the \textbf{statistical cycle}
+        and name what each stage hands in.
+  \item \ldots{} write a \textbf{survey instrument} whose \textbf{closed-response items}
+        are neutral, ask one thing, and offer choices that cover everyone without
+        overlapping.
+  \item \ldots{} turn a tally into \textbf{relative frequencies} and read them off a
+        \textbf{bar graph}.
+  \item \ldots{} report a conclusion about the people my design actually covers ---
+        and explain why a \textbf{convenience sample} that happens to agree with a
+        chance sample has proved nothing.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -49,11 +73,17 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & A finished study: counts, percents, and a whole school & \blank{1.2cm} \\
-2 & Guided Notes   & The cycle, the instrument, the picture, the report & \blank{1.2cm} \\
-3 & Group Activity & Your class runs its own survey, start to finish & \blank{1.2cm} \\
-4 & Exit Ticket    & One Bayside homeroom speaks for $750$ students & \blank{1.2cm} \\
-5 & Homework       & Millbrook Library: the phone survey and the clipboard & \blank{1.2cm} \\
+1 & Warm-Up & The Student Council's finished survey: a percent, a prediction, and the
+             two groups hiding in the paragraph & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & The cycle as a checklist; four rules for an instrument;
+             counts to percents to a bar graph; whom a report may describe ---
+             then the survey this class runs on itself & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, started in class. Packet pages are the default; a
+% Desmos activity may replace them on a given day, decided at Close & Assign. The row and its
+% score cell never change.
+3 & Homework & Millbrook Public Library: a phone survey and a front-desk clipboard ---
+             then your class's own four-sentence report ---
+             \textbf{scored, started in class, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -61,17 +91,16 @@
 
 \vspace{0.14in}
 
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
 \small
-\textbf{This is the unit, run forwards.} Every lesson since 1.1 took apart a
-study somebody else built; today you build one. \textbf{Formulate} a question
-that names a group and a measurement, \textbf{collect} by choosing a sample and
-writing a neutral instrument, \textbf{represent} the answers in a frequency
-table and a bar graph, and \textbf{analyze and report} in context. The last
-step is the one that decides your grade: a conclusion may only describe the
-people your sample actually covers. Your class is a \textbf{convenience
-sample}, so say so --- naming the limit is part of the answer, not an
-apology for it.
+A \textbf{relative frequency} is a count divided by the total, and the four add to $100\%$
+only when the \textbf{instrument} gave every person exactly one box to check. A sample percent
+may be scaled to the population only when \textbf{chance} chose the sample --- ask \emph{who
+chose these people?} before you multiply. \textbf{Watch out:} a class surveying itself is a
+\textbf{convenience sample}, and landing near the council's number is luck, not evidence ---
+the same class could have missed by twenty points and nobody would know. Name the limit in
+your report; that is part of the answer, not an apology.
 \end{remindbox}
 
 \end{document}
