@@ -409,15 +409,20 @@ builds all four. Both documents are standalone handouts with no cover behind the
 `\parthead{Part …}` strips and `\setlength{\workrowsep}{5pt}` --- they are assessment family,
 not lesson components, so the 12pt student-component rule does not reach them.
 
-- **The sample quiz** is a parallel form of the real quiz --- same blueprint, different numbers
-  and contexts, reshuffled vocabulary letters --- and carries the unit tests' four parts scaled
+- **The quiz ships as two parallel forms**, exactly as the unit tests do: `sample_quiz/` is the
+  study copy students get beforehand, `actual_quiz/` is the graded form, and the two share a
+  blueprint while differing in every number, context, vocabulary letter, and correct multiple-choice
+  letter. **Only `sample_quiz` is ever handed out as study material.** Both carry the unit tests' four parts scaled
   down: **A Vocabulary (matching) · B Multiple Choice · C Short Answer & Computation · D
   Extended Response**, with the crux in D. Unit 1's set is $19$ items for $50$ points
   ($8 / 12 / 20 / 10$), $4$ pages. **Part B needs an `Answer:` `\blank{}` slot on each item**:
   the unit tests park their MC answers in a `teachernote` on page 2 of `unit_cover_key/`, and a
   standalone quiz has no cover to park them on. Sample only the lessons the quiz covers, and
-  use **fresh contexts** --- Riverbend, Lakeside, Harbor Point, Northgate, Cedar Ridge, and
-  Bayside are all spent in unit 1's lessons and its unit test.
+  use **fresh contexts for each form** --- Riverbend, Lakeside, Harbor Point, Northgate, Cedar
+  Ridge, and Bayside are spent in unit 1's lessons and its unit test; Millbrook and Stonebridge
+  in quiz 1's sample form; Westbrook and Clearwater in its graded form. **Author the graded form
+  by mirroring the sample's file structure exactly** --- same parts, same guards, same answer-slot
+  order --- so its pagination behaves the same way and needs no separate guard sweep.
 - **The study packet** is the review handout: a *terms* reference table (definitions printed in
   both copies, so nothing can drift), a *worked moves* section --- one box per skill the quiz
   tests, each ending in the target misconception named as a trap --- and a *practice* section of

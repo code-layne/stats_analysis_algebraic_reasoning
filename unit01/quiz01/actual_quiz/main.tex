@@ -1,0 +1,345 @@
+%! Unit 1: Asking Questions with Data: Study Design — Quiz 1 (Lessons 1.0–1.3) — blank
+% THE REAL QUIZ. Parallel form of unit01/quiz01/sample_quiz: same blueprint and same ideas,
+% different numbers and contexts, reshuffled vocabulary letters, different correct MC letters.
+% Structure is deliberately identical to the sample quiz file — same parts, same guards, same
+% slot order — so its pagination behaves the same way.
+%
+% Standalone assessment on the unit-test model (LESSON_SHAPE.md section 6): 10pt,
+% \parthead{Part …} strips, \workrowsep 5pt identical in blank and key, \namedateperiod kept
+% because it is taken in a testing setting. Merged into no packet. THIS IS THE GRADED FORM —
+% it is built by unit01/quiz01/Makefile like the others, but it must never be handed out as
+% study material the way sample_quiz is.
+%
+% BLUEPRINT — 19 items, 50 points, Lessons 1.0–1.3 only:
+%   A vocabulary matching  8 items ×1 =  8   (1.0 ×2, 1.1 ×1, 1.2 ×3, 1.3 ×2)
+%   B multiple choice      6 items ×2 = 12   (1.0, 1.1, 1.2 ×2, 1.3 ×2)
+%   C short answer         4 items ×5 = 20   (C1 1.0/1.1 · C2 1.1 · C3 1.2 · C4 1.3)
+%   D extended response    1 item ×10 = 10   (1.3 crux + 1.2 parameter/statistic)
+% Contexts are new again: Westbrook High School (840) and Clearwater Aquatic Center (1,400).
+% Riverbend, Lakeside, Harbor Point, Northgate, Cedar Ridge, and Bayside are spent in the
+% lessons and the unit test; Millbrook and Stonebridge are spent in the sample quiz.
+% Every number verified in pure Python before authoring.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit01/quiz01/actual_quiz/main.tex \
+%       unit01/quiz01/actual_quiz_key/main.tex unit01/quiz01/actual_quiz_key/answers.json
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+
+% Work blocks on a quiz need handwriting room, not typeset spacing. This moves the blank and
+% the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Quiz 1 --- Lessons 1.0--1.3}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{Quiz 1 covers Lessons 1.0--1.3} --- data and variables, the data cycle, populations and
+samples, and the four sampling techniques. \textbf{No notes and no calculator sharing.} Show
+your work where a computation is asked for; an answer with no work earns no credit. Every
+answer that interprets a number must name the group it describes.
+\textbf{50 points:} Part A $8$, Part B $12$, Part C $20$, Part D $10$.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part A --- Vocabulary \hfill 8 questions, 1 point each}
+
+\small
+Write the letter of the matching description next to each term. Each letter is used once.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item \blank{0.8cm} Individual
+  \item \blank{0.8cm} Quantitative variable
+  \item \blank{0.8cm} Statistical question
+  \item \blank{0.8cm} Sample
+  \item \blank{0.8cm} Parameter
+  \item \blank{0.8cm} Statistic
+  \item \blank{0.8cm} Sampling frame
+  \item \blank{0.8cm} Stratified sample
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item A number computed from the sample. It changes from sample to sample.
+  \item The part of the population data were actually collected from.
+  \item A variable that records a measured amount with units, summarized with a mean.
+  \item The list of individuals a sample can actually be drawn from.
+  \item A question whose answers are expected to vary from individual to individual.
+  \item The population is split into groups that are alike inside, and some are chosen at
+        random from every group.
+  \item One person or object that data are collected about --- one row of a data table.
+  \item A number that describes the population. Usually unknown.
+\end{enumerate}
+\end{minipage}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[8]
+\parthead{Part B --- Multiple Choice \hfill 6 questions, 2 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=9]
+
+\item Westbrook High School records each student's \textbf{locker number}. This variable is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item categorical, because the numbers are labels for lockers.
+  \item quantitative, because the values are numbers.
+  \item quantitative, because the lockers can be put in order.
+  \item neither, because a locker number is not really data.
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\item Which of these is a \textbf{statistical question}?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item How many seats are in the Westbrook auditorium?
+  \item Did the Westbrook team win its last game?
+  \item How many hours do Westbrook students sleep on a school night?
+  \item How many hours did I sleep last night?
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\item Clearwater Aquatic Center's own membership records show that \textbf{exactly $30\%$ of
+all $1{,}400$ members} take a class. That $30\%$ is a
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item statistic, because it is written as a percent.
+  \item statistic, because the center had to look it up.
+  \item parameter, because the number came out round.
+  \item parameter, because it describes every member of the population.
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\item Two different random samples of $70$ Clearwater members give $40\%$ and $34\%$ taking a
+class. This result shows
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item sampling variability --- the parameter did not move, and both are honest estimates.
+  \item that one of the two samples must have been collected incorrectly.
+  \item that the parameter changed between the two surveys.
+  \item that the true value must be exactly $37\%$.
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\item A researcher stands at the Clearwater front desk on a Saturday morning and surveys
+whoever walks in. His sample is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item a cluster sample, because he surveyed one whole morning.
+  \item a convenience sample, because a member who never comes on Saturday could not be chosen.
+  \item a systematic sample, because members arrive in order.
+  \item a simple random sample, because he did not pick favorites.
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\item Which sentence states the difference between a \textbf{stratum} and a \textbf{cluster}?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item A stratum is chosen by chance; a cluster is chosen by convenience.
+  \item There is no difference --- both mean a group inside the population.
+  \item A stratum is alike inside and differs from other strata; a cluster is meant to be a
+        small mix of the whole.
+  \item A stratum is a small mix of the whole; a cluster is alike inside.
+\end{enumerate}
+\hfill \textbf{Answer:} \blank{0.9cm}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\newpage
+\parthead{Part C --- Short Answer \& Computation \hfill 4 questions, 5 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=15]
+
+% ---------------------------------------------------------------- C1 (1.0 / 1.1)
+\item \textbf{Westbrook High School} has $840$ students. For each student the office records
+locker number, minutes spent at practice yesterday, whether the student takes the bus, and
+preferred field-trip destination.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \blank{6.2cm}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Locker number & \blank{4.4cm} \\
+Minutes at practice yesterday & \blank{4.4cm} \\
+Takes the bus (yes / no) & \blank{4.4cm} \\
+Preferred field-trip destination & \blank{4.4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) The office's first draft question is \emph{``How long is practice?''} Explain why that is
+not a statistical question, then rewrite it so that it is.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- C2 (1.1)
+\boxguard[20]
+\item \textbf{Westbrook's student council} asks $50$ students to name a preferred field-trip
+destination. The counts are below.
+
+\vspace{2pt}
+(a) Complete the relative frequency column as a percent.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Destination} & \textbf{Frequency} & \textbf{Relative frequency} \\
+\midrule
+Science museum & $22$ & \blank{2.6cm} \\
+Aquarium       & $14$ & \blank{2.6cm} \\
+State capitol  & $9$  & \blank{2.6cm} \\
+Theater        & $5$  & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Write a \textbf{conclusion in context} about the most popular destination, naming the group
+it applies to.
+
+\par\writeline
+\par\writeline
+
+\vspace{2pt}
+(c) The council writes: \emph{``Most Westbrook students want the science museum.''} Give the
+two things that are wrong with that sentence.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- C3 (1.2)
+\boxguard[18]
+\item \textbf{Clearwater Aquatic Center} has $1{,}400$ members. The manager surveys $70$
+members chosen at random; $28$ of them take a class.
+
+\vspace{2pt}
+(a) Population: \blank{4.4cm} \quad Sample size: \blank{1.8cm}
+
+\vspace{3pt}
+Sample: \blank{9.0cm}
+
+\vspace{3pt}
+(b) What percent of the sample takes a class, and about how many of all $1{,}400$ members does
+that estimate?
+
+\begin{work}
+  \dfrac{28}{70} &= 0.40 = 40\% \\
+  0.40 \times 1400 &= 560 \text{ members}
+\end{work}
+
+(c) Is the $40\%$ a parameter or a statistic? Say how you know.
+
+\par\writeline
+
+(d) Name one \textbf{constraint} that keeps the manager from taking a census of all $1{,}400$
+members.
+
+\par\writeline
+
+% ---------------------------------------------------------------- C4 (1.3)
+\newpage
+\item \textbf{Westbrook High School} has $840$ students, a numbered list of all of them, and
+$30$ homerooms of $28$ students each.
+
+\vspace{2pt}
+(a) Name the sampling technique used in each row.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the researcher did} & \textbf{Technique} \\
+\midrule
+Put all $840$ student numbers in a generator and drew $42$. & \blank{3.2cm} \\
+Split the school by grade and drew students at random from every grade, in proportion. &
+  \blank{3.2cm} \\
+Ordered the list and took every $20$th student after a random start. & \blank{3.2cm} \\
+Drew $2$ homerooms at random and surveyed everyone in them. & \blank{3.2cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) For a \textbf{systematic} sample of $42$ students, show why $k = 20$, then list the first
+four students chosen from a random start of $6$.
+
+\begin{work}
+  k &= N \div n = 840 \div 42 = 20
+\end{work}
+
+\vspace{-2pt}
+\blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm}
+
+\vspace{4pt}
+(c) For a \textbf{simple random} sample, a generator gives $517$, $926$, $304$, $688$, $150$.
+One of those numbers cannot be used. Which one, and why?
+
+\par\writeline
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[10]
+\parthead{Part D --- Extended Response \hfill 1 question, 10 points}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=19]
+
+\item \textbf{Westbrook} ($840$ students) wants to know whether students would use a Saturday
+tutoring session. The office has a numbered list of all $840$ students, the four grades are
+believed to differ a lot in their answers, and the $30$ homerooms are \textbf{built by grade}.
+
+\vspace{2pt}
+(a) Choose \textbf{one} of the four sampling techniques and justify it from what this context
+allows. Your reason must name \emph{how the groups are built}.
+
+\par\writeline
+\par\writeline
+
+\vspace{2pt}
+(b) Instead, a teacher draws $2$ homerooms at random and surveys all $56$ students in them;
+$42$ say yes. Show her two computations: the percent of her sample saying yes, and the number
+of all $840$ students that percent points to.
+
+\begin{work}
+  \dfrac{42}{56} &= 0.75 = 75\% \\
+  0.75 \times 840 &= 630 \text{ students}
+\end{work}
+
+(c) Her arithmetic is correct. Explain what is wrong with her report anyway, and state what she
+\emph{is} allowed to say.
+
+\par\writeline
+\par\writeline
+\par\writeline
+
+\vspace{2pt}
+(d) Is her $75\%$ a parameter or a statistic? Name one change to her method that would make it
+an estimate worth trusting.
+
+\par\writeline
+\par\writeline
+
+\end{enumerate}
+\normalsize
+
+\end{document}

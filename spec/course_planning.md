@@ -25,9 +25,9 @@ park them on. **The study packet** is terms table → five worked moves (each cl
 lesson's target misconception as a named trap) → keyed practice, one item per lesson → readiness
 checklist; its worked examples use `\[ \]` displays, never `work` blocks, which are invisible
 without `-key`. Every number verified in pure Python before authoring. Two parity traps found,
-both now in the profile — see Gotchas. **Next: the real Quiz 1 as a parallel form of the sample,
-if the user wants one; the lesson conversions (1.1, then 1.0 and 1.5–1.8) are still the main
-queue.**
+both now in the profile — see Gotchas. **The graded `actual_quiz` was added the same day, on user request**, mirroring the sample's
+file structure exactly so its pagination needed no separate guard sweep — it came out 4/4 on the
+first build. **Next: the lesson conversions (1.1, then 1.0 and 1.5–1.8) are the main queue.**
 
 **Previous run (2026-09-07) — LESSON 1.4 REGENERATED IN THE PILOT SHAPE** (`/lesson-planning
 regenerate lesson 1.4`): the pre-EFFL legacy lesson (5 notes sections + activity + exit ticket)
@@ -666,12 +666,16 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    6 pages; `\setlength{\workrowsep}{5pt}` in every test preamble; unit cover pair with scoring on
    the key's page 2). The tests were untouched by every redesign.
 6. **A course-wide final (`finals/`) is still not scaffolded.** Wait for more units.
-6a. **Quiz 1 for lessons 1.0–1.3 is authored** (`unit01/quiz01/`, 2026-09-14): study packet +
-   sample quiz, both keyed and page-for-page verified. **The real Quiz 1 does not exist yet** —
-   author it as a parallel form of the sample (same blueprint, different numbers and contexts,
-   reshuffled vocabulary letters) as `actual_quiz/` + `actual_quiz_key/` in the same directory
-   when the user asks; the Makefile globs `*/main.tex`, so it needs no build change. The same
-   `quizNN/` pattern covers a second unit-1 quiz for 1.4–1.8 and mid-unit quizzes in units 2–8.
+6a. **Quiz 1 for lessons 1.0–1.3 is COMPLETE** (`unit01/quiz01/`, 2026-09-14): study packet
+   (5pp), sample quiz (4pp), and the graded `actual_quiz` (4pp), each with its generated key and
+   each verified page-for-page by per-page heading. The two quiz forms share a blueprint and
+   differ in every number, context, vocabulary letter, and correct MC letter — sample runs on
+   Millbrook / Stonebridge, graded on **Westbrook** ($840$ students, $30$ homerooms of $28$) and
+   **Clearwater Aquatic Center** ($1{,}400$ members). Graded Part D: $42/56 = 75\%$ and
+   $0.75 \times 840 = 630$, correct arithmetic on two homerooms that are one or two grades.
+   **Only `sample_quiz` is handed out.** The same `quizNN/` pattern covers a second unit-1 quiz
+   for 1.4–1.8 and mid-unit quizzes in units 2–8; the Makefile globs `*/main.tex`, so adding a
+   form needs no build change.
 7. Merged to `main`: lesson-1.0 + palette as PR #3; 1.1 as PR #4; 1.2 as PR #5; 1.3 as PR #6;
    1.4 as PR #7; 1.5 as PR #8; 1.6 as PR #9; the breakdown doc as PR #10; 1.7 as PR #11; 1.8 as
    PR #12; the EFFL port as PR #15; the 1.0 EFFL regen as PR #16; the gradual-release restoration
