@@ -1,0 +1,859 @@
+%! Unit 1: Asking Questions with Data: Study Design — Unit 1 Test Study Guide (Lessons 1.0–1.8) — blank
+% Standalone review handout for the Unit 1 Test. Authored on the quiz-1 study-packet model
+% (unit01/quiz01/study_packet: 10pt, \parthead strips, \workrowsep 5pt identical in blank and
+% key), scaled from lessons 1.0–1.3 up to the whole unit. It is NOT a lesson component and is
+% merged into no packet. It keeps \namedateperiod: it is a standalone handout with no cover.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit01/study_guide/study_guide/main.tex \
+%       unit01/study_guide/study_guide_key/main.tex unit01/study_guide/study_guide_key/answers.json
+% Re-run it after every edit to this file.
+%
+% Part 2's worked examples are printed in BOTH copies — they are the study material, so they
+% use ordinary \[ \] displays and plain tables, never a `work` block (a work block is invisible
+% without -key). Part 3's prose answers are one \par\writeline per line, never \writelines{n}.
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+
+% Work blocks in the practice section need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
+% Part-divider strip (same macro the unit tests define)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Unit 1 Test Study Guide}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This guide is how you study for the Unit 1 Test.} The test covers
+\textbf{all of Unit 1, Lessons 1.0--1.8} --- variables and statistical questions, populations
+and samples, sampling techniques, bias, observational studies, experiments, choosing a design
+and a collection method, and building a survey. It has \textbf{33 items for 100 points}:
+Part A vocabulary matching $14$ (two sets of $7$), Part B multiple choice $16$ ($8 \times 2$),
+Part C short answer and computation $40$ ($8 \times 5$), Part D extended response $30$
+($3 \times 10$).
+\textbf{How answers are scored:} naming the right term earns \emph{half} credit. A full answer
+also gives the \textbf{direction} of a bias (over- or underestimate, and why) or the
+\textbf{reason} a design earns its verb (who built the groups).
+\textbf{Use it in this order:} read Part 1 and cover the definitions to test yourself, read
+every worked example in Part 2, then work all of Part 3 with your notes closed. Check Part 3
+against the answer key last, not while you work.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part 1 --- Every Term You Have to Know \hfill Lessons 1.0--1.8}
+
+\small
+Cover the right-hand column and say each definition out loud before you check it.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.22}
+% Four tables, not one: a tabularx cannot break across a page, so a single 40-row table is
+% pushed off the page whole. Split at lesson boundaries instead, each behind its own guard.
+\boxguard[14]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.5cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.0 & Individual & One person, animal, or object data are collected about --- one
+      \emph{row} of a data table. \\
+1.0 & Variable & A characteristic recorded for each individual --- one
+      \emph{column} of a data table. \\
+1.0 & Categorical variable & Records a \emph{label} or group name. Summarize with
+      counts and percents. \\
+1.0 & Quantitative variable & Records a \emph{measured amount} with units.
+      Summarize with a mean or median. \\
+1.0 & Digit test & The check that settles a column written with digits:
+      \emph{does arithmetic on this variable mean anything?} \\
+1.1 & Statistical question & A question whose answers are expected to
+      \emph{vary}, that names the group, and that says what will be recorded. \\
+1.1 & Relative frequency & A count divided by the total, as a decimal or a
+      percent. The categories' relative frequencies add to $100\%$. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[16]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.5cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.2 & Population & Every individual the question is about --- everyone the
+      conclusion should describe. \\
+1.2 & Sample & The part of the population data were actually collected from.
+      \textbf{Sample size} is how many are in it. \\
+1.2 & Census & A study that collects data from every individual in the
+      population. \\
+1.2 & Parameter & A number that describes the \emph{population}. Usually unknown
+      --- and there is only one. \\
+1.2 & Statistic & A number computed from the \emph{sample}. Known --- and it
+      changes from sample to sample. \\
+1.2 & Sampling variability & The change in a statistic from one honest sample to the
+      next, even though the population has not changed. Not a mistake. \\
+1.2 & Constraint & A real-world limit on the study: time, cost, access,
+      destruction, or a changing population. \\
+1.3 & Sampling frame & The list a study can actually choose from. Anyone off the
+      frame can never be sampled. \\
+1.3 & Convenience sample & Whoever is easiest to reach --- the schedule chose,
+      not chance. Test: \emph{who could never have been picked?} \\
+1.3 & Simple random sample & Number the frame and draw; every individual has an
+      equal chance. Skip out-of-range and repeated numbers. \\
+1.3 & Systematic sample & From an ordered list, every $k$th individual after a
+      random start, where $k = N \div n$. \\
+1.3 & Stratified sample & Split into \emph{strata} that are alike inside; draw a
+      random sample from \emph{every} stratum, in proportion. \\
+1.3 & Cluster sample & Split into \emph{clusters}, each a small mix of the whole;
+      draw a few whole clusters at random and measure everyone in them. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[14]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.5cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.4 & Bias & The \emph{procedure} leans the same direction every time --- it
+      systematically overestimates or underestimates. A direction, not bad luck. \\
+1.4 & Undercoverage & Part of the population is left off the sampling frame, so
+      those members have no chance at all of being chosen. \\
+1.4 & Nonresponse & Individuals are chosen properly but never answer, so the data
+      are missing exactly the people who stayed silent. \\
+1.4 & Response bias & Something about the survey itself --- who asks, the wording
+      (a \emph{leading} question), the order --- pushes answers away from the truth. \\
+1.5 & Observational study & Measures or surveys without assigning anyone to a group
+      --- the groups already exist. A survey is one kind. \\
+1.5 & Explanatory / response variable & The variable we think explains the other
+      (the tail of the arrow) / the variable we measure to see what happens (the head). \\
+1.5 & Association vs.\ causation & Two variables move together / one actually
+      produces the change in the other. Causation needs \emph{assigning}. \\
+1.5 & Lurking variable & A variable outside the study that affects both variables in
+      it, and can create an association all by itself. \\
+1.5 & Reversed arrow & The response variable is what put individuals into their
+      group in the first place, so the association runs the other way. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[16]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.5cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+1.6 & Experiment & The researcher \emph{assigns} the units to groups and imposes a
+      treatment on at least one group. \\
+1.6 & Treatment / control group & The condition applied to a group / the group that
+      does not get it --- the baseline. Not a wasted group. \\
+1.6 & Random assignment & Chance --- a generator, a coin --- decides each unit's
+      group, so the groups start out alike. \\
+1.6 & Four principles & \textbf{Comparison}, \textbf{randomization},
+      \textbf{replication} (many units per group), \textbf{control} (all else the same). \\
+1.6 & Confounding variable & A variable that differs between the groups \emph{and}
+      affects the response, so the two explanations cannot be told apart. \\
+1.6 & Placebo & A fake treatment built to look real, so the \textbf{placebo effect}
+      --- responding to the \emph{idea} of treatment --- hits both groups. \\
+1.6 & Blinding & Keeping someone from knowing each subject's group.
+      \textbf{Single-blind:} subjects or measurers. \textbf{Double-blind:} both. \\
+1.6 & Randomized block design & Sort units into \textbf{blocks} of similar units first,
+      then randomize \emph{within} each block. \\
+1.7 & Collection method & How the data arrive: survey, interview, focus group,
+      observation, content analysis. \emph{A method, not a design.} \\
+1.8 & Survey instrument & The exact wording read to every person, in order, plus
+      its choices --- the tool that turns a question into data. \\
+1.8 & Instrument rules & One idea per item (else \emph{double-barrelled}), neutral
+      wording (else \emph{leading}), choices that cover everyone, short. \\
+\end{tabularx}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[22]
+\parthead{Part 2 --- The Nine Moves, Worked \hfill study these before you practice}
+
+\small
+Every test question is one of these nine moves. The work is shown; follow it line by line.
+
+\vspace{4pt}
+\boxguard[14]
+\begin{notesbox}{Move 1 --- Classify a variable, and fix a question (Lessons 1.0--1.1)}
+\small
+Oakdale High School records four things about each student. Ask the \textbf{digit test} of
+every one: \emph{does arithmetic on this mean anything?}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c X @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Type} & \textbf{Why} \\
+\midrule
+Hours of sleep last night & Quantitative & A mean number of hours means something. \\
+Bus route number & Categorical & ``Mean route $7.3$'' describes no bus. The digits are
+  labels. \\
+Student ID number & Categorical & Digits, but arithmetic on them is meaningless. \\
+Favorite sport & Categorical & A label; count it and turn it into a percent. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Fix a question.} ``How many hours did Keisha sleep last night?'' has \emph{one}
+answer, so it is not statistical. Name a group and let the answers vary: \emph{``How many
+hours did Oakdale students sleep last night?''} The question also settles the type ---
+hours is an amount, so quantitative --- before any data exist.
+
+\vspace{3pt}
+\textbf{The trap:} the \emph{digit reflex} --- calling anything written with digits
+quantitative. Bus route, ZIP code, jersey number, and grade level are all categorical. But
+digits are not the enemy: $7$ hours of sleep is an amount.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[14]
+\begin{notesbox}{Move 2 --- Parameter or statistic, and estimating with it (Lesson 1.2)}
+\small
+Crestview Public Library has $1{,}600$ cardholders. The director surveys $80$ chosen at
+random; $24$ of them borrowed an e-book last month.
+
+\vspace{2pt}
+\textbf{Population:} all $1{,}600$ cardholders. \quad \textbf{Sample:} the $80$ surveyed.
+\quad \textbf{Sample size:} $80$.
+\[ \frac{24}{80} = 0.30 = 30\% \qquad\text{and}\qquad 0.30 \times 1600 = 480 \text{ cardholders} \]
+The $30\%$ is a \textbf{statistic} --- it describes the $80$-person sample. The percent of all
+$1{,}600$ cardholders is a \textbf{parameter}, and nobody knows it. The $480$ is an
+\textbf{estimate}. \textbf{Ask who the number describes, never what it looks like.}
+
+\vspace{2pt}
+A census of all $1{,}600$ is blocked by a \textbf{constraint} --- the time and cost of
+reaching every cardholder.
+
+\vspace{2pt}
+\textbf{The trap:} a second random sample of $80$ finds $28$, or $35\%$, and someone says one
+survey was done wrong. Neither was. There is \textbf{one} parameter and it did not move ---
+two honest samples give two honest estimates. That is \emph{sampling variability}.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 3 --- Carry out a systematic, stratified, or simple random sample (Lesson 1.3)}
+\small
+Juniper Hills Fitness Club has $N = 800$ members and wants a sample of $n = 40$.
+
+\vspace{2pt}
+\textbf{Systematic.} Order the list, compute the step, then take every $k$th member after a
+random start:
+\[ k = N \div n = 800 \div 40 = 20 \]
+From a random start of $13$: members $13$, $33$, $53$, $73$, \dots\ Only the \emph{start} is
+random.
+
+\vspace{3pt}
+\textbf{Stratified.} Take the same fraction of every stratum:
+\[ \frac{40}{800} = \frac{1}{20} \qquad\text{so adults give}\qquad
+   400 \times \frac{1}{20} = 20 \text{ members} \]
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c | c @{}}
+\rowcolor{frost}
+\textbf{Membership type} & \textbf{Youth} & \textbf{Adult} & \textbf{Senior} & \textbf{Total} \\
+\midrule
+Members of that type & $240$ & $400$ & $160$ & $800$ \\
+Number sampled & $12$ & $20$ & $8$ & $40$ \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Check your allocation twice:} every entry divides by $20$, and the sampled row adds to
+$40$.
+
+\vspace{3pt}
+\textbf{Simple random.} Number the frame $001$--$800$ and read the generator's digits in
+threes: $512$, $874$, $093$, $512$, $640$ gives $512$, $093$, $640$ --- $874$ is off the frame
+and the second $512$ is already chosen.
+
+\vspace{3pt}
+\textbf{The trap:} thinking \emph{random} means \emph{unplanned}. Surveying whoever walks past
+the front desk at noon picks no favorites, but a member who only comes at night could never
+have been chosen --- that is a \textbf{convenience sample}, however fair it felt.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 4 --- Choose the technique a context calls for (Lesson 1.3)}
+\small
+``Best'' is a property of a technique \emph{in a context}: what list exists, and \textbf{how
+the groups are built}.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X X @{}}
+\rowcolor{frost}
+\textbf{Technique} & \textbf{Use it when} & \textbf{How chance is used} \\
+\midrule
+Simple random & You have a numbered list of the whole frame. & Every individual drawn
+  directly at random. \\
+Systematic & The list is ordered and you want an easy sweep of it. & Only the start is
+  random; then every $k$th. \\
+Stratified & The groups are \emph{alike inside} and differ from each other, and you need
+  every group represented. & Some from \emph{every} group, in proportion. \\
+Cluster & The groups are each a \emph{small mix of the whole}, and reaching whole groups is
+  cheaper. & A few whole groups at random; everyone in them. \\
+\end{tabularx}
+
+\vspace{3pt}
+Fox Hollow Middle School ($540$ students) has $18$ homerooms of $30$, six per grade, each
+homeroom \emph{one grade}; it also has $20$ advisory groups of $27$, each a mix of grades 6, 7,
+and 8. Drawing $2$ advisory groups at random is a fair \textbf{cluster} sample. Drawing $2$
+homerooms at random could give $60$ sixth graders and no eighth graders --- a homeroom is alike
+inside, a \emph{stratum}. Use the homerooms to \textbf{stratify} instead.
+
+\vspace{3pt}
+\textbf{The trap:} thinking that ``chance chose'' settles it --- that a random draw of
+\emph{groups} is as good as a random draw of \emph{individuals}. \emph{Alike inside
+$\rightarrow$ some from every group} (stratified). \emph{A mix of the whole $\rightarrow$
+everyone from a few} (cluster).
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[18]
+\begin{notesbox}{Move 5 --- Name a bias, its type, and its direction (Lesson 1.4)}
+\small
+Name the type by asking one question: \textbf{could that person have been chosen?}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X X @{}}
+\rowcolor{frost}
+\textbf{Type} & \textbf{The test} & \textbf{The fix that removes it} \\
+\midrule
+Undercoverage & No --- they were never on the frame. & A complete frame. \\
+Nonresponse & Yes --- chosen, but they never answered. & Follow up the non-responders. \\
+Response bias & Yes, and they answered --- but the wording, the asker, or the order pushed
+  the answer. & Neutral wording; a neutral asker. \\
+\end{tabularx}
+
+\vspace{3pt}
+The town of Crestview has $4{,}000$ households. The library mails a survey to $100$ chosen at
+random from the town's complete address list; $50$ mail it back, and $34$ of the $50$ say they
+would use Sunday hours.
+\[ \text{response rate} = \frac{50}{100} = 50\% \qquad \frac{34}{50} = 0.68 = 68\% \qquad
+   0.68 \times 4000 = 2{,}720 \text{ households} \]
+A town count of all $4{,}000$ households later finds the truth is $40\%$, or $1{,}600$
+households. The type is \textbf{nonresponse} (the silent $50$ \emph{could} have been chosen).
+The \textbf{direction}: it \emph{overestimates} --- people who care about Sunday hours mailed
+it back --- by $68 - 40 = 28$ points, or $2{,}720 - 1{,}600 = 1{,}120$ households.
+
+\vspace{3pt}
+\textbf{The trap:} ``the sample was too small.'' A second mailing to $1{,}000$ households gets
+$500$ back with $340$ yes --- $\frac{340}{500} = 68\%$ again. A larger sample makes an estimate
+more \emph{precise}, not more \emph{correct}: size shrinks scatter and does nothing to
+direction. Only a better \emph{procedure} --- following up the non-responders --- removes it.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 6 --- Association is not causation (Lesson 1.5)}
+\small
+A random sample of $150$ Oakdale students, all of whom answered: of the $50$ in the band, $40$
+have a GPA above $3.0$; of the $100$ not in the band, $50$ do. Nobody was \emph{assigned} to
+the band --- the groups already existed, so this is an \textbf{observational study}.
+\[ \frac{40}{50} = 80\% \qquad \frac{50}{100} = 50\% \qquad 80 - 50 = 30 \text{ percentage
+   points} \]
+\[ \text{pooled: } \frac{90}{150} = 60\% \qquad\text{so about}\qquad 0.60 \times 1200 = 720
+   \text{ of Oakdale's } 1{,}200 \text{ students} \]
+\textbf{Explanatory:} in the band or not. \quad \textbf{Response:} GPA above $3.0$ or not.
+\quad \textbf{The sentence it earns:} \emph{band members were more likely to have a GPA above
+$3.0$} --- an \textbf{association}, with no causal verb.
+
+\vspace{2pt}
+Two other stories make the same table. \textbf{Reversed arrow:} the band requires a C average
+to stay in, so grades put students in the band. \textbf{Lurking variable:} families who can pay
+for private lessons also pay for tutoring, which pushes both band and GPA up --- so the $30$
+points are \emph{inflated} by it.
+
+\vspace{2pt}
+\textbf{The trap:} a clean study proves the claim --- \emph{association is causation}. An
+unbiased sample still cannot say \emph{why} two groups differ. Only assigning can (Move 7).
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 7 --- Design an experiment (Lesson 1.6)}
+\small
+Birchwood Recreation Center tests a recovery drink on $60$ volunteers. A generator assigns
+$30$ to the drink and $30$ to a \textbf{placebo} --- a drink that looks and tastes the same with
+nothing in it. A trainer rates each volunteer's soreness the next day.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X @{}}
+\rowcolor{frost}
+\textbf{Principle} & \textbf{Where it is in this design} \\
+\midrule
+Comparison & Two groups: the drink (\textbf{treatment}) and the placebo (\textbf{control}). \\
+Randomization & The generator, not the volunteers, decides who drinks what. \\
+Replication & $30$ volunteers per group, not one or two. \\
+Control & Same workout, same day, same trainer --- everything else alike. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Placebo and blinding.} Without the placebo, volunteers who know they got ``something''
+may feel better from the \emph{idea} of it --- the \textbf{placebo effect}. If neither the
+volunteers nor the trainer knows who got which drink, it is \textbf{double-blind}.
+
+\vspace{2pt}
+\textbf{Randomized block.} The $60$ are $24$ teens and $36$ adults, and age may affect soreness.
+Randomize \emph{within} each block: teens $12$ drink and $12$ placebo; adults $18$ and $18$.
+Totals: $30$ and $30$. A \textbf{confounding variable} is a lurking variable that got inside
+the experiment --- blocking keeps age from landing unevenly.
+
+\vspace{2pt}
+\textbf{The trap:} that a control group is a wasted group, or that a group getting a placebo
+``gets something'' so it is not a control. Without it there is nothing to compare against ---
+and comparison is principle one.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[18]
+\begin{notesbox}{Move 8 --- The design buys the verb, not the gap (Lessons 1.6--1.7)}
+\small
+Fox Hollow's counselor runs two studies of a homework club.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.0cm} X X @{}}
+\rowcolor{frost}
+& \textbf{Study A} & \textbf{Study B} \\
+\midrule
+What happened & $50$ students \emph{chose} the club; $100$ did not. & A generator put $40$ in
+  the club and $40$ out. The counselor then \emph{watched} who turned in all homework. \\
+Result & $\frac{36}{50} = 72\%$ vs.\ $\frac{36}{100} = 36\%$: a $36$-point gap &
+  $\frac{28}{40} = 70\%$ vs.\ $\frac{20}{40} = 50\%$: a $20$-point gap \\
+Who built the groups? & The students & Chance \\
+Design & Observational study & Experiment \\
+The verb it earns & \emph{associated with} & \emph{caused} \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Why A's bigger gap is weaker evidence:} the students who chose the club were already
+the organized ones, so their eagerness is added to the gap --- a self-selected gap is
+\emph{inflated} by whoever did the selecting.
+
+\vspace{2pt}
+\textbf{Can it be run?} Assigning students to sleep four hours a night to see what happens to
+grades would be \textbf{unethical}. When you cannot assign, observe --- and settle for the
+weaker verb.
+
+\vspace{2pt}
+\textbf{The trap:} that \emph{observation} the collection method makes a study an
+\emph{observational study}. Study B collected its data by watching, yet a generator built its
+groups, so it is an experiment. \textbf{Second trap:} that a bigger gap is stronger evidence.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[18]
+\begin{notesbox}{Move 9 --- Build the instrument, choose the method, judge the sample (Lessons 1.7--1.8)}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X X @{}}
+\rowcolor{frost}
+\textbf{Rule} & \textbf{Broken, it is called} & \textbf{Draft that breaks it} \\
+\midrule
+One idea per item & Double-barrelled & ``Is the library quiet and clean?'' \\
+Neutral wording & Leading & ``Don't you agree the library needs Sunday hours?'' \\
+Choices cover everyone & Overlapping or missing choices & ``$0$--$2$ visits, $2$--$4$
+  visits'' \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Choose the method by what the question needs:} counts and percents from many people
+$\rightarrow$ \textbf{survey}; reasons in their own words $\rightarrow$ \textbf{interview};
+ideas that build on each other $\rightarrow$ \textbf{focus group}; what people actually do
+$\rightarrow$ \textbf{observation}; records that already exist $\rightarrow$ \textbf{content
+analysis}.
+
+\vspace{3pt}
+A Crestview librarian surveys her own Tuesday book club: $9$ of $20$, or $45\%$, want later
+weekday hours. A random sample of $200$ cardholders finds $88$, or $44\%$. The numbers nearly
+match --- and the book club still speaks only for the book club.
+
+\vspace{2pt}
+\textbf{The trap:} that near-agreement is evidence. \emph{Chance never chose the book club}, so
+the match is luck --- the same group could have missed by twenty points and nothing in its
+method would have told anyone. Correct arithmetic does not launder a convenience sample.
+\end{notesbox}
+\normalsize
+
+% ======================================================================
+\boxguard[22]
+\parthead{Part 3 --- Practice \hfill notes closed; check the key only at the end}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt]
+
+% ---------------------------------------------------------------- P1 (1.0)
+\item \textbf{Fox Hollow Middle School} has $540$ students. For each student the office
+records homeroom number, minutes of screen time last night, number of siblings, and favorite
+subject.
+
+\vspace{2pt}
+(a) Who are the \textbf{individuals} in this data set? \blank{6.2cm}
+
+\vspace{3pt}
+(b) Classify each variable.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Categorical or quantitative?} \\
+\midrule
+Homeroom number & \blank{4.4cm} \\
+Minutes of screen time last night & \blank{4.4cm} \\
+Number of siblings & \blank{4.4cm} \\
+Favorite subject & \blank{4.4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) Homeroom number is written with digits. Apply the \textbf{digit test} to justify your
+answer.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P2 (1.1)
+\boxguard[14]
+\item A \textbf{Crestview Public Library} librarian writes the question \emph{``How many books
+did Mr.\ Alvarez check out last month?''}
+
+\vspace{2pt}
+(a) Is it a \textbf{statistical question}? \blank{2.0cm} \quad Which check does it fail?
+
+\par\writeline
+
+(b) Rewrite it as a statistical question about the library's cardholders.
+
+\par\writeline
+
+(c) The data your question collects will be categorical or quantitative? \blank{3.0cm}
+
+% ---------------------------------------------------------------- P3 (1.2)
+\boxguard[22]
+\item \textbf{Birchwood Recreation Center} has $1{,}200$ members. The director surveys $80$
+members chosen at random; $28$ of them swim at least once a week.
+
+\vspace{2pt}
+(a) Population: \blank{5.4cm} \quad Sample size: \blank{1.8cm}
+
+\vspace{3pt}
+Sample: \blank{9.0cm}
+
+\vspace{3pt}
+(b) What percent of the sample swims weekly, and about how many of all $1{,}200$ members
+does that estimate?
+
+\begin{work}
+  \dfrac{28}{80} &= 0.35 = 35\% \\
+  0.35 \times 1200 &= 420 \text{ members}
+\end{work}
+
+(c) Is the $35\%$ a parameter or a statistic? Say how you know.
+
+\par\writeline
+
+(d) A second random sample of $80$ members finds $30\%$. Did somebody make a mistake?
+
+\par\writeline
+
+(e) Name one \textbf{constraint} that keeps the director from taking a census.
+
+\par\writeline
+
+% ---------------------------------------------------------------- P4 (1.3)
+\boxguard[26]
+\item \textbf{Oakdale High School} ($1{,}200$ students) wants a \textbf{stratified} random
+sample of $60$, allocated in proportion to the grades.
+
+\vspace{2pt}
+(a) What fraction of the school is being sampled?
+
+\begin{work}
+  \dfrac{60}{1200} &= \dfrac{1}{20}
+\end{work}
+
+(b) Show the work for the \textbf{9th grade} row, then complete the table.
+
+\begin{work}
+  340 \times \dfrac{1}{20} &= 17 \text{ students}
+\end{work}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{Total} \\
+\midrule
+Students in the grade & $340$ & $320$ & $280$ & $260$ & $1{,}200$ \\
+Number sampled & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} &
+  \blank{1.5cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) Instead, Oakdale takes a \textbf{systematic} sample of $60$ from its ordered list of all
+$1{,}200$ students. Find $k$.
+
+\begin{work}
+  k &= 1200 \div 60 = 20
+\end{work}
+
+From a random start of $7$, list the first four students chosen.
+
+\vspace{2pt}
+\blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm}
+
+\vspace{4pt}
+\boxguard[12]
+(d) Name the sampling technique used in each row.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c @{}}
+\rowcolor{frost}
+\textbf{What the researcher did} & \textbf{Technique} \\
+\midrule
+Numbered all $1{,}200$ students and let a generator pick $60$. & \blank{3.2cm} \\
+Surveyed the students eating in the library at lunch. & \blank{3.2cm} \\
+Drew $3$ of the $40$ advisory groups --- each a mix of all four grades --- at random and
+  surveyed every student in them. & \blank{3.2cm} \\
+Took every $20$th name on the alphabetical list after a random start. & \blank{3.2cm} \\
+\end{tabularx}
+
+% ---------------------------------------------------------------- P5 (1.4)
+\boxguard[26]
+\item \textbf{Lindenwood Apartments} has $600$ households. Management runs two phone surveys,
+each of $50$ households chosen at random from its complete list.
+
+\vspace{2pt}
+\textbf{Survey A:} \emph{``Do you support a \$20 monthly parking fee?''} --- $18$ of $50$ say
+yes.\par
+\textbf{Survey B:} \emph{``The lot is overcrowded and unsafe. Do you support a \$20 monthly
+parking fee to fix it?''} --- $31$ of $50$ say yes.
+
+\vspace{2pt}
+(a) Show the work for Survey B, then complete the table.
+
+\begin{work}
+  \dfrac{31}{50} &= 0.62 = 62\% \\
+  0.62 \times 600 &= 372 \text{ households}
+\end{work}
+
+\vspace{-2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Survey} & \textbf{Percent who say yes} & \textbf{Households it estimates} \\
+\midrule
+A (neutral wording) & \blank{2.4cm} & \blank{2.4cm} \\
+B & \blank{2.4cm} & \blank{2.4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Which survey is biased? \blank{2.4cm} \quad What type of bias? \blank{3.4cm}
+
+\vspace{3pt}
+(c) In which \textbf{direction} does the biased survey push the estimate, and why?
+
+\par\writeline
+\par\writeline
+
+(d) Management says: \emph{``Call $500$ households with Survey B's wording and the bias will
+wash out.''} Respond.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P6 (1.5)
+\boxguard[26]
+\item \textbf{Juniper Hills Fitness Club} has $800$ members. A random sample of $150$ members
+all answered: of the $60$ who attend Saturday yoga, $45$ sleep $8$ or more hours a night; of the
+$90$ who do not, $36$ do.
+
+\vspace{2pt}
+(a) Find each group's percent and the gap.
+
+\begin{work}
+  \dfrac{45}{60} &= 0.75 = 75\% \\
+  \dfrac{36}{90} &= 0.40 = 40\% \\
+  75 - 40 &= 35 \text{ percentage points}
+\end{work}
+
+(b) Explanatory variable: \blank{6.4cm}
+
+\vspace{3pt}
+Response variable: \blank{6.4cm}
+
+\vspace{3pt}
+(c) Find the pooled percent who sleep $8$ or more hours, and scale it up to all $800$ members.
+
+\begin{work}
+  \dfrac{45 + 36}{150} &= \dfrac{81}{150} = 0.54 = 54\% \\
+  0.54 \times 800 &= 432 \text{ members}
+\end{work}
+
+(d) The club's ad says \emph{``Yoga gives you better sleep.''} Name a lurking variable or a
+reversed arrow, and say which way it pushes the gap.
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P7 (1.6)
+\boxguard[26]
+\item \textbf{Fox Hollow Middle School} tests a flashcard app. A generator assigns $40$ of $80$
+volunteers to study vocabulary with the app and the other $40$ with the usual word list. On the
+vocabulary quiz, $32$ app students and $22$ word-list students pass.
+
+\vspace{2pt}
+(a) Find each group's pass rate and the gap.
+
+\begin{work}
+  \dfrac{32}{40} &= 0.80 = 80\% \\
+  \dfrac{22}{40} &= 0.55 = 55\% \\
+  80 - 55 &= 25 \text{ percentage points}
+\end{work}
+
+(b) Treatment group: \blank{7.2cm}
+
+\vspace{3pt}
+Control group: \blank{7.2cm}
+
+\vspace{3pt}
+(c) The $80$ volunteers are $48$ sixth graders and $32$ seventh graders. Complete the plan for a
+\textbf{randomized block design} with grade as the block.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Block} & \textbf{Assigned to the app} & \textbf{Assigned to the word list} \\
+\midrule
+Grade 6 ($48$ students) & \blank{1.7cm} & \blank{1.7cm} \\
+Grade 7 ($32$ students) & \blank{1.7cm} & \blank{1.7cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(d) Why must the generator, not the students, decide who uses the app?
+
+\par\writeline
+
+% ---------------------------------------------------------------- P8 (1.7)
+\boxguard[28]
+\item \textbf{Crestview Public Library} runs two studies of its summer reading club.
+\textbf{Study 1:} of the $120$ children who signed up for the club, $84$ read five or more
+books; of $180$ who did not, $54$ did. \textbf{Study 2:} a generator split $100$ volunteer
+children, $50$ into the club and $50$ out; librarians then \emph{watched} the checkout desk and
+recorded that $30$ club children and $20$ others read five or more books.
+
+\vspace{2pt}
+(a) Find each study's gap.
+
+\begin{work}
+  \text{Study 1: } \dfrac{84}{120} - \dfrac{54}{180} &= 70\% - 30\% = 40 \text{ points} \\
+  \text{Study 2: } \dfrac{30}{50} - \dfrac{20}{50} &= 60\% - 40\% = 20 \text{ points}
+\end{work}
+
+(b) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Study} & \textbf{Who built the groups?} & \textbf{Observational study or experiment?} \\
+\midrule
+Study 1 & \blank{4.4cm} & \blank{3.8cm} \\
+Study 2 & \blank{4.4cm} & \blank{3.8cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(c) Study 2 collected its data by observation. Why is it not an observational study?
+
+\par\writeline
+
+(d) Which study earns the word \emph{caused}? \blank{2.2cm} \quad Why is Study 1's gap bigger,
+and why is it still the weaker evidence?
+
+\par\writeline
+\par\writeline
+
+% ---------------------------------------------------------------- P9 (1.8)
+\boxguard[28]
+\item At \textbf{Oakdale High School}, Jada surveys the $25$ students in her own statistics
+class about their main after-school activity.
+
+\vspace{2pt}
+(a) Complete the relative frequency column as a percent.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+\textbf{Main after-school activity} & \textbf{Frequency} & \textbf{Relative frequency} \\
+\midrule
+Sports & $10$ & \blank{2.6cm} \\
+A job  & $7$  & \blank{2.6cm} \\
+Clubs  & $5$  & \blank{2.6cm} \\
+None   & $3$  & \blank{2.6cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) On a relative-frequency bar graph of this table, how tall is the \emph{A job} bar?
+\blank{2.0cm}
+
+\vspace{3pt}
+(c) Her draft item reads \emph{``Don't you agree that students with jobs are too tired for
+homework and sports?''} Name the two instrument rules it breaks.
+
+\vspace{2pt}
+\blank{3.6cm} \quad and \quad \blank{3.6cm}
+
+\vspace{3pt}
+(d) To learn \emph{why} students chose their activity, in their own words, which collection
+method fits best? \blank{2.8cm}
+
+\vspace{3pt}
+(e) A random sample of $100$ Oakdale students finds $38\%$ play sports. Jada says her $40\%$
+\emph{``proves my class speaks for the school.''} Respond.
+
+\par\writeline
+\par\writeline
+
+\end{enumerate}
+\normalsize
+
+\vspace{6pt}
+\boxguard[16]
+\begin{remindbox}
+\small
+\textbf{You are ready for the Unit 1 Test when you can, with no notes:}
+name the individuals and classify every variable with the digit test (1.0);
+repair a question that has one answer into a statistical question and build a relative
+frequency table (1.1);
+name the population and the sample, call a number a parameter or a statistic by asking who it
+describes, scale a sample percent up to a population count, and explain two honest samples
+that disagree as sampling variability (1.2);
+compute $k = N \div n$ and a proportional stratified allocation, and choose stratified or
+cluster by \emph{how the groups are built} (1.3);
+name undercoverage, nonresponse, or response bias by asking \emph{could that person have been
+chosen?}, give the bias's \textbf{direction}, and explain why a bigger sample repeats it (1.4);
+state an \textbf{association} with no causal verb and name a reversed arrow or a lurking
+variable with the way it pushes the gap (1.5);
+name the treatment and control, check the four principles, say what a placebo and blinding do,
+and split units into blocks (1.6);
+decide the design by \emph{who built the groups} --- never by the collection method --- and say
+why the design, not the gap, earns \emph{caused} (1.7);
+spot a leading or double-barrelled item and say whom a convenience sample may speak for, however
+closely it matched (1.8).
+\end{remindbox}
+
+\end{document}
