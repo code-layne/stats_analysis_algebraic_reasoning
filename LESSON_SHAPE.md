@@ -382,47 +382,9 @@ interpret-and-justify in D. Practice and actual are **parallel forms**: same blu
 different numbers and contexts, reshuffled vocabulary letters. Sample every lettered skill the
 unit's lessons taught. **Unit 1's set is the template for units 2–8:** 14 / 16 / 40 / 30 points,
 33 items, 6 pages, with `\setlength{\workrowsep}{5pt}` in every test preamble (identical in blank
-and key) for handwriting room. Build: `make -C unitXX/tests all && make -C unitXX/test_keys all`
-**before** the unit packet, so the `sample_test` prefab exists when `unit.mk` merges it.
-
-- **Aim every item at a lesson's named misconception** (unit 1's set rewritten 2026-09-28 this
-  way). Each Part B item and each Part C/D item tests one lesson's *target misconception* from its
-  plan's Key Understandings; the unit cover key's rationale names the lesson per MC item. Unit 1's
-  blueprint: A = two 7-term sets (data \& sampling; bias \& design) · B = 15 digit reflex, 16
-  sampling variability, 17 stratum-not-cluster, 18 undercoverage vs.\ nonresponse, 19 size does
-  not fix bias, 20 association, 21 placebo, 22 unethical · C = 23 classify + statistical question,
-  24 parameter/statistic + constraint, 25 stratified allocation, 26 systematic + name the
-  technique, 27 leading wording on two *random* samples (response bias + direction), 28 reversed
-  arrow or lurking variable, 29 experiment + blocks, 30 relative frequency + bar graph + two broken
-  instrument rules · D = 31 bigger self-selected gap vs.\ smaller assigned gap *collected by
-  observation*, 32 nonresponse + size does not fix it, 33 technique + method + a near-matching
-  convenience sample.
-- **Test keys are generated with `templates/lesson/mkkey.py`** from an `answers.json` beside the
-  key, like the quizzes; never hand-edit one. The correct MC option carries `\correct` and a
-  key-only drawing (the bars on item 30) is wrapped in `\keyonly{}` --- both defined in the test
-  preamble on `\ifsaar@workvisible`, so they print only once `-key` is loaded and the key still
-  regenerates byte for byte from its blank. Prose answers are one `\par\writeline` per line.
-- **Guard every MC item** with `\boxguard[7]` so no stem is split from its four options, and guard
-  a prompt together with the table it introduces.
-- **Test contexts are spent too.** Unit 1's practice form uses Maplewood High, Silver Lake
-  Recreation Center, Elmhurst Library, Brookside Apartments, Granite Falls Middle; its graded form
-  Hillcrest High, Pine Valley Aquatic Center, Kingsport Library, Willow Creek Apartments, Summit
-  Middle; its study guide Oakdale High, Fox Hollow Middle, Crestview Library, Lindenwood
-  Apartments, Birchwood Recreation Center, Juniper Hills Fitness Club.
-
-**The unit test study guide** (added 2026-09-28, unit 1 is the pattern) --- the review handout for
-the unit test, built exactly like a quiz study packet (below) but spanning the whole unit:
-`unitXX/study_guide/` with one `study_guide/` directory and its own self-contained
-`Makefile` (the quiz Makefile with the directory renamed), **merged into no packet** so the unit's
-verified packets never reflow. 10pt, `\namedateperiod`, `\parthead` strips. Part 1 is every term in
-the unit in `Lsn | Term | What it means` tables split at lesson boundaries (term column
-`p{3.5cm}` ragged-right, so bold terms do not hyphenate); Part 2 is one worked `notesbox` per skill
-the test tests, each ending in "The trap:"; Part 3 is one keyed practice item per lesson; a
-readiness checklist closes it. Its remindbox describes the test's parts and points --- **when the
-test blueprint changes, update the guide's remindbox and moves with it.** Unit 1's is 10 pages,
-9 moves, 9 practice items. **The study guide has no key** (user decision 2026-09-28): it is study
-material only, Part 3 is rehearsal, and students check themselves on the practice test, which is
-keyed. This differs from a quiz study packet, which keeps its key.
+and key) for handwriting room. The tests have no pedagogy in them and were untouched by both
+redesigns. Build: `make -C unitXX/tests all && make -C unitXX/test_keys all` **before** the unit
+packet, so the `sample_test` prefab exists when `unit.mk` merges it.
 
 **The unit cover pair** — `unit_cover/` (student packet) and `unit_cover_key/` (key packet); both
 wrappers `\input` one shared **`unit_cover/body.tex`** so page 1 cannot drift — edit the cover
