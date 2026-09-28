@@ -1,4 +1,4 @@
-# unit01/study_guide/Makefile — build the Unit 1 test study guide and its key.
+# unit01/study_guide/Makefile — build the Unit 1 test study guide (no key, by design).
 #
 # Self-contained, on the finals/ model (LESSON_SHAPE.md section 6): the study guide is a
 # STANDALONE deliverable merged into no packet, so it is NOT added to shared/unit.mk or

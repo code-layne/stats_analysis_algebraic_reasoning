@@ -412,7 +412,7 @@ and key) for handwriting room. Build: `make -C unitXX/tests all && make -C unitX
 
 **The unit test study guide** (added 2026-09-28, unit 1 is the pattern) --- the review handout for
 the unit test, built exactly like a quiz study packet (below) but spanning the whole unit:
-`unitXX/study_guide/` with `study_guide/` and `study_guide_key/` and its own self-contained
+`unitXX/study_guide/` with one `study_guide/` directory and its own self-contained
 `Makefile` (the quiz Makefile with the directory renamed), **merged into no packet** so the unit's
 verified packets never reflow. 10pt, `\namedateperiod`, `\parthead` strips. Part 1 is every term in
 the unit in `Lsn | Term | What it means` tables split at lesson boundaries (term column
@@ -420,7 +420,9 @@ the unit in `Lsn | Term | What it means` tables split at lesson boundaries (term
 the test tests, each ending in "The trap:"; Part 3 is one keyed practice item per lesson; a
 readiness checklist closes it. Its remindbox describes the test's parts and points --- **when the
 test blueprint changes, update the guide's remindbox and moves with it.** Unit 1's is 10 pages,
-9 moves, 9 practice items, 50 blanks.
+9 moves, 9 practice items. **The study guide has no key** (user decision 2026-09-28): it is study
+material only, Part 3 is rehearsal, and students check themselves on the practice test, which is
+keyed. This differs from a quiz study packet, which keeps its key.
 
 **The unit cover pair** — `unit_cover/` (student packet) and `unit_cover_key/` (key packet); both
 wrappers `\input` one shared **`unit_cover/body.tex`** so page 1 cannot drift — edit the cover
