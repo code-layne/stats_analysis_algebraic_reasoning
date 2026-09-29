@@ -1,4 +1,4 @@
-# unit02/review/Makefile — build the Unit 2 test study guide and its key.
+# unit02/review/Makefile — build the Unit 2 test study guide (review only; no key).
 #
 # Self-contained, on the finals/ model (LESSON_SHAPE.md section 6): this review set is a
 # STANDALONE deliverable merged into no packet, so it is NOT added to shared/unit.mk or
