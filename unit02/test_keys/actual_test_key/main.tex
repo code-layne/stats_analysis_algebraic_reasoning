@@ -1,7 +1,21 @@
-%! Unit 2: Describing One Variable — Summative Assessment — Unit Test (KEY)
+%! Unit 2: Describing One Variable — Summative Assessment — Unit Test (blank) (Answer Key)
+% The GRADED form. It is never published into a packet (tests.mk drops only the practice test).
+% A parallel form of practice_test: same file structure, parts, guards and answer-slot order;
+% every number, context, vocabulary letter and correct MC letter differs.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit02/tests/actual_test/main.tex \
+%       unit02/test_keys/actual_test_key/main.tex unit02/test_keys/actual_test_key/answers.json
+% Re-run it after every edit to this file. Part B carries an Answer: slot on every item (the
+% quiz-01 model) so the letter lives in the generated key; unit 2 has no unit_cover_key page to
+% park the letters on.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Work blocks on a test need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
 
 % Part-divider strip
 \newcommand{\parthead}[1]{%
@@ -9,26 +23,510 @@
   \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
   \vspace{4pt}}
 
+% One horizontal boxplot on a tikz x-axis: \drawbox{y}{min}{Q1}{med}{Q3}{max}{label}
+\newcommand{\drawbox}[7]{%
+  \draw[charcoal, thick] (#2,#1) -- (#3,#1);
+  \draw[charcoal, thick] (#5,#1) -- (#6,#1);
+  \draw[charcoal, thick] (#2,#1-0.15) -- (#2,#1+0.15);
+  \draw[charcoal, thick] (#6,#1-0.15) -- (#6,#1+0.15);
+  \filldraw[fill=frost, draw=cerulean, thick] (#3,#1-0.3) rectangle (#5,#1+0.3);
+  \draw[cerulean, very thick] (#4,#1-0.3) -- (#4,#1+0.3);
+  \node[left, font=\small\bfseries] at (#2-0.2,#1) {#7};}
+
 \begin{document}
 
 \pageheader{Unit 2: Describing One Variable}{Unit Test --- Answer Key}
+\namedateperiod
 
-% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
-% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
-% NO teachernote here: the practice test rides in the STUDENT packet, and the
-% key must stay the same length as its blank. Answer rationale and Part D
-% scoring go on page 2 of unit2/unit_cover_key/main.tex (key packet only).
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{Instructions:} Show all work. Answer every interpretation in context, with units.
+No notes unless your teacher says so.
+\textbf{25 questions, 100 points:} Part A $10$, Part B $12$, Part C $48$, Part D $30$.
+\end{remindbox}
+
 % ======================================================================
-\parthead{Part A --- Vocabulary}
-% TODO: answers via \ans{...}
+\parthead{Part A --- Vocabulary \hfill 10 questions, 1 point each}
 
-\parthead{Part B --- Multiple Choice}
-% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\small
+\textbf{Set 1 --- Displays and Shape.} Write the letter of the matching description
+next to each term.
 
-\parthead{Part C --- Short Answer \& Computation}
-% TODO: worked answers via \ans{...}
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item \ans{D} Distribution
+  \item \ans{C} Stemplot
+  \item \ans{A} Histogram
+  \item \ans{E} Skewed right
+  \item \ans{B} Skewed left
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item Bars over equal-width bins; each bar's height is a count.
+  \item The long tail stretches toward the smaller values.
+  \item Each value split into a stem and a leaf, read with a key.
+  \item What values a variable takes and how often it takes each one.
+  \item The long tail stretches toward the larger values.
+\end{enumerate}
+\end{minipage}
 
-\parthead{Part D --- Extended Response}
-% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
+\vspace{6pt}
+\textbf{Set 2 --- Measures and Outliers.} Same directions.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.36\linewidth}
+\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=6]
+  \item \ans{B} Median
+  \item \ans{A} Interquartile range
+  \item \ans{E} Standard deviation
+  \item \ans{D} Outlier
+  \item \ans{C} Resistant
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
+  \item $Q_3 - Q_1$: the spread of the middle half of the data.
+  \item The middle value of the ordered data.
+  \item Barely moved by one extreme value.
+  \item A value below $Q_1 - 1.5 \times \text{IQR}$ or above
+        $Q_3 + 1.5 \times \text{IQR}$.
+  \item About the typical distance of the values from their mean.
+\end{enumerate}
+\end{minipage}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part B --- Multiple Choice \hfill 6 questions, 2 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=11]
+
+\boxguard[9]
+\item A histogram of $80$ Harlow students' scores on an easy review quiz has its tallest bars
+between $90$ and $100$ points, then shorter and shorter bars down to $40$ points. The
+distribution is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item skewed right, because the tallest bars are on the right.
+  \item symmetric, because it has only one peak.
+  \item skewed right, because most students scored high.
+  \item skewed left, because the long tail stretches toward the smaller values.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{D}
+
+\boxguard[9]
+\item Salaries at a company are strongly skewed right by a few very large executive salaries.
+The best measure of a typical salary is
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item the mean, because it uses every salary.
+  \item the range, because it shows the largest salary.
+  \item the median, because the few large salaries barely move it.
+  \item the standard deviation, because it measures typical distance.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{C}
+
+\boxguard[9]
+\item Relay team R's $400$-meter times run from $50$ to $54$ seconds with $s = 1.2$. Team S's
+run from $58$ to $80$ seconds with $s = 7$. Which statement is true?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item Team S's times typically sit farther from their own mean than Team R's.
+  \item Team R is faster, so its standard deviation must be smaller.
+  \item The two standard deviations cannot be compared.
+  \item Team S's times are larger, and that is why its $s$ is larger.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{A}
+
+\boxguard[9]
+\item Every value in a data set is decreased by $3$. What happens to the mean and the standard
+deviation?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item Both decrease by $3$.
+  \item The mean stays the same; the standard deviation decreases by $3$.
+  \item Neither one changes.
+  \item The mean decreases by $3$; the standard deviation does not change.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{D}
+
+\boxguard[9]
+\item One very small outlier is removed from a data set of $17$ values. Which summary
+changes the most?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item the median
+  \item the mean
+  \item the third quartile
+  \item the interquartile range
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{B}
+
+\boxguard[9]
+\item Two clinics each have a median wait of $12$ minutes. Clinic M's IQR is $9$ minutes
+and Clinic N's is $3$ minutes. Which is a correct comparison?
+\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
+  \item Clinic M is more consistent, because its IQR is larger.
+  \item The clinics perform the same, because their medians are equal.
+  \item Both typically take about $12$ minutes, but Clinic N's waits are more consistent.
+  \item Clinic N is faster, because its IQR is smaller.
+\end{enumerate}
+\hfill \textbf{Answer:} \ans{C}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[8]
+\parthead{Part C --- Short Answer \& Computation \hfill 6 questions, 8 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=17]
+
+% ---------------------------------------------------------------- C1 (2.1)
+\item Eighteen \textbf{Harlow High School} students recorded the hours they volunteered this
+semester.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.30\linewidth}
+\vspace{0pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{r|l}
+0 & 5\;7 \\
+1 & 1\;2\;3\;3\;6\;7 \\
+2 & 0\;1\;2\;2\;4\;5\;8 \\
+3 & 1\;3 \\
+4 & 6 \\
+\end{tabular}
+
+\vspace{3pt}
+\textbf{Key:} $1\,|\,3$ means $13$ hours
+\end{minipage}\hfill
+\begin{minipage}[t]{0.67\linewidth}
+\vspace{0pt}
+(a) What does the leaf $6$ on stem $4$ stand for?
+
+\vspace{2pt}
+\ans{One student who volunteered 46 hours}
+
+\vspace{4pt}
+(b) Median: \ans{$20.5$ hours} \quad Range: \ans{$41$ hours}
+
+\vspace{4pt}
+(c) Describe the distribution --- shape, unusual features, center, and spread --- in
+context.
+\end{minipage}
+
+\par\ansline{Roughly symmetric with a slight right tail, a gap from 33 to 46 hours, and a possible outlier at 46.}
+\par\ansline{The median is 20.5 hours, and the hours run from 5 to 46 (range 41 hours).}
+
+% ---------------------------------------------------------------- C3 (2.2)
+\boxguard[22]
+\item Nine members of the Harlow chess club won these numbers of games this season, in
+order: $2$, $4$, $4$, $5$, $7$, $10$, $11$, $13$, $16$.
+
+\vspace{2pt}
+(a) Find the mean.
+
+\begin{work}
+  \bar{x} &= \dfrac{2 + 4 + 4 + 5 + 7 + 10 + 11 + 13 + 16}{9} = \dfrac{72}{9} = 8 \text{ games}
+\end{work}
+
+(b) Median: \ans{$7$ games} \quad Mode: \ans{$4$ games}
+
+\vspace{3pt}
+(c) Find $Q_1$ and $Q_3$. (Leave the median out of both halves.)
+
+\begin{work}
+  Q_1 &= \dfrac{4 + 4}{2} = 4 \qquad Q_3 = \dfrac{11 + 13}{2} = 12
+\end{work}
+
+(d) Five-number summary: \ans{$2$}, \ans{$4$}, \ans{$7$}, \ans{$12$},
+\ans{$16$} \quad IQR: \ans{$8$ games}
+
+% ---------------------------------------------------------------- C4 (2.2)
+\boxguard[22]
+\item The Harlow school store sold these numbers of water bottles on five days:
+$15$, $20$, $21$, $21$, $23$. The mean is $20$ bottles.
+
+\vspace{2pt}
+(a) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} | c @{}}
+\rowcolor{frost}
+ & & & & & & \textbf{Sum} \\
+Value $x$ & $15$ & $20$ & $21$ & $21$ & $23$ & $100$ \\
+Deviation $x - \bar{x}$ & \ans{$-5$} & \ans{$0$} & \ans{$1$} & \ans{$1$} &
+  \ans{$3$} & \ans{$0$} \\
+Squared $(x - \bar{x})^2$ & \ans{$25$} & \ans{$0$} & \ans{$1$} & \ans{$1$} &
+  \ans{$9$} & \ans{$36$} \\
+\end{tabularx}
+
+\vspace{2pt}
+(b) Find the variance and the standard deviation.
+
+\begin{work}
+  s^2 &= \dfrac{36}{5 - 1} = 9 \text{ square bottles} \qquad s = \sqrt{9} = 3 \text{ bottles}
+\end{work}
+
+(c) Interpret $s$ in context.
+
+\par\ansline{A typical day's sales are about 3 bottles from the 20-bottle mean.}
+
+% ---------------------------------------------------------------- C5 (2.3)
+\boxguard[20]
+\item The five-number summary of $30$ Harlow students' text messages sent on Monday is
+$14$, $40$, $51$, $60$, $98$. The three most extreme values are $14$, $86$, and $98$.
+
+\vspace{2pt}
+(a) Find the IQR and both fences.
+
+\begin{work}
+  \text{IQR} &= 60 - 40 = 20 \\
+  \text{lower fence} &= 40 - 1.5(20) = 10 \qquad \text{upper fence} = 60 + 1.5(20) = 90
+\end{work}
+
+(b) Which of $14$, $86$, and $98$ are outliers? \ans{Only $98$}
+
+\vspace{3pt}
+(c) In a modified boxplot, where does the upper whisker end? \ans{At $86$}
+
+\vspace{3pt}
+(d) The value $14$ looks far from the box. Explain whether it is an outlier.
+
+\par\ansline{No --- 14 is above the lower fence of 10, so it is inside the fences.}
+
+% ---------------------------------------------------------------- C6 (2.3)
+\boxguard[26]
+\item The graph shows how many push-ups $100$ Harlow students did without stopping.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.50\linewidth}
+\vspace{0pt}
+\begin{tikzpicture}
+\begin{axis}[width=7.4cm, height=4.8cm, xmin=0, xmax=30, ymin=0, ymax=100,
+  xtick={0,5,...,30}, ytick={0,25,50,75,100}, yticklabel={\pgfmathprintnumber{\tick}\%},
+  grid=major, grid style={linegray}, tick label style={font=\scriptsize},
+  xlabel={Push-ups without stopping}, ylabel={Cumulative \%}, label style={font=\scriptsize}]
+  \addplot[cerulean, thick, mark=*, mark size=1.3pt]
+    coordinates {(0,0) (5,6) (10,25) (15,50) (20,75) (25,90) (30,100)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\vspace{2pt}
+(a) $Q_1$: \ans{$10$} \quad Median: \ans{$15$}
+
+\vspace{4pt}
+$Q_3$: \ans{$20$} \quad IQR: \ans{$10$}
+
+\vspace{4pt}
+(b) A student did $25$ push-ups. What percentile is that? \ans{$90$th}
+
+\vspace{4pt}
+(c) Interpret your answer to (b) in context.
+\end{minipage}
+
+\par\ansline{90\% of these 100 students did 25 or fewer push-ups without stopping.}
+
+% ---------------------------------------------------------------- C8 (2.4)
+\boxguard[26]
+\item Harlow surveyed freshmen and sophomores about hours of homework in one week. The
+parallel boxplots share one scale.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[x=1.05cm, y=1cm]
+  \draw[linegray] (1.5,0) -- (11,0);
+  \foreach \t in {2,3,...,11} {
+    \draw[linegray] (\t,-0.08) -- (\t,0.08);
+    \node[below, font=\scriptsize] at (\t,-0.08) {\t};}
+  \foreach \t in {2.5,3.5,...,10.5} \draw[linegray] (\t,-0.05) -- (\t,0.05);
+  \node[below, font=\scriptsize] at (6.5,-0.45) {Hours of homework};
+  \drawbox{0.7}{2}{4}{5}{7}{10}{Freshmen}
+  \drawbox{1.6}{3}{5.5}{6}{6.5}{8}{Sophomores}
+\end{tikzpicture}
+\end{center}
+
+(a) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+ & \textbf{Median} & \textbf{IQR} \\
+Freshmen & \ans{$5$ h} & \ans{$3$ h} \\
+Sophomores & \ans{$6$ h} & \ans{$1$ h} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Compare the two groups' homework, with a comparative word for center \emph{and} for spread.
+
+\par\ansline{Sophomores' median (6 h) is greater than freshmen's (5 h), and freshmen's}
+\par\ansline{homework is more spread out (IQR 3 h vs.\ 1 h), so sophomores are more consistent.}
+
+\end{enumerate}
+\normalsize
+
+% ======================================================================
+\boxguard[10]
+\parthead{Part D --- Extended Response \hfill 3 questions, 10 points each}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=23]
+
+% ---------------------------------------------------------------- D1 (2.1, 2.3)
+\item Sixty Harlow students reported how many minutes they spent on social media last
+Saturday. The histogram and the calculator's 1-Var Stats are below.
+
+\vspace{2pt}
+\begin{minipage}[t]{0.56\linewidth}
+\vspace{0pt}
+\begin{tikzpicture}
+\begin{axis}[width=8.2cm, height=4.6cm, ybar interval, xmin=0, xmax=420, ymin=0, ymax=20,
+  xtick={0,60,...,420}, x tick label as interval=false, ytick={0,5,...,20}, ymajorgrids, grid style={linegray},
+  tick label style={font=\scriptsize},
+  scaled x ticks=false, xlabel={Minutes on social media}, ylabel={Students},
+  label style={font=\scriptsize}]
+  \addplot[fill=frost, draw=cerulean] coordinates
+    {(0,17) (60,15) (120,11) (180,8) (240,4) (300,3) (360,2) (420,2)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\linewidth}
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{} l r @{}}
+\rowcolor{frost}
+\multicolumn{2}{@{}l@{}}{\textbf{1-Var Stats}} \\
+$\bar{x}$ & $134$ \\
+Sx & $99$ \\
+$n$ & $60$ \\
+minX & $5$ \\
+$Q_1$ & $52$ \\
+Med & $108$ \\
+$Q_3$ & $196$ \\
+maxX & $405$ \\
+\end{tabular}
+\end{minipage}
+
+\vspace{4pt}
+(a) Name the shape of the distribution, and justify it from the histogram.
+
+\par\ansline{Skewed right: most students spent under 2 hours, and the long tail}
+\par\ansline{stretches toward the larger times, out to about 400 minutes.}
+
+(b) The mean ($134$ minutes) is larger than the median ($108$ minutes). Explain why, using the shape.
+
+\par\ansline{The mean uses every value, so the few students in the long right tail pull}
+\par\ansline{it up; the median uses only the middle position, so it stays lower.}
+
+\boxguard[7]
+(c) Which center and which spread should the school report? Give their values in context and
+say why.
+
+\par\ansline{The median, 108 minutes, and the IQR, 144 minutes (the middle half spent 52 to 196).}
+\par\ansline{The data are skewed right, so the tail pulls the mean and SD up.}
+
+(d) A student wrote: \emph{``Skewed left --- the tallest bars are on the left, where most
+students are.''} Explain what is wrong.
+
+\par\ansline{The skew is named by the long tail, not the peak. The tall bars are on the left,}
+\par\ansline{but the tail stretches toward longer times, so it is skewed right.}
+
+% ---------------------------------------------------------------- D2 (2.2)
+\boxguard[30]
+\item Two Harlow basketball players' points in five games. \quad
+\textbf{Ana:} $22$, $23$, $24$, $25$, $26$ ($\bar{x} = 24$). \quad
+\textbf{Ben:} $4$, $10$, $14$, $20$, $27$ ($\bar{x} = 15$, $s \approx 8.9$).
+
+\vspace{3pt}
+(a) Complete the table for Ana, then find her standard deviation.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} | c @{}}
+\rowcolor{frost}
+ & & & & & & \textbf{Sum} \\
+Points $x$ & $22$ & $23$ & $24$ & $25$ & $26$ & $120$ \\
+Deviation $x - \bar{x}$ & \ans{$-2$} & \ans{$-1$} & \ans{$0$} & \ans{$1$} &
+  \ans{$2$} & \ans{$0$} \\
+Squared $(x - \bar{x})^2$ & \ans{$4$} & \ans{$1$} & \ans{$0$} & \ans{$1$} &
+  \ans{$4$} & \ans{$10$} \\
+\end{tabularx}
+
+\begin{work}
+  s^2 &= \dfrac{10}{5 - 1} = 2.5 \qquad s = \sqrt{2.5} \approx 1.6 \text{ points}
+\end{work}
+
+(b) A friend says, \emph{``Ana's standard deviation should be the bigger one --- she scores
+way more points.''} Use the formula to explain why the friend is wrong.
+
+\par\ansline{$s$ is built from the deviations --- each game's distance from its own mean.}
+\par\ansline{Ana's games sit within 2 points of 24; how big the scores are never enters.}
+
+(c) In the next five games Ana scores exactly $3$ points more than in each of these.
+New mean: \ans{$27$} \quad New standard deviation: \ans{$1.6$}
+
+\vspace{3pt}
+Explain why the standard deviation came out that way.
+
+\par\ansline{Adding 3 to every game adds 3 to the mean, so not one deviation changes.}
+
+(d) Which player is more consistent? Justify with numbers.
+
+\par\ansline{Ana: $s \approx 1.6$ points against Ben's 8.9, so her games stay close together.}
+
+% ---------------------------------------------------------------- D3 (2.4)
+\boxguard[30]
+\item Harlow's art department tested $12$ cans of each of two brands of paint. Here are the
+drying times, in minutes, from the calculator.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} X *{7}{c} @{}}
+\rowcolor{frost}
+\textbf{Brand} & $\bar{x}$ & \textbf{Sx} & \textbf{minX} & $Q_1$ & \textbf{Med} & $Q_3$ &
+  \textbf{maxX} \\
+\midrule
+Brand C & $60$ & $2.4$ & $55$ & $58$ & $60$ & $62$ & $65$ \\
+Brand D & $60$ & $8.1$ & $44$ & $54$ & $60$ & $66$ & $76$ \\
+\end{tabularx}
+
+\vspace{4pt}
+Both distributions are roughly symmetric.
+
+\vspace{3pt}
+(a) Check Brand D for outliers with the $1.5 \times \text{IQR}$ rule.
+
+\begin{work}
+  \text{IQR} &= 66 - 54 = 12 \\
+  \text{fences} &= 54 - 18 = 36 \quad\text{and}\quad 66 + 18 = 84
+\end{work}
+
+\par\ansline{Every value lies between the fences (44 to 76), so Brand D has no outliers.}
+
+(b) The department head says, \emph{``Same median, same mean --- it doesn't matter which we
+buy.''} Respond.
+
+\par\ansline{When the centers match, the spread decides. Brand D's drying times are much}
+\par\ansline{more spread out, so some D cans take far longer than any C can.}
+
+(c) Write a comparison of the two brands --- shape, outliers, center, and spread --- using
+comparative words.
+
+\par\ansline{Both brands are roughly symmetric with no outliers, and both centers are 60 minutes.}
+\par\ansline{Brand D is much more spread out (Sx 8.1 min, range 32 min) than Brand C}
+\par\ansline{(Sx 2.4 min, range 10 min), so Brand C's drying times are more consistent.}
+
+(d) A mural must be dry within $65$ minutes. Which brand should the department buy?
+Justify with the table.
+
+\par\ansline{Brand C. Its maximum is 65 minutes, so every C can dried within 65 minutes;}
+\par\ansline{Brand D's $Q_3$ is 66, so at least a quarter of D cans take too long.}
+
+\end{enumerate}
+\normalsize
 
 \end{document}
