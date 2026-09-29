@@ -1,0 +1,43 @@
+{
+  "blanks": [
+    "D",
+    "H",
+    "G",
+    "A",
+    "C",
+    "I",
+    "E",
+    "J",
+    "F",
+    "B",
+    "$24$",
+    "$20$",
+    "$16$",
+    "$60$",
+    "$3$",
+    "$13$",
+    "$23$",
+    "$33$",
+    "$25$ points"
+  ],
+  "lines": [
+    [
+      "No. Nobody was assigned --- students chose --- so this is an observational study."
+    ],
+    [
+      "It shows an association between breakfast and grades, not causation."
+    ],
+    [
+      "Another variable: family routine. Students with more support at home are more"
+    ],
+    [
+      "likely to eat breakfast \\emph{and} to keep up with homework,"
+    ],
+    [
+      "and that support could raise grades by itself."
+    ],
+    [
+      "Only an experiment that randomly assigns breakfast could show it causes higher grades."
+    ]
+  ]
+}

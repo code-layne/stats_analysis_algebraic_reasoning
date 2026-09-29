@@ -1,0 +1,43 @@
+{
+  "blanks": [
+    "F",
+    "A",
+    "D",
+    "I",
+    "G",
+    "B",
+    "J",
+    "E",
+    "C",
+    "H",
+    "$40$",
+    "$35$",
+    "$25$",
+    "$100$",
+    "$6$",
+    "$26$",
+    "$46$",
+    "$66$",
+    "$20$ points"
+  ],
+  "lines": [
+    [
+      "No. Nobody was assigned --- students chose --- so this is an observational study."
+    ],
+    [
+      "It shows an association between music and math grades, not causation."
+    ],
+    [
+      "Another variable: family income. Families with more money can pay for music"
+    ],
+    [
+      "lessons \\emph{and} for tutoring or extra help in math,"
+    ],
+    [
+      "and that extra help could raise math grades by itself."
+    ],
+    [
+      "Only an experiment that randomly assigns instruments could show it causes higher grades."
+    ]
+  ]
+}
