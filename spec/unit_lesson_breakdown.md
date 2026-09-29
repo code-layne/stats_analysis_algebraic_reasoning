@@ -68,8 +68,9 @@ standard is still covered. Unit 1 ends Thursday 2026-10-01.
 
 **All four authored, built, and gated 2026-09-29** (`unit02/lesson01`–`04`; the old
 `lesson00` and `lesson05`–`07` skeletons are gone). Every keyed component is page-for-page;
-warm-ups 1pp; homework 2pp; notes 6 / 6 / 5 / 6 pp — **over the 4–5pp budget in 2.1, 2.2, 2.4**
-(the Guided Practice row spills to a sixth page; open decision).
+warm-ups 1pp; homework 2pp; notes 6 / 6 / 5 / 5 pp — 2.4 brought to 5 by cutting one problem
+(user decision 2026-09-29). **2.1 and 2.2 stay at 6** — no single-problem cut, pair cut, or
+shorter vocabulary row reaches 5 (every combination tested); open decision.
 
 ### Unit 3 — Categorical Data and Probability
 Standards: PS.DS.4, PS.P.1, AFDA.DA.3 · 8 content lessons
