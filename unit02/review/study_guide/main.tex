@@ -1,23 +1,13 @@
-%! Unit 2: Describing One Variable — Unit Test Study Guide (Lessons 2.1–2.4) — blank
-% Standalone review handout for the Unit 2 test. Authored on the unit-test model (10pt,
-% \parthead strips, \workrowsep 5pt identical in blank and key) because it sits beside
-% unit02/tests, not inside a lesson packet — it is NOT a lesson component and is merged into
-% no packet. It keeps \namedateperiod: it is a standalone handout with no cover behind it.
-%
-% THE KEY IS GENERATED, NEVER HAND-EDITED:
-%   python3 templates/lesson/mkkey.py unit02/review/study_guide/main.tex \
-%       unit02/review/study_guide_key/main.tex unit02/review/study_guide_key/answers.json
-% Re-run it after every edit to this file.
-%
-% Part 2's worked examples are printed in BOTH copies — they are the study material, so they
-% use ordinary \[ \] displays, never a `work` block (a work block is invisible without -key).
+%! Unit 2: Describing One Variable — Unit Test Study Guide (Lessons 2.1–2.4)
+% Standalone REVIEW handout for the Unit 2 test: read-only study material, not turned in, not
+% scored, and with NO key (user decision 2026-09-29). There is nothing to fill in — every worked
+% example is printed in full with ordinary \[ \] displays — and no \namedateperiod. Practice is
+% the practice test (tests/practice_test), whose key rides in the unit key packet.
+% Authored on the unit-test model (10pt, \parthead strips); it sits beside unit02/tests, is
+% NOT a lesson component, and is merged into no packet.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-
-% Work blocks in the practice section need handwriting room, not typeset spacing. This moves
-% the blank and the key together, so it cannot open a page mismatch.
-\setlength{\workrowsep}{5pt}
 
 % Part-divider strip (same macro the unit tests define)
 \newcommand{\parthead}[1]{%
@@ -38,7 +28,6 @@
 \begin{document}
 
 \pageheader{Unit 2: Describing One Variable}{Unit Test Study Guide --- Lessons 2.1--2.4}
-\namedateperiod
 
 \vspace{0.10in}
 \begin{remindbox}
@@ -48,9 +37,10 @@
 spread, boxplots and outliers, and comparing two groups. It has \textbf{25 questions worth 100 points}:
 Part A vocabulary $10$, Part B multiple choice $12$, Part C short answer and computation $48$,
 Part D extended response $30$.
-\textbf{Use it in this order:} read Part 1 and cover the definitions to test yourself, read
-every worked example in Part 2, then work all of Part 3 with your notes closed. Check Part 3
-against the answer key last, not while you work. Then take the practice test.
+\textbf{This is review, not an assignment} --- nothing here is turned in.
+\textbf{Use it in this order:} read Part 1 and cover the definitions to test yourself, then
+read every worked example in Part 2 and follow the work line by line. Then take the
+\textbf{practice test} with your notes closed and check it against its key.
 \end{remindbox}
 
 % ======================================================================
@@ -337,158 +327,6 @@ minutes. Grade 7's times are much more spread out (IQR $18$ minutes, range $40$)
 centers match, \textbf{the spread decides}. \textbf{Second trap:} two separate descriptions
 side by side with no comparative word, or two displays on different scales.
 \end{notesbox}
-\normalsize
-
-% ======================================================================
-\newpage
-\parthead{Part 3 --- Practice \hfill notes closed; check the key only at the end}
-
-\small
-\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt]
-
-% ---------------------------------------------------------------- P1 (2.1)
-\item \textbf{Willow Creek Middle School} gave a $10$-point quiz. Each dot is one of $20$
-students' scores.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[x=0.9cm, y=0.28cm]
-  \draw[linegray] (2.5,0) -- (10.5,0);
-  \foreach \t in {3,...,10} {
-    \draw[linegray] (\t,-0.3) -- (\t,0.3);
-    \node[below, font=\scriptsize] at (\t,-0.3) {\t};}
-  \node[below, font=\scriptsize] at (6.5,-1.9) {Quiz score (points)};
-  \foreach \x/\k in {3/1, 5/1, 6/1, 7/2, 8/3, 9/5, 10/7}
-    \foreach \j in {1,...,\k}
-      \fill[cerulean] (\x,{1.1*\j}) circle (0.14cm);
-\end{tikzpicture}
-\end{center}
-
-(a) What does one dot stand for? \blank{7.6cm}
-
-\vspace{3pt}
-(b) Median: \blank{1.6cm} \quad Range: \blank{1.6cm} \quad Shape: \blank{3.0cm}
-
-\vspace{3pt}
-(c) A classmate says, \emph{``It's skewed right, because the peak is on the right.''} Explain
-the mistake.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- P2 (2.2)
-\boxguard[24]
-\item \textbf{Willow Creek's} five science classes collected these numbers of cans for a food
-drive: $9$, $11$, $12$, $16$, $17$ (in dozens).
-
-\vspace{2pt}
-(a) Find the mean.
-
-\begin{work}
-  \bar{x} &= \dfrac{9 + 11 + 12 + 16 + 17}{5} = \dfrac{65}{5} = 13 \text{ dozen}
-\end{work}
-
-(b) Complete the table.
-
-\vspace{2pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} | c @{}}
-\rowcolor{frost}
- & & & & & & \textbf{Sum} \\
-Value $x$ & $9$ & $11$ & $12$ & $16$ & $17$ & $65$ \\
-Deviation $x - \bar{x}$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
-Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
-\end{tabularx}
-
-\vspace{2pt}
-(c) Find the variance and the standard deviation.
-
-\begin{work}
-  s^2 &= \dfrac{46}{5 - 1} = 11.5 \\
-  s &= \sqrt{11.5} \approx 3.4 \text{ dozen}
-\end{work}
-
-(d) Interpret $s$ in context.
-
-\par\writeline
-
-% ---------------------------------------------------------------- P3 (2.3)
-\boxguard[26]
-\item \textbf{Willow Creek's} eight bus drivers logged these overtime hours last month, in
-order: $22$, $25$, $26$, $28$, $30$, $31$, $34$, $60$.
-
-\vspace{2pt}
-(a) Find the quartiles, the IQR, and both fences.
-
-\begin{work}
-  Q_1 &= \dfrac{25 + 26}{2} = 25.5 \qquad Q_3 = \dfrac{31 + 34}{2} = 32.5 \qquad
-    \text{IQR} = 7 \\
-  \text{lower fence} &= 25.5 - 1.5(7) = 15 \qquad
-    \text{upper fence} = 32.5 + 1.5(7) = 43
-\end{work}
-
-(b) Which value, if any, is an outlier? \blank{4.4cm}
-
-\vspace{3pt}
-(c) Complete the table.
-
-\vspace{2pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} X c c @{}}
-\rowcolor{frost}
- & \textbf{Mean} & \textbf{Median} \\
-With $60$ ($n = 8$) & \blank{1.8cm} & \blank{1.8cm} \\
-Without $60$ ($n = 7$) & \blank{1.8cm} & \blank{1.8cm} \\
-\end{tabularx}
-
-\vspace{4pt}
-(d) Which center should the district report for these hours, and why?
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- P4 (2.4)
-\boxguard[28]
-\item Two \textbf{Willow Creek} math sections took the same $50$-point test. The
-back-to-back stemplot shows both.
-
-\vspace{2pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{r|c|l}
-\textbf{Section 1} & & \textbf{Section 2} \\
-8 & 2 & \\
-8\;5\;1 & 3 & 6\;7\;9 \\
-9\;7\;5\;2\;1\;0 & 4 & 0\;0\;1\;1\;2\;3\;4 \\
-\end{tabular}
-
-\vspace{2pt}
-\textbf{Key:} $1\,|\,3\,|\,6$ means $31$ points in Section 1 and $36$ points in Section 2
-\end{center}
-
-\vspace{2pt}
-(a) Complete the table.
-
-\vspace{2pt}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{} X c c c @{}}
-\rowcolor{frost}
- & \textbf{Median} & \textbf{IQR} & \textbf{Range} \\
-Section 1 & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
-Section 2 & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
-\end{tabularx}
-
-\vspace{4pt}
-(b) Write a comparison of the two sections' scores that uses a comparative word for center
-\emph{and} for spread, and says which section is more consistent.
-
-\par\writeline
-\par\writeline
-\par\writeline
-
-\end{enumerate}
 \normalsize
 
 \vspace{6pt}
