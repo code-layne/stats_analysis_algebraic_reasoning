@@ -1,132 +1,43 @@
 {
   "blanks": [
-    "E",
-    "C",
+    "D",
+    "H",
     "G",
     "A",
-    "F",
-    "B",
-    "D",
-    "D",
-    "G",
-    "A",
-    "F",
-    "B",
-    "E",
     "C",
-    "The 840 Granite Falls students",
-    "Categorical",
-    "Quantitative",
-    "Categorical",
-    "Quantitative",
-    "All 1,600 members",
-    "$80$",
-    "The 80 members who were surveyed",
+    "I",
+    "E",
+    "J",
+    "F",
+    "B",
+    "$24$",
     "$20$",
-    "$17$",
-    "$15$",
-    "$12$",
-    "$64$",
-    "$7$",
-    "$22$",
-    "$37$",
-    "$52$",
-    "Stratified",
-    "Cluster",
-    "Convenience",
-    "Plays a school sport",
-    "Made the honor roll",
-    "Review session",
-    "The 40 in study hall",
-    "$35\\%$",
-    "$25\\%$",
-    "$30\\%$",
-    "$10\\%$"
+    "$16$",
+    "$60$",
+    "$3$",
+    "$13$",
+    "$23$",
+    "$33$",
+    "$25$ points"
   ],
   "lines": [
     [
-      "It names no group and no measurement, and a single person has one answer."
+      "No. Nobody was assigned --- students chose --- so this is an observational study."
     ],
     [
-      "``How many hours did Granite Falls students sleep last night?''"
+      "It shows an association between breakfast and grades, not causation."
     ],
     [
-      "A statistic --- it describes the 80-member sample, not all 1,600 members."
+      "Another variable: family routine. Students with more support at home are more"
     ],
     [
-      "Time or cost --- reaching every one of 1,600 members would take far too long."
+      "likely to eat breakfast \\emph{and} to keep up with homework,"
     ],
     [
-      "Method 1. Response bias --- the leading wording pushes people toward yes, so it"
+      "and that support could raise grades by itself."
     ],
     [
-      "overestimates: 74\\% against 45\\%, or 1,110 card holders against 675."
-    ],
-    [
-      "Reversed arrow: good grades are what let a student stay on a team, so grades put"
-    ],
-    [
-      "students into the sport group --- that pushes the athletes' percent up on its own."
-    ],
-    [
-      "Leading --- ``Don't you agree'' pushes toward yes, so the wording is not neutral."
-    ],
-    [
-      "Double-barrelled --- it asks about books and picnic tables in one item."
-    ],
-    [
-      "A is observational, B is an experiment: who decided the groups --- families chose in A,"
-    ],
-    [
-      "a generator assigned in B. Observing is how B collected data, not how it built groups."
-    ],
-    [
-      "Study B. Random assignment made the groups alike at the start, so the program is the"
-    ],
-    [
-      "only difference left. Study A's bigger gap earns only ``is associated with.''"
-    ],
-    [
-      "Families who chose to sign up were already readers, so A's program group started"
-    ],
-    [
-      "ahead. Self-selection inflates the gap; in B nobody chose, so that head start is gone."
-    ],
-    [
-      "Nonresponse bias --- the 75\\% who never returned it cared less about a dog park."
-    ],
-    [
-      "It overestimates by 30 percentage points, or $504 - 288 = 216$ households."
-    ],
-    [
-      "Twice the responses, the same wrong 70\\%: a larger sample does not remove bias."
-    ],
-    [
-      "Draw a random sample of households and follow up by phone or in person until nearly"
-    ],
-    [
-      "all of them answer. That removes the nonresponse bias, which size never did."
-    ],
-    [
-      "Stratified. A full numbered list exists and the grades are expected to differ, so"
-    ],
-    [
-      "drawing at random within each grade guarantees all three are represented in proportion."
-    ],
-    [
-      "Survey. The question has a fixed yes/no answer and needs many students, so a short"
-    ],
-    [
-      "written instrument given to the whole sample can be counted quickly."
-    ],
-    [
-      "Chance never chose her advisory --- the other 810 students could not be asked --- so the"
-    ],
-    [
-      "match is luck: the same room could have missed by 20 points and nothing would warn her."
-    ],
-    [
-      "She may say only that 40\\% of her own advisory wants a garden club."
+      "Only an experiment that randomly assigns breakfast could show it causes higher grades."
     ]
   ]
 }

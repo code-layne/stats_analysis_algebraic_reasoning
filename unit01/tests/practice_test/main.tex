@@ -1,6 +1,7 @@
 %! Unit 1: Asking Questions with Data: Study Design — Summative Assessment — Practice Test --- Study Copy (blank)
-% Rewritten 2026-09-28 against the regenerated lessons 1.0-1.8: every item now aims at the
-% target misconception its lesson names. Parallel to ../actual_test/ item for item.
+% Shortened 2026-09-29 at the user's request: 20 items, 100 points --- 10 vocabulary, 5 multiple
+% choice, 4 one-step computations, 1 critical-thinking short answer. Parallel to ../actual_test/
+% item for item.
 %
 % THE KEY IS GENERATED, NEVER HAND-EDITED:
 %   python3 templates/lesson/mkkey.py unit01/tests/practice_test/main.tex \
@@ -25,8 +26,6 @@
 % from this file byte for byte.
 \makeatletter
 \newcommand{\correct}{\ifsaar@workvisible\ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}\fi}
-% Key-only drawing (the correct bars on item 30), inside the figure's existing bounding box.
-\newcommand{\keyonly}[1]{\ifsaar@workvisible#1\fi}
 \makeatother
 
 \begin{document}
@@ -40,542 +39,211 @@
 \textbf{This is a practice test.} It mirrors the real Unit 1 test in length, format,
 and the ideas it covers, but the numbers and contexts differ. Work every problem
 with no notes, then check your answers against the key.
-\textbf{100 points:} Part A $14$, Part B $16$, Part C $40$, Part D $30$.
+\textbf{100 points:} Part A $20$, Part B $20$, Part C $40$, Part D $20$.
 \end{remindbox}
 
 % ======================================================================
-\parthead{Part A --- Vocabulary \hfill 14 questions, 1 point each}
+\parthead{Part A --- Vocabulary \hfill 10 questions, 2 points each}
 
 \small
-\textbf{Set 1 --- Data and Sampling.} Write the letter of the matching description
-next to each term.
+Write the letter of the matching description next to each term.
 
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
-\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item \blank{0.8cm} Categorical variable
-  \item \blank{0.8cm} Statistical question
+\begin{enumerate}[leftmargin=1.9em, itemsep=5pt, topsep=1pt]
+  \item \blank{0.8cm} Population
+  \item \blank{0.8cm} Sample
   \item \blank{0.8cm} Parameter
   \item \blank{0.8cm} Statistic
-  \item \blank{0.8cm} Sampling frame
-  \item \blank{0.8cm} Stratified sample
-  \item \blank{0.8cm} Cluster sample
+  \item \blank{0.8cm} Categorical variable
+  \item \blank{0.8cm} Quantitative variable
+  \item \blank{0.8cm} Simple random sample
+  \item \blank{0.8cm} Convenience sample
+  \item \blank{0.8cm} Observational study
+  \item \blank{0.8cm} Experiment
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
-\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item A number computed from a sample.
-  \item The population is split into groups that are alike inside, and some are
-        chosen at random from every group.
-  \item A question whose answers are expected to vary, and that names the group
-        and what will be recorded.
-  \item A few whole groups, each a small mix of the whole, are chosen at random
-        and everyone in them is studied.
-  \item A variable whose values are labels or group names.
-  \item The list of individuals a study can actually choose from.
-  \item A number that describes a population.
-\end{enumerate}
-\end{minipage}
-
-\vspace{6pt}
-\textbf{Set 2 --- Bias and Study Design.} Same directions.
-
-\vspace{2pt}
-\begin{minipage}[t]{0.36\linewidth}
-\begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=8]
-  \item \blank{0.8cm} Undercoverage
-  \item \blank{0.8cm} Nonresponse
-  \item \blank{0.8cm} Response bias
-  \item \blank{0.8cm} Lurking variable
-  \item \blank{0.8cm} Confounding variable
-  \item \blank{0.8cm} Placebo
-  \item \blank{0.8cm} Randomized block design
-\end{enumerate}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.61\linewidth}
-\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item Who asks, the wording, or the order of the questions pushes people away
-        from their true answer.
-  \item A variable that differs between an experiment's groups and affects the
-        response, so two explanations cannot be told apart.
-  \item Units are sorted into groups of similar units first, then randomly
-        assigned within each group.
-  \item Part of the population is left off the frame and can never be chosen.
-  \item A fake treatment built to look real.
-  \item A variable outside the study that affects both variables being compared.
-  \item Individuals were chosen for the sample but never answered.
+\begin{enumerate}[label=\Alph*., leftmargin=1.9em, itemsep=5pt, topsep=1pt]
+  \item A number that describes a sample.
+  \item The researcher assigns people to groups and gives them a treatment.
+  \item A variable whose values are labels, like a color or a team name.
+  \item The whole group we want to learn about.
+  \item Everyone has an equal chance of being picked.
+  \item The researcher watches or asks, without assigning anyone to a group.
+  \item A number that describes a whole population.
+  \item The part of the population we actually collect data from.
+  \item A variable whose values are measured amounts, like minutes or inches.
+  \item Choosing whoever is easiest to reach.
 \end{enumerate}
 \end{minipage}
 \normalsize
 
 % ======================================================================
 \boxguard[8]
-\parthead{Part B --- Multiple Choice \hfill 8 questions, 2 points each}
+\parthead{Part B --- Multiple Choice \hfill 5 questions, 4 points each}
 
 \small
-\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=15]
+\begin{enumerate}[leftmargin=2.2em, itemsep=5pt, topsep=2pt, start=11]
 
-\item Granite Falls Middle School records each student's \textbf{bus route number}
-($4$, $7$, $12$, or $15$). This variable is
+\item Which of these variables is \textbf{quantitative}?
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item quantitative, because the values are numbers.
-  \item quantitative, because you can compute a mean route number.
-  \item categorical, because the numbers are labels for routes.\correct
-  \item neither, because a route number is not really data.
+  \item Eye color
+  \item Favorite sport
+  \item Height in inches\correct
+  \item Home ZIP code
 \end{enumerate}
 
 % keep each stem with its four options
 \boxguard[7]
-\item Two volunteers each take an honest random sample of $50$ Silver Lake
-Recreation Center members. One finds that $34\%$ swim laps weekly; the other finds
-$42\%$. The best explanation is that
+\item Maplewood High School has $900$ students. A survey of $60$ of them finds that
+$30\%$ walk to school. The $30\%$ is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item both are statistics estimating one parameter, and samples vary.\correct
-  \item one volunteer made a mistake, because there is only one true percent.
-  \item the true percent must be exactly $38\%$, halfway between them.
-  \item the percent of members who swim changed between the two samples.
+  \item statistic, because it describes the sample.\correct
+  \item parameter, because it describes the sample.
+  \item statistic, because it describes all $900$ students.
+  \item parameter, because it describes all $900$ students.
 \end{enumerate}
 
 % keep each stem with its four options
 \boxguard[7]
-\item Each of Maplewood High School's $32$ homerooms holds students from a
-\textbf{single grade}. A researcher draws $2$ homerooms at random and surveys
-everyone in them. The main problem with this sample is that
+\item A librarian takes an alphabetical list of card holders, picks a random start, and
+then chooses \textbf{every 10th name}. This is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item no chance was used, so it is a convenience sample.
-  \item two homerooms is too small a sample to use.
-  \item a cluster sample can never be used in a school.
-  \item a homeroom is alike inside, so only one or two grades are reached.\correct
+  \item stratified sample.
+  \item cluster sample.
+  \item convenience sample.
+  \item systematic sample.\correct
 \end{enumerate}
 
 % keep each stem with its four options
 \boxguard[7]
-\item Brookside Apartments draws $60$ households at random from its complete list
-and mails each a survey. $22$ are never returned. The missing $22$ are an example of
+\item To learn how often town residents exercise, a researcher surveys people
+\textbf{inside a gym}. The results will most likely
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item undercoverage, because those households were left out.
-  \item nonresponse, because they were chosen but never answered.\correct
-  \item a convenience sample, because the others were easier to reach.
-  \item sampling variability, because samples differ from each other.
+  \item be about right, because the people were chosen fairly.
+  \item overestimate how often residents exercise.\correct
+  \item underestimate how often residents exercise.
+  \item be right if the researcher surveys more people at the gym.
 \end{enumerate}
 
 % keep each stem with its four options
 \boxguard[7]
-\item A survey's method causes it to \textbf{underestimate} by $12$ percentage
-points. The researcher repeats it with \textbf{five times as many people} and the
-same method. The new estimate will most likely
+\item Researchers use a coin flip to put $80$ volunteers into two groups. One group
+sleeps $8$ hours and the other sleeps $5$ hours before a memory test. This study is
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item underestimate by about the same $12$ points.\correct
-  \item land close to the true value, because the sample is larger.
-  \item overestimate, because larger samples pull the other way.
-  \item be impossible to predict in any direction.
-\end{enumerate}
-
-% keep each stem with its four options
-\boxguard[7]
-\item In a random sample of adults, those who own a dog walk more minutes per day
-than those who do not. Nobody was assigned a dog. This result shows
-\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item that owning a dog causes people to walk more.
-  \item that walking more causes people to buy a dog.
-  \item an association only; a lurking variable could explain it.\correct
-  \item nothing at all, because the sample was chosen at random.
-\end{enumerate}
-
-% keep each stem with its four options
-\boxguard[7]
-\item In an experiment on a new vitamin, the control group is given a
-\textbf{placebo}. Its purpose is to
-\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item make the total number of subjects larger.
-  \item let both groups believe they are treated, so only the vitamin differs.\correct
-  \item tell each subject which group they are in.
-  \item remove the need for random assignment.
-\end{enumerate}
-
-% keep each stem with its four options
-\boxguard[7]
-\item A researcher wants to know whether energy drinks cause heart problems in
-$12$-year-olds. No experiment is run. The best reason is that the experiment would be
-\begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
-  \item impractical, because $12$-year-olds are hard to find.
-  \item impossible, because heart problems cannot be measured.
-  \item unnecessary, because observational studies prove causation.
-  \item unethical, because it would assign children to drink them.\correct
+  \item an experiment, because the researchers assigned the groups.\correct
+  \item an experiment, because it measures memory.
+  \item an observational study, because the volunteers were watched.
+  \item an observational study, because there are two groups.
 \end{enumerate}
 
 \end{enumerate}
 \normalsize
 
 % ======================================================================
-\boxguard[8]
-\parthead{Part C --- Short Answer \& Computation \hfill 8 questions, 5 points each}
+\boxguard[12]
+\parthead{Part C --- Short Computations \hfill 4 questions, 10 points each}
 
 \small
-\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt, start=23]
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=16]
 
-% ---------------------------------------------------------------- C1 (1.0/1.1)
-\item \textbf{Granite Falls Middle School} has $840$ students. For each student the
-office records: bus route number, hours of sleep last night, favorite elective, and
-number of siblings.
-
-\vspace{2pt}
-(a) Who are the \textbf{individuals} in this data set? \blank{6.2cm}
-
-\vspace{3pt}
-\boxguard[10]
-(b) Classify each variable.
+% ---------------------------------------------------------------- C1 (1.2)
+\item \textbf{Silver Lake Recreation Center} has $900$ members. The director asks
+$60$ members chosen at random, and $18$ of them use the pool every week.
 
 \vspace{2pt}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} X c @{}}
-\rowcolor{frost}
-\textbf{Variable} & \textbf{Categorical or quantitative?} \\
-\midrule
-Bus route number & \blank{4.4cm} \\
-Hours of sleep last night & \blank{4.4cm} \\
-Favorite elective & \blank{4.4cm} \\
-Number of siblings & \blank{4.4cm} \\
-\end{tabularx}
-
-\vspace{4pt}
-(c) The office's first draft question is \emph{``How much sleep?''} Explain why that
-is not a statistical question, then rewrite it so that it is.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- C2 (1.2)
-\boxguard[16]
-\item \textbf{Silver Lake Recreation Center} has $1{,}600$ members. The director
-surveys $80$ members chosen at random; $28$ of them use the pool every week.
-
-\vspace{2pt}
-(a) Population: \blank{4.4cm} \quad Sample size: \blank{1.8cm}
-
-\vspace{3pt}
-Sample: \blank{9.0cm}
-
-\vspace{3pt}
-(b) What percent of the sample uses the pool weekly? About how many of all $1{,}600$
-members does that estimate?
+(a) What percent of the sample uses the pool every week?
 
 \begin{work}
-  \dfrac{28}{80} &= 0.35 = 35\% \\
-  0.35 \times 1600 &= 560 \text{ members}
+  \dfrac{18}{60} &= 0.30 = 30\%
 \end{work}
 
-(c) Is the $35\%$ a parameter or a statistic? Say how you know.
+(b) About how many of all $900$ members use the pool every week?
 
-\par\writeline
+\begin{work}
+  0.30 \times 900 &= 270 \text{ members}
+\end{work}
 
-(d) Name one \textbf{constraint} that keeps the director from taking a census of all
-$1{,}600$ members.
-
-\par\writeline
-
-% ---------------------------------------------------------------- C3 (1.3)
-\boxguard[18]
-\item \textbf{Maplewood High School} has $960$ students and wants a
-\textbf{stratified} random sample of $64$, allocated in proportion to grade size.
+% ---------------------------------------------------------------- C2 (1.3)
+\boxguard[14]
+\item \textbf{Granite Falls Middle School} has $600$ students and wants a
+\textbf{stratified} sample of $60$ --- the same fraction from each grade.
 
 \vspace{2pt}
 (a) What fraction of the school is being sampled?
 
 \begin{work}
-  \dfrac{64}{960} &= \dfrac{1}{15}
+  \dfrac{60}{600} &= \dfrac{1}{10}
 \end{work}
 
-(b) Show the work for the \textbf{10th grade} row, then complete the table.
+(b) Complete the table.
 
-\begin{work}
-  255 \times \dfrac{1}{15} &= 17 \text{ students}
-\end{work}
-
-\vspace{-2pt}
+\vspace{2pt}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\begin{tabularx}{\linewidth}{@{} X c c c | c @{}}
 \rowcolor{frost}
-\textbf{Grade} & 9 & 10 & 11 & 12 & \textbf{Total} \\
+\textbf{Grade} & 6 & 7 & 8 & \textbf{Total} \\
 \midrule
-Students in grade & $300$ & $255$ & $225$ & $180$ & $960$ \\
-Number sampled & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+Students in grade & $240$ & $200$ & $160$ & $600$ \\
+Number sampled & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
 \end{tabularx}
 
-% ---------------------------------------------------------------- C4 (1.3)
-\boxguard[18]
-\item \textbf{Brookside Apartments} has $720$ households on a numbered list.
-The manager wants a \textbf{systematic} random sample of $48$.
+% ---------------------------------------------------------------- C3 (1.3)
+\boxguard[14]
+\item \textbf{Brookside Apartments} has $500$ households on a numbered list. The
+manager wants a \textbf{systematic} sample of $50$.
 
 \vspace{2pt}
 (a) Find the interval $k$.
 
 \begin{work}
-  k &= 720 \div 48 \\
-  k &= 15
+  k &= 500 \div 50 = 10
 \end{work}
 
-(b) The random start is household $7$. List the first four households selected:
+(b) The random start is household $3$. List the first four households chosen.
 
 \vspace{2pt}
 \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm} \quad \blank{1.6cm}
 
-\vspace{4pt}
-(c) Name the sampling technique each manager used.
+% ---------------------------------------------------------------- C4 (1.6)
+\boxguard[14]
+\item In an \textbf{experiment}, $40$ students are randomly assigned to use a
+flashcard app and $40$ to study the usual way. Afterwards, $30$ of the app group and
+$20$ of the usual group passed a quiz.
 
 \vspace{2pt}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} X c @{}}
-\rowcolor{frost}
-\textbf{What the manager did} & \textbf{Technique} \\
-\midrule
-Split the households by building age and drew some at random from every
-building, in proportion. & \blank{3.4cm} \\
-Drew $4$ of the $24$ floors at random, then surveyed every household on
-those $4$. & \blank{3.4cm} \\
-Stood in the lobby on Saturday morning and asked whoever walked past. & \blank{3.4cm} \\
-\end{tabularx}
-
-% ---------------------------------------------------------------- C5 (1.4)
-\boxguard[20]
-\item \textbf{Elmhurst Public Library} has $1{,}500$ card holders and wants to know
-what fraction want Sunday hours. Two random phone samples were taken.
-
-\vspace{1pt}
-\textbf{Method 1.} $100$ card holders were asked, \emph{``Most libraries now open on
-Sundays. Wouldn't you like Sunday hours too?''} $74$ said yes. \\
-\textbf{Method 2.} $120$ card holders were asked, \emph{``Should the library add
-Sunday hours?''} $54$ said yes.
-
-\vspace{2pt}
-(a) Find the percent saying yes for each method.
+(a) Find the percent who passed in each group.
 
 \begin{work}
-  \dfrac{74}{100} &= 0.74 = 74\% \\
-  \dfrac{54}{120} &= 0.45 = 45\%
+  \text{App: } \dfrac{30}{40} &= 0.75 = 75\% \\
+  \text{Usual: } \dfrac{20}{40} &= 0.50 = 50\%
 \end{work}
 
-(b) Estimate the number of all $1{,}500$ card holders each method points to.
-
-\begin{work}
-  0.74 \times 1500 &= 1110 \text{ card holders} \\
-  0.45 \times 1500 &= 675 \text{ card holders}
-\end{work}
-
-(c) Both samples were random, yet one method is biased. Name it, name the
-\textbf{type} of bias, and say which \textbf{direction} it pushes the estimate.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- C6 (1.5)
-\boxguard[20]
-\item A random sample of $200$ Maplewood students is taken. Of the $80$ who play a
-\textbf{school sport}, $60$ made the honor roll. Of the $120$ who do not, $60$ made
-the honor roll. Nobody was assigned --- students chose.
-
-\vspace{2pt}
-(a) Find each group's honor-roll percent, and the gap between them.
-
-\begin{work}
-  \dfrac{60}{80} &= 0.75 = 75\% \\
-  \dfrac{60}{120} &= 0.50 = 50\% \\
-  75\% - 50\% &= 25 \text{ percentage points}
-\end{work}
-
-(b) Explanatory variable: \blank{4.6cm} \quad Response: \blank{4.6cm}
-
-\vspace{3pt}
-(c) Using all $200$ students, find the overall honor-roll percent and estimate how
-many of all $960$ students that is.
-
-\begin{work}
-  \dfrac{60 + 60}{200} &= \dfrac{120}{200} = 0.60 = 60\% \\
-  0.60 \times 960 &= 576 \text{ students}
-\end{work}
-
-(d) Maplewood requires passing grades to stay on a team. Name the \textbf{reversed
-arrow} or a \textbf{lurking variable}, and say which way it pushes the numbers.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- C7 (1.6)
-\boxguard[20]
-\item Maplewood now runs an \textbf{experiment}. Of $80$ volunteers, a random
-number generator sends $40$ to a review session before the unit test and $40$ to
-an ordinary study hall. Afterwards $30$ of the review group and $22$ of the study
-hall group passed.
-
-\vspace{2pt}
-(a) Find each group's pass percent and the gap.
-
-\begin{work}
-  \dfrac{30}{40} &= 0.75 = 75\% \\
-  \dfrac{22}{40} &= 0.55 = 55\% \\
-  75\% - 55\% &= 20 \text{ percentage points}
-\end{work}
-
-(b) Treatment: \blank{4.6cm} \quad Control group: \blank{4.6cm}
-
-\vspace{3pt}
-(c) Instead, Maplewood \textbf{blocks} on the last unit test: $48$ volunteers
-passed it and $32$ did not. Randomly split each block in half. How many go to each
-group?
-
-\begin{work}
-  48 \div 2 &= 24 \text{ per group (passed block)} \\
-  32 \div 2 &= 16 \text{ per group (did-not-pass block)}
-\end{work}
-
-% ---------------------------------------------------------------- C8 (1.8)
-\boxguard[30]
-\item The Maplewood Student Council asked a stratified sample of $80$ students how
-to spend a grant. Complete the table, then complete the bar graph.
-
-\vspace{2pt}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{} X c c @{}}
-\rowcolor{frost}
-\textbf{Choice} & \textbf{Count} & \textbf{Relative frequency} \\
-\midrule
-New library books     & $28$ & \blank{2.6cm} \\
-Picnic tables         & $20$ & \blank{2.6cm} \\
-Water bottle stations & $24$ & \blank{2.6cm} \\
-Longer passing time   & $8$  & \blank{2.6cm} \\
-\end{tabularx}
-
-\vspace{6pt}
-\begin{center}
-\begin{tikzpicture}[x=1cm, y=0.075cm]
-  \foreach \y in {5,15,25,35}
-    \draw[linegray, very thin] (0,\y) -- (10.4,\y);
-  \foreach \y in {10,20,30,40}
-    \draw[linegray] (0,\y) -- (10.4,\y);
-  \foreach \y in {0,10,20,30,40}
-    \node[left, font=\scriptsize] at (-0.05,\y) {\y\%};
-  \foreach \x in {2.6,5.2,7.8}
-    \draw[linegray, dashed] (\x,0) -- (\x,45);
-  \foreach \i/\lab in {1/New library books, 2/Picnic tables, 3/Water bottle stations,
-                       4/Longer passing time}
-    \node[below, font=\scriptsize, align=center, text width=2.4cm]
-      at ({2.6*\i-1.3},-0.5) {\lab};
-  \draw[cerulean, thick] (0,45) -- (0,0) -- (10.4,0);
-  \keyonly{\foreach \i/\h in {1/35, 2/25, 3/30, 4/10}
-    \fill[keyred, opacity=0.55] ({2.6*\i-2.0},0) rectangle ({2.6*\i-0.6},\h);}
-\end{tikzpicture}
-\end{center}
-
-\vspace{2pt}
-The council's first draft item read: \emph{``Don't you agree the grant should buy
-new books and picnic tables?''} Name the \textbf{two} instrument rules it breaks.
-
-\par\writeline
-\par\writeline
+(b) How many percentage points apart are the two groups? \blank{2.8cm}
 
 \end{enumerate}
 \normalsize
 
 % ======================================================================
-\boxguard[10]
-\parthead{Part D --- Extended Response \hfill 3 questions, 10 points each}
+\boxguard[12]
+\parthead{Part D --- Critical Thinking \hfill 1 question, 20 points}
 
 \small
-\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=31]
+\begin{enumerate}[leftmargin=2.2em, itemsep=10pt, topsep=2pt, start=20]
 
-% ---------------------------------------------------------------- D1 (1.5-1.7)
-\item Elmhurst Public Library has run \textbf{two} studies of its summer reading
-program.
-
-\vspace{1pt}
-\textbf{Study A.} Library records were checked. Of the children whose families
-\emph{chose} to sign up, $84\%$ met their reading goal; of those who did not sign
-up, $52\%$ did. \\
-\textbf{Study B.} Of $120$ volunteer children, a generator \emph{assigned} $60$ to
-the program and $60$ to no program. Librarians collected the data by
-\emph{observing} each child read aloud: $75\%$ of the program group met the goal
-and $60\%$ of the others did.
+\item A random sample of Maplewood students found that students who \textbf{eat
+breakfast} have higher grades than students who skip it. Nobody was assigned ---
+students chose for themselves. The principal says, \emph{``Eating breakfast causes
+higher grades.''}
 
 \vspace{3pt}
-(a) Which study is observational and which is an experiment? Give the one feature
-that decides it --- and say why Study B's \emph{observing} does not change your answer.
+Is the principal's conclusion justified? Explain your reasoning, and name one
+\textbf{other variable} that could explain the result.
 
 \par\writeline
 \par\writeline
-
-(b) Study A's gap is $32$ points and Study B's is $15$. Which study lets the library
-write \emph{``the program caused more children to meet their goal''}? Justify it.
-
 \par\writeline
-\par\writeline
-
-(c) Explain why Study A's gap came out so much \emph{bigger} than Study B's.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- D2 (1.4)
-\boxguard[26]
-\item \textbf{Brookside Apartments} mailed a survey about a proposed dog park to
-all $720$ households. $180$ were returned, and $126$ of those said yes. The
-management office's own sign-up records show that $288$ of the $720$ households
-actually want one.
-
-\vspace{2pt}
-(a) Find the response rate, the survey's percent saying yes, and the number of
-households that percent points to.
-
-\begin{work}
-  \dfrac{180}{720} &= 0.25 = 25\% \text{ response rate} \\
-  \dfrac{126}{180} &= 0.70 = 70\% \\
-  0.70 \times 720 &= 504 \text{ households}
-\end{work}
-
-(b) The records say the truth is $288$ of $720$, or $40\%$. Name the bias, and give
-its size in percentage points \emph{and} in households.
-
-\par\writeline
-\par\writeline
-
-(c) The manager mails again and gets $360$ returns, $252$ of them yes. Compute that
-percent and explain what the result shows.
-
-\begin{work}
-  \dfrac{252}{360} &= 0.70 = 70\%
-\end{work}
-
-\par\writeline
-
-(d) Describe one change that would actually reduce the bias, and name the bias it
-removes.
-
-\par\writeline
-\par\writeline
-
-% ---------------------------------------------------------------- D3 (1.3/1.7/1.8)
-\boxguard[24]
-\item \textbf{Granite Falls Middle School} ($840$ students) wants to know whether
-to start a school garden club. The office has a numbered list of all $840$ students,
-and the three grades are believed to differ a lot in their answers.
-
-\vspace{2pt}
-(a) Choose \textbf{one} of the four sampling techniques and justify it from what this
-context allows.
-
-\par\writeline
-\par\writeline
-
-(b) Name one of the five \textbf{data collection methods} and say why it fits this
-question.
-
-\par\writeline
-\par\writeline
-
-(c) Instead, a teacher asks her own advisory of $30$ students; $12$ say yes. A random
-sample of the school later finds $38\%$. She reports: \emph{``My advisory got $40\%$
---- within $2$ points --- so asking one advisory works as well as a random sample.''}
-Explain what is wrong with her claim, and state what she \emph{is} allowed to say.
-
 \par\writeline
 \par\writeline
 \par\writeline
