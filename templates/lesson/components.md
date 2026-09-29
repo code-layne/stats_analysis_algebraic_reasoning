@@ -16,7 +16,7 @@ Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) 
 2026-09-06, modeled on AP Statistics lesson 1.4 minus its AP Practice page). The **guided notes
 carry the release** — the teacher models **exactly two** long sections (*I do*), then works one
 **Guided Practice** with the class holding the pen (*we do*) — and **the homework is the individual
-practice** (*you do*), started in class in the last ten minutes. **There is no group activity and
+practice** (*you do*), assigned at the close and done outside class (Unit 2 on, 2026-09-29; Unit 1 started it in class). **There is no group activity and
 no solo practice set in the notes.** The **debrief is spoken — a phase, not a component** — it lives
 in the lesson plan and the deck only — and **there is no exit ticket**. `activity/` (the
 dropped group activity), `experience/` (the scrapped EFFL component), and `exit_ticket/` still
@@ -57,34 +57,34 @@ order:
    table (use `\TallMath{...}` for tall formulas).
 5. **Lesson at a Glance — `\MeetingLength`** — `fixedskillbox{frost}`, a four-column `tabularx`
    (Phase / Min / Students / Teacher) carrying the four phases:
-   **Warm-Up 5 · Guided Notes & Practice 35 · Debrief 10 · Close & Assign 10.**
+   **Warm-Up 5 · Guided Notes & Practice 45 · Debrief 5 · Close & Assign 5** (Unit 2 on; Unit 1 reads 5 · 35 · 10 · 10).
    `fixedskillbox` because a `tabularx` must not split. **This table is a contract** — the I do is
-   about 20 of the 35 and the Guided Practice about 14; the debrief is spoken; the homework start
-   is the second formative read.
+   about 25 of the 45 and the Guided Practice about 20; the debrief is the spoken cold check; the
+   homework is assigned, not started in class.
 6. **Warm-Up — Activate Prior Knowledge (5 min)** — `fixedskillbox{frost}`, two columns: *the three
    items and what each seeds* (which notes section picks each one up) · *running it* (which item
    to debrief aloud, what to leave on the board, which item is the tell).
    `\includegraphics[page=1]{warmup/main}` **only** if the warm-up is a prefab PDF.
 7. **Hook — before anyone sits down** — `skillbox{frost}`: the claim on the board, the vote, and
    **do not settle it** — name where it settles (the second half of section 2).
-8. **Guided Notes & Practice — I do, then we do (35 min)** — `skillbox{frost}`, `multicols{2}`.
-   Left column, *I do (about 20 min)*: one paragraph per section, each in two moves with its
+8. **Guided Notes & Practice — I do, then we do (45 min)** — `skillbox{frost}`, `multicols{2}`.
+   Left column, *I do (about 25 min)*: one paragraph per section, each in two moves with its
    minutes, saying what the teacher models and what students write; name which section **is the
    lesson** (section 2) and where to take the vote before anyone writes. Right column, *we do
-   (about 15 min)*: the Guided Practice by name, the questions the teacher asks per lettered part,
+   (about 20 min)*: the Guided Practice by name, the questions the teacher asks per lettered part,
    the circulation prompts (reasons, not words), and which two papers to collect for the debrief.
-9. **Debrief — whole class, spoken (10 min)** — `skillbox{frost}`, `multicols{2}`: the ordered walk
+9. **Debrief — whole class, spoken (5 min)** — `skillbox{frost}`, `multicols{2}`: the ordered walk
    of what goes back on the board (students answer aloud, nothing to fill in), the **cold check**
    asked cold with its correct answer (*this replaces the exit ticket*), the **formative read** into
-   three piles and how the next lesson opens from pile (c), and what to cut if it runs short.
-10. **Homework — scored, started in class, due after two study halls** — `skillbox{goldbox}`: the ~6 items and
+   three piles and how the next lesson opens from pile (c) — one board item and the cold check, nothing more.
+10. **Homework — scored, assigned today, due after two study halls** — `skillbox{goldbox}`: the ~6 items and
     what each targets (name the contrast pair, the crux head-on, and the spiral item), scoring
     (2 per item), **packet or Desmos** with the activity named if Desmos, the next-lesson preview,
     and the **Connections & Big Ideas** line carrying the lettered standard codes.
 11. **Watch For (while circulating)** — `skillbox{redbox}`: misconceptions keyed to notes section,
     Guided Practice part, *and* homework item, each with a probe; cold-call prompts.
-12. **Close & Assign (10 min)** — `skillbox{goldbox}`: the homework launch, which items to start in
-    class and which to let go home, the three-pile sort while circulating and the reteach trigger,
+12. **Close & Assign (5 min)** — `skillbox{goldbox}`: the homework launch (form, points, due date,
+    which item to do first),
     the one-line "what changed today," the preview.
 13. **Teacher notes** — `\begin{teachernote}[Component]`, one per component in packet order:
     **[Warm-Up]**, **[Guided Notes \& Practice]**, **[Homework]**. Three notes — none for the
@@ -105,7 +105,7 @@ order:
   |---|---|---|---|
   | 1 | Warm-Up | what the spiral items rehearse | `\blank{1.2cm}` |
   | 2 | Guided Notes & Practice | the ideas the two sections build, then the one survey worked together | `\blank{1.2cm}` |
-  | 3 | Homework | the new context, one line — *scored, started in class, due the first class after two study halls* | `\blank{1.2cm}` |
+  | 3 | Homework | the new context, one line — *scored, due the first class after two study halls* | `\blank{1.2cm}` |
 
   **Three rows** — the Guided Practice is inside the Guided Notes & Practice row, not its own,
   because it has no separate handout. **Homework is scored**, so its score cell is a `\blank{}` —
@@ -130,11 +130,11 @@ you collect it.
 
 ## Guided notes & practice
 
-`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
+`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 45 minutes** (35 in Unit 1), in the **Main
 Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; density rules of
 2026-09-12). `\pageheader{...}` (no name row — Namestrip), the `vocabbox`, the `hookbox` (it stays), then **one
-`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **3–4 pages** at
-12pt, **12–19 numbered problems**. The page belongs to the student's pen.
+`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **4–5 pages** at
+12pt, **16–24 numbered problems** (Unit 1: 3–4 pages, 12–19). The page belongs to the student's pen.
 
 - `vocabbox` — one `\vterm{Term}` per key term (4–6): the fixed-height row pair `\vterm` /
   `\vtermans` defined in the notes preamble (copy from the reference lesson). The box says **"Fill in
@@ -176,8 +176,8 @@ Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; densit
 
 `homework/` (+ `homework_key/`) — authored for **every** lesson. It is the lesson's **individual
 practice** *and* its graded work: the cover's score column carries a `\blank{}` for it, never `NA`,
-and **students start it in class in the last ten minutes of the period**, alone, while the
-teacher circulates for the second formative read.
+and it is **assigned at Close & Assign and done outside class** (Unit 2 on; Unit 1 started it in
+class in the last ten minutes).
 
 `\pageheader{...}{Homework}` — **no name row** (namestrip). Budget **two pages maximum** at 12pt, blank
 and key (user decision 2026-09-06 — cut an item or a part rather than run to a third page); the practice boxes at full size (`\small` only in the opening `remindbox`).

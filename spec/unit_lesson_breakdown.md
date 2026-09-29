@@ -53,18 +53,22 @@ assessments and cover pair ✅
 | 1.8 | Project: Design and Conduct a Survey | AFDA.DA.2d, h–j; PS.DC.2d | ✅ table shape (2026-09-14) |
 
 ### Unit 2 — Describing One Variable
-Standards: PS.DS.1, PS.DS.2, PS.DS.3 · 7 content lessons
+Standards: PS.DS.1, PS.DS.2, PS.DS.3 · 4 content lessons, no launch, no quiz
 
-| # | Title | Standards | Status |
-|---|---|---|---|
-| 2.0 | Unit Launch: Describing One Variable | — | ⬜ |
-| 2.1 | Dot Plots, Stemplots, and Histograms | PS.DS.1a | ⬜ |
-| 2.2 | Boxplots and Cumulative Frequency Graphs | PS.DS.1a | ⬜ |
-| 2.3 | Shape, Center, Spread, and Unusual Features | PS.DS.1b | ⬜ |
-| 2.4 | Measures of Center | PS.DS.2a | ⬜ |
-| 2.5 | Measures of Spread | PS.DS.2b, e | ⬜ |
-| 2.6 | Outliers and Their Influence | PS.DS.2c–d | ⬜ |
-| 2.7 | Comparing Distributions | PS.DS.3a–b | ⬜ |
+**Consolidated 2026-09-29 (user decision)** from eight days (launch + 2.1–2.7) to four lessons
+on the 5 / 45 / 5 / 5 period, then a review day and the test — six days instead of ten. Every
+standard is still covered. Unit 1 ends Thursday 2026-10-01.
+
+| # | Title | Folds in (old map) | Content | Standards | Status |
+|---|---|---|---|---|---|
+| 2.1 | Displaying and Describing Distributions | 2.0, 2.1, 2.3 | dot plots, stemplots, histograms; shape, center, spread, unusual features (SOCS) read from each; the launch becomes the hook and warm-up | PS.DS.1a, 1b | ⬜ |
+| 2.2 | Measuring Center and Spread | 2.4, 2.5 | mean / median / mode (brisk review); range, quartiles, IQR; variance and standard deviation from a deviations table | PS.DS.2a, 2b, 2e | ⬜ |
+| 2.3 | Boxplots, Outliers, and Resistance | 2.2, 2.6 | five-number summary → boxplot; 1.5·IQR fences; remove the outlier — mean and SD move, median and IQR don't; quartiles read off a cumulative frequency graph | PS.DS.1a, 2c, 2d | ⬜ |
+| 2.4 | Comparing Distributions | 2.7 | back-to-back stemplots, parallel dot plots, parallel boxplots; compare on SOCS in context | PS.DS.3a, 3b | ⬜ |
+
+**Directories are not yet restructured:** `unit02/lesson00`–`lesson07` are still the old EFFL
+skeletons under the old titles. Remove `lesson00` and `lesson05`–`07`, then re-scaffold
+`lesson01`–`04` under the titles above (the scaffolder now emits notes + the 5 / 45 / 5 / 5 plan).
 
 ### Unit 3 — Categorical Data and Probability
 Standards: PS.DS.4, PS.P.1, AFDA.DA.3 · 8 content lessons

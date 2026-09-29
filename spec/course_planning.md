@@ -702,7 +702,14 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    class after two study halls.
 3. ~~Convert 1.0, 1.1, 1.3–1.8~~ — **done 2026-09-14.** Unit 1 is uniform.
 4. **Units 2–8**: scaffold `notes` (only) into each lesson as authored and delete
-   `experience`/`experience_key`; confirm the Unit 2 lesson map with the user before authoring.
+   `experience`/`experience_key`. **The Unit 2 map is confirmed (2026-09-29): four lessons, no
+   launch, no quiz** — 2.1 Displaying and Describing Distributions, 2.2 Measuring Center and
+   Spread, 2.3 Boxplots, Outliers, and Resistance, 2.4 Comparing Distributions — then review and
+   test (`unit_lesson_breakdown.md`). **Units 2–8 use the 5 / 45 / 5 / 5 period** (user decision
+   2026-09-29, `LESSON_SHAPE.md` §1): ten more minutes of notes, a five-minute cold-check
+   debrief, homework assigned rather than started in class; notes run 4–5 pages, 4–5
+   instruction rows, 16–24 problems. Unit 1 stays at 5 / 35 / 10 / 10. **Still to do:** remove
+   `unit02/lesson00` and `lesson05`–`07` and re-scaffold `lesson01`–`04` under the new titles.
    **Author them straight into the table shape** — there is no longer an older shape to convert
    from, and `templates/lesson/notes.tex` already emits it.
 5. **Reuse the Unit 1 assessment set as the template for U2–U8** (blueprint 14/16/40/30, 33 items,

@@ -46,16 +46,15 @@ Standards: PS.DC.1, PS.DC.2, PS.DC.3, AFDA.DA.2
 7. Experiments vs. observational studies; choosing a collection method (PS.DC.3c–e)
 8. Project: design and conduct a class survey (AFDA.DA.2d, h–j; PS.DC.2d)
 
-### Unit 2 — Describing One Variable (7 lessons)
+### Unit 2 — Describing One Variable (4 lessons)
 Standards: PS.DS.1, PS.DS.2, PS.DS.3
 
-1. Dot plots, stemplots, histograms (PS.DS.1a)
-2. Boxplots and cumulative frequency graphs (PS.DS.1a)
-3. Shape, center, spread, and unusual features from graphs (PS.DS.1b)
-4. Measures of center: mean, median, mode (PS.DS.2a)
-5. Measures of spread: range, IQR, variance, standard deviation (PS.DS.2b, e)
-6. Outliers and their influence (PS.DS.2c–d)
-7. Comparing distributions (PS.DS.3a–b)
+*Consolidated 2026-09-29 from seven lessons to four (see `unit_lesson_breakdown.md`).*
+
+1. Displaying and describing distributions: dot plots, stemplots, histograms; shape, center, spread, unusual features (PS.DS.1a–b)
+2. Measuring center and spread: mean, median, mode; range, IQR, variance, standard deviation (PS.DS.2a, b, e)
+3. Boxplots, outliers, and resistance: boxplots, 1.5·IQR rule, influence of outliers, cumulative frequency graphs (PS.DS.1a, 2c–d)
+4. Comparing distributions (PS.DS.3a–b)
 
 ### Unit 3 — Categorical Data & Probability (8 lessons)
 Standards: PS.DS.4, PS.P.1, AFDA.DA.3

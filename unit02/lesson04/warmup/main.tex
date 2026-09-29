@@ -1,5 +1,5 @@
-%! Measures of Center — Unit 2, Lesson 2.4 — Warm-Up
-\documentclass[10pt]{article}
+%! Comparing Distributions — Unit 2, Lesson 2.4 — Warm-Up
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -8,14 +8,30 @@
 
 \pageheader{Unit 2, Lesson 2.4}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
-
+% cover this component is stapled behind. See LESSON_SHAPE.md (namestrip).
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% If this is the HOMEWORK: it is this course's Check Your Understanding set — ~6 items in new
-% contexts spanning the lesson's lettered skills, each ending in an interpretation or a
-% justification, plus one spiral item and a closing \begin{spiralbox} preview. It IS scored.
+% TODO: author the Warm-Up. See templates/lesson/components.md for the expected structure.
+% PILOT SHAPE (2026-09-06) — mirror unit01/lesson02. GUIDED NOTES & PRACTICE carry the whole
+% gradual release and END AT THE GUIDED PRACTICE:
+%   PAGE 1: vocabbox of \vterm{} rows + hookbox (circle-one vote, left unresolved; NO objectivebox)
+%   (FIXED-HEIGHT rows, 2.3cm, term label + open writing space, NO inline blank, no rule line; the
+%   \vterm / \vtermans pair is defined in the notes preamble — copy it from unit01/lesson02;
+%   the key's \vtermans{}{} fills the same height, definitions two lines at most) ->
+%   EXACTLY TWO \begin{notesbox}{N. Title} sections the teacher models (I DO), each in two
+%   moves, the second move introduced by \textbf{\textcolor{cerulean}{Its Title.}} ->
+%   PAGES 2-3: the two sections, \newpage before each; PAGE 4: one \begin{practicebox} ("Guided
+%   Practice") of four or five lettered parts, alone on its page. Every fill-in cluster opens with
+%   \wordbank{a \;\textbullet\; b ...} (macro defined in the preamble — copy from 1.2).
+% No hookbox (the hook is a slide), no solo practice box, no extensionbox. The crux is the second
+% half of section 2. Target 3-4 pages, blank and key. The homework is the individual practice.
+% HOMEWORK: a remindbox ("This is your graded homework..."), a scenariobox context, ~6 items in a
+% notesbox (split into a "..., continued" box where the pages fall — never strand a lead-in from
+% its table), a contrast pair, the crux head-on, one spiral item, and a closing \begin{spiralbox}
+% preview. Scored; assigned at the close, done outside class. Practice boxes at full 12pt size.
+% NOTES: \small inside every box (objectivebox, vocabbox, notesbox, practicebox), as the stats model.
+% GENERATE THE KEY from the blank: python3 templates/lesson/mkkey.py blank key answers.json
+% (see templates/lesson/examples/). Never hand-edit a key.
 % \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
 % the box opens with an unbreakable TikZ figure or tabularx.
 % Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
