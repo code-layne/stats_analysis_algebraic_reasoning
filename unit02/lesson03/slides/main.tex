@@ -1,9 +1,11 @@
 %! Boxplots, Outliers, and Resistance — Unit 2, Lesson 2.3 — Slides (Beamer)
-% PILOT SHAPE (2026-09-06). GRADUAL RELEASE deck (~14 frames): title → targets → warm-up → hook
-% (dark, UNRESOLVED) → I DO divider (dark) → two or three frames per notes section (crux frame
-% flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
-% debrief with the cold check → You do: START THE HOMEWORK → close (dark). No practice launch,
-% no exit ticket. There is no spoiler rule. Mirror unit01/lesson02/slides.
+% PILOT SHAPE on the UNIT 2 PERIOD (5 / 45 / 5 / 5). GRADUAL RELEASE deck (14 frames): title →
+% targets → warm-up → hook (dark, UNRESOLVED) → I DO divider (dark) → one or two frames per notes
+% row (the crux frame flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface,
+% un-answered) → spoken debrief with the cold check → You do: THE HOMEWORK (assigned, not
+% started in class) → close (dark). No practice launch, no exit ticket. There is no spoiler
+% rule: the notes frames ARE the board. \CourseName is not defined in beamer — written
+% literally; no tcolorbox here (beamer blocks only).
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
@@ -28,33 +30,56 @@
 \begin{frame}[t, plain]
   \ceruleanheader{Today's targets}
   \sectionlabel{Lesson 2.3}
+  {\footnotesize\color{slate} Standards: PS.DS.1a, PS.DS.2c, PS.DS.2d}\par\smallskip
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item TODO: target 1, naming the formal term.
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item read a \textbf{boxplot} and finish one from a five-number summary.
+    \item use the \textbf{$1.5 \times \text{IQR}$ rule} to find the fences, name every
+          \textbf{outlier}, and read a \textbf{modified boxplot}.
+    \item read quartiles and \textbf{percentiles} off a \textbf{cumulative relative frequency
+          graph}.
+    \item explain why the median and IQR are \textbf{resistant} and the mean and SD are not.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
-    debrief $\to$ \textbf{you start the homework here, alone}.
+    Warm-up $\to$ \textbf{notes together, row by row} $\to$ \textbf{one shelter we work as a
+    class} $\to$ debrief $\to$ \textbf{the homework goes home with you}.
   \end{block}
 \end{frame}
 
 % ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Warm-Up --- 5 minutes, silent}
-  \sectionlabel{spiral review}
-  % TODO: the three items in one line each, and the line saying the notes reuse these numbers.
+  \sectionlabel{Pine Street Pizza, Friday night}
+  \vspace{0.2cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Ten Friday deliveries, in minutes: \quad 25, 30, 22, 55, 27, 20, 24, 28, 23, 26
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item Put them in order. Find the \textbf{median}.
+        \item Find $Q_1$ and $Q_3$ --- the medians of the lower five and upper five --- and the
+              \textbf{IQR}.
+        \item The week had 40 deliveries: 10, 20, and 30 of them took 20, 25, and 30 minutes
+              or less. Write each as a \textbf{percent} of 40.
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep these numbers --- the whole lesson is built on them.}
+  \end{center}
 \end{frame}
 
-% ── HOOK — dark frame; leave it UNRESOLVED; section 2's second half settles it ──
+% ── HOOK — dark frame; leave it UNRESOLVED; problem 17 (row 4) settles it ────
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
-  \vspace{1.3cm}
+  \vspace{1.1cm}
   \begin{center}
-    {\color{frostmid}\bfseries\small TODO SETUP LINE}\\[0.8cm]
-    {\color{white}\bfseries\Large TODO the claim.}\\[0.9cm]
-    {\color{goldacc}\bfseries\large TODO the question --- vote.}\\[0.5cm]
-    {\color{frostmid}\small We settle this at the end of section 2.}
+    {\color{frostmid}\bfseries\small TEN FRIDAY DELIVERIES, IN MINUTES}\\[0.5cm]
+    {\color{white}\bfseries\large 20 \ 22 \ 23 \ 24 \ 25 \ 26 \ 27 \ 28 \ 30 \ \ {\color{goldacc}55}}\\[0.5cm]
+    {\color{frostmid}\small The 55 was a flat tire. The manager throws it out.}\\[0.8cm]
+    {\color{goldacc}\bfseries\Large Which drops more --- the mean or the median?}\\[0.5cm]
+    {\color{frostmid}\small Vote: the mean, the median, or about the same. We settle this at problem 17.}
   \end{center}
 \end{frame}
 }
@@ -66,51 +91,217 @@
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
-    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
-    name it --- not before.}\\[0.9cm]
-    {\color{frostmid}\small TODO terms go in the vocabulary box today. Write each one the
-    moment we use it.}
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today: boxplot, outlier,
+    modified boxplot, cumulative relative frequency graph, resistant.}
   \end{minipage}
 \end{frame}
 }
 
-% ── NOTES SECTION FRAMES — two or three per section; these ARE the board ─────
+% ── ROW 1. BOXPLOT ───────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 1, first move}
-  \sectionlabel{notes section 1 $\cdot$ TODO}
-  % TODO: the definitions and the worked example exactly as they go on the board.
+  \ceruleanheader{Five numbers, one picture}
+  \sectionlabel{notes row 1 $\cdot$ Boxplot $\cdot$ problems 1--4}
+  \begin{center}
+  \begin{tikzpicture}[x=0.21cm, y=1cm]
+    \draw[->, thick] (14,0) -- (61,0);
+    \foreach \x in {15,20,...,60} {
+      \draw (\x,0.08) -- (\x,-0.08); \node[below, font=\scriptsize] at (\x,-0.08) {\x}; }
+    \draw[thick, cerulean] (20,0.9) -- (23,0.9);
+    \draw[thick, cerulean] (28,0.9) -- (55,0.9);
+    \draw[thick, cerulean] (20,0.7) -- (20,1.1);
+    \draw[thick, cerulean] (55,0.7) -- (55,1.1);
+    \draw[thick, cerulean, fill=frost] (23,0.55) rectangle (28,1.25);
+    \draw[very thick, cerulean] (25.5,0.55) -- (25.5,1.25);
+    \node[font=\scriptsize, above] at (20,1.15) {20};
+    \node[font=\scriptsize, above] at (23,1.3) {$Q_1{=}23$};
+    \node[font=\scriptsize, above] at (29.5,1.3) {$Q_3{=}28$};
+    \node[font=\scriptsize, below] at (25.5,0.5) {25.5};
+    \node[font=\scriptsize, above] at (55,1.15) {55};
+    \node[font=\scriptsize\color{goldacc}\bfseries] at (25.5,1.9) {middle 50\%};
+    \node[font=\scriptsize\color{goldacc}\bfseries] at (21.5,0.4) {25\%};
+    \node[font=\scriptsize\color{goldacc}\bfseries] at (41.5,0.4) {25\%};
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Box from $Q_1$ to $Q_3$, a line at the median, whiskers out to the min and max.
+    \item $Q_1$, $Q_3$: medians of the lower and upper halves (odd count: leave the median out).
+    \item Four sections, four different lengths --- \redink{about 25\% of the data in each.}
+          A long whisker means spread-out values, not more of them.
+  \end{itemize}
 \end{frame}
 
+% ── ROW 2a. THE 1.5 x IQR RULE ───────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 2, second move --- the crux}
-  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
-  % TODO: the computation, the re-vote, and the rule in a block, with the term in \redink{}.
+  \ceruleanheader{The $1.5 \times \text{IQR}$ rule: check the fences}
+  \sectionlabel{notes row 2 $\cdot$ Outliers $\cdot$ problems 5--8}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{2pt}
+        \item $\text{IQR} = Q_3 - Q_1 = 28 - 23 = 5$
+        \item step $= 1.5 \times 5 = 7.5$
+        \item lower fence $= 23 - 7.5 = 15.5$\\
+              upper fence $= 28 + 7.5 = 35.5$
+        \item Outside a fence $\Rightarrow$ \redink{outlier}. Only the 55.
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Modified boxplot}
+        Each outlier is its own dot. The whisker stops at the most extreme value that is
+        \emph{not} an outlier --- here, \textbf{30}.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \begin{center}
+  \begin{tikzpicture}[x=0.2cm, y=1cm]
+    \draw[->, thick] (10,0) -- (61,0);
+    \foreach \x in {10,15,...,60} {
+      \draw (\x,0.08) -- (\x,-0.08); \node[below, font=\scriptsize] at (\x,-0.08) {\x}; }
+    \draw[dashed, redacc, thick] (15.5,-0.05) -- (15.5,1.35);
+    \draw[dashed, redacc, thick] (35.5,-0.05) -- (35.5,1.35);
+    \draw[thick, cerulean] (20,0.7) -- (23,0.7);
+    \draw[thick, cerulean] (28,0.7) -- (30,0.7);
+    \draw[thick, cerulean] (20,0.5) -- (20,0.9);
+    \draw[thick, cerulean] (30,0.5) -- (30,0.9);
+    \draw[thick, cerulean, fill=frost] (23,0.4) rectangle (28,1.0);
+    \draw[very thick, cerulean] (25.5,0.4) -- (25.5,1.0);
+    \fill[cerulean] (55,0.7) circle (2.6pt);
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+% ── ROW 2b. THE TRAP — it looks far ──────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{It looks far. Is it an outlier?}
+  \sectionlabel{notes row 2 $\cdot$ problem 7 $\cdot$ vote first}
+  \vspace{6pt}
+  Suppose Friday's fastest delivery had been \textbf{16 minutes}, not 20. $Q_1$ and $Q_3$ stay
+  23 and 28, so the fences stay \textbf{15.5} and \textbf{35.5}.
+  \vspace{10pt}
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item Hands up: outlier or not?
+    \item $16 > 15.5$ --- it is \redink{inside} the lower fence. \textbf{Not an outlier.}
+  \end{itemize}
+  \vspace{10pt}
+  \begin{block}{The rule}
+    The fence decides, not your eye. ``Looks far'' is a reason to \emph{check} --- never the
+    answer.
+  \end{block}
+\end{frame}
+
+% ── ROW 3. CUMULATIVE RELATIVE FREQUENCY GRAPH ───────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Across, then down}
+  \sectionlabel{notes row 3 $\cdot$ Cumulative graph $\cdot$ problems 9--12}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}[x=0.15cm, y=0.034cm, baseline=(current bounding box.north)]
+        \foreach \x in {10,15,...,50} { \draw[linegray!55] (\x,0) -- (\x,100); }
+        \foreach \y in {25,50,75,100} { \draw[linegray!55] (10,\y) -- (50,\y); }
+        \draw[thick] (10,0) -- (50,0);
+        \draw[thick] (10,0) -- (10,100);
+        \foreach \x in {10,20,...,50} { \node[below, font=\tiny] at (\x,0) {\x}; }
+        \foreach \y in {0,25,50,75,100} { \node[left, font=\tiny] at (10,\y) {\y\%}; }
+        \draw[very thick, cerulean] (15,0) -- (20,25) -- (25,50) -- (30,75) -- (35,90) -- (40,95) -- (45,100);
+        \draw[dashed, redacc] (10,50) -- (25,50) -- (25,0);
+        \node[font=\tiny, anchor=north] at (30,-9) {40 deliveries, minutes};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \small
+      Each point: the percent of the data \textbf{at or below} that value.
+      \begin{itemize}\setlength{\itemsep}{2pt}
+        \item Across from 50\%, down: median \textbf{25} min.
+        \item From 25\% and 75\%: $Q_1 = 20$, $Q_3 = 30$.
+        \item 35 min is at 90\% --- the \textbf{90th percentile}.
+        \item ``35 minutes or free'': 10\% of 40 $=$ \textbf{4} free.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 4. THE CRUX — resistance ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{One flat tire. Four summaries.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Resistance $\cdot$ problems 13--18 $\cdot$ the whole point of today}
+  \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{@{} l c c c @{}}
+    \hline
+    \textbf{Summary} & \textbf{With the 55} & \textbf{Without it} & \textbf{Moved} \\
+    \hline
+    Mean     & $280/10 = 28$ & $225/9 = 25$ & \redink{3 min} \\
+    Median   & 25.5 & 25 & 0.5 min \\
+    IQR      & $28 - 23 = 5$ & $27.5 - 22.5 = 5$ & 0 \\
+    SD ($s$) & 9.9 & 3.1 & \redink{6.8 min} \\
+    \hline
+    \end{tabular}
+  \end{center}
+  \vspace{2pt}
+  \textbf{Problem 17 --- vote again:} which dropped more, the mean or the median?
+  \begin{block}{Resistant (PS.DS.2d)}
+    \textbf{The median and IQR are resistant; the mean and standard deviation are not.} The
+    mean and SD use every \emph{value}, 55 included; the median and IQR only use
+    \emph{positions}. With outliers or skew, \redink{report the median and IQR.}
+  \end{block}
 \end{frame}
 
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Guided Practice: TODO title}
-  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
-  % TODO: the context and its data, then the lettered parts as questions.
+  \ceruleanheader{Guided Practice: Shelter Stays}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 19--22 $\cdot$ you hold the pen}
+  Days each of Maple Grove's last ten adopted dogs waited for a home:
+  \begin{center}
+    \textbf{2 \quad 4 \quad 4 \quad 5 \quad 6 \quad 7 \quad 10 \quad 10 \quad 15 \quad 37}
+    \quad {\small (the 37: a long medical hold)}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[19.] The five-number summary and the IQR.
+    \item[20.] The fences. Which stays are outliers? Where does the right whisker stop?
+    \item[21.] Remove the 37. \textbf{Vote first:} mean or median --- which moves more? Then
+          compute both. (Sums: 100 with, 63 without.)
+    \item[22.] Flyer: ``Our dogs find homes in 10 days on average.'' Fair? What should it report?
+  \end{itemize}
   \begin{block}{The question behind the question}
-    TODO: the trap, named.
+    If you moved the mean and the median by the same amount in 21, you are still at the hook
+    vote.
   \end{block}
 \end{frame}
 
 % ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: TODO}
-  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
-  % TODO: the two or three things that go back on the board, then the cold check in a block.
+  \ceruleanheader{Debrief: what does the mean use that the median doesn't?}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Pine Street: mean \textbf{28 $\to$ 25}, median \textbf{25.5 $\to$ 25}, IQR
+          \textbf{5 $\to$ 5}, SD \textbf{9.9 $\to$ 3.1}. Say the sentence.
+  \end{itemize}
+  \vspace{8pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Ten quiz scores have a mean of 78 and a median of 81. One score was typed as \textbf{8}
+    instead of \textbf{80}, and the teacher fixes it. \textbf{Which changes more --- the mean
+    or the median?}
+  \end{block}
 \end{frame}
 
-% ── YOU DO — the homework is the individual practice, assigned today ───────
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
   \ceruleanheader{You do: the homework}
-  \sectionlabel[goldacc]{On your own $\cdot$ due after two study halls}
-  % TODO: the context, the item themes (never the answers).
-  \begin{block}{On your own. TODO form (packet pages or a named Desmos activity), points, due date.}
-    Start with TODO items. Item TODO is the one I am reading over your shoulder.
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Elm Park Bike Shop} --- eleven used bikes, \$40 to \$900.
+    \item The five-number summary and the fences. Is the \$40 bike an outlier? Check the fence.
+    \item Sell the \$900 bike: what happens to the mean? The median? Which summaries resist?
+    \item Read a cumulative relative frequency graph of the season's 40 bikes.
+    \item From Lesson 2.2: is the range resistant?
+  \end{itemize}
+  \begin{block}{Packet pages, scored out of 12 (2 per item), due at the start of the first class after two study halls.}
+    Done outside class, on your own. Start with \textbf{item 1} --- the rest leans on it.
+    Item 4 is the one I read first.
   \end{block}
 \end{frame}
 
@@ -121,8 +312,10 @@
   \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
-    {\color{white}\bfseries\Large TODO: what changed today, in two sentences.}\\[0.9cm]
-    {\color{frostmid}\small Next: Lesson TODO --- TODO one-line preview.}
+    {\color{white}\bfseries\Large One flat tire moved the mean 3 minutes and the median half a
+    minute. The fence --- not your eye --- decides what an outlier is.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 2.4 --- two boxplots on one axis, and a claim about
+    which group is ``faster'' that you will have to defend.}
   \end{minipage}
 \end{frame}
 }

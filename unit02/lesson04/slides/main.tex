@@ -1,9 +1,11 @@
 %! Comparing Distributions — Unit 2, Lesson 2.4 — Slides (Beamer)
-% PILOT SHAPE (2026-09-06). GRADUAL RELEASE deck (~14 frames): title → targets → warm-up → hook
-% (dark, UNRESOLVED) → I DO divider (dark) → two or three frames per notes section (crux frame
-% flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
-% debrief with the cold check → You do: START THE HOMEWORK → close (dark). No practice launch,
-% no exit ticket. There is no spoiler rule. Mirror unit01/lesson02/slides.
+% GRADUAL RELEASE deck, Unit 2 timing (5/45/5/5): title → targets → warm-up → hook (dark,
+% UNRESOLVED) → I DO divider (dark) → one or two frames per notes row (crux frame flagged
+% \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken debrief
+% with the cold check → You do: THE HOMEWORK, assigned (not started in class) → close (dark).
+% No practice launch, no exit ticket. There is no spoiler rule: the notes frames ARE the board.
+% Standards: PS.DS.3a (parallel displays, back-to-back stemplots, with technology),
+% PS.DS.3b (compare shape, center, spread, unusual features in context).
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
@@ -19,42 +21,63 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.4}\\[0.5cm]
     {\color{white}\bfseries\LARGE Comparing Distributions}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2}
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2~$\cdot$~PS.DS.3a--b}
   \end{minipage}
 \end{frame}
 }
 
-% ── LEARNING TARGETS — worded as on the cover ────────────────────────────────
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Today's targets}
   \sectionlabel{Lesson 2.4}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item TODO: target 1, naming the formal term.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item read a \textbf{back-to-back stemplot}, \textbf{parallel dot plots}, and
+          \textbf{parallel boxplots} --- and compare only on a \textbf{common scale}.
+    \item write a \textbf{comparison} in context: shape, outliers, center, spread, with
+          comparative words.
+    \item choose median \& IQR (skewed or outliers) or mean \& SD (roughly symmetric).
+    \item decide which group is more \textbf{consistent} when the centers are the same.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
-    debrief $\to$ \textbf{you start the homework here, alone}.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one data set we work as a class} $\to$
+    debrief $\to$ \textbf{the homework, assigned today and done outside class}.
   \end{block}
 \end{frame}
 
 % ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Warm-Up --- 5 minutes, silent}
-  \sectionlabel{spiral review}
-  % TODO: the three items in one line each, and the line saying the notes reuse these numbers.
+  \sectionlabel{back to Lesson 2.3 $\cdot$ Tony's Pizza}
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Tony's last \textbf{11} delivery times (minutes):
+      \textbf{18, 21, 22, 24, 25, 25, 27, 28, 30, 33, 44}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item Find $Q_1$, the median, $Q_3$, and the IQR.
+        \item Is the 44-minute delivery an outlier? Use $Q_3 + 1.5 \cdot \text{IQR}$.
+        \item List A: 9, 10, 11. List B: 2, 10, 18. Mean and range of each --- how are they
+              alike, and how are they different?
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- the notes open with Tony's times.}
+  \end{center}
 \end{frame}
 
-% ── HOOK — dark frame; leave it UNRESOLVED; section 2's second half settles it ──
+% ── HOOK — leave it UNRESOLVED; problem 15 (row 4, Different Spread) settles it ─
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
   \vspace{1.3cm}
   \begin{center}
-    {\color{frostmid}\bfseries\small TODO SETUP LINE}\\[0.8cm]
-    {\color{white}\bfseries\Large TODO the claim.}\\[0.9cm]
-    {\color{goldacc}\bfseries\large TODO the question --- vote.}\\[0.5cm]
-    {\color{frostmid}\small We settle this at the end of section 2.}
+    {\color{frostmid}\bfseries\small TWO PIZZA SHOPS. THE SAME MEDIAN DELIVERY TIME: 35 MINUTES.}\\[0.8cm]
+    {\color{white}\bfseries\Large Your party starts in 40 minutes.}\\[0.9cm]
+    {\color{goldacc}\bfseries\large Rosa's, Slice House --- or doesn't it matter?}\\[0.5cm]
+    {\color{frostmid}\small Vote, and write one line of why. We settle this at problem 15.}
   \end{center}
 \end{frame}
 }
@@ -66,51 +89,228 @@
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
-    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
-    name it --- not before.}\\[0.9cm]
-    {\color{frostmid}\small TODO terms go in the vocabulary box today. Write each one the
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
     moment we use it.}
   \end{minipage}
 \end{frame}
 }
 
-% ── NOTES SECTION FRAMES — two or three per section; these ARE the board ─────
+% ── ROW 1. BACK-TO-BACK STEMPLOTS ────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 1, first move}
-  \sectionlabel{notes section 1 $\cdot$ TODO}
-  % TODO: the definitions and the worked example exactly as they go on the board.
+  \ceruleanheader{Two groups, one column of stems}
+  \sectionlabel{notes row 1 $\cdot$ Back-to-Back Stemplots $\cdot$ problems 1--4}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        {\ttfamily\renewcommand{\arraystretch}{1.3}%
+        \begin{tabular}{r|c|l}
+        \multicolumn{1}{c}{\rmfamily\bfseries Tony's} & \multicolumn{1}{c}{\rmfamily\bfseries Stem} & \multicolumn{1}{c}{\rmfamily\bfseries Rosa's} \\ \hline
+        8 & 1 & \\
+        8 7 5 5 4 2 1 & 2 & 4 9 \\
+        3 0 & 3 & 1 3 4 5 6 6 7 8 9 \\
+        4 & 4 & \\ \hline
+        \end{tabular}}\\[6pt]
+        {\small Key: 5\,|\,2\,|\,4 means Tony's 25 min, Rosa's 24 min}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{Read stem first, then leaf} --- on \emph{both} sides.
+              The top-left leaf is \redink{18}, not 81.
+        \item Medians (6th of 11): Tony's \textbf{25}, Rosa's \textbf{35}.
+        \item Tony's: skewed right, 44 stands apart. Rosa's: skewed left.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2. PARALLEL DISPLAYS ON A COMMON SCALE ───────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{One number line for both groups}
+  \sectionlabel{notes row 2 $\cdot$ Parallel Displays $\cdot$ problems 5--8}
+  \begin{center}
+  \begin{tikzpicture}[x=0.32cm, y=0.9cm]
+    \foreach \v in {15,20,...,45} { \draw[linegray, densely dashed] (\v,0) -- (\v,2.3); }
+    \draw[thick, ->] (14,0) -- (46.5,0);
+    \foreach \v in {15,20,...,45} { \draw (\v,0.08) -- (\v,-0.08) node[below, font=\scriptsize] {\v}; }
+    \draw[thick] (18,1.55) -- (22,1.55);  \draw[thick] (18,1.4) -- (18,1.7);
+    \draw[thick, fill=frost] (22,1.35) rectangle (30,1.75);
+    \draw[very thick] (25,1.35) -- (25,1.75);
+    \draw[thick] (30,1.55) -- (33,1.55);  \draw[thick] (33,1.4) -- (33,1.7);
+    \fill[charcoal] (44,1.55) circle[radius=1mm];
+    \draw[thick] (24,0.7) -- (31,0.7);    \draw[thick] (24,0.55) -- (24,0.85);
+    \draw[thick, fill=goldbg] (31,0.5) rectangle (37,0.9);
+    \draw[very thick] (35,0.5) -- (35,0.9);
+    \draw[thick] (37,0.7) -- (39,0.7);    \draw[thick] (39,0.55) -- (39,0.85);
+    \node[anchor=east, font=\footnotesize\bfseries] at (14,1.55) {Tony's};
+    \node[anchor=east, font=\footnotesize\bfseries] at (14,0.7) {Rosa's};
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item IQR: Tony's $30 - 22 = \mathbf{8}$ min; Rosa's $37 - 31 = \mathbf{6}$ min.
+          Rosa's lower fence $31 - 1.5(6) = 22$: the 24 is \emph{not} an outlier.
+  \end{itemize}
+  \begin{block}{Problem 8 --- Mia's drawing: Tony's on 15--45, Rosa's on its own 20--40}
+    Rosa's box \emph{looks} wider --- but the scales differ. \redink{Compare only on a common
+    scale:} Rosa's IQR (6) is less than Tony's (8).
+  \end{block}
+\end{frame}
+
+% ── ROW 3. COMPARE IN CONTEXT ────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{A comparison uses comparative words}
+  \sectionlabel{notes row 3 $\cdot$ Compare in Context $\cdot$ problems 9--13}
+  \begin{columns}[t]
+    \begin{column}{0.44\textwidth}
+      \small
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{@{} l l l @{}}
+      \hline
+      \textbf{Feature} & \textbf{Tony's} & \textbf{Rosa's} \\
+      \hline
+      Shape    & skewed right & skewed left \\
+      Outliers & 44 min       & none \\
+      Center (median) & 25 min & 35 min \\
+      Spread (IQR)    & 8 min  & 6 min \\
+      \hline
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{The frame}
+        [A]'s [measure] ([value]) is \emph{greater than / less than / about the same as}
+        [B]'s ([value]), so [meaning in context].
+      \end{block}
+      {\small Tony's median (25 min) is \textbf{10 minutes less than} Rosa's (35 min): Tony's
+      is typically faster. Tony's IQR (8 min) is \textbf{greater than} Rosa's (6 min): Tony's
+      times vary more.}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    Skewed or an outlier $\Rightarrow$ \redink{median \& IQR}. \quad Both roughly symmetric,
+    no outliers $\Rightarrow$ \redink{mean \& SD}.
+  \end{center}
+\end{frame}
+
+% ── ROW 4. THE CRUX — same center, different spread ──────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Same center. Different spread.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Different Spread $\cdot$ problems 14--17 $\cdot$ the whole point of today}
+  \begin{center}
+  \begin{tikzpicture}[x=0.21cm, y=0.9cm]
+    \draw[thick, ->] (9,0) -- (62,0);
+    \foreach \v in {10,20,...,60} { \draw (\v,0.08) -- (\v,-0.08) node[below, font=\scriptsize] {\v}; }
+    \draw[redacc, thick, densely dashed] (35,0) -- (35,2.1);
+    \node[above, font=\scriptsize\bfseries\color{redacc}] at (35,2.1) {both medians: 35 min};
+    \draw[slate] (10,0.5) -- (60,0.5);  \draw[slate] (10,1.5) -- (60,1.5);
+    \foreach \v in {15, 20, 24, 28, 33, 35, 38, 44, 47, 50, 55} {
+      \fill[plumacc] (\v,0.63) circle[radius=1mm]; }
+    \foreach \v/\k in {24/0, 29/0, 31/0, 33/0, 34/0, 35/0, 36/0, 36/1, 37/0, 38/0, 39/0} {
+      \fill[goldacc] (\v,{1.5+0.15+0.26*\k}) circle[radius=1mm]; }
+    \node[anchor=south west, font=\footnotesize\bfseries] at (10,0.78) {Slice House};
+    \node[anchor=south west, font=\footnotesize\bfseries] at (10,1.55) {Rosa's};
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item IQR: Rosa's \textbf{6} min; Slice House $47 - 24 = \mathbf{23}$ min.
+          \textbf{Problem 15 --- vote again.}
+    \item Within 40 minutes: Rosa's \redink{11 of 11}; Slice House \redink{7 of 11}.
+  \end{itemize}
+  \begin{block}{When the centers match, the spread decides}
+    The group with less spread is more \textbf{consistent}. ``Same median'' does not mean
+    ``same distribution'' --- \redink{call Rosa's.}
+  \end{block}
 \end{frame}
 
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 2, second move --- the crux}
-  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
-  % TODO: the computation, the re-vote, and the rule in a block, with the term in \redink{}.
+  \ceruleanheader{Two descriptions are not a comparison}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 16--17}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Dev's sentence}
+        ``Rosa's: median 35, IQR 6. Slice House: median 35, IQR 23.''\\[4pt]
+        \redink{Not a comparison} --- two lists, no comparing words, no context.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{A comparison}
+        Both shops have the \textbf{same} median (35 min), but Slice House's IQR (23 min) is
+        \textbf{almost 4 times} Rosa's (6 min): Rosa's deliveries are far more consistent.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\small\color{slate} Problem 16: for a delivery \emph{under} 25 minutes, Slice House wins
+    (3 of 11 vs.\ 1 of 11). ``Better'' depends on the question --- and the spread answers it.}
+  \end{center}
 \end{frame}
 
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Guided Practice: TODO title}
-  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
-  % TODO: the context and its data, then the lettered parts as questions.
+  \ceruleanheader{Guided Practice: Paper Airplanes}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 18--21 $\cdot$ you hold the pen}
+  \begin{columns}[t]
+    \begin{column}{0.36\textwidth}
+      {\small\ttfamily
+      \textbf{Design A} (10 throws, ft)\\
+      $\bar{x}$=30 \ Sx=2.58\\
+      min 26 \ Q1 28 \ Med 30\\
+      Q3 32 \ max 34\\[6pt]
+      \textbf{Design B} (10 throws, ft)\\
+      $\bar{x}$=30 \ Sx=7.26\\
+      min 18 \ Q1 25 \ Med 30\\
+      Q3 35 \ max 42}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item[18.] Roughly symmetric, no outliers? Which pair of measures fits?
+        \item[19.] Compare the centers, then the spreads --- comparative words, units.
+        \item[20.] Landing zone: 27 to 33 ft. Kai: ``Same mean --- it doesn't matter.''
+              Count each design's throws in the zone. Is Kai right?
+        \item[21.] The full comparison --- shape, outliers, center, spread --- in context.
+      \end{itemize}
+    \end{column}
+  \end{columns}
   \begin{block}{The question behind the question}
-    TODO: the trap, named.
+    If you agreed with Kai in 20, you are still at the hook vote.
   \end{block}
 \end{frame}
 
 % ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: TODO}
-  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
-  % TODO: the two or three things that go back on the board, then the cold check in a block.
+  \ceruleanheader{Debrief: same center, different spread}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Problem 20: Design A 8 of 10 in the zone, Design B 4 of 10. Say the sentence ---
+          \emph{same center, and the spread decides.}
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Two classes took the same 20-point quiz. Both class means are \textbf{15}. Class 1's SD
+    is \textbf{1.2} points; Class 2's SD is \textbf{4.5}. Maya says, ``The classes did the
+    same.'' \textbf{Is she right? Say it as one comparison sentence.}
+  \end{block}
 \end{frame}
 
-% ── YOU DO — the homework is the individual practice, assigned today ───────
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
   \ceruleanheader{You do: the homework}
-  \sectionlabel[goldacc]{On your own $\cdot$ due after two study halls}
-  % TODO: the context, the item themes (never the answers).
-  \begin{block}{On your own. TODO form (packet pages or a named Desmos activity), points, due date.}
-    Start with TODO items. Item TODO is the one I am reading over your shoulder.
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own, outside class $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Volt vs.\ Nova phone batteries} --- 11 phones of each brand, hours until
+          the battery died.
+    \item Five-number summaries and IQRs; is Volt's 6-hour phone an outlier?
+    \item Volt's mean with and without that phone --- and which measures fit.
+    \item Two buyers with opposite needs, and a claim that ``it doesn't matter.''
+  \end{itemize}
+  \begin{block}{Packet pages, scored out of 12 (2 per item), due at the start of the first class after two study halls.}
+    Do item 6 first if you are short on time --- it is the one that shows whether today
+    landed. Your notes' rows 3 and 4 and the \emph{Keep in Mind} box are your reference.
   \end{block}
 \end{frame}
 
@@ -121,8 +321,11 @@
   \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
-    {\color{white}\bfseries\Large TODO: what changed today, in two sentences.}\\[0.9cm]
-    {\color{frostmid}\small Next: Lesson TODO --- TODO one-line preview.}
+    {\color{white}\bfseries\Large Comparing means comparing shape, outliers, center, and
+    spread --- on one scale, with comparative words. Same center is not the same
+    distribution: the spread decides.}\\[0.9cm]
+    {\color{frostmid}\small Next: the Unit 2 review --- every tool from this unit, then the
+    test.}
   \end{minipage}
 \end{frame}
 }

@@ -1,178 +1,296 @@
 %! Comparing Distributions — Unit 2, Lesson 2.4 — Guided Notes & Practice
 % THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
-% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
-% right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a two-across
-% grid of a few numbered problems with 2–3cm of writing room. Problems run 1..N (aim 16–24).
-% DENSITY: the page belongs to the student's pen. A \blank{} only where a word or number IS the
-% answer (a table to fill, a display to name) — never mid-sentence. Short printed text, big
-% pictures, big answer spaces. 4–5 pages.
-%   I DO   : the teacher reads the definition, marks up the display, works the first problem.
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display the
+% student reads or names, then a bold prompt and a two-across grid of numbered problems.
+% Problems run 1..21. Unit 2 timing (5/45/5/5): I do ~25 min (rows 1-4), Guided Practice ~20.
+% DENSITY: a \blank{} only where a word or number IS the answer (the eight cells of the
+% comparison table, problem 9 — the one \wordbank strip sits above it); no mid-sentence blanks;
+% every display is pre-drawn; the page belongs to the student's pen.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 10, 14).
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
-%            Guided Practice, is worked entirely together in a fresh context.
-%   YOU DO : nothing on this page — ../homework/ IS the individual practice. No independent
-%            set, no reflection box, no objectives box (targets are on the cover).
-% The crux — the problem that surfaces the target misconception — is in the grid of the LAST
-% INSTRUCTION ROW, before Guided Practice.
+%            Guided Practice (18-21), is worked entirely together on paper airplanes.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, assigned at Close
+%            & Assign and done outside class.
+% THE TRAPS: problem 3 (a left-side leaf read backwards, 81 for 18) and problem 8 (two boxplots
+% on different scales — the secondary misconception).
+% THE CRUX: problem 15 (row 4, "Different Spread"): two shops with the SAME median, and the
+% hook vote re-taken — spread decides. Problem 17 is the non-comparison (two descriptions with
+% no comparative words). Problem 20 is the crux transferred (same mean, different SD).
 %
-% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, and the answer argument
-% of every \pcell, \writespace and \labelbox filled. Nothing else differs. Answer spaces are
-% fixed heights, so the two files cannot drift.
+% THE DATA (quartiles: median of each half, overall median left out when n is odd)
+%   Tony's Pizza (n=11): 18 21 22 24 25 25 27 28 30 33 44
+%     min 18, Q1 22, med 25, Q3 30, max 44; IQR 8; fences 10 and 42 -> 44 is an outlier;
+%     mean 297/11 = 27.0 (> median: skewed right)
+%   Rosa's Pizza (n=11): 24 29 31 33 34 35 36 36 37 38 39
+%     min 24, Q1 31, med 35, Q3 37, max 39; IQR 6; fences 22 and 46 -> no outliers;
+%     mean 372/11 = 33.8 (< median: skewed left)
+%   Slice House (n=11): 15 20 24 28 33 35 38 44 47 50 55
+%     min 15, Q1 24, med 35, Q3 47, max 55; IQR 23; fences -10.5 and 81.5 -> no outliers
+%     within 40 min: Rosa's 11/11, Slice House 7/11; under 25 min: Rosa's 1/11, Slice 3/11
+%   Guided Practice, paper airplanes (n=10 each, feet):
+%     Design A: 26 27 28 29 30 30 31 32 33 34 -> mean 30.0, Sx = sqrt(60/9) = 2.58;
+%       Q1 28, med 30, Q3 32; in the 27-33 zone: 8 of 10
+%     Design B: 18 22 25 28 30 30 32 35 38 42 -> mean 30.0, Sx = sqrt(474/9) = 7.26;
+%       Q1 25, med 30, Q3 35; in the 27-33 zone: 4 of 10
+%
+% PAGE LOCKSTEP with notes_key/: the key differs only in -key for -boxes, the header's
+% "--- Answer Key", \vterm -> \vtermans, \blank -> \ans, \writelines{2} -> two \ansline, and
+% the answer argument of every \pcell, \writespace and \labelbox. KEEP EVERY \pcell ON ONE
+% SOURCE LINE.
 % TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
 % across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
 % sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
-% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ (or set as a table) and read.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-% Vocabulary rows: copy the \vterm / \vtermans block from unit01/lesson02/notes/main.tex
-% (fixed-height rows, no rule line — user correction 2026-09-06). \wordbank only above a fill table.
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 3). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space —
+% no underline beside the term and no rule line (user correction 2026-09-06). The key fills
+% exactly the same height, so the box cannot drift blank vs. keyed. Copied from
+% unit01/lesson02/notes/main.tex. Keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Guided Notes \& Practice}
-% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind.
 
-\vspace{2pt}
+\vspace{0.15in}
 
-% ── VOCABULARY (I do — students fill each term AS IT IS NAMED, never in advance) ──
 \boxguard[16]
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
-\par
-\vterm{TODO Term 1}
-\par
-\vterm{TODO Term 2}
-\par
-\vterm{TODO Term 3}
-\par
+\vterm{Back-to-back stemplot}
+\vterm{Parallel boxplots}
+\vterm{Common scale}
+\vterm{Comparison}
+\vterm{Consistent}
 \end{vocabbox}
 
-% ── HOOK (stays — the 60-second context whose numbers the rows below reuse) ──
-\boxguard[14]
+\boxguard[12]
 \begin{hookbox}
 \small
-TODO: the hook, two or three sentences, and one question left hanging.
+Rosa's Pizza and Slice House advertise the same thing: \emph{a median delivery time of
+$35$ minutes.} Your party starts in $40$ minutes, and the pizza has to be there on time.
+
+\vspace{3pt}
+\textbf{Which shop should you call?} Circle one: \quad Rosa's \qquad Slice House \qquad
+it doesn't matter --- same median \quad --- and say why. We vote again at problem~15.
 \par\writelines{2}
 \end{hookbox}
 
 \small
 \begin{guidednotes}
-% ── ROW 1: TODO idea ─────────────────────────────────────────────────────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: one or two complete sentences. A \textbf{TODO term} is TODO. \textbf{The test:} TODO.
-
-\vspace{4pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.95]
-  % TODO: a large pre-drawn display that SHOWS the idea
-  \draw[->, thick] (-0.2,0) -- (7.2,0);
-\end{tikzpicture}
-\end{center}
+% ── ROW 1: back-to-back stemplots ────────────────────────────────────────────
+\mainidea[Two groups, one stem]{Back-to-Back Stemplots} &
+A \textbf{back-to-back stemplot} puts two groups on one shared column of stems: one group's
+leaves grow to the left, the other group's to the right. \textbf{Read every leaf with its
+stem} --- on either side, the stem is the tens digit and the leaf is the ones digit.
 \\
-& \notesprompt{TODO Classify each \dots\ Say how you know.}
+& {\centering
+{\footnotesize\textbf{Delivery times (minutes), $11$ orders from each shop}}\par\vspace{4pt}
+{\large\ttfamily\renewcommand{\arraystretch}{1.3}%
+\begin{tabular}{r|c|l}
+\multicolumn{1}{c}{\normalsize\rmfamily\bfseries Tony's Pizza} & \multicolumn{1}{c}{\normalsize\rmfamily\bfseries Stem} & \multicolumn{1}{c}{\normalsize\rmfamily\bfseries Rosa's Pizza} \\ \hline
+8 & 1 & \\
+8 7 5 5 4 2 1 & 2 & 4 9 \\
+3 0 & 3 & 1 3 4 5 6 6 7 8 9 \\
+4 & 4 & \\ \hline
+\end{tabular}}\par\vspace{6pt}
+Key: $5 \,|\, 2 \,|\, 4$ means Tony's \labelbox{1.8cm}{}\quad and Rosa's \labelbox{1.8cm}{}\par}
+\\
+& \notesprompt{Read both sides --- stem first, then leaf.}
 \begin{probgrid}{|Y|Y|}
-\pcell{1}{TODO}{2.0cm}{} & \pcell{2}{TODO}{2.0cm}{} \\ \hline
+\pcell{1}{Read each shop's fastest and slowest delivery.}{1.6cm}{} & \pcell{2}{Find each shop's median delivery time. (Eleven orders: count to the $6$th leaf from the fastest.)}{1.6cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{3}{TODO --- the trap}{2.0cm}{} & \pcell{4}{TODO}{2.0cm}{} \\ \hline
+\pcell{3}{Jaden reads the top leaf on Tony's side as $81$ minutes. What did he do wrong, and what is the value?}{2.0cm}{} & \pcell{4}{Describe each shop's shape. Does either shop have a value that stands apart?}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 2: TODO idea with a display to annotate ──────────────────────────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: the context in one sentence. \textbf{TODO: the one thing to notice.}
-
-\vspace{4pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-  % TODO: pre-drawn display
-  \draw[->, thick] (-0.2,0) -- (7.2,0);
-\end{tikzpicture}\\[6pt]
-This is a \labelbox{2.4cm}{}
-\end{center}
+% ── ROW 2: parallel dot plots and parallel boxplots on a common scale ────────
+\mainidea[One number line]{Parallel Displays} &
+\textbf{Parallel dot plots} and \textbf{parallel boxplots} stack the groups over \textbf{one
+common scale}, so the same distance means the same number of minutes for every group.
+Quartiles are found as in Lesson~2.3: the median of each half, leaving out the overall median
+when $n$ is odd.
 \\
-& \notesprompt{Read it.}
+& {\centering
+\begin{tikzpicture}[x=0.3cm, y=1cm]
+  % one common scale: faint gridlines run through every display
+  \foreach \v in {15,20,...,45} { \draw[linegray, densely dashed] (\v,0) -- (\v,4.35); }
+  \draw[thick, ->] (14,0) -- (46.5,0);
+  \foreach \v in {15,20,...,45} { \draw (\v,0.08) -- (\v,-0.08) node[below, font=\scriptsize] {\v}; }
+  \node[font=\scriptsize\itshape] at (30,-0.68) {delivery time (minutes) --- one common scale};
+  % parallel boxplots: Tony's (top) and Rosa's (bottom)
+  \draw[thick] (18,1.55) -- (22,1.55);  \draw[thick] (18,1.4) -- (18,1.7);
+  \draw[thick, fill=frost] (22,1.35) rectangle (30,1.75);
+  \draw[very thick] (25,1.35) -- (25,1.75);
+  \draw[thick] (30,1.55) -- (33,1.55);  \draw[thick] (33,1.4) -- (33,1.7);
+  \fill[charcoal] (44,1.55) circle[radius=1mm];
+  \draw[thick] (24,0.7) -- (31,0.7);    \draw[thick] (24,0.55) -- (24,0.85);
+  \draw[thick, fill=goldbg] (31,0.5) rectangle (37,0.9);
+  \draw[very thick] (35,0.5) -- (35,0.9);
+  \draw[thick] (37,0.7) -- (39,0.7);    \draw[thick] (39,0.55) -- (39,0.85);
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,1.55) {Tony's};
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,0.7) {Rosa's};
+  % parallel dot plots: Tony's (top) and Rosa's (bottom)
+  \draw[slate] (15,2.45) -- (45,2.45);
+  \draw[slate] (15,3.55) -- (45,3.55);
+  \foreach \v/\k in {24/0, 29/0, 31/0, 33/0, 34/0, 35/0, 36/0, 36/1, 37/0, 38/0, 39/0} {
+    \fill[goldacc] (\v,{2.45+0.13+0.24*\k}) circle[radius=1mm]; }
+  \foreach \v/\k in {18/0, 21/0, 22/0, 24/0, 25/0, 25/1, 27/0, 28/0, 30/0, 33/0, 44/0} {
+    \fill[cerulean] (\v,{3.55+0.13+0.24*\k}) circle[radius=1mm]; }
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,2.55) {Rosa's};
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,3.65) {Tony's};
+\end{tikzpicture}\par\vspace{5pt}
+Top pair: parallel \labelbox{2.6cm}{}\qquad Bottom pair: parallel \labelbox{2.6cm}{}\par}
+\\
+& \notesprompt{Read the displays --- every answer names the shop and the minutes.}
 \begin{probgrid}{|Y|Y|}
-\pcell{5}{TODO}{1.8cm}{} & \pcell{6}{TODO}{1.8cm}{} \\ \hline
+\pcell{5}{Whose middle half of deliveries sits farther right on the common scale? What does that mean for a customer?}{2.0cm}{} & \pcell{6}{Find each shop's IQR from its box. Whose middle half is more spread out?}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{7}{TODO}{1.8cm}{} & \pcell{8}{\textbf{In your own words:} TODO}{1.8cm}{} \\ \hline
+\pcell{7}{Tony's $44$ is plotted as an outlier. Is Rosa's $24$-minute delivery one? Use the lower fence $Q_1 - 1.5 \cdot \text{IQR}$.}{2.0cm}{} & \pcell{8}{Mia draws Tony's boxplot on a $15$--$45$ scale and Rosa's on its own $20$--$40$ scale. Rosa's box now looks wider. Is Rosa's more spread out?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 3: TODO procedure ────────────────────────────────────────────────────
-\mainidea{TODO Label} &
-TODO: the setup sentence.
-
-\vspace{3pt}
-\stepnum{1}\ TODO step.\par
-\stepnum{2}\ TODO step.\par
-\stepnum{3}\ TODO step.
-
-\vspace{5pt}
-\textbf{9.} TODO: a table the student fills (its cells are the only \blank{}s on the page).
+% ── ROW 3: comparing — shape, outliers, center, spread, in context ───────────
+\mainidea[Shape, outliers, center, spread]{Compare in Context} &
+A \textbf{comparison} compares all four features --- shape, outliers (unusual features), center,
+and spread --- using comparative words (\emph{greater than, less than, about the same as}), in
+context. \textbf{Pick the measures that fit the shape:} median and IQR when a distribution is
+skewed or has an outlier; mean and standard deviation when both are roughly symmetric with no
+outliers.
 \\
-& \begin{center}
-\begin{tikzpicture}[scale=0.9]
-  % TODO: the display the procedure produces, pre-drawn
-  \draw[->, thick] (0,0) -- (6,0);
-\end{tikzpicture}
-\end{center}
+& \textbf{9.} Fill in the table from rows 1 and 2.
+\wordbank{skewed right \;\textbullet\; skewed left \;\textbullet\; 44 min \;\textbullet\; none \;\textbullet\; 25 min \;\textbullet\; 35 min \;\textbullet\; 8 min \;\textbullet\; 6 min}
+{\renewcommand{\arraystretch}{1.5}%
+\begin{tabularx}{\linewidth}{@{} X p{3.2cm} p{3.2cm} @{}}
+\toprule
+\textbf{Feature} & \textbf{Tony's} & \textbf{Rosa's} \\
+\midrule
+Shape & \blank{2.8cm} & \blank{2.8cm} \\
+Outliers (unusual features) & \blank{2.8cm} & \blank{2.8cm} \\
+Center (median) & \blank{2.8cm} & \blank{2.8cm} \\
+Spread (IQR) & \blank{2.8cm} & \blank{2.8cm} \\
+\bottomrule
+\end{tabularx}}
 \\
-& \textbf{TODO: the sentence to land.}
-\notesprompt{Use it.}
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\raggedright
+\textbf{The frame:} [Group A]'s [measure] ([value]) is \emph{greater than / less than / about
+the same as} [Group B]'s ([value]), so [what that means in context].}}
+\notesprompt{Use the frame --- one sentence each, in context.}
 \begin{probgrid}{|Y|Y|}
-\pcell{10}{TODO}{2.2cm}{} & \pcell{11}{TODO}{2.2cm}{} \\ \hline
+\pcell{10}{Compare the centers.}{2.0cm}{} & \pcell{11}{Compare the spreads.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{12}{Compare the shapes and the unusual features.}{2.0cm}{} & \pcell{13}{Why median and IQR here, not mean and SD? When would mean and SD be the right pair?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 4: THE CRUX — the target misconception as problems in a grid ─────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: the contrast, in one sentence.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.72]
-  % TODO: the two pictures side by side
-  \draw[->, thick] (0,0) -- (6,0);
-\end{tikzpicture}
-\end{center}
+% ── ROW 4: THE CRUX — same center, different spread ──────────────────────────
+\mainidea[Same center,]{Different Spread} &
+Back to the hook. Rosa's Pizza and Slice House each made $11$ deliveries, and both have a
+median of $35$ minutes. \textbf{Your party needs the pizza within $40$ minutes.}
+\\
+& {\centering
+\begin{tikzpicture}[x=0.21cm, y=1cm]
+  \draw[thick, ->] (9,0) -- (62,0);
+  \foreach \v in {10,15,...,60} { \draw (\v,0.08) -- (\v,-0.08); }
+  \foreach \v in {10,20,...,60} { \node[below, font=\scriptsize] at (\v,-0.08) {\v}; }
+  \node[font=\scriptsize\itshape] at (35,-0.68) {delivery time (minutes) --- one common scale};
+  % both medians
+  \draw[redacc, thick, densely dashed] (35,0) -- (35,2.2);
+  \node[above, font=\scriptsize\bfseries\color{redacc}] at (35,2.2) {both medians: $35$ min};
+  % Slice House (bottom) and Rosa's (top)
+  \draw[slate] (10,0.5) -- (60,0.5);
+  \draw[slate] (10,1.5) -- (60,1.5);
+  \foreach \v in {15, 20, 24, 28, 33, 35, 38, 44, 47, 50, 55} {
+    \fill[plumacc] (\v,0.63) circle[radius=1mm]; }
+  \foreach \v/\k in {24/0, 29/0, 31/0, 33/0, 34/0, 35/0, 36/0, 36/1, 37/0, 38/0, 39/0} {
+    \fill[goldacc] (\v,{1.5+0.13+0.24*\k}) circle[radius=1mm]; }
+  \node[anchor=south west, font=\footnotesize\bfseries] at (10,0.78) {Slice House};
+  \node[anchor=south west, font=\footnotesize\bfseries] at (10,1.55) {Rosa's};
+\end{tikzpicture}\par}
 \\
 & \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{TODO: the sentence to land, printed whole.}}}
+\textbf{The same center does not make the same distribution. When the centers match, the
+spread decides: the group with less spread is more consistent.}}}
 
 \vspace{3pt}
-\textbf{In your own words:} TODO the question that makes them restate it.
-\writespace{1.6cm}{}
+A list of two separate descriptions --- or a comparison of centers alone --- is \emph{not} a
+comparison.\par
+\textbf{In your own words:} why can two shops with the same median not be equally good for
+your party?
+\writespace{1.4cm}{}
 \\
-& \notesprompt{TODO Compare.}
+& \notesprompt{Now settle the hook vote.}
 \begin{probgrid}{|Y|Y|}
-\pcell{12}{TODO}{2.4cm}{} & \pcell{13}{TODO}{2.4cm}{} \\ \hline
+\pcell{14}{Find each shop's median and IQR. (Slice House: the median of each half of its $11$ times.)}{2.0cm}{} & \pcell{15}{\textbf{Vote again:} Rosa's \; Slice House \; doesn't matter. How many of each shop's $11$ deliveries came within $40$ minutes? Which shop?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{14}{TODO --- the crux}{2.4cm}{} & \pcell{15}{TODO --- the counterweight}{2.4cm}{} \\ \hline
+\pcell{16}{Another night you only care about your best chance at a delivery \emph{under $25$ minutes}. Now which shop?}{2.0cm}{} & \pcell{17}{Dev writes: \emph{``Rosa's: median 35, IQR 6. Slice House: median 35, IQR 23.''} Is that a comparison? Rewrite it, in context.}{2.6cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── LAST ROW: GUIDED PRACTICE — we do, together, a fresh context ─────────────
-\mainidea[Guided practice]{TODO Title} &
-TODO: the fresh context in one sentence.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-  % TODO: its pre-drawn display
-  \draw[->, thick] (-0.2,0) -- (7.4,0);
-\end{tikzpicture}
-\end{center}
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Paper Airplanes} &
+The design club throws two paper-airplane designs $10$ times each and measures every flight in
+feet. Below are the calculator's \emph{1-Var Stats} screens and a parallel dot plot. Sx is the
+\emph{sample} standard deviation --- it divides by $n - 1$.
+\\
+& {\centering
+\begin{tikzpicture}
+  \foreach \x/\des/\sd/\lo/\qa/\qc/\hi in {0/A/2.58/26/28/32/34, 6/B/7.26/18/25/35/42} {
+    \fill[charcoal, rounded corners=3pt] (\x,0) rectangle ({\x+5.2},3.2);
+    \fill[frost] ({\x+0.15},0.15) rectangle ({\x+5.05},3.05);
+    \node[anchor=north west, align=left, font=\ttfamily\footnotesize] at ({\x+0.35},2.95)
+      {\textbf{1-Var Stats: Design \des}\\ $\bar{x}$=30\\ Sx=\sd\\ n=10\\ minX=\lo \quad Q1=\qa\\ Med=30 \quad Q3=\qc\\ maxX=\hi};
+  }
+\end{tikzpicture}\par}
+\\
+& {\centering
+\begin{tikzpicture}[x=0.3cm, y=1cm]
+  \draw[thick, ->] (14,0) -- (46.5,0);
+  \foreach \v in {15,20,...,45} { \draw (\v,0.08) -- (\v,-0.08) node[below, font=\scriptsize] {\v}; }
+  \node[font=\scriptsize\itshape] at (30,-0.68) {flight distance (feet) --- one common scale};
+  \draw[slate] (15,0.5) -- (45,0.5);
+  \draw[slate] (15,1.6) -- (45,1.6);
+  \foreach \v/\k in {18/0, 22/0, 25/0, 28/0, 30/0, 30/1, 32/0, 35/0, 38/0, 42/0} {
+    \fill[plumacc] (\v,{0.5+0.13+0.24*\k}) circle[radius=1mm]; }
+  \foreach \v/\k in {26/0, 27/0, 28/0, 29/0, 30/0, 30/1, 31/0, 32/0, 33/0, 34/0} {
+    \fill[cerulean] (\v,{1.6+0.13+0.24*\k}) circle[radius=1mm]; }
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,0.6) {Design B};
+  \node[anchor=east, font=\footnotesize\bfseries] at (14,1.7) {Design A};
+\end{tikzpicture}\par}
 \\
 & \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{16}{TODO}{2.2cm}{} & \pcell{17}{TODO}{2.2cm}{} \\ \hline
+\pcell{18}{Shape and outliers: are both distributions roughly symmetric with no outliers? So which pair of measures fits?}{2.0cm}{} & \pcell{19}{Compare the centers, then the spreads, with comparative words and units.}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{18}{TODO --- the crux transferred}{2.6cm}{} & \pcell{19}{TODO}{2.6cm}{} \\ \hline
+\pcell{20}{The contest target is a landing zone from $27$ to $33$ feet. Kai says, \emph{``Same mean --- it doesn't matter which design we fly.''} Count each design's throws in the zone. Is Kai right?}{2.6cm}{} & \pcell{21}{Write the full comparison --- shape, outliers, center, spread --- in context, in one or two sentences.}{2.6cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

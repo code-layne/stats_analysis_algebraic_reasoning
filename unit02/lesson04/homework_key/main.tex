@@ -1,23 +1,147 @@
 %! Comparing Distributions — Unit 2, Lesson 2.4 — Homework (Answer Key)
+% This is the lesson's SCORED individual practice and the LAST component in the packet.
+% Unit 2 on (2026-09-29): ASSIGNED at Close & Assign and done OUTSIDE class — not started in
+% class. Packet pages are the default; a Desmos activity may replace them on a given day
+% (decided at Close & Assign).
+% THIRD CONTEXT: the notes teach on pizza delivery times (Tony's, Rosa's, Slice House), the
+% Guided Practice runs on paper airplanes, and these items are on phone batteries.
+% TWO PAGES MAX: two boxes — items 1-2 on page 1, items 3-6 and the spiralbox on page 2 — so no
+% item breaks across a page.
+% Items 4 and 5 are the deliberate CONTRAST PAIR: the same question with opposite needs, two
+% brands with the SAME median — both answers are decided by spread, and they point to
+% opposite brands. Item 6 is the crux head-on (a centers-only claim). Item 3 is the spiral
+% (Lessons 2.2-2.3: the mean is not resistant, the median is).
+% THE DATA (quartiles: median of each half, overall median left out when n is odd)
+%   Volt (n=11): 6 10 11 11 12 12 12 13 13 14 15
+%     min 6, Q1 11, med 12, Q3 13, max 15; IQR 2; fences 8 and 16 -> 6 is an outlier;
+%     mean 129/11 = 11.7; without the 6: mean 123/10 = 12.3, median (12+12)/2 = 12
+%   Nova (n=11): 4 7 8 10 11 12 14 15 16 18 19
+%     min 4, Q1 8, med 12, Q3 16, max 19; IQR 8; fences -4 and 28 -> no outliers
+%   at least 10 h: Volt 10/11, Nova 8/11;  at least 16 h: Volt 0/11, Nova 3/11
+% PAGE LOCKSTEP: the key differs only in -key for -boxes, the header, \blank -> \ans and
+% \writelines{n} -> n \ansline; every work block is byte-identical.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it and
+% prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{10pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
-\vspace{0.15in}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+\vspace{0.12in}
+
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored out of 12 (2 points per item) and due at
+the start of the first class after two study halls. It is assigned today and done on your own,
+outside class --- flip back to the \emph{Keep in Mind} box on the cover and to rows 3 and 4 of
+your notes.
+\end{remindbox}
+
+\vspace{0.08in}
+
+\boxguard[20]
+\begin{scenariobox}[Volt vs.\ Nova Phone Batteries]{cerulean}
+A tech club fully charged $11$ phones of each brand and played the same video on every phone
+until its battery died. Battery life, in hours, in order:
+
+\vspace{3pt}
+\textbf{Volt:} \quad $6,\ 10,\ 11,\ 11,\ 12,\ 12,\ 12,\ 13,\ 13,\ 14,\ 15$
+\par\vspace{2pt}
+\textbf{Nova:} \quad $4,\ 7,\ 8,\ 10,\ 11,\ 12,\ 14,\ 15,\ 16,\ 18,\ 19$
+\end{scenariobox}
+
+\vspace{0.08in}
+
 \boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Comparing Two Brands}
+Every answer names the brand and the hours.
+\wordbank{4 \;\textbullet\; 6 \;\textbullet\; 8 \;\textbullet\; 11 \;\textbullet\; 12 \;\textbullet\; 13 \;\textbullet\; 15 \;\textbullet\; 16 \;\textbullet\; 19 \;\textbullet\; 2 \;\textbullet\; outlier}
+\begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
+
+  \item Complete each brand's five-number summary and IQR.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y Y Y Y @{}}
+        \toprule
+        \textbf{Brand} & \textbf{Min} & $\boldsymbol{Q_1}$ & \textbf{Median} & $\boldsymbol{Q_3}$ & \textbf{Max} & \textbf{IQR} \\
+        \midrule
+        Volt & \ans{6} & \ans{11} & \ans{12} & \ans{13} & \ans{15} & \ans{2} \\
+        Nova & \ans{4} & \ans{8} & \ans{12} & \ans{16} & \ans{19} & \ans{8} \\
+        \bottomrule
+        \end{tabularx}
+        \end{center}
+
+        In context, what does Nova's IQR tell you?
+        \par\ansline{Middle half of Nova phones: 8 to 16 hours, an 8-hour span.}
+
+  \item Is Volt's $6$-hour phone an outlier? Show the lower fence,
+        $Q_1 - 1.5 \cdot \text{IQR}$.
+
+        \begin{work}
+          \text{Lower fence} &= 11 - 1.5(2) \\
+                             &= 8 \text{ hours}
+        \end{work}
+
+        \vspace{4pt}
+        Outlier? \ans{Yes --- 6 hours is below the lower fence of 8 hours.}
+
+\end{enumerate}
 \end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{Comparing Two Brands, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=5pt, topsep=2pt, start=3]
+
+  \item \emph{Back to Lessons 2.2--2.3.} Find Volt's mean with the $6$-hour phone and without
+        it, and Volt's median both ways. Then: which pair of measures --- mean and SD, or
+        median and IQR --- should you use to compare these brands, and why?
+
+        \begin{work}
+          \bar{x}_{\text{with the 6}} &= 129 / 11 \approx 11.7 \text{ hours} \\
+          \bar{x}_{\text{without it}} &= 123 / 10 = 12.3 \text{ hours} \\
+          \text{median} &= 12 \text{ hours both ways}
+        \end{work}
+
+        \par\ansline{Median and IQR: Volt's 6-hour outlier pulls the mean}
+\ansline{(11.7 vs.\ 12.3 hours) but not the median, which stays 12.}
+
+  \item Maya needs a phone that lasts a full school day: \textbf{at least $10$ hours}. How
+        many of each brand's $11$ phones did that? Which brand should she buy?
+        \par\ansline{Volt: 10 of 11. Nova: 8 of 11 (the 4, 7, and 8 fall short).}
+\ansline{Maya should buy Volt --- same median, more consistent.}
+
+  \item Leo wants his best chance at a phone that lasts \textbf{at least $16$ hours} on a
+        long trip. How many of each brand's $11$ phones did that? Which brand should he buy?
+        \par\ansline{Volt: 0 of 11. Nova: 3 of 11 (16, 18, and 19 hours).}
+\ansline{Leo should buy Nova --- its greater spread reaches higher.}
+
+  \item Jordan says, \emph{``Both brands have a median of $12$ hours, so it doesn't matter
+        which one you buy.''} Say what Jordan left out, then write the comparison with
+        comparative words, in context.
+        \par\ansline{Jordan compared centers only. Both medians are 12 hours, but}
+\ansline{Nova's IQR (8 h) is 4 times Volt's (2 h), so Volt's battery}
+\ansline{life is far more consistent. Volt has one low outlier (6 h).}
+
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[5]   % the short spiralbox needs about five baselines; a larger guard risks a third page
+\begin{spiralbox}
+\textbf{Next class: Unit 2 Review.} This was the last lesson of Unit~2. Next class we review
+for the Unit~2 test: displays and SOCS, mean, median, SD and IQR, boxplots and fences, and
+today's comparisons. Item~6 is exactly the kind of question the test asks.
+\end{spiralbox}
 
 \end{document}

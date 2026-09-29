@@ -1,178 +1,351 @@
 %! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Guided Notes & Practice
 % THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
-% box, then ONE two-column guidednotes table. Each row is one idea — a label on the left; on the
-% right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a two-across
-% grid of a few numbered problems with 2–3cm of writing room. Problems run 1..N (aim 16–24).
-% DENSITY: the page belongs to the student's pen. A \blank{} only where a word or number IS the
-% answer (a table to fill, a display to name) — never mid-sentence. Short printed text, big
-% pictures, big answer spaces. 4–5 pages.
-%   I DO   : the teacher reads the definition, marks up the display, works the first problem.
-%   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
-%            Guided Practice, is worked entirely together in a fresh context.
-%   YOU DO : nothing on this page — ../homework/ IS the individual practice. No independent
-%            set, no reflection box, no objectives box (targets are on the cover).
-% The crux — the problem that surfaces the target misconception — is in the grid of the LAST
-% INSTRUCTION ROW, before Guided Practice.
+% box, the hook, then ONE two-column guidednotes table. Unit 2 period (2026-09-29): 5 / 45 / 5 / 5
+% — I do ~25 of the 45 (rows 1–5, problems 1–20), Guided Practice ~20 (row 6, problems 21–24).
+% Five instruction rows + the Guided Practice row; 24 problems; 4–5 pages at 12pt.
+% DENSITY: a \blank{} only where a number IS the answer (the six counts of the frequency table in
+% row 3 — the one \wordbank strip sits above it); no mid-sentence blanks; every display is
+% pre-drawn and READ or ANNOTATED (\labelbox) — nothing is sketched. Problem 1 finishes a dot plot
+% whose frame and first 17 dots are printed.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 9's first cell, 13, 17).
+%   WE DO  : the class works the rest of each grid; the last row, Guided Practice (21–24), is
+%            worked entirely together on Pinecrest instead of Fox Run.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, assigned at Close &
+%            Assign and done outside class.
+% THE TRAP is problem 19 (Jordan names the skew by the PEAK). THE CRUX is problem 17 (row 5,
+% "Skew": the hook vote re-taken — the commute histogram piles up on the LEFT and is skewed
+% RIGHT). Problem 21 is the crux transferred (Pinecrest, skewed LEFT). Problem 16 is the
+% secondary misconception (a description with no context or units).
 %
-% PAGE LOCKSTEP with notes_key/: \termblank -> \termans, \blank -> \ans, and the answer argument
-% of every \pcell, \writespace and \labelbox filled. Nothing else differs. Answer spaces are
-% fixed heights, so the two files cannot drift.
+% THE DATA — Fox Run High, Ms. Ortiz's first-period class, n = 20 (every row but the GP)
+%   Sleep (hours), dot plot: 5:1 6:4 7:7 8:5 9:2 10:1 = 20 (printed 5:1 6:3 7:6 8:4 9:2 10:1 = 17;
+%     students add 6, 7, 8). 8+ hours: 5+2+1 = 8. Under 7: 1+4 = 5 = 25%. Mode 7. Symmetric.
+%   Minutes to school, stemplot (and the hook / crux histogram, bins of 10: 7,7,3,2,1):
+%     3 5 6 7 8 8 9 | 10 12 12 14 15 15 18 | 21 24 26 | 32 38 | 47. Min 3, max 47, range 44.
+%     Median (10th+11th)/2 = (12+14)/2 = 13. More than 20 min: 6. Skewed right.
+%   Unit 1 quiz (percent), histogram bins of 10: 40s 1, 50s 1, 60s 2, 70s 4, 80s 7, 90s 5 = 20.
+%     70+: 16. Below 60: 2 = 10%. Skewed left.
+%   Hours worked last week, dot plot: 0:6 2:1 4:1 10:2 12:3 14:3 15:1 16:2 20:1 = 20. Bimodal,
+%     gap 5–9, range 20, median (10+12)/2 = 11.
+%   GP — Pinecrest girls' basketball, 16 players, free throws made of 10:
+%     2:1 5:1 6:2 7:3 8:5 9:3 10:1 = 16. Median (8+8)/2 = 8. Range 8. Skewed left; 2 a possible outlier.
+%
+% PAGE LOCKSTEP with notes_key/: the key differs ONLY by saar-key for saar-boxes, the header's
+% "--- Answer Key", \vterm -> \vtermans, \blank -> \ans, and the answer argument of every \pcell,
+% \writespace and \labelbox. KEEP EVERY \pcell ON ONE SOURCE LINE.
 % TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
 % across pages: the figure gets its own sub-row (`\\` then `& ...`) and EACH GRID ROW is its own
 % sub-row — close the probgrid, `\\ &`, reopen as probgrid* (no top rule).
-% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-% Vocabulary rows: copy the \vterm / \vtermans block from unit01/lesson02/notes/main.tex
-% (fixed-height rows, no rule line — user correction 2026-09-06). \wordbank only above a fill table.
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 3). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space (copied
+% from unit01/lesson02). The key fills exactly the same height; key definitions two lines max.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Guided Notes \& Practice}
-% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind.
 
-\vspace{2pt}
+\vspace{0.15in}
 
-% ── VOCABULARY (I do — students fill each term AS IT IS NAMED, never in advance) ──
-\boxguard[16]
+\boxguard
 \begin{vocabbox}
 \small
 Fill in each term \textbf{as we name it} in the notes below.
-\par
-\vterm{TODO Term 1}
-\par
-\vterm{TODO Term 2}
-\par
-\vterm{TODO Term 3}
-\par
+\vterm{Distribution}
+\vterm{Stemplot}
+\vterm{Histogram}
+\vterm{Skewed right / skewed left}
+\vterm{Outlier}
 \end{vocabbox}
 
-% ── HOOK (stays — the 60-second context whose numbers the rows below reuse) ──
 \boxguard[14]
 \begin{hookbox}
 \small
-TODO: the hook, two or three sentences, and one question left hanging.
+\begin{minipage}[t]{0.56\linewidth}\vspace{0pt}
+Ms.~Ortiz's first-period class at Fox Run High recorded how many minutes each of its $20$
+students takes to get to school. Most of the class lives close: the tall bars are on the
+\emph{left}, and a few short bars trail off to the right, out to the $40$s.
+
+\vspace{4pt}
+\textbf{Is this distribution skewed left or skewed right?}\par
+Circle one: \quad skewed left \qquad skewed right \qquad neither\par
+--- and say why. We vote again at problem~17.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\linewidth}\vspace{0pt}\centering
+\begin{tikzpicture}[scale=0.85]
+  \foreach \x/\n in {0/7, 1/7, 2/3, 3/2, 4/1} {
+    \fill[frostmid] ({\x*0.9},0) rectangle ({\x*0.9+0.9},{\n*0.34});
+    \draw[cerulean, thick] ({\x*0.9},0) rectangle ({\x*0.9+0.9},{\n*0.34});
+  }
+  \draw[thick] (-0.1,0) -- (4.7,0);
+  \foreach \x/\lab in {0/0, 1/10, 2/20, 3/30, 4/40, 5/50} {
+    \node[below, font=\tiny] at ({\x*0.9},0) {\lab};
+  }
+  \node[font=\tiny] at (2.25,-0.62) {minutes to get to school};
+\end{tikzpicture}
+\end{minipage}
 \par\writelines{2}
 \end{hookbox}
 
 \small
 \begin{guidednotes}
-% ── ROW 1: TODO idea ─────────────────────────────────────────────────────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: one or two complete sentences. A \textbf{TODO term} is TODO. \textbf{The test:} TODO.
-
-\vspace{4pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.95]
-  % TODO: a large pre-drawn display that SHOWS the idea
-  \draw[->, thick] (-0.2,0) -- (7.2,0);
-\end{tikzpicture}
-\end{center}
+% ── ROW 1: the dot plot ──────────────────────────────────────────────────────
+\mainidea[One dot per student]{Dot Plot} &
+A \textbf{distribution} tells what values a variable takes and how often it takes each one.
+A \textbf{dot plot} shows a distribution by stacking one dot for each individual above a number
+line --- so every single value can be read back off the display. Below: $17$ of Ms.~Ortiz's $20$
+students so far.
 \\
-& \notesprompt{TODO Classify each \dots\ Say how you know.}
+& {\centering
+\begin{tikzpicture}
+  \draw[thick] (0.8,0) -- (10.4,0);
+  \foreach \x in {5,...,10} {
+    \draw ({(\x-4)*1.6},0.08) -- ({(\x-4)*1.6},-0.08);
+    \node[below, font=\small] at ({(\x-4)*1.6},-0.08) {\x};
+  }
+  \foreach \x/\n in {5/1, 6/3, 7/6, 8/4, 9/2, 10/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[cerulean] ({(\x-4)*1.6},{\k*0.36}) circle (0.14);
+    }
+  }
+  \path (0.8,2.9) -- (10.4,2.9);
+  \node[font=\small\bfseries] at (5.6,-0.95) {Hours of sleep last school night};
+  \node[font=\scriptsize\itshape, anchor=east] at (10.4,2.6) {each dot: one student};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{Finish the dot plot, then read it.}
 \begin{probgrid}{|Y|Y|}
-\pcell{1}{TODO}{2.0cm}{} & \pcell{2}{TODO}{2.0cm}{} \\ \hline
+\pcell{1}{The last three students slept $6$, $7$, and $8$ hours. Add their dots. How many students does the plot show now?}{1.4cm}{} & \pcell{2}{How many students slept $8$ hours or more?}{1.4cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{3}{TODO --- the trap}{2.0cm}{} & \pcell{4}{TODO}{2.0cm}{} \\ \hline
+\pcell{3}{Which amount of sleep is the most common, and how many students got it?}{1.4cm}{} & \pcell{4}{What percent of the class slept \emph{fewer} than $7$ hours?}{1.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 2: TODO idea with a display to annotate ──────────────────────────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: the context in one sentence. \textbf{TODO: the one thing to notice.}
-
-\vspace{4pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-  % TODO: pre-drawn display
-  \draw[->, thick] (-0.2,0) -- (7.2,0);
-\end{tikzpicture}\\[6pt]
-This is a \labelbox{2.4cm}{}
-\end{center}
+% ── ROW 2: the stemplot ──────────────────────────────────────────────────────
+\mainidea[Stems and leaves]{Stemplot} &
+A \textbf{stemplot} splits each value into a \textbf{stem} (every digit but the last) and a
+\textbf{leaf} (the last digit), and lists the leaves in order. The \textbf{key} says what one stem
+and leaf mean --- never read a stemplot without it. When a few stems hold too many leaves,
+\textbf{split} each stem in two: leaves $0$--$4$ on the first, $5$--$9$ on the second.
+\\
+& {\centering
+\begin{minipage}[c]{0.5\linewidth}\centering
+\textbf{Minutes to get to school}\par\vspace{4pt}
+{\large\renewcommand{\arraystretch}{1.3}%
+\begin{tabular}{r|l}
+0 & 3\enspace 5\enspace 6\enspace 7\enspace 8\enspace 8\enspace 9 \\
+1 & 0\enspace 2\enspace 2\enspace 4\enspace 5\enspace 5\enspace 8 \\
+2 & 1\enspace 4\enspace 6 \\
+3 & 2\enspace 8 \\
+4 & 7 \\
+\end{tabular}}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.46\linewidth}\raggedright
+\fbox{\textbf{Key:} $1 \mid 4 = 14$ minutes}\par\vspace{8pt}
+In $1 \mid 4$, the $1$ is the\par\labelbox{2.2cm}{}\par\vspace{4pt}
+and the $4$ is the\par\labelbox{2.2cm}{}
+\end{minipage}\par}
+\\
+& \notesprompt{Read it --- use the key every time.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{What are the shortest and the longest trips to school?}{1.4cm}{} & \pcell{6}{What does the leaf $8$ on stem $3$ stand for? Say it in context.}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{How many students take \emph{more} than $20$ minutes to get to school?}{1.4cm}{} & \pcell{8}{Split the stems ($0$--$4$ and $5$--$9$). Which leaves go on the \emph{first} stem~$1$, and what trips are they?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: the histogram (technology, pre-digested) ──────────────────────────
+\mainidea[Bars over bins]{Histogram} &
+A \textbf{histogram} groups the values of a quantitative variable into equal-width
+\textbf{bins} and draws a bar over each; the bar's height is the \textbf{frequency} --- how many
+values fall in that bin. The bars touch, because the bins cover the number line with no gaps. A
+value on a boundary goes in the bin to its right: a score of $70$ counts in $70$--$79$. Your
+calculator or Desmos draws it; your job is to read it.
+\\
+& {\centering
+\begin{tikzpicture}
+  \node[font=\small\bfseries] at (4.2,3.55) {Unit 1 quiz scores (percent) --- Desmos, bin width $10$};
+  \foreach \y in {1,...,7} {
+    \draw[linegray, very thin] (0,{\y*0.42}) -- (7.9,{\y*0.42});
+    \node[left, font=\scriptsize] at (0,{\y*0.42}) {\y};
+  }
+  \foreach \x/\n in {0/1, 1/1, 2/2, 3/4, 4/7, 5/5} {
+    \fill[frostmid] ({\x*1.3},0) rectangle ({\x*1.3+1.3},{\n*0.42});
+    \draw[cerulean, thick] ({\x*1.3},0) rectangle ({\x*1.3+1.3},{\n*0.42});
+  }
+  \draw[thick] (0,0) -- (8.0,0);
+  \draw[thick] (0,0) -- (0,3.15);
+  \foreach \x/\lab in {0/40, 1/50, 2/60, 3/70, 4/80, 5/90, 6/100} {
+    \node[below, font=\scriptsize] at ({\x*1.3},0) {\lab};
+  }
+  \node[font=\scriptsize] at (3.9,-0.62) {quiz score (percent); nobody scored $100$};
+  \node[rotate=90, font=\scriptsize] at (-0.65,1.5) {frequency};
+\end{tikzpicture}\par}
+\\
+& \textbf{9.} Read the bars into a frequency table.
+\wordbank{1 \;\textbullet\; 2 \;\textbullet\; 4 \;\textbullet\; 5 \;\textbullet\; 7 \quad (a number may be used twice)}
+{\renewcommand{\arraystretch}{1.5}%
+\begin{tabularx}{\linewidth}{@{} l *{6}{Y} @{}}
+\toprule
+\textbf{Score} & $40$--$49$ & $50$--$59$ & $60$--$69$ & $70$--$79$ & $80$--$89$ & $90$--$99$ \\
+\midrule
+\textbf{Count} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} & \blank{0.8cm} \\
+\bottomrule
+\end{tabularx}}
 \\
 & \notesprompt{Read it.}
 \begin{probgrid}{|Y|Y|}
-\pcell{5}{TODO}{1.8cm}{} & \pcell{6}{TODO}{1.8cm}{} \\ \hline
+\pcell{10}{How many students scored $70$ or higher?}{1.4cm}{} & \pcell{11}{What percent of the class scored below $60$?}{1.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|}
+\pcell{12}{What was the single highest score? Can the histogram tell you --- and which display would?}{1.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: describing a distribution ─────────────────────────────────────────
+\mainidea[Say four things]{Describe} &
+To \textbf{describe a distribution}, name four things --- always with the variable, the
+individuals, and the units:\par\vspace{3pt}
+\stepnum{1}\ \textbf{Shape:} \textbf{symmetric}, \textbf{skewed} left or right, or
+\textbf{uniform} (flat); \textbf{unimodal} (one peak) or \textbf{bimodal} (two).\par
+\stepnum{2}\ \textbf{Unusual features:} an \textbf{outlier} sits far from the rest; a
+\textbf{gap} is an empty stretch; a \textbf{cluster} is a group packed together.\par
+\stepnum{3}\ \textbf{Center:} a typical value --- roughly where the data split in half.\par
+\stepnum{4}\ \textbf{Spread:} from the smallest to the largest value; the \textbf{range} is
+$\text{max} - \text{min}$.
+\\
+& {\centering
+\begin{tikzpicture}
+  \draw[thick] (-0.4,0) -- (10.4,0);
+  \foreach \x in {0,2,...,20} {
+    \draw ({\x*0.5},0.08) -- ({\x*0.5},-0.08);
+    \node[below, font=\small] at ({\x*0.5},-0.08) {\x};
+  }
+  \foreach \x/\n in {0/6, 2/1, 4/1, 10/2, 12/3, 14/3, 15/1, 16/2, 20/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[cerulean] ({\x*0.5},{\k*0.3}) circle (0.12);
+    }
+  }
+  \node[font=\small\bfseries] at (5,-0.95) {Hours worked at a job last week --- same $20$ students};
+\end{tikzpicture}\par\vspace{5pt}
+The empty stretch from $5$ to $9$ hours is a \labelbox{2cm}{}\quad Each group of dots is a \labelbox{2cm}{}\par}
+\\
+& \notesprompt{Describe it --- in context, with units.}
+\begin{probgrid}{|Y|Y|}
+\pcell{13}{Describe the \emph{sleep} dot plot (row~1): shape, unusual features, center, spread --- in one sentence.}{2.6cm}{} & \pcell{14}{Hours worked: name the shape and the unusual features.}{2.6cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{7}{TODO}{1.8cm}{} & \pcell{8}{\textbf{In your own words:} TODO}{1.8cm}{} \\ \hline
+\pcell{15}{Hours worked: give the spread and a rough center, with units.}{2.2cm}{} & \pcell{16}{Sam wrote: \emph{``Bimodal, a gap, range 20.''} What is missing? Fix it.}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 3: TODO procedure ────────────────────────────────────────────────────
-\mainidea{TODO Label} &
-TODO: the setup sentence.
-
-\vspace{3pt}
-\stepnum{1}\ TODO step.\par
-\stepnum{2}\ TODO step.\par
-\stepnum{3}\ TODO step.
-
-\vspace{5pt}
-\textbf{9.} TODO: a table the student fills (its cells are the only \blank{}s on the page).
+% ── ROW 5: THE CRUX — skew is named by the tail ──────────────────────────────
+\mainidea[Name it by the tail]{Skew} &
+A distribution is \textbf{skewed right} when its long \textbf{tail} stretches toward the
+\emph{larger} values, and \textbf{skewed left} when its tail stretches toward the \emph{smaller}
+values. The \textbf{peak} --- where most of the data pile up --- sits on the \emph{opposite} side
+from the tail.
 \\
-& \begin{center}
-\begin{tikzpicture}[scale=0.9]
-  % TODO: the display the procedure produces, pre-drawn
-  \draw[->, thick] (0,0) -- (6,0);
-\end{tikzpicture}
-\end{center}
-\\
-& \textbf{TODO: the sentence to land.}
-\notesprompt{Use it.}
-\begin{probgrid}{|Y|Y|}
-\pcell{10}{TODO}{2.2cm}{} & \pcell{11}{TODO}{2.2cm}{} \\ \hline
-\end{probgrid}
-\\ \hline
-% ── ROW 4: THE CRUX — the target misconception as problems in a grid ─────────
-\mainidea[TODO lead]{TODO Label} &
-TODO: the contrast, in one sentence.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.72]
-  % TODO: the two pictures side by side
-  \draw[->, thick] (0,0) -- (6,0);
-\end{tikzpicture}
-\end{center}
+& {\centering
+\begin{minipage}[t]{0.49\linewidth}\centering
+\textbf{A.} Minutes to get to school\par\vspace{3pt}
+\begin{tikzpicture}
+  \foreach \x/\n in {0/7, 1/7, 2/3, 3/2, 4/1} {
+    \fill[frostmid] ({\x*0.95},0) rectangle ({\x*0.95+0.95},{\n*0.3});
+    \draw[cerulean, thick] ({\x*0.95},0) rectangle ({\x*0.95+0.95},{\n*0.3});
+  }
+  \draw[thick] (-0.1,0) -- (4.95,0);
+  \foreach \x/\lab in {0/0, 1/10, 2/20, 3/30, 4/40, 5/50} {
+    \node[below, font=\scriptsize] at ({\x*0.95},0) {\lab};
+  }
+\end{tikzpicture}\par\vspace{4pt}
+Peak on the \labelbox{1.4cm}{}\par\vspace{2pt}
+Tail toward the \labelbox{1.4cm}{}\par\vspace{2pt}
+Skewed \labelbox{1.4cm}{}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}\centering
+\textbf{B.} Unit 1 quiz scores (percent)\par\vspace{3pt}
+\begin{tikzpicture}
+  \foreach \x/\n in {0/1, 1/1, 2/2, 3/4, 4/7, 5/5} {
+    \fill[frostmid] ({\x*0.8},0) rectangle ({\x*0.8+0.8},{\n*0.3});
+    \draw[cerulean, thick] ({\x*0.8},0) rectangle ({\x*0.8+0.8},{\n*0.3});
+  }
+  \draw[thick] (-0.1,0) -- (4.9,0);
+  \foreach \x/\lab in {0/40, 1/50, 2/60, 3/70, 4/80, 5/90, 6/100} {
+    \node[below, font=\scriptsize] at ({\x*0.8},0) {\lab};
+  }
+\end{tikzpicture}\par\vspace{4pt}
+Peak on the \labelbox{1.4cm}{}\par\vspace{2pt}
+Tail toward the \labelbox{1.4cm}{}\par\vspace{2pt}
+Skewed \labelbox{1.4cm}{}
+\end{minipage}\par}
 \\
 & \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{TODO: the sentence to land, printed whole.}}}
+\textbf{Skew is named by the tail, not the peak: it points where the few extreme values go.}}}
 
 \vspace{3pt}
-\textbf{In your own words:} TODO the question that makes them restate it.
-\writespace{1.6cm}{}
+\textbf{In your own words:} most Fox Run students live close, so the tall bars are on the left.
+Why is that distribution skewed \emph{right}?
+\writespace{1.4cm}{}
 \\
-& \notesprompt{TODO Compare.}
+& \notesprompt{Now settle the hook vote.}
 \begin{probgrid}{|Y|Y|}
-\pcell{12}{TODO}{2.4cm}{} & \pcell{13}{TODO}{2.4cm}{} \\ \hline
+\pcell{17}{\textbf{Vote again} on display~A: skewed left, skewed right, or neither? Name the tail.}{2.2cm}{} & \pcell{18}{Display~B: which way is it skewed, and what does its tail mean for the class?}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{14}{TODO --- the crux}{2.4cm}{} & \pcell{15}{TODO --- the counterweight}{2.4cm}{} \\ \hline
+\pcell{19}{Jordan: \emph{``Most of the class scored in the $80$s and $90$s, on the right --- so the scores are skewed right.''} What did he look at? Fix it.}{2.2cm}{} & \pcell{20}{Is the sleep dot plot (row~1) skewed? Which way?}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── LAST ROW: GUIDED PRACTICE — we do, together, a fresh context ─────────────
-\mainidea[Guided practice]{TODO Title} &
-TODO: the fresh context in one sentence.
-
-\vspace{2pt}
-\begin{center}
-\begin{tikzpicture}[scale=1.0]
-  % TODO: its pre-drawn display
-  \draw[->, thick] (-0.2,0) -- (7.4,0);
-\end{tikzpicture}
-\end{center}
+% ── ROW 6: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Free Throws} &
+The Pinecrest High girls' basketball coach had each of her $16$ players shoot $10$ free throws at
+practice and recorded how many each player made.
+\\
+& {\centering
+\begin{tikzpicture}
+  \draw[thick] (-0.4,0) -- (9.4,0);
+  \foreach \x in {0,...,10} {
+    \draw ({\x*0.9},0.08) -- ({\x*0.9},-0.08);
+    \node[below, font=\small] at ({\x*0.9},-0.08) {\x};
+  }
+  \foreach \x/\n in {2/1, 5/1, 6/2, 7/3, 8/5, 9/3, 10/1} {
+    \foreach \k in {1,...,\n} {
+      \fill[cerulean] ({\x*0.9},{\k*0.34}) circle (0.13);
+    }
+  }
+  \node[font=\small\bfseries] at (4.5,-0.95) {Free throws made (out of $10$)};
+\end{tikzpicture}\par}
 \\
 & \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{16}{TODO}{2.2cm}{} & \pcell{17}{TODO}{2.2cm}{} \\ \hline
+\pcell{21}{Shape: skewed left or skewed right? Say how you know --- the tail, not the peak.}{2.2cm}{} & \pcell{22}{Any unusual features --- outliers, gaps, clusters?}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{18}{TODO --- the crux transferred}{2.6cm}{} & \pcell{19}{TODO}{2.6cm}{} \\ \hline
+\pcell{23}{Give a rough center and the spread, with units.}{2.6cm}{} & \pcell{24}{Write the full description in one sentence --- context and units.}{2.6cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

@@ -1,9 +1,10 @@
 %! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Slides (Beamer)
-% PILOT SHAPE (2026-09-06). GRADUAL RELEASE deck (~14 frames): title → targets → warm-up → hook
-% (dark, UNRESOLVED) → I DO divider (dark) → two or three frames per notes section (crux frame
-% flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
-% debrief with the cold check → You do: START THE HOMEWORK → close (dark). No practice launch,
-% no exit ticket. There is no spoiler rule. Mirror unit01/lesson02/slides.
+% UNIT 2 PERIOD (2026-09-29): 5 / 45 / 5 / 5. GRADUAL RELEASE deck (14 frames): title → targets →
+% warm-up → hook (dark, UNRESOLVED) → I DO divider (dark) → one frame per notes row (the crux
+% frame flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
+% debrief with the cold check → You do: THE HOMEWORK (assigned, not started) → close (dark).
+% No practice launch, no exit ticket. There is no spoiler rule: the notes frames ARE the board.
+% Standards: PS.DS.1a, PS.DS.1b.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
@@ -17,9 +18,9 @@
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 2.1}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 2.1 \ \textbullet\ \ UNIT 2 BEGINS}\\[0.5cm]
     {\color{white}\bfseries\LARGE Displaying and Describing Distributions}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2}
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2: Describing One Variable}
   \end{minipage}
 \end{frame}
 }
@@ -27,34 +28,64 @@
 % ── LEARNING TARGETS — worded as on the cover ────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Today's targets}
-  \sectionlabel{Lesson 2.1}
+  \sectionlabel{Lesson 2.1 $\cdot$ PS.DS.1a, PS.DS.1b}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item TODO: target 1, naming the formal term.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item read a \textbf{dot plot}, a \textbf{stemplot} (using its \textbf{key}), and a
+          \textbf{histogram}, and say what one dot, leaf, or bar stands for.
+    \item describe a \textbf{distribution} by its \textbf{shape}, \textbf{center}, and
+          \textbf{spread}, in a sentence with context and units.
+    \item point out \textbf{outliers}, \textbf{gaps}, and \textbf{clusters}.
+    \item name the direction of a \textbf{skew} by its \textbf{tail}.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
-    debrief $\to$ \textbf{you start the homework here, alone}.
+    Warm-up $\to$ \textbf{notes together, row by row} $\to$ \textbf{one team we describe as a
+    class} $\to$ debrief $\to$ \textbf{the homework is assigned --- you do it on your own}.
   \end{block}
 \end{frame}
 
 % ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Warm-Up --- 5 minutes, silent}
-  \sectionlabel{spiral review}
-  % TODO: the three items in one line each, and the line saying the notes reuse these numbers.
+  \sectionlabel{back to Unit 1 $\cdot$ Ms. Ortiz's class at Fox Run High}
+  \vspace{0.2cm}
+  \begin{center}
+    \begin{minipage}{0.88\textwidth}
+      Twenty students answered: hours of sleep, how they get to school, and minutes the trip takes.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item Quantitative or categorical? Units?
+        \item The trip-time frequency table: how many in all, how many take 20 minutes or more,
+              and what percent take less than 10?
+        \item The longest trip is 47 minutes. Say what 47 means --- and is it typical?
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Unit 1 skills, on purpose. The notes open on this same survey.}
+  \end{center}
 \end{frame}
 
-% ── HOOK — dark frame; leave it UNRESOLVED; section 2's second half settles it ──
+% ── HOOK — leave it UNRESOLVED; problem 17 (row 5, Skew) settles it ──────────
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
-  \vspace{1.3cm}
+  \vspace{0.6cm}
   \begin{center}
-    {\color{frostmid}\bfseries\small TODO SETUP LINE}\\[0.8cm]
-    {\color{white}\bfseries\Large TODO the claim.}\\[0.9cm]
-    {\color{goldacc}\bfseries\large TODO the question --- vote.}\\[0.5cm]
-    {\color{frostmid}\small We settle this at the end of section 2.}
+    {\color{frostmid}\bfseries\small MS. ORTIZ'S 20 STUDENTS $\cdot$ MINUTES TO GET TO SCHOOL}\\[0.4cm]
+    \begin{tikzpicture}
+      \foreach \x/\n in {0/7, 1/7, 2/3, 3/2, 4/1} {
+        \fill[frostmid] ({\x*1.3},0) rectangle ({\x*1.3+1.3},{\n*0.42});
+        \draw[white, thick] ({\x*1.3},0) rectangle ({\x*1.3+1.3},{\n*0.42});
+      }
+      \draw[white, thick] (-0.1,0) -- (6.6,0);
+      \foreach \x/\lab in {0/0, 1/10, 2/20, 3/30, 4/40, 5/50} {
+        \node[below, text=white, font=\small] at ({\x*1.3},0) {\lab};
+      }
+    \end{tikzpicture}\\[0.5cm]
+    {\color{white}\bfseries\Large Most of the class lives close. The tall bars are on the left.}\\[0.5cm]
+    {\color{goldacc}\bfseries\large Skewed left or skewed right?}\\[0.3cm]
+    {\color{frostmid}\small Circle one and write why. We vote again at problem 17.}
   \end{center}
 \end{frame}
 }
@@ -66,51 +97,229 @@
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
-    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
-    name it --- not before.}\\[0.9cm]
-    {\color{frostmid}\small TODO terms go in the vocabulary box today. Write each one the
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today. Write each one the
     moment we use it.}
   \end{minipage}
 \end{frame}
 }
 
-% ── NOTES SECTION FRAMES — two or three per section; these ARE the board ─────
+% ── ROW 1. DOT PLOT ──────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 1, first move}
-  \sectionlabel{notes section 1 $\cdot$ TODO}
-  % TODO: the definitions and the worked example exactly as they go on the board.
+  \ceruleanheader{One dot per student}
+  \sectionlabel{notes row 1 $\cdot$ Dot Plot $\cdot$ problems 1--4}
+  \begin{block}{Distribution}
+    What values a variable takes and how often it takes each one.
+  \end{block}
+  \vspace{2pt}
+  A \textbf{dot plot} stacks one dot per individual over a number line --- every value can be
+  read back.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick] (0.8,0) -- (10.4,0);
+      \foreach \x in {5,...,10} {
+        \draw ({(\x-4)*1.6},0.08) -- ({(\x-4)*1.6},-0.08);
+        \node[below, font=\small] at ({(\x-4)*1.6},-0.08) {\x};
+      }
+      \foreach \x/\n in {5/1, 6/4, 7/7, 8/5, 9/2, 10/1} {
+        \foreach \k in {1,...,\n} {
+          \fill[cerulean] ({(\x-4)*1.6},{\k*0.3}) circle (0.12);
+        }
+      }
+      \node[font=\small\bfseries] at (5.6,-0.8) {Hours of sleep last school night (all 20 students)};
+    \end{tikzpicture}
+  \end{center}
+  {\small 8 hours or more: $5+2+1 = 8$ students. \quad Fewer than 7: $5$ of $20 = 25\%$.}
 \end{frame}
 
+% ── ROW 2. STEMPLOT ──────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 2, second move --- the crux}
-  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
-  % TODO: the computation, the re-vote, and the rule in a block, with the term in \redink{}.
+  \ceruleanheader{Stems, leaves, and the key}
+  \sectionlabel{notes row 2 $\cdot$ Stemplot $\cdot$ problems 5--8}
+  \begin{columns}[t]
+    \begin{column}{0.44\textwidth}
+      \begin{center}
+      {\bfseries Minutes to get to school}\\[4pt]
+      {\large\renewcommand{\arraystretch}{1.25}%
+      \begin{tabular}{r|l}
+      0 & 3\enspace 5\enspace 6\enspace 7\enspace 8\enspace 8\enspace 9 \\
+      1 & 0\enspace 2\enspace 2\enspace 4\enspace 5\enspace 5\enspace 8 \\
+      2 & 1\enspace 4\enspace 6 \\
+      3 & 2\enspace 8 \\
+      4 & 7 \\
+      \end{tabular}}\\[6pt]
+      \textbf{Key:} $1 \mid 4 = 14$ minutes
+      \end{center}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{Stem} = every digit but the last; \textbf{leaf} = the last digit.
+        \item \redink{Read the key first.} $4 \mid 7$ is a 47-minute trip --- not 7.
+        \item Shortest 3 minutes, longest 47. More than 20 minutes: 6 students.
+        \item \textbf{Split stems}: leaves 0--4 on one stem, 5--9 on the next. First stem 1:
+              10, 12, 12, 14.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 3. HISTOGRAM ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{The calculator draws it. You read it.}
+  \sectionlabel{notes row 3 $\cdot$ Histogram $\cdot$ problems 9--12}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}
+        \foreach \x/\n in {0/1, 1/1, 2/2, 3/4, 4/7, 5/5} {
+          \fill[frostmid] ({\x*0.95},0) rectangle ({\x*0.95+0.95},{\n*0.4});
+          \draw[cerulean, thick] ({\x*0.95},0) rectangle ({\x*0.95+0.95},{\n*0.4});
+          \node[above, font=\scriptsize] at ({\x*0.95+0.475},{\n*0.4}) {\n};
+        }
+        \draw[thick] (-0.1,0) -- (5.8,0);
+        \foreach \x/\lab in {0/40, 1/50, 2/60, 3/70, 4/80, 5/90, 6/100} {
+          \node[below, font=\scriptsize] at ({\x*0.95},0) {\lab};
+        }
+        \node[font=\small] at (2.85,-0.7) {Unit 1 quiz score (percent)};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Equal-width \textbf{bins}; bar height = \textbf{frequency}. Bars touch.
+        \item A boundary value goes right: 70 counts in 70--79.
+        \item 70 or higher: $4+7+5 = 16$. Below 60: $2/20 = 10\%$.
+        \item \redink{The top score?} Somewhere 90--99. A histogram keeps counts, not values.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 4. DESCRIBE ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Describe a distribution: say four things}
+  \sectionlabel{notes row 4 $\cdot$ Describe $\cdot$ problems 13--16}
+  \begin{enumerate}\setlength{\itemsep}{3pt}
+    \item \textbf{Shape} --- symmetric, skewed left or right, uniform; unimodal or bimodal.
+    \item \textbf{Unusual features} --- outliers, gaps, clusters.
+    \item \textbf{Center} --- a typical value, roughly where the data split in half.
+    \item \textbf{Spread} --- smallest to largest; range $=$ max $-$ min.
+  \end{enumerate}
+  \begin{block}{Problem 13, the model sentence}
+    The 20 students' hours of sleep are roughly symmetric and unimodal, centered near 7 hours,
+    from 5 to 10 hours (range 5 hours), with no outliers.
+  \end{block}
+  \vspace{2pt}
+  {\small Problem 16 --- Sam wrote ``Bimodal, a gap, range 20.'' \redink{Who? What? 20 what?}
+  Context and units, every time.}
+\end{frame}
+
+% ── ROW 5. THE CRUX ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Skew is named by the tail, not the peak}
+  \sectionlabel[redacc]{notes row 5 $\cdot$ Skew $\cdot$ problems 17--20 $\cdot$ the whole point of today}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+      {\small\bfseries A. Minutes to get to school}\\[3pt]
+      \begin{tikzpicture}
+        \foreach \x/\n in {0/7, 1/7, 2/3, 3/2, 4/1} {
+          \fill[frostmid] ({\x*0.9},0) rectangle ({\x*0.9+0.9},{\n*0.3});
+          \draw[cerulean, thick] ({\x*0.9},0) rectangle ({\x*0.9+0.9},{\n*0.3});
+        }
+        \draw[thick] (-0.1,0) -- (4.7,0);
+        \draw[->, very thick, redacc] (2.4,1.1) -- (4.5,0.55);
+        \node[font=\scriptsize\bfseries, text=redacc] at (3.6,1.2) {tail};
+      \end{tikzpicture}\\[-1pt]
+      {\small Peak \textbf{left}, tail \textbf{right}: \redink{skewed right}}
+      \end{center}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+      {\small\bfseries B. Unit 1 quiz scores}\\[3pt]
+      \begin{tikzpicture}
+        \foreach \x/\n in {0/1, 1/1, 2/2, 3/4, 4/7, 5/5} {
+          \fill[frostmid] ({\x*0.75},0) rectangle ({\x*0.75+0.75},{\n*0.3});
+          \draw[cerulean, thick] ({\x*0.75},0) rectangle ({\x*0.75+0.75},{\n*0.3});
+        }
+        \draw[thick] (-0.1,0) -- (4.6,0);
+        \draw[->, very thick, redacc] (2.0,1.1) -- (0.15,0.5);
+        \node[font=\scriptsize\bfseries, text=redacc] at (0.9,1.25) {tail};
+      \end{tikzpicture}\\[-1pt]
+      {\small Peak \textbf{right}, tail \textbf{left}: \redink{skewed left}}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \begin{itemize}\setlength{\itemsep}{0pt}
+    \item \textbf{Problem 17 --- vote again} on the hook. Where is the 47 on the board? \redink{That is the tail.}
+    \item Problem 19: Jordan says B is skewed right ``because most scores are on the right.'' He
+          named the \emph{peak}.
+  \end{itemize}
+  \begin{block}{The rule}
+    The skew points where the few extreme values go. The pile sits on the \emph{opposite} side.
+  \end{block}
 \end{frame}
 
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Guided Practice: TODO title}
-  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
-  % TODO: the context and its data, then the lettered parts as questions.
-  \begin{block}{The question behind the question}
-    TODO: the trap, named.
-  \end{block}
+  \ceruleanheader{Guided Practice: Free Throws}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 21--24 $\cdot$ you hold the pen}
+  Pinecrest High: each of 16 players shot 10 free throws. How many did each make?
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick] (-0.4,0) -- (9.4,0);
+      \foreach \x in {0,...,10} {
+        \draw ({\x*0.9},0.08) -- ({\x*0.9},-0.08);
+        \node[below, font=\small] at ({\x*0.9},-0.08) {\x};
+      }
+      \foreach \x/\n in {2/1, 5/1, 6/2, 7/3, 8/5, 9/3, 10/1} {
+        \foreach \k in {1,...,\n} {
+          \fill[cerulean] ({\x*0.9},{\k*0.3}) circle (0.12);
+        }
+      }
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item[21.] Skewed left or skewed right? Put your finger on the tail.
+    \item[22.] Outliers, gaps, clusters?
+    \item[23.] A rough center and the spread --- with units.
+    \item[24.] The whole description in one sentence.
+  \end{itemize}
 \end{frame}
 
 % ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: TODO}
-  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
-  % TODO: the two or three things that go back on the board, then the cold check in a block.
+  \ceruleanheader{Debrief: which way does the tail point?}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Display A again: the pile is on the left, the tail goes right --- so it is skewed
+          \_\_\_\_\_. Then: two problem 21s. Which one named the tail?
+  \end{enumerate}
+  \vspace{8pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    At the Pinecrest pool, most swimmers are 8 to 14 years old, and a few parents and
+    lifeguards are 30 to 50. \textbf{Is the distribution of ages skewed left or skewed right ---
+    and where is the peak?}
+  \end{block}
 \end{frame}
 
-% ── YOU DO — the homework is the individual practice, assigned today ───────
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
   \ceruleanheader{You do: the homework}
-  \sectionlabel[goldacc]{On your own $\cdot$ due after two study halls}
-  % TODO: the context, the item themes (never the answers).
-  \begin{block}{On your own. TODO form (packet pages or a named Desmos activity), points, due date.}
-    Start with TODO items. Item TODO is the one I am reading over your shoulder.
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own $\cdot$ not started in class}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Oak Hollow Library summer reading} --- 20 kids, percent of goal met and books read.
+    \item Finish a stemplot and read it; could favorite genre go in a histogram?
+    \item Two displays, the same three questions --- where most kids are, where the tail goes,
+          the shape. They do not skew the same way.
+    \item Ava names a skew by where most kids are. Explain her mistake.
+    \item Describe books read --- shape, unusual features, center, spread, with units.
+  \end{itemize}
+  \begin{block}{Packet pages, 6 items, scored out of 12 (2 each). Due at the start of the first class after two study halls.}
+    Do \textbf{item 5 first} --- it is today's rule. The \emph{Keep in Mind} box on your cover is
+    the page to flip back to.
   \end{block}
 \end{frame}
 
@@ -121,8 +330,11 @@
   \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
-    {\color{white}\bfseries\Large TODO: what changed today, in two sentences.}\\[0.9cm]
-    {\color{frostmid}\small Next: Lesson TODO --- TODO one-line preview.}
+    {\color{white}\bfseries\Large Describe a distribution in one honest sentence: shape,
+    unusual features, center, spread --- with units. And name a skew by its tail: a pile on the
+    left can be skewed right.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 2.2 --- Measuring Center and Spread. Every center today
+    was ``about.'' Next time we make it exact.}
   \end{minipage}
 \end{frame}
 }

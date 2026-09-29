@@ -1,23 +1,85 @@
 %! Measuring Center and Spread — Unit 2, Lesson 2.2 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt. Do not add
+% a fourth item — the page is full.
+% Each item is a TOOL THE NOTES PICK UP AGAIN:
+%   1. Read Route 5's dot plot (spiral to Lesson 2.1) and order the values -> row 1 (median,
+%      mode) and row 2 (the ordered strip the quartiles are cut from).
+%   2. Add and divide -> row 1 names it the MEAN and writes it x-bar = (sum x)/n = 135/9 = 15.
+%   3. -4, -2, -2, 2, 6: add (0), square and add (64), 64/4 = 16, sqrt 16 = 4 -> row 3 reveals
+%      these are Route 2's DEVIATIONS: students have already computed a standard deviation.
+% DATA: Route 5 = 8, 10, 12, 12, 12, 15, 18, 20, 28 (sum 135, mean 15, mode 12).
+% PAGE LOCKSTEP: this key differs from warmup/ only in -key, the header, and \blank -> \ans.
+% NO teachernote here — teacher prose lives in the lesson plan.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the key together.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank.
+
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
-\boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\boxguard[30]
+\begin{notesbox}{Spiral Review --- Maple Grove's Route 5 Bus}
+\normalsize
+Nine students ride Maple Grove's Route~5 bus to school. The dot plot shows each rider's
+commute, in minutes.
+
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.5cm]
+  \draw[thick] (4.5,0) -- (30.5,0);
+  \foreach \tk in {5,...,30} { \draw (\tk,0) -- (\tk,-0.25); }
+  \foreach \tk in {5,10,...,30} {
+    \draw[thick] (\tk,0) -- (\tk,-0.45);
+    \node[below, font=\small] at (\tk,-0.45) {\tk}; }
+  \node[font=\small] at (17.5,-1.9) {commute time (minutes)};
+  \foreach \p/\q in {8/1, 10/1, 12/1, 12/2, 12/3, 15/1, 18/1, 20/1, 28/1} {
+    \fill[cerulean] (\p,{\q*0.75}) circle (3pt); }
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=6pt]
+
+  \item Read the dot plot. List the nine commute times from smallest to largest, then name
+        the time that appears most often.
+
+        \par\vspace{6pt}
+        Times: \ans{8, 10, 12, 12, 12, 15, 18, 20, 28}
+        \par\vspace{10pt}
+        Most common: \ans{12 minutes}
+
+  \item Add the nine commute times, then divide the total by $9$.
+
+        \begin{work}
+          8+10+12+12+12+15+18+20+28 &= 135 \\
+          135 \div 9 &= 15 \text{ minutes}
+        \end{work}
+
+  \item Five numbers: $-4,\ -2,\ -2,\ 2,\ 6$. Add them. Then square each one, and add the
+        squares.
+        \wordbank{$0$ \;\textbullet\; $4$ \;\textbullet\; $16$ \;\textbullet\; $36$ \;\textbullet\; $64$}
+
+        \vspace{2pt}
+        {\centering\renewcommand{\arraystretch}{2.6}
+        \begin{tabular}{@{} l C{1.3cm} C{1.3cm} C{1.3cm} C{1.3cm} C{1.3cm} C{2.2cm} @{}}
+        \toprule
+        \textbf{Number} & $-4$ & $-2$ & $-2$ & $2$ & $6$ & Sum: \ans{$0$} \\
+        \midrule
+        \textbf{Square} & \ans{$16$} & \ans{$4$} & \ans{$4$} & \ans{$4$} & \ans{$36$} & Sum: \ans{$64$} \\
+        \bottomrule
+        \end{tabular}\par}
+
+        \vspace{8pt}
+        Divide the sum of squares by $4$, then take the square root: \ans{$64 \div 4 = 16$; $\sqrt{16} = 4$}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -1,23 +1,78 @@
 %! Boxplots, Outliers, and Resistance — Unit 2, Lesson 2.3 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt (\workrowsep 50pt, item spacing 22pt) so each
+% item gets real handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates Lesson 2.2's skills on the numbers the notes open with.
+% Items 1-2 compute Pine Street Pizza's median, Q1, Q3 and IQR (the hook and rows 1, 2 and 4 of
+% the notes reuse exactly these values: 25.5, 23, 28, 5). Item 3 turns counts into cumulative
+% percents (25%, 50%, 75%) — row 3 of the notes graphs those same percents as the cumulative
+% relative frequency graph.
+% THE DATA: 25 30 22 55 27 20 24 28 23 26 -> in order 20 22 23 24 25 26 27 28 30 55;
+%   median (25+26)/2 = 25.5; Q1 = med(20,22,23,24,25) = 23; Q3 = med(26,27,28,30,55) = 28;
+%   IQR 5. Week: 10/40 = 25%, 20/40 = 50%, 30/40 = 75%.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
+
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
 \boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Pine Street Pizza, Friday Night}
+\normalsize
+Pine Street Pizza timed its ten Friday-night deliveries. In the order they happened, in
+minutes: \quad $25, \ 30, \ 22, \ 55, \ 27, \ 20, \ 24, \ 28, \ 23, \ 26$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Write the ten times in order, then find the \textbf{median}.
+
+        \par\vspace{6pt}
+        In order: \ans{20, 22, 23, 24, 25, 26, 27, 28, 30, 55}
+
+        \begin{work}
+          \text{median} &= \dfrac{25 + 26}{2} \\
+                        &= 25.5 \text{ minutes}
+        \end{work}
+
+  \item Find $Q_1$ and $Q_3$ --- the medians of the lower five and the upper five times ---
+        then the \textbf{IQR}.
+
+        \par\vspace{6pt}
+        $Q_1 = $ \ans{23 minutes} \qquad $Q_3 = $ \ans{28 minutes}
+
+        \begin{work}
+          \text{IQR} &= 28 - 23 = 5 \text{ minutes}
+        \end{work}
+
+  \item Over the whole week the shop made $40$ deliveries. Write each count as a
+        \textbf{percent} of all $40$.
+        \wordbank{20\% \;\textbullet\; 25\% \;\textbullet\; 40\% \;\textbullet\; 50\% \;\textbullet\; 75\% \;\textbullet\; 80\%}
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{2.1}
+        \begin{tabularx}{\linewidth}{@{} X c p{3.4cm} @{}}
+        \toprule
+        \textbf{Deliveries that took\dots} & \textbf{Count} & \textbf{Percent of the 40} \\
+        \midrule
+        $20$ minutes or less & $10$ & \ans{$10/40 = 25\%$} \\
+        $25$ minutes or less & $20$ & \ans{$20/40 = 50\%$} \\
+        $30$ minutes or less & $30$ & \ans{$30/40 = 75\%$} \\
+        \bottomrule
+        \end{tabularx}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

@@ -1,45 +1,86 @@
 %! Comparing Distributions — Unit 2, Lesson 2.4 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt (item spacing 22pt) so each item gets real
+% handwriting room and still fits. Do not add a fourth item — the page is full.
+% \workrowsep is 30pt here (not 1.2's 50pt): the page also carries two fill tables.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Items 1 and 2
+% are Lesson 2.3's quartiles, IQR and 1.5 IQR fence on TONY'S PIZZA — the same 11 delivery
+% times the notes open with (row 1's back-to-back stemplot, row 2's boxplot with 44 plotted as
+% an outlier). Item 3 is two tiny lists with the SAME mean and different spread: it seeds the
+% crux (row 4, "Different Spread") without the vocabulary.
+% THE DATA — Tony's: 18 21 22 24 25 25 27 28 30 33 44 (n=11). Median = 6th = 25; lower half
+%   18 21 22 24 25 -> Q1 22; upper half 27 28 30 33 44 -> Q3 30; IQR 8; upper fence
+%   30 + 12 = 42 -> 44 is an outlier. Lists: A 9 10 11 (mean 10, range 2); B 2 10 18
+%   (mean 10, range 16).
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it and
+% prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{30pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See LESSON_SHAPE.md (namestrip).
+% cover this component is stapled behind.
+
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See templates/lesson/components.md for the expected structure.
-% PILOT SHAPE (2026-09-06) — mirror unit01/lesson02. GUIDED NOTES & PRACTICE carry the whole
-% gradual release and END AT THE GUIDED PRACTICE:
-%   PAGE 1: vocabbox of \vterm{} rows + hookbox (circle-one vote, left unresolved; NO objectivebox)
-%   (FIXED-HEIGHT rows, 2.3cm, term label + open writing space, NO inline blank, no rule line; the
-%   \vterm / \vtermans pair is defined in the notes preamble — copy it from unit01/lesson02;
-%   the key's \vtermans{}{} fills the same height, definitions two lines at most) ->
-%   EXACTLY TWO \begin{notesbox}{N. Title} sections the teacher models (I DO), each in two
-%   moves, the second move introduced by \textbf{\textcolor{cerulean}{Its Title.}} ->
-%   PAGES 2-3: the two sections, \newpage before each; PAGE 4: one \begin{practicebox} ("Guided
-%   Practice") of four or five lettered parts, alone on its page. Every fill-in cluster opens with
-%   \wordbank{a \;\textbullet\; b ...} (macro defined in the preamble — copy from 1.2).
-% No hookbox (the hook is a slide), no solo practice box, no extensionbox. The crux is the second
-% half of section 2. Target 3-4 pages, blank and key. The homework is the individual practice.
-% HOMEWORK: a remindbox ("This is your graded homework..."), a scenariobox context, ~6 items in a
-% notesbox (split into a "..., continued" box where the pages fall — never strand a lead-in from
-% its table), a contrast pair, the crux head-on, one spiral item, and a closing \begin{spiralbox}
-% preview. Scored; assigned at the close, done outside class. Practice boxes at full 12pt size.
-% NOTES: \small inside every box (objectivebox, vocabbox, notesbox, practicebox), as the stats model.
-% GENERATE THE KEY from the blank: python3 templates/lesson/mkkey.py blank key answers.json
-% (see templates/lesson/examples/). Never hand-edit a key.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
-% the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
-% _key: the blank reserves its exact height, the key prints it. That is the work rule, and it
-% is what keeps this component the same number of pages as its key.
 \boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Spiral Review --- Tony's Pizza Delivery Times}
+\normalsize
+Tony's Pizza timed its last $11$ deliveries, in minutes, in order:
+\quad $18,\ 21,\ 22,\ 24,\ 25,\ 25,\ 27,\ 28,\ 30,\ 33,\ 44$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Find the quartiles and the IQR. (Quartiles are the medians of each half; with $11$
+        values, leave the overall median out of both halves.)
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.4}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \toprule
+        $Q_1$ & \textbf{Median} & $Q_3$ & \textbf{IQR} \\
+        \midrule
+        \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Is the $44$-minute delivery an outlier? Use the upper fence,
+        $Q_3 + 1.5 \cdot \text{IQR}$.
+
+        \begin{work}
+          \text{Upper fence} &= 30 + 1.5(8) \\
+                             &= 42 \text{ minutes}
+        \end{work}
+
+        \vspace{6pt}
+        Outlier? \blank{10cm}
+
+  \item Two tiny lists: \quad \textbf{List A:} $9,\ 10,\ 11$ \qquad \textbf{List B:} $2,\ 10,\ 18$.
+        \wordbank{2 \;\textbullet\; 10 \;\textbullet\; 16 \;\textbullet\; 20}
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.2}
+        \begin{tabularx}{\linewidth}{@{} X p{3.4cm} p{3.4cm} @{}}
+        \toprule
+        \textbf{List} & \textbf{Mean} & \textbf{Range} \\
+        \midrule
+        A: $9,\ 10,\ 11$  & \blank{3cm} & \blank{3cm} \\
+        B: $2,\ 10,\ 18$  & \blank{3cm} & \blank{3cm} \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{8pt}
+        In one sentence: how are the two lists alike, and how are they different?
+        \par\writelines{2}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

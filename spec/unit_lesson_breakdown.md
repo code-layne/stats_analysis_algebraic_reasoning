@@ -9,9 +9,9 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 | | |
 |---|---|
 | Units | 8 |
-| Content lessons | 58 (≤ 8 per unit) |
-| Unit-launch lessons (Lesson 0) | 8 |
-| Lesson directories total | 66 |
+| Content lessons | 55 (≤ 8 per unit; Unit 2 consolidated to 4) |
+| Unit-launch lessons (Lesson 0) | 7 (none in Unit 2) |
+| Lesson directories total | 62 |
 | Assessments | 8 unit tests (practice + actual, each with key) + 8 sample tests — **Unit 1 authored** |
 | Semester split | after Unit 4 — S1 *data and chance*, S2 *models and decisions* |
 | Projects | Units 1, 5, 6, 8 (Lesson 1.8, 5.7, 6.8, 8.6 capstone) |
@@ -61,14 +61,15 @@ standard is still covered. Unit 1 ends Thursday 2026-10-01.
 
 | # | Title | Folds in (old map) | Content | Standards | Status |
 |---|---|---|---|---|---|
-| 2.1 | Displaying and Describing Distributions | 2.0, 2.1, 2.3 | dot plots, stemplots, histograms; shape, center, spread, unusual features (SOCS) read from each; the launch becomes the hook and warm-up | PS.DS.1a, 1b | ⬜ |
-| 2.2 | Measuring Center and Spread | 2.4, 2.5 | mean / median / mode (brisk review); range, quartiles, IQR; variance and standard deviation from a deviations table | PS.DS.2a, 2b, 2e | ⬜ |
-| 2.3 | Boxplots, Outliers, and Resistance | 2.2, 2.6 | five-number summary → boxplot; 1.5·IQR fences; remove the outlier — mean and SD move, median and IQR don't; quartiles read off a cumulative frequency graph | PS.DS.1a, 2c, 2d | ⬜ |
-| 2.4 | Comparing Distributions | 2.7 | back-to-back stemplots, parallel dot plots, parallel boxplots; compare on SOCS in context | PS.DS.3a, 3b | ⬜ |
+| 2.1 | Displaying and Describing Distributions | 2.0, 2.1, 2.3 | dot plots, stemplots, histograms; shape, center, spread, unusual features (SOCS) read from each; the launch becomes the hook and warm-up | PS.DS.1a, 1b | ✅ |
+| 2.2 | Measuring Center and Spread | 2.4, 2.5 | mean / median / mode (brisk review); range, quartiles, IQR; variance and standard deviation from a deviations table | PS.DS.2a, 2b, 2e | ✅ |
+| 2.3 | Boxplots, Outliers, and Resistance | 2.2, 2.6 | five-number summary → boxplot; 1.5·IQR fences; remove the outlier — mean and SD move, median and IQR don't; quartiles read off a cumulative frequency graph | PS.DS.1a, 2c, 2d | ✅ |
+| 2.4 | Comparing Distributions | 2.7 | back-to-back stemplots, parallel dot plots, parallel boxplots; compare on SOCS in context | PS.DS.3a, 3b | ✅ |
 
-**Directories are not yet restructured:** `unit02/lesson00`–`lesson07` are still the old EFFL
-skeletons under the old titles. Remove `lesson00` and `lesson05`–`07`, then re-scaffold
-`lesson01`–`04` under the titles above (the scaffolder now emits notes + the 5 / 45 / 5 / 5 plan).
+**All four authored, built, and gated 2026-09-29** (`unit02/lesson01`–`04`; the old
+`lesson00` and `lesson05`–`07` skeletons are gone). Every keyed component is page-for-page;
+warm-ups 1pp; homework 2pp; notes 6 / 6 / 5 / 6 pp — **over the 4–5pp budget in 2.1, 2.2, 2.4**
+(the Guided Practice row spills to a sixth page; open decision).
 
 ### Unit 3 — Categorical Data and Probability
 Standards: PS.DS.4, PS.P.1, AFDA.DA.3 · 8 content lessons
@@ -166,14 +167,14 @@ Standards: PS.IS.2 · 6 content lessons
 | Unit | Content lessons | Dirs (incl. Lesson 0) | Authored |
 |---|---|---|---|
 | 1 | 8 | 9 | **9 of 9 — complete** |
-| 2 | 7 | 8 | 0 |
+| 2 | 4 | 4 | **4 of 4 — complete** |
 | 3 | 8 | 9 | 0 |
 | 4 | 7 | 8 | 0 |
 | 5 | 7 | 8 | 0 |
 | 6 | 8 | 9 | 0 |
 | 7 | 7 | 8 | 0 |
 | 8 | 6 | 7 | 0 |
-| **Total** | **58** | **66** | **9** |
+| **Total** | **55** | **62** | **13** |
 
 ## Standards coverage
 

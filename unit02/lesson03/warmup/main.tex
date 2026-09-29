@@ -1,45 +1,78 @@
 %! Boxplots, Outliers, and Resistance — Unit 2, Lesson 2.3 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt (\workrowsep 50pt, item spacing 22pt) so each
+% item gets real handwriting room and still fits. Do not add a fourth item — the page is full.
+% GRADUAL RELEASE: the warm-up activates Lesson 2.2's skills on the numbers the notes open with.
+% Items 1-2 compute Pine Street Pizza's median, Q1, Q3 and IQR (the hook and rows 1, 2 and 4 of
+% the notes reuse exactly these values: 25.5, 23, 28, 5). Item 3 turns counts into cumulative
+% percents (25%, 50%, 75%) — row 3 of the notes graphs those same percents as the cumulative
+% relative frequency graph.
+% THE DATA: 25 30 22 55 27 20 24 28 23 26 -> in order 20 22 23 24 25 26 27 28 30 55;
+%   median (25+26)/2 = 25.5; Q1 = med(20,22,23,24,25) = 23; Q3 = med(26,27,28,30,55) = 28;
+%   IQR 5. Week: 10/40 = 25%, 20/40 = 50%, 30/40 = 75%.
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See LESSON_SHAPE.md (namestrip).
+% cover this component is stapled behind.
+
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See templates/lesson/components.md for the expected structure.
-% PILOT SHAPE (2026-09-06) — mirror unit01/lesson02. GUIDED NOTES & PRACTICE carry the whole
-% gradual release and END AT THE GUIDED PRACTICE:
-%   PAGE 1: vocabbox of \vterm{} rows + hookbox (circle-one vote, left unresolved; NO objectivebox)
-%   (FIXED-HEIGHT rows, 2.3cm, term label + open writing space, NO inline blank, no rule line; the
-%   \vterm / \vtermans pair is defined in the notes preamble — copy it from unit01/lesson02;
-%   the key's \vtermans{}{} fills the same height, definitions two lines at most) ->
-%   EXACTLY TWO \begin{notesbox}{N. Title} sections the teacher models (I DO), each in two
-%   moves, the second move introduced by \textbf{\textcolor{cerulean}{Its Title.}} ->
-%   PAGES 2-3: the two sections, \newpage before each; PAGE 4: one \begin{practicebox} ("Guided
-%   Practice") of four or five lettered parts, alone on its page. Every fill-in cluster opens with
-%   \wordbank{a \;\textbullet\; b ...} (macro defined in the preamble — copy from 1.2).
-% No hookbox (the hook is a slide), no solo practice box, no extensionbox. The crux is the second
-% half of section 2. Target 3-4 pages, blank and key. The homework is the individual practice.
-% HOMEWORK: a remindbox ("This is your graded homework..."), a scenariobox context, ~6 items in a
-% notesbox (split into a "..., continued" box where the pages fall — never strand a lead-in from
-% its table), a contrast pair, the crux head-on, one spiral item, and a closing \begin{spiralbox}
-% preview. Scored; assigned at the close, done outside class. Practice boxes at full 12pt size.
-% NOTES: \small inside every box (objectivebox, vocabbox, notesbox, practicebox), as the stats model.
-% GENERATE THE KEY from the blank: python3 templates/lesson/mkkey.py blank key answers.json
-% (see templates/lesson/examples/). Never hand-edit a key.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
-% the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
-% _key: the blank reserves its exact height, the key prints it. That is the work rule, and it
-% is what keeps this component the same number of pages as its key.
 \boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Spiral Review --- Pine Street Pizza, Friday Night}
+\normalsize
+Pine Street Pizza timed its ten Friday-night deliveries. In the order they happened, in
+minutes: \quad $25, \ 30, \ 22, \ 55, \ 27, \ 20, \ 24, \ 28, \ 23, \ 26$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Write the ten times in order, then find the \textbf{median}.
+
+        \par\vspace{6pt}
+        In order: \blank{11cm}
+
+        \begin{work}
+          \text{median} &= \dfrac{25 + 26}{2} \\
+                        &= 25.5 \text{ minutes}
+        \end{work}
+
+  \item Find $Q_1$ and $Q_3$ --- the medians of the lower five and the upper five times ---
+        then the \textbf{IQR}.
+
+        \par\vspace{6pt}
+        $Q_1 = $ \blank{2.4cm} \qquad $Q_3 = $ \blank{2.4cm}
+
+        \begin{work}
+          \text{IQR} &= 28 - 23 = 5 \text{ minutes}
+        \end{work}
+
+  \item Over the whole week the shop made $40$ deliveries. Write each count as a
+        \textbf{percent} of all $40$.
+        \wordbank{20\% \;\textbullet\; 25\% \;\textbullet\; 40\% \;\textbullet\; 50\% \;\textbullet\; 75\% \;\textbullet\; 80\%}
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{2.1}
+        \begin{tabularx}{\linewidth}{@{} X c p{3.4cm} @{}}
+        \toprule
+        \textbf{Deliveries that took\dots} & \textbf{Count} & \textbf{Percent of the 40} \\
+        \midrule
+        $20$ minutes or less & $10$ & \blank{3cm} \\
+        $25$ minutes or less & $20$ & \blank{3cm} \\
+        $30$ minutes or less & $30$ & \blank{3cm} \\
+        \bottomrule
+        \end{tabularx}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

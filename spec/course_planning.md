@@ -708,8 +708,12 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    test (`unit_lesson_breakdown.md`). **Units 2–8 use the 5 / 45 / 5 / 5 period** (user decision
    2026-09-29, `LESSON_SHAPE.md` §1): ten more minutes of notes, a five-minute cold-check
    debrief, homework assigned rather than started in class; notes run 4–5 pages, 4–5
-   instruction rows, 16–24 problems. Unit 1 stays at 5 / 35 / 10 / 10. **Still to do:** remove
-   `unit02/lesson00` and `lesson05`–`07` and re-scaffold `lesson01`–`04` under the new titles.
+   instruction rows, 16–24 problems. Unit 1 stays at 5 / 35 / 10 / 10. **Unit 2's four lessons are authored, built and gated
+   (2026-09-29)** — all page-for-page, `make check` clean. **Open decision:** notes for 2.1, 2.2
+   and 2.4 run 6 pages (the Guided Practice row spills), over the 4–5pp budget set the same day —
+   either raise the budget to 6 for the 45-minute notes or cut one problem pair per lesson.
+   **Gotcha:** `\writelines{1}` sets an extra empty line after its rule that `\ansline` does not,
+   so a blank runs taller than its key; on a tight page use `\par\writeline` per line instead.
    **Author them straight into the table shape** — there is no longer an older shape to convert
    from, and `templates/lesson/notes.tex` already emits it.
 5. **Reuse the Unit 1 assessment set as the template for U2–U8** (blueprint 14/16/40/30, 33 items,

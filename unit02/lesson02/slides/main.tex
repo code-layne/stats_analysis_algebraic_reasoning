@@ -1,9 +1,10 @@
 %! Measuring Center and Spread — Unit 2, Lesson 2.2 — Slides (Beamer)
-% PILOT SHAPE (2026-09-06). GRADUAL RELEASE deck (~14 frames): title → targets → warm-up → hook
-% (dark, UNRESOLVED) → I DO divider (dark) → two or three frames per notes section (crux frame
-% flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface, un-answered) → spoken
-% debrief with the cold check → You do: START THE HOMEWORK → close (dark). No practice launch,
-% no exit ticket. There is no spoiler rule. Mirror unit01/lesson02/slides.
+% PILOT SHAPE on the Unit 2 period (5 / 45 / 5 / 5). GRADUAL RELEASE deck (14 frames): title →
+% targets → warm-up → hook (dark, UNRESOLVED) → I DO divider (dark) → one or two frames per notes
+% row (the crux frame flagged \sectionlabel[redacc]{}) → Guided Practice (a LIVE surface,
+% un-answered) → spoken debrief with the cold check → You do: THE HOMEWORK (assigned, not started
+% in class) → close (dark). No practice launch, no exit ticket. There is no spoiler rule: the
+% notes frames ARE the board.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
@@ -19,7 +20,7 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.2}\\[0.5cm]
     {\color{white}\bfseries\LARGE Measuring Center and Spread}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2}
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 2~$\cdot$~PS.DS.2a, 2b, 2e}
   \end{minipage}
 \end{frame}
 }
@@ -29,32 +30,54 @@
   \ceruleanheader{Today's targets}
   \sectionlabel{Lesson 2.2}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{5pt}
-    \item TODO: target 1, naming the formal term.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item find and interpret the \textbf{mean} ($\bar{x}$), \textbf{median}, and \textbf{mode}.
+    \item find the \textbf{range}, \textbf{quartiles}, and \textbf{IQR} --- the spread of the
+          middle half --- and give the \textbf{five-number summary}.
+    \item compute the \textbf{variance} and \textbf{standard deviation} from a table of
+          \textbf{deviations}, and read $s$ from a calculator.
+    \item explain that the standard deviation measures spread about the mean --- \emph{not} how
+          big the values are.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one we work as a class} $\to$
-    debrief $\to$ \textbf{you start the homework here, alone}.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one data set we work as a class} $\to$
+    debrief $\to$ \textbf{the homework is assigned --- you do it on your own}.
   \end{block}
 \end{frame}
 
 % ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Warm-Up --- 5 minutes, silent}
-  \sectionlabel{spiral review}
-  % TODO: the three items in one line each, and the line saying the notes reuse these numbers.
+  \sectionlabel{Maple Grove's Route 5 bus}
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      Nine Route 5 riders' commutes are on the dot plot on your page.
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item List the nine times in order. Which time is most common?
+        \item Add the nine times, then divide by 9.
+        \item Add $-4, -2, -2, 2, 6$. Square each and add the squares. Divide by 4, then take
+              the square root.
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- every one of these numbers comes back in the notes.}
+  \end{center}
 \end{frame}
 
-% ── HOOK — dark frame; leave it UNRESOLVED; section 2's second half settles it ──
+% ── HOOK — leave it UNRESOLVED; problem 16 (row 4, Spread, Not Size) settles it ──
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
-  \vspace{1.3cm}
+  \vspace{1.1cm}
   \begin{center}
-    {\color{frostmid}\bfseries\small TODO SETUP LINE}\\[0.8cm]
-    {\color{white}\bfseries\Large TODO the claim.}\\[0.9cm]
-    {\color{goldacc}\bfseries\large TODO the question --- vote.}\\[0.5cm]
-    {\color{frostmid}\small We settle this at the end of section 2.}
+    {\color{frostmid}\bfseries\small TWO MAPLE GROVE BUS ROUTES. FIVE RIDERS EACH. COMMUTE TIMES IN MINUTES.}\\[0.7cm]
+    {\color{white}\bfseries\Large Route 7 (past the reservoir): \ 38, 38, 40, 42, 42}\\[0.35cm]
+    {\color{white}\bfseries\Large Route 3 (in town): \ 6, 6, 12, 18, 18}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Which route has the bigger standard deviation?}\\[0.5cm]
+    {\color{frostmid}\small Vote: Route 7, Route 3, or the same. We settle this at problem 16.}
   \end{center}
 \end{frame}
 }
@@ -66,51 +89,222 @@
   \vspace{1.8cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
-    {\color{white}\bfseries\Large Open to your Guided Notes page. Fill each blank as we
-    name it --- not before.}\\[0.9cm]
-    {\color{frostmid}\small TODO terms go in the vocabulary box today. Write each one the
-    moment we use it.}
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Five terms go in the vocabulary box today: mean, median, IQR,
+    variance, standard deviation.}
   \end{minipage}
 \end{frame}
 }
 
-% ── NOTES SECTION FRAMES — two or three per section; these ARE the board ─────
+% ── ROW 1. CENTER ────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 1, first move}
-  \sectionlabel{notes section 1 $\cdot$ TODO}
-  % TODO: the definitions and the worked example exactly as they go on the board.
+  \ceruleanheader{Three measures of center}
+  \sectionlabel{notes row 1 $\cdot$ Center $\cdot$ problems 1--4 $\cdot$ PS.DS.2a}
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Mean}
+        $\displaystyle \bar{x} = \frac{\sum x}{n}$ \quad --- $\Sigma$ means ``add them all up.''
+      \end{block}
+      \vspace{3pt}
+      \begin{block}{Median \ $\cdot$ \ Mode}
+        The middle of the ordered data \ $\cdot$ \ the most common value.
+      \end{block}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      {\small Route 5: \ 8, 10, 12, 12, \textbf{12}, 15, 18, 20, 28}
+      \begin{itemize}\setlength{\itemsep}{3pt}
+        \item $\bar{x} = 135/9 =$ \redink{15} min --- on average, 15 minutes.
+        \item Median $=$ \redink{12} min --- half ride 12 min or less.
+        \item Mode $=$ \redink{12} min.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\large The 28-minute rider \redink{pulls the mean up}; the median only counts the middle.}
+  \end{center}
 \end{frame}
 
+% ── ROW 2. RANGE AND IQR ─────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{TODO section 2, second move --- the crux}
-  \sectionlabel[redacc]{notes section 2 $\cdot$ the whole point of today}
-  % TODO: the computation, the re-vote, and the rule in a block, with the term in \redink{}.
+  \ceruleanheader{The spread of the middle half}
+  \sectionlabel{notes row 2 $\cdot$ Range \& IQR $\cdot$ problems 5--8 $\cdot$ PS.DS.2b}
+  \vspace{2pt}
+  \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      8 & 10 & 12 & 12 & \textcolor{goldacc}{\textbf{12}} & 15 & 18 & 20 & 28 \\
+      \hline
+    \end{tabular}\\[4pt]
+    {\small lower half: 8, 10, 12, 12 $\to$ $Q_1 =$ \redink{11} \qquad median $= 12$ (left out)
+    \qquad upper half: 15, 18, 20, 28 $\to$ $Q_3 =$ \redink{19}}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item $Q_1$, $Q_3$ = medians of the lower and upper halves --- \textbf{when $n$ is odd, leave
+          the overall median out.}
+    \item Range $= 28 - 8 = 20$ min. \quad IQR $= Q_3 - Q_1 = 19 - 11 =$ \redink{8} min.
+    \item Five-number summary: \ 8, \ 11, \ 12, \ 19, \ 28.
+  \end{itemize}
+  \begin{block}{Say it in context}
+    The \textbf{middle half} of Route 5's riders commute between 11 and 19 minutes --- a spread of 8.
+  \end{block}
+\end{frame}
+
+% ── ROW 3a. THE DEVIATIONS TABLE ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Standard deviation, step by step}
+  \sectionlabel{notes row 3 $\cdot$ problems 9--11 $\cdot$ Route 2: 6, 8, 8, 12, 16 $\cdot$ PS.DS.2b, 2e}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+        \small\renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c c c}
+          \hline
+          $x$ & $x - \bar{x}$ & $(x - \bar{x})^2$ \\
+          \hline
+          6 & $-4$ & 16 \\
+          8 & $-2$ & 4 \\
+          8 & $-2$ & 4 \\
+          12 & 2 & 4 \\
+          16 & 6 & 36 \\
+          \hline
+          \textbf{50} & \redink{0} & \textbf{64} \\
+          \hline
+        \end{tabular}
+      \end{center}
+      {\small $\bar{x} = 50/5 = 10$ min.}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}\setlength{\itemsep}{3pt}
+        \item The deviations add to \redink{0} --- \emph{always}. That is the mean balancing, not
+              ``no spread.'' So we \textbf{square} first.
+        \item $\displaystyle s^2 = \frac{\sum (x - \bar{x})^2}{n - 1} = \frac{64}{4} = 16$
+              \ (min$^2$)
+        \item $s = \sqrt{16} =$ \redink{4} minutes.
+      \end{itemize}
+      \begin{block}{Say it in context}
+        A typical Route 2 commute is about 4 minutes from the mean of 10.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 3b. THE CALCULATOR AND n - 1 ─────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Reading the calculator}
+  \sectionlabel{notes row 3 $\cdot$ problems 12--13 $\cdot$ Route 5's nine commutes}
+  \begin{columns}[t]
+    \begin{column}{0.44\textwidth}
+      \vspace{4pt}
+      {\ttfamily\small
+      \begin{tabular}{l l}
+        1-Var Stats & \\
+        $\bar{x}$=15 & n=9 \\
+        $\Sigma$x=135 & minX=8 \\
+        $\Sigma$x$^2$=2329 & Q$_1$=11 \\
+        \textcolor{redacc}{\textbf{Sx=6.164414003}} & Med=12 \\
+        $\sigma$x=5.811865258 & Q$_3$=19 \\
+         & maxX=28 \\
+      \end{tabular}}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{Sx} divides by $n - 1$ --- the \textbf{sample} standard deviation. That is
+              our $s$. \ ($\sigma$x divides by $n$; we do not use it.)
+        \item $s \approx$ \redink{6.2} min: a typical Route 5 commute is about 6.2 minutes from
+              the 15-minute mean.
+        \item The variance, $s^2 = 38$, is in \emph{minutes squared}. The square root brings
+              us back to minutes.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 4. THE CRUX ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Spread about the mean --- not size}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Spread, Not Size $\cdot$ problems 14--17 $\cdot$ the whole point of today}
+  \vspace{2pt}
+  \begin{center}
+    \small\renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{l l c c}
+      \hline
+      \textbf{Route} & \textbf{Commutes (min)} & $\bar{x}$ & $s$ \\
+      \hline
+      Route 3 & 6, 6, 12, 18, 18 & 12 & \redink{6} \\
+      Route 4 & 11, 11, 12, 13, 13 & 12 & 1 \\
+      Route 7 & 38, 38, 40, 42, 42 & 40 & \redink{2} \\
+      Route 3 + detour & 16, 16, 22, 28, 28 & 22 & 6 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item \textbf{Problem 16 --- vote again:} Route 7 or Route 3? \ Route 3: $6 > 2$. Route 7 has
+          the biggest numbers on the page and huddles within 2 minutes of its mean.
+    \item Every rider $+10$: the mean moves up 10, \redink{every deviation stays the same}, $s$ stays 6.
+  \end{itemize}
+  \begin{block}{The standard deviation measures spread about the mean (PS.DS.2e)}
+    It is built from $x - \bar{x}$ --- distance from the \emph{route's own} mean. It never asks
+    how big the values are.
+  \end{block}
 \end{frame}
 
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Guided Practice: TODO title}
-  \sectionlabel[goldacc]{We do $\cdot$ you hold the pen}
-  % TODO: the context and its data, then the lettered parts as questions.
+  \ceruleanheader{Guided Practice: Two Towns}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 18--21 $\cdot$ you hold the pen}
+  Weekday high temperatures ($^\circ$F), one week in March. \quad
+  \textbf{Kestrel Bay} (coastal): 70, 70, 72, 74, 74. \quad
+  \textbf{Sandhill} (inland): 50, 56, 58, 66, 70.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[18.] Sandhill's mean (use $\Sigma$) and median. What does the mean say?
+    \item[19.] Sandhill's standard deviation: deviations, squares, sum, divide by $n - 1$, root.
+          Interpret $s$.
+    \item[20.] Kestrel Bay: $\bar{x} = 72^\circ$F, $s = 2^\circ$F. Sam: ``Kestrel Bay has the
+          bigger standard deviation --- it's the warmer town.'' Right?
+    \item[21.] A warm front makes every Sandhill high $5^\circ$F warmer. New $\bar{x}$? New $s$?
+  \end{itemize}
   \begin{block}{The question behind the question}
-    TODO: the trap, named.
+    If you agreed with Sam in 20, you are still at the hook vote.
   \end{block}
 \end{frame}
 
 % ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: TODO}
-  \sectionlabel{10 minutes $\cdot$ pens down, papers up --- we say these aloud}
-  % TODO: the two or three things that go back on the board, then the cold check in a block.
+  \ceruleanheader{Debrief: spread, not size}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say this aloud}
+  \vspace{4pt}
+  \begin{center}
+    {\large Route 7: \ 38--42 min, \ $s = 2$ \qquad Route 3: \ 6--18 min, \ $s = 6$}\\[6pt]
+    {\small Say the sentence: whose values are bigger, whose are more spread out, and why those
+    are different questions.}
+  \end{center}
+  \vspace{8pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Two classes took the same quiz. Class A: mean 85, standard deviation 3. Class B: mean 70,
+    standard deviation 12. \textbf{Which class's scores are more spread out --- and does Class
+    A's higher mean tell you anything about that?}
+  \end{block}
 \end{frame}
 
-% ── YOU DO — the homework is the individual practice, assigned today ───────
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
   \ceruleanheader{You do: the homework}
-  \sectionlabel[goldacc]{On your own $\cdot$ due after two study halls}
-  % TODO: the context, the item themes (never the answers).
-  \begin{block}{On your own. TODO form (packet pages or a named Desmos activity), points, due date.}
-    Start with TODO items. Item TODO is the one I am reading over your shoulder.
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item \textbf{Oak Street Pizza} --- six Friday delivery times.
+    \item The mean with $\Sigma$, the median, and what they tell a customer; is $\bar{x}$ a
+          statistic or a parameter?
+    \item The five-number summary and the IQR; the standard deviation from a deviations table.
+    \item Two other shops --- one with the same mean, one with the same $s$.
+    \item A snowy Friday adds 8 minutes to every delivery. Did $s$ go up?
+  \end{itemize}
+  \begin{block}{On your own, outside class. Packet pages, scored out of 12 (2 per item), due at the start of the first class after two study halls.}
+    Do \textbf{item 4} (the deviations table) first, while it is fresh. \textbf{Item 6} is the
+    one I read first --- it is Route 7 and Route 3 again.
   \end{block}
 \end{frame}
 
@@ -121,8 +315,11 @@
   \vspace{1.5cm}\hspace{0.8cm}%
   \begin{minipage}{0.86\textwidth}
     {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
-    {\color{white}\bfseries\Large TODO: what changed today, in two sentences.}\\[0.9cm]
-    {\color{frostmid}\small Next: Lesson TODO --- TODO one-line preview.}
+    {\color{white}\bfseries\Large The mean and median say where the values are. The IQR and
+    the standard deviation say how spread out they are --- and a bigger standard deviation does
+    not mean bigger values.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 2.3 --- today's five-number summary becomes a boxplot,
+    and we find out which of today's numbers one wild value can drag around.}
   \end{minipage}
 \end{frame}
 }
