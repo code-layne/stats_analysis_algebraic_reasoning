@@ -1,0 +1,151 @@
+{
+  "blanks": [
+    "D",
+    "C",
+    "A",
+    "E",
+    "B",
+    "B",
+    "A",
+    "E",
+    "D",
+    "C",
+    "D",
+    "C",
+    "A",
+    "D",
+    "B",
+    "C",
+    "One student who volunteered 46 hours",
+    "$20.5$ hours",
+    "$41$ hours",
+    "$7$ games",
+    "$4$ games",
+    "$2$",
+    "$4$",
+    "$7$",
+    "$12$",
+    "$16$",
+    "$8$ games",
+    "$-5$",
+    "$0$",
+    "$1$",
+    "$1$",
+    "$3$",
+    "$0$",
+    "$25$",
+    "$0$",
+    "$1$",
+    "$1$",
+    "$9$",
+    "$36$",
+    "Only $98$",
+    "At $86$",
+    "$10$",
+    "$15$",
+    "$20$",
+    "$10$",
+    "$90$th",
+    "$5$ h",
+    "$3$ h",
+    "$6$ h",
+    "$1$ h",
+    "$-2$",
+    "$-1$",
+    "$0$",
+    "$1$",
+    "$2$",
+    "$0$",
+    "$4$",
+    "$1$",
+    "$0$",
+    "$1$",
+    "$4$",
+    "$10$",
+    "$27$",
+    "$1.6$"
+  ],
+  "lines": [
+    [
+      "Roughly symmetric with a slight right tail, a gap from 33 to 46 hours, and a possible outlier at 46."
+    ],
+    [
+      "The median is 20.5 hours, and the hours run from 5 to 46 (range 41 hours)."
+    ],
+    [
+      "A typical day's sales are about 3 bottles from the 20-bottle mean."
+    ],
+    [
+      "No --- 14 is above the lower fence of 10, so it is inside the fences."
+    ],
+    [
+      "90\\% of these 100 students did 25 or fewer push-ups without stopping."
+    ],
+    [
+      "Sophomores' median (6 h) is greater than freshmen's (5 h), and freshmen's"
+    ],
+    [
+      "homework is more spread out (IQR 3 h vs.\\ 1 h), so sophomores are more consistent."
+    ],
+    [
+      "Skewed right: most students spent under 2 hours, and the long tail"
+    ],
+    [
+      "stretches toward the larger times, out to about 400 minutes."
+    ],
+    [
+      "The mean uses every value, so the few students in the long right tail pull"
+    ],
+    [
+      "it up; the median uses only the middle position, so it stays lower."
+    ],
+    [
+      "The median, 108 minutes, and the IQR, 144 minutes (the middle half spent 52 to 196)."
+    ],
+    [
+      "The data are skewed right, so the tail pulls the mean and SD up."
+    ],
+    [
+      "The skew is named by the long tail, not the peak. The tall bars are on the left,"
+    ],
+    [
+      "but the tail stretches toward longer times, so it is skewed right."
+    ],
+    [
+      "$s$ is built from the deviations --- each game's distance from its own mean."
+    ],
+    [
+      "Ana's games sit within 2 points of 24; how big the scores are never enters."
+    ],
+    [
+      "Adding 3 to every game adds 3 to the mean, so not one deviation changes."
+    ],
+    [
+      "Ana: $s \\approx 1.6$ points against Ben's 8.9, so her games stay close together."
+    ],
+    [
+      "Every value lies between the fences (44 to 76), so Brand D has no outliers."
+    ],
+    [
+      "When the centers match, the spread decides. Brand D's drying times are much"
+    ],
+    [
+      "more spread out, so some D cans take far longer than any C can."
+    ],
+    [
+      "Both brands are roughly symmetric with no outliers, and both centers are 60 minutes."
+    ],
+    [
+      "Brand D is much more spread out (Sx 8.1 min, range 32 min) than Brand C"
+    ],
+    [
+      "(Sx 2.4 min, range 10 min), so Brand C's drying times are more consistent."
+    ],
+    [
+      "Brand C. Its maximum is 65 minutes, so every C can dried within 65 minutes;"
+    ],
+    [
+      "Brand D's $Q_3$ is 66, so at least a quarter of D cans take too long."
+    ]
+  ]
+}

@@ -1,0 +1,509 @@
+%! Unit 2: Describing One Variable — Unit Test Study Guide (Lessons 2.1–2.4) — blank (Answer Key)
+% Standalone review handout for the Unit 2 test. Authored on the unit-test model (10pt,
+% \parthead strips, \workrowsep 5pt identical in blank and key) because it sits beside
+% unit02/tests, not inside a lesson packet — it is NOT a lesson component and is merged into
+% no packet. It keeps \namedateperiod: it is a standalone handout with no cover behind it.
+%
+% THE KEY IS GENERATED, NEVER HAND-EDITED:
+%   python3 templates/lesson/mkkey.py unit02/review/study_guide/main.tex \
+%       unit02/review/study_guide_key/main.tex unit02/review/study_guide_key/answers.json
+% Re-run it after every edit to this file.
+%
+% Part 2's worked examples are printed in BOTH copies — they are the study material, so they
+% use ordinary \[ \] displays, never a `work` block (a work block is invisible without -key).
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Work blocks in the practice section need handwriting room, not typeset spacing. This moves
+% the blank and the key together, so it cannot open a page mismatch.
+\setlength{\workrowsep}{5pt}
+
+% Part-divider strip (same macro the unit tests define)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+% One horizontal boxplot on a tikz x-axis: \drawbox{y}{min}{Q1}{med}{Q3}{max}{label}
+\newcommand{\drawbox}[7]{%
+  \draw[charcoal, thick] (#2,#1) -- (#3,#1);
+  \draw[charcoal, thick] (#5,#1) -- (#6,#1);
+  \draw[charcoal, thick] (#2,#1-0.15) -- (#2,#1+0.15);
+  \draw[charcoal, thick] (#6,#1-0.15) -- (#6,#1+0.15);
+  \filldraw[fill=frost, draw=cerulean, thick] (#3,#1-0.3) rectangle (#5,#1+0.3);
+  \draw[cerulean, very thick] (#4,#1-0.3) -- (#4,#1+0.3);
+  \node[left, font=\small\bfseries] at (#2-0.2,#1) {#7};}
+
+\begin{document}
+
+\pageheader{Unit 2: Describing One Variable}{Unit Test Study Guide --- Lessons 2.1--2.4 --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This guide is how you study for the Unit 2 test.} The test covers
+\textbf{Lessons 2.1--2.4} --- displaying and describing a distribution, measuring center and
+spread, boxplots and outliers, and comparing two groups. It has \textbf{25 questions worth 100 points}:
+Part A vocabulary $10$, Part B multiple choice $12$, Part C short answer and computation $48$,
+Part D extended response $30$.
+\textbf{Use it in this order:} read Part 1 and cover the definitions to test yourself, read
+every worked example in Part 2, then work all of Part 3 with your notes closed. Check Part 3
+against the answer key last, not while you work. Then take the practice test.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part 1 --- Every Term You Have to Know \hfill Lessons 2.1--2.4}
+
+\small
+Cover the right-hand column and say each definition out loud before you check it.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.2}
+% Two tables, not one: a tabularx cannot break across a page. Split at the 2.2 | 2.3 boundary.
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\bfseries}p{3.3cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+2.1 & Distribution & What values a variable takes and how often it takes each one. \\
+2.1 & Dot plot & One dot per individual stacked over a number line --- every value can be
+      read back. \\
+2.1 & Stemplot & Each value split into a \emph{stem} (all but the last digit) and a
+      \emph{leaf} (the last digit). The \textbf{key} says what a stem and leaf mean. \\
+2.1 & Histogram & Bars over equal-width \emph{bins}; each bar's height is a count. A value on
+      a boundary goes in the bin to its right. \\
+2.1 & Shape & Symmetric, skewed right, skewed left, or uniform; one peak (unimodal) or two
+      (bimodal). \\
+2.1 & Skewed right / left & Named by the long \textbf{tail}: a tail toward larger values is
+      skewed \emph{right}; toward smaller values, skewed \emph{left}. \\
+2.1 & Outlier, gap, cluster & A value far from the rest; an empty stretch; a group of values
+      packed together. \\
+2.2 & Mean ($\bar{x}$) & $\bar{x} = \sum x / n$ --- add them all up, divide by how many. The
+      balance point. \\
+2.2 & Median / mode & The middle of the ordered data (for even $n$, the mean of the middle
+      two) / the most common value. \\
+2.2 & Range & Maximum $-$ minimum. \\
+2.2 & Quartiles, IQR & $Q_1$ and $Q_3$ are the medians of the lower and upper halves (leave
+      the overall median out when $n$ is odd). $\text{IQR} = Q_3 - Q_1$, the spread of the
+      middle half. \\
+2.2 & Five-number summary & Minimum, $Q_1$, median, $Q_3$, maximum. \\
+2.2 & Deviation & $x - \bar{x}$: how far a value sits from the mean, and on which side. The
+      deviations always add to $0$. \\
+2.2 & Variance, SD & $s^2 = \sum (x - \bar{x})^2 / (n - 1)$, in squared units; $s = \sqrt{s^2}$,
+      about the typical distance of a value from the mean. \textbf{Spread, not size.} \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[14]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\bfseries}p{3.3cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Term} & \textbf{What it means} \\
+\midrule
+2.3 & Boxplot & A box from $Q_1$ to $Q_3$ with a line at the median, whiskers out to the
+      extremes. Each of the four sections holds about $25\%$ of the data. \\
+2.3 & Fences, outlier & Lower fence $Q_1 - 1.5 \times \text{IQR}$; upper fence
+      $Q_3 + 1.5 \times \text{IQR}$. A value beyond a fence is an outlier. \\
+2.3 & Modified boxplot & Plots each outlier as its own dot; the whisker stops at the most
+      extreme value that is \emph{not} an outlier. \\
+2.3 & Cumulative relative frequency graph & The percent of the data at or below each value.
+      Read across from $25\%$, $50\%$, $75\%$, then down, for $Q_1$, median, $Q_3$. \\
+2.3 & Percentile & The $p$th percentile has $p\%$ of the data at or below it. \\
+2.3 & Resistant & Barely moved by one extreme value. Median and IQR resist; mean and SD do
+      not. \\
+2.4 & Back-to-back stemplot & Two groups share one column of stems; one group's leaves go
+      left, the other's go right. \\
+2.4 & Parallel dot plots / boxplots & Two or more groups drawn over \textbf{one common scale},
+      so equal distances mean equal amounts. \\
+2.4 & Comparison & Shape, outliers, center, and spread, each with a comparative word
+      (\emph{greater than, less than, about the same as}), in context. \\
+2.4 & Consistent & Less spread --- a smaller IQR or SD. The values stay close together. \\
+\end{tabularx}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[14]
+\parthead{Part 2 --- The Seven Moves, Worked \hfill study these before you practice}
+
+\small
+Every test question is one of these seven moves. The work is shown; follow it line by line.
+Moves 1, 4, and 5 all use the same data set.
+
+\vspace{4pt}
+\boxguard[20]
+\begin{notesbox}{Move 1 --- Read a display and describe the distribution (Lesson 2.1)}
+\small
+Twenty Brookside Middle School students recorded how many minutes they spent getting ready
+for school.
+
+\vspace{3pt}
+\begin{minipage}[t]{0.36\linewidth}
+\vspace{0pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{r|l}
+1 & 2\;4\;5\;5\;6\;8\;8\;9 \\
+2 & 0\;1\;2\;2\;4\;5\;7\;9 \\
+3 & 3\;6\;8 \\
+4 & \\
+5 & 2 \\
+\end{tabular}
+
+\vspace{3pt}
+\textbf{Key:} $1\,|\,2$ means $12$ minutes
+\end{minipage}\hfill
+\begin{minipage}[t]{0.61\linewidth}
+\vspace{0pt}
+\textbf{Read it:} the leaf $2$ on stem $5$ is \emph{one student} who took $52$ minutes. With
+$n = 20$ the median is the mean of the $10$th and $11$th values:
+\[ \frac{21 + 22}{2} = 21.5 \text{ min} \qquad \text{range} = 52 - 12 = 40 \text{ min} \]
+\textbf{Describe it --- shape, unusual features, center, spread, in context:}
+\emph{The getting-ready times for these $20$ Brookside students are skewed right, with a gap
+from $38$ to $52$ minutes and a possible outlier at $52$. The median is $21.5$ minutes, and
+the times run from $12$ to $52$ minutes.}
+\end{minipage}
+
+\vspace{4pt}
+\textbf{The trap:} naming the skew by the \emph{peak}. The pile is on the left (short times)
+and the long tail stretches toward the \emph{larger} values, so it is skewed \textbf{right}.
+The tail names the skew. \textbf{Second trap:} a description with no context or units ---
+``skewed right, median 21.5'' is not an answer; \emph{minutes} for \emph{these students} is.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Move 2 --- Center and the five-number summary (Lesson 2.2)}
+\small
+Brookside's basketball team scored these points in $9$ games, in order:
+\quad $36$, $41$, $45$, $45$, $47$, $50$, $52$, $56$, $60$.
+\[ \bar{x} = \frac{36 + 41 + 45 + 45 + 47 + 50 + 52 + 56 + 60}{9} = \frac{432}{9} = 48
+   \text{ points} \qquad \text{median} = 47 \qquad \text{mode} = 45 \]
+$n = 9$ is odd, so the median ($47$, the $5$th value) is left \emph{out} of both halves:
+\[ Q_1 = \text{median of } 36, 41, 45, 45 = \frac{41 + 45}{2} = 43 \qquad
+   Q_3 = \text{median of } 50, 52, 56, 60 = \frac{52 + 56}{2} = 54 \]
+\textbf{Five-number summary:} $36$, $43$, $47$, $54$, $60$. \quad
+$\text{IQR} = 54 - 43 = 11$ points. \quad Range $= 60 - 36 = 24$ points.
+
+\vspace{2pt}
+\textbf{Say it:} \emph{On average the team scored $48$ points a game, and the middle half of its
+games fell within an $11$-point span, from $43$ to $54$.}
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[22]
+\begin{notesbox}{Move 3 --- Standard deviation from a table of deviations (Lesson 2.2)}
+\small
+Five Brookside students' bus rides, in minutes: $14$, $18$, $22$, $22$, $24$. \quad
+$\bar{x} = 100 / 5 = 20$ minutes.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} | c @{}}
+\rowcolor{frost}
+ & & & & & & \textbf{Sum} \\
+Value $x$ & $14$ & $18$ & $22$ & $22$ & $24$ & $100$ \\
+Deviation $x - \bar{x}$ & $-6$ & $-2$ & $2$ & $2$ & $4$ & $0$ \\
+Squared $(x - \bar{x})^2$ & $36$ & $4$ & $4$ & $4$ & $16$ & $64$ \\
+\end{tabularx}
+\[ s^2 = \frac{64}{5 - 1} = 16 \text{ square minutes} \qquad
+   s = \sqrt{16} = 4 \text{ minutes} \]
+\textbf{Say it:} \emph{A typical ride is about $4$ minutes from the $20$-minute mean.}
+\textbf{Why each step:} the deviations add to $0$ every time (that is what the mean is), so
+they are \emph{squared} before adding; dividing by $n - 1$ makes $s$ a better estimate of the
+population's spread; the square root puts $s$ back in minutes.
+
+\vspace{3pt}
+\textbf{The trap:} thinking a bigger SD means bigger values. Another route's rides are $50$,
+$52$, $53$, $54$, $56$ minutes --- all longer --- but $s \approx 2.2$ minutes, \emph{smaller},
+because those rides sit close to \emph{their own} mean of $53$. Add $10$ to every ride and
+the mean rises $10$, but not one deviation changes, so $s$ does not change.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[22]
+\begin{notesbox}{Move 4 --- Fences, outliers, and the modified boxplot (Lesson 2.3)}
+\small
+Move 1's getting-ready times. The lower half is the first $10$ values and the upper half the
+last $10$:
+\[ Q_1 = \frac{16 + 18}{2} = 17 \qquad Q_3 = \frac{27 + 29}{2} = 28 \qquad
+   \text{IQR} = 28 - 17 = 11 \]
+\[ \text{lower fence} = 17 - 1.5(11) = 0.5 \qquad \text{upper fence} = 28 + 1.5(11) = 44.5 \]
+Only $52$ is beyond a fence, so $52$ is the one outlier. In the modified boxplot it is its own
+dot, and the upper whisker stops at $38$, the largest value that is \emph{not} an outlier.
+
+\vspace{3pt}
+\begin{center}
+\begin{tikzpicture}[x=0.19cm, y=1cm]
+  \draw[linegray] (10,0) -- (55,0);
+  \foreach \t in {10,15,...,55} {
+    \draw[linegray] (\t,-0.08) -- (\t,0.08);
+    \node[below, font=\scriptsize] at (\t,-0.08) {\t};}
+  \node[below, font=\scriptsize] at (32.5,-0.45) {Minutes getting ready};
+  \drawbox{0.75}{12}{17}{21.5}{28}{38}{}
+  \fill[redacc] (52,0.75) circle (0.09);
+  \node[right, font=\scriptsize] at (52.4,0.75) {outlier};
+\end{tikzpicture}
+\end{center}
+
+\textbf{The trap:} calling a value an outlier because it ``looks far.'' The fence decides, not
+the eye: $38$ looks far from the box but sits inside the upper fence of $44.5$.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[18]
+\begin{notesbox}{Move 5 --- Resistance: which summary to report (Lesson 2.3)}
+\small
+Compute each summary of Move 1's data with the outlier $52$ and without it.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c c c c @{}}
+\rowcolor{frost}
+ & \textbf{Mean} & \textbf{SD} & \textbf{Median} & \textbf{IQR} \\
+With $52$ ($n = 20$) & $23.8$ & $9.8$ & $21.5$ & $11$ \\
+Without $52$ ($n = 19$) & $22.3$ & $7.5$ & $21$ & $11$ \\
+\textbf{Change} & $1.5$ min & $2.3$ min & $0.5$ min & $0$ \\
+\end{tabularx}
+
+\vspace{3pt}
+The mean and SD use every \emph{value}, so one big value pulls them. The median and IQR use
+only \emph{positions}, so they barely move. \textbf{With outliers or strong skew, report the
+median and IQR; with a roughly symmetric shape and no outliers, the mean and SD.}
+
+\vspace{2pt}
+\textbf{The trap:} thinking an outlier moves every summary equally --- that the median is
+pulled like the mean. It is not.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[24]
+\begin{notesbox}{Move 6 --- Read a cumulative relative frequency graph (Lesson 2.3)}
+\small
+\begin{minipage}[t]{0.52\linewidth}
+\vspace{0pt}
+\begin{tikzpicture}
+\begin{axis}[width=7.6cm, height=4.9cm, xmin=6, xmax=12, ymin=0, ymax=100,
+  xtick={6,...,12}, ytick={0,25,50,75,100}, yticklabel={\pgfmathprintnumber{\tick}\%},
+  grid=major, grid style={linegray}, tick label style={font=\scriptsize},
+  xlabel={Mile time (minutes)}, ylabel={Cumulative \%},
+  label style={font=\scriptsize}]
+  \addplot[cerulean, thick, mark=*, mark size=1.3pt]
+    coordinates {(6,0) (7,10) (8,25) (9,50) (10,75) (11,90) (12,100)};
+  \addplot[redacc, dashed, thick] coordinates {(6,50) (9,50) (9,0)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\vspace{2pt}
+Brookside $7$th graders' mile-run times. \textbf{Read across, then down.}
+
+\vspace{3pt}
+Across from $50\%$, down to $9$: the \textbf{median} is $9$ minutes (dashed). Across from
+$25\%$ gives $Q_1 = 8$; across from $75\%$ gives $Q_3 = 10$, so the IQR is $2$ minutes.
+
+\vspace{3pt}
+Up from $11$ minutes to $90\%$: a time of $11$ minutes is the $90$th \textbf{percentile} ---
+$90\%$ of these students ran it in $11$ minutes or less, and $10\%$ took longer.
+\end{minipage}
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[26]
+\begin{notesbox}{Move 7 --- Compare two groups (Lesson 2.4)}
+\small
+Brookside surveyed $7$th and $8$th graders about minutes of reading last night. The parallel
+boxplots share \textbf{one common scale} --- compare them only that way.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[x=0.2cm, y=1cm]
+  \draw[linegray] (15,0) -- (65,0);
+  \foreach \t in {15,20,...,65} {
+    \draw[linegray] (\t,-0.08) -- (\t,0.08);
+    \node[below, font=\scriptsize] at (\t,-0.08) {\t};}
+  \node[below, font=\scriptsize] at (40,-0.45) {Minutes of reading};
+  \drawbox{0.7}{20}{30}{40}{48}{60}{Grade 7}
+  \drawbox{1.6}{32}{37}{40}{43}{50}{Grade 8}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Comparison, with a comparative word for each feature:} \emph{Both grades' reading
+times are roughly symmetric with no outliers. The two medians are about the same, $40$
+minutes. Grade 7's times are much more spread out (IQR $18$ minutes, range $40$) than grade 8's
+(IQR $6$ minutes, range $18$), so grade 8's reading times are more \textbf{consistent}.}
+
+\vspace{3pt}
+\textbf{The trap:} comparing centers only --- ``same median, so no difference.'' When the
+centers match, \textbf{the spread decides}. \textbf{Second trap:} two separate descriptions
+side by side with no comparative word, or two displays on different scales.
+\end{notesbox}
+\normalsize
+
+% ======================================================================
+\newpage
+\parthead{Part 3 --- Practice \hfill notes closed; check the key only at the end}
+
+\small
+\begin{enumerate}[leftmargin=2.2em, itemsep=9pt, topsep=2pt]
+
+% ---------------------------------------------------------------- P1 (2.1)
+\item \textbf{Willow Creek Middle School} gave a $10$-point quiz. Each dot is one of $20$
+students' scores.
+
+\vspace{2pt}
+\begin{center}
+\begin{tikzpicture}[x=0.9cm, y=0.28cm]
+  \draw[linegray] (2.5,0) -- (10.5,0);
+  \foreach \t in {3,...,10} {
+    \draw[linegray] (\t,-0.3) -- (\t,0.3);
+    \node[below, font=\scriptsize] at (\t,-0.3) {\t};}
+  \node[below, font=\scriptsize] at (6.5,-1.9) {Quiz score (points)};
+  \foreach \x/\k in {3/1, 5/1, 6/1, 7/2, 8/3, 9/5, 10/7}
+    \foreach \j in {1,...,\k}
+      \fill[cerulean] (\x,{1.1*\j}) circle (0.14cm);
+\end{tikzpicture}
+\end{center}
+
+(a) What does one dot stand for? \ans{One student's score on the quiz}
+
+\vspace{3pt}
+(b) Median: \ans{$9$ points} \quad Range: \ans{$7$ points} \quad Shape: \ans{Skewed left}
+
+\vspace{3pt}
+(c) A classmate says, \emph{``It's skewed right, because the peak is on the right.''} Explain
+the mistake.
+
+\par\ansline{The skew is named by the long tail, not the peak. The tail stretches toward the}
+\par\ansline{smaller scores (down to 3), so the distribution is skewed left.}
+
+% ---------------------------------------------------------------- P2 (2.2)
+\boxguard[24]
+\item \textbf{Willow Creek's} five science classes collected these numbers of cans for a food
+drive: $9$, $11$, $12$, $16$, $17$ (in dozens).
+
+\vspace{2pt}
+(a) Find the mean.
+
+\begin{work}
+  \bar{x} &= \dfrac{9 + 11 + 12 + 16 + 17}{5} = \dfrac{65}{5} = 13 \text{ dozen}
+\end{work}
+
+(b) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} | c @{}}
+\rowcolor{frost}
+ & & & & & & \textbf{Sum} \\
+Value $x$ & $9$ & $11$ & $12$ & $16$ & $17$ & $65$ \\
+Deviation $x - \bar{x}$ & \ans{$-4$} & \ans{$-2$} & \ans{$-1$} & \ans{$3$} &
+  \ans{$4$} & \ans{$0$} \\
+Squared $(x - \bar{x})^2$ & \ans{$16$} & \ans{$4$} & \ans{$1$} & \ans{$9$} &
+  \ans{$16$} & \ans{$46$} \\
+\end{tabularx}
+
+\vspace{2pt}
+(c) Find the variance and the standard deviation.
+
+\begin{work}
+  s^2 &= \dfrac{46}{5 - 1} = 11.5 \\
+  s &= \sqrt{11.5} \approx 3.4 \text{ dozen}
+\end{work}
+
+(d) Interpret $s$ in context.
+
+\par\ansline{A typical class's total is about 3.4 dozen cans from the mean of 13 dozen.}
+
+% ---------------------------------------------------------------- P3 (2.3)
+\boxguard[26]
+\item \textbf{Willow Creek's} eight bus drivers logged these overtime hours last month, in
+order: $22$, $25$, $26$, $28$, $30$, $31$, $34$, $60$.
+
+\vspace{2pt}
+(a) Find the quartiles, the IQR, and both fences.
+
+\begin{work}
+  Q_1 &= \dfrac{25 + 26}{2} = 25.5 \qquad Q_3 = \dfrac{31 + 34}{2} = 32.5 \qquad
+    \text{IQR} = 7 \\
+  \text{lower fence} &= 25.5 - 1.5(7) = 15 \qquad
+    \text{upper fence} = 32.5 + 1.5(7) = 43
+\end{work}
+
+(b) Which value, if any, is an outlier? \ans{$60$ hours}
+
+\vspace{3pt}
+(c) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c c @{}}
+\rowcolor{frost}
+ & \textbf{Mean} & \textbf{Median} \\
+With $60$ ($n = 8$) & \ans{$32$ hours} & \ans{$29$ hours} \\
+Without $60$ ($n = 7$) & \ans{$28$ hours} & \ans{$28$ hours} \\
+\end{tabularx}
+
+\vspace{4pt}
+(d) Which center should the district report for these hours, and why?
+
+\par\ansline{The median. The 60-hour outlier pulls the mean up 4 hours but moves the}
+\par\ansline{median only 1 hour, so the median is the typical driver's overtime.}
+
+% ---------------------------------------------------------------- P4 (2.4)
+\boxguard[28]
+\item Two \textbf{Willow Creek} math sections took the same $50$-point test. The
+back-to-back stemplot shows both.
+
+\vspace{2pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{r|c|l}
+\textbf{Section 1} & & \textbf{Section 2} \\
+8 & 2 & \\
+8\;5\;1 & 3 & 6\;7\;9 \\
+9\;7\;5\;2\;1\;0 & 4 & 0\;0\;1\;1\;2\;3\;4 \\
+\end{tabular}
+
+\vspace{2pt}
+\textbf{Key:} $1\,|\,3\,|\,6$ means $31$ points in Section 1 and $36$ points in Section 2
+\end{center}
+
+\vspace{2pt}
+(a) Complete the table.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} X c c c @{}}
+\rowcolor{frost}
+ & \textbf{Median} & \textbf{IQR} & \textbf{Range} \\
+Section 1 & \ans{$40.5$} & \ans{$10$} & \ans{$21$} \\
+Section 2 & \ans{$40.5$} & \ans{$3$} & \ans{$8$} \\
+\end{tabularx}
+
+\vspace{4pt}
+(b) Write a comparison of the two sections' scores that uses a comparative word for center
+\emph{and} for spread, and says which section is more consistent.
+
+\par\ansline{Both sections have the same median, 40.5 points, so the spread decides.}
+\par\ansline{Section 1's scores are much more spread out (IQR 10, range 21) than Section 2's}
+\par\ansline{(IQR 3, range 8), so Section 2's scores are more consistent.}
+
+\end{enumerate}
+\normalsize
+
+\vspace{6pt}
+\boxguard[12]
+\begin{remindbox}
+\small
+\textbf{You are ready for the Unit 2 test when you can, with no notes:}
+read a dot plot, a stemplot by its key, and a histogram, and describe a distribution by shape,
+unusual features, center, and spread in context --- naming the skew by its tail (2.1);
+find the mean, median, mode, quartiles, IQR, and five-number summary, and compute $s$ from a
+table of deviations and say what it means (2.2);
+find the fences, name every outlier, read a boxplot and a cumulative relative frequency graph,
+and show with and without an outlier why the median and IQR resist (2.3);
+compare two groups on one common scale with a comparative word for every feature, letting the
+spread decide when the centers match (2.4).
+\end{remindbox}
+
+\end{document}

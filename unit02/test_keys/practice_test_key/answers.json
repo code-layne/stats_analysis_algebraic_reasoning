@@ -1,0 +1,151 @@
+{
+  "blanks": [
+    "C",
+    "A",
+    "E",
+    "B",
+    "D",
+    "D",
+    "E",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "C",
+    "B",
+    "A",
+    "D",
+    "One student who worked 48 hours",
+    "$19$ hours",
+    "$40$ hours",
+    "$8$ books",
+    "$6$ books",
+    "$3$",
+    "$5.5$",
+    "$8$",
+    "$11.5$",
+    "$21$",
+    "$6$ books",
+    "$-3$",
+    "$-1$",
+    "$1$",
+    "$1$",
+    "$2$",
+    "$0$",
+    "$9$",
+    "$1$",
+    "$1$",
+    "$1$",
+    "$4$",
+    "$16$",
+    "Only $110$",
+    "At $97$",
+    "$30$",
+    "$40$",
+    "$50$",
+    "$20$",
+    "$92$nd",
+    "$7$ h",
+    "$1.5$ h",
+    "$6.5$ h",
+    "$2.5$ h",
+    "$-4$",
+    "$-2$",
+    "$0$",
+    "$2$",
+    "$4$",
+    "$0$",
+    "$16$",
+    "$4$",
+    "$0$",
+    "$4$",
+    "$16$",
+    "$40$",
+    "$194$",
+    "$3.2$"
+  ],
+  "lines": [
+    [
+      "Roughly symmetric with a slight right tail, a gap from 32 to 48 hours, and a possible outlier at 48."
+    ],
+    [
+      "The median is 19 hours, and the hours run from 8 to 48 (range 40 hours)."
+    ],
+    [
+      "A typical day's line time is about 2 minutes from the 12-minute mean."
+    ],
+    [
+      "No --- 18 is above the lower fence of 6, so it is inside the fences."
+    ],
+    [
+      "92\\% of these 100 students did 60 or fewer sit-ups in one minute."
+    ],
+    [
+      "Juniors' median (7 h) is greater than seniors' (6.5 h), and seniors' sleep is"
+    ],
+    [
+      "more spread out (IQR 2.5 h vs.\\ 1.5 h), so juniors' sleep is more consistent."
+    ],
+    [
+      "Skewed right: most students earned under \\$1{,}000, and the long tail"
+    ],
+    [
+      "stretches toward the larger earnings, out to about \\$3{,}500."
+    ],
+    [
+      "The mean uses every value, so the few students in the long right tail pull"
+    ],
+    [
+      "it up; the median uses only the middle position, so it stays lower."
+    ],
+    [
+      "The median, \\$860, and the IQR, \\$1{,}230 (the middle half earned \\$390 to \\$1{,}620)."
+    ],
+    [
+      "The data are skewed right, so the tail pulls the mean and SD up."
+    ],
+    [
+      "The skew is named by the long tail, not the peak. The pile is on the left,"
+    ],
+    [
+      "but the tail stretches toward larger earnings, so it is skewed right."
+    ],
+    [
+      "$s$ is built from the deviations --- each score's distance from its own mean."
+    ],
+    [
+      "Maya's scores sit within 4 pins of 184; how big the scores are never enters."
+    ],
+    [
+      "Adding 10 to every score adds 10 to the mean, so not one deviation changes."
+    ],
+    [
+      "Maya: $s \\approx 3.2$ pins against Jordan's 24.7, so her games stay close together."
+    ],
+    [
+      "Every value lies between the fences (26 to 52), so Brand B has no outliers."
+    ],
+    [
+      "When the centers match, the spread decides. Brand B's lifetimes are much"
+    ],
+    [
+      "more spread out, so some B batteries die far sooner than any A battery."
+    ],
+    [
+      "Both brands are roughly symmetric with no outliers, and both centers are 40 hours."
+    ],
+    [
+      "Brand B is much more spread out (Sx 7.8 h, range 26 h) than Brand A"
+    ],
+    [
+      "(Sx 2.1 h, range 8 h), so Brand A's lifetimes are more consistent."
+    ],
+    [
+      "Brand A. Its minimum is 36 hours, so every A battery lasted at least 35 hours;"
+    ],
+    [
+      "Brand B's $Q_1$ is 34, so at least a quarter of B batteries fall short."
+    ]
+  ]
+}
