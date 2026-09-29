@@ -1,24 +1,87 @@
-%! Measures of Center — Unit 2, Lesson 2.4 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Comparing Distributions — Unit 2, Lesson 2.4 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt (item spacing 22pt) so each item gets real
+% handwriting room and still fits. Do not add a fourth item — the page is full.
+% \workrowsep is 30pt here (not 1.2's 50pt): the page also carries two fill tables.
+% GRADUAL RELEASE: the warm-up activates prior knowledge before the guided notes. Items 1 and 2
+% are Lesson 2.3's quartiles, IQR and 1.5 IQR fence on TONY'S PIZZA — the same 11 delivery
+% times the notes open with (row 1's back-to-back stemplot, row 2's boxplot with 44 plotted as
+% an outlier). Item 3 is two tiny lists with the SAME mean and different spread: it seeds the
+% crux (row 4, "Different Spread") without the vocabulary.
+% THE DATA — Tony's: 18 21 22 24 25 25 27 28 30 33 44 (n=11). Median = 6th = 25; lower half
+%   18 21 22 24 25 -> Q1 22; upper half 27 28 30 33 44 -> Q3 30; IQR 8; upper fence
+%   30 + 12 = 42 -> 44 is an outlier. Lists: A 9 10 11 (mean 10, range 2); B 2 10 18
+%   (mean 10, range 16).
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it and
+% prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{30pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
 \boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Tony's Pizza Delivery Times}
+\normalsize
+Tony's Pizza timed its last $11$ deliveries, in minutes, in order:
+\quad $18,\ 21,\ 22,\ 24,\ 25,\ 25,\ 27,\ 28,\ 30,\ 33,\ 44$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Find the quartiles and the IQR. (Quartiles are the medians of each half; with $11$
+        values, leave the overall median out of both halves.)
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.4}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y Y @{}}
+        \toprule
+        $Q_1$ & \textbf{Median} & $Q_3$ & \textbf{IQR} \\
+        \midrule
+        \ans{22} & \ans{25} & \ans{30} & \ans{$30 - 22 = 8$} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Is the $44$-minute delivery an outlier? Use the upper fence,
+        $Q_3 + 1.5 \cdot \text{IQR}$.
+
+        \begin{work}
+          \text{Upper fence} &= 30 + 1.5(8) \\
+                             &= 42 \text{ minutes}
+        \end{work}
+
+        \vspace{6pt}
+        Outlier? \ans{Yes --- 44 is above the upper fence of 42 minutes.}
+
+  \item Two tiny lists: \quad \textbf{List A:} $9,\ 10,\ 11$ \qquad \textbf{List B:} $2,\ 10,\ 18$.
+        \wordbank{2 \;\textbullet\; 10 \;\textbullet\; 16 \;\textbullet\; 20}
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.2}
+        \begin{tabularx}{\linewidth}{@{} X p{3.4cm} p{3.4cm} @{}}
+        \toprule
+        \textbf{List} & \textbf{Mean} & \textbf{Range} \\
+        \midrule
+        A: $9,\ 10,\ 11$  & \ans{10} & \ans{$11 - 9 = 2$} \\
+        B: $2,\ 10,\ 18$  & \ans{10} & \ans{$18 - 2 = 16$} \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{8pt}
+        In one sentence: how are the two lists alike, and how are they different?
+        \par\ansline{Alike: both lists have the same mean, 10.}
+\ansline{Different: B is far more spread out (range 16 vs.\ 2).}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

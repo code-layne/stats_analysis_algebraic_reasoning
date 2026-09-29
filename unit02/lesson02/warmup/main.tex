@@ -1,29 +1,84 @@
-%! Boxplots and Cumulative Frequency Graphs — Unit 2, Lesson 2.2 — Warm-Up
-\documentclass[10pt]{article}
+%! Measuring Center and Spread — Unit 2, Lesson 2.2 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt. Do not add
+% a fourth item — the page is full.
+% Each item is a TOOL THE NOTES PICK UP AGAIN:
+%   1. Read Route 5's dot plot (spiral to Lesson 2.1) and order the values -> row 1 (median,
+%      mode) and row 2 (the ordered strip the quartiles are cut from).
+%   2. Add and divide -> row 1 names it the MEAN and writes it x-bar = (sum x)/n = 135/9 = 15.
+%   3. -4, -2, -2, 2, 6: add (0), square and add (64), 64/4 = 16, sqrt 16 = 4 -> row 3 reveals
+%      these are Route 2's DEVIATIONS: students have already computed a standard deviation.
+% DATA: Route 5 = 8, 10, 12, 12, 12, 15, 18, 20, 28 (sum 135, mean 15, mode 12).
+% PAGE LOCKSTEP: warmup_key differs only in -key, the header, and \blank -> \ans.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the key together.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Warm-Up}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the cover.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% If this is the HOMEWORK: it is this course's Check Your Understanding set — ~6 items in new
-% contexts spanning the lesson's lettered skills, each ending in an interpretation or a
-% justification, plus one spiral item and a closing \begin{spiralbox} preview. It IS scored.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
-% the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
-% _key: the blank reserves its exact height, the key prints it. That is the work rule, and it
-% is what keeps this component the same number of pages as its key.
-\boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\boxguard[30]
+\begin{notesbox}{Spiral Review --- Maple Grove's Route 5 Bus}
+\normalsize
+Nine students ride Maple Grove's Route~5 bus to school. The dot plot shows each rider's
+commute, in minutes.
+
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.5cm]
+  \draw[thick] (4.5,0) -- (30.5,0);
+  \foreach \tk in {5,...,30} { \draw (\tk,0) -- (\tk,-0.25); }
+  \foreach \tk in {5,10,...,30} {
+    \draw[thick] (\tk,0) -- (\tk,-0.45);
+    \node[below, font=\small] at (\tk,-0.45) {\tk}; }
+  \node[font=\small] at (17.5,-1.9) {commute time (minutes)};
+  \foreach \p/\q in {8/1, 10/1, 12/1, 12/2, 12/3, 15/1, 18/1, 20/1, 28/1} {
+    \fill[cerulean] (\p,{\q*0.75}) circle (3pt); }
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=6pt]
+
+  \item Read the dot plot. List the nine commute times from smallest to largest, then name
+        the time that appears most often.
+
+        \par\vspace{6pt}
+        Times: \blank{9.5cm}
+        \par\vspace{10pt}
+        Most common: \blank{3cm}
+
+  \item Add the nine commute times, then divide the total by $9$.
+
+        \begin{work}
+          8+10+12+12+12+15+18+20+28 &= 135 \\
+          135 \div 9 &= 15 \text{ minutes}
+        \end{work}
+
+  \item Five numbers: $-4,\ -2,\ -2,\ 2,\ 6$. Add them. Then square each one, and add the
+        squares.
+        \wordbank{$0$ \;\textbullet\; $4$ \;\textbullet\; $16$ \;\textbullet\; $36$ \;\textbullet\; $64$}
+
+        \vspace{2pt}
+        {\centering\renewcommand{\arraystretch}{2.6}
+        \begin{tabular}{@{} l C{1.3cm} C{1.3cm} C{1.3cm} C{1.3cm} C{1.3cm} C{2.2cm} @{}}
+        \toprule
+        \textbf{Number} & $-4$ & $-2$ & $-2$ & $2$ & $6$ & Sum: \blank{1.1cm} \\
+        \midrule
+        \textbf{Square} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & Sum: \blank{1.1cm} \\
+        \bottomrule
+        \end{tabular}\par}
+
+        \vspace{8pt}
+        Divide the sum of squares by $4$, then take the square root: \blank{4.2cm}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

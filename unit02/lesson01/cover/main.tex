@@ -1,40 +1,64 @@
-%! Dot Plots, Stemplots, and Histograms — Unit 2, Lesson 2.1 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Student Packet Cover Sheet
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, assigned at Close & Assign and done outside class (Unit 2 on), and it is SCORED, so
+% its cell is a \blank{}, never NA. Standard codes stay in the plan, never here.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 2}{Lesson 2.1 \quad Displaying and Describing Distributions}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 2}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.1 \quad Dot Plots, Stemplots, and Histograms}}
-\end{center}
-
-\vspace{0.22in}
-% NAMESTRIP: this is the ONLY component that carries the name row. Everything else
-% is stapled behind it.
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
-% SPOILER RULE (EFFL): targets are plain-language descriptions of what students will be able
-% to DO — never the formal vocabulary the debrief will attach ("how spread out the values are",
-% not "standard deviation"; "how fast it grows", not "exponential"). The lettered standard
-% codes belong in the teacher-facing lesson plan, not here.
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DS.1a-b) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: spoiler-free learning target 1.
-  \item \ldots{} TODO: spoiler-free learning target 2.
+  \item \ldots{} read a \textbf{dot plot}, a \textbf{stemplot} (using its \textbf{key}), and a
+        \textbf{histogram} from a calculator or Desmos, and say what one dot, leaf, or bar stands
+        for.
+  \item \ldots{} describe a \textbf{distribution} by its \textbf{shape} (\textbf{symmetric},
+        \textbf{skewed}, \textbf{uniform}; \textbf{unimodal} or \textbf{bimodal}), its
+        \textbf{center}, and its \textbf{spread} (\textbf{range}), in a sentence with context and
+        units.
+  \item \ldots{} point out unusual features --- \textbf{outliers}, \textbf{gaps}, and
+        \textbf{clusters}.
+  \item \ldots{} name the direction of \textbf{skew} by the \textbf{tail}, not by the peak.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -47,14 +71,17 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up    & TODO (spoiler-free) & \blank{1.2cm} \\
-2 & Experience \& Formalize & \emph{TODO Activity Title} --- TODO scenarios (with your group),
-                 then QuickNotes and an application we work together & \blank{1.2cm} \\
-% Homework is this course's Check Your Understanding set and IS scored, so the score cell
-% carries a \blank{}. Whether it is assigned from this packet or swapped for the equivalent
-% DeltaMath set is decided lesson by lesson at Close & Assign; the pages are authored either
-% way, so the row and its score cell never change.
-3 & Homework   & Check Your Understanding --- TODO, practice in new contexts & \blank{1.2cm} \\
+1 & Warm-Up & Back to Unit 1: quantitative or categorical, a variable's units, and a
+             frequency table of trip times & \blank{1.2cm} \\
+2 & Guided Notes \& Practice & Dot plots, stemplots, and histograms; describing a
+             distribution by shape, unusual features, center, and spread; which way a skew
+             points --- then one team's free throws we describe together & \blank{1.2cm} \\
+% Row 3 is the lesson's GRADED practice, assigned at the close and done outside class. Packet
+% pages are the default; a Desmos activity may replace them on a given day, decided at Close &
+% Assign. The row and its score cell never change.
+3 & Homework & Oak Hollow Library summer reading: finish a stemplot, read a histogram, and
+             name and explain two skews ---
+             \textbf{scored, assigned today, due the first class after two study halls} & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
@@ -62,12 +89,16 @@
 
 \vspace{0.14in}
 
-% Keep in Mind describes the EFFL PROCESS only, and stops there — no content preview,
-% no formal vocabulary (the spoiler rule).
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
-\small In this lesson you will \textbf{experience first, formalize later}: you and your group
-will work out TODO using what you already know --- and only afterward will we name what you
-found.
+\small
+To describe a \textbf{distribution}, name its \textbf{shape}, any \textbf{unusual features}
+(outliers, gaps, clusters), its \textbf{center}, and its \textbf{spread} --- always with the
+individuals, the variable, and the units. \textbf{Skew is named by the tail:} if the long tail
+stretches toward the larger values, the distribution is \textbf{skewed right}; toward the smaller
+values, \textbf{skewed left}. \textbf{Watch out:} the peak --- where most of the data pile up ---
+sits on the \emph{opposite} side from the tail. A pile on the left with a tail to the right is
+skewed \emph{right}.
 \end{remindbox}
 
 \end{document}

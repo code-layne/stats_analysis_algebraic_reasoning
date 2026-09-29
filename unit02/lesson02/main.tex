@@ -1,16 +1,20 @@
-%! Boxplots and Cumulative Frequency Graphs — Unit 2, Lesson 2.2 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Measuring Center and Spread — Unit 2, Lesson 2.2 — Lesson Plan
+% PILOT SHAPE on the UNIT 2 PERIOD (5 / 45 / 5 / 5, user decision 2026-09-29): warm-up / guided
+% notes and practice (I do ~25, Guided Practice ~20) / spoken debrief (the cold check and one
+% board item) / close and ASSIGN the homework (not started in class). The guided notes carry the
+% release ROW BY ROW in one Main Ideas / Notes table: four instruction rows (problems 1-17), then
+% the Guided Practice row (18-21). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the
+% homework is the individual practice. Teacher-facing. Breakable boxes are `skillbox` with a
+% \boxguard ahead; the two tabularx boxes are `fixedskillbox` (never splits). No group activity,
+% no tier boxes, no exit ticket. Mirror unit01/lesson02.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 2: Describing One Variable \quad}
-\newcommand{\LessonNumberName}{Lesson 2.2: Boxplots and Cumulative Frequency Graphs}
+\newcommand{\LessonNumberName}{Lesson 2.2: Measuring Center and Spread}
 
 \begin{document}
 \begin{center}
@@ -20,170 +24,393 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will compute and interpret the mean, median, and mode;
+    the range, quartiles, IQR, and five-number summary; and the variance and sample standard
+    deviation from a table of deviations --- reading $s$ off a calculator's 1-Var Stats screen
+    --- and will justify, from the formula, that the standard deviation measures how far values
+    typically sit from their own mean, not how big the values are.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.DS.2a (mean, median, mode), PS.DS.2b (range, IQR, variance,
+    standard deviation), PS.DS.2e (how the standard deviation formula measures variability)
+    \quad$\cdot$\quad PS.DC.1d carried forward in the spiral item \quad$\cdot$\quad previews
+    Lesson~2.3 (boxplots, the $1.5 \times \text{IQR}$ rule, resistance)
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} The notes name the vocabulary as they teach it and deliver the
+    instruction \textbf{row by row in one Main Ideas / Notes table} (four rows, problems 1--17:
+    you read the sentences, mark up the display, and work problems 1, 5, 9 and 14; the class
+    works the rest); the Guided Practice row (problems 18--21) is worked together with students
+    holding the pen; \textbf{the homework is the individual practice}, assigned at the close
+    and done outside class. The debrief is a \emph{spoken} cold check.
+    \\[2pt]
+    \textbf{Two conventions to hold all period:} quartiles are the \emph{median of each half},
+    leaving the overall median out when $n$ is odd (the TI-84's method, so the screen agrees);
+    and $s$ is the \emph{sample} standard deviation, dividing by $n - 1$ --- the screen's
+    \texttt{Sx}, never \texttt{$\sigma$x}. Boxplots and the outlier rule are Lesson~2.3's; do not
+    draw one today.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can find the \textbf{mean} ($\bar{x} = \sum x / n$), \textbf{median}, and
+        \textbf{mode} and say what each means in context. \hfill \textit{PS.DS.2a}
+  \item I can find the \textbf{range}, \textbf{quartiles}, and \textbf{IQR}, give the
+        \textbf{five-number summary}, and explain the IQR as the spread of the middle half.
+        \hfill \textit{PS.DS.2b}
+  \item I can compute the \textbf{variance} and \textbf{standard deviation} from a table of
+        deviations, and read $s$ from a 1-Var Stats screen. \hfill \textit{PS.DS.2b}
+  \item I can explain, from the formula, why the deviations are squared, why we divide by
+        $n - 1$, and why the square root returns to the data's units. \hfill \textit{PS.DS.2e}
+  \item I can explain that $s$ measures spread about the mean, not the size of the values.
+        \hfill \textit{PS.DS.2b, 2e}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} \emph{a bigger standard deviation means bigger values
+        (or a bigger mean).} Route~7's commutes ($38$--$42$ min, $s = 2$) are the longest and
+        the least spread; Route~3's ($6$--$18$ min, $s = 6$) are short and scattered. The rule
+        that replaces it: $s$ is built from the \emph{deviations} $x - \bar{x}$, so it measures
+        the typical distance from the \emph{route's own} mean --- slide every value up $10$ and
+        not one deviation changes.
+  \item \textbf{Second misconception:} \emph{``the deviations add to zero, so there is no
+        spread.''} They add to $0$ for every data set --- that is what the mean is, the balance
+        point. That cancelling is exactly why the formula squares them.
+  \item Every summary number has a unit and a sentence: the mean is ``on average,'' the IQR is
+        ``the middle half,'' $s$ is ``typically this far from the mean.'' A number without its
+        sentence is not an answer in this course.
+  \item Dividing by $n - 1$ makes $s$ a better estimate of the population's spread from a
+        sample (PS.DC.1d, Lesson~1.2's parameter and statistic). Say so; do not prove it.
+  \item The variance is in \emph{squared} units; the square root is what makes $s$ readable.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Mean ($\bar{x}$) & \TallMath{\bar{x} = \frac{\sum x}{n}} --- the sum divided by how many; the
+       balance point. $\Sigma$ means ``add them all up.'' \\
+Median & The middle of the ordered data; for even $n$, the mean of the middle two. \\
+Mode & The most common value. \\
+Range & Max $-$ min. \\
+Quartiles $Q_1$, $Q_3$ & The medians of the lower and upper halves --- leave the overall median
+       out of both halves when $n$ is odd. \\
+IQR & $Q_3 - Q_1$: the spread of the middle half of the data. \\
+Five-number summary & Min, $Q_1$, median, $Q_3$, max. \\
+Deviation & $x - \bar{x}$: how far a value sits from the mean, and on which side. The deviations
+       always sum to $0$. \\
+Variance ($s^2$) & \TallMath{s^2 = \frac{\sum (x - \bar{x})^2}{n - 1}} --- in squared units. \\
+Standard deviation ($s$) & $s = \sqrt{s^2}$, in the data's own units: about the typical
+       distance of a value from the mean. Measures spread, not size. \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 (Unit 2 on; 2026-09-29) — I do ~25 of the 45,
+% Guided Practice ~20; the debrief is the spoken cold check; the homework is assigned, not started.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Read Route~5's dot plot, average it, and add-square-root five numbers ---
+  silent & Debrief item~3 aloud; leave ``$-4, -2, -2, 2, 6$ add to $0$; their squares give
+  $4$'' on the board all period \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; work rows 1--4
+  (problems 1--17) with the pen in their hand; then the Guided Practice row, \emph{Two Towns}
+  (18--21), together & \textbf{I do / we do, row by row}: read, mark up the display, work
+  problems 1, 5, 9, 14; the class works the rest (25) $\to$ \textbf{we do} Guided Practice
+  18--21 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Route~7 against Route~3 back on
+  the board, one sentence from a student; the cold check \\
+Close \& Assign & 5 & Write down the homework, its due date, and the item to do first &
+  Announce the homework and its form (packet), preview Lesson~2.3 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Read Route~5's dot plot, list the nine times in order, name the most
+            common. \textbf{Spirals} to Lesson~2.1 (dot plots). \textbf{Seeds:} row~1's median
+            and mode, and row~2's ordered strip that the quartiles are cut from.
+      \item \textbf{2.} Add the nine times and divide by $9$ ($135/9 = 15$). \textbf{Seeds:}
+            row~1 names it the \emph{mean} and writes it $\bar{x} = \sum x / n$ --- problem~1.
+      \item \textbf{3.} Add $-4, -2, -2, 2, 6$ (to $0$), square and add ($64$), divide by $4$,
+            root ($4$). \textbf{Seeds:} row~3 --- these are Route~2's \emph{deviations}; the
+            class has already computed a standard deviation without the name.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and leave on the board: \emph{the five numbers add to
+            $0$; square them first and you get $4$.} Row~3 opens by pointing at it.
+      \item Item~3's first sum is the tell. A student who writes something other than $0$
+            has added the signs wrong and will need the deviation column done slowly.
+      \item Item~1's list is the other tell: a student who lists $12$ once has read the dot
+            plot as a set of positions, not of riders --- fix it before row~1.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``Route~7 riders live out past the reservoir: $38, 38, 40, 42, 42$ minutes. Route~3 riders
+live in town: $6, 6, 12, 18, 18$ minutes.''} Say only that a standard deviation measures how
+spread out values are. \textbf{Ask: which route's commutes have the bigger standard deviation?}
+Students circle Route~7, Route~3, or \emph{the same} and write one line of reason \emph{before}
+anyone speaks; then take the hand vote and write the split on the board. Many rooms vote Route~7
+--- ``they're way bigger numbers.'' \textbf{Do not settle it.} Say only that the answer is
+problem~16, in the \emph{Spread, Not Size} row, and that they will vote again there. Students
+have to have committed to \emph{bigger numbers, bigger spread} before the notes take it away.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, assigned at the
+close. The notes are \textbf{one Main Ideas / Notes table}: four instruction rows (problems
+1--17), then the Guided Practice row (18--21). \textbf{The rhythm in every row is the same}: read
+the sentences aloud, mark up the display, work the first problem yourself, then hand the rest to
+the room. The vocabulary box on page~1 is filled \emph{as each term is named}. The only blanks
+are the ten cells of the deviations table (problem~9); every other answer goes in a problem's
+own space or a label box.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Center (problems 1--4) --- 4 minutes.} This is review; keep it brisk. Point at the
+warm-up's item~2 and write $\bar{x} = \sum x / n = 135/9 = 15$ --- that is problem~1, with its
+sentence. Label arrows A (mean) and B (median, mode) on the dot plot. The class does 2--4;
+problem~4 (the $28$-minute rider pulls the mean up) is a preview of 2.3's resistance --- say
+\emph{pulls}, not \emph{resistant}.
+
+\emph{Row 2, Range \& IQR (problems 5--8) --- 6 minutes.} Read the quartile rule and \textbf{say it
+once, slowly}: median of each half, overall median left out when $n$ is odd. Fill the three
+label boxes on the strip ($11$, $12$, $19$). Work problem~5; the class does 6--8. Problem~7 is the
+even-$n$ case (Route~9): the median is $(10+14)/2$ and nothing is left out. Every IQR gets the
+words \emph{the middle half}.
+
+\emph{Row 3, Standard Deviation (problems 9--13) --- 8 minutes.} Point at the warm-up board line:
+those five numbers were Route~2's deviations. Read the five steps, then work problem~9's first row
+and the two sums with the class. \textbf{Take problem~10 slowly} --- it is the second
+misconception: the deviations add to $0$ for \emph{every} data set, so ``no spread'' cannot be
+what the zero means; squaring stops the cancelling. Problem~11 finishes $s = 4$. Then the
+calculator screen: problem~12 is \emph{which line} ($\texttt{Sx}$, divide by $n - 1$), problem~13 is
+the sentence and the units.
+
+\emph{Row 4, Spread, Not Size (problems 14--17) --- the crux, 7 minutes.} Work problem~14 live
+(Route~4, $s = 1$: same mean as Route~3, far less spread). The class does~15 (Route~7, $s = 2$).
+Then \textbf{re-take the hook vote at problem~16 before you say anything}: Route~7 or Route~3.
+Put $6$ and $2$ side by side; Route~3 wins, and Route~7 had the biggest numbers on the page.
+Problem~17 is the detour --- every value $+10$, same picture slid right, $s$ unchanged. Land the
+boxed sentence word by word, then the \emph{own words} line.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Two Towns} (problems 18--21) ---
+the same moves the homework will ask alone, on temperatures instead of buses.
+\textbf{Students hold the pen; you hold the questions.} Problem~18 is center with $\Sigma$
+($60^\circ$F, median $58^\circ$F). Problem~19 is the whole procedure on their own pens:
+$256/4 = 64$, $s = 8^\circ$F --- the one to circulate hardest. \textbf{Problem~20 is the crux
+transferred}: take a hand count on \emph{is Sam right} before anyone writes, and make both sides
+defend it. Problem~21 is the shift transferred ($65^\circ$F, still $8^\circ$F).
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 18:} ``What does $60$ mean for someone packing for Sandhill?''
+  \item \textbf{Problem 19:} ``You divided by $5$. How many riders did Route~2 have, and what
+        did we divide by?'' ($n - 1$.) ``Your deviations add to what?''
+  \item \textbf{Problem 20:} ``How far is Kestrel Bay's hottest day from Kestrel Bay's mean?
+        Sandhill's coldest from Sandhill's?'' A student who agrees with Sam has not left the
+        hook vote.
+  \item \textbf{Problem 21:} ``Which deviation changed when every day got $5^\circ$ warmer?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one problem~20 that said
+\emph{no, $8 > 2$, spread not warmth}, and one that agreed with Sam. \textbf{This circulation is
+your formative read} --- the homework is not started in class.
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: Route~7 against Route~3.} Put the two dot plots back up
+        and make a student say the sentence: \emph{Route~7's times are bigger, Route~3's are
+        more spread out; $s$ measures distance from the mean, not size} (PS.DS.2e). If there is
+        a minute left, read the two problem~20 papers you picked side by side.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Two classes took the
+same quiz. Class A: mean $85$, standard deviation $3$. Class B: mean $70$, standard deviation
+$12$. Which class's scores are more spread out --- and does Class A's higher mean tell you
+anything about that?''} Hands down, thirty seconds of think time, then cold-call three
+students. Correct answer: \textbf{Class B} ($12 > 3$) --- its scores sit about $12$ points from
+their mean; \textbf{no}, the mean says where the scores are, not how spread they are.
+\emph{This replaces the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} Class B, and
+separated the mean from the spread; \textbf{(b)} Class B, but ``because it's lower'' or no
+reason; \textbf{(c)} Class A, because $85$ is bigger. \textbf{If pile (c) runs past a third of
+the room, open Lesson~2.3 by re-running the \emph{Spread, Not Size} row (problems 14--17)}, and
+say so plainly.
+
+\textbf{Five minutes: the board item and the cold check only.} Anything else waits for the
+next warm-up.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{Oak Street Pizza} (six Friday delivery times: $26, 26, 28, 32, 32, 36$
+minutes): \textbf{1} the mean with $\Sigma$ ($180/6 = 30$), the median ($30$), and what the mean
+tells a customer; \textbf{2} \emph{the spiral to Lesson~1.2} --- is $\bar{x} = 30$ a parameter or a
+statistic, and who does it describe (a statistic; the six timed deliveries); \textbf{3} the
+five-number summary ($26, 26, 30, 32, 36$), range $10$, IQR $6$, interpreted as the middle half;
+\textbf{4} \emph{the core procedure} --- the deviations table, $s^2 = 80/5 = 16$, $s = 4$ minutes,
+interpreted; \textbf{5} \emph{the contrast pair} --- (a) Main Street, same mean $30$ with $s = 11$
+(same center, more spread), (b) Hilltop, mean $45$ with the same $s = 4$ (slower, not more
+spread); \textbf{6} \emph{the crux head-on, justified} --- a snowy Friday adds $8$ minutes to every
+delivery and Jordan says $s$ went up (new $\bar{x} = 38$, $s$ still $4$).
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points --- 2
+per item (1 for the number, 1 for the sentence in context). \textbf{Item~5(b) and item~6 are where
+the misconception shows.} Item~4 is where the second one shows: a deviation row that does not
+sum to $0$ is an arithmetic slip; a student who writes $0$ and stops has the ``no spread''
+reflex.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+A Desmos Classroom activity could compute a mean or a standard deviation, but none asks a student
+to explain why slower deliveries are not more spread out --- the items this lesson exists for ---
+so \textbf{2.2 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~2.3.} Item~3's five-number summary is exactly what a boxplot is drawn
+from; 2.3 draws it, tests for outliers with $1.5 \times \text{IQR}$, and asks which measures one
+very late delivery can move. Do not open that here.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 2 core idea:} a distribution is described by its
+shape, center, and spread, each with a number and a sentence. \textit{Standards covered:}
+PS.DS.2a, PS.DS.2b, PS.DS.2e (with PS.DC.1d carried forward in item~2). \textit{Spirals forward
+to:} boxplots, outliers, resistance, and cumulative frequency (Lesson~2.3); the standard deviation
+returns in $z$-scores and the normal distribution, where ``typical distance from the mean'' becomes
+the unit of measurement. \textit{Reaches back to:} Lesson~2.1's dot plots and SOCS, Lesson~1.2's
+statistic and parameter, and middle-school averages.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{``Bigger values, bigger standard deviation''} (hook, problem~16, GP~20, HW~5(b)
+        and~6 --- the target misconception). Probe: \emph{``How far is each value from its
+        \emph{own} mean?''}
+  \item \textbf{``The deviations add to 0, so there is no spread''} (problem~10, GP~19, HW~4).
+        Probe: \emph{``Do the riders all have the same commute? Then what does the zero
+        tell you?''}
+  \item \textbf{Adding a constant changes $s$} (problem~17, GP~21, HW~6). Probe: \emph{``Which
+        deviation changed?''}
+  \item \textbf{Dividing by $n$, or reading $\sigma$x} (problems~11--12, GP~19, HW~4). Probe:
+        \emph{``Which line divides by $n - 1$?''}
+  \item \textbf{Unordered median; overall median kept in both halves} (problems~2, 6--7,
+        HW~3). Probe: \emph{``Did you put them in order? Is $n$ odd?''}
+  \item \textbf{A number with no sentence, or the variance called the standard deviation}
+        (problems~11, 13, HW~1, 3, 4). Probe: \emph{``Minutes, or minutes squared? Say it for
+        a customer.''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me a data set with big values and a standard deviation of
+zero.''} \quad \emph{``Why can't the deviations tell us the spread without squaring?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{Assign the homework --- it is not started in class.} Hand the launch: six items on Oak
+Street Pizza, packet pages, scored out of 12, due at the start of the first class after two
+study halls. Point out that the \emph{Keep in Mind} box on the cover is the page to flip back
+to, and tell students to \textbf{do item~4 first}, while the deviations table is fresh, and to
+\textbf{read item~6 twice} --- it is Route~7 and Route~3 again, with pizza. Then close on what
+changed: \emph{``You walked in knowing how to average. You walk out with three measures of
+center, two of spread, and one rule: the standard deviation is how far values sit from their own
+mean --- long commutes can have the smallest one in the room.''} \textbf{Preview:}
+Lesson~2.3, \emph{Boxplots and Outliers} --- today's five-number summary becomes a picture, and
+we find out which of today's numbers one wild value can drag around.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key. No note for the debrief or the homework
+% launch — both are fully specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. Items 1 and~2 are review --- Lesson~2.1's dot plot and a
+middle-school average --- so say so, and do not let them expand. \textbf{Item~3 is the one to
+read while collecting}: students who get $0$, $64$, and $4$ have already run the standard
+deviation formula on Route~2's deviations and do not know it yet; row~3 can move at speed.
+Students who get a nonzero first sum are adding signs wrong and will need the deviation column
+done slowly. Write the line \emph{``$-4, -2, -2, 2, 6$ add to $0$; square first and you get
+$4$''} on the board and \textbf{leave it up all period}; row~3 points at it, and problem~10 is
+its punchline. Do \emph{not} say the words \emph{deviation} or \emph{standard deviation} here.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief, then 5 to
+assign.} Every row runs the same way: you read the sentences, mark up the display, and work the
+first problem (1, 5, 9, 14); the class works the rest with the pen in their hand. Rows 1 and~2
+must move --- row~1 is review, and row~2 needs only the quartile rule said once and the three
+label boxes. \textbf{Say the quartile rule and the $n - 1$ rule exactly once each, and point
+back to them rather than re-deriving}: median of each half with the overall median left out when
+$n$ is odd; the sample standard deviation divides by $n - 1$ because we are estimating the
+population's spread from a sample (Lesson~1.2's statistic). Do not prove the $n - 1$.
+
+\textbf{Spend the time in rows 3 and~4.} In row~3, take problem~10 before problem~11: the zero
+is the second misconception, and a student who believes it will stop the procedure there. In
+row~4, work problem~14 live, let the class do~15, and \textbf{re-take the hook vote at
+problem~16 before you say anything}: Route~7 or Route~3. Let the room argue, then write $s = 2$
+and $s = 6$ side by side and let the numbers settle it. Do not resolve it by reading the boxed
+sentence --- point at the dot plots: Route~7 huddles, Route~3 scatters. Problem~17 is the
+counterweight: slide every value $10$ and \emph{nothing} about the spread moved.
+
+\textbf{Guided Practice (18--21) is where the pen changes hands.} \emph{Two Towns} runs the moves
+the homework will ask alone --- center with $\Sigma$, the whole standard deviation, the crux, the
+shift --- on temperatures instead of buses. Problem~19 is the longest computation of the day; if
+time is short, give the deviations aloud and let them square. \textbf{Protect problem~20} --- it
+is the crux transferred, and the paper that agreed with Sam is the one you want for the debrief.
+Problem~21 can be said aloud if the clock runs.
+
+\textbf{There is no independent practice set on this page, and the homework is not started in
+class} --- the Guided Practice circulation is your formative read. If the ``bigger values'' pile
+from problem~20 or the cold check is more than a third of the room, \textbf{open Lesson~2.3 by
+re-running problems 14--17}, and say so plainly.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored, 12 points (2 per item: 1 for the number, 1 for the sentence), due at the start
+of the first class after two study halls.} Assigned at the close and done outside class ---
+nobody starts it in the room. \textbf{Read items~5(b) and~6 first when scoring}: a student who
+says Hilltop is ``more spread out because it takes longer,'' or that the snowy Friday raised $s$,
+has learned the procedure and not the rule. Item~4's deviation row is the second check --- it
+must sum to $0$, and a student who stops at the zero has the ``no spread'' reflex. Item~2 is the
+spiral: \emph{statistic}, because it describes the six timed deliveries, not every Friday
+delivery. Score items 1--4 for correctness plus a sentence in context, and items 5--6 for the
+\emph{reason}, not the verdict. \textbf{Sort item~6 into three piles} --- said $s$ is still $4$
+and named the deviations (ready); said $s$ is still $4$ with no reason (ready, needs the
+language); said $s$ went up (the misconception survived). If more than a third land in the last
+pile, reopen Route~7 and Route~3 in the Lesson~2.3 warm-up debrief rather than letting it ride.
+
+\textbf{Packet is the call for 2.2.} A Desmos activity would compute the numbers and skip the
+explanations; do not swap it in. Go over item~3 at the start of Lesson~2.3 --- its five-number
+summary is the boxplot 2.3 draws first.
 \end{teachernote}
 \end{document}

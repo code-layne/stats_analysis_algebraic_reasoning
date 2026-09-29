@@ -1,0 +1,308 @@
+%! Measuring Center and Spread — Unit 2, Lesson 2.2 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Four instruction rows (problems 1-17),
+% then the Guided Practice row (18-21). Unit 2 timing (5 / 45 / 5 / 5): I do ~25, GP ~20.
+%   I DO   : the teacher reads the sentences, marks up the display, works problems 1, 5, 9
+%            (the first table row and the sums), and 14.
+%   WE DO  : the class works the rest of each grid, pen in hand; the Guided Practice row
+%            (18-21) is worked together on a fresh context (two towns' temperatures).
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice, assigned at
+%            Close & Assign and done outside class.
+% THE TRAP (secondary misconception) is problem 10: "the deviations add to 0, so no spread."
+% THE CRUX is problem 16 (row 4, "Spread, Not Size"): the hook re-vote — Route 7's long,
+% tight commutes (s = 2) against Route 3's short, scattered ones (s = 6). Problem 17 is the
+% constant shift (SD unchanged); problem 20 is the crux transferred; 21 the shift transferred.
+%
+% THE DATA (all verified by hand; quartiles = median of each half, overall median left out
+% when n is odd; SAMPLE standard deviation, divide by n - 1)
+%   Route 5 (rows 1-3): 8,10,12,12,12,15,18,20,28  n=9  sum=135  mean=15  median=12  mode=12
+%     range 20; lower half 8,10,12,12 -> Q1=11; upper 15,18,20,28 -> Q3=19; IQR=8
+%     deviations -7,-5,-3,-3,-3,0,3,5,13 ; squares sum 304 ; s^2 = 304/8 = 38 ; s = 6.164
+%     sigma = sqrt(304/9) = 5.8119 ; sum x^2 = 2329
+%   Route 9 (row 2): 4,6,8,10,14,16,20,22  n=8  median (10+14)/2=12  Q1=(6+8)/2=7
+%     Q3=(16+20)/2=18  IQR=11
+%   Route 2 (row 3): 6,8,8,12,16  mean 10  deviations -4,-2,-2,2,6 (sum 0)
+%     squares 16,4,4,4,36 (sum 64)  s^2=16  s=4
+%   Route 3: 6,6,12,18,18 mean 12, dev -6,-6,0,6,6, SS 144, s^2 36, s 6
+%   Route 4: 11,11,12,13,13 mean 12, dev -1,-1,0,1,1, SS 4, s^2 1, s 1
+%   Route 7: 38,38,40,42,42 mean 40, dev -2,-2,0,2,2, SS 16, s^2 4, s 2
+%   Route 3 + detour (+10): 16,16,22,28,28 mean 22, s 6
+%   GP Kestrel Bay: 70,70,72,74,74 mean 72, s 2 ; Sandhill: 50,56,58,66,70 sum 300 mean 60
+%     median 58, dev -10,-4,-2,6,10, squares 100,16,4,36,100 sum 256, s^2 64, s 8
+%     warm front +5: mean 65, s 8
+%
+% PAGE LOCKSTEP with notes_key/: the key differs ONLY in -key for -boxes, the header's
+% "--- Answer Key", \vterm -> \vtermans, \blank -> \ans, \par\writelines{2} -> two \ansline,
+% and the answer argument of every \pcell, \writespace and \labelbox. KEEP EVERY \pcell ON ONE
+% SOURCE LINE.
+% TABLE MECHANICS: inside a cell, `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure gets its own sub-row and EACH GRID ROW is its own sub-row.
+% NO SKETCH QUESTIONS: every display is pre-drawn in TikZ and read.
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip — ONLY above a table the student fills (row 3). Defined per document;
+% the key inherits it and prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Vocabulary rows: a FIXED-HEIGHT row carrying the term label and OPEN writing space (copied
+% from unit01/lesson02). The key fills exactly the same height; key definitions two lines max.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here — the name row lives on the cover only.
+
+\vspace{0.15in}
+
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Mean ($\bar{x}$)}
+\vterm{Median}
+\vterm{Interquartile range (IQR)}
+\vterm{Variance ($s^2$)}
+\vterm{Standard deviation ($s$)}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+Two Maple Grove bus routes. Route~7 riders live out past the reservoir; their commutes are
+$38, 38, 40, 42, 42$ minutes. Route~3 riders live in town; their commutes are
+$6, 6, 12, 18, 18$ minutes. A \textbf{standard deviation} measures how spread out a set of
+values is.
+
+\vspace{3pt}
+\textbf{Which route's commute times have the bigger standard deviation?} Circle one: \quad
+Route 7 \qquad Route 3 \qquad the same \quad --- and say why you think so. We vote again at
+problem~16.
+\par\writelines{2}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: center — mean, median, mode ──────────────────────────────────────
+\mainidea[Three measures of]{Center} &
+The \textbf{mean} is the sum of the values divided by how many there are --- the balance point
+of the data. $\Sigma$ (sigma) means ``add them all up.'' The \textbf{median} is the middle value
+once the data are in order (for an even $n$, the mean of the middle two). The \textbf{mode} is
+the most common value.
+\par\vspace{2pt}
+{\centering $\displaystyle \bar{x} = \frac{\sum x}{n}$\par}
+\\
+& {\centering
+\begin{tikzpicture}[x=0.42cm, y=0.42cm]
+  \node[font=\small\bfseries\color{cerulean}] at (17.5,6.6) {Route 5 --- nine riders' commutes};
+  \draw[thick] (4.5,0) -- (30.5,0);
+  \foreach \tk in {5,...,30} { \draw (\tk,0) -- (\tk,-0.25); }
+  \foreach \tk in {5,10,...,30} {
+    \draw[thick] (\tk,0) -- (\tk,-0.45);
+    \node[below, font=\scriptsize] at (\tk,-0.45) {\tk}; }
+  \node[font=\scriptsize] at (17.5,-2.1) {commute time (minutes)};
+  \foreach \p/\q in {8/1, 10/1, 12/1, 12/2, 12/3, 15/1, 18/1, 20/1, 28/1} {
+    \fill[cerulean] (\p,{\q*0.75}) circle (2.6pt); }
+  \draw[->, very thick, goldacc] (15,3.9) -- (15,1.5);
+  \node[font=\small\bfseries\color{goldacc}] at (15,4.6) {A};
+  \draw[->, very thick, plumacc] (12,4.9) -- (12,3.0);
+  \node[font=\small\bfseries\color{plumacc}] at (12,5.6) {B};
+\end{tikzpicture}\par\vspace{5pt}
+Arrow A marks the \labelbox{2.4cm}{}\qquad Arrow B marks the \labelbox{2.8cm}{}\par}
+\\
+& \notesprompt{Compute each one, then say what it means for Route 5's riders.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Find the mean commute. Write it with $\bar{x}$ and $\Sigma$, then say what it means.}{1.9cm}{} & \pcell{2}{Find the median. Interpret it for Route 5.}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Find the mode. Interpret it.}{1.9cm}{} & \pcell{4}{The mean is bigger than the median. Which rider pulls the mean up --- and why doesn't that rider move the median?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: range, quartiles, IQR — the five-number summary ─────────────────
+\mainidea[Spread of the middle half]{Range \& IQR} &
+The \textbf{range} is max $-$ min. The \textbf{quartiles} cut the ordered data into quarters:
+$Q_1$ is the median of the lower half and $Q_3$ the median of the upper half ---
+\textbf{when $n$ is odd, leave the overall median out of both halves.} The
+\textbf{interquartile range}, $\text{IQR} = Q_3 - Q_1$, is the spread of the \textbf{middle half}
+of the data. Min, $Q_1$, median, $Q_3$, max is the \textbf{five-number summary}.
+\\
+& {\centering
+\begin{tikzpicture}
+  \fill[goldbg] (4.6,0) rectangle (5.6,0.8);
+  \foreach \i/\vv in {0/8, 1/10, 2/12, 3/12, 4/12, 5/15, 6/18, 7/20, 8/28} {
+    \draw[cerulean, thick] ({\i*1.15},0) rectangle ({\i*1.15+1.0},0.8);
+    \node[font=\small\bfseries] at ({\i*1.15+0.5},0.4) {\vv}; }
+  \draw[thick, slate] (0,1.0) -- (0,1.2) -- (4.45,1.2) -- (4.45,1.0);
+  \node[above, font=\scriptsize\color{slate}] at (2.225,1.2) {lower half --- 4 values};
+  \draw[thick, slate] (5.75,1.0) -- (5.75,1.2) -- (10.2,1.2) -- (10.2,1.0);
+  \node[above, font=\scriptsize\color{slate}] at (7.975,1.2) {upper half --- 4 values};
+  \node[above, font=\tiny\itshape\color{goldacc}] at (5.1,0.85) {left out};
+  \foreach \xx/\lab in {2.225/{$Q_1$}, 5.1/{Median}, 7.975/{$Q_3$}} {
+    \draw[<-, very thick, goldacc] (\xx,-0.08) -- (\xx,-0.7);
+    \node[below, font=\scriptsize\bfseries] at (\xx,-0.7) {\lab}; }
+  \node[anchor=west, font=\scriptsize\color{cerulean}] at (0,-1.45) {Route 5, in order (minutes)};
+\end{tikzpicture}\par\vspace{5pt}
+$Q_1 =$ \labelbox{1.3cm}{}\qquad Median $=$ \labelbox{1.3cm}{}\qquad $Q_3 =$ \labelbox{1.3cm}{}\par}
+\\
+& \notesprompt{Measure the spread, then say what it means.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Find the range of Route 5. What does it measure?}{1.9cm}{} & \pcell{6}{Find Route 5's IQR and interpret it.}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{Route 9's eight riders: $4, 6, 8, 10, 14, 16, 20, 22$ minutes. Give the five-number summary.}{1.9cm}{} & \pcell{8}{Find Route 9's IQR. Whose middle half is more spread out, Route 5's or Route 9's?}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: variance and standard deviation from a deviations table ─────────
+\mainidea[Typical distance from the mean]{Standard Deviation} &
+A \textbf{deviation}, $x - \bar{x}$, says how far a value sits from the mean, and on which side.
+The deviations always add to $0$ --- values above the mean balance the ones below --- so we
+\textbf{square} them before we add. We use the \textbf{sample} standard deviation: divide by
+$n - 1$, not $n$.
+\par\vspace{3pt}
+\stepnum{1}\ Find the mean $\bar{x}$.\par
+\stepnum{2}\ Subtract to get each deviation, $x - \bar{x}$.\par
+\stepnum{3}\ Square each deviation, then add the squares.\par
+\stepnum{4}\ Divide by $n - 1$: that is the \textbf{variance}, $s^2$.\par
+\stepnum{5}\ Take the square root: the \textbf{standard deviation}, $s$ --- back in the data's units.
+\par\vspace{2pt}
+{\centering $\displaystyle s^2 = \frac{\sum (x - \bar{x})^2}{n - 1} \qquad s = \sqrt{s^2}$\par}
+\\
+& \textbf{9.} Five Route~2 riders commute $6, 8, 8, 12, 16$ minutes, so $\bar{x} = 50/5 = 10$.
+Complete the table.
+\wordbank{$-4$ \;\textbullet\; $-2$ \;\textbullet\; $0$ \;\textbullet\; $2$ \;\textbullet\; $4$ \;\textbullet\; $6$ \;\textbullet\; $16$ \;\textbullet\; $36$ \;\textbullet\; $64$}
+{\centering\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{} c c c @{}}
+\toprule
+\textbf{Commute} $x$ & \textbf{Deviation} $x - \bar{x}$ & \textbf{Squared} $(x - \bar{x})^2$ \\
+\midrule
+$6$  & $6 - 10 = -4$ & $16$ \\
+$8$  & \blank{2.2cm} & \blank{1.6cm} \\
+$8$  & \blank{2.2cm} & \blank{1.6cm} \\
+$12$ & \blank{2.2cm} & \blank{1.6cm} \\
+$16$ & \blank{2.2cm} & \blank{1.6cm} \\
+\midrule
+\textbf{Sum:} $50$ & \blank{2.2cm} & \blank{1.6cm} \\
+\bottomrule
+\end{tabular}\par}
+\\
+& \notesprompt{Finish the standard deviation --- and do not stop at the zero.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Add the deviations. A classmate says, ``They add to $0$, so Route~2 has no spread.'' What is wrong with that?}{2.6cm}{} & \pcell{11}{Divide the sum of the squares by $n - 1$, then take the square root. Interpret $s$ for Route~2.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& {\centering
+\begin{tikzpicture}
+  \fill[graybg, rounded corners=5pt] (0,0) rectangle (8.4,3.5);
+  \draw[charcoal, very thick, rounded corners=5pt] (0,0) rectangle (8.4,3.5);
+  \node[anchor=west, font=\footnotesize\ttfamily\bfseries] at (0.3,3.1) {1-Var Stats};
+  \foreach \yy/\txt in {2.55/{$\bar{x}$=15}, 2.05/{$\Sigma$x=135}, 1.55/{$\Sigma$x$^2$=2329},
+      1.05/{Sx=6.164414003}, 0.55/{$\sigma$x=5.811865258}} {
+    \node[anchor=west, font=\footnotesize\ttfamily] at (0.3,\yy) {\txt}; }
+  \foreach \yy/\txt in {2.55/{n=9}, 2.05/{minX=8}, 1.55/{Q$_1$=11}, 1.05/{Med=12},
+      0.55/{Q$_3$=19}} {
+    \node[anchor=west, font=\footnotesize\ttfamily] at (4.9,\yy) {\txt}; }
+  \node[anchor=west, font=\footnotesize\ttfamily] at (4.9,3.1) {maxX=28};
+\end{tikzpicture}\par\vspace{3pt}
+{\footnotesize\itshape A calculator's 1-Var Stats screen for Route~5's nine commutes (rows 1--2).}\par}
+\\
+& \notesprompt{Read the screen --- the calculator does steps 1--5 for you.}
+\begin{probgrid}{|Y|Y|}
+\pcell{12}{Which line is the sample standard deviation $s$? Give $\bar{x}$, $s$, and $n$ for Route~5.}{2.2cm}{} & \pcell{13}{Interpret $s \approx 6.2$ for Route~5. Its variance is $s^2 = 38$ --- why is that not in minutes?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — SD measures spread about the mean, not size ───────────
+\mainidea[Spread about the mean,]{Spread, Not Size} &
+Four Maple Grove routes, five riders each, drawn on \textbf{one} scale. Each $\blacktriangle$
+marks that route's mean. Route~3's standard deviation is $s = 6$ minutes.
+\\
+& {\centering
+\begin{tikzpicture}[x=0.19cm, y=1cm]
+  \foreach \yy/\nm/\subl in {4.05/{Route 3}/{$\bar{x} = 12$, $s = 6$},
+      2.75/{Route 4}/{$\bar{x} = 12$}, 1.45/{Route 7}/{$\bar{x} = 40$},
+      0.15/{Route 3 + detour}/{every rider $+10$ min}} {
+    \draw[linegray, thick] (0,\yy) -- (45,\yy);
+    \node[anchor=east, font=\scriptsize\bfseries, align=right] at (-1,{\yy+0.22}) {\nm};
+    \node[anchor=east, font=\tiny, align=right] at (-1,{\yy-0.12}) {\subl}; }
+  % dots: value / row baseline / stack level
+  \foreach \p/\yy/\q in {6/4.05/1, 6/4.05/2, 12/4.05/1, 18/4.05/1, 18/4.05/2,
+      11/2.75/1, 11/2.75/2, 12/2.75/1, 13/2.75/1, 13/2.75/2,
+      38/1.45/1, 38/1.45/2, 40/1.45/1, 42/1.45/1, 42/1.45/2,
+      16/0.15/1, 16/0.15/2, 22/0.15/1, 28/0.15/1, 28/0.15/2} {
+    \fill[cerulean] (\p,{\yy+0.18*\q-0.05}) circle (2.3pt); }
+  % mean markers (the detour's mean is problem 17, so it is not marked)
+  \foreach \p/\yy in {12/4.05, 12/2.75, 40/1.45} {
+    \node[font=\scriptsize\color{goldacc}] at (\p,{\yy-0.2}) {$\blacktriangle$}; }
+  % shared axis
+  \draw[thick] (0,-0.55) -- (45,-0.55);
+  \foreach \tk in {0,5,...,45} {
+    \draw (\tk,-0.55) -- (\tk,-0.65);
+    \node[below, font=\scriptsize] at (\tk,-0.65) {\tk}; }
+  \node[font=\scriptsize] at (22.5,-1.3) {commute time (minutes)};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{Compute each standard deviation, then settle the hook vote.}
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{Route~3 and Route~4 both have $\bar{x} = 12$. Find Route~4's $s$. Which route is more consistent?}{2.2cm}{} & \pcell{15}{Find Route~7's $s$. Its mean is $\bar{x} = 40$.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{16}{\textbf{Vote again:} Route~7 or Route~3 --- which has the bigger $s$? Does a longer commute mean a bigger standard deviation?}{2.6cm}{} & \pcell{17}{A detour adds $10$ minutes to every Route~3 commute. New $\bar{x}$? New $s$? Explain without recomputing.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The standard deviation measures spread about the mean --- not how big the values are.}\par
+Adding the same amount to every value moves the mean and leaves $s$ unchanged.}}
+\par\vspace{3pt}
+\textbf{In your own words:} Route~7's commutes are the longest. Why is its standard deviation
+only $2$ minutes?
+\writespace{1.6cm}{}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Two Towns} &
+Weekday high temperatures ($^\circ$F) for one week in March. Coastal \textbf{Kestrel Bay}:
+$70, 70, 72, 74, 74$. Inland \textbf{Sandhill}: $50, 56, 58, 66, 70$.
+\\
+& {\centering
+\begin{tikzpicture}[x=0.32cm, y=1cm]
+  \foreach \yy/\nm in {1.6/{Kestrel Bay (coastal)}, 0.35/{Sandhill (inland)}} {
+    \draw[linegray, thick] (45,\yy) -- (80,\yy);
+    \node[anchor=west, font=\scriptsize\bfseries] at (45,{\yy+0.55}) {\nm}; }
+  \foreach \p/\yy/\q in {70/1.6/1, 70/1.6/2, 72/1.6/1, 74/1.6/1, 74/1.6/2,
+      50/0.35/1, 56/0.35/1, 58/0.35/1, 66/0.35/1, 70/0.35/1} {
+    \fill[cerulean] (\p,{\yy+0.18*\q-0.05}) circle (2.3pt); }
+  \draw[thick] (45,-0.2) -- (80,-0.2);
+  \foreach \tk in {45,50,...,80} {
+    \draw (\tk,-0.2) -- (\tk,-0.3);
+    \node[below, font=\scriptsize] at (\tk,-0.3) {\tk}; }
+  \node[font=\scriptsize] at (62.5,-0.95) {daily high temperature ($^\circ$F)};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{18}{Find Sandhill's mean (use $\Sigma$) and its median. Interpret $\bar{x}$.}{3.0cm}{} & \pcell{19}{Find Sandhill's standard deviation: deviations, squares, sum, divide by $n - 1$, root. Interpret $s$.}{3.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{20}{Kestrel Bay: $\bar{x} = 72^\circ$F, $s = 2^\circ$F. Sam says, ``Kestrel Bay has the bigger standard deviation --- it's the warmer town.'' Is Sam right?}{2.8cm}{} & \pcell{21}{Next week a warm front makes every Sandhill high exactly $5^\circ$F warmer. New $\bar{x}$? New $s$? Justify.}{2.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% assigned at Close & Assign and done outside class.
+
+\end{document}

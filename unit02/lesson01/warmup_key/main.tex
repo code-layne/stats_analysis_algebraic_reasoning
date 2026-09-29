@@ -1,24 +1,89 @@
-%! Dot Plots, Stemplots, and Histograms — Unit 2, Lesson 2.1 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt, \workrowsep 50pt, item spacing 22pt. Do not add a
+% fourth item — the page is full.
+% UNIT 2 LAUNCH: this warm-up spirals back to Unit 1 on the same Fox Run survey the notes open
+% with. Item 1 (quantitative vs categorical, and a variable's units) is the test every display in
+% the notes needs — only a quantitative variable goes on a number line. Item 2 reads a frequency
+% table whose counts ARE the hook's histogram (7, 7, 3, 2, 1) and seed row 3's frequency table.
+% Item 3 writes a value in context with units (the rule row 4 enforces) and flags 47 as unusual
+% (the tail the crux row names).
+% THE DATA: minutes to school, 0–9: 7, 10–19: 7, 20–29: 3, 30–39: 2, 40–49: 1 -> 20 students;
+%   20 or more: 3 + 2 + 1 = 6; under 10: 7/20 = 0.35 = 35%.
+% PAGE LOCKSTEP: the key differs only by saar-key, \blank -> \ans, \par\writeline -> \par\ansline;
+% the work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for every fill-in cluster. Defined per document; the key inherits it and
+% prints the same strip, so heights match.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
 
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
 \boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Back to Unit 1: Variables and Frequency Tables}
+\normalsize
+Ms.~Ortiz's first-period class at Fox Run High has $20$ students. Each one answered three
+questions: how many hours they slept last night, how they get to school (bus, car, walk, or
+bike), and how many minutes the trip takes.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Classify each variable, and give its units if it has any.
+        \wordbank{quantitative \;\textbullet\; categorical \;\textbullet\; hours \;\textbullet\; minutes \;\textbullet\; none}
+
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabularx}{\linewidth}{@{} X p{4.2cm} p{2.6cm} @{}}
+        \toprule
+        \textbf{Variable} & \textbf{Quantitative or categorical?} & \textbf{Units} \\
+        \midrule
+        Hours of sleep last night  & \ans{quantitative} & \ans{hours} \\
+        How you get to school      & \ans{categorical} & \ans{none} \\
+        Minutes to get to school   & \ans{quantitative} & \ans{minutes} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Ms.~Ortiz grouped the trip times into a frequency table.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabularx}{\linewidth}{@{} l *{5}{Y} @{}}
+        \toprule
+        \textbf{Minutes}  & $0$--$9$ & $10$--$19$ & $20$--$29$ & $30$--$39$ & $40$--$49$ \\
+        \midrule
+        \textbf{Students} & $7$ & $7$ & $3$ & $2$ & $1$ \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{8pt}
+        How many students in all? \ans{20}\par\vspace{4pt}
+        How many take $20$ minutes or more? \ans{6}
+
+        \vspace{8pt}
+        What \textbf{percent} of the class takes less than $10$ minutes?
+
+        \begin{work}
+          \dfrac{7}{20} = 0.35 = 35\%
+        \end{work}
+
+  \item The longest trip in the class is $47$ minutes. Write one sentence that says what $47$
+        means --- name the individual, the variable, and the units.
+        \par\ansline{One student in the class takes 47 minutes to get to school.}
+
+        \vspace{6pt}
+        Is a $47$-minute trip typical or unusual for this class? \ans{unusual}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

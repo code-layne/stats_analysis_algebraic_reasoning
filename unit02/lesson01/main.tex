@@ -1,16 +1,19 @@
-%! Dot Plots, Stemplots, and Histograms — Unit 2, Lesson 2.1 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Lesson Plan
+% PILOT SHAPE on the UNIT 2 PERIOD (2026-09-29): 5 / 45 / 5 / 5. Gradual-release plan: warm-up /
+% guided notes & practice (I do ~25: five instruction rows, problems 1-20; we do ~20: the Guided
+% Practice row, problems 21-24) / SPOKEN debrief (the cold check + one board item) / close and
+% ASSIGN THE HOMEWORK (not started in class). This lesson also OPENS UNIT 2: the hook and a
+% warm-up that spirals back to Unit 1. Teacher-facing. Breakable boxes are `skillbox` with a
+% \boxguard ahead; the two tabularx boxes are `fixedskillbox` (never splits).
+% No group activity, no tier boxes, no exit ticket.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 2: Describing One Variable \quad}
-\newcommand{\LessonNumberName}{Lesson 2.1: Dot Plots, Stemplots, and Histograms}
+\newcommand{\LessonNumberName}{Lesson 2.1: Displaying and Describing Distributions}
 
 \begin{document}
 \begin{center}
@@ -20,170 +23,378 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will read a dot plot, a stemplot (by its key), and a
+    technology-drawn histogram; describe a distribution by its shape, unusual features, center,
+    and spread in one sentence with context and units; and justify the direction of a skew by
+    pointing to the \emph{tail}, not the peak.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.DS.1a (dot plots, stemplots, histograms, with technology),
+    PS.DS.1b (shape, center, spread, and unusual features in context) \quad$\cdot$\quad Unit~1's
+    variable types and frequency tables carried forward in the warm-up and HW~2
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} The notes deliver the instruction \textbf{row by row in one Main Ideas /
+    Notes table} (five rows, problems 1--20: you read the definition, mark up the display, and
+    work the first problem of each grid; the class works the rest); the Guided Practice row
+    (problems 21--24) is worked together with students holding the pen; \textbf{the homework is
+    the individual practice}, assigned at the close and done outside class. The debrief is a
+    \emph{spoken} cold check.
+    \\[2pt]
+    \textbf{Unit launch:} this is the first lesson of Unit~2. The hook opens the unit, and the
+    warm-up spirals back to Unit~1 (quantitative vs.\ categorical, units, a frequency table) on
+    the same Fox Run survey the notes use. \textbf{Technology is pre-digested}: the histograms
+    are printed as calculator/Desmos output to read; no one enters data today.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can read a \textbf{dot plot}, a \textbf{stemplot} (using its \textbf{key}), and a
+        \textbf{histogram}, and say what one dot, leaf, or bar stands for.
+        \hfill \textit{PS.DS.1a}
+  \item I can describe a \textbf{distribution} by its \textbf{shape}, \textbf{center}, and
+        \textbf{spread}, in a sentence with context and units. \hfill \textit{PS.DS.1b}
+  \item I can point out \textbf{outliers}, \textbf{gaps}, and \textbf{clusters}.
+        \hfill \textit{PS.DS.1b}
+  \item I can name the direction of a \textbf{skew} by its \textbf{tail}, and explain why.
+        \hfill \textit{PS.DS.1b}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} that ``skewed right'' means the peak --- where most of
+        the data are --- is on the right. \textbf{The skew is named by the long tail}: a pile on
+        the left with a tail stretching toward the larger values is skewed \emph{right}. The
+        Fox Run commute (most trips short, a few out to $47$ minutes) is the case that forces it.
+  \item \textbf{Second misconception:} describing with no context or units (``bimodal, a gap,
+        range 20''). A description is about \emph{these individuals} and \emph{this variable}; a
+        number without units is not an answer.
+  \item Different displays keep different things: a dot plot and a stemplot keep every value; a
+        histogram keeps only counts per bin. The key is part of a stemplot, not decoration.
+  \item Center and spread are \emph{rough} today --- ``about $13$ minutes,'' ``from $3$ to $47$.''
+        Lesson~2.2 makes them exact; shape decides which center to trust.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.1cm} X @{}}
+Distribution & What values a variable takes and how often it takes each one. \\
+Dot plot & One dot per individual stacked above a number line; every value can be read back. \\
+Stemplot & Each value split into a stem (all but the last digit) and a leaf (the last digit), leaves
+       in order, with a \textbf{key}. \textbf{Split stems}: leaves $0$--$4$ and $5$--$9$ on separate
+       stems. \\
+Histogram & Bars over equal-width \textbf{bins} of a quantitative variable; height = frequency.
+       Bars touch; a boundary value goes in the bin to its right. \\
+Shape & Symmetric; skewed right or left; uniform (flat); unimodal or bimodal. \\
+Skewed right / left & Named by the long \textbf{tail}: toward larger values = right; toward
+       smaller values = left. The peak sits on the opposite side. \\
+Outlier, gap, cluster & A value far from the rest; an empty stretch; a group packed together. \\
+Center \& spread & A typical value (roughly where the data split in half); from the smallest to
+       the largest value, \textbf{range} $=$ max $-$ min. \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 (Unit 2 on; 2026-09-29) — I do ~25 of the 45,
+% Guided Practice ~20; the debrief is the spoken cold check; the homework is assigned, not started.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Back to Unit~1 on the Fox Run survey: classify three variables, read the trip-time
+  frequency table, write $47$ in context --- silent & Debrief item~3 aloud; leave ``one student
+  takes $47$ minutes to get to school'' on the board all period \\
+Guided Notes \& Practice & 45 & Hook vote first; fill the vocabulary box as each term is named;
+  work rows 1--5 (problems 1--20) with the pen in their hand; then the Guided Practice row,
+  \emph{Free Throws} (21--24), together & \textbf{I do / we do, row by row}: read the definition,
+  mark up the display, work problems 1, 5, 9 (first two cells), 13, 17; the class works the rest
+  (25) $\to$ \textbf{we do} Guided Practice 21--24 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put display~A (the commute) back
+  up and make a student name the tail; the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~5 as the one to do first &
+  Announce the homework and its form (packet), point to the \emph{Keep in Mind} box, preview
+  Lesson~2.2 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Quantitative or categorical, and units, for sleep, how you get to
+            school, and trip minutes. \textbf{Spirals} to Unit~1 --- and it is the test every
+            display today needs: only a quantitative variable goes on a number line (row~3's
+            histogram, and HW~2's genre question).
+      \item \textbf{2.} The trip-time frequency table ($7, 7, 3, 2, 1$): total, ``$20$ or more,''
+            and $7/20 = 35\%$. \textbf{Seeds:} these counts \emph{are} the hook's histogram,
+            and row~3 turns a histogram back into this kind of table (problem~9).
+      \item \textbf{3.} Write $47$ in context, then call it typical or unusual. \textbf{Seeds:} the
+            context-and-units rule of row~4 (problem~16), and the tail the crux row names
+            --- $47$ \emph{is} the tail.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and write a student's sentence on the board ---
+            \emph{one student takes $47$ minutes to get to school}. Leave it up all period;
+            in row~5 you point at it and say ``that is the tail.''
+      \item Item~1's middle row is the tell. A student who writes \emph{quantitative} for ``how
+            you get to school'' is sorting by whether the answer \emph{could} be counted, and
+            needs row~3's ``quantitative variable'' said slowly.
+      \item Items 1--2 are Unit~1 skills --- say so, so the unit launch reads as a running
+            start, not a retest. Do not let item~2(c)'s arithmetic expand.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page~1 of the notes}, under the vocabulary box, and on the deck's dark
+frame: \textit{``Ms.~Ortiz's $20$ students' minutes to get to school. Most of the class lives
+close --- the tall bars are on the left, and a few short bars trail off to the right, out to the
+$40$s.''} \textbf{Ask: is this distribution skewed left or skewed right?} Students circle
+\emph{skewed left}, \emph{skewed right}, or \emph{neither} and write one line of reason \emph{before}
+anyone speaks; then take the hand vote and write the split on the board. Most rooms vote
+\emph{skewed left} --- ``the bars are on the left.'' \textbf{Do not settle it.} Say only that
+the answer is problem~17, in the \emph{Skew} row, and that they will vote again there. This is
+also the unit's opening question: Unit~2 is about describing one variable honestly, and the
+first honest word most students reach for here is the wrong one.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, assigned at the
+close. The notes are \textbf{one Main Ideas / Notes table}: five instruction rows (problems
+1--20), then the Guided Practice row (21--24). \textbf{The rhythm in every row is the same}:
+read the definition aloud, mark up the display, work the first problem of the grid yourself,
+then hand the rest to the room. The vocabulary box on page~1 is filled \emph{as each term is
+named}. The only blanks are the six counts of the frequency table (problem~9); the
+\texttt{labelbox}es (stem/leaf, gap/cluster, peak/tail/skew) are marked up on the displays.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Dot Plot (problems 1--4), 4 min.} Read the definition of \emph{distribution};
+students write it in the box. Work problem~1 yourself: add the three dots (6, 7, 8) on the
+document camera --- one dot per student, stacked. The class does 2--4; problem~4 is the Unit~1
+percent again ($5/20 = 25\%$).
+
+\emph{Row 2, Stemplot (problems 5--8), 5 min.} Read the key \emph{first}, aloud, and have
+students label \emph{stem} and \emph{leaf} beside it. Work problem~5 yourself, reading $0\mid3$
+and $4\mid7$ back as minutes. Problem~8 is the split: leaves $0$--$4$ of stem~$1$ are
+$10, 12, 12, 14$ minutes. Fill \emph{stemplot} in the vocabulary box.
+
+\emph{Row 3, Histogram (problems 9--12), 5 min.} Say plainly: the calculator drew this; we read
+it. Fill the first two cells of problem~9 yourself ($1$, $1$), the class does the rest. Problem~12
+is the point of the row: a histogram cannot tell you the top score --- the dot plot and the
+stemplot could. Fill \emph{histogram}.
+
+\emph{Row 4, Describe (problems 13--16), 5 min.} Read the four steps, then mark the work-hours
+dot plot: \emph{gap}, \emph{cluster}. Work problem~13 aloud as a model sentence --- \emph{the
+20 students' sleep is roughly symmetric, centered near 7 hours, from 5 to 10 hours, no
+outliers}. \textbf{Problem~16 is the second misconception}: Sam's ``bimodal, a gap, range 20''
+has no individuals, no variable, no units. Fill \emph{outlier}.
+
+\emph{Row 5, Skew (problems 17--20) --- the crux, 6 min.} Read the definition, then label the
+two displays with the class: A --- peak \emph{left}, tail \emph{right}, skewed \emph{right};
+B --- peak \emph{right}, tail \emph{left}, skewed \emph{left}. \textbf{Re-take the hook vote at
+problem~17 before you say anything.} Then point at the $47$ still on the board: \emph{that is
+the tail}. Land the boxed sentence word by word: \emph{skew is named by the tail, not the peak}.
+Problem~19 (Jordan) is the trap stated out loud; problem~20 (sleep: neither) is the
+counterweight. Fill \emph{skewed right / left}.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Free Throws} (problems 21--24) ---
+the four moves the homework asks alone, on a basketball team instead of a classroom.
+\textbf{Students hold the pen; you hold the questions.} \textbf{Problem~21 is the crux
+transferred, and the direction is flipped}: the pile is on the right (8 made) and the tail runs
+left to 2. Take a hand count on \emph{left or right} before anyone writes and make both sides
+point at the tail. Problem~22 names the 2 as a possible outlier after a gap. Problem~23 is rough
+center (about 8) and spread (2 to 10, range 8). Problem~24 assembles the sentence --- insist on
+\emph{16 players}, \emph{free throws made}, \emph{out of 10}.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 21:} ``Put your finger on the tail. Which way is it pointing?'' A student
+        who answers ``right, because most players are there'' is still at the hook vote.
+  \item \textbf{Problem 22:} ``Is the 2 a mistake? What would you check?''
+  \item \textbf{Problem 23:} ``About 8 \emph{what}?'' --- units, every time.
+  \item \textbf{Problem 24:} ``Who is this sentence about? Could a stranger tell?''
+\end{itemize}
+While circulating, pick the papers to put up in the debrief --- one problem~21 that named the
+tail, and one that said \emph{skewed right} by the peak. \textbf{This circulation is your
+formative read} --- the homework is not started in class.
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room. \textbf{One board item and
+the cold check, nothing more.}
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The board item.} Put display~A (the commute) back up beside the two problem~21
+        papers you picked. A student says the sentence: \emph{the pile is on the left, the tail
+        goes right, so it is skewed right}. Then read both problem~21s aloud and let the room
+        say which one named the tail.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``At the Pinecrest pool, most
+swimmers are 8 to 14 years old, and a few parents and lifeguards are 30 to 50. Is the
+distribution of ages skewed left or skewed right --- and where is the peak?''} Hands down, thirty
+seconds of think time, then cold-call three students. Correct answer: \textbf{skewed right} ---
+the long tail stretches toward the older ages; the peak is on the left, at the young swimmers.
+\emph{This replaces the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the three answers as they come: \textbf{(a)} skewed right,
+because of the tail; \textbf{(b)} skewed right, with no reason or ``because it's lopsided'';
+\textbf{(c)} skewed left, ``because most swimmers are young, on the left.'' \textbf{If pile (c)
+runs past a third of the room, open Lesson~2.2 by re-running the \emph{Skew} row
+(problems 17--20)}, and say so plainly.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored, assigned today, due after two study halls]{goldbox}
+Six items on the \textbf{Oak Hollow Library summer reading challenge} ($20$ kids; percent of
+goal met, and books read): \textbf{1} finish a stemplot whose frame is printed (three missing
+leaves: $9$, $8$, $8$) and count the kids at $90\%$ or more ($9$) --- \emph{the core procedure};
+\textbf{2} favorite genre is categorical and cannot go in a histogram --- \emph{the spiral to
+Unit~1}; \textbf{3} and \textbf{4} are the \textbf{contrast pair} --- the same three blanks
+(most kids at, tail toward, shape) for books read (pile low, \emph{skewed right}) and goal
+percent (pile high, \emph{skewed left}); \textbf{5} Ava's ``skewed right because most kids are
+at the high end'' --- \emph{the crux head-on}, the justify item; \textbf{6} the full description
+of books read in context --- \emph{interpret}.
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points --- 2 per
+item. \textbf{Item~5 is where the misconception shows}: a student who agrees with Ava, or who
+corrects her to ``skewed left'' without naming the tail, has learned the word and not the rule.
+\textbf{Items 3 and~4 are the second check}: two ``skewed right''s means the student is naming
+by the peak on one of them.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom has display-reading practice that would cover items 1 and~3, but nothing that
+asks a student to explain a skew or write a description with units --- the items this lesson
+exists for --- so \textbf{2.1 is a packet night}. Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~2.2.} Every center today was ``about.'' Next class the mean and
+median make it exact --- and the skew students named tonight decides which one to trust.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 2 core idea:} describe one variable honestly ---
+its shape, its center, its spread, its surprises, in context. \textit{Standards covered:}
+PS.DS.1a, PS.DS.1b. \textit{Spirals forward to:} measures of center and spread (2.2), and every
+later display in the unit, where shape decides which summary to report. \textit{Reaches back
+to:} Unit~1's variable types, units, and frequency tables, and Algebra~1 percent.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{Naming the skew by the peak} (problems 17 and~19, GP~21, HW~3--5 --- the target
+        misconception). Probe: \emph{``Put your finger on the tail --- the few values far from the
+        rest. Which way is it pointing?''}
+  \item \textbf{A description with no context or units} (problem~16, GP~24, HW~6). Probe:
+        \emph{``About 8 \emph{what}? Who is this sentence about?''}
+  \item \textbf{Reading a stemplot without the key} (problems 5--6, HW~1): ``the longest trip is
+        7.'' Probe: \emph{``What does the key say $4\mid7$ means?''}
+  \item \textbf{Reading a histogram as individual values} (problem~12): ``the top score is 99.''
+        Probe: \emph{``How many students are in that bar? Which one scored highest?''}
+  \item \textbf{Stemplot orientation} (HW~4): larger values are at the \emph{bottom}, so a tail
+        at the top of a stemplot points toward the \emph{smaller} values. Probe: \emph{``Which end
+        of the stemplot holds the small numbers?''}
+  \item \textbf{Calling a categorical variable a histogram candidate} (warm-up~1, HW~2). Probe:
+        \emph{``Where would `mystery' go on a number line?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me a variable at this school that would be skewed right.''}
+\quad \emph{``Where is the tail on the free-throw dot plot?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{Launch the homework --- it is not started in class.} Six items on the packet pages,
+scored out of 12, due at the start of the first class after two study halls. Say it is a
+\textbf{packet night} (no Desmos), and point to the \emph{Keep in Mind} box on the cover as the
+page to flip back to. \textbf{Tell students to do item~5 first} --- Ava's claim is the rule from
+today, and if they can answer it, items 3 and~4 follow. Then close on what changed:
+\emph{``You walked in knowing how to sort a variable and read a frequency table. You walk out
+able to read three kinds of display, describe any distribution in one honest sentence, and name
+a skew by its tail --- which means a pile on the left can be skewed right.''}
+\textbf{Preview:} Lesson~2.2, \emph{Measuring Center and Spread} --- today's centers were all
+``about''; next time we make them exact, and find out that a skew pulls one kind of center and
+not the other.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key. No note for the debrief or the homework
+% launch — both are fully specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. This is the first page of Unit~2, so say out loud that it is Unit~1
+on purpose --- the same classify-and-count moves, on the survey today's notes use. \textbf{Item~1's
+middle row is the one to read while collecting}: ``how you get to school'' is categorical with no
+units, and a student who calls it quantitative will not see why row~3 insists on a quantitative
+variable. Item~2's counts ($7, 7, 3, 2, 1$) are the hook's histogram --- do not point that out
+yet; let students recognize it. Write a student's item~3 sentence on the board (\emph{one student
+takes $47$ minutes to get to school}) and \textbf{leave it up all period}: in the \emph{Skew} row
+you point at it and call it the tail.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief and 5 to
+assign the homework.} It is one table, and every row runs the same way: you read the definition,
+mark up the display, and work the first problem of the grid (1, 5, 9's first two cells, 13, 17);
+the class works the rest with the pen in their hand. Rows 1--4 must move --- four or five minutes
+each; they are reading skills, and students will be faster than you expect on the dot plot. If
+time runs short, cut problem~8 (split stems) and problem~15 before touching row~5.
+
+\textbf{Spend the time in row~5, \emph{Skew}}, which carries the misconception. Label displays A
+and B with the class, then \textbf{re-take the hook vote at problem~17 before you say anything}.
+Let the room argue; then point at the $47$ on the board and at the short bars trailing right:
+\emph{the tail}. Do not resolve it by restating the definition --- have a student put a finger on
+the tail and say which way it points. Problem~19 is the trap said aloud (Jordan names the peak);
+problem~20 is the counterweight (no tail, no skew).
+
+\textbf{Guided Practice (21--24) is where the pen changes hands.} \emph{Free Throws} flips the
+direction on purpose: a student who memorized ``pile on the left means skewed right'' has not
+learned the rule, and the free-throw pile is on the \emph{right}. Take the hand count on
+problem~21 before anyone writes. If you get only through 21, 22, and~23, that is the right trade;
+problem~24's sentence can be assembled aloud from the three answers.
+
+\textbf{There is no independent practice set on this page, and no homework start in class ---
+the homework is the individual practice.} Your formative read is the Guided Practice
+circulation and the debrief's cold check; if the ``skewed left because it's on the left'' pile
+runs past a third of the room, \textbf{open Lesson~2.2 by re-running problems 17--20}.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls.} Assigned at the close and done outside class --- nothing is started in the room. Item~5
+is the one to read first when scoring: full credit needs both \emph{she named the peak} and
+\emph{the tail points toward the low percents, so skewed left}; one of the two earns 1 point.
+Items 3 and~4 are the contrast pair --- score each blank, and flag any paper with the same shape
+on both. Item~4 also tests stemplot orientation (larger values at the bottom). Item~6 needs all
+four features \emph{and} the units for 2 points; a description with no ``books'' or no ``kids''
+earns 1. \textbf{When you score the page, sort item~5 into three piles} --- named the tail
+(ready); right shape, no reason (ready, needs the language); agreed with Ava (the misconception
+survived). If more than a third land in the last pile, reopen display~A in the Lesson~2.2
+warm-up debrief rather than letting it ride.
+
+\textbf{Packet is the call for 2.1.} Desmos carries display reading and nothing else in this
+set; do not swap it in. Collect it at the start of the first class after two study halls and
+use item~6's descriptions to open Lesson~2.2: every one of them says ``about.''
 \end{teachernote}
 \end{document}

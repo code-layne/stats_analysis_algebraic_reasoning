@@ -1,8 +1,11 @@
-%! Shape, Center, Spread, and Unusual Features — Unit 2, Lesson 2.3 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Boxplots, Outliers, and Resistance — Unit 2, Lesson 2.3 — Lesson Plan
+% PILOT SHAPE (2026-09-06, modeled on AP Statistics 1.4 minus AP Practice), on the UNIT 2 PERIOD
+% (2026-09-29): 5 / 45 / 5 / 5 — warm-up / guided notes & practice (I do ~25 row by row, we do
+% the Guided Practice ~20) / SPOKEN debrief (cold check + one board item) / close and ASSIGN the
+% homework (not started in class). There is no independent practice set in the notes — the
+% homework is the individual practice. Teacher-facing: the formal vocabulary and the lettered
+% standard codes are used freely. Breakable boxes are `skillbox` + \boxguard; the two tabularx
+% boxes are `fixedskillbox` (never splits). Mirrors unit01/lesson02.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
@@ -10,7 +13,7 @@
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 2: Describing One Variable \quad}
-\newcommand{\LessonNumberName}{Lesson 2.3: Shape, Center, Spread, and Unusual Features}
+\newcommand{\LessonNumberName}{Lesson 2.3: Boxplots, Outliers, and Resistance}
 
 \begin{document}
 \begin{center}
@@ -20,170 +23,398 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will read a boxplot and finish one from a five-number
+    summary, use the $1.5 \times \text{IQR}$ rule to find fences and name outliers (and read a
+    modified boxplot), read quartiles and percentiles off a cumulative relative frequency graph
+    and say them in context, and \emph{justify} --- by computing each summary with and without
+    an outlier --- why the median and IQR are the center and spread to report when data have
+    outliers or strong skew.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    % CITE THE STANDARD CODES. They appear here and again on the Connections line.
+    \textbf{Standards:} PS.DS.1a (boxplots and cumulative frequency graphs --- create and
+    interpret) \quad$\cdot$\quad PS.DS.2c (identify possible outliers using an algorithm)
+    \quad$\cdot$\quad PS.DS.2d (the influence of outliers) \quad$\cdot$\quad builds on
+    Lesson~2.2's five-number summary, IQR, and standard deviation
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do --- all of it inside
+    the guided notes.} The notes deliver the instruction \textbf{row by row in one Main Ideas /
+    Notes table} (four rows, problems 1--18: you read the definition, mark up the display, and
+    work the first problem of each grid --- 1, 5, 9, 13; the class works the rest); the Guided
+    Practice row (problems 19--22) is worked together with students holding the pen;
+    \textbf{the homework is the individual practice}, assigned at the close and done outside
+    class. The debrief is a \emph{spoken} cold check.
+    \\[2pt]
+    \textbf{Conventions on the page:} quartiles are the medians of the lower and upper halves,
+    with the overall median left out of both halves when $n$ is odd (printed once, in notes
+    row~1); every standard deviation is the \emph{sample} standard deviation ($\div\,(n-1)$),
+    given as calculator output --- students do not compute one today. Single-group boxplots
+    only: parallel boxplots are Lesson~2.4.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can read a \textbf{boxplot} and finish one from a five-number summary, knowing each
+        of its four sections holds about $25\%$ of the data. \hfill \textit{PS.DS.1a}
+  \item I can use the \textbf{$1.5 \times \text{IQR}$ rule} to find the fences, name every
+        \textbf{outlier}, and read a \textbf{modified boxplot}. \hfill \textit{PS.DS.2c}
+  \item I can read the median, the quartiles, and a \textbf{percentile} off a
+        \textbf{cumulative relative frequency graph} and say it in context.
+        \hfill \textit{PS.DS.1a}
+  \item I can show, with and without an outlier, that the median and IQR are
+        \textbf{resistant} and the mean and standard deviation are not --- and choose what to
+        report. \hfill \textit{PS.DS.2d}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} that an outlier changes every summary equally --- that
+        the median is pulled like the mean. It is not: removing Pine Street's $55$ drops the
+        mean $3$ minutes and the median half a minute, and leaves the IQR at $5$. The mean and
+        SD use every \emph{value}; the median and IQR use only \emph{positions}.
+        \emph{Median and IQR resist; mean and SD do not.}
+  \item \textbf{Second misconception:} calling a point an outlier because it ``looks far.''
+        The test is the fence, not the eye: a $16$-minute delivery sits inside the lower fence
+        of $15.5$ (problem~7); Elm Park's \$40 bike sits inside its fence of \$30 (HW~2).
+  \item Each section of a boxplot holds about a quarter of the data; a long whisker means
+        spread-out values, not more of them.
+  \item A cumulative relative frequency graph is read \emph{across then down}: the value at
+        $p\%$ is the $p$th percentile, so $Q_1$, the median, and $Q_3$ are the $25$th, $50$th,
+        and $75$th.
+  \item The choice of summary is a claim about the data: with outliers or strong skew, the
+        mean describes no typical case, so report the median and IQR (PS.DS.2d).
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Five-number summary & Minimum, $Q_1$, median, $Q_3$, maximum (Lesson~2.2). \\
+Boxplot & A graph of the five-number summary: a box from $Q_1$ to $Q_3$ with a line at the
+       median, whiskers out to the extremes. Each of the four sections holds about $25\%$. \\
+Outlier ($1.5 \times$ IQR rule) & A value below $Q_1 - 1.5 \times \text{IQR}$ or above
+       $Q_3 + 1.5 \times \text{IQR}$ --- the \textbf{lower} and \textbf{upper fences}. \\
+Modified boxplot & A boxplot that plots each outlier as its own dot; the whisker stops at the
+       most extreme value that is not an outlier. \\
+Cumulative relative frequency graph & Plots the percent of the data at or below each value
+       (an \emph{ogive}). Read across from $25\%$, $50\%$, $75\%$ for $Q_1$, median, $Q_3$. \\
+Percentile & The $p$th percentile is the value with $p\%$ of the data at or below it. \\
+Resistant & A summary that one extreme value barely moves. Median and IQR: resistant. Mean and
+       standard deviation: not. \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 (Unit 2 on; 2026-09-29) — I do ~25 of the 45,
+% Guided Practice ~20; the debrief is the spoken cold check; the homework is assigned, not started.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Order Pine Street's ten Friday deliveries; the median, $Q_1$, $Q_3$, IQR; three
+  counts as percents of $40$ --- silent & Debrief item~2 aloud; write
+  \emph{$Q_1 = 23$, median $25.5$, $Q_3 = 28$, IQR $5$} on the board and leave it up all
+  period \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; vote on the
+  hook; work rows 1--4 (problems 1--18) with the pen in their hand; then the Guided Practice
+  row, \emph{Shelter Stays} (19--22), together & \textbf{I do / we do, row by row}: read the
+  definition, mark up the display, work 1, 5, 9, 13; the class works the rest (25) $\to$
+  \textbf{we do} Guided Practice 19--22 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put the with/without board back
+  up and have a student say the sentence; then the cold check \\
+Close \& Assign & 5 & Write down the homework, due date, and first item & Announce the
+  homework and its form (packet), 12 points, due after two study halls; preview Lesson~2.4 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Order ten delivery times; the median ($25.5$). \textbf{Spirals} to
+            Lesson~2.2 --- and it is the list the hook prints in order, and the median problem~14
+            compares to $25$.
+      \item \textbf{2.} $Q_1 = 23$, $Q_3 = 28$, IQR $= 5$ by the halves method. \textbf{Seeds:}
+            the boxplot in row~1 (problem~1 reads these back) and the fences in row~2
+            (problem~5 starts from them).
+      \item \textbf{3.} $10$, $20$, $30$ of $40$ as $25\%$, $50\%$, $75\%$. \textbf{Seeds:} the
+            cumulative relative frequency graph in row~3 --- those are its three quartile
+            points.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~2 aloud} and leave the four numbers on the board all period;
+            rows 1, 2, and~4 all hang on them.
+      \item Item~2 is the tell. Any $Q_1$ other than $23$ (usually $22$ or $22.5$) means the
+            halves were split wrong --- with ten values each half is five, and $Q_1$ is its
+            middle value. Fix it here, once, with the halves on the board.
+      \item Item~1's \emph{unsorted} list is deliberate: a student who takes the middle of the
+            raw list (``$55$ and $27$'') has not ordered. Say so, briefly.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``Pine Street Pizza's ten Friday deliveries: $20, 22, 23, 24, 25, 26, 27, 28, 30, 55$.
+The $55$ was a flat tire. The manager throws it out.''} \textbf{Ask: which number drops more
+--- the mean or the median --- or do they drop about the same?} Students circle one and write a
+line of reason \emph{before} anyone speaks; then take the hand vote and write the three-way
+split on the board. Expect a large ``about the same'' pile --- one value left, so everything
+shifts --- and a few who guess the median ``because it's the middle.''
+\textbf{Do not settle it.} Say only that the answer is problem~17, in the \emph{Resistance}
+row, and that they will vote again there. The vote is what makes the crux land: students have
+to have committed to \emph{every summary moves the same} before the computation takes it away.
+\end{skillbox}
 
+\boxguard
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, assigned at the
+close. The notes are \textbf{one Main Ideas / Notes table}: four instruction rows (problems
+1--18), then the Guided Practice row (19--22). \textbf{The rhythm in every row is the same}:
+read the definition aloud, mark up the display, work the first problem of the grid yourself,
+then hand the rest to the room with the pen in their hand. The vocabulary box on page~1 is
+filled \emph{as each term is named}, never in advance. There are no blanks in the notes ---
+answers go in each problem's own space and in the \emph{labelboxes} under the displays.
 \begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Boxplot (problems 1--4), 5 min.} Read the definition --- including the
+parenthetical halves rule, the only place it is printed. Point at the four sections of the
+Friday boxplot and fill the labelboxes: $25\%$ each, $50\%$ in the box. Work problem~1 yourself
+(the warm-up's numbers, read back off the picture). Problem~2 is the ``long whisker holds more''
+reflex --- nine times as long, the same quarter of the data. Problem~4 is \emph{finishing marks
+on a printed axis}, not a sketch: box $22$--$27$, line at $24$, whiskers to $18$ and~$33$.
+
+\emph{Row 2, Outliers (problems 5--8), 6 min.} Read the four steps; name the dashed lines
+(\emph{fences}) and the dot (\emph{outlier}). Work problem~5 live: IQR $5$, step $7.5$, fences
+$15.5$ and $35.5$. \textbf{Take problem~7 as a hand vote before anyone writes}: a $16$-minute
+delivery that \emph{looks} far. Most say outlier; the fence says $16 > 15.5$. That is the
+secondary misconception, and it is settled by arithmetic, not by you. Problem~8 is why the
+modified whisker stops at $30$.
+
+\emph{Row 3, Cumulative Graph (problems 9--12), 5 min.} Read the definition; trace
+\emph{across from $50\%$, then down} with your finger and fill the labelbox ($25$ minutes).
+Work problem~9 ($Q_1 = 20$, $Q_3 = 30$, IQR $10$). Problems 10--12 are percentile language:
+$35$ minutes is the $90$th percentile, so $10\%$ of $40 = 4$ free pizzas; Tomas's $30$ minutes
+is the $75$th.
+
+\textbf{Row 4, Resistance (problems 13--18) --- this row is the lesson}, 9 min. Put the two dot
+plots up. Work problem~13 live (mean $28 \to 25$); the class does 14 (median $25.5 \to 25$) and
+15 (IQR $5 \to 5$, with the halves printed for them); 16 hands them the SDs ($9.9 \to 3.1$) to
+sort. \textbf{Then re-take the hook vote at problem~17 before you say anything} --- the numbers
+are on their page now. Land the printed box word by word: \emph{the median and IQR are
+resistant; the mean and standard deviation are not.} Problem~18 is the decision the unit
+cares about: the ad's ``average $28$'' describes no typical Friday delivery.
 
 \columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Shelter Stays} (problems 19--22)
+--- the same moves the homework will ask alone, on a shelter instead of a pizza shop, with an
+\emph{even} count so the halves split cleanly. \textbf{Students hold the pen; you hold the
+questions.} Problem~19 goes on them cold (five-number summary $2, 4, 6.5, 10, 37$; IQR $6$).
+Problem~20: fences $-5$ and $19$ --- a negative lower fence is fine, it just means no low
+outliers; the whisker stops at $15$. \textbf{Problem~21 is the crux transferred}: take a hand
+count on \emph{mean or median} before anyone computes, then mean $10 \to 7$, median
+$6.5 \to 6$. Problem~22 is the report: the flyer's ``$10$ days on average'' should be the
+median, $6.5$ days, with the IQR, $6$ days.
+
+Circulate during Guided Practice and demand the reason, not the word:
 \begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
+  \item \textbf{Problem 19:} ``Show me your two halves. Where did the median go?'' (Even count:
+        the halves are the lower five and the upper five.)
+  \item \textbf{Problem 20:} ``Is $15$ an outlier? It's far from $10$.'' Make them say the fence.
+  \item \textbf{Problem 21:} ``Why did the median barely move when you threw out the biggest
+        number?'' A student who says ``it did move the same'' has not left the hook vote.
+  \item \textbf{Problem 22:} ``How many of the ten dogs waited $7$ days or fewer? Then is $10$
+        a typical wait?'' (Six of ten.)
 \end{itemize}
-While circulating, pick the group work to display in the debrief.
+While circulating, pick the papers for the debrief --- one problem~21 that computed both and
+said \emph{the mean moved more}, and one that moved both by the same amount. \textbf{This
+circulation is your only formative read} --- the homework is not started in class.
 \end{multicols}
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in. \textbf{Five minutes: one board item and the cold check, nothing more.}
 \begin{multicols}{2}
-\begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
-\end{enumerate}
-\columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{The board item.} Put the with/without table back up --- mean $28 \to 25$, median
+$25.5 \to 25$, IQR $5 \to 5$, SD $9.9 \to 3.1$ --- and have a student say the sentence:
+\emph{the median and IQR are resistant; the mean and SD are not}. Then ask the one follow-up
+that names the reason: \emph{``What does the mean use that the median doesn't?''} (The value
+$55$ itself; the median only uses the middle position.) Hold up the two problem~21 papers you
+picked only if there is time --- the cold check comes first.
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\columnbreak
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Ten quiz scores have a
+mean of $78$ and a median of $81$. The teacher finds one score was typed as $8$ instead of
+$80$ and fixes it. Which changes more --- the mean or the median?''} Hands down, thirty seconds
+of think time, then cold-call three students. Correct answer: \textbf{the mean} --- it rises
+$72 \div 10 = 7.2$ points, to $85.2$; the median stays about $81$, because fixing the lowest
+score does not change the middle. \emph{This replaces the exit ticket.}
+
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} the mean, with the
+reason (it uses every value); \textbf{(b)} the mean, no reason, or ``the median doesn't change''
+with no why; \textbf{(c)} ``both change the same'' --- the misconception survived. \textbf{If
+pile (c) runs past a third of the room, open Lesson~2.4 by re-running problems 13--17}, and say
+so plainly.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{Elm Park Bike Shop} (eleven used bikes, \$40 to \$900 --- an \emph{odd}
+count, so the halves rule is exercised the other way from the notes): \textbf{1} the
+five-number summary, with the halves shown (\emph{the core procedure}); \textbf{2} the fences
+($30$ and $270$), the outlier (\$900), and whether the \$40 bike that ``looks far'' is one (it
+is not --- the \emph{secondary misconception}); \textbf{3} the \textbf{contrast pair}: mean and
+median with and without the \$900 bike (\$210 $\to$ \$141 against \$150 $\to$ \$145);
+\textbf{4} \emph{the crux head-on}: a classmate's claim that the median drops as much as the
+mean, then naming which summaries resist (IQR \$60 $\to$ \$60, $s$ \$233 $\to$ \$46);
+\textbf{5} interpret a cumulative relative frequency graph of the season's $40$ bikes (median
+\$150, $90\%$ at or below \$250, \$200 is the $75$th percentile); \textbf{6} \emph{the spiral}
+to Lesson~2.2 --- the range, \$860 $\to$ \$160, is not resistant, so report the IQR.
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points ---
+2 per item. \textbf{Item~4 is where the misconception shows}; item~3 is where it first surfaces.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+Desmos Classroom can draw a boxplot and compute a five-number summary, but it will not make a
+student explain why the median resisted the \$900 bike or check a fence against a point that
+``looks far'' --- the two items this lesson exists for --- so \textbf{2.3 is a packet night}.
+Say so aloud at Close \& Assign.
+
+\textbf{Preview of Lesson~2.4.} The spiral box ends on two boxplots on one axis: Elm Park beside
+another shop. Do not draw it here --- it is 2.4's opening.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 2 core idea:} a summary is a claim about the
+data, and the right one depends on the data's shape. \textit{Standards covered:} PS.DS.1a
+(boxplots and cumulative relative frequency graphs), PS.DS.2c (the $1.5 \times \text{IQR}$
+outlier rule), PS.DS.2d (the influence of outliers --- resistance). \textit{Spirals forward
+to:} parallel boxplots and comparing distributions (2.4, PS.DS.1a), and the choice of center
+and spread every data project in the course must defend. \textit{Reaches back to:} Lesson~2.2's
+mean, median, quartiles, IQR, range, and standard deviation, and Algebra~1 percent reasoning.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{``The outlier moves every summary the same''} (problems 17--18, GP~21--22,
+        HW~3--4 --- the target misconception). Probe: \emph{``Which of the ten values does the
+        median actually use? Did the $55$ change which value is in the middle?''}
+  \item \textbf{``It looks far, so it's an outlier''} (problem~7, GP~20, HW~2 --- the second
+        misconception). Probe: \emph{``What is the fence? Which side of it is the point on?''}
+  \item \textbf{The modified whisker drawn to the outlier} (problem~8, GP~20, HW~2). Probe:
+        \emph{``The whisker reaches the biggest value that is \emph{not} an outlier. Which one
+        is that?''}
+  \item \textbf{A long whisker holds more data} (problem~2). Probe: \emph{``How many deliveries
+        are in the right whisker? In the left?''}
+  \item \textbf{The halves done wrong} (warm-up~2, GP~19, HW~1): the median put into a half when
+        $n$ is odd, or the list never sorted. Probe: \emph{``Show me your lower half. How many
+        values are in it?''}
+  \item \textbf{The cumulative graph read down-then-across, or the percent read as a time}
+        (problems 9--12, HW~5). Probe: \emph{``Start on the percent axis. Across to the curve ---
+        then where?''}
+  \item \textbf{The SD called resistant ``because it's spread, like the IQR''} (problem~16,
+        HW~4). Probe: \emph{``Does the SD use the $55$ in its arithmetic?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me a data set from this school where the mean would mislead.''}
+\quad \emph{``Name a summary from Lesson~2.2 that is \emph{not} resistant besides the mean.''}
+(The range, and the SD.)
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{Launch the homework --- it is assigned now and done outside class, not started here.}
+Say the form (\textbf{packet pages}, pages after the notes), the points (\textbf{12}, 2 per
+item), and the due date (\textbf{the start of the first class after two study halls}); point
+out that the \emph{Keep in Mind} box on the cover is the page to flip back to. Tell them to do
+\textbf{item~1 first} --- every later item leans on its quartiles --- and that \textbf{item~4 is
+the one you will read first}: a student who says the median drops as much as the mean has
+learned the words and not the rule. Then close on what changed: \emph{``You walked in able to
+compute a median and a mean. You walk out knowing that one flat tire moves the mean three
+minutes and the median half a minute --- and that the fence, not your eye, decides what an
+outlier is.''} \textbf{Preview:} Lesson~2.4, \emph{Comparing Distributions} --- two boxplots
+on one axis, and a claim about which group is ``faster'' or ``cheaper'' that you will have to
+defend with the resistant summaries.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% TEACHERNOTES: teacher prose lives HERE, never in a _key. No note for the debrief or the
+% homework launch — both are fully specified in their own boxes above.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. This is Lesson~2.2's arithmetic on the exact numbers the notes open
+with --- say so, so nobody thinks they are being retested. \textbf{Item~2 is the one to read
+while collecting}: the halves method is the single most common error of the unit, and
+everything in rows 1, 2, and~4 is built on $Q_1 = 23$ and $Q_3 = 28$. Any other $Q_1$ means
+the halves were split wrong: ten values make two halves of five, and each quartile is the
+middle of its five. Put the ordered list and the two halves on the board, write
+$Q_1 = 23$, median $25.5$, $Q_3 = 28$, IQR $5$ beside them, and \textbf{leave them up all
+period}. Item~3's three percents are the three dots of row~3's graph at $25\%$, $50\%$, $75\%$;
+point that out when you get there, not now.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief and 5 to
+assign.} It is one table, and every row runs the same way: you read the definition, mark up the
+display, and work the first problem of the grid (1, 5, 9, 13); the class works the rest with
+the pen in their hand. Rows 1--3 must move --- five, six, and five minutes. \textbf{Take the
+hand count on problem~7 before anyone writes}; if they compute first, the ``looks far'' trap is
+gone. Problem~4 finishes a boxplot on a printed axis --- walk the room once to check that the
+box spans $22$ to $27$, not $18$ to $33$.
+
+\textbf{Spend the time in row~4, \emph{Resistance}}, which carries the misconception --- nine
+minutes. Work problem~13 live, give 14 and~15 to the room (the halves for 15 are printed so it
+stays quick), hand them the SDs in 16 to sort, and \textbf{re-take the hook vote at problem~17
+before you say anything}. Let the room see its own numbers disagree with its vote: the mean
+moved six times as far as the median. Only then read the printed box. Do not resolve it by
+restating the definition; put \emph{``$3$ minutes''} and \emph{``$0.5$ minute''} side by side
+on the board and ask what the mean uses that the median does not.
+
+\textbf{Guided Practice (19--22) is where the pen changes hands.} \emph{Shelter Stays} runs
+the four moves the homework asks alone --- summary, fences, with and without, the report ---
+on a shelter instead of a pizza shop. Problem~21 is the crux transferred; a student who moves
+both summaries by the same amount has not left the hook vote. \textbf{If time is short,
+protect 21 and~22's verdict}; problem~20's whisker question can be said aloud.
+
+\textbf{There is no independent practice set on this page, and the homework is not started in
+class} (the Unit~2 period). Your formative read is the Guided Practice circulation and the
+debrief's cold check. If the ``both move the same'' pile is more than a third of the room,
+\textbf{open Lesson~2.4 by re-running problems 13--17}, and say so plainly.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls; assigned at Close \& Assign, done outside class.} Score items 1, 3, and~5 for
+correctness (one point per half; accept \$145 or ``halfway between \$140 and \$150'' for the
+median without the \$900 bike). Score items 2, 4, and~6 for the \emph{reason}: item~2 needs a
+fence named for \emph{both} the \$900 and the \$40 bike; item~4 needs the two changes compared
+(\$69 against \$5) \emph{and} the four summaries sorted; item~6 needs ``it uses the \$900
+itself'' or equivalent, not just ``not resistant.'' \textbf{Read item~4 first, and sort it into
+three piles} --- the median barely moved, with a reason (ready); the right verdict, no reason
+(ready, needs the language); ``she is right'' or both summaries moved equally (the misconception
+survived). If more than a third land in the last pile, reopen the Pine Street with/without
+table in the Lesson~2.4 warm-up debrief rather than letting it ride.
+
+\textbf{Packet is the call for 2.3.} Desmos draws the boxplot and nothing else in this set; do
+not swap it in. Item~5 is the only graph-reading item --- if it comes back weak, start 2.4's
+warm-up with one ``across, then down'' read.
 \end{teachernote}
 \end{document}

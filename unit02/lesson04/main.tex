@@ -1,16 +1,19 @@
-%! Measures of Center — Unit 2, Lesson 2.4 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Comparing Distributions — Unit 2, Lesson 2.4 — Lesson Plan
+% GRADUAL-RELEASE plan, Unit 2 timing 5 / 45 / 5 / 5 (user decision 2026-09-29): warm-up /
+% guided notes and practice / spoken debrief / close and ASSIGN the homework (not started in
+% class). The guided notes carry the release ROW BY ROW in one Main Ideas / Notes table: I do /
+% we do in rows 1-4 (problems 1-16, ~25 min) -> we do the Guided Practice row (problems 17-20,
+% ~20 min). THERE IS NO INDEPENDENT PRACTICE SET IN THE NOTES — the homework is the individual
+% practice. Teacher-facing. Breakable boxes are `skillbox` with a \boxguard ahead; the two
+% tabularx boxes are `fixedskillbox` (never splits). No group activity, no exit ticket.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 2: Describing One Variable \quad}
-\newcommand{\LessonNumberName}{Lesson 2.4: Measures of Center}
+\newcommand{\LessonNumberName}{Lesson 2.4: Comparing Distributions}
 
 \begin{document}
 \begin{center}
@@ -20,170 +23,393 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will read two groups off a back-to-back stemplot,
+    parallel dot plots, parallel boxplots, and calculator output on one common scale; write a
+    comparison \emph{in context} that uses comparative words for shape, outliers, center, and
+    spread; choose median and IQR or mean and SD to fit the shape; and justify which group is
+    more consistent when the two centers are the same.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.DS.3a, PS.DS.3b \quad$\cdot$\quad carries forward Lessons 2.1--2.3
+    (displays and SOCS; mean, median, SD, IQR; boxplots, $1.5\cdot$IQR fences, resistance)
+    \quad$\cdot$\quad the last lesson before the Unit~2 review and test
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} There is no group
+    activity. The notes name the vocabulary as they teach it and deliver the instruction
+    \textbf{row by row in one Main Ideas / Notes table} (four rows, problems 1--16: you read
+    the definition, mark up the display, and work the first problem of each grid; the class
+    works the rest); the Guided Practice row (problems 17--20) is worked together with students
+    holding the pen. \textbf{The homework is the individual practice} --- assigned at Close \&
+    Assign and done outside class, not started in class. The debrief is a \emph{spoken} cold
+    check and one board item; there is no exit ticket.
+    \\[2pt]
+    \textbf{Conventions on the page:} quartiles are the medians of each half, leaving out the
+    overall median when $n$ is odd (the Lesson~2.3 method, restated in row~2); Sx on the
+    calculator screens is the \emph{sample} standard deviation (divide by $n-1$).
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can read a \textbf{back-to-back stemplot}, \textbf{parallel dot plots}, and
+        \textbf{parallel boxplots}, and I compare groups only on a \textbf{common scale}.
+        \hfill \textit{PS.DS.3a}
+  \item I can read two groups' calculator output (1-Var Stats) and use it to compare them.
+        \hfill \textit{PS.DS.3a}
+  \item I can write a \textbf{comparison} in context with comparative words for shape,
+        outliers, center, and spread. \hfill \textit{PS.DS.3b}
+  \item I can choose median and IQR (skewed or outliers) or mean and SD (roughly symmetric,
+        no outliers) to fit the shape. \hfill \textit{PS.DS.3b}
+  \item I can decide which group is more \textbf{consistent} when the centers match, and
+        explain why the spread decides. \hfill \textit{PS.DS.3b}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} that comparing distributions means comparing
+        \emph{centers only} --- ``same median, so it doesn't matter'' --- or writing two
+        separate descriptions side by side with no comparative word. \textbf{The rule that
+        replaces it:} compare all four features with comparative words, in context; when the
+        centers match, \emph{the spread decides}, and the group with less spread is more
+        consistent.
+  \item \textbf{Second misconception:} comparing two displays drawn on \emph{different}
+        scales. A box that looks wider on a stretched axis can hold fewer minutes. Parallel
+        displays exist so that both groups share one scale (PS.DS.3a).
+  \item The measures follow the shape: an outlier or a long tail pulls the mean and SD, so
+        median and IQR carry the comparison; mean and SD are the right pair only when both
+        groups are roughly symmetric with no outliers.
+  \item ``Better'' depends on the question --- \emph{within 40 minutes} favors the consistent
+        shop, \emph{under 25 minutes} favors the spread-out one --- but either answer is read
+        off the spread, never off the center.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Back-to-back stemplot & Two groups share one column of stems; one group's leaves go left, the
+       other's go right. Every leaf is read with its stem, on either side. \\
+Parallel dot plots / boxplots & Dot plots or boxplots of two or more groups stacked over one
+       common scale, so they can be compared directly. \\
+Common scale & One number line for every group, so equal distances mean equal amounts. \\
+Comparison & A statement that uses comparative words (\emph{greater than, less than, about the
+       same as}) for shape, outliers, center, and spread, in context. Two separate
+       descriptions are not a comparison. \\
+Consistent & Having less spread (smaller IQR or SD): the values stay close together. \\
+Resistant measures & Median and IQR --- not pulled by outliers or a long tail; use them when
+       either group is skewed or has an outlier (Lesson~2.3). \\
+Sample standard deviation & Sx on the calculator --- the typical distance of values from the
+       mean, dividing by $n-1$ (Lesson~2.2). \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 (Unit 2 on; 2026-09-29) — I do ~25 of the 45,
+% Guided Practice ~20; the debrief is the spoken cold check; the homework is assigned, not started.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Tony's quartiles, IQR, and fence; two tiny lists with the same mean --- silent &
+  Debrief item~3 aloud; write ``same mean, different spread'' on the board and leave it up all
+  period \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; work rows 1--4
+  (problems 1--16) with the pen in their hand; then the Guided Practice row, \emph{Paper
+  Airplanes} (17--20), together & \textbf{I do / we do, row by row}: read the definition, mark
+  up the display, work problems 1, 5, 10, 14; the class works the rest (25) $\to$ \textbf{we
+  do} Guided Practice 17--20 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put problem~19 back on the
+  board (8 of 10 vs.\ 4 of 10); ask the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~6 as the first item &
+  Announce the homework and its form (packet), preview the Unit~2 review \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Tony's $Q_1 = 22$, median $25$, $Q_3 = 30$, IQR $8$. \textbf{Spirals}
+            to Lesson~2.3 --- and they are the numbers row~1's stemplot and row~2's boxplot
+            are built on (problems 2 and~6).
+      \item \textbf{2.} Upper fence $30 + 1.5(8) = 42$, so $44$ is an outlier. \textbf{Seeds:}
+            the dot at $44$ in row~2's boxplot, problem~7's lower-fence check on Rosa's, and
+            homework item~2.
+      \item \textbf{3.} Lists $9, 10, 11$ and $2, 10, 18$: both means $10$, ranges $2$ and
+            $16$. \textbf{Seeds:} the crux --- row~4 (\emph{Different Spread}) is this
+            sentence on real data.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud} and write a student's sentence on the board ---
+            \emph{same mean, different spread}. Leave it up all period; row~4 points back to
+            it.
+      \item Item~3's sentence is the tell. A student who writes \emph{``they are the
+            same''} because the means match has walked in with today's misconception ---
+            note who, and cold-call them at problem~14.
+      \item Items 1--2 are Lesson~2.3's arithmetic --- say so, so nobody thinks they are
+            being retested. Do not let them expand.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``Rosa's Pizza and Slice House both advertise a median delivery time of $35$
+minutes. Your party starts in $40$ minutes.''} \textbf{Ask: which shop do you call?}
+Students circle \emph{Rosa's}, \emph{Slice House}, or \emph{it doesn't matter --- same
+median} and write one line of reason \emph{before} anyone speaks; then take the hand vote and
+write the split on the board. Most rooms vote \emph{it doesn't matter}. \textbf{Do not settle
+it.} Say only that the answer is problem~14, in the \emph{Different Spread} row, and that they
+will vote again there. The vote is what makes the crux land: students have to have committed
+to \emph{same center, same shop} before the notes take it away.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, assigned at the
+close and done outside class. The notes are \textbf{one Main Ideas / Notes table}: four
+instruction rows (problems 1--16), then the Guided Practice row (17--20). \textbf{The rhythm
+in every row is the same}: read the definition aloud, mark up the display, work the first
+problem of the grid yourself, then hand the rest to the room. The vocabulary box on page~1 is
+filled \emph{as each term is named}. The only blanks are the eight cells of the comparison
+table (problem~9); every other answer is written in a problem's own space.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Back-to-Back Stemplots (problems 1--4).} Tony's warm-up times are the left
+side. Name the \emph{back-to-back stemplot}, read the key together ($25$ and $24$), then work
+problem~1 yourself (fastest and slowest). The class does 2--4. \textbf{Problem~3 is the
+trap}: the left leaves read outward, and a student who says $81$ has read leaf-then-stem.
+Five minutes.
+
+\emph{Row 2, Parallel Displays (problems 5--8).} The same two shops as parallel dot plots and
+parallel boxplots over one axis; students label the two pairs. Name \emph{common scale} as you
+run a finger up a gridline. Work problem~5 yourself (Rosa's box sits to the right --- longer
+deliveries). The class does 6--7. \textbf{Problem~8 is the second trap}: Mia's separate
+scales make Rosa's box look wider when its IQR is smaller. Six minutes.
+
+\emph{Row 3, Compare in Context (problems 9--12).} Read the definition of a
+\emph{comparison} and the measures-fit-the-shape sentence. Take problem~9's table from the
+class quickly (the word bank carries it), then read the frame aloud and work problem~10
+(centers) yourself. The class does 11--12; the \emph{why median and IQR} justification is
+said aloud from the frame, and problem~17 makes students carry it. Six minutes.
+
+\emph{Row 4, Different Spread (problems 13--16) --- the crux.} Back to the hook's two shops
+on one scale, medians marked. Work problem~13 live (both medians $35$; IQRs $6$ and $23$),
+then \textbf{re-take the hook vote at problem~14 before anyone counts}. Then count: Rosa's
+$11$ of $11$ within $40$ minutes, Slice House $7$ of $11$. Land the boxed sentence word by
+word: \emph{when the centers match, the spread decides}. Problem~15 is the counterweight
+(under $25$ minutes favors Slice House --- still a spread answer); problem~16 is Dev's two
+lists, rewritten as a comparison. Eight minutes.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Paper Airplanes} (problems
+17--20) --- a fresh context, symmetric data, and pre-made calculator output, so the
+\emph{mean and SD} branch finally gets used. \textbf{Students hold the pen; you hold the
+questions.} Problem~17 decides the measures (both symmetric, no outliers $\to$ mean and SD).
+Problem~18 compares with comparative words (same mean $30$ ft; SD $7.26$ vs.\ $2.58$ ft ---
+almost three times). \textbf{Problem~19 is the crux transferred}: Kai says the same mean means
+it doesn't matter. Take a hand count on Kai before anyone counts the zone; then Design A
+lands $8$ of $10$ in the $27$--$33$ ft zone, Design B $4$ of $10$. Problem~20 is the full
+comparison sentence the homework will ask for.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 17:} ``What would make you switch to median and IQR?'' (A tail or an
+        outlier --- neither is here.)
+  \item \textbf{Problem 18:} ``You wrote two numbers. Where is the comparing word?''
+  \item \textbf{Problem 19:} ``The means match. So what does decide it?'' A student who sides
+        with Kai has not left the hook vote.
+  \item \textbf{Problem 20:} ``Read me your sentence. Could a coach act on it?''
+\end{itemize}
+While circulating, pick the one paper to put up in the debrief --- a problem~19 that counted
+the zone and said \emph{spread decides}. \textbf{This circulation is your formative read} ---
+the homework is not started in class.
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: problem~19.} Put the paper you picked up (Design A $8$ of
+        $10$ in the zone, Design B $4$ of $10$) and make a student say the sentence: \emph{same
+        center, and the spread decides --- the design with less spread is more consistent.}
+        Point back at the warm-up's line on the board: \emph{same mean, different spread}.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Two classes took the
+same $20$-point quiz. Both class means are $15$. Class~1's standard deviation is $1.2$
+points; Class~2's is $4.5$. Maya says the classes did the same. Is she right? Say it as one
+comparison sentence.''} Hands down, thirty seconds of think time, then cold-call three
+students. Correct answer: \textbf{no} --- the centers are the same ($15$), but Class~2's SD
+($4.5$) is much greater than Class~1's ($1.2$), so Class~1's scores are far more consistent.
+\emph{This replaces the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} said \emph{no},
+named the same center, and compared the spreads with a comparative word; \textbf{(b)} said
+\emph{no} but gave two separate descriptions (``Class~1 is $1.2$, Class~2 is $4.5$'');
+\textbf{(c)} agreed with Maya --- centers only. \textbf{If pile (c) runs past a third of the
+room, open the Unit~2 review by re-running row~4 (problems 13--16)}, and say so plainly.
+
+\textbf{Five minutes: item~1 and the cold check only.} Anything else waits for the review.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{Volt vs.\ Nova phone batteries} ($11$ phones each; both medians $12$
+hours): \textbf{1} each brand's five-number summary and IQR, and Nova's IQR in context (the
+core procedure); \textbf{2} is Volt's $6$-hour phone an outlier --- the lower fence $11 -
+1.5(2) = 8$; \textbf{3} Volt's mean with and without the $6$ ($11.7$ vs.\ $12.3$ hours, the
+median $12$ both ways) and which pair of measures fits --- \emph{the spiral item}, reaching
+back to Lessons 2.2--2.3, and the justification; \textbf{4} and \textbf{5} are the
+\textbf{contrast pair}: the same question with opposite needs --- at least $10$ hours favors
+Volt ($10$ of $11$ vs.\ $8$ of $11$), at least $16$ hours favors Nova ($3$ of $11$ vs.\ $0$)
+--- two brands with the \emph{same} median sending two buyers opposite ways; \textbf{6}
+Jordan's ``same median, so it doesn't matter'' --- \emph{the crux head-on}, answered with a
+written comparison.
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points --- 2
+per item. \textbf{Item~6 is where the misconception shows}: a student who agrees with Jordan,
+or who writes ``Volt: IQR 2; Nova: IQR 8'' with no comparing word, has not yet made the move.
+\textbf{Items 4--5 carry the second check} --- a student who answers both by the median has
+compared centers only.
+
+\textbf{Packet or Desmos --- decided here.} The packet pages are authored and are the default.
+The items this lesson exists for are \emph{written} comparisons and a buyer's decision, which
+the packet carries and a graphing activity does not, so \textbf{2.4 is a packet night}. Say so
+aloud at Close \& Assign.
+
+\textbf{Preview of the next class.} The Unit~2 review: every tool from 2.1--2.4 on one data
+set, then the Unit~2 test. Item~6 is test-style --- say so.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 2 core idea:} a distribution is described by
+its shape, outliers, center, and spread, and two distributions are compared on all four.
+\textit{Standards covered:} PS.DS.3a (back-to-back stemplots, parallel dot plots, parallel
+boxplots, with technology), PS.DS.3b (compare shape, center, spread, and unusual features in
+context). \textit{Spirals forward to:} the Unit~2 review and test, and every later lesson
+that compares two groups --- treatment against control in an experiment, one year against
+the next. \textit{Reaches back to:} Lesson~2.1's displays and SOCS, Lesson~2.2's mean,
+median, SD, and IQR, and Lesson~2.3's boxplots, fences, and resistance.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{``Same center, so it doesn't matter''} (the hook, problems 14 and~19, HW~4--6
+        --- the target misconception). Probe: \emph{``The medians match. So which of these
+        shops gets your pizza there on time --- and what number told you?''}
+  \item \textbf{Two descriptions, no comparison} (problems 10--12, 16, 18, 20; HW~6):
+        ``Tony's median is 25. Rosa's median is 35.'' Probe: \emph{``Put one word between those
+        two numbers that tells me which is bigger --- and what that means for a customer.''}
+  \item \textbf{Different scales} (problem~8): Mia's wider-looking box. Probe: \emph{``How many
+        minutes does that box cover? Put both on one number line.''}
+  \item \textbf{Leaf before stem on the left side} (problem~3): $81$ for $18$. Probe:
+        \emph{``Which digit is the stem? Read it first, on both sides.''}
+  \item \textbf{Mean and SD with an outlier} (row~3's frame, problem~17, HW~3): reporting Volt's mean of
+        $11.7$ as its center. Probe: \emph{``What happened to the mean when the $6$ left?
+        What happened to the median?''}
+  \item \textbf{A comparison with no context} (problems 18 and~20): ``B's SD is bigger.''
+        Probe: \emph{``Bigger SD of what, in what units --- and what does it mean for the
+        contest?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me two groups at this school with about the same center and
+very different spreads.''} \quad \emph{``When is the group with MORE spread the better
+choice?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{The homework is assigned here and done outside class --- it is not started in
+class.} Hand the launch: six items on Volt vs.\ Nova phone batteries, packet pages, scored out
+of 12 (2 per item), due at the start of the first class after two study halls. Point out that
+the \emph{Keep in Mind} box on the cover and rows 3--4 of the notes are the pages to flip back
+to. \textbf{Tell students to do item~6 first if they are short on time} --- it is the item
+that shows whether row~4 landed --- and that items 4 and~5 are a pair: read both before
+answering either. Then close on what changed: \emph{``You walked in knowing how to find a
+median, an IQR, and a fence for one group. You walk out comparing two --- on one scale, with
+comparative words, on all four features --- and knowing that when two centers match, the
+spread decides.''} \textbf{Preview:} the Unit~2 review --- every tool from this unit on one
+data set --- then the test.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key. No note for the debrief — it is fully
+% specified in its own box above.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. Items 1 and~2 are Lesson~2.3's arithmetic on the same $11$ Tony's
+times the notes open with --- say so, so nobody thinks they are being retested, and so row~1
+can move fast (students already know Tony's median is $25$). \textbf{Item~3 is the one to read
+while collecting}: students who write \emph{``same mean, but B is more spread out''} have made
+today's distinction without the vocabulary. Students who write \emph{``they are the same''}
+because the means match have walked in with the target misconception --- note two of them and
+cold-call them at problem~14. Write a student's sentence on the board --- \emph{same mean,
+different spread} --- and \textbf{leave it up all period}; the debrief points back at it.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief and 5 to
+assign the homework.} It is one table, and every row runs the same way: you read the
+definition, mark up the display, and work the first problem of the grid (1, 5, 10, 14); the
+class works the rest with the pen in their hand. Rows 1 and~2 must move --- five and six
+minutes. Tony's and Rosa's numbers are the same across rows 1--3, so students are reading one
+data set three ways, not learning three data sets.
+
+\textbf{Spend the time in row~4, \emph{Different Spread}}, which carries the misconception.
+Work problem~13 live, then \textbf{re-take the hook vote at problem~14 before anyone counts.}
+If students count first, the vote is empty; if they commit to \emph{it doesn't matter} and
+\emph{then} count $11$ of $11$ against $7$ of $11$, the rule arrives as the answer to a
+question they already have. Problem~15 is the counterweight and keeps the rule honest: more
+spread is sometimes what you want --- and it is \emph{still} the spread that answers.
+\textbf{Do not skip problem~16}: Dev's two lists are the exact form the misconception takes in
+writing, and the rewrite is the sentence the homework and the test ask for.
+
+\textbf{Guided Practice (17--20) is where the pen changes hands.} \emph{Paper Airplanes} uses
+symmetric data and calculator output, so it is the first place the mean-and-SD branch of row~3
+is used. Problem~19 is the crux transferred: take a hand count on Kai before anyone counts the
+zone. If time is short, protect 17, 19, and 20 --- problem~18's comparison can be said aloud.
+
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice}, assigned at the close and done outside class. Your
+formative read is the Guided Practice circulation plus the cold check; if the centers-only
+pile is more than a third of the room, \textbf{open the Unit~2 review by re-running
+problems 13--16}, and say so plainly.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored, 12 points (2 per item), due at the start of the first class after two study
+halls; assigned at the close, not started in class.} Score items 1--3 for correctness (item~1:
+all twelve cells right for 2, most right for 1; item~2 needs the fence \emph{and} the verdict;
+item~3 needs both means and a reason naming the outlier). Score items 4--6 for the
+\emph{reason}: in 4 and~5 the counts plus the brand; in 6, full credit only for a sentence that
+names the same center \emph{and} compares the spreads with a comparative word in context.
+\textbf{Item~6 is the one to read first.} Sort it into three piles --- compared the spreads in
+context (ready); named the spreads but as two separate descriptions (ready, needs the
+language); agreed with Jordan or compared medians only (the misconception survived). If more
+than a third land in the last pile, open the Unit~2 review with problems 13--16 before
+anything else. Items 4 and~5 are a diagnostic pair: a student who picks the same brand for
+both buyers is choosing by center.
+
+\textbf{Packet is the call for 2.4.} The review opens from item~6 --- put two anonymous
+answers from different piles side by side on the board.
 \end{teachernote}
 \end{document}
