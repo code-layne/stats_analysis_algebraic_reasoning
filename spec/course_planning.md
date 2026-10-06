@@ -1,6 +1,8 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-09-29 — **UNIT 2 STUDY GUIDE + PRACTICE (SAMPLE) TEST AND KEYS**
+**Last updated:** 2026-10-06 — **2.1 DAY 2 WARM-UP** (class stopped after notes row 3, Histogram, #12). New standalone `unit02/warmups/lesson01_day2{,_key}` (1 page each, own `warmups/Makefile` on the quiz01 model, merged into no packet): one fresh-data item per display (dot plot, stemplot, histogram) seeding row 4 Describe (mode/outlier, max − min, boundary rule + percent). Day 2 of 2.1 resumes at row 4.
+
+**Previous update:** 2026-09-29 — **UNIT 2 STUDY GUIDE + PRACTICE (SAMPLE) TEST AND KEYS**
 (`/lesson-planning i want to create a study guide and sample test and key for unit 2`).
 `unit02/review/study_guide` (4pp, new deliverable, self-contained `review/Makefile`, merged into
 no packet; **revised the same day to review only — no key, no fill-ins, no name line, not turned

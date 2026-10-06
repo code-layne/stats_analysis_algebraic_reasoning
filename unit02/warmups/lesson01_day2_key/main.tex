@@ -1,0 +1,118 @@
+%! Displaying and Describing Distributions — Unit 2, Lesson 2.1 — Warm-Up, Day 2 (Answer Key)
+% STANDALONE re-entry warm-up for the second day of 2.1, when the class stopped after row 3
+% (Histogram, problem 12). Merged into no packet — see ../Makefile. ONE PAGE, blank and key.
+% Three items, one per display taught on day 1, each on FRESH data from the same Fox Run class
+% (Ms. Ortiz, first period), so students read the display rather than recall yesterday's answers.
+% Each item also seeds row 4 (Describe), where day 2 picks up:
+%   1. Dot plot  — the most common value (center) and the one home far from the rest (outlier).
+%   2. Stemplot  — read with the key; shortest/longest and max - min (spread, range).
+%   3. Histogram — the boundary rule (exactly 4 hours goes in 4--6) and a percent from the bars.
+% THE DATA (n = 20 except the stemplot, n = 12):
+%   People living in your home, dot plot: 2:2 3:5 4:7 5:4 6:1 9:1 = 20. 5 or more: 4+1+1 = 6.
+%     Most common: 4 people (7 students). Far from the rest: 9.
+%   Minutes on homework, stemplot (key 2|5 = 25): 5 8 | 10 10 15 | 20 25 25 25 | 30 35 | 45 = 12.
+%     Shortest 5, longest 45, 45 - 5 = 40 minutes. 3|5 = one student, 35 minutes.
+%   Screen time yesterday (hours), histogram bins of 2: 0-2:3 2-4:6 4-6:5 6-8:4 8-10:2 = 20.
+%     6 or more: 4+2 = 6 -> 6/20 = 0.30 = 30%. Exactly 4 hours -> the 4--6 bar.
+% PAGE LOCKSTEP: the key differs only by saar-key, the header, \blank -> \ans,
+% \par\writeline -> \par\ansline; the work block is byte-identical.
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Handwriting room inside every \begin{work} block. Moves the blank and the
+% key together, so the two can never drift apart.
+\setlength{\workrowsep}{50pt}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.1}{Warm-Up --- Day 2 --- Answer Key}
+% NAMESTRIP: no \namedateperiod — the 2.1 packet cover already carries the name.
+
+\vspace{0.15in}
+
+\boxguard
+\begin{notesbox}{Spiral Review --- Read Each Display}
+\normalsize
+Yesterday we read a dot plot, a stemplot, and a histogram. Here is one of each --- new
+questions from Ms.~Ortiz's first-period class at Fox Run High.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=30pt, topsep=10pt]
+
+  \item \textbf{People living in your home} ($20$ students).\par\vspace{4pt}
+        \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}\centering
+        \begin{tikzpicture}
+          \draw[thick] (0.3,0) -- (7.7,0);
+          \foreach \x in {1,...,9} {
+            \draw ({(\x-1)*0.9+0.3},0.08) -- ({(\x-1)*0.9+0.3},-0.08);
+            \node[below, font=\small] at ({(\x-1)*0.9+0.3},-0.08) {\x};
+          }
+          \foreach \x/\n in {2/2, 3/5, 4/7, 5/4, 6/1, 9/1} {
+            \foreach \k in {1,...,\n} {
+              \fill[cerulean] ({(\x-1)*0.9+0.3},{\k*0.30}) circle (0.12);
+            }
+          }
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}\raggedright
+        How many students live with $5$ or more people? \ans{6}\par\vspace{10pt}
+        Most common home size? \ans{4 people}\par\vspace{10pt}
+        Which value sits far from the rest?\par\ans{9 people}
+        \end{minipage}
+
+  \item \textbf{Minutes on homework last night} ($12$ students).\par\vspace{4pt}
+        \begin{minipage}[t]{0.40\linewidth}\vspace{0pt}\centering
+        {\renewcommand{\arraystretch}{1.25}%
+        \begin{tabular}{r|l}
+        0 & 5\enspace 8 \\
+        1 & 0\enspace 0\enspace 5 \\
+        2 & 0\enspace 5\enspace 5\enspace 5 \\
+        3 & 0\enspace 5 \\
+        4 & 5 \\
+        \end{tabular}}\par\vspace{6pt}
+        \fbox{\textbf{Key:} $2 \mid 5 = 25$ minutes}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.56\linewidth}\vspace{0pt}\raggedright
+        Shortest: \ans{5 minutes}\quad Longest: \ans{45 minutes}\par\vspace{6pt}
+        How many minutes apart are they?
+        \begin{work}
+          45 - 5 = 40 \text{ minutes}
+        \end{work}
+        \vspace{0.5cm}
+        What does $3 \mid 5$ mean? Say it in context.
+        \par\ansline{One student spent 35 minutes.}
+        \end{minipage}
+
+  \item \textbf{Hours of screen time yesterday} ($20$ students).\par\vspace{4pt}
+        \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}\centering
+        \begin{tikzpicture}
+          \foreach \y in {1,...,6} {
+            \draw[linegray, very thin] (0,{\y*0.36}) -- (6.0,{\y*0.36});
+            \node[left, font=\scriptsize] at (0,{\y*0.36}) {\y};
+          }
+          \foreach \x/\n in {0/3, 1/6, 2/5, 3/4, 4/2} {
+            \fill[frostmid] ({\x*1.2},0) rectangle ({\x*1.2+1.2},{\n*0.36});
+            \draw[cerulean, thick] ({\x*1.2},0) rectangle ({\x*1.2+1.2},{\n*0.36});
+          }
+          \draw[thick] (0,0) -- (6.1,0);
+          \draw[thick] (0,0) -- (0,2.3);
+          \foreach \x/\lab in {0/0, 1/2, 2/4, 3/6, 4/8, 5/10} {
+            \node[below, font=\scriptsize] at ({\x*1.2},0) {\lab};
+          }
+          \node[font=\scriptsize] at (3.0,-0.55) {hours};
+          \node[rotate=90, font=\scriptsize] at (-0.6,1.1) {frequency};
+        \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}\raggedright
+        Ana had exactly $4$ hours. Which bar is she in?\par\ans{the 4 to 6 hour bar}\par\vspace{10pt}
+        What \textbf{percent} had $6$ hours or more?
+        \begin{work}
+          \dfrac{4 + 2}{20} = \dfrac{6}{20} = 30\%
+        \end{work}
+        \vspace{1.2cm}
+        \end{minipage}
+
+\end{enumerate}
+\end{notesbox}
+
+\end{document}
