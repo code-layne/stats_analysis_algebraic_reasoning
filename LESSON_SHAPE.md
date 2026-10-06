@@ -118,7 +118,7 @@ convert them by the recipe in `templates/lesson/components.md` when you touch th
   today works* block) → warm-up → **hook, dark frame, left unresolved** → **I-do divider** → two
   or three frames per notes section (the crux frame flagged `\sectionlabel[redacc]{}`) → **Guided
   Practice, a live surface left un-answered** → debrief with the cold check → **You do: the
-  homework** (Unit 2 on: assigned, not started — *You do: start the homework* in Unit 1) (context, item themes, the rule, the form — packet pages or a named Desmos activity,
+  homework** (Unit 2 on: assigned, not started — *You do: start the homework* in Unit 1) (context, item themes, the rule, the form — packet pages, a named Desmos activity, or named DeltaMath topics + the packet items turned in,
   due date, points) → close, dark frame.
 
 **There is no spoiler rule.** The vocabulary is taught, not discovered: the cover, the warm-up,
@@ -168,15 +168,23 @@ two numbered sections and a Guided Practice, **none of** `activity/`, `experienc
   per item (12 for six). Algebra 2 dropped homework entirely and AP
   Statistics keeps a separate unscored in-class practice set — **copy neither.** Scoring guidance
   goes in the plan's `\begin{teachernote}[Homework]`, never in the key.
-- **Packet or Desmos is a per-lesson teacher decision, made at Close & Assign.** The packet pages
-  are authored either way and are the default. **Desmos Classroom's coverage of this course's
-  standards is uneven** — stronger on function modeling and regression, thinner on inference and
-  study design — so it is checked lesson by lesson and never assumed. When a Desmos activity
-  carries the lesson's skills, it replaces the assignment and students keep the packet pages as a
-  worked reference. Nothing about what you author changes: the plan's Reinforcement box and the
-  deck's closing frame say which form the assignment takes (naming the specific Desmos activity
-  when that is the call); the cover row and its score cell never change. (Desmos replaced
-  DeltaMath as the override on 2026-08-31 — do not write DeltaMath anywhere.)
+- **The assignment's form is a per-lesson teacher decision, made at Close & Assign: packet,
+  Desmos, or DeltaMath + justifications.** The packet pages are authored every time and are the
+  default.
+  - **Desmos** — Desmos Classroom's coverage of this course's standards is uneven (stronger on
+    function modeling and regression, thinner on inference and study design), so it is checked
+    lesson by lesson and never assumed. When a Desmos activity carries the lesson's skills, it
+    replaces the assignment and students keep the packet pages as a worked reference.
+  - **DeltaMath + justifications** (user decision 2026-10-01; reverses the 2026-08-31 "no
+    DeltaMath" rule) — a DeltaMath assignment carries the homework's **computational** items,
+    and students **turn in the packet's interpretation and justification items** (the crux item
+    always among them), keeping the computational pages as a worked reference. DeltaMath grades
+    computation, not written reasons, so it never replaces the justify items. Scoring stays 12:
+    the turned-in items at 2 points each, the DeltaMath score scaled to the rest. Name the
+    DeltaMath topics and the turned-in item numbers.
+  Nothing about the student pages changes with the choice: the plan's Homework box and teacher
+  note and the deck's closing frame say which form the assignment takes; the cover row, its score
+  cell, and the homework's `remindbox` never change.
 - **Homework is due at the start of the first class after two study halls** — never "due next
   class" (user decision 2026-09-06, the same convention as the AP Statistics course). Write it that
   way on the homework's `remindbox`, the cover row, the plan's Homework box and teacher note, and
@@ -364,7 +372,7 @@ prompts, and which papers to collect for the debrief) → **Debrief — whole cl
 **cold check** with its correct answer — *this replaces the exit ticket*; the **formative read**
 into three piles and how the next lesson opens from pile (c)) →
 **Homework — scored, assigned today, due after two study halls** (`skillbox{goldbox}`; the ~6 items and
-what each targets, scoring, **packet or Desmos** with the activity named, the next-lesson preview,
+what each targets, scoring, **packet, Desmos, or DeltaMath + justifications** with the activity or topics and turned-in items named, the next-lesson preview,
 and the **Connections & Big Ideas** line carrying the standard codes) → **Watch For (while
 circulating)** (`skillbox{redbox}`; misconceptions keyed to notes section, Guided Practice part,
 *and* homework item; a probe for each; cold-call prompts) → **Close & Assign (5 min)**

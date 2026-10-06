@@ -79,7 +79,7 @@ order:
    three piles and how the next lesson opens from pile (c) — one board item and the cold check, nothing more.
 10. **Homework — scored, assigned today, due after two study halls** — `skillbox{goldbox}`: the ~6 items and
     what each targets (name the contrast pair, the crux head-on, and the spiral item), scoring
-    (2 per item), **packet or Desmos** with the activity named if Desmos, the next-lesson preview,
+    (2 per item), **packet, Desmos, or DeltaMath + justifications** with the Desmos activity, or the DeltaMath topics and turned-in items, named, the next-lesson preview,
     and the **Connections & Big Ideas** line carrying the lettered standard codes.
 11. **Watch For (while circulating)** — `skillbox{redbox}`: misconceptions keyed to notes section,
     Guided Practice part, *and* homework item, each with a probe; cold-call prompts.
@@ -109,7 +109,7 @@ order:
 
   **Three rows** — the Guided Practice is inside the Guided Notes & Practice row, not its own,
   because it has no separate handout. **Homework is scored**, so its score cell is a `\blank{}` —
-  never `NA`. The row never changes with the packet-vs-Desmos choice; that is announced aloud at
+  never `NA`. The row never changes with the packet / Desmos / DeltaMath choice; that is announced aloud at
   Close & Assign.
 - `remindbox` ("Keep in Mind") — the lesson's **content takeaway** in three or four sentences:
   the rule, the test to apply, and the trap to avoid, stated in the formal vocabulary. This is
@@ -202,14 +202,18 @@ with `\ans`, carries every `work` block and `\boxguard` over unchanged, and tags
 option. Scoring guidance goes in the lesson plan's `\begin{teachernote}[Homework]`, **not** in the
 key.
 
-**Packet or Desmos.** The packet pages are authored for every lesson regardless. Which form the
-assignment takes is decided **lesson by lesson** by the teacher at Close & Assign, based on whether
-**Desmos** carries an activity adequate to that lesson's skills; when it does, students keep the
-packet pages as a worked reference instead. Desmos Classroom's coverage of this course's standards
-is uneven — strong on function modeling and regression, thinner on the inference and study-design
-standards — so it is checked per lesson and never assumed. Nothing about what you author changes:
-say the choice in the lesson plan's Homework box and on the deck's closing frame, name the specific
-Desmos activity there if that is the call, and leave the cover row alone.
+**Packet, Desmos, or DeltaMath + justifications.** The packet pages are authored for every lesson
+regardless. Which form the assignment takes is decided **lesson by lesson** by the teacher at Close
+& Assign. **Desmos** replaces the assignment when it carries an activity adequate to that lesson's
+skills (students keep the packet pages as a worked reference); its coverage of this course's
+standards is uneven — strong on function modeling and regression, thinner on the inference and
+study-design standards — so it is checked per lesson and never assumed. **DeltaMath +
+justifications** puts the computational items on a DeltaMath assignment and has students turn in
+the packet's interpretation and justification items (the crux always among them); scoring stays
+12 — 2 per turned-in item, the DeltaMath score scaled to the rest. Nothing about what you author
+for students changes: say the choice in the lesson plan's Homework box and teacher note and on the
+deck's closing frame, name the Desmos activity or the DeltaMath topics and turned-in item numbers,
+and leave the cover row alone.
 
 ## Dead shapes
 
@@ -257,7 +261,8 @@ at, so they are the board, not a preview — advance them in step with the hando
   not ship it pre-answered.
 - The **You do frame** names the homework context and the item themes (never the answers), the
   standing rule — **silent and alone, I am circulating** — which items to start in class, and
-  plainly which form the assignment takes (the packet pages, or a named Desmos activity), the
+  plainly which form the assignment takes (the packet pages, a named Desmos activity, or named
+  DeltaMath topics plus the packet items to turn in), the
   points, and the due date.
 - There is **no independent-practice launch frame** and no exit-ticket frame.
 
