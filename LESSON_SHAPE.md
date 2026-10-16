@@ -75,10 +75,21 @@ started in class) and previews. Unit 1 stays at 5 / 35 / 10 / 10 — it is taugh
 do not repace it. Author the table exactly so; if a phase does not fit, cut content — do not let
 the table lie, and do not edit `shared/`.
 
+**The packet budget — 10 printed pages from Lesson 2.3 on (user decision 2026-10-16),** the
+length of the AP Statistics compact packets. The pagination pass starts every component on a
+right-hand page, so an odd-length component costs a blank verso: cover 1 + verso, warm-up 1 +
+verso, **notes 4**, homework 2 = 10. A 5-page notes component pads to 6 and makes a 12-page
+packet (2.1–2.3 as first authored), so **4 pages is a hard ceiling, not a target range**. Fit it
+by cutting, in this order: a redundant problem pair (a grid sub-row) in each instruction row, a
+fifth vocabulary term the notes' printed sentences already define, then a merged problem —
+never a standards-bearing row, the trap, the crux, or the Guided Practice's four problems, and
+never by shrinking `\termrowheight`, a `\pcell`'s answer room, or the font. Lessons 2.1 and 2.2
+are taught and stay at 12 pages; do not repace them.
+
 **`notes` — *Guided Notes \& Practice* — is the in-class centrepiece (2026-09-12 shape, ported
-from AP Statistics).** `\pageheader{…}` → `vocabbox` (4–5 fixed-height `\vterm` rows, filled *as each term is
+from AP Statistics).** `\pageheader{…}` → `vocabbox` (4 fixed-height `\vterm` rows from Lesson 2.3, 4–5 before, filled *as each term is
 named*) → `hookbox` (the claim, a circle-one vote, two lines of reason — **left unresolved**) → **one two-column *Main Ideas / Questions* | *Notes* table**
-(`guidednotes` in `saar-boxes.sty`), 4–5 pages at 12pt from Unit 2 (3–4 in Unit 1). **There is no `objectivebox`** — the
+(`guidednotes` in `saar-boxes.sty`), **4 pages at 12pt from Lesson 2.3 on** (2.1–2.2 ran 4–5, Unit 1 3–4) — see *The packet budget* below. **There is no `objectivebox`** — the
 cover carries the targets. Each **row** is one idea on the one worked context: a short label on
 the left (`\mainidea[lead]{Label}`); on the right one or two **complete printed sentences** (the
 definition or the general form, read — never a sentence with words punched out), **one large
@@ -86,8 +97,8 @@ pre-drawn display** (a graph, a table, the two things students conflate side by 
 student reads or annotates with `\labelbox`, then a bold prompt and a **two-across grid of a few
 numbered problems** (`probgrid` + `\pcell`, **2–3 cm of work room each**, algebra in `work`
 blocks); a procedure uses `\stepnum{n}`, the sentence to land an *In your own words*
-`\writespace`. Four or five instruction rows from Unit 2 (three or four in Unit 1) — the last carries the **target misconception as
-problems**, the case where the two answers *disagree* — then the **Guided Practice row** (`\mainidea[Guided practice]{Title}`, a second context, four problems worked together with students holding the pen). **The notes end there.** **Density rules:** a `\blank{}` only where a single word or number *is* the answer (a table to fill, a display to name), never mid-sentence, a handful per lesson; 16–24 problems from Unit 2 (12–19 in Unit 1), two across, never three; every row a picture; the plan names, by problem number, which problems the teacher works, which is the trap, which is the crux. A `\wordbank` strip only above a fill table. **Sequence the rows so the crux is earned:** the hook plants it and takes a vote, the first rows build the vocabulary against the warm-up's numbers, the last instruction row re-takes the vote and settles it with a correct computation, and the Guided Practice tests it again in a fresh context.
+`\writespace`. Four instruction rows (three or four in Unit 1; 2.1–2.2 ran five) — the last carries the **target misconception as
+problems**, the case where the two answers *disagree* — then the **Guided Practice row** (`\mainidea[Guided practice]{Title}`, a second context, four problems worked together with students holding the pen). **The notes end there.** **Density rules:** a `\blank{}` only where a single word or number *is* the answer (a table to fill, a display to name), never mid-sentence, a handful per lesson; 14–16 problems from Lesson 2.3 on (2.1–2.2 ran 16–24, Unit 1 12–19), two per grid sub-row, two across, never three; every row a picture; the plan names, by problem number, which problems the teacher works, which is the trap, which is the crux. A `\wordbank` strip only above a fill table. **Sequence the rows so the crux is earned:** the hook plants it and takes a vote, the first rows build the vocabulary against the warm-up's numbers, the last instruction row re-takes the vote and settles it with a correct computation, and the Guided Practice tests it again in a fresh context.
 Lessons authored before 2026-09-12 use the boxed notes (`notesbox` sections + `practicebox`);
 convert them by the recipe in `templates/lesson/components.md` when you touch them.
 
@@ -258,7 +269,7 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   model does, and the homework's practice boxes at full size. That is the frontmatter's
   `point_size: 12`. **The lesson plan stays 10pt and the deck 11pt** — they are not student
   work. The unit tests were authored at 10pt and have not been resized (not part of the pilot).
-  At 12pt the notes run **4 pages** and the homework **2** (two boxes, items 1–2 / 3–6, no item breaking across a
+  At 12pt the notes run **4 pages** (never 5 — see *The packet budget*) and the homework **2** (two boxes, items 1–2 / 3–6, no item breaking across a
   page; cut an item or a part before letting it reach a third page); `\boxguard` counts are baselines, so the same numbers reserve more at 12pt (12 before
   the first `notesbox` after the vocab box; 30 before a box opening with an unbreakable
   TikZ/pgfplots figure or `tabularx`).

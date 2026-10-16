@@ -1,6 +1,8 @@
 # Course Planning Log — Statistical Analysis & Algebraic Reasoning
 
-**Last updated:** 2026-10-06 — **2.1 DAY 2 WARM-UP** (class stopped after notes row 3, Histogram, #12). New standalone `unit02/warmups/lesson01_day2{,_key}` (1 page each, own `warmups/Makefile` on the quiz01 model, merged into no packet): one fresh-data item per display (dot plot, stemplot, histogram) seeding row 4 Describe (mode/outlier, max − min, boundary rule + percent). Day 2 of 2.1 resumes at row 4.
+**Last updated:** 2026-10-16 — **2.3 AND 2.4 CONDENSED TO 10-PAGE PACKETS** (`/lesson-planning condense the remainder of unit 2 from 2.3 onward … ~10 pages, not 12`). New rule in `LESSON_SHAPE.md` §1 *The packet budget*: from 2.3 on the packet is the AP Statistics compact length — cover 1 + verso, warm-up 1 + verso, **notes 4 (a ceiling: 5 pads to 6)**, homework 2 = **10 pages**; 4 vocab terms, 14–16 problems (2.4 lands at 12). **2.3** notes 22 → 16 problems: cut old 2–3 (row 1), 11–12 (cumulative-graph extras), 18 (the ad), merged old 15+16 (IQR + SD → 11); vocab drops *Modified boxplot*; row 4's own-words space gone. Trap 5, crux 12, crux transferred 15. **2.4** notes 20 → 12: merged old 1+2; cut old 4, 5, 7, 12, 15, 16 (Dev's two lists — the rule is now a printed sentence in row 3); vocab drops *Common scale*; row 4's own-words space and prompt gone; GP's two 1-Var Stats screens became one sentence, old 18+20 merged into the full comparison (11), Kai (crux transferred) moved last as 12. Traps 2 and 4, crux 9. Both 4/4pp blank/key, per-page problem numbers identical, packets 10pp. Plans and decks renumbered. **2.1 and 2.2 are taught and stay at 12 pages.**
+
+**Earlier — 2026-10-06** — **2.1 DAY 2 WARM-UP** (class stopped after notes row 3, Histogram, #12). New standalone `unit02/warmups/lesson01_day2{,_key}` (1 page each, own `warmups/Makefile` on the quiz01 model, merged into no packet): one fresh-data item per display (dot plot, stemplot, histogram) seeding row 4 Describe (mode/outlier, max − min, boundary rule + percent). Day 2 of 2.1 resumes at row 4.
 
 **Previous update:** 2026-09-29 — **UNIT 2 STUDY GUIDE + PRACTICE (SAMPLE) TEST AND KEYS**
 (`/lesson-planning i want to create a study guide and sample test and key for unit 2`).
@@ -725,9 +727,10 @@ six documents was rendered and eyeballed for stubs and orphan underlines — non
    2026-09-29, `LESSON_SHAPE.md` §1): ten more minutes of notes, a five-minute cold-check
    debrief, homework assigned rather than started in class; notes run 4–5 pages, 4–5
    instruction rows, 16–24 problems. Unit 1 stays at 5 / 35 / 10 / 10. **Unit 2's four lessons are authored, built and gated
-   (2026-09-29)** — all page-for-page, `make check` clean. **Open decision:** notes for 2.1, 2.2
-   and 2.4 run 6 pages (the Guided Practice row spills), over the 4–5pp budget set the same day —
-   either raise the budget to 6 for the 45-minute notes or cut one problem pair per lesson.
+   (2026-09-29)** — all page-for-page, `make check` clean. **Decided 2026-10-16:** from 2.3 on, notes are 4
+   pages and the packet 10 (the stats compact length); 2.3 and 2.4 were cut to fit. 2.1 and 2.2
+   (taught) stay at 12-page packets. Units 3–8: author to 4 notes pages from the start — 4 vocab
+   terms, 14–16 problems.
    **Gotcha:** `\writelines{1}` sets an extra empty line after its rule that `\ansline` does not,
    so a blank runs taller than its key; on a tight page use `\par\writeline` per line instead.
    **Author them straight into the table shape** — there is no longer an older shape to convert

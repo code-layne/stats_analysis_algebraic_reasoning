@@ -3,21 +3,22 @@
 % box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
 % left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display the
 % student reads or names, then a bold prompt and a two-across grid of numbered problems.
-% Problems run 1..21. Unit 2 timing (5/45/5/5): I do ~25 min (rows 1-4), Guided Practice ~20.
+% Problems run 1..12. Unit 2 timing (5/45/5/5): I do ~25 min (rows 1-4), Guided Practice ~20.
+% 4 pages at 12pt — a ceiling (10-page packet, LESSON_SHAPE.md §1).
 % DENSITY: a \blank{} only where a word or number IS the answer (the eight cells of the
-% comparison table, problem 9 — the one \wordbank strip sits above it); no mid-sentence blanks;
+% comparison table, problem 5 — the one \wordbank strip sits above it); no mid-sentence blanks;
 % every display is pre-drawn; the page belongs to the student's pen.
 %   I DO   : the teacher reads the definition, marks up the display, works the first problem
-%            of each grid (1, 5, 10, 13).
+%            of each grid (1, 3, 6, 8).
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
-%            Guided Practice (17-20), is worked entirely together on paper airplanes.
+%            Guided Practice (10-12), is worked entirely together on paper airplanes.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, assigned at Close
 %            & Assign and done outside class.
-% THE TRAPS: problem 3 (a left-side leaf read backwards, 81 for 18) and problem 8 (two boxplots
+% THE TRAPS: problem 2 (a left-side leaf read backwards, 81 for 18) and problem 4 (two boxplots
 % on different scales — the secondary misconception).
-% THE CRUX: problem 14 (row 4, "Different Spread"): two shops with the SAME median, and the
-% hook vote re-taken — spread decides. Problem 16 is the non-comparison (two descriptions with
-% no comparative words). Problem 19 is the crux transferred (same mean, different SD).
+% THE CRUX: problem 9 (row 4, "Different Spread"): two shops with the SAME median, and the
+% hook vote re-taken — spread decides. Row 3 prints the non-comparison rule (two descriptions
+% are not a comparison). Problem 12 is the crux transferred (same mean, different SD).
 %
 % THE DATA (quartiles: median of each half, overall median left out when n is odd)
 %   Tony's Pizza (n=11): 18 21 22 24 25 25 27 28 30 33 44
@@ -81,7 +82,6 @@
 Fill in each term \textbf{as we name it} in the notes below.
 \vterm{Back-to-back stemplot}
 \vterm{Parallel boxplots}
-\vterm{Common scale}
 \vterm{Comparison}
 \vterm{Consistent}
 \end{vocabbox}
@@ -94,7 +94,7 @@ $35$ minutes.} Your party starts in $40$ minutes, and the pizza has to be there 
 
 \vspace{3pt}
 \textbf{Which shop should you call?} Circle one: \quad Rosa's \qquad Slice House \qquad
-it doesn't matter --- same median \quad --- and say why. We vote again at problem~14.
+it doesn't matter --- same median \quad --- and say why. We vote again at problem~9.
 \par\writelines{2}
 \end{hookbox}
 
@@ -120,11 +120,7 @@ Key: $5 \,|\, 2 \,|\, 4$ means Tony's \labelbox{1.8cm}{}\quad and Rosa's \labelb
 \\
 & \notesprompt{Read both sides --- stem first, then leaf.}
 \begin{probgrid}{|Y|Y|}
-\pcell{1}{Read each shop's fastest and slowest delivery.}{1.6cm}{} & \pcell{2}{Find each shop's median delivery time. (Eleven orders: count to the $6$th leaf from the fastest.)}{1.6cm}{} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{3}{Jaden reads the top leaf on Tony's side as $81$ minutes. What did he do wrong, and what is the value?}{2.0cm}{} & \pcell{4}{Describe each shop's shape. Does either shop have a value that stands apart?}{2.0cm}{} \\ \hline
+\pcell{1}{Read each shop's fastest, slowest, and median delivery. (Eleven orders: the median is the $6$th leaf from the fastest.)}{2.0cm}{} & \pcell{2}{Jaden reads the top leaf on Tony's side as $81$ minutes. What did he do wrong, and what is the value?}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: parallel dot plots and parallel boxplots on a common scale ────────
@@ -167,11 +163,7 @@ Top pair: parallel \labelbox{2.6cm}{}\qquad Bottom pair: parallel \labelbox{2.6c
 \\
 & \notesprompt{Read the displays --- every answer names the shop and the minutes.}
 \begin{probgrid}{|Y|Y|}
-\pcell{5}{Whose middle half of deliveries sits farther right on the common scale? What does that mean for a customer?}{2.0cm}{} & \pcell{6}{Find each shop's IQR from its box. Whose middle half is more spread out?}{2.0cm}{} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{7}{Tony's $44$ is plotted as an outlier. Is Rosa's $24$-minute delivery one? Use the lower fence $Q_1 - 1.5 \cdot \text{IQR}$.}{2.0cm}{} & \pcell{8}{Mia draws Tony's boxplot on a $15$--$45$ scale and Rosa's on its own $20$--$40$ scale. Rosa's box now looks wider. Is Rosa's more spread out?}{2.4cm}{} \\ \hline
+\pcell{3}{Find each shop's IQR from its box. Whose middle half is more spread out?}{2.0cm}{} & \pcell{4}{Mia draws Tony's boxplot on a $15$--$45$ scale and Rosa's on its own $20$--$40$ scale. Rosa's box now looks wider. Is Rosa's more spread out?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: comparing — shape, outliers, center, spread, in context ───────────
@@ -180,9 +172,9 @@ A \textbf{comparison} compares all four features --- shape, outliers (unusual fe
 and spread --- using comparative words (\emph{greater than, less than, about the same as}), in
 context. \textbf{Pick the measures that fit the shape:} median and IQR when a distribution is
 skewed or has an outlier; mean and standard deviation when both are roughly symmetric with no
-outliers.
+outliers. Two separate descriptions --- or centers alone --- are \emph{not} a comparison.
 \\
-& \textbf{9.} Fill in the table from rows 1 and 2.
+& \textbf{5.} Fill in the table from rows 1 and 2.
 \wordbank{skewed right \;\textbullet\; skewed left \;\textbullet\; 44 min \;\textbullet\; none \;\textbullet\; 25 min \;\textbullet\; 35 min \;\textbullet\; 8 min \;\textbullet\; 6 min}
 {\renewcommand{\arraystretch}{1.5}%
 \begin{tabularx}{\linewidth}{@{} X p{3.2cm} p{3.2cm} @{}}
@@ -201,11 +193,7 @@ Spread (IQR) & \blank{2.8cm} & \blank{2.8cm} \\
 the same as} [Group B]'s ([value]), so [what that means in context].}}
 \notesprompt{Use the frame --- one sentence each, in context.}
 \begin{probgrid}{|Y|Y|}
-\pcell{10}{Compare the centers.}{2.0cm}{} & \pcell{11}{Compare the spreads.}{2.0cm}{} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|}
-\pcell{12}{Compare the shapes and the unusual features.}{2.0cm}{} \\ \hline
+\pcell{6}{Compare the centers.}{2.0cm}{} & \pcell{7}{Compare the spreads.}{2.0cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: THE CRUX — same center, different spread ──────────────────────────
@@ -236,38 +224,15 @@ median of $35$ minutes. \textbf{Your party needs the pizza within $40$ minutes.}
 & \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
 \textbf{The same center does not make the same distribution. When the centers match, the
 spread decides: the group with less spread is more consistent.}}}
-
-\vspace{3pt}
-A list of two separate descriptions --- or a comparison of centers alone --- is \emph{not} a
-comparison.\par
-\textbf{In your own words:} why can two shops with the same median not be equally good for
-your party?
-\writespace{1.4cm}{}
 \\
-& \notesprompt{Now settle the hook vote.}
-\begin{probgrid}{|Y|Y|}
-\pcell{13}{Find each shop's median and IQR. (Slice House: the median of each half of its $11$ times.)}{2.0cm}{} & \pcell{14}{\textbf{Vote again:} Rosa's \; Slice House \; doesn't matter. How many of each shop's $11$ deliveries came within $40$ minutes? Which shop?}{2.4cm}{} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{15}{Another night you only care about your best chance at a delivery \emph{under $25$ minutes}. Now which shop?}{2.0cm}{} & \pcell{16}{Dev writes: \emph{``Rosa's: median 35, IQR 6. Slice House: median 35, IQR 23.''} Is that a comparison? Rewrite it, in context.}{2.6cm}{} \\ \hline
+& \begin{probgrid}{|Y|Y|}
+\pcell{8}{Find each shop's median and IQR. (Slice House: the median of each half of its $11$ times.)}{2.0cm}{} & \pcell{9}{\textbf{Vote again:} Rosa's \; Slice House \; doesn't matter. How many of each shop's $11$ deliveries came within $40$ minutes? Which shop?}{2.4cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
 \mainidea[Guided practice]{Paper Airplanes} &
-The design club throws two paper-airplane designs $10$ times each and measures every flight in
-feet. Below are the calculator's \emph{1-Var Stats} screens and a parallel dot plot. Sx is the
-\emph{sample} standard deviation --- it divides by $n - 1$.
-\\
-& {\centering
-\begin{tikzpicture}
-  \foreach \x/\des/\sd/\lo/\qa/\qc/\hi in {0/A/2.58/26/28/32/34, 6/B/7.26/18/25/35/42} {
-    \fill[charcoal, rounded corners=3pt] (\x,0) rectangle ({\x+5.2},3.2);
-    \fill[frost] ({\x+0.15},0.15) rectangle ({\x+5.05},3.05);
-    \node[anchor=north west, align=left, font=\ttfamily\footnotesize] at ({\x+0.35},2.95)
-      {\textbf{1-Var Stats: Design \des}\\ $\bar{x}$=30\\ Sx=\sd\\ n=10\\ minX=\lo \quad Q1=\qa\\ Med=30 \quad Q3=\qc\\ maxX=\hi};
-  }
-\end{tikzpicture}\par}
+The design club threw two paper-airplane designs $10$ times each (feet). \emph{1-Var Stats:} both
+have $\bar{x} = 30$ ft; Sx $= 2.58$ ft for Design A, $7.26$ ft for Design B.
 \\
 & {\centering
 \begin{tikzpicture}[x=0.3cm, y=1cm]
@@ -284,13 +249,12 @@ feet. Below are the calculator's \emph{1-Var Stats} screens and a parallel dot p
   \node[anchor=east, font=\footnotesize\bfseries] at (14,1.7) {Design A};
 \end{tikzpicture}\par}
 \\
-& \notesprompt{We work these together.}
-\begin{probgrid}{|Y|Y|}
-\pcell{17}{Shape and outliers: are both distributions roughly symmetric with no outliers? So which pair of measures fits?}{2.0cm}{} & \pcell{18}{Compare the centers, then the spreads, with comparative words and units.}{2.2cm}{} \\ \hline
+& \begin{probgrid}{|Y|Y|}
+\pcell{10}{Shape and outliers: are both roughly symmetric with no outliers? So which pair of measures fits?}{2.0cm}{} & \pcell{11}{Write the full comparison --- shape, outliers, center, spread --- with comparative words and units.}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{19}{The contest target is a landing zone from $27$ to $33$ feet. Kai says, \emph{``Same mean --- it doesn't matter which design we fly.''} Count each design's throws in the zone. Is Kai right?}{2.6cm}{} & \pcell{20}{Write the full comparison --- shape, outliers, center, spread --- in context, in one or two sentences.}{2.6cm}{} \\ \hline
+& \begin{probgrid}*{|Y|}
+\pcell{12}{The contest target is a landing zone from $27$ to $33$ feet. Kai says, \emph{``Same mean --- it doesn't matter which design we fly.''} Count each design's throws in the zone. Is Kai right?}{2.2cm}{} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

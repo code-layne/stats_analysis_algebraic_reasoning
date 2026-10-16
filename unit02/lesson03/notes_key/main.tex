@@ -3,21 +3,21 @@
 % box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
 % left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display the
 % student reads or names, then a bold prompt and a two-across grid of numbered problems.
-% Problems run 1..22. Unit 2 timing (5 / 45 / 5 / 5): I do ~25 min (rows 1-4), Guided
-% Practice ~20 min (row 5). 4-5 pages at 12pt.
+% Problems run 1..16. Unit 2 timing (5 / 45 / 5 / 5): I do ~25 min (rows 1-4), Guided
+% Practice ~20 min (row 5). 4 pages at 12pt — a ceiling (10-page packet, LESSON_SHAPE.md §1).
 % DENSITY: no \blank{} in this component — every answer is written in a problem's own space
-% or in a \labelbox on a display; every display is pre-drawn (TikZ) and read. Problem 4 asks
+% or in a \labelbox on a display; every display is pre-drawn (TikZ) and read. Problem 2 asks
 % students to FINISH a boxplot on a provided, pre-scaled axis (completing marks, not a sketch).
 %   I DO   : the teacher reads the definition, marks up the display, works the first problem
-%            of each grid (1, 5, 9, 13).
+%            of each grid (1, 3, 7, 9).
 %   WE DO  : the class works the rest of each grid, students holding the pen; the last row,
-%            Guided Practice (19-22), is worked entirely together on the Maple Grove shelter.
+%            Guided Practice (13-16), is worked entirely together on the Maple Grove shelter.
 %   YOU DO : nothing on this page — ../homework/ IS the individual practice, assigned at
 %            Close & Assign and done outside class.
-% THE TRAP is problem 7 (a 16-minute delivery that LOOKS far but sits inside the lower fence).
-% THE CRUX is problem 17 (row 4, "Resistance"): the hook vote re-taken — removing the 55 drops
-% the mean 3 minutes and the median half a minute (PS.DS.2d). Problem 21 is the crux
-% transferred to the shelter; problem 22 is the report choice (median/IQR for outlier data).
+% THE TRAP is problem 5 (a 16-minute delivery that LOOKS far but sits inside the lower fence).
+% THE CRUX is problem 12 (row 4, "Resistance"): the hook vote re-taken — removing the 55 drops
+% the mean 3 minutes and the median half a minute (PS.DS.2d). Problem 15 is the crux
+% transferred to the shelter; problem 16 is the report choice (median/IQR for outlier data).
 %
 % THE DATA (all checked by hand; quartiles = medians of the lower and upper halves, the overall
 % median left OUT of both halves when n is odd; SD = SAMPLE standard deviation, divide by n-1)
@@ -27,9 +27,9 @@
 %     outlier; modified whisker stops at 30. s = sqrt(888/9) = 9.93 -> 9.9.
 %   Without the 55 (nine): sum 225, mean 25; median 25; Q1 = med(20,22,23,24) = 22.5;
 %     Q3 = med(26,27,28,30) = 27.5; IQR 5. s = sqrt(78/8) = 3.12 -> 3.1.
-%   Trap (problem 7): min 16 instead of 20 -> Q1 = med(16,22,23,24,25) = 23 unchanged;
+%   Trap (problem 5): min 16 instead of 20 -> Q1 = med(16,22,23,24,25) = 23 unchanged;
 %     16 > 15.5, NOT an outlier.
-%   Saturday summary (problem 4): 18, 22, 24, 27, 33.
+%   Saturday summary (problem 2): 18, 22, 24, 27, 33.
 %   Week's 40 deliveries (ogive): cumulative % at 15,20,25,30,35,40,45 min =
 %     0, 25, 50, 75, 90, 95, 100 -> Q1 20, median 25, Q3 30, IQR 10; 35 min = 90th
 %     percentile; 10% of 40 = 4 free deliveries; 30 min = 75th percentile.
@@ -80,7 +80,6 @@
 Fill in each term \textbf{as we name it} in the notes below.
 \vtermans{Boxplot}{A graph of the five-number summary: a box from $Q_1$ to $Q_3$ with a line at the median, and whiskers out to the minimum and maximum.}
 \vtermans{Outlier}{A value outside a fence --- below $Q_1 - 1.5 \times \text{IQR}$ or above $Q_3 + 1.5 \times \text{IQR}$. Check the fence; never judge by eye.}
-\vtermans{Modified boxplot}{A boxplot that plots each outlier as its own dot; the whisker stops at the most extreme value that is not an outlier.}
 \vtermans{Cumulative relative frequency graph}{Plots the percent of the data at or below each value. Read across from 25\%, 50\%, 75\% for $Q_1$, the median, $Q_3$.}
 \vtermans{Resistant}{A summary that one extreme value barely moves. The median and IQR are resistant; the mean and standard deviation are not.}
 \end{vocabbox}
@@ -94,9 +93,9 @@ throw it out.
 
 \vspace{3pt}
 \textbf{Which number drops more when the $55$ is removed?} Circle one: \quad the mean \qquad
-the median \qquad they drop about the same \quad --- and say why. We vote again at problem~17.
+the median \qquad they drop about the same \quad --- and say why. We vote again at problem~12.
 \par\ansline{Answers vary --- many pick ``about the same'': one value leaves both.}
-\par\ansline{(Settled at problem 17: the mean drops 3 min; the median only 0.5 min.)}
+\par\ansline{(Settled at problem 12: the mean drops 3 min; the median only 0.5 min.)}
 \end{hookbox}
 
 \small
@@ -130,11 +129,7 @@ the middle \labelbox{1.3cm}{50\%}\par}
 \\
 & \notesprompt{Read it, then build one.}
 \begin{probgrid}{|Y|Y|}
-\pcell{1}{Read Friday's five-number summary off the boxplot.}{1.3cm}{Min 20, $Q_1$ 23, median 25.5, $Q_3$ 28, max 55 (minutes)} & \pcell{2}{The right whisker is nine times as long as the left one. Does it hold nine times as many deliveries? Explain.}{2.0cm}{No --- each holds about 25\%. The right one is long because its times (30, 55) are spread out.} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{3}{About what percent of Friday's deliveries took $28$ minutes or less? Say it in context.}{1.7cm}{About 75\% --- 28 is $Q_3$: three-quarters of Friday's deliveries took 28 min or less.} & \pcell{4}{Saturday: min $18$, $Q_1 = 22$, median $24$, $Q_3 = 27$, max $33$. Finish its boxplot on this axis.\par\smallskip{\centering\begin{tikzpicture}[x=0.26cm, y=1cm] \path (16,1.2); \draw[->, thick] (16,0) -- (35,0); \foreach \x in {16,...,34} { \draw (\x,0.05) -- (\x,-0.05); } \foreach \x in {16,18,...,34} { \node[below, font=\tiny] at (\x,-0.05) {\x}; } \end{tikzpicture}\par}}{1.1cm}{Box 22 to 27, line at 24, whiskers to 18 and 33.} \\ \hline
+\pcell{1}{Read Friday's five-number summary off the boxplot.}{1.3cm}{Min 20, $Q_1$ 23, median 25.5, $Q_3$ 28, max 55 (minutes)} & \pcell{2}{Saturday: min $18$, $Q_1 = 22$, median $24$, $Q_3 = 27$, max $33$. Finish its boxplot on this axis.\par\smallskip{\centering\begin{tikzpicture}[x=0.26cm, y=1cm] \path (16,1.2); \draw[->, thick] (16,0) -- (35,0); \foreach \x in {16,...,34} { \draw (\x,0.05) -- (\x,-0.05); } \foreach \x in {16,18,...,34} { \node[below, font=\tiny] at (\x,-0.05) {\x}; } \end{tikzpicture}\par}}{1.1cm}{Box 22 to 27, line at 24, whiskers to 18 and 33.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 2: the 1.5 x IQR rule and the modified boxplot ───────────────────────
@@ -171,11 +166,11 @@ The dashed lines are the \labelbox{1.8cm}{fences}\qquad The dot at $55$ is an \l
 \\
 & \notesprompt{Check the fences --- then decide.}
 \begin{probgrid}{|Y|Y|}
-\pcell{5}{Compute the IQR, the step $1.5 \times \text{IQR}$, and both fences for Friday ($Q_1 = 23$, $Q_3 = 28$).}{1.8cm}{IQR $= 5$; step $= 1.5(5) = 7.5$ \par Lower: $23 - 7.5 = 15.5$ \par Upper: $28 + 7.5 = 35.5$} & \pcell{6}{Which Friday times are outliers? Justify with a fence.}{1.8cm}{Only 55: it is above the upper fence (35.5). The rest are inside the fences.} \\ \hline
+\pcell{3}{Compute the IQR, the step $1.5 \times \text{IQR}$, and both fences for Friday ($Q_1 = 23$, $Q_3 = 28$).}{1.8cm}{IQR $= 5$; step $= 1.5(5) = 7.5$ \par Lower: $23 - 7.5 = 15.5$ \par Upper: $28 + 7.5 = 35.5$} & \pcell{4}{Which Friday times are outliers? Justify with a fence.}{1.8cm}{Only 55: it is above the upper fence (35.5). The rest are inside the fences.} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{7}{Suppose the fastest delivery had been $16$ minutes, not $20$ ($Q_1$ and $Q_3$ stay the same). It looks far from the pack. Outlier? \textbf{Vote first, then check.}}{1.8cm}{No --- 16 is above the lower fence, 15.5. It looks far, but it is inside the fence.} & \pcell{8}{In the modified boxplot the right whisker stops at $30$, not at $55$. Why $30$?}{1.8cm}{30 is the largest time that is not an outlier; the 55 gets its own dot.} \\ \hline
+\pcell{5}{Suppose the fastest delivery had been $16$ minutes, not $20$ ($Q_1$ and $Q_3$ stay the same). It looks far from the pack. Outlier? \textbf{Vote first, then check.}}{1.8cm}{No --- 16 is above the lower fence, 15.5. It looks far, but it is inside the fence.} & \pcell{6}{In the modified boxplot the right whisker stops at $30$, not at $55$. Why $30$?}{1.8cm}{30 is the largest time that is not an outlier; the 55 gets its own dot.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 3: the cumulative relative frequency graph ───────────────────────────
@@ -204,11 +199,7 @@ Read across from $50\%$: the median is \labelbox{1.6cm}{25} minutes.\par}
 \\
 & \notesprompt{Read across, then down --- and say it in context.}
 \begin{probgrid}{|Y|Y|}
-\pcell{9}{Read $Q_1$ and $Q_3$ off the graph. What is the IQR?}{1.6cm}{$Q_1 = 20$ min, $Q_3 = 30$ min \par IQR $= 30 - 20 = 10$ min} & \pcell{10}{What percent of the week's deliveries took $35$ minutes or less? So $35$ minutes is which percentile?}{1.6cm}{90\% --- so 35 min is the 90th percentile: 90\% took 35 min or less.} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{11}{The shop's promise: \emph{``In $35$ minutes or it's free.''} About how many of the $40$ deliveries were free?}{1.6cm}{10\% took longer than 35 min, and $0.10 \times 40 = 4$ deliveries were free.} & \pcell{12}{Tomas's pizza took $30$ minutes. What percentile is that? Say it in context.}{1.6cm}{The 75th percentile: 75\% of the week's deliveries took 30 min or less.} \\ \hline
+\pcell{7}{Read $Q_1$ and $Q_3$ off the graph. What is the IQR?}{1.6cm}{$Q_1 = 20$ min, $Q_3 = 30$ min \par IQR $= 30 - 20 = 10$ min} & \pcell{8}{What percent of the week's deliveries took $35$ minutes or less? So $35$ minutes is which percentile?}{1.6cm}{90\% --- so 35 min is the 90th percentile: 90\% took 35 min or less.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── ROW 4: THE CRUX — resistance, with and without the 55 ────────────────────
@@ -235,23 +226,16 @@ $280$ minutes. Sum of the nine without the $55$: $225$ minutes.) A summary is
 \\
 & \notesprompt{Compute each summary twice. How far did it move?}
 \begin{probgrid}{|Y|Y|}
-\pcell{13}{The mean, with and without the $55$. How far did it move?}{1.6cm}{With: $280/10 = 28$ min \par Without: $225/9 = 25$ min \par Moved 3 minutes.} & \pcell{14}{The median, with and without the $55$. How far did it move?}{1.6cm}{With: $(25+26)/2 = 25.5$ min \par Without: 25 min (5th of 9) \par Moved 0.5 minute.} \\ \hline
+\pcell{9}{The mean, with and without the $55$. How far did it move?}{1.6cm}{With: $280/10 = 28$ min \par Without: $225/9 = 25$ min \par Moved 3 minutes.} & \pcell{10}{The median, with and without the $55$. How far did it move?}{1.6cm}{With: $(25+26)/2 = 25.5$ min \par Without: 25 min (5th of 9) \par Moved 0.5 minute.} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{15}{The IQR, with and without the $55$. (Without it: lower half $20, 22, 23, 24$; upper half $26, 27, 28, 30$.)}{1.6cm}{With: $28 - 23 = 5$ min \par Without: $27.5 - 22.5 = 5$ \par Did not move.} & \pcell{16}{A calculator gives the sample standard deviation: $s \approx 9.9$ min with the $55$, $s \approx 3.1$ min without. Which two summaries did one delivery pull? Which two barely moved?}{1.6cm}{Pulled: mean (28 to 25), SD (9.9 to 3.1). Barely moved: median, IQR.} \\ \hline
-\end{probgrid}
-\\
-& \begin{probgrid}*{|Y|Y|}
-\pcell{17}{\textbf{Vote again:} which drops more when the $55$ goes --- the mean or the median? By how much each?}{1.6cm}{The mean: down 3 min (28 to 25). The median: down only 0.5 min (25.5 to 25).} & \pcell{18}{The shop's ad says \emph{``Average delivery: $28$ minutes.''} Which center and spread describe a typical Friday delivery? Justify.}{1.6cm}{Median 25.5 min and IQR 5 min: they resist the one flat tire; the mean does not.} \\ \hline
+\pcell{11}{The IQR, with and without the $55$ (without: halves $20$--$24$ and $26$--$30$). The SD: $s \approx 9.9$ min with, $3.1$ without. Which two summaries moved? Which barely did?}{2.0cm}{IQR: $28 - 23 = 5$ with, $27.5 - 22.5 = 5$ without. Pulled: mean, SD ($9.9 \to 3.1$). Barely moved: median, IQR.} & \pcell{12}{\textbf{Vote again:} which drops more when the $55$ goes --- the mean or the median? By how much each?}{2.0cm}{The mean: down 3 min (28 to 25). The median: down only 0.5 min (25.5 to 25).} \\ \hline
 \end{probgrid}
 \\
 & \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
 \textbf{The median and IQR are resistant; the mean and standard deviation are not.}\par
 When data are skewed or have outliers, report the median and the IQR.}}
-\par\vspace{3pt}
-\textbf{In your own words:} why can one flat tire move the mean but not the median?
-\writespace{1.4cm}{The mean adds up every time, 55 included. The median only counts to the middle; 55 is just one more time above it.}
 \\ \hline
 % ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
 \mainidea[Guided practice]{Shelter Stays} &
@@ -271,11 +255,11 @@ for a home: $2, 4, 4, 5, 6, 7, 10, 10, 15, 37$. The $37$ was a dog on a long med
 \\
 & \notesprompt{We work these together.}
 \begin{probgrid}{|Y|Y|}
-\pcell{19}{Find the five-number summary and the IQR.}{1.8cm}{Min 2, $Q_1$ 4, median 6.5, $Q_3$ 10, max 37 (days) \par IQR $= 10 - 4 = 6$ days} & \pcell{20}{Find the fences. Which stays are outliers? Where does the modified boxplot's right whisker stop?}{2.2cm}{Step $= 1.5(6) = 9$; fences $-5$ and $19$. Only 37 is above 19, an outlier. The whisker stops at 15.} \\ \hline
+\pcell{13}{Find the five-number summary and the IQR.}{1.8cm}{Min 2, $Q_1$ 4, median 6.5, $Q_3$ 10, max 37 (days) \par IQR $= 10 - 4 = 6$ days} & \pcell{14}{Find the fences. Which stays are outliers? Where does the modified boxplot's right whisker stop?}{2.2cm}{Step $= 1.5(6) = 9$; fences $-5$ and $19$. Only 37 is above 19, an outlier. The whisker stops at 15.} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{21}{Remove the $37$. \textbf{Vote first:} which moves more, the mean or the median? Then compute both, with and without. (Sums: $100$ with, $63$ without.)}{2.0cm}{Mean: 10 to 7 days (down 3). Median: 6.5 to 6 days (down 0.5). The mean moved more.} & \pcell{22}{The flyer says \emph{``Our dogs find homes in $10$ days on average.''} Fair for a typical dog? What center and spread should it report?}{2.2cm}{No --- the one 37-day stay pulls the mean up to 10. Report the median, 6.5 days, and IQR, 6 days.} \\ \hline
+\pcell{15}{Remove the $37$. \textbf{Vote first:} which moves more, the mean or the median? Then compute both, with and without. (Sums: $100$ with, $63$ without.)}{2.0cm}{Mean: 10 to 7 days (down 3). Median: 6.5 to 6 days (down 0.5). The mean moved more.} & \pcell{16}{The flyer says \emph{``Our dogs find homes in $10$ days on average.''} Fair for a typical dog? What center and spread should it report?}{2.2cm}{No --- the one 37-day stay pulls the mean up to 10. Report the median, 6.5 days, and IQR, 6 days.} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}
