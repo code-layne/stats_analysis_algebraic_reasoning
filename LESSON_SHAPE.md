@@ -192,7 +192,14 @@ two numbered sections and a Guided Practice, **none of** `activity/`, `experienc
     always among them), keeping the computational pages as a worked reference. DeltaMath grades
     computation, not written reasons, so it never replaces the justify items. Scoring stays 12:
     the turned-in items at 2 points each, the DeltaMath score scaled to the rest. Name the
-    DeltaMath topics and the turned-in item numbers.
+    DeltaMath topics and the turned-in item numbers — **DeltaMath's exact topic names** from the
+    teacher catalog, searchable by name in the assignment builder (catalog read 2026-10-14; the
+    Unit 2 plans are the worked examples). **The catalog has gaps, and an item whose skill has no
+    topic is turned in, not dropped:** there is no *sample* standard deviation (its only
+    standard-deviation topics, *Find Population Standard Deviation* and *Analyze Datasets*,
+    divide by n — never assign them in a course that teaches s), no 1.5 × IQR fence, and no
+    cumulative relative frequency graph. More turned-in items shrink the DeltaMath share, never
+    the 12.
   Nothing about the student pages changes with the choice: the plan's Homework box and teacher
   note and the deck's closing frame say which form the assignment takes; the cover row, its score
   cell, and the homework's `remindbox` never change.
