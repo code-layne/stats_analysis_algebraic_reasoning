@@ -133,8 +133,8 @@ you collect it.
 `notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 45 minutes** (35 in Unit 1), in the **Main
 Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; density rules of
 2026-09-12). `\pageheader{...}` (no name row — Namestrip), the `vocabbox`, the `hookbox` (it stays), then **one
-`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **4–5 pages** at
-12pt, **16–24 numbered problems** (Unit 1: 3–4 pages, 12–19). The page belongs to the student's pen.
+`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **4 pages** at
+12pt — a ceiling, so the packet is 10 pages (`LESSON_SHAPE.md` §1, *The packet budget*) — **14–16 numbered problems**, 4 vocabulary terms (Lessons 2.1–2.2: 4–5 pages, 16–24; Unit 1: 3–4 pages, 12–19). The page belongs to the student's pen.
 
 - `vocabbox` — one `\vterm{Term}` per key term (4–6): the fixed-height row pair `\vterm` /
   `\vtermans` defined in the notes preamble (copy from the reference lesson). The box says **"Fill in

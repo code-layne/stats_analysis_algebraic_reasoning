@@ -69,7 +69,7 @@
   \end{center}
 \end{frame}
 
-% ── HOOK — dark frame; leave it UNRESOLVED; problem 17 (row 4) settles it ────
+% ── HOOK — dark frame; leave it UNRESOLVED; problem 12 (row 4) settles it ────
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
@@ -79,7 +79,7 @@
     {\color{white}\bfseries\large 20 \ 22 \ 23 \ 24 \ 25 \ 26 \ 27 \ 28 \ 30 \ \ {\color{goldacc}55}}\\[0.5cm]
     {\color{frostmid}\small The 55 was a flat tire. The manager throws it out.}\\[0.8cm]
     {\color{goldacc}\bfseries\Large Which drops more --- the mean or the median?}\\[0.5cm]
-    {\color{frostmid}\small Vote: the mean, the median, or about the same. We settle this at problem 17.}
+    {\color{frostmid}\small Vote: the mean, the median, or about the same. We vote again at problem 12.}
   \end{center}
 \end{frame}
 }
@@ -93,8 +93,8 @@
     {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
     {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
     row --- fill each term as we name it, not before.}\\[0.9cm]
-    {\color{frostmid}\small Five terms go in the vocabulary box today: boxplot, outlier,
-    modified boxplot, cumulative relative frequency graph, resistant.}
+    {\color{frostmid}\small Four terms go in the vocabulary box today: boxplot, outlier,
+    cumulative relative frequency graph, resistant.}
   \end{minipage}
 \end{frame}
 }
@@ -102,7 +102,7 @@
 % ── ROW 1. BOXPLOT ───────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Five numbers, one picture}
-  \sectionlabel{notes row 1 $\cdot$ Boxplot $\cdot$ problems 1--4}
+  \sectionlabel{notes row 1 $\cdot$ Boxplot $\cdot$ problems 1--2}
   \begin{center}
   \begin{tikzpicture}[x=0.21cm, y=1cm]
     \draw[->, thick] (14,0) -- (61,0);
@@ -135,7 +135,7 @@
 % ── ROW 2a. THE 1.5 x IQR RULE ───────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{The $1.5 \times \text{IQR}$ rule: check the fences}
-  \sectionlabel{notes row 2 $\cdot$ Outliers $\cdot$ problems 5--8}
+  \sectionlabel{notes row 2 $\cdot$ Outliers $\cdot$ problems 3--6}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{enumerate}\setlength{\itemsep}{2pt}
@@ -175,7 +175,7 @@
 % ── ROW 2b. THE TRAP — it looks far ──────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{It looks far. Is it an outlier?}
-  \sectionlabel{notes row 2 $\cdot$ problem 7 $\cdot$ vote first}
+  \sectionlabel{notes row 2 $\cdot$ problem 5 $\cdot$ vote first}
   \vspace{6pt}
   Suppose Friday's fastest delivery had been \textbf{16 minutes}, not 20. $Q_1$ and $Q_3$ stay
   23 and 28, so the fences stay \textbf{15.5} and \textbf{35.5}.
@@ -194,7 +194,7 @@
 % ── ROW 3. CUMULATIVE RELATIVE FREQUENCY GRAPH ───────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Across, then down}
-  \sectionlabel{notes row 3 $\cdot$ Cumulative graph $\cdot$ problems 9--12}
+  \sectionlabel{notes row 3 $\cdot$ Cumulative graph $\cdot$ problems 7--8}
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
       \begin{tikzpicture}[x=0.15cm, y=0.034cm, baseline=(current bounding box.north)]
@@ -214,9 +214,9 @@
       Each point: the percent of the data \textbf{at or below} that value.
       \begin{itemize}\setlength{\itemsep}{2pt}
         \item Across from 50\%, down: median \textbf{25} min.
-        \item From 25\% and 75\%: $Q_1 = 20$, $Q_3 = 30$.
-        \item 35 min is at 90\% --- the \textbf{90th percentile}.
-        \item ``35 minutes or free'': 10\% of 40 $=$ \textbf{4} free.
+        \item From 25\% and 75\%: $Q_1 = 20$, $Q_3 = 30$; IQR \textbf{10} min.
+        \item 35 min is at 90\% --- the \textbf{90th percentile}: 90\% of the week's
+              deliveries took 35 minutes or less.
       \end{itemize}
     \end{column}
   \end{columns}
@@ -225,7 +225,7 @@
 % ── ROW 4. THE CRUX — resistance ─────────────────────────────────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{One flat tire. Four summaries.}
-  \sectionlabel[redacc]{notes row 4 $\cdot$ Resistance $\cdot$ problems 13--18 $\cdot$ the whole point of today}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ Resistance $\cdot$ problems 9--12 $\cdot$ the whole point of today}
   \begin{center}
     \small
     \renewcommand{\arraystretch}{1.25}
@@ -241,7 +241,7 @@
     \end{tabular}
   \end{center}
   \vspace{2pt}
-  \textbf{Problem 17 --- vote again:} which dropped more, the mean or the median?
+  \textbf{Problem 12 --- vote again:} which dropped more, the mean or the median?
   \begin{block}{Resistant (PS.DS.2d)}
     \textbf{The median and IQR are resistant; the mean and standard deviation are not.} The
     mean and SD use every \emph{value}, 55 included; the median and IQR only use
@@ -252,21 +252,21 @@
 % ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
   \ceruleanheader{Guided Practice: Shelter Stays}
-  \sectionlabel[goldacc]{We do $\cdot$ problems 19--22 $\cdot$ you hold the pen}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 13--16 $\cdot$ you hold the pen}
   Days each of Maple Grove's last ten adopted dogs waited for a home:
   \begin{center}
     \textbf{2 \quad 4 \quad 4 \quad 5 \quad 6 \quad 7 \quad 10 \quad 10 \quad 15 \quad 37}
     \quad {\small (the 37: a long medical hold)}
   \end{center}
   \begin{itemize}\setlength{\itemsep}{4pt}
-    \item[19.] The five-number summary and the IQR.
-    \item[20.] The fences. Which stays are outliers? Where does the right whisker stop?
-    \item[21.] Remove the 37. \textbf{Vote first:} mean or median --- which moves more? Then
+    \item[13.] The five-number summary and the IQR.
+    \item[14.] The fences. Which stays are outliers? Where does the right whisker stop?
+    \item[15.] Remove the 37. \textbf{Vote first:} mean or median --- which moves more? Then
           compute both. (Sums: 100 with, 63 without.)
-    \item[22.] Flyer: ``Our dogs find homes in 10 days on average.'' Fair? What should it report?
+    \item[16.] Flyer: ``Our dogs find homes in 10 days on average.'' Fair? What should it report?
   \end{itemize}
   \begin{block}{The question behind the question}
-    If you moved the mean and the median by the same amount in 21, you are still at the hook
+    If you moved the mean and the median by the same amount in 15, you are still at the hook
     vote.
   \end{block}
 \end{frame}
