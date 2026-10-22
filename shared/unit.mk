@@ -9,6 +9,9 @@
 PROJECT_ROOT := $(abspath ..)
 UNIT         := $(notdir $(CURDIR))
 COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
+# The course packages (recursive), then math-shared non-recursively — see the
+# TEXINPUTS note in shared/lesson.mk.
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 
 # Auto-discover lessons that have a Makefile, in sorted order.
 LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
@@ -49,7 +52,7 @@ check: $(LESSONS)
 _unit_cover:
 ifdef HAS_UNIT_COVER
 	@mkdir -p $(COMPILED_DIR)/$(UNIT)
-	cd unit_cover && TEXINPUTS="$(PROJECT_ROOT)/shared//:" \
+	cd unit_cover && TEXINPUTS="$(TEXINPUTS)" \
 	    latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
 	    -outdir="$(PROJECT_ROOT)/target/$(UNIT)/unit_cover" main.tex
 	cp $(PROJECT_ROOT)/target/$(UNIT)/unit_cover/main.pdf $(UNIT_COVER_PDF)
@@ -59,7 +62,7 @@ endif
 _unit_cover_key:
 ifdef HAS_UNIT_COVER_KEY
 	@mkdir -p $(COMPILED_DIR)/$(UNIT)
-	cd unit_cover_key && TEXINPUTS="$(PROJECT_ROOT)/shared//:" \
+	cd unit_cover_key && TEXINPUTS="$(TEXINPUTS)" \
 	    latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
 	    -outdir="$(PROJECT_ROOT)/target/$(UNIT)/unit_cover_key" main.tex
 	cp $(PROJECT_ROOT)/target/$(UNIT)/unit_cover_key/main.pdf $(UNIT_COVER_KEY_PDF)
@@ -121,3 +124,69 @@ clean:
 	rm -f $(UNIT_COVER_PDF) $(UNIT_COVER_KEY_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
 	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
 	      $(COMPILED_DIR)/$(UNIT)_full.pdf
+
+# ── Grading (math-shared, the submodule at the project root) ──────────────────
+# Unit-level entry points to math-shared's grading.mk, for ONE quiz or test that
+# uses grading.sty (\gradedblank items). COMP is the component directory
+# relative to the unit, e.g. tests/practice_test or quiz01/sample_quiz. Its key
+# is the sibling <COMP>_key when there is one (quizzes), otherwise
+# test_keys/<name>_key (tests). The same targets run from tests/, test_keys/
+# and a quiz directory, where COMP is the bare name.
+#
+#   make manifest COMP=tests/practice_test
+#       blank + key builds, target/<unit>/grading/<COMP>/manifest.json, and the
+#       check that the blank and key agree on every graded item.
+#   make roster-packets COMP=tests/actual_test ROSTER=~/Rosters/saar/roster-map.csv [SECTION=…]
+#       one personalized copy per student, in roster order (QR codes carry the
+#       student's tracking id, the name strip the student's name), each padded
+#       to an even page count so every copy starts on a fresh sheet, joined
+#       into target/compiled/<unit>/<COMP with / as _>_roster.pdf to print as
+#       one collated job.
+#
+# Unit rubrics live in <unit>/rubrics/; a rubric item names its file relative
+# to the component's parent directory (rubric=../rubrics/<assignment>-<id>.yaml).
+# Roster copies carry student names: they stay under target/, never committed.
+GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
+COMP          ?=
+COMPONENT     := $(COMP)
+KEY_COMPONENT := $(if $(wildcard $(COMP)_key/main.tex),$(COMP)_key,$(patsubst tests/%,test_keys/%_key,$(COMP)))
+GRADING_OUT   := $(PROJECT_ROOT)/target/$(UNIT)/grading/$(COMP)
+ROSTER_OUT    := $(COMPILED_DIR)/$(UNIT)/$(subst /,_,$(COMP))_roster.pdf
+
+.PHONY: manifest roster-packets grading-need-comp
+
+ifneq ($(wildcard $(GRADING_MK)),)
+include $(GRADING_MK)
+
+grading-need-comp:
+	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=tests/practice_test"; exit 1; }
+
+manifest: grading-need-comp
+	@$(MAKE) --no-print-directory grading-manifest
+	@echo "✓  Manifest       → target/$(UNIT)/grading/$(COMP)/manifest.json"
+
+# A one-page blank letter sheet pads an odd-length copy.
+GRADING_PAD := $(GRADING_OUT)/pad/pad.pdf
+$(GRADING_PAD):
+	@mkdir -p $(dir $@)
+	@cd $(dir $@) && xelatex -interaction=nonstopmode -halt-on-error -jobname=pad \
+	    '\documentclass{article}\usepackage[letterpaper]{geometry}\pagestyle{empty}\begin{document}\null\end{document}' \
+	    > pad.out 2>&1 || { echo "!  pad page failed — see $(dir $@)pad.log"; exit 1; }
+
+roster-packets: grading-need-comp grading-need-roster grading-personalized $(GRADING_PAD)
+	@mkdir -p $(dir $(ROSTER_OUT))
+	@set -e; \
+	ids=$$($(GRADING_PYTHON) "$(GRADING_SCRIPTS)/roster_tex.py" "$(ROSTER)" --ids-only \
+	        $(if $(SECTION),--section "$(SECTION)")); \
+	pdfs=; n=0; \
+	for id in $$ids; do \
+	  f="$(GR_STUDENTS)/$$id.pdf"; pdfs="$$pdfs $$f"; n=$$((n + 1)); \
+	  p=$$(pdfinfo "$$f" | awk '/^Pages/{print $$2}'); \
+	  if [ $$((p % 2)) -eq 1 ]; then pdfs="$$pdfs $(GRADING_PAD)"; fi; \
+	done; \
+	pdfunite $$pdfs $(ROSTER_OUT); \
+	echo "✓  Roster copies  → target/compiled/$(UNIT)/$(notdir $(ROSTER_OUT)) ($$n students, roster order)"
+else
+manifest roster-packets grading-need-comp:
+	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
+endif

@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l08-hw item q3c (unit01/lesson08/homework).
+id: q3c
+points: 1
+task: "The phone survey (a simple random sample of 80) gives 35% for book club; the clipboard (50 who signed) gives 60% for story hour. Which percent may be scaled to all 1,200, and why?"
+criteria:
+  - id: which
+    points: 0.5
+    full: "Says the 35% may be scaled and the 60% may not."
+  - id: why
+    points: 0.5
+    full: "Says chance chose the 80 from the whole list, while the 50 chose themselves, so the 60% describes only the people who signed."

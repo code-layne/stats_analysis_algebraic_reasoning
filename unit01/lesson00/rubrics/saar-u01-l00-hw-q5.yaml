@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l00-hw item q5 (unit01/lesson00/homework).
+id: q5
+points: 2
+task: "45 of 300 surveyed members use the pool. Predict how many of all 2000 members do, and write the prediction as one sentence for the director."
+criteria:
+  - id: value
+    points: 1
+    full: "Predicts about 300 members (15% of 2000)."
+  - id: sentence
+    points: 1
+    full: "One sentence for the director naming the 2000 Northgate members and calling it a prediction or estimate from the 300 surveyed."

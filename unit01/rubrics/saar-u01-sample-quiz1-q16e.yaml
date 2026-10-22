@@ -1,0 +1,11 @@
+# Rubric for saar-u01-sample-quiz1 item q16e (unit01/quiz01/sample_quiz).
+id: q16e
+points: 1.5
+task: "24 of 60 surveyed students (40%) chose decades, the most popular theme. Write a conclusion in context naming the group it applies to."
+criteria:
+  - id: value
+    points: 0.5
+    full: "Names the decades theme with its 40% (24 of 60)."
+  - id: group
+    points: 1
+    full: "Limits the conclusion to the 60 Millbrook students surveyed, in context (more than any other theme)."

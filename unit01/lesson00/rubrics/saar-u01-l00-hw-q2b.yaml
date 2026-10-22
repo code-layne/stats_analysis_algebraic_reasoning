@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l00-hw item q2b (unit01/lesson00/homework).
+id: q2b
+points: 0.25
+task: "Say how you know Member ID is categorical."
+criteria:
+  - id: reason
+    points: 0.25
+    full: "Says the ID is a label (a name written with digits), not an amount, so arithmetic such as a mean means nothing."

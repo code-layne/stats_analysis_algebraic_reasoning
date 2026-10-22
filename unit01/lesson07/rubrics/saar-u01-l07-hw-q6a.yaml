@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l07-hw item q6a (unit01/lesson07/homework).
+id: q6a
+points: 1
+task: "She collected the book-club data by sitting in on the meetings and recording who came, so a classmate calls it an observational study. Name the method and the design, and say whether the classmate is right."
+criteria:
+  - id: names
+    points: 0.5
+    full: "Method: observation; design: experiment (a generator built the groups)."
+  - id: wrong
+    points: 0.5
+    full: "Says the classmate is wrong: how data are recorded does not decide the design; assignment does."

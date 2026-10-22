@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l01-hw item q3 (unit01/lesson01/homework).
+id: q3
+points: 2
+task: "5 of 50 shoppers asked rode the bus (10%). Write the estimate for all 800 Saturday shoppers as one sentence for the manager's report, naming the group asked, the number, and what was measured."
+criteria:
+  - id: value
+    points: 1
+    full: "Estimates about 80 of the 800 Saturday shoppers ride the bus (10% of 800)."
+  - id: sentence
+    points: 1
+    full: "Names the group asked (the 50 shoppers one Saturday) and what was measured (how they traveled), and presents 80 as an estimate."
+examples:
+  - response: "80 people ride the bus."
+    scores: {value: 1, sentence: 0}

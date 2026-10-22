@@ -1,0 +1,23 @@
+# Rubric for saar-u01-practice-test item q20 (unit01/tests/practice_test).
+id: q20
+points: 20
+task: "A random sample of students found an association, but nobody was assigned. The principal claims that eating breakfast causes higher grades. Is the conclusion justified? Explain, and name one other variable that could explain the result."
+criteria:
+  - id: observational
+    points: 6
+    full: "Says no: nobody was assigned (students chose for themselves), so this is an observational study."
+  - id: association
+    points: 4
+    full: "Says the study shows an association, not causation."
+  - id: variable
+    points: 4
+    full: "Names a plausible other (confounding) variable, e.g. family routine or support at home, which can lead to both eating breakfast and keeping up with homework."
+  - id: mechanism
+    points: 4
+    full: "Explains how that variable could drive both the explanatory variable and the grades."
+  - id: experiment
+    points: 2
+    full: "Says only an experiment that randomly assigns the treatment could show causation."
+examples:
+  - response: "Yes, because the students who did it had higher grades."
+    scores: {observational: 0, association: 0, variable: 0, mechanism: 0, experiment: 0}

@@ -1,0 +1,14 @@
+# Rubric for saar-u02-actual-test item q25c (unit02/tests/actual_test).
+id: q25c
+points: 2.5
+task: "Write a comparison of the two brands: shape, outliers, center, and spread, using comparative words."
+criteria:
+  - id: shape
+    points: 0.5
+    full: "Both roughly symmetric with no outliers."
+  - id: center
+    points: 0.5
+    full: "Both centers are 60 minutes."
+  - id: spread
+    points: 1.5
+    full: "Compares spread with a comparative word and numbers: Brand D (Sx 8.1 min, range 32 min) is much more spread out than Brand C (Sx 2.4 min, range 10 min), so Brand C's drying times are more consistent."

@@ -1,0 +1,14 @@
+# Rubric for saar-u02-l04-hw item q6 (unit02/lesson04/homework).
+id: q6
+points: 2
+task: "Jordan says both brands have a median of 12 hours, so it doesn't matter which one you buy. Say what Jordan left out, then write the comparison with comparative words, in context."
+criteria:
+  - id: leftout
+    points: 0.5
+    full: "Jordan compared centers only and left out spread (and outliers)."
+  - id: spread
+    points: 1
+    full: "Compares spread with comparative words: Nova's IQR (8 hours) is 4 times Volt's (2 hours), so Volt's battery life is far more consistent."
+  - id: outlier
+    points: 0.5
+    full: "Mentions Volt's low outlier (6 hours), in context."

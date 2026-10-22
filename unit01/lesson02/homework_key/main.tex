@@ -17,6 +17,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u01-l02-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -61,9 +64,9 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
   \item Name the groups in this study.
 
         \par\vspace{4pt}
-        Population: \ans{all 1,500 Harbor Point members} \hfill Sample size: \ans{75}
+        Population: \blankbox{\gradedblank[id=q1a, type=short, points=0.75, answer={all 1,500 Harbor Point members}, check=text]{5.6cm}{13.5pt}} \hfill Sample size: \blankbox{\gradedblank[id=q1b, type=short, points=0.5, answer={75}, check=numeric]{1.6cm}{13.5pt}}
         \par\vspace{8pt}
-        Sample: \ans{the 75 members asked on Tuesday evening}
+        Sample: \blankbox{\gradedblank[id=q1c, type=short, points=0.75, answer={the 75 members asked on Tuesday evening}, check=text]{6.8cm}{13.5pt}}
 
   \item Complete the staff member's frequency table, then show your work for the
         \textbf{water aerobics} row.
@@ -74,12 +77,12 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \toprule
         \textbf{Main use} & \textbf{Count} & \textbf{Relative frequency (percent)} \\
         \midrule
-        Lap swimming   & 27 & \ans{$27/75 = 0.36 = 36\%$} \\
-        Family swim    & 21 & \ans{$21/75 = 0.28 = 28\%$} \\
-        Lessons        & 18 & \ans{$18/75 = 0.24 = 24\%$} \\
-        Water aerobics &  9 & \ans{$9/75 = 0.12 = 12\%$} \\
+        Lap swimming   & 27 & \ans{\makebox[4.2cm][l]{$27/75 = 0.36$}}\hspace{0.2cm}\smash{\gradedblank[id=q2a, type=short, points=0.25, answer={36}, check=numeric, display={36\%}]{2cm}{18pt}} \\
+        Family swim    & 21 & \ans{\makebox[4.2cm][l]{$21/75 = 0.28$}}\hspace{0.2cm}\smash{\gradedblank[id=q2b, type=short, points=0.25, answer={28}, check=numeric, display={28\%}]{2cm}{18pt}} \\
+        Lessons        & 18 & \ans{\makebox[4.2cm][l]{$18/75 = 0.24$}}\hspace{0.2cm}\smash{\gradedblank[id=q2c, type=short, points=0.25, answer={24}, check=numeric, display={24\%}]{2cm}{18pt}} \\
+        Water aerobics &  9 & \ans{\makebox[4.2cm][l]{$9/75 = 0.12$}}\hspace{0.2cm}\smash{\gradedblank[id=q2d, type=short, points=0.25, answer={12}, check=numeric, display={12\%}]{2cm}{18pt}} \\
         \midrule
-        \textbf{Total} & \ans{75} & \ans{$75/75 = 1.00 = 100\%$} \\
+        \textbf{Total} & \blankbox{\gradedblank[id=q2e, type=short, points=0.5, answer={75}, check=numeric]{1.4cm}{18pt}} & \ans{\makebox[4.2cm][l]{$75/75 = 1.00$}}\hspace{0.2cm}\smash{\gradedblank[id=q2f, type=short, points=0.5, answer={100}, check=numeric, display={100\%}]{2cm}{18pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -103,8 +106,7 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \end{work}
 
         Write that result as one sentence for the board: name the group, and call it an estimate.
-        \par\ansline{36\% of the 75 members asked mainly swim laps, so if they represent the pool,}
-\ansline{about 540 of Harbor Point's 1,500 members do --- an estimate, not a count.}
+        \par\gradedwritelines{2}{\gradedblank[id=q3, type=rubric, points=2, display={36\% of the 75 members asked mainly swim laps, so if they represent the pool, about 540 of Harbor Point's 1,500 members do --- an estimate, not a count.}]{\linewidth}{30pt}}
 
 
   \item Label each number \textbf{parameter} or \textbf{statistic}, and say who it describes.
@@ -116,13 +118,13 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \textbf{The number} & \textbf{Kind?} & \textbf{Describes\dots} \\
         \midrule
         The pool has $1{,}500$ members.
-          & \ans{parameter} & \ans{all 1,500 members} \\
+          & \blankbox{\gradedblank[id=q4a, type=short, points=0.25, answer={parameter}, check=text]{2cm}{17pt}} & \blankbox{\gradedblank[id=q4b, type=short, points=0.25, answer={all 1,500 members}, check=text]{3.4cm}{17pt}} \\
         $36\%$ of the $75$ members asked mainly swim laps.
-          & \ans{statistic} & \ans{the 75 asked} \\
+          & \blankbox{\gradedblank[id=q4c, type=short, points=0.25, answer={statistic}, check=text]{2cm}{17pt}} & \blankbox{\gradedblank[id=q4d, type=short, points=0.25, answer={the 75 asked}, check=text]{3.4cm}{17pt}} \\
         True mean visits per month, all $1{,}500$ members.
-          & \ans{parameter} & \ans{all 1,500 members} \\
+          & \blankbox{\gradedblank[id=q4e, type=short, points=0.25, answer={parameter}, check=text]{2cm}{17pt}} & \blankbox{\gradedblank[id=q4f, type=short, points=0.25, answer={all 1,500 members}, check=text]{3.4cm}{17pt}} \\
         Records: $62\%$ of all $1{,}500$ members renewed.
-          & \ans{parameter} & \ans{all 1,500 members} \\
+          & \blankbox{\gradedblank[id=q4g, type=short, points=0.25, answer={parameter}, check=text]{2cm}{17pt}} & \blankbox{\gradedblank[id=q4h, type=short, points=0.25, answer={all 1,500 members}, check=text]{3.4cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -136,13 +138,13 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         \textbf{Situation} & \textbf{Constraint} \\
         \midrule
         Reaching every member in person would take staff three weeks.
-          & \ans{time} \\
+          & \blankbox{\gradedblank[id=q5a, type=short, points=0.5, answer={time}, check=text]{2.4cm}{17pt}} \\
         Mailing a survey to all $1{,}500$ would cost more than the board budgeted.
-          & \ans{cost} \\
+          & \blankbox{\gradedblank[id=q5b, type=short, points=0.5, answer={cost}, check=text]{2.4cm}{17pt}} \\
         Some members moved away and left no forwarding address.
-          & \ans{access} \\
+          & \blankbox{\gradedblank[id=q5c, type=short, points=0.5, answer={access}, check=text]{2.4cm}{17pt}} \\
         Members join and quit every month, so the list is never the same twice.
-          & \ans{change} \\
+          & \blankbox{\gradedblank[id=q5d, type=short, points=0.5, answer={change}, check=text]{2.4cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -152,8 +154,7 @@ Every answer names the group it is about --- the $75$ asked, or all $1{,}500$ me
         says, ``One of you counted wrong.'' Explain why the difference between $36\%$ and
         $40\%$ does \emph{not} mean that, and say how many true percents there are for all
         $1{,}500$ members.
-        \par\ansline{Two honest samples give two statistics --- sampling variability, not an error.}
-\ansline{There is exactly one true percent for all 1,500 members; both estimate it.}
+        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Two honest samples give two statistics --- sampling variability, not an error. There is exactly one true percent for all 1,500 members; both estimate it.}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}

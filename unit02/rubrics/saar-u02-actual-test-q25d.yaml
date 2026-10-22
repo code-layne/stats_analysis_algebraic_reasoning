@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q25d (unit02/tests/actual_test).
+id: q25d
+points: 2.5
+task: "A mural must be dry within 65 minutes. Which brand should the department buy? Justify with the table."
+criteria:
+  - id: brand
+    points: 1
+    full: "Brand C."
+  - id: justify
+    points: 1.5
+    full: "Justifies with the table: C's maximum is 65 minutes, so every C can dried within 65 minutes; D's Q3 is 66, so at least a quarter of D cans take too long."

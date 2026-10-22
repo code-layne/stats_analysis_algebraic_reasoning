@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l01-hw item q4b (unit01/lesson01/homework).
+id: q4b
+points: 0.25
+task: "How would you summarize answers to \"How did you travel to the market today?\""
+criteria:
+  - id: summary
+    points: 0.25
+    full: "Counts and/or percents (proportions) of each category; a mean earns nothing."

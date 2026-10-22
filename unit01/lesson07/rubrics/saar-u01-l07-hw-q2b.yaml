@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l07-hw item q2b (unit01/lesson07/homework).
+id: q2b
+points: 1
+task: "The book-club experiment (a generator split 300 volunteers 150/150) found 64% vs. 40%. Write the strongest sentence this study earns."
+criteria:
+  - id: caused
+    points: 0.5
+    full: "Uses a causal verb: the book club caused (raised) the share reading at least 10 books."
+  - id: reason
+    points: 0.5
+    full: "Gives the reason: random assignment (the generator) built the groups, so the club is the only difference."

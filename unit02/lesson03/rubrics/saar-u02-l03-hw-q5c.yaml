@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l03-hw item q5c (unit02/lesson03/homework).
+id: q5c
+points: 1
+task: "From the cumulative relative frequency graph of 40 used bikes: $200 is which percentile? Say what that means about the bikes."
+criteria:
+  - id: percentile
+    points: 0.5
+    full: "The 75th percentile."
+  - id: meaning
+    points: 0.5
+    full: "75% of the 40 bikes sold for $200 or less."

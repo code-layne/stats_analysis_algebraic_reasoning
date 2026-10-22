@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l02-hw item q3 (unit01/lesson02/homework).
+id: q3
+points: 2
+task: "36% of the 75 members asked mainly swim laps (0.36 x 1500 = 540). Write the result as one sentence for the board: name the group, and call it an estimate."
+criteria:
+  - id: value
+    points: 1
+    full: "Gives about 540 of the 1,500 members."
+  - id: estimate
+    points: 1
+    full: "Names the group (Harbor Point's 1,500 members, from the 75 asked) and calls 540 an estimate, not a count."
+examples:
+  - response: "540 members swim laps."
+    scores: {value: 1, estimate: 0}

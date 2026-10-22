@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l08-hw item q5 (unit01/lesson08/homework).
+id: q5
+points: 2
+task: "The draft item read \"Wouldn't you love a coding lab for our teens?\" Name the instrument rule it breaks and the name Lesson 1.4 gave that bias, then repair it."
+criteria:
+  - id: rule
+    points: 0.5
+    full: "Names the neutral-wording rule (rule 2)."
+  - id: bias
+    points: 0.5
+    full: "Names the bias: a leading question (response bias)."
+  - id: repair
+    points: 1
+    full: "Rewrites it neutrally, e.g. \"Which one of these four programs should the grant fund?\""

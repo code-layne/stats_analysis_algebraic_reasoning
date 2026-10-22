@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l04-hw item q4d (unit01/lesson04/homework).
+id: q4d
+points: 1
+task: "Plan A leaves the front-desk surveys out four weeks to get 360 back; Plan B is the random phone sample. Why would Plan A's 360 still report about 80%?"
+criteria:
+  - id: same
+    points: 1
+    full: "Says more of the same procedure reaches the same kind of people (those who come in and choose to fill it out), so the bias stays: about 80%, not the truth near 45%. A bigger sample does not fix bias."

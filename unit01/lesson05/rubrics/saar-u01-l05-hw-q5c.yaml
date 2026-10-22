@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l05-hw item q5c (unit01/lesson05/homework).
+id: q5c
+points: 1
+task: "Last summer 70% of those who signed up and 20% of those who did not already read 10+ books. Which of the three stories is this, and does it make the program look better or worse than it really is?"
+criteria:
+  - id: story
+    points: 0.5
+    full: "Names the reversed arrow: people who already read a lot are the ones who sign up."
+  - id: better
+    points: 0.5
+    full: "Says it makes the program look better than it is (most of the gap was there before the program)."

@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l07-hw item q3b (unit01/lesson07/homework).
+id: q3b
+points: 0.5
+task: "Represent stage of the book-club study."
+criteria:
+  - id: represent
+    points: 0.5
+    full: "A table (or bar graph) of each group's count and percent."

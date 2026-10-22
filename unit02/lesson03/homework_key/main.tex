@@ -24,6 +24,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u02-l03-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -93,10 +96,10 @@ Every answer names the bikes and the dollars.
 
         Which prices are outliers? The \$40 bike looks far below the rest --- is it an
         outlier? Justify each answer with a fence.
-        \par\ansline{Only the \$900 bike: it is above the upper fence, \$270.}
-        \par\ansline{The \$40 bike is not: \$40 is above the lower fence, \$30.}
+        \par\gradedwriteline[{\gradedblank[id=q2a, type=rubric, points=1.5, display={Only the \$900 bike: it is above the upper fence, \$270. The \$40 bike is not: \$40 is above the lower fence, \$30.}]{\linewidth}{33.5pt}}]
+        \par\gradedwriteline
         \par\vspace{4pt}
-        Where does the right whisker of the modified boxplot stop? \ans{at \$200}
+        Where does the right whisker of the modified boxplot stop? \blankbox{\gradedblank[id=q2b, type=short, points=0.5, answer={200}, check=numeric, display={at \$200}]{2.4cm}{13.5pt}}
 
 \end{enumerate}
 \end{notesbox}
@@ -125,8 +128,8 @@ Every answer names the bikes and the dollars.
         the mean.''} Use item~3 to say whether she is right. Then name which summaries are
         resistant, using these too: with the \$900 bike, $\text{IQR} = \$60$ and
         $s \approx \$233$; without it, $\text{IQR} = \$60$ and $s \approx \$46$.
-        \par\ansline{No --- the mean fell \$69 (\$210 to \$141); the median only \$5.}
-        \par\ansline{Resistant: the median and IQR. Not resistant: the mean and SD.}
+        \par\gradedwriteline[{\gradedblank[id=q4, type=rubric, points=2, display={No --- the mean fell \$69 (\$210 to \$141); the median only \$5. Resistant: the median and IQR. Not resistant: the mean and SD.}]{\linewidth}{33.5pt}}]
+        \par\gradedwriteline
 
   \item Last season the shop sold $40$ used bikes. Read their cumulative relative frequency
         graph.
@@ -147,17 +150,17 @@ Every answer names the bikes and the dollars.
         \end{tikzpicture}
         \end{center}
 
-        Median price: \ans{\$150} \qquad Percent sold for \$250 or less: \ans{90\%}
+        Median price: \blankbox{\gradedblank[id=q5a, type=short, points=0.5, answer={150}, check=numeric, display={\$150}]{2.4cm}{13.5pt}} \qquad Percent sold for \$250 or less: \blankbox{\gradedblank[id=q5b, type=short, points=0.5, answer={90}, check=numeric, display={90\%}]{2.4cm}{13.5pt}}
         \par\vspace{4pt}
         \$200 is which percentile? Say what that means about the bikes.
-        \par\ansline{The 75th --- 75\% of the 40 bikes sold for \$200 or less.}
+        \par\gradedwriteline[{\gradedblank[id=q5c, type=rubric, points=1, display={The 75th --- 75\% of the 40 bikes sold for \$200 or less.}]{\linewidth}{12pt}}]
 
   \item \emph{From Lesson 2.2:} the \textbf{range} is max $-$ min. Find it with and without the
         \$900 bike. Is the range resistant? Which spread should the shop's ad report, and why?
 
         \par\vspace{4pt}
-        With: \ans{\$900 $-$ \$40 $=$ \$860} \qquad Without: \ans{\$200 $-$ \$40 $=$ \$160}
-        \par\ansline{Not resistant --- it uses the \$900 itself. Report the IQR, \$60.}
+        With: \ans{\makebox[2.4cm][l]{\$900 $-$ \$40}}\hspace{0.2cm}\smash{\gradedblank[id=q6a, type=short, points=0.5, answer={860}, check=numeric, display={\$860}]{1.8cm}{13.5pt}} \qquad Without: \ans{\makebox[2.4cm][l]{\$200 $-$ \$40}}\hspace{0.2cm}\smash{\gradedblank[id=q6b, type=short, points=0.5, answer={160}, check=numeric, display={\$160}]{1.8cm}{13.5pt}}
+        \par\gradedwriteline[{\gradedblank[id=q6c, type=rubric, points=1, display={Not resistant --- it uses the \$900 itself. Report the IQR, \$60.}]{\linewidth}{12pt}}]
 
 \end{enumerate}
 \end{notesbox}

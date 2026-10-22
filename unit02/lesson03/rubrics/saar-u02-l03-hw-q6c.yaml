@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l03-hw item q6c (unit02/lesson03/homework).
+id: q6c
+points: 1
+task: "The range is $860 with the $900 bike and $160 without. Is the range resistant? Which spread should the shop's ad report, and why?"
+criteria:
+  - id: not
+    points: 0.5
+    full: "Not resistant: it uses the $900 price itself."
+  - id: iqr
+    points: 0.5
+    full: "Report the IQR ($60), which is resistant."

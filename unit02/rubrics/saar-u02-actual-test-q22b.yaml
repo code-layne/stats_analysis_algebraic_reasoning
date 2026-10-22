@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q22b (unit02/tests/actual_test).
+id: q22b
+points: 5
+task: "Compare the two groups' hours of homework in one week (freshmen and sophomores) (parallel boxplots), with a comparative word for center and for spread."
+criteria:
+  - id: center
+    points: 2.5
+    full: "Compares centers with a comparative word and values: sophomores' median (6 h) is greater than freshmen's (5 h)."
+  - id: spread
+    points: 2.5
+    full: "Compares spreads with a comparative word and values: freshmen's homework is more spread out (IQR 3 h vs. 1 h), so sophomores are more consistent."

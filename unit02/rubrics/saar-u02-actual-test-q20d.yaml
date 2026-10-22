@@ -1,0 +1,8 @@
+# Rubric for saar-u02-actual-test item q20d (unit02/tests/actual_test).
+id: q20d
+points: 2
+task: "Fences 10 and 90. The value 14 looks far from the box. Explain whether it is an outlier."
+criteria:
+  - id: inside
+    points: 2
+    full: "Says no: 14 is above the lower fence, 10, so it is inside the fences."

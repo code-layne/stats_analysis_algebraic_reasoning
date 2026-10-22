@@ -1,0 +1,11 @@
+# Rubric for saar-u01-sample-quiz1 item q17d (unit01/quiz01/sample_quiz).
+id: q17d
+points: 1
+task: "28 of 80 randomly surveyed members (35%) arrive before 7 a.m. Is the 35% a parameter or a statistic? Say how you know."
+criteria:
+  - id: statistic
+    points: 0.5
+    full: "Says statistic."
+  - id: why
+    points: 0.5
+    full: "Because it describes the 80-member sample, not all 1,200 members."

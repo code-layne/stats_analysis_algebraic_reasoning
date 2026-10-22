@@ -1,0 +1,11 @@
+# Rubric for saar-u02-practice-test item q25b (unit02/tests/practice_test).
+id: q25b
+points: 2.5
+task: "The department head says \"Same median, same mean --- it doesn't matter which we buy.\" Respond."
+criteria:
+  - id: spread
+    points: 1
+    full: "When the centers match, the spread decides."
+  - id: consequence
+    points: 1.5
+    full: "Brand B is much more spread out, so some B batteries die far sooner than any A battery."

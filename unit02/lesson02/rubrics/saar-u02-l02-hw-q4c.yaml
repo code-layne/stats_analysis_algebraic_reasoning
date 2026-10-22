@@ -1,0 +1,8 @@
+# Rubric for saar-u02-l02-hw item q4c (unit02/lesson02/homework).
+id: q4c
+points: 1
+task: "Six Oak Street deliveries have mean 30 minutes and s = 4 minutes. Interpret s in context."
+criteria:
+  - id: typical
+    points: 1
+    full: "Says a typical Oak Street delivery time is about 4 minutes from the 30-minute mean (in context, with units)."

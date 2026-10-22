@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l04-hw item q2 (unit02/lesson04/homework).
+id: q2
+points: 2
+task: "Volt: Q1 = 11 hours, IQR = 2 hours. Is Volt's 6-hour phone an outlier? Show the lower fence, Q1 - 1.5 IQR."
+criteria:
+  - id: fence
+    points: 1
+    full: "Lower fence 11 - 1.5(2) = 8 hours (the fence may be in the work above)."
+  - id: yes
+    points: 1
+    full: "Yes: 6 hours is below the lower fence of 8 hours."

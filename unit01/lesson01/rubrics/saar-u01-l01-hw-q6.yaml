@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l01-hw item q6 (unit01/lesson01/homework).
+id: q6
+points: 2
+task: "The report says only 10% of shoppers ride the bus, so a free shuttle would be used by very few. Every number is correct. Explain why the conclusion does not follow, and name the stage the problem entered at."
+criteria:
+  - id: why
+    points: 1
+    full: "Explains that nobody was asked about a shuttle (the question asked how they traveled now), so the data cannot say who would use one."
+  - id: stage
+    points: 1
+    full: "Names stage 1, the question."

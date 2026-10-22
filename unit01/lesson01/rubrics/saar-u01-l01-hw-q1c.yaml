@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l01-hw item q1c (unit01/lesson01/homework).
+id: q1c
+points: 1
+task: "How do you know the variable (how the shopper traveled) is categorical?"
+criteria:
+  - id: reason
+    points: 1
+    full: "Says the answers are labels or categories (drove, walked, ...), not amounts, so arithmetic on them means nothing."

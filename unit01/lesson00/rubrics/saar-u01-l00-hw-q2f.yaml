@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l00-hw item q2f (unit01/lesson00/homework).
+id: q2f
+points: 0.25
+task: "Say how you know Visits last month is quantitative."
+criteria:
+  - id: reason
+    points: 0.25
+    full: "Says it is a count or amount of visits, so a mean makes sense. \"It's a number\" alone earns nothing."

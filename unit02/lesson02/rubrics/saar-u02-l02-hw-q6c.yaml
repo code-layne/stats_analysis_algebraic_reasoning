@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l02-hw item q6c (unit02/lesson02/homework).
+id: q6c
+points: 1
+task: "Every Oak Street delivery took exactly 8 minutes longer; Jordan says s went up because the times are bigger. Explain what Jordan has mixed up."
+criteria:
+  - id: unchanged
+    points: 0.5
+    full: "Says each deviation from the (new) mean is unchanged, because every time moved up the same 8 minutes."
+  - id: size
+    points: 0.5
+    full: "Says s measures spread, not size: bigger times, same spread."

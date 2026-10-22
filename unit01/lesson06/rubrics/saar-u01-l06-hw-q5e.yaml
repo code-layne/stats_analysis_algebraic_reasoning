@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l06-hw item q5e (unit01/lesson06/homework).
+id: q5e
+points: 1
+task: "The director blocks the 200 volunteers on age (120 adults, 80 children) and randomizes inside each block. Why block rather than leave age to chance?"
+criteria:
+  - id: certain
+    points: 1
+    full: "Says children and adults read differently, and blocking makes it certain (not just likely) that each group gets the same mix of ages."

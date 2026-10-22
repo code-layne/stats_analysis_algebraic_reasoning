@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l00-hw item q4b (unit01/lesson00/homework).
+id: q4b
+points: 1
+task: "Explain why a percent, and not a mean, is the right summary of \"Group class?\"."
+criteria:
+  - id: reason
+    points: 1
+    full: "Says Yes/No are labels (categorical): they cannot be added or averaged, only counted, so the summary is the percent (or count) saying Yes."

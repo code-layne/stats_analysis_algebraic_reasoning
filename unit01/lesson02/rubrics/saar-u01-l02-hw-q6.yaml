@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l02-hw item q6 (unit01/lesson02/homework).
+id: q6
+points: 2
+task: "A second sample of 75 gives 40% lap swimmers against the first's 36%. Explain why the difference does not mean someone counted wrong, and say how many true percents there are for all 1,500 members."
+criteria:
+  - id: variability
+    points: 1
+    full: "Says different samples give different statistics (sampling variability), so the difference is expected, not an error."
+  - id: one
+    points: 1
+    full: "Says there is exactly one true percent (the parameter) for all 1,500 members, and both samples estimate it."

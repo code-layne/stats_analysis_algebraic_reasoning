@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l03-hw item q2a (unit02/lesson03/homework).
+id: q2a
+points: 1.5
+task: "The fences are $30 and $270. Which prices are outliers? Is the $40 bike an outlier? Justify each answer with a fence."
+criteria:
+  - id: 900
+    points: 0.75
+    full: "Only the $900 bike is an outlier: it is above the upper fence, $270."
+  - id: 40
+    points: 0.75
+    full: "The $40 bike is not an outlier: $40 is above the lower fence, $30."

@@ -20,6 +20,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
+\usepackage{grading}
+\gradingassignment{saar-u01-l04-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -64,23 +67,23 @@ asked} and \emph{who answered}.
 
   \item The front-desk study.
         \par\vspace{4pt}
-        Population: \blank{4.2cm} \hfill Sample: \blank{5cm}
+        Population: \blankbox{\gradedblank[id=q1a, type=short, points=0.25, answer={all 1,200 card holders}, check=text]{4.2cm}{13.5pt}} \hfill Sample: \blankbox{\gradedblank[id=q1b, type=short, points=0.25, answer={the 90 who filled one out}, check=text]{5cm}{13.5pt}}
         \par\vspace{8pt}
-        It was a \blank{2.6cm} sample, and a frame that leaves out part of the population
-        causes \blank{3cm}. Name one kind of card holder who had almost no chance of being
+        It was a \blankbox{\gradedblank[id=q1c, type=short, points=0.25, answer={convenience}, check=text]{2.6cm}{13.5pt}} sample, and a frame that leaves out part of the population
+        causes \blankbox{\gradedblank[id=q1d, type=short, points=0.25, answer={undercoverage}, check=text]{3cm}{13.5pt}}. Name one kind of card holder who had almost no chance of being
         included.
-        \par\writeline
+        \par\gradedwriteline[{\gradedblank[id=q1e, type=rubric, points=1, display={Anyone who did not visit the library that week --- weekend-only or online-only card holders.}]{\linewidth}{12pt}}]
 
   \item Of the $90$ surveys returned, $72$ said they want longer weekend hours.
 
-        \textbf{(a)} What percent of the returned surveys is that?
+        \textbf{(a)} What percent of the returned surveys is that? \hfill\smash{\gradedblank[id=q2a, type=short, points=1, answer={80}, check=numeric, display={80\%}]{1.8cm}{13.5pt}}
 
         \begin{work}
           \dfrac{72}{90} &= 0.80 = 80\%
         \end{work}
 
         \textbf{(b)} The director applies that percent to all $1{,}200$ card holders. How many
-        does she predict want longer weekend hours?
+        does she predict want longer weekend hours? \hfill\smash{\gradedblank[id=q2b, type=short, points=1, answer={960}, check=numeric]{1.8cm}{13.5pt}}
 
         \begin{work}
           0.80 \times 1200 &= 960 \text{ card holders}
@@ -96,22 +99,22 @@ asked} and \emph{who answered}.
   \item A statistician talks her into doing it properly: a random sample of $120$ card holders
         from the full list, reached by phone until every one answers. $54$ want longer hours.
 
-        \textbf{(a)} What percent is that, and what does it predict for all $1{,}200$?
+        \textbf{(a)} What percent is that, and what does it predict for all $1{,}200$? \hfill\smash{\gradedblank[id=q3a, type=short, points=0.5, answer={45}, check=numeric, display={45\%}]{1.6cm}{13.5pt}}\quad\smash{\gradedblank[id=q3b, type=short, points=0.5, answer={540}, check=numeric]{1.8cm}{13.5pt}}
 
         \begin{work}
           \dfrac{54}{120} &= 0.45 = 45\%, \text{ so } 0.45 \times 1200 = 540 \text{ card holders}
         \end{work}
 
-        \textbf{(b)} The front-desk study was too high by \blank{1.2cm} points --- about
-        \blank{1.4cm} card holders.
+        \textbf{(b)} The front-desk study was too high by \blankbox{\gradedblank[id=q3c, type=short, points=0.5, answer={35}, check=numeric]{1.2cm}{13.5pt}} points --- about
+        \blankbox{\gradedblank[id=q3d, type=short, points=0.5, answer={420}, check=numeric]{1.4cm}{13.5pt}} card holders.
 
   \item Before the phone survey, the director had said: ``The front-desk number is fine, we
         just need more of them --- leave the surveys out for four weeks and get $360$ back.''
         Call that Plan A; the phone sample is Plan B.
         \par\vspace{2pt}
-        Bigger: Plan \blank{0.8cm}. \quad Closer to the truth: Plan \blank{0.8cm}. \quad
-        Plan A's $360$ would report \blank{2cm} --- why?
-        \par\writelines{2}
+        Bigger: Plan \blankbox{\gradedblank[id=q4a, type=choice, points=0.25, answer={A}]{0.8cm}{13.5pt}}. \quad Closer to the truth: Plan \blankbox{\gradedblank[id=q4b, type=choice, points=0.25, answer={B}]{0.8cm}{13.5pt}}. \quad
+        Plan A's $360$ would report \blankbox{\gradedblank[id=q4c, type=short, points=0.5, answer={80}, check=numeric, tolerance=5, display={about 80\%}]{2cm}{13.5pt}} --- why?
+        \par\gradedwritelines{2}{\gradedblank[id=q4d, type=rubric, points=1, display={Same desk, same visitors, more of them: four weeks of the same procedure still reaches only the people who come in and bother to write, so the lean is the same --- about 80\%, not 45\%.}]{\linewidth}{30pt}}
 
   \item Name the kind of response bias in each situation.
         \nopagebreak
@@ -122,22 +125,22 @@ asked} and \emph{who answered}.
         \toprule
         \textbf{The situation} & \textbf{Kind} \\
         \midrule
-        A card holder agrees with all ten statements, two of which conflict. & \blank{3.3cm} \\
-        The survey is headed \emph{``Help us win longer weekend hours!''} & \blank{3.3cm} \\
-        The story-hour librarian hands out the survey and waits for it. & \blank{3.3cm} \\
-        A card holder circles the middle box, ``no opinion,'' on every question. & \blank{3.3cm} \\
+        A card holder agrees with all ten statements, two of which conflict. & \blankbox{\gradedblank[id=q5a, type=short, points=0.25, answer={acquiescence}, check=text]{3.3cm}{14pt}} \\
+        The survey is headed \emph{``Help us win longer weekend hours!''} & \blankbox{\gradedblank[id=q5b, type=short, points=0.25, answer={demand}, check=text]{3.3cm}{14pt}} \\
+        The story-hour librarian hands out the survey and waits for it. & \blankbox{\gradedblank[id=q5c, type=short, points=0.25, answer={social desirability}, check=text]{3.3cm}{14pt}} \\
+        A card holder circles the middle box, ``no opinion,'' on every question. & \blankbox{\gradedblank[id=q5d, type=short, points=0.25, answer={neutral responding}, check=text]{3.3cm}{14pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
         Asked \emph{``Have you ever found the library closed?''} first, $68\%$ support longer
         hours; asked \emph{``Should the town raise library funding?''} first, $47\%$ do. Gap:
-        \blank{1cm} points --- \blank{2.9cm} bias.
+        \blankbox{\gradedblank[id=q5e, type=short, points=0.5, answer={21}, check=numeric]{1cm}{13.5pt}} points --- \blankbox{\gradedblank[id=q5f, type=short, points=0.5, answer={question order}, check=text]{2.9cm}{13.5pt}} bias.
 
   \item Same phone draw, but only $78$ of the $120$ ever picked up. Percent answered:
-        \blank{1.4cm} \quad The draw was random and every count is correct --- explain why
+        \blankbox{\gradedblank[id=q6a, type=short, points=0.5, answer={65}, check=numeric, display={65\%}]{1.4cm}{13.5pt}} \quad The draw was random and every count is correct --- explain why
         the result could still be biased, and name the fix.
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q6b, type=rubric, points=1.5, display={Nonresponse: the 42 who never picked up may use the library differently from the 78 who did, so the answering group leans. Fix: keep calling back until every one of the 120 answers.}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}

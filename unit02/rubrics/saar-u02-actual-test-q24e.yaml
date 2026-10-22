@@ -1,0 +1,8 @@
+# Rubric for saar-u02-actual-test item q24e (unit02/tests/actual_test).
+id: q24e
+points: 1
+task: "Every one of Ana's scores goes up by the same amount. Explain why the standard deviation came out the same."
+criteria:
+  - id: shift
+    points: 1
+    full: "Adding the same amount to every score adds it to the mean, so no deviation changes."

@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l01-hw item q4d (unit01/lesson01/homework).
+id: q4d
+points: 0.25
+task: "How would you summarize answers to \"How many miles did you travel to the market today?\""
+criteria:
+  - id: summary
+    points: 0.25
+    full: "A mean (or another numerical summary such as a median)."

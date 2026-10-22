@@ -18,6 +18,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u01-l00-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -75,8 +78,8 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
 \wordbank{8 \;\textbullet\; 5 \;\textbullet\; categorical \;\textbullet\; quantitative}
 \begin{enumerate}[leftmargin=1.6em, itemsep=9pt, topsep=3pt]
 
-  \item How many \textbf{individuals} does the table describe? \ans{8} \hfill
-        How many \textbf{variables} does it record? \ans{5}
+  \item How many \textbf{individuals} does the table describe? \blankbox{\gradedblank[id=q1a, type=short, points=1, answer={8}, check=numeric]{1.8cm}{13.5pt}} \hfill
+        How many \textbf{variables} does it record? \blankbox{\gradedblank[id=q1b, type=short, points=1, answer={5}, check=numeric]{1.8cm}{13.5pt}}
         \par\vspace{2pt}
         \emph{(``Member'' names the individuals --- it is not a variable being studied.)}
 
@@ -88,10 +91,10 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
         \toprule
         \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
         \midrule
-        Member ID          & \ans{categorical} & \ans{a label written with digits; a mean ID means nothing} \\
-        Membership         & \ans{categorical} & \ans{Family / Student / Senior are group names} \\
-        Visits last month  & \ans{quantitative} & \ans{a count of visits --- an amount; a mean makes sense} \\
-        Age                & \ans{quantitative} & \ans{an amount measured in years} \\
+        Member ID          & \blankbox{\gradedblank[id=q2a, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2b, type=rubric, points=0.25, display={a label written with digits; a mean ID means nothing}]{6.2cm}{18pt}} \\
+        Membership         & \blankbox{\gradedblank[id=q2c, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2d, type=rubric, points=0.25, display={Family / Student / Senior are group names}]{6.2cm}{18pt}} \\
+        Visits last month  & \blankbox{\gradedblank[id=q2e, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2f, type=rubric, points=0.25, display={a count of visits --- an amount; a mean makes sense}]{6.2cm}{18pt}} \\
+        Age                & \blankbox{\gradedblank[id=q2g, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2h, type=rubric, points=0.25, display={an amount measured in years}]{6.2cm}{18pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -109,16 +112,16 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
         \begin{work}
           \bar{x} &= \dfrac{6+2+9+4+14+1+8+4}{8} = \dfrac{48}{8} = 6 \text{ visits}
         \end{work}
-        \par\ansline{These eight Northgate members made a mean of 6 visits to the center last month.}
+        \par\gradedwriteline[{\gradedblank[id=q3, type=rubric, points=2, display={These eight Northgate members made a mean of 6 visits to the center last month.}]{\linewidth}{12pt}}]
 
   \item ``Group class?'' is categorical, so a mean is not available. Find the
         \textbf{percent} of these eight members who take a group class, then explain
-        why a percent --- and not a mean --- is the right summary here.
+        why a percent --- and not a mean --- is the right summary here. \hfill\smash{\gradedblank[id=q4a, type=short, points=1, answer={62.5}, check=numeric, display={62.5\%}]{2cm}{13.5pt}}
 
         \begin{work}
           \dfrac{5}{8} &= 0.625 = 62.5\%
         \end{work}
-        \par\ansline{Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes.}
+        \par\gradedwriteline[{\gradedblank[id=q4b, type=rubric, points=1, display={Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes.}]{\linewidth}{12pt}}]
 
   \item \textbf{Spiral --- Algebra 1.} The director asks, \emph{``How many of our $2000$ members
         use the pool?''} --- a statistical question, because the answer varies from member to
@@ -130,14 +133,13 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
           \dfrac{45}{300} &= 0.15 = 15\% \\
           0.15 \times 2000 &= 300 \text{ members}
         \end{work}
-        \par\ansline{About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed.}
+        \par\gradedwriteline[{\gradedblank[id=q5, type=rubric, points=2, display={About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed.}]{\linewidth}{12pt}}]
 
   \item A staff member computes the mean of the Member ID column --- correctly --- and gets
         $140.5$. She writes: \textit{``The average Northgate member is number $140.5$.''}
         What does that number actually tell you about Northgate's members? Use the type you
         gave Member ID in item~2 to explain.
-        \par\ansline{Nothing. Member ID is categorical --- a label that tells members apart, not an amount ---}
-\ansline{so its mean is not a measurement of anything; no member is ``number 140.5.''}
+        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Nothing. Member ID is categorical --- a label that tells members apart, not an amount --- so its mean is not a measurement of anything; no member is ``number 140.5.''}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}
