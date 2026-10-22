@@ -7,7 +7,7 @@
 
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/catchup
 LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 

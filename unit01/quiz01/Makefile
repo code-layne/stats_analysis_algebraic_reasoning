@@ -7,7 +7,7 @@
 
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/quiz01
 LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
@@ -22,3 +22,9 @@ $(QUIZZES):
 
 clean:
 	rm -rf $(PDF_DIR)
+
+# Grading: `make manifest COMP=<name>` and `make roster-packets COMP=<name> ROSTER=<path>`
+# run shared/unit.mk's grading targets for quiz01/<name>. See shared/unit.mk.
+.PHONY: manifest roster-packets
+manifest roster-packets:
+	@$(MAKE) --no-print-directory -C .. $@ COMP=$(notdir $(CURDIR))/$(patsubst %_key,%,$(COMP))

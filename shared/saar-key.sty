@@ -10,6 +10,16 @@
 % comment above the environment in saar-boxes.sty.
 \saar@workvisibletrue
 
+% ── Graded items (math-shared/grading.sty) ────────────────────────────────────
+% A graded component is authored identically in the blank and the key; key mode
+% makes each \gradedblank print its answer inside the box. Turn it on only for a
+% document that loads grading.sty itself — before or after this package — and
+% never load grading.sty from here, so every key without graded items compiles
+% exactly as it did before.
+\@ifpackageloaded{grading}
+  {\gradingkeytrue}
+  {\AddToHook{package/grading/after}{\gradingkeytrue}}
+
 % ── Answer macros ─────────────────────────────────────────────────────────────
 \newcommand{\ans}[1]{\textcolor{keyred}{\textbf{#1}}}
 \newcommand{\ansline}[1]{%

@@ -510,7 +510,7 @@ unit's `tests/` and `test_keys/` are the format model — read them first and mi
    ```make
    # finals/Makefile — build the cumulative course final exam.
    PROJECT_ROOT := $(abspath ..)
-   TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+   TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
    PDF_DIR      := $(PROJECT_ROOT)/target/finals
    LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 
