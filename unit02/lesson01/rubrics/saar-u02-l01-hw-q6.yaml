@@ -1,0 +1,17 @@
+# Rubric for saar-u02-l01-hw item q6 (unit02/lesson01/homework).
+id: q6
+points: 2
+task: "Describe the distribution of books read (histogram, bin width 3): shape, unusual features, center, and spread, in context with units."
+criteria:
+  - id: shape
+    points: 0.5
+    full: "Skewed right."
+  - id: unusual
+    points: 0.5
+    full: "Names the kid at 18 to 20 books after a gap (15 to 17) as a possible outlier."
+  - id: center
+    points: 0.5
+    full: "Gives a center of about 3 to 5 books (about 4)."
+  - id: spread
+    points: 0.5
+    full: "Gives the spread, about 0 to 20 books, in context (the 20 kids' books read)."

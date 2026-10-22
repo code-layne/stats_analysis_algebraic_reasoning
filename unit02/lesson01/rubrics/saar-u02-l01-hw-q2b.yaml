@@ -1,0 +1,8 @@
+# Rubric for saar-u02-l01-hw item q2b (unit02/lesson01/homework).
+id: q2b
+points: 1
+task: "Favorite genre is categorical. Could it be shown in a histogram? Explain."
+criteria:
+  - id: no
+    points: 1
+    full: "Says no, because genres are categories (labels), not numbers on a number line; a histogram needs a quantitative variable (use a bar graph)."

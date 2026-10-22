@@ -23,6 +23,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u02-l04-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster. Defined per document; the key inherits it and
 % prints the same strip, so heights match.
@@ -95,7 +98,7 @@ Every answer names the brand and the hours.
         \end{work}
 
         \vspace{4pt}
-        Outlier? \ans{Yes --- 6 hours is below the lower fence of 8 hours.}
+        Outlier? \blankbox{\gradedblank[id=q2, type=rubric, points=2, display={Yes --- 6 hours is below the lower fence of 8 hours.}]{11cm}{13.5pt}}
 
 \end{enumerate}
 \end{notesbox}
@@ -119,20 +122,16 @@ Every answer names the brand and the hours.
 
   \item Maya needs a phone that lasts a full school day: \textbf{at least $10$ hours}. How
         many of each brand's $11$ phones did that? Which brand should she buy?
-        \par\ansline{Volt: 10 of 11. Nova: 8 of 11 (the 4, 7, and 8 fall short).}
-\ansline{Maya should buy Volt --- same median, more consistent.}
+        \par\gradedwritelines{2}{\gradedblank[id=q4, type=rubric, points=2, display={Volt: 10 of 11. Nova: 8 of 11 (the 4, 7, and 8 fall short). Maya should buy Volt --- same median, more consistent.}]{\linewidth}{30pt}}
 
   \item Leo wants his best chance at a phone that lasts \textbf{at least $16$ hours} on a
         long trip. How many of each brand's $11$ phones did that? Which brand should he buy?
-        \par\ansline{Volt: 0 of 11. Nova: 3 of 11 (16, 18, and 19 hours).}
-\ansline{Leo should buy Nova --- its greater spread reaches higher.}
+        \par\gradedwritelines{2}{\gradedblank[id=q5, type=rubric, points=2, display={Volt: 0 of 11. Nova: 3 of 11 (16, 18, and 19 hours). Leo should buy Nova --- its greater spread reaches higher.}]{\linewidth}{30pt}}
 
   \item Jordan says, \emph{``Both brands have a median of $12$ hours, so it doesn't matter
         which one you buy.''} Say what Jordan left out, then write the comparison with
         comparative words, in context.
-        \par\ansline{Jordan compared centers only. Both medians are 12 hours, but}
-\ansline{Nova's IQR (8 h) is 4 times Volt's (2 h), so Volt's battery}
-\ansline{life is far more consistent. Volt has one low outlier (6 h).}
+        \par\gradedwritelines{3}{\gradedblank[id=q6, type=rubric, points=2, display={Jordan compared centers only. Both medians are 12 hours, but Nova's IQR (8 h) is 4 times Volt's (2 h), so Volt's battery life is far more consistent. Volt has one low outlier (6 h).}]{\linewidth}{49pt}}
 
 \end{enumerate}
 \end{notesbox}

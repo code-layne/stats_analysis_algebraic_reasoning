@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l03-hw item q4 (unit02/lesson03/homework).
+id: q4
+points: 2
+task: "A classmate says selling the $900 bike pulls the median down just as much as the mean. Is she right? Name which summaries are resistant (with: IQR $60, s about $233; without: IQR $60, s about $46)."
+criteria:
+  - id: wrong
+    points: 1
+    full: "Says no, citing item 3: the mean fell $69 ($210 to $141) while the median fell only $5."
+  - id: resistant
+    points: 1
+    full: "Names the median and IQR as resistant, the mean and standard deviation as not resistant."

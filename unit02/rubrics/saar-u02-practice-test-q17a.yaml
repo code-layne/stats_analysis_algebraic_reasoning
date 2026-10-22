@@ -1,0 +1,8 @@
+# Rubric for saar-u02-practice-test item q17a (unit02/tests/practice_test).
+id: q17a
+points: 1
+task: "Stemplot (key 1|4 = 14 hours): what does the leaf 8 on stem 4 stand for?"
+criteria:
+  - id: value
+    points: 1
+    full: "One student who worked 48 hours."

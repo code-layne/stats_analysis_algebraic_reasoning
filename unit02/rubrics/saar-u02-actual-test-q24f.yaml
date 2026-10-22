@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q24f (unit02/tests/actual_test).
+id: q24f
+points: 2
+task: "Which bowler (player) is more consistent? Justify with numbers."
+criteria:
+  - id: who
+    points: 1
+    full: "Ana."
+  - id: numbers
+    points: 1
+    full: "Compares the standard deviations: Ana's s is about 1.6 points against Ben's 8.9."

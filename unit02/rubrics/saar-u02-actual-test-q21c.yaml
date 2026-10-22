@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q21c (unit02/tests/actual_test).
+id: q21c
+points: 3
+task: "Interpret the 90th percentile of 25 push-ups (100 students' push-ups without stopping) in context."
+criteria:
+  - id: percent
+    points: 1.5
+    full: "Says 90% of the students did 25 push-ups or fewer."
+  - id: context
+    points: 1.5
+    full: "Names the 100 students and the variable (push-ups without stopping)."

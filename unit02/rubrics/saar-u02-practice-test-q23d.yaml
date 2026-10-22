@@ -1,0 +1,11 @@
+# Rubric for saar-u02-practice-test item q23d (unit02/tests/practice_test).
+id: q23d
+points: 2.5
+task: "A student wrote \"Skewed left --- most students are low, so the peak is on the left.\" Explain what is wrong."
+criteria:
+  - id: tail
+    points: 1.5
+    full: "The skew is named by the long tail, not the peak."
+  - id: right
+    points: 1
+    full: "The tail stretches toward the larger values, so it is skewed right."

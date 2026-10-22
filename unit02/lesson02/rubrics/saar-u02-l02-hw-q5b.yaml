@@ -1,0 +1,8 @@
+# Rubric for saar-u02-l02-hw item q5b (unit02/lesson02/homework).
+id: q5b
+points: 1
+task: "Hilltop (mean 45 min, s = 4 min) takes 15 minutes longer on average than Oak Street (mean 30, s = 4). Are Hilltop's times more spread out? Explain."
+criteria:
+  - id: no
+    points: 1
+    full: "Says no: both have s = 4 minutes; Hilltop is slower (bigger center), not more spread out."

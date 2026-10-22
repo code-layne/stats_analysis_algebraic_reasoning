@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q23a (unit02/tests/actual_test).
+id: q23a
+points: 2.5
+task: "Name the shape of the minutes 60 students spent on social media last Saturday histogram and justify it from the histogram."
+criteria:
+  - id: shape
+    points: 1
+    full: "Skewed right."
+  - id: justify
+    points: 1.5
+    full: "Justifies from the histogram: most values are low (most students spent under 2 hours) and the long tail stretches toward larger values."

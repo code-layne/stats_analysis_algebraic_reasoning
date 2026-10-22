@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q19c (unit02/tests/actual_test).
+id: q19c
+points: 3
+task: "The school store sold 15, 20, 21, 21, 23 water bottles on five days (mean 20 bottles); s = 3 bottles. Interpret s in context."
+criteria:
+  - id: typical
+    points: 2
+    full: "Says a typical day is about 3 bottles from the 20-bottle mean (typical distance from the mean)."
+  - id: context
+    points: 1
+    full: "States it in context with units."

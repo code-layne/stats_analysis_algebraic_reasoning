@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q24b (unit02/tests/actual_test).
+id: q24b
+points: 2
+task: "A friend says Ana's standard deviation should be the bigger one because the scores are higher. Use the formula to explain why the friend is wrong."
+criteria:
+  - id: deviations
+    points: 1
+    full: "s is built from the deviations: each score's distance from its own mean."
+  - id: size
+    points: 1
+    full: "Ana's scores sit close to their own mean (within 2 points of 24); how big the scores are never enters."

@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q25a (unit02/tests/actual_test).
+id: q25a
+points: 2.5
+task: "Check Brand D for outliers with the 1.5 x IQR rule."
+criteria:
+  - id: fences
+    points: 1
+    full: "Finds the fences, 36 and 84 (here or in the work)."
+  - id: none
+    points: 1.5
+    full: "Says every value (44 to 76) lies between the fences, so Brand D has no outliers."

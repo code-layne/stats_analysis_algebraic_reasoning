@@ -1,0 +1,11 @@
+# Rubric for saar-u02-practice-test item q23a (unit02/tests/practice_test).
+id: q23a
+points: 2.5
+task: "Name the shape of the summer earnings of 60 students histogram and justify it from the histogram."
+criteria:
+  - id: shape
+    points: 1
+    full: "Skewed right."
+  - id: justify
+    points: 1.5
+    full: "Justifies from the histogram: most values are low (most students earned under $1,000) and the long tail stretches toward larger values."

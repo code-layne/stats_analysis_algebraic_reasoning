@@ -1,0 +1,11 @@
+# Rubric for saar-u02-practice-test item q23c (unit02/tests/practice_test).
+id: q23c
+points: 2.5
+task: "Which center and which spread should the school report? Give their values in context and say why."
+criteria:
+  - id: values
+    points: 1.5
+    full: "The median and IQR, with values: median $860 and IQR $1,230 (the middle half earned $390 to $1,620)."
+  - id: why
+    points: 1
+    full: "Because the data are skewed right, and the tail pulls the mean and SD up."

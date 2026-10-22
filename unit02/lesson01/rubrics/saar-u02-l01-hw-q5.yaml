@@ -1,0 +1,14 @@
+# Rubric for saar-u02-l01-hw item q5 (unit02/lesson01/homework).
+id: q5
+points: 2
+task: "Ava says the goal percents are skewed right \"because most kids are up at the high end.\" What did Ava name the skew by? Explain the correct shape using the tail."
+criteria:
+  - id: peak
+    points: 1
+    full: "Says she named it by the peak (where most kids are, 90% to 100%), not by the tail."
+  - id: shape
+    points: 1
+    full: "Says the tail stretches toward the low percents (about 45%), so the shape is skewed left."
+examples:
+  - response: "It is skewed left."
+    scores: {peak: 0, shape: 0.5}

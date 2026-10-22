@@ -1,0 +1,14 @@
+# Rubric for saar-u02-practice-test item q25c (unit02/tests/practice_test).
+id: q25c
+points: 2.5
+task: "Write a comparison of the two brands: shape, outliers, center, and spread, using comparative words."
+criteria:
+  - id: shape
+    points: 0.5
+    full: "Both roughly symmetric with no outliers."
+  - id: center
+    points: 0.5
+    full: "Both centers are 40 hours."
+  - id: spread
+    points: 1.5
+    full: "Compares spread with a comparative word and numbers: Brand B (Sx 7.8 h, range 26 h) is much more spread out than Brand A (Sx 2.1 h, range 8 h), so Brand A's lifetimes are more consistent."

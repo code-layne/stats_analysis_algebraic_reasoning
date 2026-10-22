@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
+\usepackage{grading}
+\gradingassignment{saar-u02-l02-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster. Defined per document; the key inherits it.
 \newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
@@ -75,7 +78,7 @@ Every answer says what the number means for Oak Street's deliveries.
         describe?
 
         \par\vspace{4pt}
-        Kind: \blank{2.6cm} \hfill Describes: \blank{7cm}
+        Kind: \blankbox{\gradedblank[id=q2a, type=short, points=1, answer={statistic}, check=text]{2.6cm}{13.5pt}} \hfill Describes: \blankbox{\gradedblank[id=q2b, type=short, points=1, answer={the 6 timed Friday deliveries}, check=text]{7cm}{13.5pt}}
 
   \item Complete the five-number summary (use the median of each half), then find the range
         and the IQR.
@@ -119,10 +122,10 @@ Every answer says what the number means for Oak Street's deliveries.
         \end{tabular}
         \end{center}
 
-        Variance $s^2 =$ \blank{3.2cm} \qquad Standard deviation $s =$ \blank{3.2cm}
+        Variance $s^2 =$ \blank{1.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q4a, type=short, points=0.5, answer={16}, check=numeric]{1.8cm}{13.5pt}} \qquad Standard deviation $s =$ \blank{1.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q4b, type=short, points=0.5, answer={4}, check=numeric, display={4 min}]{1.8cm}{13.5pt}}
         \par\vspace{6pt}
         Interpret $s$ in context.
-        \par\writeline
+        \par\gradedwriteline[{\gradedblank[id=q4c, type=rubric, points=1, display={A typical delivery is about 4 minutes from the 30-minute mean.}]{\linewidth}{12pt}}]
 
   \item Two other shops timed Friday deliveries too. \textbf{Main Street Pizza:}
         $\bar{x} = 30$ min, $s = 11$ min. \textbf{Hilltop Pizza:} $\bar{x} = 45$ min,
@@ -131,19 +134,19 @@ Every answer says what the number means for Oak Street's deliveries.
         \par\vspace{3pt}
         \textbf{(a)} Oak Street and Main Street have the same mean. Whose delivery times are
         more predictable? Explain.
-        \par\writeline
+        \par\gradedwriteline[{\gradedblank[id=q5a, type=rubric, points=1, display={Oak Street: about 4 min from the mean, not 11 --- less spread.}]{\linewidth}{12pt}}]
 
         \textbf{(b)} Hilltop's deliveries take 15 minutes longer on average. Are Hilltop's
         times more spread out than Oak Street's? Explain.
-        \par\writeline
+        \par\gradedwriteline[{\gradedblank[id=q5b, type=rubric, points=1, display={No --- both have $s = 4$. Hilltop is slower, not more spread out.}]{\linewidth}{12pt}}]
 
   \item On a snowy Friday every Oak Street delivery took exactly $8$ minutes longer. Jordan
         says, ``Bigger times, so they're more spread out --- $s$ went up.'' Give the new
         $\bar{x}$ and $s$, and explain what Jordan has mixed up.
 
         \par\vspace{4pt}
-        New $\bar{x}$: \blank{3cm} \qquad New $s$: \blank{3cm}
-        \par\writeline\par\writeline
+        New $\bar{x}$: \blankbox{\gradedblank[id=q6a, type=short, points=0.5, answer={38}, check=numeric, display={38 minutes}]{3cm}{13.5pt}} \qquad New $s$: \blankbox{\gradedblank[id=q6b, type=short, points=0.5, answer={4}, check=numeric, display={4 minutes}]{3cm}{13.5pt}}
+        \par\gradedwriteline[{\gradedblank[id=q6c, type=rubric, points=1, display={Every time moved up 8, so each deviation from the new mean is unchanged. Bigger times, same spread: $s$ is not about size.}]{\linewidth}{33.5pt}}]\par\gradedwriteline
 
 \end{enumerate}
 \end{notesbox}

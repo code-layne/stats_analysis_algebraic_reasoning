@@ -1,0 +1,8 @@
+# Rubric for saar-u02-l02-hw item q5a (unit02/lesson02/homework).
+id: q5a
+points: 1
+task: "Oak Street (mean 30 min, s = 4 min) and Main Street (mean 30 min, s = 11 min) have the same mean. Whose delivery times are more predictable? Explain."
+criteria:
+  - id: oak
+    points: 1
+    full: "Oak Street, because its s is smaller (about 4 minutes from the mean, not 11): less spread."

@@ -1,0 +1,17 @@
+# Rubric for saar-u02-actual-test item q17d (unit02/tests/actual_test).
+id: q17d
+points: 5
+task: "Describe the distribution of the 18 students' hours volunteered this semester (stemplot): shape, unusual features, center, and spread, in context."
+criteria:
+  - id: shape
+    points: 1.25
+    full: "Roughly symmetric with a slight right tail."
+  - id: unusual
+    points: 1.25
+    full: "Names the gap (33 to 46 hours) and the possible outlier at 46 hours."
+  - id: center
+    points: 1.25
+    full: "Gives the center: median 20.5 hours."
+  - id: spread
+    points: 1.25
+    full: "Gives the spread: range 41 hours (5 to 46 hours), in context with units."

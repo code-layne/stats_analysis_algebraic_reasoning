@@ -1,0 +1,17 @@
+# Rubric for saar-u02-practice-test item q17d (unit02/tests/practice_test).
+id: q17d
+points: 5
+task: "Describe the distribution of the 18 students' hours worked last week (stemplot): shape, unusual features, center, and spread, in context."
+criteria:
+  - id: shape
+    points: 1.25
+    full: "Roughly symmetric with a slight right tail."
+  - id: unusual
+    points: 1.25
+    full: "Names the gap (32 to 48 hours) and the possible outlier at 48 hours."
+  - id: center
+    points: 1.25
+    full: "Gives the center: median 19 hours."
+  - id: spread
+    points: 1.25
+    full: "Gives the spread: range 40 hours (8 to 48 hours), in context with units."

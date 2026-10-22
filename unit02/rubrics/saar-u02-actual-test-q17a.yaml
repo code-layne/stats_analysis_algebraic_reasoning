@@ -1,0 +1,8 @@
+# Rubric for saar-u02-actual-test item q17a (unit02/tests/actual_test).
+id: q17a
+points: 1
+task: "Stemplot (key 1|3 = 13 hours): what does the leaf 6 on stem 4 stand for?"
+criteria:
+  - id: value
+    points: 1
+    full: "One student who volunteered 46 hours."

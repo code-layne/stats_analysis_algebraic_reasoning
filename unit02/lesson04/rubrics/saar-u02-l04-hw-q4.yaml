@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l04-hw item q4 (unit02/lesson04/homework).
+id: q4
+points: 2
+task: "Maya needs a phone that lasts at least 10 hours. How many of each brand's 11 phones did that? Which brand should she buy?"
+criteria:
+  - id: counts
+    points: 1
+    full: "Volt: 10 of 11; Nova: 8 of 11."
+  - id: choice
+    points: 1
+    full: "Volt, because it is more consistent (same median, less spread)."

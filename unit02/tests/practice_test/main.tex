@@ -11,6 +11,9 @@
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
+\usepackage{grading}
+\gradingassignment{saar-u02-practice-test}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 
 % Work blocks on a test need handwriting room, not typeset spacing. This moves
 % the blank and the key together, so it cannot open a page mismatch.
@@ -56,11 +59,11 @@ next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item \blank{0.8cm} Distribution
-  \item \blank{0.8cm} Stemplot
-  \item \blank{0.8cm} Histogram
-  \item \blank{0.8cm} Skewed right
-  \item \blank{0.8cm} Skewed left
+  \item \blankbox{\gradedblank[id=q1, type=choice, points=1, answer={C}]{0.8cm}{11pt}} Distribution
+  \item \blankbox{\gradedblank[id=q2, type=choice, points=1, answer={A}]{0.8cm}{11pt}} Stemplot
+  \item \blankbox{\gradedblank[id=q3, type=choice, points=1, answer={E}]{0.8cm}{11pt}} Histogram
+  \item \blankbox{\gradedblank[id=q4, type=choice, points=1, answer={B}]{0.8cm}{11pt}} Skewed right
+  \item \blankbox{\gradedblank[id=q5, type=choice, points=1, answer={D}]{0.8cm}{11pt}} Skewed left
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -79,11 +82,11 @@ next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=6]
-  \item \blank{0.8cm} Median
-  \item \blank{0.8cm} Interquartile range
-  \item \blank{0.8cm} Standard deviation
-  \item \blank{0.8cm} Outlier
-  \item \blank{0.8cm} Resistant
+  \item \blankbox{\gradedblank[id=q6, type=choice, points=1, answer={D}]{0.8cm}{11pt}} Median
+  \item \blankbox{\gradedblank[id=q7, type=choice, points=1, answer={E}]{0.8cm}{11pt}} Interquartile range
+  \item \blankbox{\gradedblank[id=q8, type=choice, points=1, answer={B}]{0.8cm}{11pt}} Standard deviation
+  \item \blankbox{\gradedblank[id=q9, type=choice, points=1, answer={C}]{0.8cm}{11pt}} Outlier
+  \item \blankbox{\gradedblank[id=q10, type=choice, points=1, answer={A}]{0.8cm}{11pt}} Resistant
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -115,7 +118,7 @@ minutes. The distribution is
   \item symmetric, because it has only one peak.
   \item skewed left, because most students spent only a little time.
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q11, type=choice, points=2, answer={B}]{0.9cm}{11pt}}
 
 \boxguard[9]
 \item House prices in a town are strongly skewed right by a few very expensive homes. The
@@ -126,7 +129,7 @@ best measure of a typical price is
   \item the range, because it shows the most expensive home.
   \item the standard deviation, because it measures typical distance.
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q12, type=choice, points=2, answer={A}]{0.9cm}{11pt}}
 
 \boxguard[9]
 \item Class P's quiz scores run from $88$ to $96$ with $s = 2.5$. Class Q's run from $60$ to
@@ -137,7 +140,7 @@ $95$ with $s = 10$. Which statement is true?
   \item Class Q's scores typically sit farther from their own mean than Class P's.
   \item Class Q scored higher, because its standard deviation is larger.
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q13, type=choice, points=2, answer={C}]{0.9cm}{11pt}}
 
 \boxguard[9]
 \item Every value in a data set is increased by $5$. What happens to the mean and the standard
@@ -148,7 +151,7 @@ deviation?
   \item The mean stays the same; the standard deviation increases by $5$.
   \item Neither one changes.
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q14, type=choice, points=2, answer={B}]{0.9cm}{11pt}}
 
 \boxguard[9]
 \item One very large outlier is removed from a data set of $15$ values. Which summary
@@ -159,7 +162,7 @@ changes the most?
   \item the first quartile
   \item the interquartile range
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q15, type=choice, points=2, answer={A}]{0.9cm}{11pt}}
 
 \boxguard[9]
 \item Two shops each have a median delivery time of $30$ minutes. Shop X's IQR is $4$
@@ -170,7 +173,7 @@ minutes and Shop Y's is $12$ minutes. Which is a correct comparison?
   \item Shop X is faster, because its IQR is smaller.
   \item Both typically take about $30$ minutes, but Shop X's times are more consistent.
 \end{enumerate}
-\hfill \textbf{Answer:} \blank{0.9cm}
+\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q16, type=choice, points=2, answer={D}]{0.9cm}{11pt}}
 
 \end{enumerate}
 \normalsize
@@ -206,18 +209,18 @@ hours they worked last week.
 (a) What does the leaf $8$ on stem $4$ stand for?
 
 \vspace{2pt}
-\blank{7.4cm}
+\blankbox{\gradedblank[id=q17a, type=rubric, points=1, rubric=../rubrics/saar-u02-practice-test-q17a.yaml, display={One student who worked 48 hours}]{7.4cm}{11pt}}
 
 \vspace{4pt}
-(b) Median: \blank{2.0cm} \quad Range: \blank{2.0cm}
+(b) Median: \blankbox{\gradedblank[id=q17b, type=short, points=1, answer={19}, check=numeric, display={$19$ hours}]{2.0cm}{13.5pt}} \quad Range: \blankbox{\gradedblank[id=q17c, type=short, points=1, answer={40}, check=numeric, display={$40$ hours}]{2.0cm}{13.5pt}}
 
 \vspace{4pt}
 (c) Describe the distribution --- shape, unusual features, center, and spread --- in
 context.
 \end{minipage}
 
-\par\writeline
-\par\writeline
+{\renewcommand{\gradedlinestop}{0.45}\par\gradedwriteline[{\gradedblank[id=q17d, type=rubric, points=5, rubric=../rubrics/saar-u02-practice-test-q17d.yaml, display={Roughly symmetric with a slight right tail, a gap from 32 to 48 hours, and a possible outlier at 48. The median is 19 hours, and the hours run from 8 to 48 (range 40 hours).}]{\linewidth}{25pt}}]}
+\par\gradedwriteline
 
 % ---------------------------------------------------------------- C3 (2.2)
 \boxguard[22]
@@ -225,23 +228,23 @@ context.
 order: $3$, $5$, $6$, $6$, $8$, $9$, $11$, $12$, $21$.
 
 \vspace{2pt}
-(a) Find the mean.
+(a) Find the mean. \hfill\smash{\gradedblank[id=q18a, type=short, points=1, answer={9}, check=numeric, display={9 books}]{1.6cm}{10pt}}
 
 \begin{work}
   \bar{x} &= \dfrac{3 + 5 + 6 + 6 + 8 + 9 + 11 + 12 + 21}{9} = \dfrac{81}{9} = 9 \text{ books}
 \end{work}
 
-(b) Median: \blank{1.8cm} \quad Mode: \blank{1.8cm}
+(b) Median: \blankbox{\gradedblank[id=q18b, type=short, points=1, answer={8}, check=numeric, display={$8$ books}]{1.8cm}{13.5pt}} \quad Mode: \blankbox{\gradedblank[id=q18c, type=short, points=1, answer={6}, check=numeric, display={$6$ books}]{1.8cm}{13.5pt}}
 
 \vspace{3pt}
-(c) Find $Q_1$ and $Q_3$. (Leave the median out of both halves.)
+(c) Find $Q_1$ and $Q_3$. (Leave the median out of both halves.) \hfill\smash{\gradedblank[id=q18f, type=short, points=1, answer={5.5}, check=numeric]{1.4cm}{10pt}}\quad\smash{\gradedblank[id=q18g, type=short, points=1, answer={11.5}, check=numeric]{1.4cm}{10pt}}
 
 \begin{work}
   Q_1 &= \dfrac{5 + 6}{2} = 5.5 \qquad Q_3 = \dfrac{11 + 12}{2} = 11.5
 \end{work}
 
-(d) Five-number summary: \blank{1.1cm}, \blank{1.1cm}, \blank{1.1cm}, \blank{1.1cm},
-\blank{1.1cm} \quad IQR: \blank{1.6cm}
+(d) Five-number summary: \blankbox{\gradedblank[id=q18d1, type=short, points=0.4, answer={3}, check=numeric]{1.1cm}{10pt}}, \blankbox{\gradedblank[id=q18d2, type=short, points=0.4, answer={5.5}, check=numeric]{1.1cm}{10pt}}, \blankbox{\gradedblank[id=q18d3, type=short, points=0.4, answer={8}, check=numeric]{1.1cm}{10pt}}, \blankbox{\gradedblank[id=q18d4, type=short, points=0.4, answer={11.5}, check=numeric]{1.1cm}{10pt}},
+\blankbox{\gradedblank[id=q18d5, type=short, points=0.4, answer={21}, check=numeric]{1.1cm}{10pt}} \quad IQR: \blankbox{\gradedblank[id=q18e, type=short, points=1, answer={6}, check=numeric, display={$6$ books}]{1.6cm}{13.5pt}}
 
 % ---------------------------------------------------------------- C4 (2.2)
 \boxguard[22]
@@ -257,14 +260,14 @@ $9$, $11$, $13$, $13$, $14$. The mean is $12$ minutes.
 \rowcolor{frost}
  & & & & & & \textbf{Sum} \\
 Value $x$ & $9$ & $11$ & $13$ & $13$ & $14$ & $60$ \\
-Deviation $x - \bar{x}$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
-Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
+Deviation $x - \bar{x}$ & \blankbox{\gradedblank[id=q19a1, type=short, points=0.25, answer={-3}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a2, type=short, points=0.25, answer={-1}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a3, type=short, points=0.25, answer={1}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a4, type=short, points=0.25, answer={1}, check=numeric]{0.9cm}{12.5pt}} &
+  \blankbox{\gradedblank[id=q19a5, type=short, points=0.25, answer={2}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a6, type=short, points=0.25, answer={0}, check=numeric]{0.9cm}{12.5pt}} \\
+Squared $(x - \bar{x})^2$ & \blankbox{\gradedblank[id=q19a7, type=short, points=0.25, answer={9}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a8, type=short, points=0.25, answer={1}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a9, type=short, points=0.25, answer={1}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a10, type=short, points=0.25, answer={1}, check=numeric]{0.9cm}{12.5pt}} &
+  \blankbox{\gradedblank[id=q19a11, type=short, points=0.25, answer={4}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q19a12, type=short, points=0.25, answer={16}, check=numeric]{0.9cm}{12.5pt}} \\
 \end{tabularx}
 
 \vspace{2pt}
-(b) Find the variance and the standard deviation.
+(b) Find the variance and the standard deviation. \hfill\smash{\gradedblank[id=q19b1, type=short, points=1, answer={4}, check=numeric, display={4 square min}]{1.4cm}{10pt}}\quad\smash{\gradedblank[id=q19b2, type=short, points=1, answer={2}, check=numeric, display={2 min}]{1.4cm}{10pt}}
 
 \begin{work}
   s^2 &= \dfrac{16}{5 - 1} = 4 \text{ square minutes} \qquad s = \sqrt{4} = 2 \text{ minutes}
@@ -272,7 +275,7 @@ Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \bla
 
 (c) Interpret $s$ in context.
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q19c, type=rubric, points=3, rubric=../rubrics/saar-u02-practice-test-q19c.yaml, display={A typical day's line time is about 2 minutes from the 12-minute mean.}]{\linewidth}{10pt}}]
 
 % ---------------------------------------------------------------- C5 (2.3)
 \boxguard[20]
@@ -280,22 +283,22 @@ Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \bla
 $18$, $42$, $55$, $66$, $110$. The three most extreme values are $18$, $97$, and $110$.
 
 \vspace{2pt}
-(a) Find the IQR and both fences.
+(a) Find the IQR and both fences. \hfill\smash{\gradedblank[id=q20a1, type=short, points=1, answer={24}, check=numeric]{1.4cm}{10pt}}\quad\smash{\gradedblank[id=q20a2, type=short, points=1, answer={6}, check=numeric]{1.4cm}{10pt}}\quad\smash{\gradedblank[id=q20a3, type=short, points=1, answer={102}, check=numeric]{1.4cm}{10pt}}
 
 \begin{work}
   \text{IQR} &= 66 - 42 = 24 \\
   \text{lower fence} &= 42 - 1.5(24) = 6 \qquad \text{upper fence} = 66 + 1.5(24) = 102
 \end{work}
 
-(b) Which of $18$, $97$, and $110$ are outliers? \blank{3.0cm}
+(b) Which of $18$, $97$, and $110$ are outliers? \blankbox{\gradedblank[id=q20b, type=short, points=1.5, answer={110}, check=set, display={Only $110$}]{3.0cm}{13.5pt}}
 
 \vspace{3pt}
-(c) In a modified boxplot, where does the upper whisker end? \blank{2.4cm}
+(c) In a modified boxplot, where does the upper whisker end? \blankbox{\gradedblank[id=q20c, type=short, points=1.5, answer={97}, check=numeric, display={At $97$}]{2.4cm}{13.5pt}}
 
 \vspace{3pt}
 (d) The value $18$ looks far from the box. Explain whether it is an outlier.
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q20d, type=rubric, points=2, rubric=../rubrics/saar-u02-practice-test-q20d.yaml, display={No --- 18 is above the lower fence of 6, so it is inside the fences.}]{\linewidth}{10pt}}]
 
 % ---------------------------------------------------------------- C6 (2.3)
 \boxguard[26]
@@ -316,19 +319,19 @@ $18$, $42$, $55$, $66$, $110$. The three most extreme values are $18$, $97$, and
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\linewidth}
 \vspace{2pt}
-(a) $Q_1$: \blank{1.4cm} \quad Median: \blank{1.4cm}
+(a) $Q_1$: \blankbox{\gradedblank[id=q21a1, type=short, points=0.75, answer={30}, check=numeric]{1.4cm}{10pt}} \quad Median: \blankbox{\gradedblank[id=q21a2, type=short, points=0.75, answer={40}, check=numeric]{1.4cm}{10pt}}
 
 \vspace{4pt}
-$Q_3$: \blank{1.4cm} \quad IQR: \blank{1.4cm}
+$Q_3$: \blankbox{\gradedblank[id=q21a3, type=short, points=0.75, answer={50}, check=numeric]{1.4cm}{10pt}} \quad IQR: \blankbox{\gradedblank[id=q21a4, type=short, points=0.75, answer={20}, check=numeric]{1.4cm}{10pt}}
 
 \vspace{4pt}
-(b) A student did $60$ sit-ups. What percentile is that? \blank{1.8cm}
+(b) A student did $60$ sit-ups. What percentile is that? \blankbox{\gradedblank[id=q21b, type=short, points=2, answer={92}, check=numeric, display={$92$nd}]{1.8cm}{13.5pt}}
 
 \vspace{4pt}
 (c) Interpret your answer to (b) in context.
 \end{minipage}
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q21c, type=rubric, points=3, rubric=../rubrics/saar-u02-practice-test-q21c.yaml, display={92\% of these 100 students did 60 or fewer sit-ups in one minute.}]{\linewidth}{10pt}}]
 
 % ---------------------------------------------------------------- C8 (2.4)
 \boxguard[26]
@@ -356,15 +359,15 @@ parallel boxplots share one scale.
 \begin{tabularx}{\linewidth}{@{} X c c @{}}
 \rowcolor{frost}
  & \textbf{Median} & \textbf{IQR} \\
-Juniors & \blank{1.8cm} & \blank{1.8cm} \\
-Seniors & \blank{1.8cm} & \blank{1.8cm} \\
+Juniors & \blankbox{\gradedblank[id=q22a1, type=short, points=0.75, answer={7}, check=numeric, display={$7$ h}]{1.8cm}{12.5pt}} & \blankbox{\gradedblank[id=q22a2, type=short, points=0.75, answer={1.5}, check=numeric, display={$1.5$ h}]{1.8cm}{12.5pt}} \\
+Seniors & \blankbox{\gradedblank[id=q22a3, type=short, points=0.75, answer={6.5}, check=numeric, display={$6.5$ h}]{1.8cm}{12.5pt}} & \blankbox{\gradedblank[id=q22a4, type=short, points=0.75, answer={2.5}, check=numeric, display={$2.5$ h}]{1.8cm}{12.5pt}} \\
 \end{tabularx}
 
 \vspace{4pt}
 (b) Compare the two groups' sleep, with a comparative word for center \emph{and} for spread.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q22b, type=rubric, points=5, rubric=../rubrics/saar-u02-practice-test-q22b.yaml, display={Juniors' median (7 h) is greater than seniors' (6.5 h), and seniors' sleep is more spread out (IQR 2.5 h vs.\ 1.5 h), so juniors' sleep is more consistent.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 \end{enumerate}
 \normalsize
@@ -414,26 +417,26 @@ maxX & $3310$ \\
 \vspace{4pt}
 (a) Name the shape of the distribution, and justify it from the histogram.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q23a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q23a.yaml, display={Skewed right: most students earned under \$1{,}000, and the long tail stretches toward the larger earnings, out to about \$3{,}500.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 (b) The mean (\$1{,}083) is larger than the median (\$860). Explain why, using the shape.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q23b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q23b.yaml, display={The mean uses every value, so the few students in the long right tail pull it up; the median uses only the middle position, so it stays lower.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 \boxguard[7]
 (c) Which center and which spread should the school report? Give their values in context and
 say why.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q23c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q23c.yaml, display={The median, \$860, and the IQR, \$1{,}230 (the middle half earned \$390 to \$1{,}620). The data are skewed right, so the tail pulls the mean and SD up.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 (d) A student wrote: \emph{``Skewed left --- most students earned a little, so the peak is on
 the left.''} Explain what is wrong.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q23d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q23d.yaml, display={The skew is named by the long tail, not the peak. The pile is on the left, but the tail stretches toward larger earnings, so it is skewed right.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 % ---------------------------------------------------------------- D2 (2.2)
 \boxguard[30]
@@ -442,7 +445,7 @@ the left.''} Explain what is wrong.
 \textbf{Jordan:} $110$, $125$, $140$, $150$, $175$ ($\bar{x} = 140$, $s \approx 24.7$).
 
 \vspace{3pt}
-(a) Complete the table for Maya, then find her standard deviation.
+(a) Complete the table for Maya, then find her standard deviation. \hfill\smash{\gradedblank[id=q24s, type=short, points=1, answer={3.2}, check=numeric, tolerance=0.05, display={3.2 pins}]{1.6cm}{10pt}}
 
 \vspace{2pt}
 \renewcommand{\arraystretch}{1.3}
@@ -450,10 +453,10 @@ the left.''} Explain what is wrong.
 \rowcolor{frost}
  & & & & & & \textbf{Sum} \\
 Score $x$ & $180$ & $182$ & $184$ & $186$ & $188$ & $920$ \\
-Deviation $x - \bar{x}$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
-Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} &
-  \blank{0.9cm} & \blank{0.9cm} \\
+Deviation $x - \bar{x}$ & \blankbox{\gradedblank[id=q24a1, type=short, points=0.25, answer={-4}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a2, type=short, points=0.25, answer={-2}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a3, type=short, points=0.25, answer={0}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a4, type=short, points=0.25, answer={2}, check=numeric]{0.9cm}{12.5pt}} &
+  \blankbox{\gradedblank[id=q24a5, type=short, points=0.25, answer={4}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a6, type=short, points=0.25, answer={0}, check=numeric]{0.9cm}{12.5pt}} \\
+Squared $(x - \bar{x})^2$ & \blankbox{\gradedblank[id=q24a7, type=short, points=0.25, answer={16}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a8, type=short, points=0.25, answer={4}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a9, type=short, points=0.25, answer={0}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a10, type=short, points=0.25, answer={4}, check=numeric]{0.9cm}{12.5pt}} &
+  \blankbox{\gradedblank[id=q24a11, type=short, points=0.25, answer={16}, check=numeric]{0.9cm}{12.5pt}} & \blankbox{\gradedblank[id=q24a12, type=short, points=0.25, answer={40}, check=numeric]{0.9cm}{12.5pt}} \\
 \end{tabularx}
 
 \begin{work}
@@ -463,20 +466,20 @@ Squared $(x - \bar{x})^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \bla
 (b) A friend says, \emph{``Maya's standard deviation should be the bigger one --- her scores
 are way higher.''} Use the formula to explain why the friend is wrong.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q24b, type=rubric, points=2, rubric=../rubrics/saar-u02-practice-test-q24b.yaml, display={$s$ is built from the deviations --- each score's distance from its own mean. Maya's scores sit within 4 pins of 184; how big the scores are never enters.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 (c) Next week every one of Maya's five scores is exactly $10$ pins higher.
-New mean: \blank{1.6cm} \quad New standard deviation: \blank{1.6cm}
+New mean: \blankbox{\gradedblank[id=q24c, type=short, points=0.5, answer={194}, check=numeric]{1.6cm}{10pt}} \quad New standard deviation: \blankbox{\gradedblank[id=q24d, type=short, points=0.5, answer={3.2}, check=numeric, tolerance=0.05]{1.6cm}{10pt}}
 
 \vspace{3pt}
 Explain why the standard deviation came out that way.
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q24e, type=rubric, points=1, rubric=../rubrics/saar-u02-practice-test-q24e.yaml, display={Adding 10 to every score adds 10 to the mean, so not one deviation changes.}]{\linewidth}{10pt}}]
 
 (d) Which bowler is more consistent? Justify with numbers.
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q24f, type=rubric, points=2, rubric=../rubrics/saar-u02-practice-test-q24f.yaml, display={Maya: $s \approx 3.2$ pins against Jordan's 24.7, so her games stay close together.}]{\linewidth}{10pt}}]
 
 % ---------------------------------------------------------------- D3 (2.4)
 \boxguard[30]
@@ -505,26 +508,26 @@ Both distributions are roughly symmetric.
   \text{fences} &= 34 - 18 = 16 \quad\text{and}\quad 46 + 18 = 64
 \end{work}
 
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q25a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q25a.yaml, display={Every value lies between the fences (26 to 52), so Brand B has no outliers.}]{\linewidth}{10pt}}]
 
 (b) The department head says, \emph{``Same median, same mean --- it doesn't matter which we
 buy.''} Respond.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q25b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q25b.yaml, display={When the centers match, the spread decides. Brand B's lifetimes are much more spread out, so some B batteries die far sooner than any A battery.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 (c) Write a comparison of the two brands --- shape, outliers, center, and spread --- using
 comparative words.
 
-\par\writeline
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q25c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q25c.yaml, display={Both brands are roughly symmetric with no outliers, and both centers are 40 hours. Brand B is much more spread out (Sx 7.8 h, range 26 h) than Brand A (Sx 2.1 h, range 8 h), so Brand A's lifetimes are more consistent.}]{\linewidth}{46pt}}]
+\par\gradedwriteline
+\par\gradedwriteline
 
 (d) A flashlight must run at least $35$ hours. Which brand should the department buy?
 Justify with the table.
 
-\par\writeline
-\par\writeline
+\par\gradedwriteline[{\gradedblank[id=q25d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-practice-test-q25d.yaml, display={Brand A. Its minimum is 36 hours, so every A battery lasted at least 35 hours; Brand B's $Q_1$ is 34, so at least a quarter of B batteries fall short.}]{\linewidth}{28pt}}]
+\par\gradedwriteline
 
 \end{enumerate}
 \normalsize

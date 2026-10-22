@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q23c (unit02/tests/actual_test).
+id: q23c
+points: 2.5
+task: "Which center and which spread should the school report? Give their values in context and say why."
+criteria:
+  - id: values
+    points: 1.5
+    full: "The median and IQR, with values: median 108 minutes and IQR 144 minutes (the middle half spent 52 to 196 minutes)."
+  - id: why
+    points: 1
+    full: "Because the data are skewed right, and the tail pulls the mean and SD up."

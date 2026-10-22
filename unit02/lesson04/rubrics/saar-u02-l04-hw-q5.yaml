@@ -1,0 +1,11 @@
+# Rubric for saar-u02-l04-hw item q5 (unit02/lesson04/homework).
+id: q5
+points: 2
+task: "Leo wants his best chance at a phone that lasts at least 16 hours. How many of each brand's 11 phones did that? Which brand should he buy?"
+criteria:
+  - id: counts
+    points: 1
+    full: "Volt: 0 of 11; Nova: 3 of 11 (16, 18 and 19 hours)."
+  - id: choice
+    points: 1
+    full: "Nova, because its greater spread reaches higher."

@@ -1,0 +1,8 @@
+# Rubric for saar-u02-practice-test item q20d (unit02/tests/practice_test).
+id: q20d
+points: 2
+task: "Fences 6 and 102. The value 18 looks far from the box. Explain whether it is an outlier."
+criteria:
+  - id: inside
+    points: 2
+    full: "Says no: 18 is above the lower fence, 6, so it is inside the fences."

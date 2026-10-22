@@ -1,0 +1,11 @@
+# Rubric for saar-u02-practice-test item q24f (unit02/tests/practice_test).
+id: q24f
+points: 2
+task: "Which bowler (player) is more consistent? Justify with numbers."
+criteria:
+  - id: who
+    points: 1
+    full: "Maya."
+  - id: numbers
+    points: 1
+    full: "Compares the standard deviations: Maya's s is about 3.2 pins against Jordan's 24.7."
