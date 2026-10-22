@@ -1,0 +1,437 @@
+%! Catch-Up Packet — Lessons 1.0–2.2 (for a student joining mid-course)
+% Standalone REVIEW handout for a new (exchange) student joining during Lesson 2.2: an abridged
+% walk through every lesson so far, in plain English with short sentences. Read-only, not turned
+% in, not scored, and with NO key (user decision 2026-10-22) — every worked example is printed
+% in full with ordinary \[ \] displays, and there is no \namedateperiod.
+% Authored on the unit study-guide model (unit02/review/study_guide: 10pt, \parthead strips);
+% it is NOT a lesson component and is merged into no packet.
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+
+% Part-divider strip (same macro the unit tests define)
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Catch-Up Packet}{Lessons 1.0--2.2 --- Study Design and Describing One Variable}
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{Welcome to the class!} This packet shows you what we learned before you arrived. It is
+short. It covers \textbf{Unit 1} (how to collect data, Lessons 1.0--1.8) and the start of
+\textbf{Unit 2} (how to describe data, Lessons 2.1--2.2).
+\textbf{It is not homework.} You do not turn it in, and it is not graded.
+\textbf{How to use it:} (1) Read the word list in Part 1. Cover the meanings and test yourself.
+(2) Read each example in Part 2 slowly, one line at a time. (3) Use the checklist at the end.
+Mark anything you do not understand, and ask your teacher.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part 1 --- The Words You Need \hfill Lessons 1.0--2.2}
+
+\small
+Each meaning uses short, simple sentences. Learn the word on the left --- we use it in every class.
+
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.15}
+% Three tables, not one: a tabularx cannot break across a page. Split at lesson boundaries.
+\boxguard[14]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.4cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Word} & \textbf{What it means} \\
+\midrule
+1.0 & Individual & One person or thing we collect data about. One \emph{row} of a table. \\
+1.0 & Variable & One thing we record about each individual. One \emph{column} of a table. \\
+1.0 & Categorical variable & The answer is a \emph{label} or a group name. Example: favorite
+      sport. \\
+1.0 & Quantitative variable & The answer is an \emph{amount} with units. Example: hours of
+      sleep. \\
+1.1 & Data cycle & Every study has four steps, in order: \textbf{ask} a question,
+      \textbf{collect} data, \textbf{organize} it, \textbf{analyze} it and say what it means. \\
+1.1 & Statistical question & A question with answers that \emph{vary}. It names the group and
+      what we will record. \\
+1.1 & Relative frequency & A count divided by the total. Write it as a decimal or a percent. \\
+1.2 & Population & \emph{Everyone} the question is about. \\
+1.2 & Sample & The part of the population we \emph{actually} collect data from. \\
+1.2 & Parameter / statistic & A number about the \emph{population} (usually unknown) / a
+      number from the \emph{sample} (we compute it). \\
+1.2 & Sampling variability & Two good samples give different numbers. This is normal. It is
+      not a mistake. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[16]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.4cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Word} & \textbf{What it means} \\
+\midrule
+1.3 & Random sample & \emph{Chance} chooses who is in the sample, not a person. \\
+1.3 & Convenience sample & We ask whoever is easy to reach. This is \emph{not} random. \\
+1.4 & Bias & The method leans the same way every time. It always guesses too high, or always
+      too low. \\
+1.5 & Observational study & We watch or ask. We do \emph{not} put anyone in a group. \\
+1.5 & Explanatory / response variable & The variable we think causes a change / the variable
+      we measure to see the change. \\
+1.5 & Association & Two variables change together. This does \emph{not} prove that one causes
+      the other. \\
+1.5 & Lurking variable & A hidden third variable that affects both variables. \\
+1.6 & Experiment & The researcher \emph{assigns} the groups and gives a treatment. Only an
+      experiment can show \emph{cause}. \\
+1.6 & Treatment / control group & The group that gets the treatment / the group that does not.
+      We compare them. \\
+1.6 & Placebo & A fake treatment that looks real. \\
+1.6 & Blinding & People do not know who is in which group. \textbf{Double-blind:} the
+      subjects \emph{and} the measurers do not know. \\
+1.7 & Collection method & \emph{How} we get the data: survey, interview, focus group,
+      observation, or existing records. \\
+1.8 & Survey instrument & The exact questions we ask, in order, with the answer choices. \\
+\end{tabularx}
+
+\vspace{4pt}
+\boxguard[16]
+\begin{tabularx}{\linewidth}{@{} c >{\raggedright\arraybackslash\bfseries}p{3.4cm} X @{}}
+\rowcolor{frost}
+\textbf{Lsn} & \textbf{Word} & \textbf{What it means} \\
+\midrule
+2.1 & Distribution & The values a variable takes, and how often it takes each one. \\
+2.1 & Dot plot / stemplot / histogram & Three pictures of quantitative data. A dot plot has one
+      dot per individual. A stemplot splits each number into a stem and a leaf. A histogram
+      has bars. \\
+2.1 & Skewed right / left & One side has a long \emph{tail}. The tail gives the name: a tail
+      to the right is skewed \emph{right}. \\
+2.1 & Outlier & A value far away from the other values. \\
+2.2 & Mean ($\bar{x}$) & Add all the values. Divide by how many there are. \\
+2.2 & Median & The middle value when the data are in order. \\
+2.2 & Range / IQR & Maximum $-$ minimum / $Q_3 - Q_1$, the spread of the middle half. \\
+2.2 & Standard deviation ($s$) & About how far a typical value is from the mean. It measures
+      \emph{spread}, not size. \\
+\end{tabularx}
+
+\vspace{6pt}
+\boxguard[14]
+\begin{blurbbox}[Words in our questions]{goldacc}
+\small
+\textbf{Describe} --- tell what you see. \quad
+\textbf{Interpret} --- say what a number means in real life. \quad
+\textbf{Justify} --- give the reason (``because \dots''). \quad
+\textbf{In context} --- use the real words and units, for example ``$13$ minutes for these
+students,'' not just ``$13$.''
+\end{blurbbox}
+\normalsize
+
+% ======================================================================
+\vspace{4pt}
+\boxguard[22]
+\parthead{Part 2 --- The Ten Skills, Worked \hfill Unit 1, then Unit 2}
+
+\small
+Each box shows one skill, with all the work. Each box ends with \textbf{the trap} --- the most
+common mistake. Every example is about Maple Grove High School, which has $1{,}200$ students.
+
+\vspace{4pt}
+\boxguard[14]
+\begin{notesbox}{Skill 1 --- Is a variable categorical or quantitative? (Lesson 1.0)}
+\small
+Ask one question: \emph{does math with this variable make sense?} If yes, it is quantitative.
+If no, it is categorical.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} X c X @{}}
+\rowcolor{frost}
+\textbf{Variable} & \textbf{Type} & \textbf{Why} \\
+\midrule
+Minutes to get to school & Quantitative & An average of minutes makes sense. \\
+Bus number & Categorical & The number is a name. ``Average bus $7.5$'' means nothing. \\
+Favorite subject & Categorical & It is a label. We count it. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{The trap:} ``It has digits, so it is quantitative.'' Bus numbers, phone numbers, and
+ZIP codes have digits, but they are \emph{labels}.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[14]
+\begin{notesbox}{Skill 2 --- Ask a statistical question, and find a percent (Lesson 1.1)}
+\small
+``How many minutes does Ana sleep?'' has \emph{one} answer, so it is not statistical.
+\emph{``How many minutes do Maple Grove students sleep on a school night?''} names a group, and
+the answers vary. That is a \textbf{statistical question}.
+
+\vspace{2pt}
+In a class of $25$, $10$ students walk to school. The relative frequency is
+\[ \frac{10}{25} = 0.40 = 40\% \]
+\textbf{The trap:} a question with no group, or a question with only one answer.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[8]
+\begin{notesbox}{Skill 3 --- Population or sample? Parameter or statistic? (Lesson 1.2)}
+\small
+The principal picks $60$ of the $1{,}200$ students at random. $18$ of the $60$ walk to school.
+
+\vspace{2pt}
+\textbf{Population:} all $1{,}200$ students. \quad \textbf{Sample:} the $60$ students asked.
+\[ \frac{18}{60} = 0.30 = 30\% \qquad\text{so we estimate}\qquad 0.30 \times 1200 = 360
+   \text{ students walk} \]
+The $30\%$ is a \textbf{statistic}: it comes from the sample. The true percent for all
+$1{,}200$ students is the \textbf{parameter}. We do not know it --- the $360$ is an
+\textbf{estimate}.
+
+\vspace{2pt}
+\textbf{The trap:} a second random sample gets $35\%$, and someone says the first survey was
+wrong. It was not. Different samples give different numbers. That is \textbf{sampling
+variability}.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Skill 4 --- Choose a sample with chance (Lesson 1.3)}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X @{}}
+\rowcolor{frost}
+\textbf{Method} & \textbf{How it works} \\
+\midrule
+Simple random & Give every student a number. Draw numbers at random. \\
+Systematic & Pick a random start on the list. Then take every $k$th student. \\
+Stratified & Split into groups that are \emph{alike inside} (like grades). Take some at random
+  from \emph{every} group. \\
+Cluster & Split into groups that are each a \emph{mix} (like advisory groups). Pick a few whole
+  groups at random. Ask everyone in them. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Systematic:} we want $60$ of $1{,}200$, so $k = 1200 \div 60 = 20$. Start at a random
+number, like $7$, and take students $7, 27, 47, 67, \dots$
+
+\vspace{2pt}
+\textbf{Stratified:} take the same fraction, $\frac{60}{1200} = \frac{1}{20}$, of every grade.
+
+\vspace{-2pt}
+\begin{tabularx}{\linewidth}{@{} X c c c c | c @{}}
+\rowcolor{frost}
+\textbf{Grade} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{Total} \\
+\midrule
+Students in the grade & $320$ & $300$ & $300$ & $280$ & $1{,}200$ \\
+Number in the sample ($\div 20$) & $16$ & $15$ & $15$ & $14$ & $60$ \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{The trap:} asking whoever walks by is \emph{not} random. That is a
+\textbf{convenience sample}. Chance must choose.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Skill 5 --- Name the bias (Lesson 1.4)}
+\small
+Ask: \emph{could this person be chosen, and did they answer honestly?}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X X @{}}
+\rowcolor{frost}
+\textbf{Type of bias} & \textbf{What went wrong} & \textbf{Example} \\
+\midrule
+Undercoverage & Some people were never on the list. & An online survey misses students with
+  no internet. \\
+Nonresponse & People were chosen but did not answer. & Only $20$ of $100$ emails come back. \\
+Response bias & People answered, but the question pushed them. & ``Don't you agree lunch is
+  too short?'' (a \emph{leading} question) \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{The trap:} ``Ask more people and the bias goes away.'' No. A bigger sample with the
+same bad method makes the same mistake. Only a \emph{better method} removes bias.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Skill 6 --- Association or cause? (Lessons 1.5 and 1.7)}
+\small
+\textbf{Ask: who made the groups?} If the people chose (or the groups already existed), it is
+an \textbf{observational study}. If the researcher assigned the groups at random, it is an
+\textbf{experiment}.
+
+\vspace{2pt}
+A survey finds that Maple Grove students who play sports have higher grades. The students chose
+to play, so this is an observational study. We may say sports and grades are
+\textbf{associated}. We may \emph{not} say sports \textbf{cause} higher grades. A
+\textbf{lurking variable} could explain it: for example, students with more free time may do
+both.
+
+\vspace{2pt}
+\textbf{The trap:} ``The groups are different, so one thing caused the other.'' Only an
+experiment can show cause.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[18]
+\begin{notesbox}{Skill 7 --- Plan an experiment (Lesson 1.6)}
+\small
+Does a text-message reminder help students turn in homework? A computer randomly puts $40$
+students in a \textbf{treatment group} (they get the text) and $40$ in a \textbf{control
+group} (no text).
+\[ \text{text: } \frac{24}{40} = 60\% \qquad \text{no text: } \frac{12}{40} = 30\% \qquad
+   60 - 30 = 30 \text{ percentage points} \]
+Chance made the groups, so the groups started out alike. So we \emph{may} say the text
+\textbf{caused} the increase.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.6cm} X @{}}
+\rowcolor{frost}
+\textbf{Principle} & \textbf{In this experiment} \\
+\midrule
+Comparison & Two groups: text and no text. \\
+Randomization & A computer, not the teacher, picks the groups. \\
+Replication & $40$ students in each group, not just a few. \\
+Control & Same homework, same week, same teacher. Only the text is different. \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{More words:} a \textbf{placebo} is a fake treatment. \textbf{Blinding} means people
+do not know their group. A \textbf{block} is a group of similar subjects (for example, one
+grade); we randomize \emph{inside} each block.
+
+\vspace{2pt}
+\textbf{The trap:} ``The control group is wasted.'' No --- without it, there is nothing to
+compare to.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[16]
+\begin{notesbox}{Skill 8 --- Write good survey questions (Lessons 1.7 and 1.8)}
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.0cm} X X @{}}
+\rowcolor{frost}
+\textbf{Rule} & \textbf{Bad question} & \textbf{Better question} \\
+\midrule
+One idea per question & ``Is the cafeteria clean and cheap?'' & Ask two questions: one about
+  clean, one about cheap. \\
+Neutral words & ``Don't you agree the library is great?'' & ``How would you rate the
+  library?'' \\
+Choices fit everyone & ``$0$--$2$ hours'' and ``$2$--$4$ hours'' (where does $2$ go?) &
+  ``$0$--$1$,'' ``$2$--$3$,'' ``$4$ or more'' \\
+\end{tabularx}
+
+\vspace{3pt}
+\textbf{Pick the method:} numbers from many people $\rightarrow$ \textbf{survey}; reasons in
+their own words $\rightarrow$ \textbf{interview}; what people really do $\rightarrow$
+\textbf{observation}. \textbf{The trap:} good questions do not fix a bad sample. You still need chance to choose who
+answers.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[26]
+\begin{notesbox}{Skill 9 --- Read a display and describe the distribution (Lesson 2.1)}
+\small
+Fifteen students recorded how many minutes it takes them to get to school. Here are the same
+$15$ values two ways.
+
+\vspace{3pt}
+\begin{minipage}[t]{0.30\linewidth}
+\vspace{0pt}
+\textbf{Stemplot}
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{r|l}
+0 & 5\;7\;8 \\
+1 & 0\;0\;2\;2\;3\;5\;5\;8 \\
+2 & 0\;2\;5 \\
+3 & \\
+4 & 0 \\
+\end{tabular}
+
+\vspace{3pt}
+\textbf{Key:} $1\,|\,3$ means $13$ minutes
+\end{minipage}\hfill
+\begin{minipage}[t]{0.66\linewidth}
+\vspace{0pt}
+\textbf{Dot plot}
+
+\vspace{2pt}
+\begin{tikzpicture}[x=0.24cm, y=0.22cm]
+  \draw[linegray] (0,0) -- (42,0);
+  \foreach \t in {0,5,...,40} {
+    \draw[linegray] (\t,-0.3) -- (\t,0.3);
+    \node[below, font=\scriptsize] at (\t,-0.3) {\t};}
+  \node[below, font=\scriptsize] at (21,-2.0) {Minutes to get to school};
+  \foreach \v/\h in {5/1, 7/1, 8/1, 10/1, 10/2, 12/1, 12/2, 13/1, 15/1, 15/2, 18/1,
+                     20/1, 22/1, 25/1, 40/1}
+    \fill[cerulean] (\v,\h) circle (0.35);
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{4pt}
+\textbf{Describe it with four things:} \textbf{shape}, anything \textbf{unusual}, the
+\textbf{center}, and the \textbf{spread} --- in context. There are $15$ values, so the median
+is the $8$th value in order: $13$ minutes. The range is $40 - 5 = 35$ minutes.
+
+\vspace{2pt}
+\emph{The travel times for these $15$ students are skewed right. There is a gap from $25$ to
+$40$ minutes, and $40$ minutes is a possible outlier. The median is $13$ minutes, and the
+times go from $5$ to $40$ minutes.}
+
+\vspace{3pt}
+\textbf{The trap:} naming the skew by where the dots pile up. The pile is on the left, but the
+long \emph{tail} goes to the right. \textbf{The tail names the skew}, so it is skewed right.
+\end{notesbox}
+
+\vspace{3pt}
+\boxguard[22]
+\begin{notesbox}{Skill 10 --- Center and spread: mean, median, IQR, standard deviation (Lesson 2.2)}
+\small
+Seven students' hours of homework last week, in order: \quad
+$3$, $5$, $6$, $7$, $8$, $9$, $11$.
+
+\vspace{2pt}
+\textbf{Center.}\vspace{-4pt}
+\[ \bar{x} = \frac{3 + 5 + 6 + 7 + 8 + 9 + 11}{7} = \frac{49}{7} = 7 \text{ hours}
+   \qquad \text{median} = 7 \text{ hours (the 4th value)} \]
+\textbf{Quartiles.} Leave the median out. $Q_1$ is the middle of $3, 5, 6$, and $Q_3$ is the
+middle of $8, 9, 11$:
+\[ Q_1 = 5 \qquad Q_3 = 9 \qquad \text{IQR} = 9 - 5 = 4 \text{ hours} \qquad
+   \text{range} = 11 - 3 = 8 \text{ hours} \]
+\textbf{Five-number summary:} $3$, $5$, $7$, $9$, $11$ (min, $Q_1$, median, $Q_3$, max).
+\textbf{Standard deviation.} Subtract the mean from each value, square, add, divide by
+$n - 1$, then take the square root.
+
+\vspace{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{7}{>{\centering\arraybackslash}X} | c @{}}
+\rowcolor{frost}
+ & & & & & & & & \textbf{Sum} \\
+Value $x$ & $3$ & $5$ & $6$ & $7$ & $8$ & $9$ & $11$ & $49$ \\
+Deviation $x - \bar{x}$ & $-4$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $4$ & $0$ \\
+Squared $(x - \bar{x})^2$ & $16$ & $4$ & $1$ & $0$ & $1$ & $4$ & $16$ & $42$ \\
+\end{tabularx}
+\[ s^2 = \frac{42}{7 - 1} = 7 \qquad s = \sqrt{7} \approx 2.6 \text{ hours} \]
+\textbf{Say it in context:} \emph{A typical student's homework time is about $2.6$ hours away
+from the mean of $7$ hours.}
+
+\vspace{3pt}
+\textbf{The trap:} ``A bigger standard deviation means bigger values.'' No. The standard
+deviation measures \textbf{spread}, not size. If every student did $10$ more hours, the mean
+would go up by $10$, but $s$ would stay $2.6$.
+\end{notesbox}
+\normalsize
+
+\vspace{4pt}
+\boxguard[5]
+\begin{remindbox}
+\small
+\textbf{You are caught up when you can do Skills 1--10 without looking.} Not sure about one?
+Circle it and ask your teacher.
+\end{remindbox}
+
+\end{document}
