@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l05-hw item q6 (unit01/lesson05/homework).
+id: q6
+points: 2
+task: "The sample was random, everyone answered, and there is no bias. Explain why the study still cannot show that the program caused the extra reading."
+criteria:
+  - id: bias
+    points: 1
+    full: "Separates the two ideas: an unbiased sample only means it represents the population; it says nothing about why the groups differ."
+  - id: selfsort
+    points: 1
+    full: "Says the card holders sorted themselves into the groups (no random assignment), so the groups may differ in other ways; no sampling method fixes that."

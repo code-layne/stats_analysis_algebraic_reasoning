@@ -105,6 +105,94 @@
    \fi
    \par\addvspace{\belowdisplayskip}}
 
+% ── Graded answer lines (math-shared/grading.sty) ─────────────────────────────
+% A free-response answer drawn as ruled lines becomes ONE \gradedblank box that
+% covers the lines, so the scan grades the whole answer. These are \writelines
+% and \writeline (saar-article) with the rules taken out and the box hung from
+% the first line: every line keeps its exact spacing, so nothing on the page
+% moves. Author the call identically in the blank and the key.
+%
+%   \par\gradedwritelines{n}{\gradedblank[...]{\linewidth}{H}}   for \par\writelines{n}
+%   \par\gradedwriteline[{\gradedblank[...]{\linewidth}{H}}]     for the first \par\writeline (braced)
+%   \par\gradedwriteline                                         for each \par\writeline after it
+%
+% The box's top sits \gradedlinestop\baselineskip (0.68) above the first line's
+% baseline, clear of the text above. To end it just under the last line, take
+% H = 0.68\baselineskip + (n-1)(line pitch) + 2pt, where the pitch is
+% \baselineskip + 4pt for \writelines and \baselineskip + 4pt + \parskip for
+% \writeline paragraphs. Under a line with deep descenders (a minipage ending in
+% a key line), lower the top in a group, {\renewcommand{\gradedlinestop}{0.45}...},
+% and take 0.45 in place of 0.68 in H.
+\newcommand{\gradedlinestop}{0.68}
+\newsavebox{\saar@gradedbox}
+\newcommand{\saar@gradedhang}[1]{%
+  \sbox{\saar@gradedbox}{#1}%
+  \rlap{\raisebox{\dimexpr\gradedlinestop\baselineskip-\ht\saar@gradedbox\relax}[0pt][0pt]%
+    {\usebox{\saar@gradedbox}}}}
+% \saar@rulestrut stands in for the rule: an invisible 0.4pt-high strut, the
+% height of \hrulefill's rule, so a line after a tall work block (spaced by
+% \lineskip, where the line's own height counts) lands exactly where it did.
+\newcommand{\saar@rulestrut}{\rule{0pt}{0.4pt}}
+\newcommand{\gradedwritelines}[2]{%
+  \vspace{1pt}\noindent\saar@rulestrut\saar@gradedhang{#2}\hfill\vspace{3pt}\\%
+  \ifnum#1>1 \foreach \i in {2,...,#1}{\vspace{1pt}\noindent\saar@rulestrut\hfill\vspace{3pt}\\}\fi}
+% \blankbox{\gradedblank[...]{W}{H}} takes the place of a \blank{W}: the box is
+% smashed, and the line keeps exactly the height and depth the blank's underline
+% gave it, so no line on the page moves. Size H to the line pitch so the box
+% stays clear of the lines above and below.
+\newcommand{\blankbox}[1]{\smash{#1}\vphantom{\blank{0pt}}}
+
+% ── Graded box positions inside tcolorboxes (XeTeX) ───────────────────────────
+% grading.sty records each box with \zsavepos (the TeX position at shipout).
+% Under XeTeX, pgf's dvipdfmx driver places every synced box — \pgftext, and so
+% the content of every tcolorbox — with a pdf:btrans translation TeX never
+% sees, so a box inside a notesbox is recorded ~15bp from where it is drawn.
+% The fix leaves the drawing alone: around each synced box with a plain
+% translation, a shipout \write brackets the positions saved inside it with
+% that translation (\saar@pgfshift), and reading the aux adds the running shift
+% to every grading:* position. Active only in a document that loads grading
+% (the hook right below), so nothing else changes.
+\newcount\saar@pgfsx
+\newcount\saar@pgfsy
+\newif\ifsaar@pgfsynced
+\def\saar@pgfshift#1#2{%
+  \global\advance\saar@pgfsx#1\relax\global\advance\saar@pgfsy#2\relax}
+\def\saar@pgfshiftmark#1#2{%
+  \edef\saar@tmp{\noexpand\write\noexpand\@auxout{\string\saar@pgfshift{#1}{#2}}}\saar@tmp}
+\def\saar@pgf@hboxsynced#1{%
+  \ifdim\pgf@pt@aa pt=1pt \ifdim\pgf@pt@ab pt=0pt \ifdim\pgf@pt@ba pt=0pt
+    \ifdim\pgf@pt@bb pt=1pt \saar@pgfsyncedtrue \fi\fi\fi\fi
+  \ifsaar@pgfsynced
+    \saar@pgfsyncedfalse
+    \edef\saar@sx{\number\pgf@pt@x}\edef\saar@sy{\number\pgf@pt@y}%
+    \saar@pgfshiftmark{\saar@sx}{\saar@sy}%
+    \saar@pgf@hboxsynced@orig{#1}%
+    \saar@pgfshiftmark{-\saar@sx}{-\saar@sy}%
+  \else
+    \saar@pgf@hboxsynced@orig{#1}%
+  \fi}
+\def\saar@zref@newlabel@shifted#1#2{%
+  \in@{grading:}{#1}%
+  \ifin@ \saar@shiftlabel{#1}#2\saar@end \else \saar@zref@newlabel{#1}{#2}\fi}
+\def\saar@shiftlabel#1\posx#2\posy#3#4\saar@end{%
+  \edef\saar@tmp{\noexpand\saar@zref@newlabel{#1}{%
+    \noexpand\posx{\the\numexpr#2+\saar@pgfsx\relax}%
+    \noexpand\posy{\the\numexpr#3+\saar@pgfsy\relax}\unexpanded{#4}}}\saar@tmp}
+\def\saar@gradingposfix{%
+  \ifdefined\pgfsys@dvipdfmx@suspendcontent
+    \let\saar@pgf@hboxsynced@orig\pgfsys@hboxsynced
+    \let\pgfsys@hboxsynced\saar@pgf@hboxsynced
+    \let\saar@zref@newlabel\zref@newlabel
+    \let\zref@newlabel\saar@zref@newlabel@shifted
+    \AtBeginDocument{\immediate\write\@mainaux{\string\providecommand\string\saar@pgfshift[2]{}}}%
+  \fi}
+\@ifpackageloaded{grading}{\saar@gradingposfix}{\AddToHook{package/grading/after}{\saar@gradingposfix}}
+
+\newcommand{\gradedwriteline}[1][]{%
+  \vspace{1pt}\noindent\saar@rulestrut
+  \if\relax\detokenize{#1}\relax\else\saar@gradedhang{#1}\fi
+  \hfill\vspace{3pt}}
+
 % ── Guided notes: the Main Ideas / Notes table ────────────────────────────────
 % The guided-notes component is ONE two-column table — the "Main Ideas /
 % Questions" column on the left, the "Notes" column on the right — modelled on

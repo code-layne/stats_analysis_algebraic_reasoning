@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l03-hw item q5c (unit01/lesson03/homework).
+id: q5c
+points: 1
+task: "Plan D drew 4 of 25 swim sessions at random: three lap-swim hours and one fitness hour. Explain why the results still might not describe all 1,500 members."
+criteria:
+  - id: alike
+    points: 1
+    full: "Says each session's members are alike inside (a session is not a small mix of the membership), so the four clusters can leave whole groups such as families or seniors out even though chance chose them."

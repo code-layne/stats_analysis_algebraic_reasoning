@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q17d (unit01/quiz01/actual_quiz).
+id: q17d
+points: 1
+task: "28 of 70 randomly surveyed members (40%) take a class. Is the 40% a parameter or a statistic? Say how you know."
+criteria:
+  - id: statistic
+    points: 0.5
+    full: "Says statistic."
+  - id: why
+    points: 0.5
+    full: "Because it describes the 70-member sample, not all 1,400 members."

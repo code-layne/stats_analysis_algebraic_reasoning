@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q18i (unit01/quiz01/actual_quiz).
+id: q18i
+points: 1
+task: "A generator gives 517, 926, 304, 688, 150 for a simple random sample from 840 numbered students. Which number cannot be used, and why?"
+criteria:
+  - id: which
+    points: 0.5
+    full: "Names 926."
+  - id: why
+    points: 0.5
+    full: "It is off the frame (001-840), so it is skipped and the next number read."

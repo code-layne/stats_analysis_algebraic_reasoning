@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l06-hw item q4b (unit01/lesson06/homework).
+id: q4b
+points: 0.5
+task: "Last summer's watched study (80% vs. 32%) may claim an association. Because..."
+criteria:
+  - id: why
+    points: 0.5
+    full: "Says the card holders chose their own group (nobody was assigned), so only an association can be claimed."

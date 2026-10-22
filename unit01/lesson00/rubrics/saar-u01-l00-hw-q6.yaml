@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l00-hw item q6 (unit01/lesson00/homework).
+id: q6
+points: 2
+task: "A staff member computes the mean Member ID, 140.5, and writes \"The average Northgate member is number 140.5.\" What does that number tell you about Northgate's members? Use Member ID's type to explain."
+criteria:
+  - id: nothing
+    points: 1
+    full: "Says the number tells nothing about the members (it measures nothing)."
+  - id: type
+    points: 1
+    full: "Explains with the type: Member ID is categorical, a label that tells members apart, not an amount, so averaging it has no meaning."
+examples:
+  - response: "It's the middle member."
+    scores: {nothing: 0, type: 0}

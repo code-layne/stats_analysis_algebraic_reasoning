@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l05-hw item q4d (unit01/lesson05/homework).
+id: q4d
+points: 0.5
+task: "Is \"The Summer Reading Program more than doubles how much our members read\" supported? Why not?"
+criteria:
+  - id: why
+    points: 0.5
+    full: "Says it is a causal claim, and nobody was assigned: card holders chose to sign up, so the readers may be the ones who signed up."

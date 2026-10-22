@@ -1,0 +1,11 @@
+# Rubric for saar-u01-sample-quiz1 item q19a (unit01/quiz01/sample_quiz).
+id: q19a
+points: 2.5
+task: "Millbrook (720 students, a numbered list, grades that differ a lot, advisory groups built by grade) wants to know about a late activity bus. Choose one sampling technique and justify it; the reason must name how the groups are built."
+criteria:
+  - id: choice
+    points: 1
+    full: "Chooses a technique that fits, e.g. stratified by grade (or a simple random sample from the full list)."
+  - id: justify
+    points: 1.5
+    full: "Justifies it from the context, naming how the groups are built: the grades differ and the advisory groups are built by grade, so a stratum per grade (and the list of 720 makes random draws possible); a cluster of advisory groups would not be a mix of the school."

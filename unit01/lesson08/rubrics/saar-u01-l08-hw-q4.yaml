@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l08-hw item q4 (unit01/lesson08/homework).
+id: q4
+points: 2
+task: "Suppose the clipboard showed 26% for story hour, almost the phone survey's 25%. Does the near-match make it trustworthy for all 1,200? Explain."
+criteria:
+  - id: no
+    points: 1
+    full: "Says no."
+  - id: why
+    points: 1
+    full: "Explains that chance never chose the 50, so the match is luck, not evidence: the method cannot tell whether it is close (it missed by 35 points in fact)."
+examples:
+  - response: "Yes, because 26% is close to 25%."
+    scores: {no: 0, why: 0}

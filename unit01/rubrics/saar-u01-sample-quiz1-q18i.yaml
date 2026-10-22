@@ -1,0 +1,11 @@
+# Rubric for saar-u01-sample-quiz1 item q18i (unit01/quiz01/sample_quiz).
+id: q18i
+points: 1
+task: "A generator gives 471, 839, 260, 554, 128 for a simple random sample from 720 numbered students. Which number cannot be used, and why?"
+criteria:
+  - id: which
+    points: 0.5
+    full: "Names 839."
+  - id: why
+    points: 0.5
+    full: "It is off the frame (001-720), so it is skipped and the next number read."

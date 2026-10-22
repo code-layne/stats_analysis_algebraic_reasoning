@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l04-hw item q1e (unit01/lesson04/homework).
+id: q1e
+points: 1
+task: "The front-desk survey was a convenience sample with undercoverage. Name one kind of card holder who had almost no chance of being included."
+criteria:
+  - id: who
+    points: 1
+    full: "Names card holders who did not visit that week, e.g. weekend-only or online-only card holders."

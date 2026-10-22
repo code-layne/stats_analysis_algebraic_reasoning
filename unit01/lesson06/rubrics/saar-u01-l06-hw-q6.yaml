@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l06-hw item q6 (unit01/lesson06/homework).
+id: q6
+points: 2
+task: "Last summer's observational study found a 48-point gap; this summer's experiment finds 30. Explain why the smaller gap is the stronger evidence that the program works."
+criteria:
+  - id: inflated
+    points: 1
+    full: "Says the 48 points were inflated: the people who signed up were already heavy readers (self-selection)."
+  - id: assigned
+    points: 1
+    full: "Says this summer chance built the groups, so the 30 points can be credited to the program."
+examples:
+  - response: "Because 30 is more realistic."
+    scores: {inflated: 0, assigned: 0}

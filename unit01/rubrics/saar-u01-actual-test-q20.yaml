@@ -1,0 +1,23 @@
+# Rubric for saar-u01-actual-test item q20 (unit01/tests/actual_test).
+id: q20
+points: 20
+task: "A random sample of students found an association, but nobody was assigned. The principal claims that playing an instrument causes higher math grades. Is the conclusion justified? Explain, and name one other variable that could explain the result."
+criteria:
+  - id: observational
+    points: 6
+    full: "Says no: nobody was assigned (students chose for themselves), so this is an observational study."
+  - id: association
+    points: 4
+    full: "Says the study shows an association, not causation."
+  - id: variable
+    points: 4
+    full: "Names a plausible other (confounding) variable, e.g. family income, which can pay for both music lessons and tutoring or extra help in math."
+  - id: mechanism
+    points: 4
+    full: "Explains how that variable could drive both the explanatory variable and the grades."
+  - id: experiment
+    points: 2
+    full: "Says only an experiment that randomly assigns the treatment could show causation."
+examples:
+  - response: "Yes, because the students who did it had higher grades."
+    scores: {observational: 0, association: 0, variable: 0, mechanism: 0, experiment: 0}

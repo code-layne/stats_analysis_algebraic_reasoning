@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l00-hw item q2h (unit01/lesson00/homework).
+id: q2h
+points: 0.25
+task: "Say how you know Age is quantitative."
+criteria:
+  - id: reason
+    points: 0.25
+    full: "Says age is an amount measured in years (a mean makes sense). \"It's a number\" alone earns nothing."

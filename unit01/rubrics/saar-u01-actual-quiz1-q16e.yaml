@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q16e (unit01/quiz01/actual_quiz).
+id: q16e
+points: 1.5
+task: "22 of 50 surveyed students (44%) chose the science museum, the most popular destination. Write a conclusion in context naming the group it applies to."
+criteria:
+  - id: value
+    points: 0.5
+    full: "Names the science museum with its 44% (22 of 50)."
+  - id: group
+    points: 1
+    full: "Limits the conclusion to the 50 Westbrook students surveyed, in context (more than any other destination)."

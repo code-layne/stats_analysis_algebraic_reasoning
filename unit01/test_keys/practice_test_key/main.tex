@@ -10,6 +10,9 @@
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u01-practice-test}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 
 % Work blocks on a test need handwriting room, not typeset spacing. This moves
 % the blank and the key together, so it cannot open a page mismatch.
@@ -51,16 +54,16 @@ Write the letter of the matching description next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=5pt, topsep=1pt]
-  \item \ans{D} Population
-  \item \ans{H} Sample
-  \item \ans{G} Parameter
-  \item \ans{A} Statistic
-  \item \ans{C} Categorical variable
-  \item \ans{I} Quantitative variable
-  \item \ans{E} Simple random sample
-  \item \ans{J} Convenience sample
-  \item \ans{F} Observational study
-  \item \ans{B} Experiment
+  \item \blankbox{\gradedblank[id=q1, type=choice, points=2, answer={D}]{0.8cm}{12pt}} Population
+  \item \blankbox{\gradedblank[id=q2, type=choice, points=2, answer={H}]{0.8cm}{12pt}} Sample
+  \item \blankbox{\gradedblank[id=q3, type=choice, points=2, answer={G}]{0.8cm}{12pt}} Parameter
+  \item \blankbox{\gradedblank[id=q4, type=choice, points=2, answer={A}]{0.8cm}{12pt}} Statistic
+  \item \blankbox{\gradedblank[id=q5, type=choice, points=2, answer={C}]{0.8cm}{12pt}} Categorical variable
+  \item \blankbox{\gradedblank[id=q6, type=choice, points=2, answer={I}]{0.8cm}{12pt}} Quantitative variable
+  \item \blankbox{\gradedblank[id=q7, type=choice, points=2, answer={E}]{0.8cm}{12pt}} Simple random sample
+  \item \blankbox{\gradedblank[id=q8, type=choice, points=2, answer={J}]{0.8cm}{12pt}} Convenience sample
+  \item \blankbox{\gradedblank[id=q9, type=choice, points=2, answer={F}]{0.8cm}{12pt}} Observational study
+  \item \blankbox{\gradedblank[id=q10, type=choice, points=2, answer={B}]{0.8cm}{12pt}} Experiment
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -89,7 +92,7 @@ Write the letter of the matching description next to each term.
 \item Which of these variables is \textbf{quantitative}?
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item Eye color
-  \item Favorite sport
+\hfill Letter:~\smash{\gradedblank[id=q11, type=choice, points=4, answer={C}]{0.45in}{10pt}}  \item Favorite sport
   \item Height in inches\correct
   \item Home ZIP code
 \end{enumerate}
@@ -100,7 +103,7 @@ Write the letter of the matching description next to each term.
 $30\%$ walk to school. The $30\%$ is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item statistic, because it describes the sample.\correct
-  \item parameter, because it describes the sample.
+\hfill Letter:~\smash{\gradedblank[id=q12, type=choice, points=4, answer={A}]{0.45in}{10pt}}  \item parameter, because it describes the sample.
   \item statistic, because it describes all $900$ students.
   \item parameter, because it describes all $900$ students.
 \end{enumerate}
@@ -111,7 +114,7 @@ $30\%$ walk to school. The $30\%$ is a
 then chooses \textbf{every 10th name}. This is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item stratified sample.
-  \item cluster sample.
+\hfill Letter:~\smash{\gradedblank[id=q13, type=choice, points=4, answer={D}]{0.45in}{10pt}}  \item cluster sample.
   \item convenience sample.
   \item systematic sample.\correct
 \end{enumerate}
@@ -122,7 +125,7 @@ then chooses \textbf{every 10th name}. This is a
 \textbf{inside a gym}. The results will most likely
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item be about right, because the people were chosen fairly.
-  \item overestimate how often residents exercise.\correct
+\hfill Letter:~\smash{\gradedblank[id=q14, type=choice, points=4, answer={B}]{0.45in}{10pt}}  \item overestimate how often residents exercise.\correct
   \item underestimate how often residents exercise.
   \item be right if the researcher surveys more people at the gym.
 \end{enumerate}
@@ -133,7 +136,7 @@ then chooses \textbf{every 10th name}. This is a
 sleeps $8$ hours and the other sleeps $5$ hours before a memory test. This study is
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item an experiment, because the researchers assigned the groups.\correct
-  \item an experiment, because it measures memory.
+\hfill Letter:~\smash{\gradedblank[id=q15, type=choice, points=4, answer={A}]{0.45in}{10pt}}  \item an experiment, because it measures memory.
   \item an observational study, because the volunteers were watched.
   \item an observational study, because there are two groups.
 \end{enumerate}
@@ -153,13 +156,13 @@ sleeps $8$ hours and the other sleeps $5$ hours before a memory test. This study
 $60$ members chosen at random, and $18$ of them use the pool every week.
 
 \vspace{2pt}
-(a) What percent of the sample uses the pool every week?
+(a) What percent of the sample uses the pool every week? \hfill\smash{\gradedblank[id=q16a, type=short, points=5, answer={30}, check=numeric, display={30\%}]{1.6cm}{10pt}}
 
 \begin{work}
   \dfrac{18}{60} &= 0.30 = 30\%
 \end{work}
 
-(b) About how many of all $900$ members use the pool every week?
+(b) About how many of all $900$ members use the pool every week? \hfill\smash{\gradedblank[id=q16b, type=short, points=5, answer={270}, check=numeric]{1.6cm}{10pt}}
 
 \begin{work}
   0.30 \times 900 &= 270 \text{ members}
@@ -171,7 +174,7 @@ $60$ members chosen at random, and $18$ of them use the pool every week.
 \textbf{stratified} sample of $60$ --- the same fraction from each grade.
 
 \vspace{2pt}
-(a) What fraction of the school is being sampled?
+(a) What fraction of the school is being sampled? \hfill\smash{\gradedblank[id=q17a, type=short, points=2, answer={1/10}, check=expression, display={$1/10$}]{1.6cm}{10pt}}
 
 \begin{work}
   \dfrac{60}{600} &= \dfrac{1}{10}
@@ -186,7 +189,7 @@ $60$ members chosen at random, and $18$ of them use the pool every week.
 \textbf{Grade} & 6 & 7 & 8 & \textbf{Total} \\
 \midrule
 Students in grade & $240$ & $200$ & $160$ & $600$ \\
-Number sampled & \ans{$24$} & \ans{$20$} & \ans{$16$} & \ans{$60$} \\
+Number sampled & \blankbox{\gradedblank[id=q17b1, type=short, points=2, answer={24}, check=numeric]{1.1cm}{11pt}} & \blankbox{\gradedblank[id=q17b2, type=short, points=2, answer={20}, check=numeric]{1.1cm}{11pt}} & \blankbox{\gradedblank[id=q17b3, type=short, points=2, answer={16}, check=numeric]{1.1cm}{11pt}} & \blankbox{\gradedblank[id=q17b4, type=short, points=2, answer={60}, check=numeric]{1.1cm}{11pt}} \\
 \end{tabularx}
 
 % ---------------------------------------------------------------- C3 (1.3)
@@ -195,7 +198,7 @@ Number sampled & \ans{$24$} & \ans{$20$} & \ans{$16$} & \ans{$60$} \\
 manager wants a \textbf{systematic} sample of $50$.
 
 \vspace{2pt}
-(a) Find the interval $k$.
+(a) Find the interval $k$. \hfill\smash{\gradedblank[id=q18a, type=short, points=2, answer={10}, check=numeric]{1.6cm}{10pt}}
 
 \begin{work}
   k &= 500 \div 50 = 10
@@ -204,7 +207,7 @@ manager wants a \textbf{systematic} sample of $50$.
 (b) The random start is household $3$. List the first four households chosen.
 
 \vspace{2pt}
-\ans{$3$} \quad \ans{$13$} \quad \ans{$23$} \quad \ans{$33$}
+\blankbox{\gradedblank[id=q18b1, type=short, points=2, answer={3}, check=numeric]{1.6cm}{10pt}} \quad \blankbox{\gradedblank[id=q18b2, type=short, points=2, answer={13}, check=numeric]{1.6cm}{10pt}} \quad \blankbox{\gradedblank[id=q18b3, type=short, points=2, answer={23}, check=numeric]{1.6cm}{10pt}} \quad \blankbox{\gradedblank[id=q18b4, type=short, points=2, answer={33}, check=numeric]{1.6cm}{10pt}}
 
 % ---------------------------------------------------------------- C4 (1.6)
 \boxguard[14]
@@ -213,14 +216,14 @@ flashcard app and $40$ to study the usual way. Afterwards, $30$ of the app group
 $20$ of the usual group passed a quiz.
 
 \vspace{2pt}
-(a) Find the percent who passed in each group.
+(a) Find the percent who passed in each group. \hfill\smash{\gradedblank[id=q19a1, type=short, points=3, answer={75}, check=numeric, display={75\%}]{1.6cm}{10pt}}\quad\smash{\gradedblank[id=q19a2, type=short, points=3, answer={50}, check=numeric, display={50\%}]{1.6cm}{10pt}}
 
 \begin{work}
   \text{App: } \dfrac{30}{40} &= 0.75 = 75\% \\
   \text{Usual: } \dfrac{20}{40} &= 0.50 = 50\%
 \end{work}
 
-(b) How many percentage points apart are the two groups? \ans{$25$ points}
+(b) How many percentage points apart are the two groups? \blankbox{\gradedblank[id=q19b, type=short, points=4, answer={25}, check=numeric, display={25 points}]{2.8cm}{10pt}}
 
 \end{enumerate}
 \normalsize
@@ -241,12 +244,12 @@ higher grades.''}
 Is the principal's conclusion justified? Explain your reasoning, and name one
 \textbf{other variable} that could explain the result.
 
-\par\ansline{No. Nobody was assigned --- students chose --- so this is an observational study.}
-\par\ansline{It shows an association between breakfast and grades, not causation.}
-\par\ansline{Another variable: family routine. Students with more support at home are more}
-\par\ansline{likely to eat breakfast \emph{and} to keep up with homework,}
-\par\ansline{and that support could raise grades by itself.}
-\par\ansline{Only an experiment that randomly assigns breakfast could show it causes higher grades.}
+\par\gradedwriteline[{\gradedblank[id=q20, type=rubric, points=20, rubric=../rubrics/saar-u01-practice-test-q20.yaml, display={No. Nobody was assigned --- students chose --- so this is an observational study. It shows an association between breakfast and grades, not causation. Another variable: family routine. Students with more support at home are more likely to eat breakfast \emph{and} to keep up with homework, and that support could raise grades by itself. Only an experiment that randomly assigns breakfast could show it causes higher grades.}]{\linewidth}{99.5pt}}]
+\par\gradedwriteline
+\par\gradedwriteline
+\par\gradedwriteline
+\par\gradedwriteline
+\par\gradedwriteline
 
 \end{enumerate}
 \normalsize

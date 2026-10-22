@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l07-hw item q3a (unit01/lesson07/homework).
+id: q3a
+points: 0.75
+task: "Collect stage of the book-club study."
+criteria:
+  - id: collect
+    points: 0.75
+    full: "Says a random generator split the 300 volunteers into two groups of 150 (club and no club), then counted who read 10 books."

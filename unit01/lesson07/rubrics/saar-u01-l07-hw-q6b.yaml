@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l07-hw item q6b (unit01/lesson07/homework).
+id: q6b
+points: 1
+task: "Millbrook has a 48-point, a 30-point, and a 24-point gap. Which is the weakest evidence that the programs work, and why is it the one with the biggest number?"
+criteria:
+  - id: which
+    points: 0.5
+    full: "Names the 48-point gap (last summer's observational study)."
+  - id: why
+    points: 0.5
+    full: "Says the people who signed themselves up were already heavy readers, so the gap measures who signed up, not the program."

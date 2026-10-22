@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q15f (unit01/quiz01/actual_quiz).
+id: q15f
+points: 2
+task: "The office's draft question is \"How long is practice?\" Explain why that is not a statistical question, then rewrite it so that it is."
+criteria:
+  - id: why
+    points: 1
+    full: "Says it has one answer (names no group of individuals whose answers vary), so it is not statistical."
+  - id: rewrite
+    points: 1
+    full: "Rewrites it to ask about a group with varying answers, e.g. \"How many minutes is practice for Westbrook students who play a sport?\""

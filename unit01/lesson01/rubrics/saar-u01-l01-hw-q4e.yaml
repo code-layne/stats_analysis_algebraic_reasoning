@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l01-hw item q4e (unit01/lesson01/homework).
+id: q4e
+points: 1
+task: "Same 50 shoppers, same Saturday: explain what made the two questions' types different."
+criteria:
+  - id: question
+    points: 1
+    full: "Says the question itself decides the type: one asks for a label (how they traveled), the other for an amount (miles)."

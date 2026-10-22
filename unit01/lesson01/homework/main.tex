@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
+\usepackage{grading}
+\gradingassignment{saar-u01-l01-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -66,9 +69,9 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
         its type.
 
         \par\vspace{4pt}
-        Variable: \blank{6cm} \hfill Type: \blank{3.4cm}
+        Variable: \blankbox{\gradedblank[id=q1a, type=short, points=0.5, answer={how the shopper traveled}, check=text]{6cm}{13.5pt}} \hfill Type: \blankbox{\gradedblank[id=q1b, type=short, points=0.5, answer={categorical}, check=text]{3.4cm}{13.5pt}}
         \par\vspace{8pt}
-        How do you know? \blank{10.6cm}
+        How do you know? \blankbox{\gradedblank[id=q1c, type=rubric, points=1, display={the answers are labels --- no arithmetic on them means anything}]{10.6cm}{13.5pt}}
 
   \item Complete her frequency table, then show your work for the \textbf{bus} row.
 
@@ -78,12 +81,12 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
         \toprule
         \textbf{How they traveled} & \textbf{Count} & \textbf{Relative frequency (percent)} \\
         \midrule
-        Drove  & 26 & \blank{6.4cm} \\
-        Walked & 12 & \blank{6.4cm} \\
-        Biked  &  7 & \blank{6.4cm} \\
-        Bus    &  5 & \blank{6.4cm} \\
+        Drove  & 26 & \blank{4.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q2a, type=short, points=0.25, answer={52}, check=numeric, display={52\%}]{2cm}{18pt}} \\
+        Walked & 12 & \blank{4.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q2b, type=short, points=0.25, answer={24}, check=numeric, display={24\%}]{2cm}{18pt}} \\
+        Biked  &  7 & \blank{4.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q2c, type=short, points=0.25, answer={14}, check=numeric, display={14\%}]{2cm}{18pt}} \\
+        Bus    &  5 & \blank{4.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q2d, type=short, points=0.25, answer={10}, check=numeric, display={10\%}]{2cm}{18pt}} \\
         \midrule
-        \textbf{Total} & \blank{1.4cm} & \blank{6.4cm} \\
+        \textbf{Total} & \blankbox{\gradedblank[id=q2e, type=short, points=0.5, answer={50}, check=numeric]{1.4cm}{18pt}} & \blank{4.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q2f, type=short, points=0.5, answer={100}, check=numeric, display={100\%}]{2cm}{18pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -108,7 +111,7 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
 
         Write that result as one sentence for the manager's report: name the group she asked,
         the number, and what was measured.
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q3, type=rubric, points=2, display={Of the 50 shoppers asked one Saturday, 10\% travel to the market by bus. If they are typical, that is about 80 of the market's 800 Saturday shoppers.}]{\linewidth}{30pt}}
 
 
   \item The manager could ask her $50$ shoppers either question below. \textbf{Decide the type
@@ -121,33 +124,33 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
         \textbf{The question} & \textbf{Type} & \textbf{Summarize with\dots} \\
         \midrule
         (i) ``How did you travel to the market today?''
-          & \blank{2.2cm} & \blank{3cm} \\
+          & \blankbox{\gradedblank[id=q4a, type=short, points=0.25, answer={categorical}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4b, type=rubric, points=0.25, display={counts and percents}]{3cm}{17pt}} \\
         (ii) ``How many miles did you travel to the market today?''
-          & \blank{2.2cm} & \blank{3cm} \\
+          & \blankbox{\gradedblank[id=q4c, type=short, points=0.25, answer={quantitative}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4d, type=rubric, points=0.25, display={a mean}]{3cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
         Same $50$ shoppers, same Saturday. Explain what made the two types different.
-        \par\writeline
+        \par\gradedwriteline[{\gradedblank[id=q4e, type=rubric, points=1, display={The question did --- one records a label, the other records a number of miles.}]{\linewidth}{12pt}}]
 
   \item Each mistake below broke the study at one stage. Write the number of the stage the
         problem \textbf{entered} at --- not the stage where the bad sentence showed up.
 
         \begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=3pt, label=(\alph*)]
           \item The original question never said \emph{which} shoppers or \emph{which} day.
-                \hfill \blank{1.2cm}
-          \item She asked only shoppers walking in from the parking lot. \hfill \blank{1.2cm}
-          \item The $50$ answers were never counted by travel method. \hfill \blank{1.2cm}
+                \hfill \blankbox{\gradedblank[id=q5a, type=short, points=0.5, answer={1}, check=numeric]{1.2cm}{13.5pt}}
+          \item She asked only shoppers walking in from the parking lot. \hfill \blankbox{\gradedblank[id=q5b, type=short, points=0.5, answer={2}, check=numeric]{1.2cm}{13.5pt}}
+          \item The $50$ answers were never counted by travel method. \hfill \blankbox{\gradedblank[id=q5c, type=short, points=0.5, answer={3}, check=numeric]{1.2cm}{13.5pt}}
           \item The write-up reports $70\%$ drove when the table says $52\%$.
-                \hfill \blank{1.2cm}
+                \hfill \blankbox{\gradedblank[id=q5d, type=short, points=0.5, answer={4}, check=numeric]{1.2cm}{13.5pt}}
         \end{enumerate}
 
   \item Her report says: \textit{``Only $10\%$ of our shoppers ride the bus, so a free shuttle
         would be used by very few people.''} \textbf{Every number in that sentence is
         correct.} Explain why the conclusion still does not follow, and name the stage the
         problem entered at.
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Nobody was ever asked about a shuttle, so the survey cannot say who would use one; 10\% of 800 is still about 80 shoppers. It entered at stage 1 --- the wrong question.}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}

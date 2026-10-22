@@ -1,0 +1,11 @@
+# Rubric for saar-u01-sample-quiz1 item q19d (unit01/quiz01/sample_quiz).
+id: q19d
+points: 3
+task: "A teacher draws 2 advisory groups (built by grade) and surveys all 48 students; 30 say yes (62.5%, pointing to 450 of 720). Her arithmetic is correct. Explain what is wrong with her report, and state what she is allowed to say."
+criteria:
+  - id: alike
+    points: 1.5
+    full: "Advisory groups are built by grade, so each is alike inside (a stratum, not a mix), so her 48 students are one or two grades and the 62.5% says nothing about all 720."
+  - id: allowed
+    points: 1.5
+    full: "She may only say 62.5% of those 48 students said yes."

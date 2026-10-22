@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q19a (unit01/quiz01/actual_quiz).
+id: q19a
+points: 2.5
+task: "Westbrook (840 students, a numbered list, grades that differ a lot, homerooms built by grade) wants to know whether students would use a Saturday tutoring session. Choose one sampling technique and justify it; the reason must name how the groups are built."
+criteria:
+  - id: choice
+    points: 1
+    full: "Chooses a technique that fits, e.g. stratified by grade (or a simple random sample from the full list)."
+  - id: justify
+    points: 1.5
+    full: "Justifies it from the context, naming how the groups are built: the grades differ and the homerooms are built by grade, so a stratum per grade (and the list of 840 makes random draws possible); a cluster of homerooms would not be a mix of the school."

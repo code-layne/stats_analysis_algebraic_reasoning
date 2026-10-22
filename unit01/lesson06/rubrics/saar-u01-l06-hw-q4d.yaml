@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l06-hw item q4d (unit01/lesson06/homework).
+id: q4d
+points: 0.5
+task: "This summer's assigned experiment (65% vs. 35%) may claim the program caused it. Because..."
+criteria:
+  - id: why
+    points: 0.5
+    full: "Says chance (random assignment) built the groups, not the readers."

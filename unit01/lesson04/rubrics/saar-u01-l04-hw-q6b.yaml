@@ -1,0 +1,11 @@
+# Rubric for saar-u01-l04-hw item q6b (unit01/lesson04/homework).
+id: q6b
+points: 1.5
+task: "Only 78 of the 120 randomly drawn card holders picked up. The draw was random and every count is correct: explain why the result could still be biased, and name the fix."
+criteria:
+  - id: nonresponse
+    points: 1
+    full: "Says the 42 who never answered may differ from the 78 who did, so the answering group leans (nonresponse bias)."
+  - id: fix
+    points: 0.5
+    full: "Names the fix: keep calling back (follow up) until every one of the 120 answers."

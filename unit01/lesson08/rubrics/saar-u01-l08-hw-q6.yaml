@@ -1,0 +1,17 @@
+# Rubric for saar-u01-l08-hw item q6 (unit01/lesson08/homework).
+id: q6
+points: 2
+task: "Project report: four sentences from the class tally: what was asked and of whom; how the sample was chosen and how many answered; what was found (the two largest categories, as percents); what it means about the people the design actually covers."
+criteria:
+  - id: asked
+    points: 0.5
+    full: "States the question asked and of whom."
+  - id: sample
+    points: 0.5
+    full: "Says how the sample was chosen (e.g. the class, not chance) and how many answered."
+  - id: found
+    points: 0.5
+    full: "Gives the two largest categories as percents from the class tally."
+  - id: means
+    points: 0.5
+    full: "Limits the conclusion to the people the design covers (this class only, a convenience sample)."

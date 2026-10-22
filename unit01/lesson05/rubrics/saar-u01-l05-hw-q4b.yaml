@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l05-hw item q4b (unit01/lesson05/homework).
+id: q4b
+points: 0.5
+task: "Is \"Card holders who signed up read more books than card holders who did not\" supported? Why?"
+criteria:
+  - id: why
+    points: 0.5
+    full: "Says it is what the data show (80% vs. 32%, a 48-point gap): an association, which an observational study can report."

@@ -20,6 +20,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u01-l03-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -65,11 +68,11 @@ Every plan below surveys $100$ members --- the plans differ only in \emph{who ge
 
   \item The Tuesday-evening study.
         \par\vspace{4pt}
-        Population: \ans{all 1,500 members} \hfill Sample: \ans{the 75 asked Tuesday evening}
+        Population: \blankbox{\gradedblank[id=q1a, type=short, points=0.25, answer={all 1,500 members}, check=text]{4.2cm}{13.5pt}} \hfill Sample: \blankbox{\gradedblank[id=q1b, type=short, points=0.25, answer={the 75 asked Tuesday evening}, check=text]{5cm}{13.5pt}}
         \par\vspace{8pt}
-        It was a \ans{convenience} sample. Name one kind of member who had \emph{no chance} of
+        It was a \blankbox{\gradedblank[id=q1c, type=short, points=0.5, answer={convenience}, check=text]{2.6cm}{13.5pt}} sample. Name one kind of member who had \emph{no chance} of
         being chosen by it.
-        \par\ansline{Morning or weekend swimmers, or anyone who works Tuesday evenings.}
+        \par\gradedwriteline[{\gradedblank[id=q1d, type=rubric, points=1, display={Morning or weekend swimmers, or anyone who works Tuesday evenings.}]{\linewidth}{12pt}}]
 
   \item \textbf{Plan A --- simple random sample.} You number the members $0001$ to $1500$
         and the generator returns {\ttfamily 0412 \; 1587 \; 0973 \; 0412 \; 0288}. Decide
@@ -82,10 +85,10 @@ Every plan below surveys $100$ members --- the plans differ only in \emph{who ge
         \textbf{Returned} & \textbf{Use it? Why or why not} & \textbf{Member chosen} \\
         \midrule
         0412 & yes --- in range and new & member 412 \\
-        1587 & \ans{no --- out of range (above 1500)} & \ans{none} \\
-        0973 & \ans{yes --- in range and new} & \ans{member 973} \\
-        0412 & \ans{no --- already chosen} & \ans{none} \\
-        0288 & \ans{yes --- in range and new} & \ans{member 288} \\
+        1587 & \blankbox{\gradedblank[id=q2a, type=short, points=0.25, answer={no --- out of range}, check=text, display={no --- out of range (above 1500)}]{4.6cm}{17pt}} & \blankbox{\gradedblank[id=q2b, type=short, points=0.25, answer={none}, check=text]{2.6cm}{17pt}} \\
+        0973 & \blankbox{\gradedblank[id=q2c, type=short, points=0.25, answer={yes --- in range and new}, check=text]{4.6cm}{17pt}} & \blankbox{\gradedblank[id=q2d, type=short, points=0.25, answer={member 973}, check=text]{2.6cm}{17pt}} \\
+        0412 & \blankbox{\gradedblank[id=q2e, type=short, points=0.25, answer={no --- already chosen}, check=text]{4.6cm}{17pt}} & \blankbox{\gradedblank[id=q2f, type=short, points=0.25, answer={none}, check=text]{2.6cm}{17pt}} \\
+        0288 & \blankbox{\gradedblank[id=q2g, type=short, points=0.25, answer={yes --- in range and new}, check=text]{4.6cm}{17pt}} & \blankbox{\gradedblank[id=q2h, type=short, points=0.25, answer={member 288}, check=text]{2.6cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -106,11 +109,11 @@ Every plan below surveys $100$ members --- the plans differ only in \emph{who ge
         \toprule
         \textbf{Membership} & \textbf{Members} & \textbf{Number to survey} \\
         \midrule
-        Individual & 600 & \ans{$600 \div 15 = 40$} \\
-        Family     & 525 & \ans{$525 \div 15 = 35$} \\
-        Senior     & 375 & \ans{$375 \div 15 = 25$} \\
+        Individual & 600 & \ans{\makebox[1.6cm][l]{$600 \div 15$}}\hspace{0.2cm}\smash{\gradedblank[id=q3a, type=short, points=0.5, answer={40}, check=numeric]{2cm}{15pt}} \\
+        Family     & 525 & \ans{\makebox[1.6cm][l]{$525 \div 15$}}\hspace{0.2cm}\smash{\gradedblank[id=q3b, type=short, points=0.5, answer={35}, check=numeric]{2cm}{15pt}} \\
+        Senior     & 375 & \ans{\makebox[1.6cm][l]{$375 \div 15$}}\hspace{0.2cm}\smash{\gradedblank[id=q3c, type=short, points=0.5, answer={25}, check=numeric]{2cm}{15pt}} \\
         \midrule
-        \textbf{Total} & \textbf{1,500} & \ans{$40+35+25 = 100$} \\
+        \textbf{Total} & \textbf{1,500} & \ans{\makebox[1.6cm][l]{$40+35+25$}}\hspace{0.2cm}\smash{\gradedblank[id=q3d, type=short, points=0.5, answer={100}, check=numeric]{2cm}{15pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -121,26 +124,24 @@ Every plan below surveys $100$ members --- the plans differ only in \emph{who ge
         \end{work}
 
   \item \textbf{Plan C --- systematic sample} from the numbered list. Find $k$; the random
-        start lands on member $9$; write the next three members chosen.
+        start lands on member $9$; write the next three members chosen. \hfill\smash{\gradedblank[id=q4a, type=short, points=0.5, answer={15}, check=numeric]{1.4cm}{13.5pt}}
 
         \begin{work}
           k = 1500 \div 100 &= 15
         \end{work}
 
-        Next three: \ans{24} \qquad \ans{39} \qquad \ans{54}
+        Next three: \blankbox{\gradedblank[id=q4b, type=short, points=0.5, answer={24}, check=numeric]{1.4cm}{13.5pt}} \qquad \blankbox{\gradedblank[id=q4c, type=short, points=0.5, answer={39}, check=numeric]{1.4cm}{13.5pt}} \qquad \blankbox{\gradedblank[id=q4d, type=short, points=0.5, answer={54}, check=numeric]{1.4cm}{13.5pt}}
 
   \item \textbf{Plan D --- cluster sample.} Draw $4$ of the $25$ swim sessions at random and
         survey everyone there ($4 \times 25 = 100$). Plans B and D both use groups: Plan B is
-        \ans{stratified} and Plan D is \ans{cluster}. The four sessions drawn are three lap-swim hours
+        \blankbox{\gradedblank[id=q5a, type=short, points=0.5, answer={stratified}, check=text]{2cm}{13.5pt}} and Plan D is \blankbox{\gradedblank[id=q5b, type=short, points=0.5, answer={cluster}, check=text]{2cm}{13.5pt}}. The four sessions drawn are three lap-swim hours
         and one fitness hour --- a random draw, every count correct. Explain why the results
         still might not describe all $1{,}500$ members.
-        \par\ansline{A swim session is not a small mix of the membership --- lap swimmers fill lap hours --- so}
-\ansline{four clusters that all lean one way leave families and seniors out. Chance chose; the groups are alike inside.}
+        \par\gradedwritelines{2}{\gradedblank[id=q5c, type=rubric, points=1, display={A swim session is not a small mix of the membership --- lap swimmers fill lap hours --- so four clusters that all lean one way leave families and seniors out. Chance chose; the groups are alike inside.}]{\linewidth}{30pt}}
 
   \item The board says: ``Whatever we do, seniors must be heard --- they pay dues too, and they
         swim at different hours.'' Which plan should they run, and why does it deliver that?
-        \par\ansline{Plan B, stratified: it samples the senior stratum separately, so 25 seniors are guaranteed}
-\ansline{a place in proportion. No other plan promises seniors appear at all --- a random draw only makes it likely.}
+        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Plan B, stratified: it samples the senior stratum separately, so 25 seniors are guaranteed a place in proportion. No other plan promises seniors appear at all --- a random draw only makes it likely.}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}

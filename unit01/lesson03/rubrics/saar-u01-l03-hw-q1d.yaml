@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l03-hw item q1d (unit01/lesson03/homework).
+id: q1d
+points: 1
+task: "The Tuesday-evening study was a convenience sample. Name one kind of member who had no chance of being chosen by it."
+criteria:
+  - id: member
+    points: 1
+    full: "Names members who never come on Tuesday evenings, e.g. morning or weekend swimmers, or people who work Tuesday evenings."

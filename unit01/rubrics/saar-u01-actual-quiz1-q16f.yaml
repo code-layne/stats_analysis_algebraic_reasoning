@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q16f (unit01/quiz01/actual_quiz).
+id: q16f
+points: 1.5
+task: "The council writes that most Westbrook students want the science museum. Give the two things wrong with that sentence."
+criteria:
+  - id: most
+    points: 0.75
+    full: "44% is not \"most\" (most means more than half)."
+  - id: group
+    points: 0.75
+    full: "The survey covers the 50 students asked, not all 840 Westbrook students."

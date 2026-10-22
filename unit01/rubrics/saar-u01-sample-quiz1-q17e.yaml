@@ -1,0 +1,8 @@
+# Rubric for saar-u01-sample-quiz1 item q17e (unit01/quiz01/sample_quiz).
+id: q17e
+points: 1
+task: "Name one constraint that keeps the manager from taking a census of all 1,200 members."
+criteria:
+  - id: constraint
+    points: 1
+    full: "Names a constraint with a reason in context: time, cost, access, or change (e.g. reaching all 1,200 would take too long)."

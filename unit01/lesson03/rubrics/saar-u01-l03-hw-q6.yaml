@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l03-hw item q6 (unit01/lesson03/homework).
+id: q6
+points: 2
+task: "The board says seniors must be heard. Which plan should they run, and why does it deliver that?"
+criteria:
+  - id: plan
+    points: 1
+    full: "Chooses Plan B, the stratified sample."
+  - id: why
+    points: 1
+    full: "Says it samples the senior stratum on its own, so seniors are guaranteed places (25, in proportion); the other plans only make it likely."
+examples:
+  - response: "Plan A because it is random."
+    scores: {plan: 0, why: 0}

@@ -1,0 +1,11 @@
+# Rubric for saar-u01-actual-quiz1 item q19e (unit01/quiz01/actual_quiz).
+id: q19e
+points: 2
+task: "Is her 75% a parameter or a statistic? Name one change to her method that would make it an estimate worth trusting."
+criteria:
+  - id: statistic
+    points: 1
+    full: "Says statistic."
+  - id: change
+    points: 1
+    full: "Names a fix: draw the sample at random from the whole list of 840, or stratify by grade so every grade can be chosen."

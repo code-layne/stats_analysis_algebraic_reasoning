@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u01-l05-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -68,9 +71,9 @@ or all $1{,}200$ card holders.
   \item The director did not put anybody into the program --- card holders signed themselves up.
 
         \par\vspace{4pt}
-        What kind of study is this? \ans{observational} \hfill Who decided the groups? \ans{the card holders themselves}
+        What kind of study is this? \blankbox{\gradedblank[id=q1a, type=short, points=0.5, answer={observational}, check=text]{3.4cm}{13.5pt}} \hfill Who decided the groups? \blankbox{\gradedblank[id=q1b, type=short, points=0.5, answer={the card holders themselves}, check=text]{4.6cm}{13.5pt}}
         \par\vspace{8pt}
-        Explanatory variable: \ans{signed up for the program} \hfill Response variable: \ans{read at least 10 books}
+        Explanatory variable: \blankbox{\gradedblank[id=q1c, type=short, points=0.5, answer={signed up for the program}, check=text]{5.2cm}{13.5pt}} \hfill Response variable: \blankbox{\gradedblank[id=q1d, type=short, points=0.5, answer={read at least 10 books}, check=text]{5cm}{13.5pt}}
 
   \item Compute the reading rate for each group --- watch the two denominators --- then the
         gap.
@@ -81,7 +84,7 @@ or all $1{,}200$ card holders.
         \end{work}
 
         \par\vspace{2pt}
-        The \ans{the program} group is higher by \ans{48} percentage points.
+        The \blankbox{\gradedblank[id=q2a, type=short, points=1, answer={the program}, check=text]{3.2cm}{13.5pt}} group is higher by \blankbox{\gradedblank[id=q2b, type=short, points=1, answer={48}, check=numeric]{1.8cm}{13.5pt}} percentage points.
 
 \end{enumerate}
 \end{notesbox}
@@ -92,7 +95,7 @@ or all $1{,}200$ card holders.
 
   \item Now use the whole sample. How many of the $240$ read at least $10$ books, what
         percent of the sample is that, and about how many of all $1{,}200$ card holders does
-        that predict?
+        that predict?\nobreak\hfill\llap{\raisebox{-26pt}[0pt][0pt]{\gradedblank[id=q3a, type=short, points=0.5, answer={120}, check=numeric]{1.3cm}{13.5pt}\enspace\gradedblank[id=q3b, type=short, points=0.5, answer={50}, check=numeric, display={50\%}]{1.3cm}{13.5pt}\enspace\gradedblank[id=q3c, type=short, points=1, answer={600}, check=numeric]{1.3cm}{13.5pt}}}
 
         \begin{work}
           \dfrac{72 + 48}{240} &= \dfrac{120}{240} = 0.50 = 50\% \\
@@ -108,9 +111,9 @@ or all $1{,}200$ card holders.
         \textbf{Statement} & \textbf{Supported?} & \textbf{Why / why not} \\
         \midrule
         Card holders who signed up read more books than card holders who did not.
-          & \ans{yes} & \ans{That is what was seen: $80\%$ vs. $32\%$, a $48$-point gap --- an association.} \\
+          & \blankbox{\gradedblank[id=q4a, type=short, points=0.5, answer={yes}, check=text]{1.8cm}{17pt}} & \blankbox{\gradedblank[id=q4b, type=rubric, points=0.5, display={That is what was seen: $80\%$ vs. $32\%$, a $48$-point gap --- an association.}]{4.2cm}{17pt}} \\
         The Summer Reading Program more than doubles how much our members read.
-          & \ans{no} & \ans{Causal (``doubles''). Nobody was assigned; the readers may have signed up.} \\
+          & \blankbox{\gradedblank[id=q4c, type=short, points=0.5, answer={no}, check=text]{1.8cm}{17pt}} & \blankbox{\gradedblank[id=q4d, type=rubric, points=0.5, display={Causal (``doubles''). Nobody was assigned; the readers may have signed up.}]{4.2cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -120,19 +123,17 @@ or all $1{,}200$ card holders.
         had already read $10$ or more books. Of the $150$ who did not, $30$ had.
 
         \par\vspace{4pt}
-        Signed up: \ans{$63/90 = 70\%$} \qquad Did not sign up: \ans{$30/150 = 20\%$}
+        Signed up: \ans{\makebox[1.4cm][l]{$63/90$}}\hspace{0.2cm}\smash{\gradedblank[id=q5a, type=short, points=0.5, answer={70}, check=numeric, display={70\%}]{2cm}{13.5pt}} \qquad Did not sign up: \ans{\makebox[1.4cm][l]{$30/150$}}\hspace{0.2cm}\smash{\gradedblank[id=q5b, type=short, points=0.5, answer={20}, check=numeric, display={20\%}]{2cm}{13.5pt}}
 
         \par\vspace{6pt}
         Which of the three stories is this --- and does it make the program look
         \emph{better} or \emph{worse} than it really is?
-        \par\ansline{The arrow backwards --- the card holders who already read a lot are the ones who sign up.}
-\ansline{It makes the program look better than it is: most of the 48-point gap was there before it.}
+        \par\gradedwritelines{2}{\gradedblank[id=q5c, type=rubric, points=1, display={The arrow backwards --- the card holders who already read a lot are the ones who sign up. It makes the program look better than it is: most of the 48-point gap was there before it.}]{\linewidth}{30pt}}
 
   \item The sample was drawn at random from the full list, every person answered, and every
         count is correct --- there is \emph{no bias} in this study. Explain why it
         \emph{still} cannot show that the program caused the extra reading.
-        \par\ansline{Bias is about whether the sample looks like the population; it does. Causation is about why}
-\ansline{the two groups differ, and the card holders sorted themselves --- no sampling method fixes that.}
+        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Bias is about whether the sample looks like the population; it does. Causation is about why the two groups differ, and the card holders sorted themselves --- no sampling method fixes that.}]{\linewidth}{30pt}}
 
 \end{enumerate}
 \end{notesbox}

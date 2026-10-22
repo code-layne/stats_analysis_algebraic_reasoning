@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l00-hw item q2d (unit01/lesson00/homework).
+id: q2d
+points: 0.25
+task: "Say how you know Membership is categorical."
+criteria:
+  - id: reason
+    points: 0.25
+    full: "Says Family / Student / Senior are group names or labels, not amounts."

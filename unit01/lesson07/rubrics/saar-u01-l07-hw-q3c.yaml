@@ -1,0 +1,8 @@
+# Rubric for saar-u01-l07-hw item q3c (unit01/lesson07/homework).
+id: q3c
+points: 0.75
+task: "Analyze & report stage of the book-club study."
+criteria:
+  - id: analyze
+    points: 0.75
+    full: "Compares 64% with 40% (a 24-point gap) and states the conclusion in context."

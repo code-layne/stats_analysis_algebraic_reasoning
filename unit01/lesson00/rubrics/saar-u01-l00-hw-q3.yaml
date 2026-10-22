@@ -1,0 +1,14 @@
+# Rubric for saar-u01-l00-hw item q3 (unit01/lesson00/homework).
+id: q3
+points: 2
+task: "Find the mean number of visits last month for the eight Northgate members, then write it as data: one sentence naming the group and the units."
+criteria:
+  - id: value
+    points: 1
+    full: "Gives the mean, 6 visits."
+  - id: sentence
+    points: 1
+    full: "One sentence that names the group (these eight Northgate members) and the units (visits last month)."
+examples:
+  - response: "The mean is 6."
+    scores: {value: 1, sentence: 0}

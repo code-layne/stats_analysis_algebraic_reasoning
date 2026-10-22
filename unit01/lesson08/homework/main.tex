@@ -21,6 +21,9 @@
 \documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
+\usepackage{grading}
+\gradingassignment{saar-u01-l08-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 % Word bank strip for every fill-in cluster (user request 2026-09-06). Defined per document;
 % the key inherits it and prints the same strip, so heights match.
@@ -73,12 +76,12 @@ $1{,}200$ card holders.
         \toprule
         \textbf{Program} & \textbf{Frequency} & \textbf{Relative frequency} \\
         \midrule
-        Evening book club   & $28$ & \blank{4.4cm} \\
-        Teen coding lab     & $24$ & \blank{4.4cm} \\
-        Saturday story hour & $20$ & \blank{4.4cm} \\
-        Job-search help     & $8$  & \blank{4.4cm} \\
+        Evening book club   & $28$ & \blank{2.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q1a, type=short, points=0.4, answer={35}, check=numeric, display={35\%}]{2cm}{14pt}} \\
+        Teen coding lab     & $24$ & \blank{2.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q1b, type=short, points=0.4, answer={30}, check=numeric, display={30\%}]{2cm}{14pt}} \\
+        Saturday story hour & $20$ & \blank{2.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q1c, type=short, points=0.4, answer={25}, check=numeric, display={25\%}]{2cm}{14pt}} \\
+        Job-search help     & $8$  & \blank{2.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q1d, type=short, points=0.4, answer={10}, check=numeric, display={10\%}]{2cm}{14pt}} \\
         \midrule
-        \textbf{Total}      & $80$ & \blank{4.4cm} \\
+        \textbf{Total}      & $80$ & \blank{2.2cm}\hspace{0.2cm}\smash{\gradedblank[id=q1e, type=short, points=0.4, answer={100}, check=numeric, display={100\%}]{2cm}{14pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
@@ -100,9 +103,9 @@ $1{,}200$ card holders.
         \end{tikzpicture}
         \end{center}
 
-        The height of the first bar tells a reader \blank{4.4cm}.
+        The height of the first bar tells a reader \blankbox{\gradedblank[id=q2a, type=short, points=1, answer={the share of the 80}, check=text, display={the share of the 80 --- 35\% chose book club}]{4.4cm}{13.5pt}}.
         \par\vspace{6pt}
-        The bars are separated because ``program'' is a \blank{3.4cm} variable.
+        The bars are separated because ``program'' is a \blankbox{\gradedblank[id=q2b, type=short, points=1, answer={categorical}, check=text]{3.4cm}{13.5pt}} variable.
 
 \end{enumerate}
 \end{notesbox}
@@ -113,35 +116,35 @@ $1{,}200$ card holders.
 
   \item Two surveys, one library, the same arithmetic.
 
-        \textbf{(a)} Scale the phone survey's book-club percent to all $1{,}200$ card holders.
+        \textbf{(a)} Scale the phone survey's book-club percent to all $1{,}200$ card holders. \hfill\smash{\gradedblank[id=q3a, type=short, points=0.5, answer={420}, check=numeric]{1.8cm}{13.5pt}}
 
         \begin{work}
           0.35 \times 1200 &= 420 \text{ card holders}
         \end{work}
 
-        \textbf{(b)} What percent of the $50$ who signed the clipboard chose story hour?
+        \textbf{(b)} What percent of the $50$ who signed the clipboard chose story hour? \hfill\smash{\gradedblank[id=q3b, type=short, points=0.5, answer={60}, check=numeric, display={60\%}]{1.8cm}{13.5pt}}
 
         \begin{work}
           \dfrac{30}{50} &= 0.60 = 60\%
         \end{work}
 
         \textbf{(c)} One of these percents may be scaled to all $1{,}200$; one may not. Which, and why?
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q3c, type=rubric, points=1, display={The 35\% may --- chance chose the 80 from the whole list. The 60\% may not: the 50 chose themselves by walking in that week, so it describes only the people who signed.}]{\linewidth}{30pt}}
 
   \item Suppose the clipboard had shown $13$ of $50$ for story hour --- $26\%$, almost exactly the
         phone survey's $25\%$. Does that near-match make it trustworthy for all $1{,}200$? Explain.
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q4, type=rubric, points=2, display={No. Chance never chose the 50, so a match is luck, not evidence --- the same clipboard could have missed by 35 points, as it actually did, and its method could not tell us.}]{\linewidth}{30pt}}
 
   \item An early draft of the director's item read: \emph{``Wouldn't you love a coding lab for
         our teens?''} Name the instrument rule it breaks and the name Lesson 1.4 gave that
         bias, then repair it.
-        \par\writelines{2}
+        \par\gradedwritelines{2}{\gradedblank[id=q5, type=rubric, points=2, display={Rule 2, neutral wording --- Lesson 1.4 called it a leading (response-bias) item. Repair: ``Which one of these four programs should the grant fund?''}]{\linewidth}{30pt}}
 
   \item \textbf{Your project report.} From your class's tally in the notes, write the four
         sentences: what you asked and of whom; how the sample was chosen and how many answered;
         what you found (the two largest categories, as percents); what it means --- \emph{about
         the people your design actually covers}.
-        \par\writelines{4}
+        \par\gradedwritelines{4}{\gradedblank[id=q6, type=rubric, points=2, display={We asked which one option the \$3,000 grant should fund, of Riverbend students. The sample was the 25 students in this room --- the schedule chose it, not chance; all 25 answered. Club funding led at 36\%, followed by field trips at 28\%. Of the 25 students in this class, most would fund clubs --- this class only, a convenience sample.}]{\linewidth}{67pt}}
 
 \end{enumerate}
 \end{notesbox}
