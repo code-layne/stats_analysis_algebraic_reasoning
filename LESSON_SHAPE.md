@@ -266,7 +266,10 @@ the answers of slots that are not boxed.
 **Checks:** `make -C unitNN/lessonYY manifest COMP=homework` (or
 `make -C unitNN manifest COMP=tests/practice_test`) builds the blank and key, writes
 `manifest.json`, and fails if the two disagree on any item. `make roster-packets` builds the
-personalized copies (see `README.md`).
+personalized copies: per student, math-shared's name cover sheet and its blank back, then the
+graded component (or, for a lesson component, the whole student packet) carrying only the
+tracking id, padded to an even page count (see `README.md`). No student name is printed on a
+graded page.
 
 ## 3. Where structure comes from
 

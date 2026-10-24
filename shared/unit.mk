@@ -137,15 +137,18 @@ clean:
 #       blank + key builds, target/<unit>/grading/<COMP>/manifest.json, and the
 #       check that the blank and key agree on every graded item.
 #   make roster-packets COMP=tests/actual_test ROSTER=~/Rosters/saar/roster-map.csv [SECTION=…]
-#       one personalized copy per student, in roster order (QR codes carry the
-#       student's tracking id, the name strip the student's name), each padded
-#       to an even page count so every copy starts on a fresh sheet, joined
-#       into target/compiled/<unit>/<COMP with / as _>_roster.pdf to print as
+#       per student, in roster order: math-shared's name cover sheet, its blank
+#       back, then her personalized copy (QR codes and the id strip carry only
+#       the tracking id) padded to an even page count, so every cover starts on
+#       an odd page. math-shared's personalized.pdf, copied to
+#       target/compiled/<unit>/<COMP with / as _>_roster.pdf to print duplex as
 #       one collated job.
 #
 # Unit rubrics live in <unit>/rubrics/; a rubric item names its file relative
 # to the component's parent directory (rubric=../rubrics/<assignment>-<id>.yaml).
-# Roster copies carry student names: they stay under target/, never committed.
+# Names are printed only on the covers. The roster PDF holds them, so it stays
+# under target/, never committed; math-shared's check_names.py fails the build
+# if a name reaches a graded copy.
 GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP          ?=
 COMPONENT     := $(COMP)
@@ -165,27 +168,10 @@ manifest: grading-need-comp
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/grading/$(COMP)/manifest.json"
 
-# A one-page blank letter sheet pads an odd-length copy.
-GRADING_PAD := $(GRADING_OUT)/pad/pad.pdf
-$(GRADING_PAD):
-	@mkdir -p $(dir $@)
-	@cd $(dir $@) && xelatex -interaction=nonstopmode -halt-on-error -jobname=pad \
-	    '\documentclass{article}\usepackage[letterpaper]{geometry}\pagestyle{empty}\begin{document}\null\end{document}' \
-	    > pad.out 2>&1 || { echo "!  pad page failed — see $(dir $@)pad.log"; exit 1; }
-
-roster-packets: grading-need-comp grading-need-roster grading-personalized $(GRADING_PAD)
+roster-packets: grading-need-comp grading-need-roster grading-personalized
 	@mkdir -p $(dir $(ROSTER_OUT))
-	@set -e; \
-	ids=$$($(GRADING_PYTHON) "$(GRADING_SCRIPTS)/roster_tex.py" "$(ROSTER)" --ids-only \
-	        $(if $(SECTION),--section "$(SECTION)")); \
-	pdfs=; n=0; \
-	for id in $$ids; do \
-	  f="$(GR_STUDENTS)/$$id.pdf"; pdfs="$$pdfs $$f"; n=$$((n + 1)); \
-	  p=$$(pdfinfo "$$f" | awk '/^Pages/{print $$2}'); \
-	  if [ $$((p % 2)) -eq 1 ]; then pdfs="$$pdfs $(GRADING_PAD)"; fi; \
-	done; \
-	pdfunite $$pdfs $(ROSTER_OUT); \
-	echo "✓  Roster copies  → target/compiled/$(UNIT)/$(notdir $(ROSTER_OUT)) ($$n students, roster order)"
+	@cp "$(GR_OUT)/personalized.pdf" $(ROSTER_OUT)
+	@echo "✓  Roster copies  → target/compiled/$(UNIT)/$(notdir $(ROSTER_OUT)) (roster order, name covers)"
 else
 manifest roster-packets grading-need-comp:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
