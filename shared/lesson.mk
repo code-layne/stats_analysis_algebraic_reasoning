@@ -320,7 +320,13 @@ include $(GRADING_MK)
 grading-need-comp:
 	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=homework"; exit 1; }
 
+# A graded page carries no name line (math-shared's cover sheet holds the name):
+# shared/graded_nameline_check.py fails on \namedateperiod, \namepartnerperiod or a
+# Name:/Date:/Period: field in COMP or its key before anything is built.
+NAMELINE_CHECK := $(PROJECT_ROOT)/shared/graded_nameline_check.py
+
 manifest: grading-need-comp
+	@python3 $(NAMELINE_CHECK) $(COMP)/main.tex $(COMP)_key/main.tex
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/$(LESSON)/grading/$(COMP)/manifest.json"
 

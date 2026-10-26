@@ -415,7 +415,9 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   `saar-beamer` does not load `tcolorbox` — use beamer's `\begin{block}{}`; beamer's `itemize` does
   not accept `[leftmargin=…]` — use `\setlength{\itemsep}{…}`.
 - `\TallMath{…}` for tall inline math is defined per document (the skeletons include it).
-  `\namedateperiod` on the cover and the unit tests/finals only; `\namepartnerperiod` is unused.
+  `\namedateperiod` on the cover and on finals only; `\namepartnerperiod` is unused. A document
+  that loads `grading` (homework, quizzes, unit tests and their keys) never carries a name row:
+  its pages are scanned, so the name goes on math-shared's cover sheet. `make manifest` fails on one.
 
 - **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid` /
   `probgrid*`, `\pcell`, `\writespace`, `\labelbox`, `\stepnum` — is defined in
@@ -470,7 +472,8 @@ idempotently, `--no-tests` skips). A unit holds `tests/` (`practice_test/`, `act
 `sample_test/main.pdf`), `test_keys/` (`practice_test_key/`, `actual_test_key/`; `drop` publishes
 to `sample_test_key/main.pdf`), and the two `sample_test*` drop-in dirs `shared/unit.mk` merges
 into the unit student / key packets. **The actual test and its key are never merged into any
-packet.** Tests are taken in a testing setting, so they **keep `\namedateperiod`**, use
+packet.** Tests load `grading`, so they carry **no `\namedateperiod`** (the name goes on math-shared's
+cover sheet, never on a scanned page), use
 `\pageheader{Unit X: <Title>}{…}`, and are organized by `\parthead{Part …}` strips: **A Vocabulary
 (matching) · B Multiple Choice · C Short Answer & Computation · D Extended Response** —
 interpret-and-justify in D. Practice and actual are **parallel forms**: same blueprint and ideas,
@@ -512,8 +515,9 @@ flat subdirectories each holding a `main.tex` --- `study_packet/`, `study_packet
 `*/main.tex` into `target/<unit>/quizNN/<name>/main.pdf`. **No `drop`/publish step, and never
 add `quizNN` to `shared/unit.mk` or `shared/root.mk`:** a mid-unit quiz must not reflow the
 pagination of a unit's already-verified student and key packets. `make -C unitXX/quizNN all`
-builds all four. Both documents are standalone handouts with no cover behind them, so both
-**keep `\namedateperiod`**, and both are authored at **10pt** with the unit tests'
+builds all four. Both documents are standalone handouts with no lesson cover behind them. The quizzes load
+`grading`, so they carry **no `\namedateperiod`** (math-shared's cover sheet holds the name); the
+study packet, which does not load `grading`, keeps it. Both are authored at **10pt** with the unit tests'
 `\parthead{Part …}` strips and `\setlength{\workrowsep}{5pt}` --- they are assessment family,
 not lesson components, so the 12pt student-component rule does not reach them.
 
@@ -746,7 +750,7 @@ it was measured against.
 | --- | --- | --- | --- |
 | — | **vocabpar** | **Automatic** — the term macros carry their own `\par` | nothing to do |
 | 1 | **teachernote** | scaffolder seeds the notes in the plan; **`make check` fails** on one in a lesson `_key`; a test key's rationale goes on p2 of `unit_cover_key/` (by hand); only `finals/*_key/` keeps its notes | `movenotes.py unitNN/lessonMM` (`--check` previews) |
-| 2 | **namestrip** | scaffolder emits no name row; **`make check` fails** on a live one on a component; cover, tests, and finals keep it | `namestrip.py --project . --unit NN --lesson MM` (`--check` previews) |
+| 2 | **namestrip** | scaffolder emits no name row; **`make check` fails** on a live one on a component, and **`make manifest` fails** on one in any document that loads `grading` (tests and quizzes included); cover and finals keep it | `namestrip.py --project . --unit NN --lesson MM` (`--check` previews) |
 | 3 | **work rule** | `work` is one code path for blank and key; **`make check` fails** on a page mismatch (totals only — compare per-page headings yourself) | `work` blocks byte-identical; `\writelines{n}` only for prose `\ansline` drift |
 | 4 | **boxguard** | **eyes only** — a stranded stub changes no page count | `\boxguard` / `\boxguard[n]` before the `\begin{...}`, blank **and** key |
 

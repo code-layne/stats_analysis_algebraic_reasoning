@@ -21,7 +21,10 @@ $(UNITS):
 # Whole-curriculum convention gate. Builds every unit first, then checks every
 # lesson in one pass so the report covers the project rather than stopping at the
 # first violation. See shared/lesson_check.py.
+# It also runs shared/graded_nameline_check.py over every document, so a name row
+# in any graded component (tests and quizzes too) fails the gate.
 check: $(UNITS)
+	@python3 $(PROJECT_ROOT)/shared/graded_nameline_check.py --project $(PROJECT_ROOT)
 	@python3 $(PROJECT_ROOT)/shared/lesson_check.py --project $(PROJECT_ROOT) --all
 
 student:

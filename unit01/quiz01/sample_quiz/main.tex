@@ -2,7 +2,7 @@
 % Standalone assessment on the unit-test model (LESSON_SHAPE.md section 6): 10pt,
 % \parthead{Part …} strips, Part A Vocabulary · B Multiple Choice · C Short Answer &
 % Computation · D Extended Response, \workrowsep 5pt identical in blank and key, and
-% \namedateperiod kept because it is taken in a testing setting. Merged into no packet.
+% no name line (it loads grading, so the name goes on math-shared's cover sheet). Merged into no packet.
 %
 % BLUEPRINT — 19 items, 50 points, Lessons 1.0–1.3 only:
 %   A vocabulary matching  8 items ×1 =  8   (1.0 ×3, 1.1 ×1, 1.2 ×2, 1.3 ×2)
@@ -36,8 +36,11 @@
 
 \begin{document}
 
-\pageheader{Unit 1: Asking Questions with Data: Study Design}{Quiz 1 --- Sample Quiz --- Lessons 1.0--1.3}
-\namedateperiod
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Quiz 1 --- Sample Quiz --- Lessons 1.0--1.3\strut}
+% HEADER: \strut gives the subtitle a full line depth, so this header is exactly as
+% tall as the key's (whose "Answer Key" has descenders) and blank and key boxes line up.
+% NAMESTRIP: no name line. Graded pages are scanned, so they carry only the tracking id in the
+% strip; the student's name goes on math-shared's cover sheet (shared/graded_nameline_check.py).
 
 \vspace{0.10in}
 \begin{remindbox}
