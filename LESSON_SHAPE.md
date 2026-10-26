@@ -239,21 +239,26 @@ the key's boxes to print their answers):
 assessment, keeping its own name — `saar-u01-practice-test`, `saar-u01-actual-test`,
 `saar-u01-sample-quiz1`, `saar-u01-actual-quiz1`. Every id is unique across the course.
 
-**Boxes**, written identically in the blank and the key; each is sized to the space the old
-blank used, so no line or page break moves:
+**Boxes**, written identically in the blank and the key. math-shared draws every choice box
+square (as tall as it is wide) and every rubric box at least 2in tall; short boxes are drawn as
+written:
 
 - a `\blank{W}` becomes `\blankbox{\gradedblank[...]{W}{H}}` (H 13.5pt in 12pt running text,
   10pt in a 10pt test's `\small` lines, a little more in stretched table rows);
-- a multiple-choice item gets a right-aligned `Letter:~\smash{\gradedblank[type=choice, ...]{0.45in}{H}}`
+- a multiple-choice item gets a right-aligned `Letter:~\gradedblank[type=choice, ...]{0.45in}{H}`
   on its option (A) line (quizzes and Unit 2 tests already had an `Answer:` slot, relabelled
-  `Letter:`);
+  `Letter:`), and a matching term gets its choice box in front of it. A choice box is never
+  `\smash`ed or wrapped in `\blankbox`: it is square, so its line must take its full height;
 - a computed answer with no slot of its own gets a box at the end of its prompt's last line, or,
   when that line is full, hung into the right of the work area (`\llap{\raisebox{...}[0pt][0pt]{...}}`);
 - a worked answer in a single blank is split: a shorter underline keeps the work (the key prints
   the working there) and the box holds only the final value;
-- answer lines become one rubric box: `\par\gradedwritelines{n}{...}` for `\par\writelines{n}`,
-  `\par\gradedwriteline[{...}]` then `\par\gradedwriteline` for a run of `\par\writeline`s
-  (`saar-boxes.sty` gives the heights).
+- every written response (`type=rubric`) gets its own full-width box under its prompt:
+  `\gradedresponse{\gradedblank[...]{\linewidth}{2in}}`, or `\gradedresponse[label]{...}` with
+  a label line above it. Never hang a rubric box from ruled lines, smash it into a sentence, or
+  put it in a table cell; two parts never share one box. In a document that loads `grading`,
+  `saar-boxes.sty` keeps a prompt, its work block and its box on one page (see
+  `\saar@gradedpaging`); check the breaks between the parts of an item by eye.
 
 **Points** match what the page states: homework 2 per item (12 for six; a DeltaMath + packet
 homework scores only its turned-in items), and each test or quiz part its printed total.
@@ -415,7 +420,9 @@ column of `spec/unit_lesson_breakdown.md` in sync when a lesson lands.
   `saar-beamer` does not load `tcolorbox` — use beamer's `\begin{block}{}`; beamer's `itemize` does
   not accept `[leftmargin=…]` — use `\setlength{\itemsep}{…}`.
 - `\TallMath{…}` for tall inline math is defined per document (the skeletons include it).
-  `\namedateperiod` on the cover and the unit tests/finals only; `\namepartnerperiod` is unused.
+  `\namedateperiod` on the cover and on finals only; `\namepartnerperiod` is unused. A document
+  that loads `grading` (homework, quizzes, unit tests and their keys) never carries a name row:
+  its pages are scanned, so the name goes on math-shared's cover sheet. `make manifest` fails on one.
 
 - **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid` /
   `probgrid*`, `\pcell`, `\writespace`, `\labelbox`, `\stepnum` — is defined in
@@ -470,7 +477,8 @@ idempotently, `--no-tests` skips). A unit holds `tests/` (`practice_test/`, `act
 `sample_test/main.pdf`), `test_keys/` (`practice_test_key/`, `actual_test_key/`; `drop` publishes
 to `sample_test_key/main.pdf`), and the two `sample_test*` drop-in dirs `shared/unit.mk` merges
 into the unit student / key packets. **The actual test and its key are never merged into any
-packet.** Tests are taken in a testing setting, so they **keep `\namedateperiod`**, use
+packet.** Tests load `grading`, so they carry **no `\namedateperiod`** (the name goes on math-shared's
+cover sheet, never on a scanned page), use
 `\pageheader{Unit X: <Title>}{…}`, and are organized by `\parthead{Part …}` strips: **A Vocabulary
 (matching) · B Multiple Choice · C Short Answer & Computation · D Extended Response** —
 interpret-and-justify in D. Practice and actual are **parallel forms**: same blueprint and ideas,
@@ -512,8 +520,9 @@ flat subdirectories each holding a `main.tex` --- `study_packet/`, `study_packet
 `*/main.tex` into `target/<unit>/quizNN/<name>/main.pdf`. **No `drop`/publish step, and never
 add `quizNN` to `shared/unit.mk` or `shared/root.mk`:** a mid-unit quiz must not reflow the
 pagination of a unit's already-verified student and key packets. `make -C unitXX/quizNN all`
-builds all four. Both documents are standalone handouts with no cover behind them, so both
-**keep `\namedateperiod`**, and both are authored at **10pt** with the unit tests'
+builds all four. Both documents are standalone handouts with no lesson cover behind them. The quizzes load
+`grading`, so they carry **no `\namedateperiod`** (math-shared's cover sheet holds the name); the
+study packet, which does not load `grading`, keeps it. Both are authored at **10pt** with the unit tests'
 `\parthead{Part …}` strips and `\setlength{\workrowsep}{5pt}` --- they are assessment family,
 not lesson components, so the 12pt student-component rule does not reach them.
 
@@ -746,7 +755,7 @@ it was measured against.
 | --- | --- | --- | --- |
 | — | **vocabpar** | **Automatic** — the term macros carry their own `\par` | nothing to do |
 | 1 | **teachernote** | scaffolder seeds the notes in the plan; **`make check` fails** on one in a lesson `_key`; a test key's rationale goes on p2 of `unit_cover_key/` (by hand); only `finals/*_key/` keeps its notes | `movenotes.py unitNN/lessonMM` (`--check` previews) |
-| 2 | **namestrip** | scaffolder emits no name row; **`make check` fails** on a live one on a component; cover, tests, and finals keep it | `namestrip.py --project . --unit NN --lesson MM` (`--check` previews) |
+| 2 | **namestrip** | scaffolder emits no name row; **`make check` fails** on a live one on a component, and **`make manifest` fails** on one in any document that loads `grading` (tests and quizzes included); cover and finals keep it | `namestrip.py --project . --unit NN --lesson MM` (`--check` previews) |
 | 3 | **work rule** | `work` is one code path for blank and key; **`make check` fails** on a page mismatch (totals only — compare per-page headings yourself) | `work` blocks byte-identical; `\writelines{n}` only for prose `\ansline` drift |
 | 4 | **boxguard** | **eyes only** — a stranded stub changes no page count | `\boxguard` / `\boxguard[n]` before the `\begin{...}`, blank **and** key |
 

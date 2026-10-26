@@ -21,8 +21,9 @@
 % Part-divider strip
 \newcommand{\parthead}[1]{%
   \vspace{6pt}\noindent
-  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
-  \vspace{4pt}}
+  {\tcbset{after={\par\nopagebreak}}% never strand a part header at a page foot
+   \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}}%
+  \nopagebreak\vspace{4pt}}
 
 % The correct multiple-choice option. Prints nothing in the blank; prints the marker once
 % -key is loaded (the same switch that makes `work` blocks visible), so the key regenerates
@@ -33,8 +34,11 @@
 
 \begin{document}
 
-\pageheader{Unit 1: Asking Questions with Data: Study Design}{Practice Test --- Study Copy}
-\namedateperiod
+\pageheader{Unit 1: Asking Questions with Data: Study Design}{Practice Test --- Study Copy\strut}
+% HEADER: \strut gives the subtitle a full line depth, so this header is exactly as
+% tall as the key's (whose "Answer Key" has descenders) and blank and key boxes line up.
+% NAMESTRIP: no name line. Graded pages are scanned, so they carry only the tracking id in the
+% strip; the student's name goes on math-shared's cover sheet (shared/graded_nameline_check.py).
 
 \vspace{0.10in}
 \begin{remindbox}
@@ -54,16 +58,16 @@ Write the letter of the matching description next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=5pt, topsep=1pt]
-  \item \blankbox{\gradedblank[id=q1, type=choice, points=2, answer={D}]{0.8cm}{12pt}} Population
-  \item \blankbox{\gradedblank[id=q2, type=choice, points=2, answer={H}]{0.8cm}{12pt}} Sample
-  \item \blankbox{\gradedblank[id=q3, type=choice, points=2, answer={G}]{0.8cm}{12pt}} Parameter
-  \item \blankbox{\gradedblank[id=q4, type=choice, points=2, answer={A}]{0.8cm}{12pt}} Statistic
-  \item \blankbox{\gradedblank[id=q5, type=choice, points=2, answer={C}]{0.8cm}{12pt}} Categorical variable
-  \item \blankbox{\gradedblank[id=q6, type=choice, points=2, answer={I}]{0.8cm}{12pt}} Quantitative variable
-  \item \blankbox{\gradedblank[id=q7, type=choice, points=2, answer={E}]{0.8cm}{12pt}} Simple random sample
-  \item \blankbox{\gradedblank[id=q8, type=choice, points=2, answer={J}]{0.8cm}{12pt}} Convenience sample
-  \item \blankbox{\gradedblank[id=q9, type=choice, points=2, answer={F}]{0.8cm}{12pt}} Observational study
-  \item \blankbox{\gradedblank[id=q10, type=choice, points=2, answer={B}]{0.8cm}{12pt}} Experiment
+  \item \gradedblank[id=q1, type=choice, points=2, answer={D}]{0.8cm}{12pt} Population
+  \item \gradedblank[id=q2, type=choice, points=2, answer={H}]{0.8cm}{12pt} Sample
+  \item \gradedblank[id=q3, type=choice, points=2, answer={G}]{0.8cm}{12pt} Parameter
+  \item \gradedblank[id=q4, type=choice, points=2, answer={A}]{0.8cm}{12pt} Statistic
+  \item \gradedblank[id=q5, type=choice, points=2, answer={C}]{0.8cm}{12pt} Categorical variable
+  \item \gradedblank[id=q6, type=choice, points=2, answer={I}]{0.8cm}{12pt} Quantitative variable
+  \item \gradedblank[id=q7, type=choice, points=2, answer={E}]{0.8cm}{12pt} Simple random sample
+  \item \gradedblank[id=q8, type=choice, points=2, answer={J}]{0.8cm}{12pt} Convenience sample
+  \item \gradedblank[id=q9, type=choice, points=2, answer={F}]{0.8cm}{12pt} Observational study
+  \item \gradedblank[id=q10, type=choice, points=2, answer={B}]{0.8cm}{12pt} Experiment
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -92,7 +96,7 @@ Write the letter of the matching description next to each term.
 \item Which of these variables is \textbf{quantitative}?
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item Eye color
-\hfill Letter:~\smash{\gradedblank[id=q11, type=choice, points=4, answer={C}]{0.45in}{10pt}}  \item Favorite sport
+\hfill Letter:~\gradedblank[id=q11, type=choice, points=4, answer={C}]{0.45in}{10pt}  \item Favorite sport
   \item Height in inches\correct
   \item Home ZIP code
 \end{enumerate}
@@ -103,7 +107,7 @@ Write the letter of the matching description next to each term.
 $30\%$ walk to school. The $30\%$ is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item statistic, because it describes the sample.\correct
-\hfill Letter:~\smash{\gradedblank[id=q12, type=choice, points=4, answer={A}]{0.45in}{10pt}}  \item parameter, because it describes the sample.
+\hfill Letter:~\gradedblank[id=q12, type=choice, points=4, answer={A}]{0.45in}{10pt}  \item parameter, because it describes the sample.
   \item statistic, because it describes all $900$ students.
   \item parameter, because it describes all $900$ students.
 \end{enumerate}
@@ -114,7 +118,7 @@ $30\%$ walk to school. The $30\%$ is a
 then chooses \textbf{every 10th name}. This is a
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item stratified sample.
-\hfill Letter:~\smash{\gradedblank[id=q13, type=choice, points=4, answer={D}]{0.45in}{10pt}}  \item cluster sample.
+\hfill Letter:~\gradedblank[id=q13, type=choice, points=4, answer={D}]{0.45in}{10pt}  \item cluster sample.
   \item convenience sample.
   \item systematic sample.\correct
 \end{enumerate}
@@ -125,7 +129,7 @@ then chooses \textbf{every 10th name}. This is a
 \textbf{inside a gym}. The results will most likely
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item be about right, because the people were chosen fairly.
-\hfill Letter:~\smash{\gradedblank[id=q14, type=choice, points=4, answer={B}]{0.45in}{10pt}}  \item overestimate how often residents exercise.\correct
+\hfill Letter:~\gradedblank[id=q14, type=choice, points=4, answer={B}]{0.45in}{10pt}  \item overestimate how often residents exercise.\correct
   \item underestimate how often residents exercise.
   \item be right if the researcher surveys more people at the gym.
 \end{enumerate}
@@ -136,7 +140,7 @@ then chooses \textbf{every 10th name}. This is a
 sleeps $8$ hours and the other sleeps $5$ hours before a memory test. This study is
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
   \item an experiment, because the researchers assigned the groups.\correct
-\hfill Letter:~\smash{\gradedblank[id=q15, type=choice, points=4, answer={A}]{0.45in}{10pt}}  \item an experiment, because it measures memory.
+\hfill Letter:~\gradedblank[id=q15, type=choice, points=4, answer={A}]{0.45in}{10pt}  \item an experiment, because it measures memory.
   \item an observational study, because the volunteers were watched.
   \item an observational study, because there are two groups.
 \end{enumerate}
@@ -244,12 +248,7 @@ higher grades.''}
 Is the principal's conclusion justified? Explain your reasoning, and name one
 \textbf{other variable} that could explain the result.
 
-\par\gradedwriteline[{\gradedblank[id=q20, type=rubric, points=20, rubric=../rubrics/saar-u01-practice-test-q20.yaml, display={No. Nobody was assigned --- students chose --- so this is an observational study. It shows an association between breakfast and grades, not causation. Another variable: family routine. Students with more support at home are more likely to eat breakfast \emph{and} to keep up with homework, and that support could raise grades by itself. Only an experiment that randomly assigns breakfast could show it causes higher grades.}]{\linewidth}{99.5pt}}]
-\par\gradedwriteline
-\par\gradedwriteline
-\par\gradedwriteline
-\par\gradedwriteline
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q20, type=rubric, points=20, rubric=../rubrics/saar-u01-practice-test-q20.yaml, display={No. Nobody was assigned --- students chose --- so this is an observational study. It shows an association between breakfast and grades, not causation. Another variable: family routine. Students with more support at home are more likely to eat breakfast \emph{and} to keep up with homework, and that support could raise grades by itself. Only an experiment that randomly assigns breakfast could show it causes higher grades.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \normalsize

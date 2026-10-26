@@ -23,8 +23,9 @@
 % Part-divider strip
 \newcommand{\parthead}[1]{%
   \vspace{6pt}\noindent
-  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
-  \vspace{4pt}}
+  {\tcbset{after={\par\nopagebreak}}% never strand a part header at a page foot
+   \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}}%
+  \nopagebreak\vspace{4pt}}
 
 % One horizontal boxplot on a tikz x-axis: \drawbox{y}{min}{Q1}{med}{Q3}{max}{label}
 \newcommand{\drawbox}[7]{%
@@ -38,8 +39,11 @@
 
 \begin{document}
 
-\pageheader{Unit 2: Describing One Variable}{Unit Test}
-\namedateperiod
+\pageheader{Unit 2: Describing One Variable}{Unit Test\strut}
+% HEADER: \strut gives the subtitle a full line depth, so this header is exactly as
+% tall as the key's (whose "Answer Key" has descenders) and blank and key boxes line up.
+% NAMESTRIP: no name line. Graded pages are scanned, so they carry only the tracking id in the
+% strip; the student's name goes on math-shared's cover sheet (shared/graded_nameline_check.py).
 
 \vspace{0.10in}
 \begin{remindbox}
@@ -59,11 +63,11 @@ next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item \blankbox{\gradedblank[id=q1, type=choice, points=1, answer={D}]{0.8cm}{11pt}} Distribution
-  \item \blankbox{\gradedblank[id=q2, type=choice, points=1, answer={C}]{0.8cm}{11pt}} Stemplot
-  \item \blankbox{\gradedblank[id=q3, type=choice, points=1, answer={A}]{0.8cm}{11pt}} Histogram
-  \item \blankbox{\gradedblank[id=q4, type=choice, points=1, answer={E}]{0.8cm}{11pt}} Skewed right
-  \item \blankbox{\gradedblank[id=q5, type=choice, points=1, answer={B}]{0.8cm}{11pt}} Skewed left
+  \item \gradedblank[id=q1, type=choice, points=1, answer={D}]{0.8cm}{11pt} Distribution
+  \item \gradedblank[id=q2, type=choice, points=1, answer={C}]{0.8cm}{11pt} Stemplot
+  \item \gradedblank[id=q3, type=choice, points=1, answer={A}]{0.8cm}{11pt} Histogram
+  \item \gradedblank[id=q4, type=choice, points=1, answer={E}]{0.8cm}{11pt} Skewed right
+  \item \gradedblank[id=q5, type=choice, points=1, answer={B}]{0.8cm}{11pt} Skewed left
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -82,11 +86,11 @@ next to each term.
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt, start=6]
-  \item \blankbox{\gradedblank[id=q6, type=choice, points=1, answer={B}]{0.8cm}{11pt}} Median
-  \item \blankbox{\gradedblank[id=q7, type=choice, points=1, answer={A}]{0.8cm}{11pt}} Interquartile range
-  \item \blankbox{\gradedblank[id=q8, type=choice, points=1, answer={E}]{0.8cm}{11pt}} Standard deviation
-  \item \blankbox{\gradedblank[id=q9, type=choice, points=1, answer={D}]{0.8cm}{11pt}} Outlier
-  \item \blankbox{\gradedblank[id=q10, type=choice, points=1, answer={C}]{0.8cm}{11pt}} Resistant
+  \item \gradedblank[id=q6, type=choice, points=1, answer={B}]{0.8cm}{11pt} Median
+  \item \gradedblank[id=q7, type=choice, points=1, answer={A}]{0.8cm}{11pt} Interquartile range
+  \item \gradedblank[id=q8, type=choice, points=1, answer={E}]{0.8cm}{11pt} Standard deviation
+  \item \gradedblank[id=q9, type=choice, points=1, answer={D}]{0.8cm}{11pt} Outlier
+  \item \gradedblank[id=q10, type=choice, points=1, answer={C}]{0.8cm}{11pt} Resistant
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -118,7 +122,7 @@ distribution is
   \item skewed right, because most students scored high.
   \item skewed left, because the long tail stretches toward the smaller values.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q11, type=choice, points=2, answer={D}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q11, type=choice, points=2, answer={D}]{0.9cm}{11pt}
 
 \boxguard[9]
 \item Salaries at a company are strongly skewed right by a few very large executive salaries.
@@ -129,7 +133,7 @@ The best measure of a typical salary is
   \item the median, because the few large salaries barely move it.
   \item the standard deviation, because it measures typical distance.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q12, type=choice, points=2, answer={C}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q12, type=choice, points=2, answer={C}]{0.9cm}{11pt}
 
 \boxguard[9]
 \item Relay team R's $400$-meter times run from $50$ to $54$ seconds with $s = 1.2$. Team S's
@@ -140,7 +144,7 @@ run from $58$ to $80$ seconds with $s = 7$. Which statement is true?
   \item The two standard deviations cannot be compared.
   \item Team S's times are larger, and that is why its $s$ is larger.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q13, type=choice, points=2, answer={A}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q13, type=choice, points=2, answer={A}]{0.9cm}{11pt}
 
 \boxguard[9]
 \item Every value in a data set is decreased by $3$. What happens to the mean and the standard
@@ -151,7 +155,7 @@ deviation?
   \item Neither one changes.
   \item The mean decreases by $3$; the standard deviation does not change.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q14, type=choice, points=2, answer={D}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q14, type=choice, points=2, answer={D}]{0.9cm}{11pt}
 
 \boxguard[9]
 \item One very small outlier is removed from a data set of $17$ values. Which summary
@@ -162,7 +166,7 @@ changes the most?
   \item the third quartile
   \item the interquartile range
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q15, type=choice, points=2, answer={B}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q15, type=choice, points=2, answer={B}]{0.9cm}{11pt}
 
 \boxguard[9]
 \item Two clinics each have a median wait of $12$ minutes. Clinic M's IQR is $9$ minutes
@@ -173,7 +177,7 @@ and Clinic N's is $3$ minutes. Which is a correct comparison?
   \item Both typically take about $12$ minutes, but Clinic N's waits are more consistent.
   \item Clinic N is faster, because its IQR is smaller.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q16, type=choice, points=2, answer={C}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q16, type=choice, points=2, answer={C}]{0.9cm}{11pt}
 
 \end{enumerate}
 \normalsize
@@ -188,6 +192,7 @@ and Clinic N's is $3$ minutes. Which is a correct comparison?
 % ---------------------------------------------------------------- C1 (2.1)
 \item Eighteen \textbf{Harlow High School} students recorded the hours they volunteered this
 semester.
+\par\nopagebreak   % keep the stem with its stemplot
 
 \vspace{2pt}
 \begin{minipage}[t]{0.30\linewidth}
@@ -208,8 +213,7 @@ semester.
 \vspace{0pt}
 (a) What does the leaf $6$ on stem $4$ stand for?
 
-\vspace{2pt}
-\blankbox{\gradedblank[id=q17a, type=rubric, points=1, rubric=../rubrics/saar-u02-actual-test-q17a.yaml, display={One student who volunteered 46 hours}]{7.4cm}{11pt}}
+\gradedresponse{\gradedblank[id=q17a, type=rubric, points=1, rubric=../rubrics/saar-u02-actual-test-q17a.yaml, display={One student who volunteered 46 hours}]{\linewidth}{2in}}
 
 \vspace{4pt}
 (b) Median: \blankbox{\gradedblank[id=q17b, type=short, points=1, answer={20.5}, check=numeric, display={$20.5$ hours}]{2.0cm}{13.5pt}} \quad Range: \blankbox{\gradedblank[id=q17c, type=short, points=1, answer={41}, check=numeric, display={$41$ hours}]{2.0cm}{13.5pt}}
@@ -219,8 +223,7 @@ semester.
 context.
 \end{minipage}
 
-{\renewcommand{\gradedlinestop}{0.45}\par\gradedwriteline[{\gradedblank[id=q17d, type=rubric, points=5, rubric=../rubrics/saar-u02-actual-test-q17d.yaml, display={Roughly symmetric with a slight right tail, a gap from 33 to 46 hours, and a possible outlier at 46. The median is 20.5 hours, and the hours run from 5 to 46 (range 41 hours).}]{\linewidth}{25pt}}]}
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q17d, type=rubric, points=5, rubric=../rubrics/saar-u02-actual-test-q17d.yaml, display={Roughly symmetric with a slight right tail, a gap from 33 to 46 hours, and a possible outlier at 46. The median is 20.5 hours, and the hours run from 5 to 46 (range 41 hours).}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C3 (2.2)
 \boxguard[22]
@@ -275,7 +278,7 @@ Squared $(x - \bar{x})^2$ & \blankbox{\gradedblank[id=q19a7, type=short, points=
 
 (c) Interpret $s$ in context.
 
-\par\gradedwriteline[{\gradedblank[id=q19c, type=rubric, points=3, rubric=../rubrics/saar-u02-actual-test-q19c.yaml, display={A typical day's sales are about 3 bottles from the 20-bottle mean.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q19c, type=rubric, points=3, rubric=../rubrics/saar-u02-actual-test-q19c.yaml, display={A typical day's sales are about 3 bottles from the 20-bottle mean.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C5 (2.3)
 \boxguard[20]
@@ -298,7 +301,7 @@ $14$, $40$, $51$, $60$, $98$. The three most extreme values are $14$, $86$, and 
 \vspace{3pt}
 (d) The value $14$ looks far from the box. Explain whether it is an outlier.
 
-\par\gradedwriteline[{\gradedblank[id=q20d, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q20d.yaml, display={No --- 14 is above the lower fence of 10, so it is inside the fences.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q20d, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q20d.yaml, display={No --- 14 is above the lower fence of 10, so it is inside the fences.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C6 (2.3)
 \boxguard[26]
@@ -331,7 +334,7 @@ $Q_3$: \blankbox{\gradedblank[id=q21a3, type=short, points=0.75, answer={20}, ch
 (c) Interpret your answer to (b) in context.
 \end{minipage}
 
-\par\gradedwriteline[{\gradedblank[id=q21c, type=rubric, points=3, rubric=../rubrics/saar-u02-actual-test-q21c.yaml, display={90\% of these 100 students did 25 or fewer push-ups without stopping.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q21c, type=rubric, points=3, rubric=../rubrics/saar-u02-actual-test-q21c.yaml, display={90\% of these 100 students did 25 or fewer push-ups without stopping.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C8 (2.4)
 \boxguard[26]
@@ -366,8 +369,7 @@ Sophomores & \blankbox{\gradedblank[id=q22a3, type=short, points=0.75, answer={6
 \vspace{4pt}
 (b) Compare the two groups' homework, with a comparative word for center \emph{and} for spread.
 
-\par\gradedwriteline[{\gradedblank[id=q22b, type=rubric, points=5, rubric=../rubrics/saar-u02-actual-test-q22b.yaml, display={Sophomores' median (6 h) is greater than freshmen's (5 h), and freshmen's homework is more spread out (IQR 3 h vs.\ 1 h), so sophomores are more consistent.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q22b, type=rubric, points=5, rubric=../rubrics/saar-u02-actual-test-q22b.yaml, display={Sophomores' median (6 h) is greater than freshmen's (5 h), and freshmen's homework is more spread out (IQR 3 h vs.\ 1 h), so sophomores are more consistent.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \normalsize
@@ -417,26 +419,22 @@ maxX & $405$ \\
 \vspace{4pt}
 (a) Name the shape of the distribution, and justify it from the histogram.
 
-\par\gradedwriteline[{\gradedblank[id=q23a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23a.yaml, display={Skewed right: most students spent under 2 hours, and the long tail stretches toward the larger times, out to about 400 minutes.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q23a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23a.yaml, display={Skewed right: most students spent under 2 hours, and the long tail stretches toward the larger times, out to about 400 minutes.}]{\linewidth}{2in}}
 
 (b) The mean ($134$ minutes) is larger than the median ($108$ minutes). Explain why, using the shape.
 
-\par\gradedwriteline[{\gradedblank[id=q23b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23b.yaml, display={The mean uses every value, so the few students in the long right tail pull it up; the median uses only the middle position, so it stays lower.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q23b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23b.yaml, display={The mean uses every value, so the few students in the long right tail pull it up; the median uses only the middle position, so it stays lower.}]{\linewidth}{2in}}
 
 \boxguard[7]
 (c) Which center and which spread should the school report? Give their values in context and
 say why.
 
-\par\gradedwriteline[{\gradedblank[id=q23c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23c.yaml, display={The median, 108 minutes, and the IQR, 144 minutes (the middle half spent 52 to 196). The data are skewed right, so the tail pulls the mean and SD up.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q23c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23c.yaml, display={The median, 108 minutes, and the IQR, 144 minutes (the middle half spent 52 to 196). The data are skewed right, so the tail pulls the mean and SD up.}]{\linewidth}{2in}}
 
 (d) A student wrote: \emph{``Skewed left --- the tallest bars are on the left, where most
 students are.''} Explain what is wrong.
 
-\par\gradedwriteline[{\gradedblank[id=q23d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23d.yaml, display={The skew is named by the long tail, not the peak. The tall bars are on the left, but the tail stretches toward longer times, so it is skewed right.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q23d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q23d.yaml, display={The skew is named by the long tail, not the peak. The tall bars are on the left, but the tail stretches toward longer times, so it is skewed right.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- D2 (2.2)
 \boxguard[30]
@@ -466,8 +464,7 @@ Squared $(x - \bar{x})^2$ & \blankbox{\gradedblank[id=q24a7, type=short, points=
 (b) A friend says, \emph{``Ana's standard deviation should be the bigger one --- she scores
 way more points.''} Use the formula to explain why the friend is wrong.
 
-\par\gradedwriteline[{\gradedblank[id=q24b, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q24b.yaml, display={$s$ is built from the deviations --- each game's distance from its own mean. Ana's games sit within 2 points of 24; how big the scores are never enters.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q24b, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q24b.yaml, display={$s$ is built from the deviations --- each game's distance from its own mean. Ana's games sit within 2 points of 24; how big the scores are never enters.}]{\linewidth}{2in}}
 
 (c) In the next five games Ana scores exactly $3$ points more than in each of these.
 New mean: \blankbox{\gradedblank[id=q24c, type=short, points=0.5, answer={27}, check=numeric]{1.6cm}{10pt}} \quad New standard deviation: \blankbox{\gradedblank[id=q24d, type=short, points=0.5, answer={1.6}, check=numeric, tolerance=0.05]{1.6cm}{10pt}}
@@ -475,11 +472,11 @@ New mean: \blankbox{\gradedblank[id=q24c, type=short, points=0.5, answer={27}, c
 \vspace{3pt}
 Explain why the standard deviation came out that way.
 
-\par\gradedwriteline[{\gradedblank[id=q24e, type=rubric, points=1, rubric=../rubrics/saar-u02-actual-test-q24e.yaml, display={Adding 3 to every game adds 3 to the mean, so not one deviation changes.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q24e, type=rubric, points=1, rubric=../rubrics/saar-u02-actual-test-q24e.yaml, display={Adding 3 to every game adds 3 to the mean, so not one deviation changes.}]{\linewidth}{2in}}
 
 (d) Which player is more consistent? Justify with numbers.
 
-\par\gradedwriteline[{\gradedblank[id=q24f, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q24f.yaml, display={Ana: $s \approx 1.6$ points against Ben's 8.9, so her games stay close together.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q24f, type=rubric, points=2, rubric=../rubrics/saar-u02-actual-test-q24f.yaml, display={Ana: $s \approx 1.6$ points against Ben's 8.9, so her games stay close together.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- D3 (2.4)
 \boxguard[30]
@@ -508,26 +505,22 @@ Both distributions are roughly symmetric.
   \text{fences} &= 54 - 18 = 36 \quad\text{and}\quad 66 + 18 = 84
 \end{work}
 
-\par\gradedwriteline[{\gradedblank[id=q25a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25a.yaml, display={Every value lies between the fences (44 to 76), so Brand D has no outliers.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q25a, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25a.yaml, display={Every value lies between the fences (44 to 76), so Brand D has no outliers.}]{\linewidth}{2in}}
 
 (b) The department head says, \emph{``Same median, same mean --- it doesn't matter which we
 buy.''} Respond.
 
-\par\gradedwriteline[{\gradedblank[id=q25b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25b.yaml, display={When the centers match, the spread decides. Brand D's drying times are much more spread out, so some D cans take far longer than any C can.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q25b, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25b.yaml, display={When the centers match, the spread decides. Brand D's drying times are much more spread out, so some D cans take far longer than any C can.}]{\linewidth}{2in}}
 
 (c) Write a comparison of the two brands --- shape, outliers, center, and spread --- using
 comparative words.
 
-\par\gradedwriteline[{\gradedblank[id=q25c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25c.yaml, display={Both brands are roughly symmetric with no outliers, and both centers are 60 minutes. Brand D is much more spread out (Sx 8.1 min, range 32 min) than Brand C (Sx 2.4 min, range 10 min), so Brand C's drying times are more consistent.}]{\linewidth}{46pt}}]
-\par\gradedwriteline
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q25c, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25c.yaml, display={Both brands are roughly symmetric with no outliers, and both centers are 60 minutes. Brand D is much more spread out (Sx 8.1 min, range 32 min) than Brand C (Sx 2.4 min, range 10 min), so Brand C's drying times are more consistent.}]{\linewidth}{2in}}
 
 (d) A mural must be dry within $65$ minutes. Which brand should the department buy?
 Justify with the table.
 
-\par\gradedwriteline[{\gradedblank[id=q25d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25d.yaml, display={Brand C. Its maximum is 65 minutes, so every C can dried within 65 minutes; Brand D's $Q_3$ is 66, so at least a quarter of D cans take too long.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q25d, type=rubric, points=2.5, rubric=../rubrics/saar-u02-actual-test-q25d.yaml, display={Brand C. Its maximum is 65 minutes, so every C can dried within 65 minutes; Brand D's $Q_3$ is 66, so at least a quarter of D cans take too long.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \normalsize

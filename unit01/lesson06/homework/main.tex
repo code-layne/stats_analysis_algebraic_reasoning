@@ -29,7 +29,7 @@
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.6}{Homework}
+\pageheader{Unit 1, Lesson 1.6}{Homework\strut}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind.
 
@@ -111,17 +111,21 @@ all $200$ volunteers.
 
         \begin{center}
         \renewcommand{\arraystretch}{1.3}
-        \begin{tabularx}{\linewidth}{@{} p{3.6cm} p{2.6cm} >{\raggedright\arraybackslash}X @{}}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} @{}}
         \toprule
-        \textbf{The study} & \textbf{May claim} & \textbf{Because\dots} \\
+        \textbf{The study} & \textbf{May claim} \\
         \midrule
         Last summer --- watched; $80\%$ vs.\ $32\%$
-          & \blankbox{\gradedblank[id=q4a, type=short, points=0.5, answer={association}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4b, type=rubric, points=0.5, display={the card holders chose their own group}]{5.8cm}{17pt}} \\
+          & \blankbox{\gradedblank[id=q4a, type=short, points=0.5, answer={association}, check=text]{2.2cm}{17pt}} \\
         This summer --- assigned; $65\%$ vs.\ $35\%$
-          & \blankbox{\gradedblank[id=q4c, type=short, points=0.5, answer={caused it}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4d, type=rubric, points=0.5, display={chance built the groups, not the readers}]{5.8cm}{17pt}} \\
+          & \blankbox{\gradedblank[id=q4c, type=short, points=0.5, answer={caused it}, check=text]{2.2cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
+
+        Give the reason for each claim.
+        \gradedresponse[\textbf{Last summer} --- because\dots]{\gradedblank[id=q4b, type=rubric, points=0.5, display={the card holders chose their own group}]{\linewidth}{2in}}
+        \gradedresponse[\textbf{This summer} --- because\dots]{\gradedblank[id=q4d, type=rubric, points=0.5, display={chance built the groups, not the readers}]{\linewidth}{2in}}
 
   \item Of the $200$ volunteers, $120$ are adults and $80$ are children. The director blocks
         on age and randomizes inside each block. Fill the table, then say why she blocked
@@ -138,12 +142,12 @@ all $200$ volunteers.
         \bottomrule
         \end{tabularx}
         \end{center}
-        \par\gradedwriteline[{\gradedblank[id=q5e, type=rubric, points=1, display={Blocking makes it certain: children and adults read differently.}]{\linewidth}{12pt}}]
+        \gradedresponse{\gradedblank[id=q5e, type=rubric, points=1, display={Blocking makes it certain: children and adults read differently.}]{\linewidth}{2in}}
 
   \item Last summer's study found a $48$-point gap; this summer's experiment finds only
         $30$. A board member says the bigger gap is the better evidence. Explain why the
         \emph{smaller} gap is the stronger evidence that the program works.
-        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Last summer's 48 points were inflated --- the sign-ups were already heavy readers. This summer chance built the groups, so the 30 points belong to the program alone.}]{\linewidth}{30pt}}
+        \gradedresponse{\gradedblank[id=q6, type=rubric, points=2, display={Last summer's 48 points were inflated --- the sign-ups were already heavy readers. This summer chance built the groups, so the 30 points belong to the program alone.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \end{notesbox}

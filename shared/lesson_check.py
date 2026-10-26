@@ -20,7 +20,9 @@ What it enforces, per lesson:
                 but only finals/ is exempt from the rule — a unit test's scoring
                 notes go on page 2 of unitXX/unit_cover_key/, checked by hand.
   namestrip     no live \\namedateperiod / \\namepartnerperiod on a worksheet
-                component — the cover carries it, and tests keep it
+                component — the cover carries it. A document that loads grading
+                (tests and quizzes too) never does: `make manifest` runs
+                shared/graded_nameline_check.py on it
 
 vocabpar is NOT checked: it is enforced structurally by \\termblanklong and
 \\vocabans, which each open with their own \\par (see saar-article.sty).

@@ -270,8 +270,10 @@ at, so they are the board, not a preview — advance them in step with the hando
 
 Unit-level, not per-lesson — scaffolded once per unit under `unitXX/tests/` and
 `unitXX/test_keys/` (see section 6 of `LESSON_SHAPE.md` and the shared skill's `references/build.md`). Author **two blank
-tests and their two keys**, all with `\pageheader{Unit X: <Title>}{...}` + `\namedateperiod` — tests
-are taken in a testing setting, not stapled behind a lesson cover, so they keep the name row:
+tests and their two keys**, all with `\pageheader{Unit X: <Title>}{...}` and **no name row**. A test
+loads `grading`, so its pages are scanned and sent to an outside API: they carry only the tracking
+id in the strip, and the student's name goes on math-shared's cover sheet. `make manifest` fails on
+a name row in any document that loads `grading` (`shared/graded_nameline_check.py`):
 
 - **`tests/practice_test/main.tex`** — the study copy students keep. Opens with a `remindbox`
   telling students it mirrors the real test in format and ideas but uses different numbers.
