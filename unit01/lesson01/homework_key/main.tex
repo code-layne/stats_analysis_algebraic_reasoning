@@ -31,7 +31,7 @@
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
+\pageheader{Unit 1, Lesson 1.1}{Homework\strut --- Answer Key}
 % NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
 % teacher prose lives in the lesson plan.
 
@@ -71,7 +71,7 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
         \par\vspace{4pt}
         Variable: \blankbox{\gradedblank[id=q1a, type=short, points=0.5, answer={how the shopper traveled}, check=text]{6cm}{13.5pt}} \hfill Type: \blankbox{\gradedblank[id=q1b, type=short, points=0.5, answer={categorical}, check=text]{3.4cm}{13.5pt}}
         \par\vspace{8pt}
-        How do you know? \blankbox{\gradedblank[id=q1c, type=rubric, points=1, display={the answers are labels --- no arithmetic on them means anything}]{10.6cm}{13.5pt}}
+        \gradedresponse[How do you know?]{\gradedblank[id=q1c, type=rubric, points=1, display={the answers are labels --- no arithmetic on them means anything}]{\linewidth}{2in}}
 
   \item Complete her frequency table, then show your work for the \textbf{bus} row.
 
@@ -111,7 +111,7 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
 
         Write that result as one sentence for the manager's report: name the group she asked,
         the number, and what was measured.
-        \par\gradedwritelines{2}{\gradedblank[id=q3, type=rubric, points=2, display={Of the 50 shoppers asked one Saturday, 10\% travel to the market by bus. If they are typical, that is about 80 of the market's 800 Saturday shoppers.}]{\linewidth}{30pt}}
+        \gradedresponse{\gradedblank[id=q3, type=rubric, points=2, display={Of the 50 shoppers asked one Saturday, 10\% travel to the market by bus. If they are typical, that is about 80 of the market's 800 Saturday shoppers.}]{\linewidth}{2in}}
 
 
   \item The manager could ask her $50$ shoppers either question below. \textbf{Decide the type
@@ -119,20 +119,24 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
 
         \begin{center}
         \renewcommand{\arraystretch}{1.3}
-        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} >{\raggedright\arraybackslash}p{3.4cm} @{}}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} @{}}
         \toprule
-        \textbf{The question} & \textbf{Type} & \textbf{Summarize with\dots} \\
+        \textbf{The question} & \textbf{Type} \\
         \midrule
         (i) ``How did you travel to the market today?''
-          & \blankbox{\gradedblank[id=q4a, type=short, points=0.25, answer={categorical}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4b, type=rubric, points=0.25, display={counts and percents}]{3cm}{17pt}} \\
+          & \blankbox{\gradedblank[id=q4a, type=short, points=0.25, answer={categorical}, check=text]{2.2cm}{17pt}} \\
         (ii) ``How many miles did you travel to the market today?''
-          & \blankbox{\gradedblank[id=q4c, type=short, points=0.25, answer={quantitative}, check=text]{2.2cm}{17pt}} & \blankbox{\gradedblank[id=q4d, type=rubric, points=0.25, display={a mean}]{3cm}{17pt}} \\
+          & \blankbox{\gradedblank[id=q4c, type=short, points=0.25, answer={quantitative}, check=text]{2.2cm}{17pt}} \\
         \bottomrule
         \end{tabularx}
         \end{center}
 
+        How would you summarize the answers to each question?
+        \gradedresponse[\textbf{(i)} Summarize with\dots]{\gradedblank[id=q4b, type=rubric, points=0.25, display={counts and percents}]{\linewidth}{2in}}
+        \gradedresponse[\textbf{(ii)} Summarize with\dots]{\gradedblank[id=q4d, type=rubric, points=0.25, display={a mean}]{\linewidth}{2in}}
+
         Same $50$ shoppers, same Saturday. Explain what made the two types different.
-        \par\gradedwriteline[{\gradedblank[id=q4e, type=rubric, points=1, display={The question did --- one records a label, the other records a number of miles.}]{\linewidth}{12pt}}]
+        \gradedresponse{\gradedblank[id=q4e, type=rubric, points=1, display={The question did --- one records a label, the other records a number of miles.}]{\linewidth}{2in}}
 
   \item Each mistake below broke the study at one stage. Write the number of the stage the
         problem \textbf{entered} at --- not the stage where the bad sentence showed up.
@@ -150,7 +154,7 @@ Every answer names the group it is about --- the $50$ shoppers she asked, or all
         would be used by very few people.''} \textbf{Every number in that sentence is
         correct.} Explain why the conclusion still does not follow, and name the stage the
         problem entered at.
-        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Nobody was ever asked about a shuttle, so the survey cannot say who would use one; 10\% of 800 is still about 80 shoppers. It entered at stage 1 --- the wrong question.}]{\linewidth}{30pt}}
+        \gradedresponse{\gradedblank[id=q6, type=rubric, points=2, display={Nobody was ever asked about a shuttle, so the survey cannot say who would use one; 10\% of 800 is still about 80 shoppers. It entered at stage 1 --- the wrong question.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \end{notesbox}

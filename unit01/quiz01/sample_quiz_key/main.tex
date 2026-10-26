@@ -31,8 +31,9 @@
 % Part-divider strip
 \newcommand{\parthead}[1]{%
   \vspace{6pt}\noindent
-  \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}%
-  \vspace{4pt}}
+  {\tcbset{after={\par\nopagebreak}}% never strand a part header at a page foot
+   \begin{headlinebox}{cerulean}{\color{white}\bfseries #1}\end{headlinebox}}%
+  \nopagebreak\vspace{4pt}}
 
 \begin{document}
 
@@ -60,14 +61,14 @@ Write the letter of the matching description next to each term. Each letter is u
 \vspace{2pt}
 \begin{minipage}[t]{0.36\linewidth}
 \begin{enumerate}[leftmargin=1.9em, itemsep=3.5pt, topsep=1pt]
-  \item \blankbox{\gradedblank[id=q1, type=choice, points=1, answer={D}]{0.8cm}{11pt}} Individual
-  \item \blankbox{\gradedblank[id=q2, type=choice, points=1, answer={G}]{0.8cm}{11pt}} Categorical variable
-  \item \blankbox{\gradedblank[id=q3, type=choice, points=1, answer={A}]{0.8cm}{11pt}} Statistical question
-  \item \blankbox{\gradedblank[id=q4, type=choice, points=1, answer={F}]{0.8cm}{11pt}} Population
-  \item \blankbox{\gradedblank[id=q5, type=choice, points=1, answer={B}]{0.8cm}{11pt}} Parameter
-  \item \blankbox{\gradedblank[id=q6, type=choice, points=1, answer={H}]{0.8cm}{11pt}} Statistic
-  \item \blankbox{\gradedblank[id=q7, type=choice, points=1, answer={C}]{0.8cm}{11pt}} Sampling frame
-  \item \blankbox{\gradedblank[id=q8, type=choice, points=1, answer={E}]{0.8cm}{11pt}} Cluster sample
+  \item \gradedblank[id=q1, type=choice, points=1, answer={D}]{0.8cm}{11pt} Individual
+  \item \gradedblank[id=q2, type=choice, points=1, answer={G}]{0.8cm}{11pt} Categorical variable
+  \item \gradedblank[id=q3, type=choice, points=1, answer={A}]{0.8cm}{11pt} Statistical question
+  \item \gradedblank[id=q4, type=choice, points=1, answer={F}]{0.8cm}{11pt} Population
+  \item \gradedblank[id=q5, type=choice, points=1, answer={B}]{0.8cm}{11pt} Parameter
+  \item \gradedblank[id=q6, type=choice, points=1, answer={H}]{0.8cm}{11pt} Statistic
+  \item \gradedblank[id=q7, type=choice, points=1, answer={C}]{0.8cm}{11pt} Sampling frame
+  \item \gradedblank[id=q8, type=choice, points=1, answer={E}]{0.8cm}{11pt} Cluster sample
 \end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.61\linewidth}
@@ -100,7 +101,7 @@ $30$. This variable is
   \item quantitative, because the groups can be put in order.
   \item neither, because a group number is not really data.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q9, type=choice, points=2, answer={B}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q9, type=choice, points=2, answer={B}]{0.9cm}{11pt}
 
 \item Which of these is a \textbf{statistical question}?
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
@@ -109,7 +110,7 @@ $30$. This variable is
   \item How many seats does the Millbrook gym hold?
   \item Does Millbrook start classes at 8 a.m.?
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q10, type=choice, points=2, answer={B}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q10, type=choice, points=2, answer={B}]{0.9cm}{11pt}
 
 \item Stonebridge Recreation Center's own membership records show that \textbf{exactly $45\%$
 of all $1{,}200$ members} renew early. That $45\%$ is a
@@ -119,7 +120,7 @@ of all $1{,}200$ members} renew early. That $45\%$ is a
   \item parameter, because it describes every member of the population.
   \item parameter, because the records are official.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q11, type=choice, points=2, answer={C}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q11, type=choice, points=2, answer={C}]{0.9cm}{11pt}
 
 \item Two different random samples of $80$ Stonebridge members give $35\%$ and $41\%$ arriving
 before 7 a.m. This result shows
@@ -129,7 +130,7 @@ before 7 a.m. This result shows
   \item sampling variability --- the parameter did not move, and both are honest estimates.
   \item that the true value must be exactly halfway between them.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q12, type=choice, points=2, answer={C}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q12, type=choice, points=2, answer={C}]{0.9cm}{11pt}
 
 \item A teacher surveys her own second-period class because it is the easiest group to reach.
 Her sample is
@@ -139,7 +140,7 @@ Her sample is
   \item a cluster sample, because she surveyed one whole class.
   \item a convenience sample, because a student in another period could never be chosen.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q13, type=choice, points=2, answer={D}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q13, type=choice, points=2, answer={D}]{0.9cm}{11pt}
 
 \item Which sentence states the difference between a \textbf{stratum} and a \textbf{cluster}?
 \begin{enumerate}[label=(\Alph*), leftmargin=1.8em, itemsep=1pt, topsep=1pt]
@@ -149,7 +150,7 @@ Her sample is
   \item A stratum is chosen by chance; a cluster is chosen by convenience.
   \item There is no difference --- both mean a group inside the population.
 \end{enumerate}
-\hfill \textbf{Letter:} \blankbox{\gradedblank[id=q14, type=choice, points=2, answer={A}]{0.9cm}{11pt}}
+\hfill \textbf{Letter:} \gradedblank[id=q14, type=choice, points=2, answer={A}]{0.9cm}{11pt}
 
 \end{enumerate}
 \normalsize
@@ -188,8 +189,7 @@ Preferred spirit-week theme & \blankbox{\gradedblank[id=q15e, type=short, points
 (c) The office's first draft question is \emph{``How long is the bus ride?''} Explain why that
 is not a statistical question, then rewrite it so that it is.
 
-\par\gradedwriteline[{\gradedblank[id=q15f, type=rubric, points=2, rubric=../rubrics/saar-u01-sample-quiz1-q15f.yaml, display={It names no group and no measurement, so it has one answer, not answers that vary. ``How many minutes is the bus ride for Millbrook students who ride the bus?''}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q15f, type=rubric, points=2, rubric=../rubrics/saar-u01-sample-quiz1-q15f.yaml, display={It names no group and no measurement, so it has one answer, not answers that vary. ``How many minutes is the bus ride for Millbrook students who ride the bus?''}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C2 (1.1)
 \boxguard[20]
@@ -215,15 +215,13 @@ Movie night & $6$  & \blankbox{\gradedblank[id=q16d, type=short, points=0.5, ans
 (b) Write a \textbf{conclusion in context} about the most popular theme, naming the group it
 applies to.
 
-\par\gradedwriteline[{\gradedblank[id=q16e, type=rubric, points=1.5, rubric=../rubrics/saar-u01-sample-quiz1-q16e.yaml, display={Of the 60 Millbrook students surveyed, 24 --- or $40\%$ --- chose a decades theme, more than any other theme.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q16e, type=rubric, points=1.5, rubric=../rubrics/saar-u01-sample-quiz1-q16e.yaml, display={Of the 60 Millbrook students surveyed, 24 --- or $40\%$ --- chose a decades theme, more than any other theme.}]{\linewidth}{2in}}
 
 \vspace{2pt}
 (c) The council writes: \emph{``Most Millbrook students want a decades theme.''} Give the two
 things that are wrong with that sentence.
 
-\par\gradedwriteline[{\gradedblank[id=q16f, type=rubric, points=1.5, rubric=../rubrics/saar-u01-sample-quiz1-q16f.yaml, display={$40\%$ is not ``most'' --- most means more than half. And the survey covers the 60 students asked, not all 720, so the sentence reaches beyond its own group.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q16f, type=rubric, points=1.5, rubric=../rubrics/saar-u01-sample-quiz1-q16f.yaml, display={$40\%$ is not ``most'' --- most means more than half. And the survey covers the 60 students asked, not all 720, so the sentence reaches beyond its own group.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C3 (1.2)
 \boxguard[18]
@@ -247,12 +245,12 @@ members does that estimate?\nobreak\hfill\llap{\raisebox{-20pt}[0pt][0pt]{\grade
 
 (c) Is the $35\%$ a parameter or a statistic? Say how you know.
 
-\par\gradedwriteline[{\gradedblank[id=q17d, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q17d.yaml, display={A statistic --- it describes the 80-member sample, not all 1,200 members.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q17d, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q17d.yaml, display={A statistic --- it describes the 80-member sample, not all 1,200 members.}]{\linewidth}{2in}}
 
 (d) Name one \textbf{constraint} that keeps the manager from taking a census of all $1{,}200$
 members.
 
-\par\gradedwriteline[{\gradedblank[id=q17e, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q17e.yaml, display={Time --- reaching every one of 1,200 members would take far too long.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q17e, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q17e.yaml, display={Time --- reaching every one of 1,200 members would take far too long.}]{\linewidth}{2in}}
 
 % ---------------------------------------------------------------- C4 (1.3)
 \newpage
@@ -290,7 +288,7 @@ four students chosen from a random start of $7$.
 (c) For a \textbf{simple random} sample, a generator gives $471$, $839$, $260$, $554$, $128$.
 One of those numbers cannot be used. Which one, and why?
 
-\par\gradedwriteline[{\gradedblank[id=q18i, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q18i.yaml, display={$839$ --- it is off the frame of $001$--$720$, so skip it and read the next number.}]{\linewidth}{10pt}}]
+\gradedresponse{\gradedblank[id=q18i, type=rubric, points=1, rubric=../rubrics/saar-u01-sample-quiz1-q18i.yaml, display={$839$ --- it is off the frame of $001$--$720$, so skip it and read the next number.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \normalsize
@@ -312,8 +310,7 @@ grade}.
 (a) Choose \textbf{one} of the four sampling techniques and justify it from what this context
 allows. Your reason must name \emph{how the groups are built}.
 
-\par\gradedwriteline[{\gradedblank[id=q19a, type=rubric, points=2.5, rubric=../rubrics/saar-u01-sample-quiz1-q19a.yaml, display={Stratified. The grades differ a lot and a numbered list of all 720 exists, so draw students at random from every grade, in proportion to grade size.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q19a, type=rubric, points=2.5, rubric=../rubrics/saar-u01-sample-quiz1-q19a.yaml, display={Stratified. The grades differ a lot and a numbered list of all 720 exists, so draw students at random from every grade, in proportion to grade size.}]{\linewidth}{2in}}
 
 \vspace{2pt}
 (b) Instead, a teacher draws $2$ advisory groups at random and surveys all $48$ students in
@@ -328,16 +325,13 @@ number of all $720$ students that percent points to.\nobreak\hfill\llap{\raisebo
 (c) Her arithmetic is correct. Explain what is wrong with her report anyway, and state what
 she \emph{is} allowed to say.
 
-\par\gradedwriteline[{\gradedblank[id=q19d, type=rubric, points=3, rubric=../rubrics/saar-u01-sample-quiz1-q19d.yaml, display={Advisory groups are built by grade, so each one is alike inside --- a stratum, not a mix of the whole. Her 48 students are one or two grades, so the $62.5\%$ estimates nothing about all 720. She may only say $62.5\%$ of those 48 students said yes.}]{\linewidth}{46pt}}]
-\par\gradedwriteline
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q19d, type=rubric, points=3, rubric=../rubrics/saar-u01-sample-quiz1-q19d.yaml, display={Advisory groups are built by grade, so each one is alike inside --- a stratum, not a mix of the whole. Her 48 students are one or two grades, so the $62.5\%$ estimates nothing about all 720. She may only say $62.5\%$ of those 48 students said yes.}]{\linewidth}{2in}}
 
 \vspace{2pt}
 (d) Is her $62.5\%$ a parameter or a statistic? Name one change to her method that would make
 it an estimate worth trusting.
 
-\par\gradedwriteline[{\gradedblank[id=q19e, type=rubric, points=2, rubric=../rubrics/saar-u01-sample-quiz1-q19e.yaml, display={A statistic. Draw the sample at random from the whole numbered list of 720, or stratify by grade, so every grade can be chosen.}]{\linewidth}{28pt}}]
-\par\gradedwriteline
+\gradedresponse{\gradedblank[id=q19e, type=rubric, points=2, rubric=../rubrics/saar-u01-sample-quiz1-q19e.yaml, display={A statistic. Draw the sample at random from the whole numbered list of 720, or stratify by grade, so every grade can be chosen.}]{\linewidth}{2in}}
 
 \end{enumerate}
 \normalsize

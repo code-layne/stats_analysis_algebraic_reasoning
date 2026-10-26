@@ -28,7 +28,7 @@
 
 \begin{document}
 
-\pageheader{Unit 1, Lesson 1.0}{Homework}
+\pageheader{Unit 1, Lesson 1.0}{Homework\strut}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
 % cover this component is stapled behind.
 
@@ -87,17 +87,23 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
 
         \begin{center}
         \renewcommand{\arraystretch}{1.5}
-        \begin{tabularx}{\linewidth}{@{} p{3.2cm} p{3cm} X @{}}
+        \begin{tabular}{@{} p{3.6cm} p{3cm} @{}}
         \toprule
-        \textbf{Variable} & \textbf{Type} & \textbf{How I know} \\
+        \textbf{Variable} & \textbf{Type} \\
         \midrule
-        Member ID          & \blankbox{\gradedblank[id=q2a, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2b, type=rubric, points=0.25, display={a label written with digits; a mean ID means nothing}]{6.2cm}{18pt}} \\
-        Membership         & \blankbox{\gradedblank[id=q2c, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2d, type=rubric, points=0.25, display={Family / Student / Senior are group names}]{6.2cm}{18pt}} \\
-        Visits last month  & \blankbox{\gradedblank[id=q2e, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2f, type=rubric, points=0.25, display={a count of visits --- an amount; a mean makes sense}]{6.2cm}{18pt}} \\
-        Age                & \blankbox{\gradedblank[id=q2g, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} & \blankbox{\gradedblank[id=q2h, type=rubric, points=0.25, display={an amount measured in years}]{6.2cm}{18pt}} \\
+        Member ID          & \blankbox{\gradedblank[id=q2a, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} \\
+        Membership         & \blankbox{\gradedblank[id=q2c, type=short, points=0.25, answer={categorical}, check=text]{2.4cm}{18pt}} \\
+        Visits last month  & \blankbox{\gradedblank[id=q2e, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} \\
+        Age                & \blankbox{\gradedblank[id=q2g, type=short, points=0.25, answer={quantitative}, check=text]{2.4cm}{18pt}} \\
         \bottomrule
-        \end{tabularx}
+        \end{tabular}
         \end{center}
+
+        \textbf{How I know} --- one reason for each variable:
+        \gradedresponse[\textbf{Member ID:}]{\gradedblank[id=q2b, type=rubric, points=0.25, display={a label written with digits; a mean ID means nothing}]{\linewidth}{2in}}
+        \gradedresponse[\textbf{Membership:}]{\gradedblank[id=q2d, type=rubric, points=0.25, display={Family / Student / Senior are group names}]{\linewidth}{2in}}
+        \gradedresponse[\textbf{Visits last month:}]{\gradedblank[id=q2f, type=rubric, points=0.25, display={a count of visits --- an amount; a mean makes sense}]{\linewidth}{2in}}
+        \gradedresponse[\textbf{Age:}]{\gradedblank[id=q2h, type=rubric, points=0.25, display={an amount measured in years}]{\linewidth}{2in}}
 
 \end{enumerate}
 \end{notesbox}
@@ -112,7 +118,7 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
         \begin{work}
           \bar{x} &= \dfrac{6+2+9+4+14+1+8+4}{8} = \dfrac{48}{8} = 6 \text{ visits}
         \end{work}
-        \par\gradedwriteline[{\gradedblank[id=q3, type=rubric, points=2, display={These eight Northgate members made a mean of 6 visits to the center last month.}]{\linewidth}{12pt}}]
+        \gradedresponse{\gradedblank[id=q3, type=rubric, points=2, display={These eight Northgate members made a mean of 6 visits to the center last month.}]{\linewidth}{2in}}
 
   \item ``Group class?'' is categorical, so a mean is not available. Find the
         \textbf{percent} of these eight members who take a group class, then explain
@@ -121,7 +127,7 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
         \begin{work}
           \dfrac{5}{8} &= 0.625 = 62.5\%
         \end{work}
-        \par\gradedwriteline[{\gradedblank[id=q4b, type=rubric, points=1, display={Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes.}]{\linewidth}{12pt}}]
+        \gradedresponse{\gradedblank[id=q4b, type=rubric, points=1, display={Yes and No are labels --- they cannot be added, only counted: 5 of the 8 say Yes.}]{\linewidth}{2in}}
 
   \item \textbf{Spiral --- Algebra 1.} The director asks, \emph{``How many of our $2000$ members
         use the pool?''} --- a statistical question, because the answer varies from member to
@@ -133,13 +139,13 @@ Every answer needs a reason --- ``it's words'' and ``it's numbers'' are not reas
           \dfrac{45}{300} &= 0.15 = 15\% \\
           0.15 \times 2000 &= 300 \text{ members}
         \end{work}
-        \par\gradedwriteline[{\gradedblank[id=q5, type=rubric, points=2, display={About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed.}]{\linewidth}{12pt}}]
+        \gradedresponse{\gradedblank[id=q5, type=rubric, points=2, display={About 300 of Northgate's 2000 members use the pool --- a prediction from the 300 surveyed.}]{\linewidth}{2in}}
 
   \item A staff member computes the mean of the Member ID column --- correctly --- and gets
         $140.5$. She writes: \textit{``The average Northgate member is number $140.5$.''}
         What does that number actually tell you about Northgate's members? Use the type you
         gave Member ID in item~2 to explain.
-        \par\gradedwritelines{2}{\gradedblank[id=q6, type=rubric, points=2, display={Nothing. Member ID is categorical --- a label that tells members apart, not an amount --- so its mean is not a measurement of anything; no member is ``number 140.5.''}]{\linewidth}{30pt}}
+        \gradedresponse{\gradedblank[id=q6, type=rubric, points=2, display={Nothing. Member ID is categorical --- a label that tells members apart, not an amount --- so its mean is not a measurement of anything; no member is ``number 140.5.''}]{\linewidth}{2in}}
 
 \end{enumerate}
 \end{notesbox}

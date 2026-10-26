@@ -239,21 +239,26 @@ the key's boxes to print their answers):
 assessment, keeping its own name — `saar-u01-practice-test`, `saar-u01-actual-test`,
 `saar-u01-sample-quiz1`, `saar-u01-actual-quiz1`. Every id is unique across the course.
 
-**Boxes**, written identically in the blank and the key; each is sized to the space the old
-blank used, so no line or page break moves:
+**Boxes**, written identically in the blank and the key. math-shared draws every choice box
+square (as tall as it is wide) and every rubric box at least 2in tall; short boxes are drawn as
+written:
 
 - a `\blank{W}` becomes `\blankbox{\gradedblank[...]{W}{H}}` (H 13.5pt in 12pt running text,
   10pt in a 10pt test's `\small` lines, a little more in stretched table rows);
-- a multiple-choice item gets a right-aligned `Letter:~\smash{\gradedblank[type=choice, ...]{0.45in}{H}}`
+- a multiple-choice item gets a right-aligned `Letter:~\gradedblank[type=choice, ...]{0.45in}{H}`
   on its option (A) line (quizzes and Unit 2 tests already had an `Answer:` slot, relabelled
-  `Letter:`);
+  `Letter:`), and a matching term gets its choice box in front of it. A choice box is never
+  `\smash`ed or wrapped in `\blankbox`: it is square, so its line must take its full height;
 - a computed answer with no slot of its own gets a box at the end of its prompt's last line, or,
   when that line is full, hung into the right of the work area (`\llap{\raisebox{...}[0pt][0pt]{...}}`);
 - a worked answer in a single blank is split: a shorter underline keeps the work (the key prints
   the working there) and the box holds only the final value;
-- answer lines become one rubric box: `\par\gradedwritelines{n}{...}` for `\par\writelines{n}`,
-  `\par\gradedwriteline[{...}]` then `\par\gradedwriteline` for a run of `\par\writeline`s
-  (`saar-boxes.sty` gives the heights).
+- every written response (`type=rubric`) gets its own full-width box under its prompt:
+  `\gradedresponse{\gradedblank[...]{\linewidth}{2in}}`, or `\gradedresponse[label]{...}` with
+  a label line above it. Never hang a rubric box from ruled lines, smash it into a sentence, or
+  put it in a table cell; two parts never share one box. In a document that loads `grading`,
+  `saar-boxes.sty` keeps a prompt, its work block and its box on one page (see
+  `\saar@gradedpaging`); check the breaks between the parts of an item by eye.
 
 **Points** match what the page states: homework 2 per item (12 for six; a DeltaMath + packet
 homework scores only its turned-in items), and each test or quiz part its printed total.

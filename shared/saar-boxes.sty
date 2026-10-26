@@ -84,8 +84,15 @@
 % together, so the two can never drift apart.
 \newlength{\workrowsep} \setlength{\workrowsep}{0pt}
 
+% In a document that loads grading, the block is also tied to the prompt above
+% it and to the line or box below it (see \saar@gradedpaging), so a scanned
+% page never shows a prompt whose work room and answer box went over to the
+% next page. Elsewhere \saar@workopen and \saar@workclose are the plain \par
+% they always were.
+\newcommand{\saar@workopen}{\par}
+\newcommand{\saar@workclose}{\par}
 \newenvironment{work}
-  {\par\addvspace{\abovedisplayskip}%
+  {\saar@workopen\addvspace{\abovedisplayskip}%
    \begin{lrbox}{\saar@work@box}%
    \begin{minipage}{\linewidth}%
    \addtolength{\jot}{\workrowsep}%
@@ -103,7 +110,7 @@
      % the content itself never reaches the page or the text layer.
      \vphantom{\usebox{\saar@work@box}}%
    \fi
-   \par\addvspace{\belowdisplayskip}}
+   \saar@workclose\addvspace{\belowdisplayskip}}
 
 % ── Graded answer lines (math-shared/grading.sty) ─────────────────────────────
 % A free-response answer drawn as ruled lines becomes ONE \gradedblank box that
@@ -192,6 +199,44 @@
   \vspace{1pt}\noindent\saar@rulestrut
   \if\relax\detokenize{#1}\relax\else\saar@gradedhang{#1}\fi
   \hfill\vspace{3pt}}
+
+% ── Written-response (rubric) boxes ───────────────────────────────────────────
+% math-shared draws every type=rubric box at least 2in tall (and every choice
+% box square), so a rubric box can no longer hang from ruled lines or sit
+% smashed in a sentence or a table cell: it would run over what follows. A
+% rubric item gets its own full-width box under its prompt, with its whole
+% height reserved on the page:
+%
+%   \gradedresponse{\gradedblank[id=q3, type=rubric, ...]{\linewidth}{2in}}
+%   \gradedresponse[(a) Member ID:]{\gradedblank[...]{\linewidth}{2in}}
+%
+% The optional label prints on its own line above the box. The box is tied to
+% the line before it (and to its label) with \nopagebreak, so a break never
+% falls between a prompt and its box. A work block in a graded document ends
+% with its own \nopagebreak (\saar@workclose, below), so a box right under a
+% work block stays with it too. Author the call identically in the blank and
+% the key.
+\newcommand{\saar@tieprev}{\ifvmode\else\par\fi\nopagebreak[4]}
+% Paging in a document that loads grading: a prompt, its work block and its
+% box stay on one page. A work block is tied to the line above it
+% (\saar@workopen) and to what follows it (\saar@workclose);
+% \interlinepenalty=10000 keeps a prompt paragraph from splitting; and
+% \@beginparpenalty=10000 keeps a prompt with the table, figure or list of
+% parts that opens right under it. A page or box break falls between items, or
+% between the parts of an item.
+\newcommand{\saar@gradedpaging}{%
+  \let\saar@workopen\saar@tieprev
+  \def\saar@workclose{\par\nopagebreak[4]}%
+  \interlinepenalty=\@M
+  \@beginparpenalty=\@M}
+\@ifpackageloaded{grading}{\saar@gradedpaging}%
+  {\AddToHook{package/grading/after}{\saar@gradedpaging}}
+\newcommand{\gradedresponse}[2][]{%
+  \saar@tieprev
+  \if\relax\detokenize{#1}\relax\else
+    \vspace{2pt}\noindent#1\par\nopagebreak[4]%
+  \fi
+  \vspace{3pt}\noindent#2\par\vspace{4pt}}
 
 % ── Guided notes: the Main Ideas / Notes table ────────────────────────────────
 % The guided-notes component is ONE two-column table — the "Main Ideas /
