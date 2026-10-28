@@ -77,9 +77,22 @@
     \vspace{1.5em}\par\noindent}
 
 % ── Student name rows ─────────────────────────────────────────────────────────
+% A per-student packet (`make roster-packets`) compiles the lesson cover with
+% \def\StudentName{…} ahead of it, and the name prints on the Name line, which
+% grows to fit it. Without \StudentName the line is the usual blank. Only the
+% cover carries \namedateperiod, so a name never reaches a graded page.
+\newlength{\saar@namewd}
+\newcommand{\saar@nameline}{%
+  \ifdefined\StudentName
+    \settowidth{\saar@namewd}{\StudentName}%
+    \ifdim\saar@namewd<4.8cm \setlength{\saar@namewd}{4.8cm}\fi
+    \underline{\makebox[\saar@namewd][l]{\StudentName}}%
+  \else
+    \blank{4.8cm}%
+  \fi}
 \newcommand{\namedateperiod}{%
     \begin{tabularx}{\linewidth}{X X X}
-    Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
+    Name:\;\saar@nameline & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
     \end{tabularx}}
 
 \newcommand{\namepartnerperiod}{%
