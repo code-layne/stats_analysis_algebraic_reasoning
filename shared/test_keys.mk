@@ -38,6 +38,8 @@ clean:
 # `make manifest COMP=<name>` and `make roster-packets COMP=<name> ROSTER=<path>`
 # run shared/unit.mk's grading targets for tests/<name> (a trailing _key is
 # dropped, so the key directory's own name works too). See shared/unit.mk.
+# ROSTER may start with ~/ and may be relative to this directory.
 .PHONY: manifest roster-packets
 manifest roster-packets:
-	@$(MAKE) --no-print-directory -C .. $@ COMP=tests/$(patsubst %_key,%,$(COMP))
+	@$(MAKE) --no-print-directory -C .. $@ COMP=tests/$(patsubst %_key,%,$(COMP)) \
+	    $(if $(ROSTER),ROSTER="$(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))")

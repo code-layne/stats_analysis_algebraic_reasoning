@@ -25,6 +25,8 @@ clean:
 
 # Grading: `make manifest COMP=<name>` and `make roster-packets COMP=<name> ROSTER=<path>`
 # run shared/unit.mk's grading targets for quiz01/<name>. See shared/unit.mk.
+# ROSTER may start with ~/ and may be relative to this directory.
 .PHONY: manifest roster-packets
 manifest roster-packets:
-	@$(MAKE) --no-print-directory -C .. $@ COMP=$(notdir $(CURDIR))/$(patsubst %_key,%,$(COMP))
+	@$(MAKE) --no-print-directory -C .. $@ COMP=$(notdir $(CURDIR))/$(patsubst %_key,%,$(COMP)) \
+	    $(if $(ROSTER),ROSTER="$(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))")

@@ -77,7 +77,7 @@ order:
    of what goes back on the board (students answer aloud, nothing to fill in), the **cold check**
    asked cold with its correct answer (*this replaces the exit ticket*), the **formative read** into
    three piles and how the next lesson opens from pile (c) — one board item and the cold check, nothing more.
-10. **Homework — scored, assigned today, due after two study halls** — `skillbox{goldbox}`: the ~6 items and
+10. **Homework — scored 1 to 5, assigned today, due after two study halls** — `skillbox{goldbox}`: the ~6 items and
     what each targets (name the contrast pair, the crux head-on, and the spiral item), scoring
     (2 per item), **packet, Desmos, or DeltaMath + justifications** with the Desmos activity, or the DeltaMath topics and turned-in items, named, the next-lesson preview,
     and the **Connections & Big Ideas** line carrying the lettered standard codes.
@@ -98,18 +98,19 @@ order:
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, one target per priority idea/skill, **naming the
   formal vocabulary outright**. The lettered standard codes belong in the lesson plan, not here.
-- `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score blank)
-  with a Total row — **three rows**:
+- `tocbox` — a `tabularx` listing each packet component (#, Component, Description). It is a
+  **contents list only** (2026-10-28): no Score column and no Total row. Three columns
+  (`c l X`): **every row needs three cells** or the widths collapse. **Three rows**:
 
-  | # | Component | Description | Score |
-  |---|---|---|---|
-  | 1 | Warm-Up | what the spiral items rehearse | `\blank{1.2cm}` |
-  | 2 | Guided Notes & Practice | the ideas the two sections build, then the one survey worked together | `\blank{1.2cm}` |
-  | 3 | Homework | the new context, one line — *scored, due the first class after two study halls* | `\blank{1.2cm}` |
+  | # | Component | Description |
+  |---|---|---|
+  | 1 | Warm-Up | what the spiral items rehearse |
+  | 2 | Guided Notes & Practice | the ideas the two sections build, then the one survey worked together |
+  | 3 | Homework | the new context, one line. **Scored 1 to 5, due the first class after two study halls.** |
 
   **Three rows** — the Guided Practice is inside the Guided Notes & Practice row, not its own,
-  because it has no separate handout. **Homework is scored**, so its score cell is a `\blank{}` —
-  never `NA`. The row never changes with the packet / Desmos / DeltaMath choice; that is announced aloud at
+  because it has no separate handout. A graded homework (one that loads `grading`) says **Scored
+  1 to 5** in its description. The row never changes with the packet / Desmos / DeltaMath choice; that is announced aloud at
   Close & Assign.
 - `remindbox` ("Keep in Mind") — the lesson's **content takeaway** in three or four sentences:
   the rule, the test to apply, and the trap to avoid, stated in the formal vocabulary. This is
@@ -175,7 +176,7 @@ Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; densit
 ## Homework
 
 `homework/` (+ `homework_key/`) — authored for **every** lesson. It is the lesson's **individual
-practice** *and* its graded work: the cover's score column carries a `\blank{}` for it, never `NA`,
+practice** *and* its graded work, **scored 1 to 5** (5 × earned / possible, rounded half up),
 and it is **assigned at Close & Assign and done outside class** (Unit 2 on; Unit 1 started it in
 class in the last ten minutes).
 
@@ -183,7 +184,7 @@ class in the last ten minutes).
 and key (user decision 2026-09-06 — cut an item or a part rather than run to a third page); the practice boxes at full size (`\small` only in the opening `remindbox`).
 Structure, in order:
 
-- A `remindbox` — "**This is your graded homework.** It is scored out of N and due …; you will
+- A `remindbox` — "**This is your graded homework.** It is scored 1 to 5 and due …; you will
   start it in the last minutes of the period …" — identical in blank and key.
 - A `scenariobox[Context]{cerulean}` giving the **third context** (notes = first, Guided Practice =
   second) and its data.
@@ -272,7 +273,7 @@ Unit-level, not per-lesson — scaffolded once per unit under `unitXX/tests/` an
 `unitXX/test_keys/` (see section 6 of `LESSON_SHAPE.md` and the shared skill's `references/build.md`). Author **two blank
 tests and their two keys**, all with `\pageheader{Unit X: <Title>}{...}` and **no name row**. A test
 loads `grading`, so its pages are scanned and sent to an outside API: they carry only the tracking
-id in the strip, and the student's name goes on math-shared's cover sheet. `make manifest` fails on
+id in the strip, and the student's name goes on math-shared's tear-off name sheet. `make manifest` fails on
 a name row in any document that loads `grading` (`shared/graded_nameline_check.py`):
 
 - **`tests/practice_test/main.tex`** — the study copy students keep. Opens with a `remindbox`

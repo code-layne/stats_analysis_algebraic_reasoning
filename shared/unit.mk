@@ -136,35 +136,64 @@ clean:
 #   make manifest COMP=tests/practice_test
 #       blank + key builds, target/<unit>/grading/<COMP>/manifest.json, and the
 #       check that the blank and key agree on every graded item.
-#   make roster-packets COMP=tests/actual_test ROSTER=~/Rosters/saar/roster-map.csv [SECTION=…]
-#       per student, in roster order: math-shared's name cover sheet, its blank
-#       back, then her personalized copy (QR codes and the id strip carry only
-#       the tracking id) padded to an even page count, so every cover starts on
-#       an odd page. math-shared's personalized.pdf, copied to
-#       target/compiled/<unit>/<COMP with / as _>_roster.pdf to print duplex as
-#       one collated job.
+#   make roster-packets COMP=tests/actual_test ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
+#       the manifest first (as `make manifest` does, which `grading ingest`
+#       reads), then per student, in roster order: math-shared's tear-off name
+#       sheet, its blank back, then her personalized copy (QR codes and the id
+#       strip carry only the tracking id) padded to an even page count, so
+#       every name sheet starts on an odd page. math-shared's personalized.pdf,
+#       copied to target/compiled/<unit>/<COMP with / as _>_roster.pdf to print
+#       duplex as one collated job.
+#
+# A lesson is handed on to its own Makefile (shared/lesson.mk):
+#   make roster-packets LESSON=lesson03 ROSTER=… [SECTION=…]   (COMP=lesson03 works the same)
+#   make manifest COMP=lesson03/homework
+# A lesson's roster-packets covers every graded component in its packet and
+# prints the name on the lesson cover, so it takes the lesson alone (a COMP in
+# the packet is ignored; one outside it gets math-shared's run, see lesson.mk).
 #
 # Unit rubrics live in <unit>/rubrics/; a rubric item names its file relative
 # to the component's parent directory (rubric=../rubrics/<assignment>-<id>.yaml).
-# Names are printed only on the covers. The roster PDF holds them, so it stays
-# under target/, never committed; math-shared's check_names.py fails the build
-# if a name reaches a graded copy.
+# The roster PDF holds names, so it stays under target/, never committed;
+# math-shared's check_names.py fails the build if a name reaches a graded copy.
 GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP          ?=
+UNIT_GR_PATH  := $(patsubst %/,%,$(or $(LESSON),$(COMP)))
+# The lesson named: LESSON=lessonYY, COMP=lessonYY, or COMP=lessonYY/<component>.
+UNIT_GR_LESSON := $(filter $(firstword $(subst /, ,$(UNIT_GR_PATH))),$(LESSONS))
+UNIT_GR_COMP   := $(patsubst $(UNIT_GR_LESSON)/%,%,$(filter $(UNIT_GR_LESSON)/%,$(UNIT_GR_PATH)))
+
+# ROSTER may start with ~/ (make does not expand it) and may be relative.
+ifneq ($(ROSTER),)
+override ROSTER := $(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))
+endif
+
+.PHONY: manifest roster-packets grading-need-comp
+
+ifneq ($(UNIT_GR_LESSON),)
+roster-packets:
+	@$(MAKE) --no-print-directory -C $(UNIT_GR_LESSON) roster-packets LESSON= COMP=$(UNIT_GR_COMP) \
+	    $(if $(ROSTER),ROSTER="$(ROSTER)") $(if $(SECTION),SECTION="$(SECTION)")
+manifest:
+	@test -n "$(UNIT_GR_COMP)" || { echo "!  manifest works on one component: COMP=$(UNIT_GR_LESSON)/homework"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(UNIT_GR_LESSON) manifest LESSON= COMP=$(UNIT_GR_COMP)
+else ifneq ($(LESSON),)
+manifest roster-packets:
+	@echo "!  $(UNIT)/$(LESSON) is not a lesson with a Makefile"; exit 1
+else
 COMPONENT     := $(COMP)
 KEY_COMPONENT := $(if $(wildcard $(COMP)_key/main.tex),$(COMP)_key,$(patsubst tests/%,test_keys/%_key,$(COMP)))
 GRADING_OUT   := $(PROJECT_ROOT)/target/$(UNIT)/grading/$(COMP)
 ROSTER_OUT    := $(COMPILED_DIR)/$(UNIT)/$(subst /,_,$(COMP))_roster.pdf
 
-.PHONY: manifest roster-packets grading-need-comp
-
 ifneq ($(wildcard $(GRADING_MK)),)
 include $(GRADING_MK)
 
 grading-need-comp:
-	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=tests/practice_test"; exit 1; }
+	@test -n "$(COMP)" || { echo "!  set COMP=<component directory>, e.g. COMP=tests/practice_test, or LESSON=lessonYY"; exit 1; }
+	@test -f "$(COMP)/main.tex" || { echo "!  no $(UNIT)/$(COMP)/main.tex"; exit 1; }
 
-# A graded page carries no name line (math-shared's cover sheet holds the name):
+# A graded page carries no name line (math-shared's name sheet holds the name):
 # shared/graded_nameline_check.py fails on \namedateperiod, \namepartnerperiod or a
 # Name:/Date:/Period: field in COMP or its key before anything is built.
 NAMELINE_CHECK := $(PROJECT_ROOT)/shared/graded_nameline_check.py
@@ -174,11 +203,13 @@ manifest: grading-need-comp
 	@$(MAKE) --no-print-directory grading-manifest
 	@echo "✓  Manifest       → target/$(UNIT)/grading/$(COMP)/manifest.json"
 
-roster-packets: grading-need-comp grading-need-roster grading-personalized
+roster-packets: grading-need-comp grading-need-roster manifest
+	@$(MAKE) --no-print-directory grading-personalized
 	@mkdir -p $(dir $(ROSTER_OUT))
 	@cp "$(GR_OUT)/personalized.pdf" $(ROSTER_OUT)
-	@echo "✓  Roster copies  → target/compiled/$(UNIT)/$(notdir $(ROSTER_OUT)) (roster order, name covers)"
+	@echo "✓  Roster copies  → target/compiled/$(UNIT)/$(notdir $(ROSTER_OUT)) (roster order, name sheets)"
 else
 manifest roster-packets grading-need-comp:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
+endif
 endif
