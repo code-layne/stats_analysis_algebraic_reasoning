@@ -1,5 +1,5 @@
-# Rubric for saar-u02-actual-test item q17d (unit02/tests/actual_test).
-id: q17d
+# Rubric for saar-u02-actual-test item q12d (unit02/tests/actual_test).
+id: q12d
 points: 5
 task: "Describe the distribution of the 18 students' hours volunteered this semester (stemplot): shape, unusual features, center, and spread, in context."
 criteria:

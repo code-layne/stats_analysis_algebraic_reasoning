@@ -1,5 +1,5 @@
-# Rubric for saar-u02-actual-test item q25a (unit02/tests/actual_test).
-id: q25a
+# Rubric for saar-u02-actual-test item q20a (unit02/tests/actual_test).
+id: q20a
 points: 2.5
 task: "Check Brand D for outliers with the 1.5 x IQR rule."
 criteria:
