@@ -1,0 +1,11 @@
+# Rubric for saar-u02-actual-test item q14d (unit02/tests/actual_test).
+id: q14d
+points: 4
+task: "Interpret the IQR of 8 games for the nine chess club members' wins this season, in context."
+criteria:
+  - id: middle_half
+    points: 2
+    full: "Says the IQR describes the middle half (middle 50%) of the members' win totals."
+  - id: context
+    points: 2
+    full: "Gives the spread of 8 games (from 4 to 12 wins), in the context of games won."
