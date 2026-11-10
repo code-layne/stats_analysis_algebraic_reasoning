@@ -1,40 +1,63 @@
-%! Displaying Categorical Data — Unit 3, Lesson 3.1 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Student Packet Cover Sheet
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, assigned at Close & Assign and done outside class, and it is scored 1 to 5. The cover
+% is a contents list, with no Score column.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 3}{Lesson 3.1 \quad Displaying and Analyzing Categorical Data}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 3}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.1 \quad Displaying Categorical Data}}
-\end{center}
-
-\vspace{0.22in}
-% NAMESTRIP: this is the ONLY component that carries the name row. Everything else
-% is stapled behind it.
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
-% SPOILER RULE (EFFL): targets are plain-language descriptions of what students will be able
-% to DO — never the formal vocabulary the debrief will attach ("how spread out the values are",
-% not "standard deviation"; "how fast it grows", not "exponential"). The lettered standard
-% codes belong in the teacher-facing lesson plan, not here.
+% GRADUAL RELEASE: the vocabulary is taught in the guided notes, so the targets name it
+% plainly. The standard codes (PS.DS.4a-d) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: spoiler-free learning target 1.
-  \item \ldots{} TODO: spoiler-free learning target 2.
+  \item \ldots{} read a bar graph of one categorical variable in context, as a frequency or a
+        \textbf{relative frequency}.
+  \item \ldots{} compare groups with \textbf{side-by-side} and \textbf{segmented} bar graphs.
+  \item \ldots{} build a \textbf{two-way table} from a summary and read its joint counts and
+        \textbf{marginal frequencies}.
+  \item \ldots{} calculate and interpret marginal and \textbf{conditional relative frequencies},
+        and name the whole each percent is taken of.
+  \item \ldots{} compare groups of different sizes with conditional percents, not raw counts ---
+        and explain why.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -47,24 +70,30 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up    & TODO (spoiler-free) \\
-2 & Experience \& Formalize & \emph{TODO Activity Title} --- TODO scenarios (with your group),
-                 then QuickNotes and an application we work together \\
-% Homework is this course's Check Your Understanding set and IS scored. The cover is a contents list, with no Score column. Whether it is assigned from this packet or swapped for the equivalent
-% DeltaMath set is decided lesson by lesson at Close & Assign; the pages are authored either
-% way, so the row never changes.
-3 & Homework   & Check Your Understanding --- TODO, practice in new contexts \\
+1 & Warm-Up & The start of Unit~3: percents of a number, fractions as percents, and reading a
+             simple table \\
+2 & Guided Notes \& Practice & How Oakdale High students get to school: bar graphs, two-way
+             tables, and conditional percents, with a vote on a newsletter's claim --- then a
+             library's streaming survey we work together \\
+% Row 3 is the lesson's GRADED practice, assigned at the close. Packet pages are the default;
+% the form may change on a given day, decided at Close & Assign. The row never changes.
+3 & Homework & Pet adoptions at a shelter: a two-way table, the percent of which whole, and a
+             claim built on counts. \textbf{Scored 1 to 5, assigned today, due the first class
+             after two study halls.} \\
 \end{tabularx}
 \end{tocbox}
 
 \vspace{0.14in}
 
-% Keep in Mind describes the EFFL PROCESS only, and stops there — no content preview,
-% no formal vocabulary (the spoiler rule).
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
-\small In this lesson you will \textbf{experience first, formalize later}: you and your group
-will work out TODO using what you already know --- and only afterward will we name what you
-found.
+\small
+A \textbf{relative frequency} is a count divided by a total. In a \textbf{two-way table}, a
+\textbf{marginal} relative frequency divides a Total by the whole table; a \textbf{conditional}
+relative frequency divides an inside cell by the total of one group. \textbf{The test:} in ``Of
+the [group], what percent \ldots?'' the words after \emph{of} name the whole, and that total is
+the denominator. \textbf{Watch out:} a larger count does not mean more likely. To compare groups
+of different sizes, compare conditional percents, never raw counts.
 \end{remindbox}
 
 \end{document}

@@ -298,7 +298,9 @@ notes and the **confirmed course map** (approved 2026-08-05): 8 units, 58 conten
 review — that sits outside the eight-content-lesson cap), **66 lesson directories** in all;
 semester split after Unit 4 (S1 *data and chance*, S2 *models and decisions*); projects with real
 data in Units 1, 5, 6, and 8 (lessons 1.8, 5.7, 6.8, 8.6). Units are standard clusters; lessons
-are groups of a standard's lettered Knowledge & Skills. **AFDA.AF.3 (linear programming) is
+are groups of a standard's lettered Knowledge & Skills. **Consolidations since the map (user
+decisions): Unit 2 to four lessons, no launch (2026-09-29); Unit 3 to five lessons, no launch, at
+the 10-page packet budget (2026-11-09).** **AFDA.AF.3 (linear programming) is
 excluded; there is no trigonometry.** `spec/unit_lesson_breakdown.md` is the per-lesson index and
 status table (it still describes the EFFL component set — two redesigns stale; fix it on the next
 run that touches it).

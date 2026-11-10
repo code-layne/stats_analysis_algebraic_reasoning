@@ -1,16 +1,17 @@
-%! Probability Basics — Unit 3, Lesson 3.2 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Probability Models — Unit 3, Lesson 3.2 — Lesson Plan
+% GRADUAL-RELEASE plan, timing 5 / 45 / 5 / 5: warm-up / guided notes and practice / spoken debrief
+% / close and ASSIGN the homework (not started in class). I do / we do in rows 1-4 (problems 1-10,
+% ~25 min) -> we do the Guided Practice row (problems 11-14, ~20 min). No group activity, no exit
+% ticket, no independent practice set in the notes.
+% Folds in the old Lessons 3.2 and 3.3 (Unit 3 condensed 2026-11-09).
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 3: Categorical Data and Probability \quad}
-\newcommand{\LessonNumberName}{Lesson 3.2: Probability Basics}
+\newcommand{\LessonNumberName}{Lesson 3.2: Probability Models}
 
 \begin{document}
 \begin{center}
@@ -20,170 +21,310 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will list a sample space and an event, find a theoretical
+    probability and predict an expected count from it; use the complement rule and tell
+    complementary from mutually exclusive events in context; organize one situation as a tree
+    diagram and a two-way table; and read a Venn diagram for intersection, union, ``neither,'' and
+    ``only,'' justifying why adding two circle totals overcounts ``or.''
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.P.1a (complementary and mutually exclusive events only), PS.P.1b;
+    AFDA.DA.3a, AFDA.DA.3c, AFDA.DA.3e \quad$\cdot$\quad carries forward Lesson~3.1 (two-way
+    tables and relative frequency)
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} The notes deliver the
+    instruction \textbf{row by row in one Main Ideas / Notes table} (four rows, problems 1--10: you
+    read the definition, mark up the display, and work problems 1, 3, 5, and~7; the class works
+    the rest). The Guided Practice row (problems 11--14) is worked together with students holding
+    the pen. \textbf{The homework is the individual practice}, assigned at Close \& Assign and done
+    outside class. The debrief is a \emph{spoken} cold check and one board item.
+    \\[2pt]
+    \textbf{Scope on the page:} ``or'' is \emph{counted region by region}; the addition-rule
+    formula and multiplying along a tree's branches are Lesson~3.3. The tree today carries given
+    counts only. Independence and conditional probability belong to Lessons 3.3 and~3.4.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can list a \textbf{sample space} and an \textbf{event}, find a theoretical probability,
+        and predict an expected count. \hfill \textit{AFDA.DA.3a}
+  \item I can use the \textbf{complement} rule and tell complementary from \textbf{mutually
+        exclusive} events, with examples in context. \hfill \textit{AFDA.DA.3e, PS.P.1a}
+  \item I can organize one situation as a tree diagram and a two-way table and read
+        probabilities from each. \hfill \textit{PS.P.1b, AFDA.DA.3c}
+  \item I can read a Venn diagram for intersection, union, ``neither,'' and ``only.''
+        \hfill \textit{PS.P.1b}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} reading a whole circle as the ``only'' region, and counting
+        the overlap twice for ``or.'' \textbf{The rule that replaces it:} a circle's total
+        includes the overlap; to count ``or,'' add the regions inside the circles, each one once.
+  \item \textbf{Second misconception:} counting category names instead of equally likely outcomes
+        (four prize names, so $\frac14$). The denominator is the sample space, and the sectors
+        are what is equally likely.
+  \item Complementary events are always mutually exclusive; mutually exclusive events are
+        complementary only if together they cover the whole sample space.
+  \item An expected count is a prediction, not a promise.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Sample space & The set of all possible outcomes of a chance process. \\
+Event & Any set of outcomes from the sample space. \\
+Theoretical probability & With equally likely outcomes, outcomes in the event over outcomes in the sample space. \\
+Expected count & $P(\text{event}) \times$ the number of trials: a prediction. \\
+Complement & All the outcomes not in the event: $P(\text{not } A) = 1 - P(A)$. \\
+Mutually exclusive & Two events that cannot both happen on the same outcome. \\
+Complementary & Mutually exclusive \emph{and} together covering the whole sample space. \\
+Intersection / union & The overlap ($A$ and $B$) / everything inside either circle ($A$ or $B$). \\
+Only / neither & A circle without the overlap / outside both circles. \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 — I do ~25 of the 45, Guided Practice ~20.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Simplify fractions; fraction to decimal to percent; $\frac38$ of $200$ --- silent &
+  Debrief item~3 aloud; say that these exact numbers come back in the notes \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; vote on Dani's
+  count; work rows 1--4 (problems 1--10); then the Guided Practice, \emph{The Team Roster}
+  (11--14), together & \textbf{I do / we do, row by row}: read the definition, mark up the display,
+  work problems 1, 3, 5, 7; the class works the rest (25) $\to$ \textbf{we do} Guided Practice
+  11--14 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put problem~13 back on the board
+  ($24$ vs.\ $20$); ask the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~5 as the first item &
+  Announce the homework and its form (packet), preview Lesson~3.3 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Simplify $\frac{28}{40}, \frac{12}{40}, \frac{10}{40}, \frac{80}{120}$.
+            \textbf{Seeds:} problem~9's $\frac{7}{10}$, problem~7's $\frac{3}{10}$, problem~8's
+            $\frac14$, problem~6's $\frac23$.
+      \item \textbf{2.} $\frac38 = 0.375 = 37.5\%$; $\frac58 = 0.625 = 62.5\%$; $\frac{7}{10} =
+            0.7 = 70\%$. \textbf{Seeds:} problem~1's three forms and problem~3's complement.
+      \item \textbf{3.} $\frac38$ of $200$ is $75$; $1 - \frac38 = \frac58$. \textbf{Seeds:}
+            problem~2's expected count and the complement rule in row~2.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~3 aloud.} ``Three eighths of something'' and ``what is left of
+            one whole'' are the two moves of the first two rows.
+      \item Items 1--2 are arithmetic only: do not let them expand. Read the answers once.
+      \item Note who struggles to simplify; those students can leave a probability unsimplified
+            in the notes and still follow the idea.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``$40$ students were surveyed. $18$ bought a taco and $15$ bought a lemonade. Dani adds:
+$18 + 15 = 33$ bought a taco or a lemonade.''} Students circle \emph{right}, \emph{too high},
+\emph{too low}, or \emph{can't tell yet} and write one line of reason \emph{before} anyone speaks;
+then take the hand vote and write the split on the board. Most rooms vote \emph{right}.
+\textbf{Do not settle it.} Say only that the answer is problem~9, in the \emph{Venn Diagram} row,
+and that they will vote again there.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} The notes are \textbf{one Main Ideas / Notes table}: four
+instruction rows (problems 1--10), then the Guided Practice row (11--14). \textbf{The rhythm in
+every row is the same}: read the definition aloud, mark up the display, work the first problem
+yourself, then hand the rest to the room. The vocabulary box is filled \emph{as each term is
+named}. The only blanks are the eight cells of the row~3 table.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Theoretical Probability (problems 1--2).} Name \emph{sample space} and \emph{event}
+on the prize wheel. Work problem~1 yourself: Kira's $\frac14$ counts four prize names, but the
+eight sectors are what is equally likely, so $P(D) = \frac38 = 0.375 = 37.5\%$. The class does 2:
+$75$ free drinks of $200$ spins, ``about'' because the spins are random (AFDA.DA.3a). Five minutes.
+
+\emph{Row 2, Complement Rule (problems 3--4).} Two wheels side by side, students label them.
+Work problem~3 yourself ($\frac58$, then $\frac34$). The class does 4: free drink and free dessert
+are mutually exclusive only (sectors 4, 5, 8 are left over); free drink and even-numbered sector
+are neither (sector~6 is both). Ask aloud for one festival example of each kind (AFDA.DA.3e,
+PS.P.1a). Seven minutes.
+
+\emph{Row 3, Tree and Two-Way Table (problems 5--6).} The same $120$ orders twice; students copy
+the branch ends into the table. Work problem~5 yourself (burger, then water: $\frac{15}{120} =
+\frac18$). The class does 6 ($\frac{80}{120} = \frac23$). \textbf{Read counts off the tree; do not
+multiply along branches}, which is Lesson~3.3 (PS.P.1b, AFDA.DA.3c). Five minutes.
+
+\emph{Row 4, Venn Diagram (problems 7--10) --- the crux.} Name the four regions on the survey and
+work problem~7 yourself ($\frac18$ and $\frac{3}{10}$). \textbf{Problem~8 is the trap}: Reese reads
+the whole circle, $15$, as ``only lemonade''; the region is $10$. Then \textbf{problem~9 is the
+crux: re-take the hook vote before anyone counts.} Region by region, $13 + 5 + 10 = 28$, and
+$P = \frac{28}{40} = \frac{7}{10}$, not Dani's $33$. Problem~10 names the $5$ counted twice and
+checks with $1 - \frac{12}{40}$. Land the boxed sentence word by word. Eight minutes.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{The Team Roster} (problems 11--14),
+a fresh context where the diagram prints only the circle totals. \textbf{Students hold the pen; you
+hold the questions.} Problem~11 fills the regions ($11$, $4$, $5$, $10$). Problem~12 reads
+$\frac16$ and $\frac13$. \textbf{Problem~13 is the crux transferred}: take a hand count on Coach's
+$24$ before anyone counts; the union is $20$, $P = \frac23$. Problem~14 ties back to row~2: not
+mutually exclusive ($4$ play both); ``soccer or basketball'' and ``neither'' are complementary
+($20 + 10 = 30$).
+
+Circulate during Guided Practice and demand the reason:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 11:} ``Does the $15$ include the $4$? So what goes in the left region?''
+  \item \textbf{Problem 13:} ``Point to every athlete you counted. Did your finger land on the
+        overlap twice?''
+  \item \textbf{Problem 14:} ``What would the diagram look like if the two sports \emph{were}
+        mutually exclusive?'' (Circles that do not touch.)
+\end{itemize}
+While circulating, pick the one paper to put up in the debrief --- a problem~13 that counted
+region by region and named the $4$. \textbf{This circulation is your formative read}.
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken.}
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: problem~13.} Put up the paper you picked ($11 + 4 + 5 = 20$,
+        not $24$) and make a student say the sentence: \emph{adding the circle totals counts the
+        overlap twice; to count ``or,'' add each region once.}
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``$32$ students: $16$ are in
+band, $10$ in choir, and $6$ in both. How many are in band or choir, and how many in only choir?''}
+Thirty seconds of think time, then cold-call three students. Correct answer: \textbf{$20$ in band
+or choir} ($10 + 6 + 4$), not $26$; \textbf{$4$ in only choir}, not $10$. \emph{This replaces the
+exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} $20$ and $4$;
+\textbf{(b)} one of the two right; \textbf{(c)} $26$ and $10$ --- both halves of the
+misconception. \textbf{If pile (c) runs past a third of the room, open Lesson~3.3 by re-running
+problems 8--9}, and say so plainly.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored 1 to 5, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{a bookstore loyalty program}: \textbf{1} a rewards wheel, $P(\$3\text{ off})
+= \frac{3}{10}$, and the \emph{interpret} item, the meaning of about $150$ of $500$ spins;
+\textbf{2} the complement ($\frac{7}{10}$) and classifying \$1 off and \$3 off (mutually exclusive
+only); \textbf{3} and \textbf{4} are the \textbf{contrast pair} on one Venn diagram: bought a
+mystery ($26$, $\frac{13}{30}$) against bought \emph{only} a mystery ($19$, $\frac{19}{60}$);
+\textbf{5} \emph{the crux head-on and the justification}: Priya's $26 + 17 = 43$, the true $36$,
+and who was counted twice; \textbf{6} \emph{the spiral item}, Lesson~3.1's relative frequency in
+a two-way table ($0.55$ and, among teens, $0.67$).
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class. Scoring:} 12 points, 2 per item, which
+the grading report turns into the 1-to-5 score. \textbf{Form: packet.} The packet pages are this
+lesson's form; every final answer goes in its box. The teacher may switch the form at Close \&
+Assign.
+
+\textbf{Preview of the next class.} Lesson~3.3, Addition and Multiplication Rules: today's
+region-by-region count becomes a rule, and the tree gets probabilities on its branches.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 3 core idea:} a probability model organizes the
+outcomes so that counting them is honest. \textit{Standards covered:} PS.P.1a (complementary and
+mutually exclusive events; dependent and independent events wait for 3.3--3.4), PS.P.1b (Venn
+diagrams, tree diagrams, two-way tables), AFDA.DA.3a (theoretical probability and predictions),
+AFDA.DA.3c (representing and calculating with these models), AFDA.DA.3e (defining and giving
+contextual examples). \textit{Reaches back to:} Lesson~3.1's two-way tables. \textit{Spirals
+forward to:} Lesson~3.3's addition and multiplication rules and Lesson~3.4's conditional
+probability.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{Whole circle read as ``only''} (problems 8 and~11, HW~3--4 --- the target
+        misconception). Probe: \emph{``Does that total include the people in the overlap?''}
+  \item \textbf{Overlap counted twice for ``or''} (the hook, problems 9 and~13, HW~5 --- the
+        target misconception). Probe: \emph{``Touch each region once. What total did you get?''}
+  \item \textbf{Counting names, not outcomes} (problem~1). Probe: \emph{``Are those four things
+        equally likely? What on the wheel is?''}
+  \item \textbf{Complementary and mutually exclusive treated as the same} (problems 4 and~14,
+        HW~2). Probe: \emph{``Is anything left over?''}
+  \item \textbf{An expected count read as a guarantee} (problem~2, HW~1). Probe: \emph{``Would
+        you bet on exactly $75$?''}
+  \item \textbf{Multiplying branch numbers} (problem~5). Probe: \emph{``The path already ends in
+        a count. What does it say?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Name two events at this school that cannot both happen.''} \quad
+\emph{``When \emph{is} adding the two totals correct?''} (When the circles do not overlap.)
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{The homework is assigned here and done outside class --- it is not started in class.}
+Hand the launch: six items on a bookstore loyalty program, \textbf{packet form}, scored 1 to 5, due
+at the start of the first class after two study halls. The teacher may switch the form here.
+Point to the \emph{Keep in Mind} box and rows 2 and~4 of the notes. \textbf{Tell students to do
+item~5 first if they are short on time}, and that items 3 and~4 are a pair: read both before
+answering either. Then close on what changed: \emph{``You walked in with fractions. You walk out
+with a sample space, a complement, and a Venn diagram you can count without counting anyone
+twice.''} \textbf{Preview:} Lesson~3.3, Addition and Multiplication Rules.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. Every number here returns in the notes, so say that rather than
+reviewing at length. Item~3 is the one to debrief: $\frac38$ of $200$ becomes the expected count
+in problem~2, and $1 - \frac38$ becomes the complement rule in problem~3. A student who cannot
+simplify can still follow the lesson with unsimplified fractions; do not stop for it.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 25 / 20, then 5 for the debrief and 5 to assign the homework.} You work 1, 3, 5,
+and~7; the class works the rest. Rows 1 and~3 must move, five minutes each.
+\textbf{Spend the time in row~4.} The trap (problem~8) comes before the crux (problem~9) on
+purpose: a student who has just separated a circle total from its ``only'' region can see why the
+circle totals overlap. \textbf{Re-take the hook vote at problem~9 before anyone counts}; if
+students count first, the vote is empty. The boxed sentence comes after 9 and~10, so the rule
+arrives as the answer to the vote. \textbf{Do not state the addition rule}: students who offer
+``subtract the overlap'' are right, and Lesson~3.3 makes it a rule; today every ``or'' is counted
+region by region. On the tree, read counts only.
+
+\textbf{Guided Practice (11--14) is where the pen changes hands.} The diagram prints only circle
+totals, so the student has to separate each ``only'' region before anything else. If time is short,
+protect 11 and~13; problem~12 can be said aloud. If the misconception pile is more than a third of
+the room, \textbf{open Lesson~3.3 by re-running problems 8--9}.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored 1 to 5 from 12 points (2 per item), due at the start of the first class after two
+study halls; assigned at the close, not started in class.} Every part is boxed: 1a, 2a, 2b, 3a,
+3b, 4a, 4b, 5a, 6a, and~6b are short boxes worth 1 point each; 1b and~5b are written responses
+worth 1 point each, scored by their rubrics. \textbf{Item~5 is the one to read first.} Sort it:
+named the $7$ counted twice (ready); got $36$ with no reason (needs the language); wrote $43$ (the
+misconception survived). Items 3 and~4 are a diagnostic pair: the same answer on both means the
+student is reading the circle as the region. If more than a third land in the last pile, open
+Lesson~3.3 with problems 8--9. \textbf{Packet is the form for this lesson}; the teacher may switch
+it at Close \& Assign.
 \end{teachernote}
 \end{document}

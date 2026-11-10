@@ -1,40 +1,61 @@
-%! Venn Diagrams, Tree Diagrams, and Two-Way Tables — Unit 3, Lesson 3.3 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Addition and Multiplication Rules — Unit 3, Lesson 3.3 — Student Packet Cover Sheet
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. The homework is the individual
+% practice, assigned at Close & Assign and done outside class, and it is scored 1 to 5.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 3}{Lesson 3.3 \quad Addition and Multiplication Rules}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 3}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.3 \quad Venn Diagrams, Tree Diagrams, and Two-Way Tables}}
-\end{center}
-
-\vspace{0.22in}
-% NAMESTRIP: this is the ONLY component that carries the name row. Everything else
-% is stapled behind it.
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
-% SPOILER RULE (EFFL): targets are plain-language descriptions of what students will be able
-% to DO — never the formal vocabulary the debrief will attach ("how spread out the values are",
-% not "standard deviation"; "how fast it grows", not "exponential"). The lettered standard
-% codes belong in the teacher-facing lesson plan, not here.
+% The standard codes (PS.P.1a, c; AFDA.DA.3e, f) stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: spoiler-free learning target 1.
-  \item \ldots{} TODO: spoiler-free learning target 2.
+  \item \ldots{} use the \textbf{addition rule} on a Venn diagram, subtracting the overlap, and
+        drop the subtraction when events are \textbf{mutually exclusive}.
+  \item \ldots{} use the complement rule to find the probability of \emph{at least one}.
+  \item \ldots{} use the \textbf{multiplication rule} on a probability tree for
+        \textbf{independent events} (with replacement) and \textbf{dependent events} (without
+        replacement).
+  \item \ldots{} decide by computing whether two events are complementary, mutually exclusive,
+        independent, or dependent --- and explain why mutually exclusive events are not
+        independent.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -47,24 +68,30 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up    & TODO (spoiler-free) \\
-2 & Experience \& Formalize & \emph{TODO Activity Title} --- TODO scenarios (with your group),
-                 then QuickNotes and an application we work together \\
-% Homework is this course's Check Your Understanding set and IS scored. The cover is a contents list, with no Score column. Whether it is assigned from this packet or swapped for the equivalent
-% DeltaMath set is decided lesson by lesson at Close & Assign; the pages are authored either
-% way, so the row never changes.
-3 & Homework   & Check Your Understanding --- TODO, practice in new contexts \\
+1 & Warm-Up & Adding and multiplying decimals and fractions, then reading the concert raffle's
+             Venn diagram \\
+2 & Guided Notes \& Practice & The concert raffle: the addition rule, mutually exclusive
+             events, the multiplication rule on trees, and classifying pairs of events --- then
+             rain and a late bus, worked together \\
+% Row 3 is the lesson's GRADED practice, assigned at the close. The row never changes with the form.
+3 & Homework & The prize wheel and capsule tray at an arcade: the rules, then which pairs of
+             events are independent. \textbf{Scored 1 to 5, assigned today, due the first
+             class after two study halls.} \\
 \end{tabularx}
 \end{tocbox}
 
 \vspace{0.14in}
 
-% Keep in Mind describes the EFFL PROCESS only, and stops there — no content preview,
-% no formal vocabulary (the spoiler rule).
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
-\small In this lesson you will \textbf{experience first, formalize later}: you and your group
-will work out TODO using what you already know --- and only afterward will we name what you
-found.
+\small
+\textbf{Addition rule:} $P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)$; if the events
+are \textbf{mutually exclusive}, the overlap is $0$. \textbf{At least one:}
+$1 - P(\text{none})$. \textbf{Multiplication rule:} multiply along the branches of a tree; the
+second factor stays the same for \textbf{independent events} (with replacement) and changes for
+\textbf{dependent events} (without replacement). \textbf{Watch out:} events are independent when
+$P(A \text{ and } B) = P(A) \cdot P(B)$. Mutually exclusive events that each have some chance
+are \textbf{dependent}: knowing one happened tells you the other did not.
 \end{remindbox}
 
 \end{document}

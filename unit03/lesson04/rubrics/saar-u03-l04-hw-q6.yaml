@@ -1,0 +1,14 @@
+# Rubric for saar-u03-l04-hw item q6 (unit03/lesson04/homework).
+id: q6
+points: 2
+task: "The assistant coach says most of the trips where the team made both were Riley's, so Riley gives the best chance. Which probabilities answer the coach's question? Who should shoot? Justify with numbers."
+criteria:
+  - id: swap
+    points: 0.5
+    full: "Identifies that the assistant used P(Riley | Made both), about 0.69, or says he swapped the condition (it is high because Riley takes most of the trips)."
+  - id: right
+    points: 1
+    full: "Uses the conditional probabilities given the player: P(Made both | Riley), about 0.36, and P(Made both | Sam) = 0.64."
+  - id: decide
+    points: 0.5
+    full: "Decides that Sam should shoot, because her chance of making both is greater."

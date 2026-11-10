@@ -1,5 +1,13 @@
-%! Displaying Categorical Data — Unit 3, Lesson 3.1 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt. It also opens the unit (the first lesson of
+% Unit 3, no separate launch lesson): one printed line says what the unit is about.
+% THE NUMBERS ARE THE NOTES': item 1 gives 94, 54, 40 (row 1's bus bar, row 2's two bus bars);
+% item 2 gives 47%, 45%, 50% (problems 8 and 9) and seeds the crux with bare fractions: the larger
+% numerator is the smaller percent. Item 3 is row 1's one-variable data as a frequency table.
+% The grade sizes are deliberately NOT printed with a context here: the hook stays open.
+% Checked: 47% of 200 = 94; 45% of 120 = 54; 50% of 80 = 40; 94/200 = 47%; 54/120 = 45%;
+% 40/80 = 50%; 26/200 = 13%.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -7,18 +15,68 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.1}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
 \boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Unit 3 Starts Here --- Percents and a Table}
+\normalsize
+Unit~3 is about data sorted into groups and the chances those data give us. Today's tools are
+ones you already own. Every number below comes back in the notes.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Find each amount.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        \toprule
+        $47\%$ of $200$ & $45\%$ of $120$ & $50\%$ of $80$ \\
+        \midrule
+        \ans{94} & \ans{54} & \ans{40} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Write each fraction as a percent.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        \toprule
+        \TallMath{\dfrac{94}{200}} & \TallMath{\dfrac{54}{120}} & \TallMath{\dfrac{40}{80}} \\
+        \midrule
+        \ans{47\%} & \ans{45\%} & \ans{50\%} \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{8pt}
+        Look at $\dfrac{54}{120}$ and $\dfrac{40}{80}$. Which one has the larger top number? Which
+        one is the larger percent?
+        \par\ansline{54/120 has the larger top number.}
+\ansline{40/80 is the larger percent: 50\% vs.\ 45\%.}
+
+  \item Oakdale High asked $200$ students how they get to school.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabularx}{\linewidth}{@{} X Y Y Y Y @{}}
+        \toprule
+        \textbf{How they get there} & \textbf{Bus} & \textbf{Car} & \textbf{Walk} & \textbf{Total} \\
+        \midrule
+        \textbf{Students} & $94$ & $80$ & $26$ & $200$ \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{10pt}
+        How many students come by car? \ans{80 students}
+
+        \vspace{12pt}
+        What percent of the $200$ students walk? \ans{13\%}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
