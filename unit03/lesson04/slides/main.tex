@@ -1,6 +1,12 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Slides (Beamer)
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Slides (Beamer)
+% GRADUAL RELEASE deck, 5/45/5/5: title, targets, warm-up, hook (dark, UNRESOLVED), I DO divider,
+% one frame per notes row, the crux frame (\sectionlabel[redacc]), Guided Practice (a LIVE surface,
+% un-answered), spoken debrief with the cold check, You do (assigned, not started), close (dark).
+% Standards: PS.P.1d; AFDA.DA.3b, 3c, 3d.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -8,82 +14,314 @@
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
-  \vspace{2.8cm}\hspace{0.55cm}%
+  \vspace{2.4cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.4}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Addition and Multiplication Rules}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Conditional Probability, Independence, and Simulation}\\[1.0cm]
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3~$\cdot$~PS.P.1d~$\cdot$~AFDA.DA.3b--d}
   \end{minipage}
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~9 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → close & assign.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% LEARNING TARGETS (spoiler-free)
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 3.4}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item find a \textbf{conditional probability} by restricting to the ``given'' row or column.
+    \item use $P(B \mid A) = P(A \text{ and } B)/P(A)$, and know it is $0$ for mutually exclusive events.
+    \item test whether two events are \textbf{independent}: compare $P(A \mid B)$ with $P(A)$.
+    \item read a \textbf{simulation}, explain the \textbf{Law of Large Numbers}, and justify a decision.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    one application together $\to$ practice.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one problem set we work as a class} $\to$
+    debrief $\to$ \textbf{the homework, assigned today and done outside class}.
   \end{block}
 \end{frame}
 
-% WARM-UP
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
-  \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items.
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{a summer coding course $\cdot$ 200 students}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{l c c c}
+      \hline
+       & \textbf{Review} & \textbf{No review} & \textbf{Total} \\
+      \hline
+      \textbf{App} & 84 & 36 & 120 \\
+      \textbf{No app} & 16 & 64 & 80 \\
+      \textbf{Total} & 100 & 100 & 200 \\
+      \hline
+      \end{tabular}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item Read the table: app \emph{and} review? App in all? Review in all?
+        \item What percent of the 120 app users went to review? What percent of the 100 at review
+              used the app?
+        \item Compare: 0.70 and 0.50; 0.60 and 0.6; 0.41 and 0.8.
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- the notes open with this table.}
+  \end{center}
 \end{frame}
 
-% ACTIVITY LAUNCH
+% ── HOOK — leave it UNRESOLVED; problem 10 settles it ────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small A POSTER FOR A STUDY APP SAYS:}\\[0.7cm]
+    {\color{white}\bfseries\Large ``Most students who passed the course used our app, so a student
+    who uses the app will probably pass.''}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Agree, disagree, or can't tell yet?}\\[0.5cm]
+    {\color{frostmid}\small Vote, and write one line of why. We vote again at problem 10.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by row
+    --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Four terms go in the vocabulary box today.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1 ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \ceruleanheader{``Given'' changes the whole}
+  \sectionlabel{notes row 1 $\cdot$ Two-Way Tables $\cdot$ problems 1--2}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{l c c c}
+      \hline
+       & \textbf{Review} & \textbf{No review} & \textbf{Total} \\
+      \hline
+      \textbf{App} & \textbf{84} & 36 & \textbf{120} \\
+      \textbf{No app} & 16 & 64 & 80 \\
+      \textbf{Total} & \textbf{100} & 100 & 200 \\
+      \hline
+      \end{tabular}
+      \end{center}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item $P(\text{Review} \mid \text{App}) = 84/120 = \mathbf{0.70}$
+        \item $P(\text{App} \mid \text{Review}) = 84/100 = \mathbf{0.84}$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{block}{The word after the bar picks the group}
+    Restrict to that row or column. Its total is the \redink{new whole}.
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
+% ── ROW 2 ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
+  \ceruleanheader{The same idea, in probabilities}
+  \sectionlabel{notes row 2 $\cdot$ The Formula $\cdot$ problems 3--4}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[scale=0.8]
+        \draw[thick, rounded corners=2pt] (-3.7,-1.75) rectangle (3.7,1.75);
+        \fill[cerulean, opacity=0.18] (-0.75,0) circle (1.4);
+        \fill[goldacc, opacity=0.22] (0.75,0) circle (1.4);
+        \draw[thick] (-0.75,0) circle (1.4);
+        \draw[thick] (0.75,0) circle (1.4);
+        \node[font=\footnotesize\bfseries] at (-2.2,1.4) {App};
+        \node[font=\footnotesize\bfseries] at (2.3,1.4) {Review};
+        \node[font=\small] at (-1.3,-0.05) {0.18};
+        \node[font=\small] at (0,-0.05) {0.42};
+        \node[font=\small] at (1.3,-0.05) {0.08};
+        \node[font=\small] at (3.05,-1.35) {0.32};
+      \end{tikzpicture}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \[ P(B \mid A) = \frac{P(A \text{ and } B)}{P(A)} \]
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item $P(\text{Review} \mid \text{App}) = 0.42/0.60 = \mathbf{0.70}$
+        \item $P(\text{Review} \mid \text{No app}) = 0.08/0.40 = \mathbf{0.20}$
+        \item Mutually exclusive: $P(A \text{ and } B) = 0$, so \redink{$P(B \mid A) = 0$}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% QUICKNOTES SUMMARY
+% ── ROW 3 ────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
+  \ceruleanheader{Does knowing change the probability?}
+  \sectionlabel{notes row 3 $\cdot$ The Test $\cdot$ problems 5--6}
+  \begin{block}{The test}
+    Compare $P(A \mid B)$ with $P(A)$. \textbf{Equal: independent. Different: dependent.}
+  \end{block}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \textbf{Review and App}\\[3pt]
+      $P(\text{Review} \mid \text{App}) = 0.70$\\
+      $P(\text{Review}) = 100/200 = 0.50$\\[3pt]
+      \redink{Different: dependent.} App users are more likely to go to review.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{App and Morning section}\\[3pt]
+      $P(\text{App} \mid \text{Morning}) = 45/75 = 0.60$\\
+      $P(\text{App}) = 120/200 = 0.60$\\[3pt]
+      \redink{Equal: independent.} Section does not change app use.
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% APPLICATION
+% ── ROW 4: SIMULATION ────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, then the interpret-in-context question and the "what if" that
-  % demands a justification. This is the lesson's only in-class practice.
+  \ceruleanheader{A spreadsheet ran it 1,000 times}
+  \sectionlabel{notes row 4 $\cdot$ Simulate and Decide $\cdot$ problem 7}
+  \begin{center}
+  \begin{tikzpicture}[x=0.0135cm, y=2.3cm]
+  \foreach \v in {0.2,0.4,0.6,0.8,1.0} { \draw[linegray, densely dashed] (0,\v) -- (620,\v); }
+  \draw[thick, ->] (0,0) -- (640,0);
+  \draw[thick] (0,0) -- (0,1.05);
+  \foreach \v in {0,100,...,600} { \draw (\v,0.02) -- (\v,-0.02) node[below, font=\scriptsize] {\v}; }
+  \foreach \v in {0,0.2,0.4,0.6,0.8,1.0} { \draw (5,\v) -- (-5,\v) node[left, font=\scriptsize] {\v}; }
+  \node[font=\scriptsize\itshape] at (310,-0.34) {simulated app users so far};
+  \node[font=\scriptsize\itshape, rotate=90] at (-85,0.5) {proportion who passed};
+  \draw[cerulean, thick, line join=round] plot coordinates {(1,0.000) (2,0.000) (3,0.000) (4,0.250) (5,0.200) (6,0.167) (7,0.286) (8,0.250) (9,0.222) (10,0.300) (11,0.273) (12,0.250) (13,0.308) (14,0.357) (15,0.400) (16,0.375) (17,0.412) (18,0.444) (19,0.474) (20,0.500) (21,0.524) (22,0.500) (23,0.522) (24,0.500) (25,0.520) (26,0.538) (27,0.556) (28,0.571) (29,0.586) (30,0.567) (35,0.543) (40,0.500) (45,0.533) (50,0.540) (55,0.527) (60,0.483) (65,0.477) (70,0.471) (75,0.480) (80,0.475) (85,0.471) (90,0.467) (95,0.474) (100,0.470) (110,0.455) (120,0.442) (130,0.431) (140,0.436) (150,0.427) (160,0.444) (170,0.441) (180,0.422) (190,0.416) (200,0.415) (210,0.414) (220,0.423) (230,0.422) (240,0.417) (250,0.412) (260,0.408) (270,0.400) (280,0.400) (290,0.403) (300,0.407) (310,0.406) (320,0.412) (330,0.421) (340,0.429) (350,0.434) (360,0.433) (370,0.441) (380,0.437) (390,0.433) (400,0.440) (410,0.439) (420,0.440) (430,0.440) (440,0.434) (450,0.436) (460,0.430) (470,0.428) (480,0.423) (490,0.424) (500,0.426) (510,0.422) (520,0.421) (530,0.423) (540,0.422) (550,0.416) (560,0.414) (570,0.414) (580,0.414) (590,0.414) (600,0.412) (607,0.412)};
+\end{tikzpicture}
+  \end{center}
+  \begin{block}{Law of Large Numbers}
+    Early on the line swings: 0.2 after 5 app users, about 0.57 after 30. As the process repeats, the
+    relative frequency \redink{settles} near the actual probability: about \textbf{0.41}.
+  \end{block}
 \end{frame}
 
-% CLOSE & ASSIGN
+% ── ROW 4: THE CRUX ──────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
-  % TODO: name the assignment and say plainly which form it takes today — the packet's
-  % Check Your Understanding pages OR the equivalent DeltaMath set. Give the due date and
-  % how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{Same 250. Two different questions.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 8--10 $\cdot$ the whole point of today $\cdot$ vote again}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{l c c c}
+      \hline
+       & \textbf{Passed} & \textbf{Did not} & \textbf{Total} \\
+      \hline
+      \textbf{App} & \textbf{250} & 357 & \textbf{607} \\
+      \textbf{No app} & 64 & 329 & 393 \\
+      \textbf{Total} & \textbf{314} & 686 & 1,000 \\
+      \hline
+      \end{tabular}
+      \end{center}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item $P(\text{Pass} \mid \text{App}) = 250/607 \approx$ \redink{0.41}
+        \item $P(\text{App} \mid \text{Pass}) = 250/314 \approx$ \redink{0.80}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{block}{Name the group the question is about: that group goes after the bar}
+    Dana asks about \emph{app users}, so 0.41 answers her: under half. The poster quoted the 0.80.
+    \redink{Disagree.} Dana should not count on the app alone.
+  \end{block}
 \end{frame}
+
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Guided Practice: Spam Filter}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 11--14 $\cdot$ you hold the pen}
+  \begin{columns}[t]
+    \begin{column}{0.42\textwidth}
+      \renewcommand{\arraystretch}{1.3}
+      {\small
+      \begin{tabular}{l c c c}
+      \hline
+       & \textbf{Flagged} & \textbf{Not} & \textbf{Total} \\
+      \hline
+      \textbf{Spam} & 90 & 10 & 100 \\
+      \textbf{Not spam} & 110 & 790 & 900 \\
+      \textbf{Total} & 200 & 800 & 1,000 \\
+      \hline
+      \end{tabular}}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item[11.] Find $P(\text{Flagged} \mid \text{Spam})$. Say it in words.
+        \item[12.] Find $P(\text{Spam} \mid \text{Flagged})$. Say it in words.
+        \item[13.] Are Flagged and Spam independent?
+        \item[14.] Theo: ``It catches 90\% of spam, so a flagged email is almost surely spam.
+              Delete them unread.'' Which probability answers him? Should he?
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{block}{The question behind the question}
+    What does Theo know about the email in front of him?
+  \end{block}
+\end{frame}
+
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Debrief: given what?}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Problem 14: 0.90 beside 0.45. Say the sentence --- \emph{the question starts from a
+          flagged email, so flagged goes after the bar.}
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Most students on the honor roll eat breakfast. Jay says a student who eats breakfast will
+    probably make the honor roll. \textbf{What did he do?}
+  \end{block}
+\end{frame}
+
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: the homework}
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own, outside class $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{The last two free throws} --- 1,000 simulated late-game trips, two players.
+    \item Two conditional probabilities from one count, and the multiplication rule from Lesson 3.3.
+    \item The independence test, and what the Law of Large Numbers says about a short run.
+    \item An assistant coach's claim, and your decision: who shoots?
+  \end{itemize}
+  \begin{block}{The packet pages. Scored 1 to 5, due at the start of the first class after two study halls.}
+    Write each final answer in its box. Do item 6 first if you are short on time. Row 4 of your
+    notes and the \emph{Keep in Mind} box are your reference.
+  \end{block}
+\end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large ``Given'' changes the whole. Before you trust a probability,
+    ask: given what?}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 3.5, Counting and Probability with Counting.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

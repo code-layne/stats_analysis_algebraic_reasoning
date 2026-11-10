@@ -1,0 +1,11 @@
+# Rubric for saar-u03-l04-hw item q4 (unit03/lesson04/homework).
+id: q4
+points: 2
+task: "Is making both independent of who shoots? Compare P(Made both | Sam) with P(Made both), and say what your answer means for the team."
+criteria:
+  - id: compare
+    points: 1
+    full: "Gives both values and compares them: P(Made both | Sam) = 128/200 = 0.64 and P(Made both) = 414/1000, about 0.41."
+  - id: conclude
+    points: 1
+    full: "Concludes the events are not independent (dependent), and says in context that the chance of making both depends on who shoots."

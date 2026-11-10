@@ -1,40 +1,59 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
-\documentclass[10pt]{article}
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
+% THREE packet rows — Warm-Up, Guided Notes & Practice, Homework. A contents list, no Score column.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \usepackage{ltablex}
 \keepXColumns
+% Measured banner: the band grows to fit the title block, so a title long enough to wrap grows
+% the band rather than running out of it (the stats course's \coverbanner; saar-article does not
+% carry one, so it is defined here — every cover copies this block verbatim).
+\newsavebox{\bannerbox}
+\newlength{\bannerht}
+\newlength{\coverbannerpad}
+\setlength{\coverbannerpad}{0.16in}       % breathing room above and below the text
+\newcommand{\coverbanner}[2]{%
+  \sbox{\bannerbox}{%
+    \begin{minipage}{\dimexpr\paperwidth-1.4in\relax}%
+      \centering
+      {\color{white}\textbf{\LARGE \CourseName}}\\[4pt]
+      {\color{frostmid}\large\textbf{#1}}\\[6pt]
+      {\color{white}\textbf{\large #2}}%
+    \end{minipage}}%
+  \setlength{\bannerht}{\dimexpr\ht\bannerbox+\dp\bannerbox+2\coverbannerpad\relax}%
+  \noindent\begin{tikzpicture}[remember picture, overlay]
+    \fill[cerulean] (current page.north west)
+      rectangle ([yshift=-\bannerht]current page.north east);
+    \node[anchor=north, inner sep=0pt]
+      at ([yshift=-\coverbannerpad]current page.north) {\usebox{\bannerbox}};
+  \end{tikzpicture}\par
+  % The text body starts 0.6in below the page edge (geometry top=0.6in), so reserve only what
+  % the band overruns that, plus a gap under the band.
+  \vspace*{\dimexpr\bannerht-0.6in+0.16in\relax}%
+}
 
 \begin{document}
 
-% Full-bleed cerulean banner
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[cerulean] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.8in}
+% Full-bleed cerulean banner, sized to the title block.
+\coverbanner{Unit 3}{Lesson 3.4 \quad Conditional Probability, Independence, and Simulation}
 
-\begin{center}
-  {\color{white}\textbf{\LARGE Statistical Analysis \& Algebraic Reasoning}}\\[4pt]
-  {\color{frostmid}\large\textbf{Unit 3}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.4 \quad Addition and Multiplication Rules}}
-\end{center}
-
-\vspace{0.22in}
-% NAMESTRIP: this is the ONLY component that carries the name row. Everything else
-% is stapled behind it.
+\vspace{0.06in}
+% NAMESTRIP: this is the ONLY component that carries the name row.
 \namedateperiod
 \vspace{0.18in}
 
-% SPOILER RULE (EFFL): targets are plain-language descriptions of what students will be able
-% to DO — never the formal vocabulary the debrief will attach ("how spread out the values are",
-% not "standard deviation"; "how fast it grows", not "exponential"). The lettered standard
-% codes belong in the teacher-facing lesson plan, not here.
+% The standard codes stay in the teacher-facing plan.
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: spoiler-free learning target 1.
-  \item \ldots{} TODO: spoiler-free learning target 2.
+  \item \ldots{} find a \textbf{conditional probability} from a two-way table by restricting to
+        the ``given'' row or column.
+  \item \ldots{} use $P(B \mid A) = \dfrac{P(A \text{ and } B)}{P(A)}$ with a Venn diagram, and
+        know it is $0$ for mutually exclusive events.
+  \item \ldots{} test whether two events are \textbf{independent} by comparing $P(A \mid B)$ with
+        $P(A)$.
+  \item \ldots{} read a \textbf{simulation}, explain the \textbf{Law of Large Numbers}, and justify a
+        decision with the conditional probability that answers the question.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -47,24 +66,26 @@
 \rowcolor{frost}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up    & TODO (spoiler-free) \\
-2 & Experience \& Formalize & \emph{TODO Activity Title} --- TODO scenarios (with your group),
-                 then QuickNotes and an application we work together \\
-% Homework is this course's Check Your Understanding set and IS scored. The cover is a contents list, with no Score column. Whether it is assigned from this packet or swapped for the equivalent
-% DeltaMath set is decided lesson by lesson at Close & Assign; the pages are authored either
-% way, so the row never changes.
-3 & Homework   & Check Your Understanding --- TODO, practice in new contexts \\
+1 & Warm-Up & A two-way table from a summer coding course: reading counts, percent of a part,
+             comparing decimals \\
+2 & Guided Notes \& Practice & Conditional probability from a table and by formula; the
+             independence test; a simulated study app and a decision --- then a spam filter we
+             work together \\
+3 & Homework & A free-throw simulation and a coach's decision. \textbf{Scored 1 to 5, assigned
+             today, due the first class after two study halls.} \\
 \end{tabularx}
 \end{tocbox}
 
 \vspace{0.14in}
 
-% Keep in Mind describes the EFFL PROCESS only, and stops there — no content preview,
-% no formal vocabulary (the spoiler rule).
+% Keep in Mind carries the lesson's CONTENT — the rule, the test, the trap — never its process.
 \begin{remindbox}
-\small In this lesson you will \textbf{experience first, formalize later}: you and your group
-will work out TODO using what you already know --- and only afterward will we name what you
-found.
+\small
+The word after the bar names the group: in $P(A \mid B)$, restrict to $B$ and divide by $B$'s total.
+Events are \textbf{independent} when $P(A \mid B) = P(A)$; if the two differ, the events are
+dependent. By the \textbf{Law of Large Numbers}, a long \textbf{simulation} settles near the actual
+probability. \textbf{Watch out:} $P(A \mid B)$ and $P(B \mid A)$ are different numbers. Before you
+decide, name the group the question is about, and put that group after the bar.
 \end{remindbox}
 
 \end{document}

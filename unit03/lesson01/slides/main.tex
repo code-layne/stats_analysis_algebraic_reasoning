@@ -1,6 +1,12 @@
-%! Displaying Categorical Data — Unit 3, Lesson 3.1 — Slides (Beamer)
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Slides (Beamer)
+% GRADUAL RELEASE deck, 5/45/5/5: title → targets → warm-up → hook (dark, UNRESOLVED) → I DO
+% divider (dark) → one frame per notes row, crux frames flagged \sectionlabel[redacc]{} → Guided
+% Practice (a LIVE surface, un-answered) → spoken debrief with the cold check → You do: THE
+% HOMEWORK, assigned (not started in class) → close (dark). Standards: PS.DS.4a-d.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
 
 \begin{document}
 
@@ -11,79 +17,336 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.1}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Displaying Categorical Data}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Displaying and Analyzing Categorical Data}\\[1.2cm]
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3~$\cdot$~PS.DS.4a--d}
   \end{minipage}
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~9 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → close & assign.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% LEARNING TARGETS (spoiler-free)
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 3.1}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item read a bar graph as a frequency or a \textbf{relative frequency}.
+    \item compare groups with \textbf{side-by-side} and \textbf{segmented} bar graphs.
+    \item build a \textbf{two-way table} and read its \textbf{marginal frequencies}.
+    \item find \textbf{conditional relative frequencies} and name the whole.
+    \item compare groups of different sizes with percents, not raw counts.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    one application together $\to$ practice.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one survey we work as a class} $\to$
+    debrief $\to$ \textbf{the homework, assigned today and done outside class}.
   \end{block}
 \end{frame}
 
-% WARM-UP
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
-  \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items.
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{Unit 3 starts here $\cdot$ groups and chances}
+  \vspace{0.2cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \item Find 47\% of 200, 45\% of 120, and 50\% of 80.
+        \item Write as percents: $\dfrac{94}{200}$, $\dfrac{54}{120}$, $\dfrac{40}{80}$. Which of
+              the last two has the larger top number? Which is the larger percent?
+        \item Bus 94, Car 80, Walk 26, Total 200. How many come by car? What percent walk?
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.2cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- every number comes back in the notes.}
+  \end{center}
 \end{frame}
 
-% ACTIVITY LAUNCH
+% ── HOOK — leave it UNRESOLVED; problem 9 settles it ─────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.2cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small THE OAKDALE HIGH NEWSLETTER}\\[0.7cm]
+    {\color{white}\bfseries\Large ``54 ninth graders ride the bus and only 40 twelfth graders do,
+    so ninth graders are more likely to ride the bus.''}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Agree, disagree, or can't tell yet?}\\[0.5cm]
+    {\color{frostmid}\small Vote, and write one line of why. We vote again at problem 9.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO ─────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1. BAR GRAPHS ────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \ceruleanheader{One variable, two axes}
+  \sectionlabel{notes row 1 $\cdot$ Bar Graphs $\cdot$ problems 1--2}
+  \begin{center}
+  \begin{tikzpicture}[x=1cm, y=0.03cm]
+    \foreach \v in {20,40,...,100} { \draw[linegray] (0,\v) -- (4.6,\v); }
+    \foreach \v in {0,20,...,100} { \node[left, font=\scriptsize] at (0,\v) {\v}; }
+    \draw[thick] (0,0) -- (0,104);  \draw[thick] (0,0) -- (4.6,0);
+    \foreach \x/\h/\f/\n in {0.45/94/cerulean/Bus, 1.9/80/frostmid/Car, 3.35/26/goldbg/Walk} {
+      \fill[\f, draw=charcoal] (\x,0) rectangle ({\x+0.8},\h);
+      \node[above, font=\scriptsize\bfseries] at ({\x+0.4},\h) {\h};
+      \node[below, font=\scriptsize] at ({\x+0.4},0) {\n};
+    }
+    \node[font=\footnotesize\bfseries] at (2.3,118) {Frequency};
+    \begin{scope}[xshift=6.7cm]
+    \foreach \v in {10,20,...,50} { \draw[linegray] (0,{\v*2}) -- (4.6,{\v*2}); }
+    \foreach \v in {0,10,...,50} { \node[left, font=\scriptsize] at (0,{\v*2}) {\v\%}; }
+    \draw[thick] (0,0) -- (0,104);  \draw[thick] (0,0) -- (4.6,0);
+    \foreach \x/\h/\f/\n/\p in {0.45/94/cerulean/Bus/47, 1.9/80/frostmid/Car/40, 3.35/26/goldbg/Walk/13} {
+      \fill[\f, draw=charcoal] (\x,0) rectangle ({\x+0.8},\h);
+      \node[above, font=\scriptsize\bfseries] at ({\x+0.4},\h) {\p\%};
+      \node[below, font=\scriptsize] at ({\x+0.4},0) {\n};
+    }
+    \node[font=\footnotesize\bfseries] at (2.3,118) {Relative frequency};
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Problem 1: \textbf{94} of the 200 surveyed students ride the bus.
+    \item Problem 2: Car $= 80/200 = \mathbf{40\%}$. \redink{Relative frequency = count $\div$ total.}
+  \end{itemize}
+\end{frame}
+
+% ── ROW 2. TWO KINDS OF BARS ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Two ways to compare the grades}
+  \sectionlabel{notes row 2 $\cdot$ Two Kinds of Bars $\cdot$ problems 3--4 $\cdot$ both graphs are counts}
+  \begin{center}
+  \begin{tikzpicture}[x=1cm, y=0.05cm]
+    \foreach \v in {20,40,60} { \draw[linegray] (0,\v) -- (5.2,\v); }
+    \foreach \v in {0,20,40,60} { \node[left, font=\scriptsize] at (0,\v) {\v}; }
+    \draw[thick] (0,0) -- (0,63);  \draw[thick] (0,0) -- (5.2,0);
+    \foreach \c/\a/\b/\n in {0.3/54/40/Bus, 2.0/48/32/Car, 3.7/18/8/Walk} {
+      \fill[cerulean, draw=charcoal] (\c,0) rectangle ({\c+0.6},\a);
+      \fill[goldbg, draw=charcoal] ({\c+0.6},0) rectangle ({\c+1.2},\b);
+      \node[above, font=\scriptsize\bfseries] at ({\c+0.3},\a) {\a};
+      \node[above, font=\scriptsize\bfseries] at ({\c+0.9},\b) {\b};
+      \node[below, font=\scriptsize] at ({\c+0.6},0) {\n};
+    }
+    \node[font=\scriptsize\bfseries] at (2.6,72) {Side-by-side (dark: Grade 9)};
+    \begin{scope}[xshift=7cm, y=0.0275cm]
+    \foreach \v in {40,80,120} { \draw[linegray] (0,\v) -- (4.8,\v); }
+    \foreach \v in {0,40,80,120} { \node[left, font=\scriptsize] at (0,\v) {\v}; }
+    \draw[thick] (0,0) -- (0,122);  \draw[thick] (0,0) -- (4.8,0);
+    \foreach \x/\a/\b/\t/\g in {0.5/54/102/120/Grade 9, 2.9/40/72/80/Grade 12} {
+      \fill[cerulean, draw=charcoal] (\x,0) rectangle ({\x+1},\a);
+      \fill[frostmid, draw=charcoal] (\x,\a) rectangle ({\x+1},\b);
+      \fill[goldbg, draw=charcoal] (\x,\b) rectangle ({\x+1},\t);
+      \node[right, font=\scriptsize\bfseries, inner sep=1.5pt] at ({\x+1},\a) {\a};
+      \node[right, font=\scriptsize\bfseries, inner sep=1.5pt] at ({\x+1},\b) {\b};
+      \node[above, font=\scriptsize\bfseries, inner sep=1.5pt] at ({\x+0.5},\t) {\t};
+      \node[below, font=\scriptsize] at ({\x+0.5},0) {\g};
+    }
+    \node[font=\scriptsize\bfseries] at (2.4,143) {Segmented (running totals)};
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Problem 3: the largest gap is Car, $48 - 32 = \mathbf{16}$ students.
+    \item Problem 4: twelfth graders by car: $72 - 40 = \mathbf{32}$. \redink{72 is a running total.}
+  \end{itemize}
+\end{frame}
+
+% ── ROW 3. TWO-WAY TABLE ─────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{From a summary to a two-way table}
+  \sectionlabel{notes row 3 $\cdot$ Two-Way Tables $\cdot$ problems 5--7}
+  \begin{columns}[t]
+    \begin{column}{0.54\textwidth}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}[t]{l c c c c}
+      \hline
+       & \textbf{Bus} & \textbf{Car} & \textbf{Walk} & \textbf{Total} \\
+      \hline
+      Grade 9 & 54 & 48 & \redink{18} & 120 \\
+      Grade 12 & 40 & 32 & \redink{8} & 80 \\
+      \textbf{Total} & \textbf{94} & \textbf{80} & \textbf{26} & \textbf{200} \\
+      \hline
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item The summary leaves out Walk: \textbf{subtract}.
+        \item Inside cell: a \textbf{joint} count. Problem 6: \textbf{8} twelfth graders walk.
+        \item A Total: a \textbf{marginal frequency}. Problem 7: \textbf{80} come by car.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 4. WHICH WHOLE ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Which whole?}
+  \sectionlabel{notes row 4 $\cdot$ Which Whole? $\cdot$ problem 8, then vote again at problem 9}
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item \textbf{Marginal relative frequency:} a Total $\div$ the whole table.
+    \item \textbf{Conditional relative frequency:} an inside cell $\div$ the total of
+          \emph{one} group.
+    \item Problem 8: $94/200 = \mathbf{47\%}$ of the surveyed students ride the bus.
+  \end{itemize}
+  \begin{block}{The test}
+    In ``Of the [group], what percent \ldots?'' \redink{the words after \emph{of} name the whole}
+    --- and that total is the denominator.
+  \end{block}
+  \vspace{6pt}
+  \begin{center}
+    {\color{cerulean}\bfseries Problem 9: vote again before anyone divides.}
+  \end{center}
+\end{frame}
+
+% ── THE CRUX ─────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{More riders. Smaller percent.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problem 9 $\cdot$ the whole point of today}
+  \begin{center}
+  \begin{tikzpicture}[x=0.1cm, y=1cm]
+    \foreach \v in {0,20,...,100} {
+      \draw[linegray] (\v,0) -- (\v,1.75);
+      \node[below, font=\scriptsize] at (\v,0) {\v\%}; }
+    \draw[thick] (0,0) -- (100,0);
+    \foreach \y/\g/\a/\b/\c in {1.05/Grade 9/45/40/15, 0.2/Grade 12/50/40/10} {
+      \fill[cerulean, draw=charcoal] (0,\y) rectangle (\a,\y+0.55);
+      \fill[frostmid, draw=charcoal] (\a,\y) rectangle ({\a+\b},\y+0.55);
+      \fill[goldbg, draw=charcoal] ({\a+\b},\y) rectangle (100,\y+0.55);
+      \node[font=\footnotesize\bfseries, text=white] at ({\a/2},\y+0.275) {Bus \a\%};
+      \node[font=\footnotesize\bfseries] at ({\a+\b/2},\y+0.275) {Car \b\%};
+      \node[font=\scriptsize\bfseries] at ({\a+\b+\c/2},\y+0.275) {\c\%};
+      \node[anchor=east, font=\scriptsize\bfseries] at (-1,\y+0.275) {\g};
+    }
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{2pt}
+    \item Ninth graders: $54/120 =$ \redink{45\%}. Twelfth graders: $40/80 =$ \redink{50\%}.
+  \end{itemize}
+  \begin{block}{Counts say how many. Conditional percents say how likely.}
+    To compare groups of different sizes, compare conditional percents. The newsletter is wrong:
+    \redink{twelfth graders are more likely to ride.}
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
+% ── THE TRAP ─────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
+  \ceruleanheader{The same 54, two different wholes}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 10--11}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Of ninth graders, what percent ride?}
+        $54/120 = 45\%$. The whole is the \textbf{120 ninth graders}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Of bus riders, what percent are ninth graders?}
+        $54/94 \approx 57\%$. The whole is the \textbf{94 bus riders}.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item Problem 10: Dani's 57\% is a percent of \redink{bus riders}, not of ninth graders.
+    \item Problem 11: Car is $48/120 = 40\%$ and $32/80 = 40\%$. \textbf{Different counts, the
+          same likelihood.}
+  \end{itemize}
 \end{frame}
 
-% QUICKNOTES SUMMARY
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
+  \ceruleanheader{Guided Practice: Streaming Choices}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 12--15 $\cdot$ you hold the pen}
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      {\small\renewcommand{\arraystretch}{1.3}%
+      \begin{tabular}{l c c c c}
+      \hline
+       & \textbf{Star} & \textbf{Reel} & \textbf{Pulse} & \textbf{Total} \\
+      \hline
+      Under 30 & 45 & 30 & 25 & 100 \\
+      30 and over & 60 & 66 & 24 & 150 \\
+      \textbf{Total} & 105 & 96 & 49 & 250 \\
+      \hline
+      \end{tabular}}\\[6pt]
+      {\footnotesize Fairview Community Library, 250 patrons.}\\[8pt]
+      {\color{cerulean}\bfseries Before you divide: of whom?}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      {\small
+      \begin{itemize}\setlength{\itemsep}{3pt}
+        \item[12.] Percent of all patrons who prefer Pulse? What kind?
+        \item[13.] Of patrons under 30, percent who prefer Pulse? What kind?
+        \item[14.] Ty: ``$25/49 \approx 51\%$, so 51\% of patrons under 30 prefer Pulse.'' What
+              whole did he use?
+        \item[15.] Flyer: ``More patrons 30 and over chose StarView (60 to 45), so they are more
+              likely to prefer it.'' Check it.
+      \end{itemize}}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% APPLICATION
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, then the interpret-in-context question and the "what if" that
-  % demands a justification. This is the lesson's only in-class practice.
+  \ceruleanheader{Debrief: of whom?}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Problem 15: 40\% of patrons 30 and over, 45\% of patrons under 30. Say the sentence ---
+          \emph{counts say how many; conditional percents say how likely.}
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Thirty of \textbf{60} juniors and \textbf{40} of \textbf{100} seniors signed up for a field
+    trip. Morgan says seniors are more likely to sign up. \textbf{Is she right? Give both
+    percents.}
+  \end{block}
 \end{frame}
 
-% CLOSE & ASSIGN
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
-  % TODO: name the assignment and say plainly which form it takes today — the packet's
-  % Check Your Understanding pages OR the equivalent DeltaMath set. Give the due date and
-  % how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{You do: the homework}
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own, outside class $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Pet adoptions at an animal shelter} --- dog or cat, by adopter age.
+    \item Finish a two-way table from a summary; interpret a percent.
+    \item Two questions about the same count, over two different wholes.
+    \item A claim built on counts, and a choice between two displays.
+  \end{itemize}
+  \begin{block}{The packet pages: every answer in its box. Scored 1 to 5, due at the start of the first class after two study halls.}
+    Do item 5 first if you are short on time --- it shows whether today landed. Your notes' rows
+    3 and 4 and the \emph{Keep in Mind} box are your reference.
+  \end{block}
 \end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Counts say how many. Conditional percents say how likely.
+    Before you divide, ask: of whom?}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 3.2, Probability Models --- today's relative frequency
+    is the first step toward a probability.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

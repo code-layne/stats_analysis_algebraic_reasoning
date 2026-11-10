@@ -1,0 +1,11 @@
+# Rubric for saar-u03-l03-hw item q4b (unit03/lesson03/homework).
+id: q4b
+points: 1
+task: "Without replacement: independent or dependent? Justify with the chance of gold on the second pick."
+criteria:
+  - id: verdict
+    points: 0.5
+    full: "Dependent."
+  - id: reason
+    points: 0.5
+    full: "The chance of gold on the second pick changes after a gold is kept out: 0.4 becomes 0.25 (1 of the 4 capsules left)."

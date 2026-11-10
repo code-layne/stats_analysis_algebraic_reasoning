@@ -56,17 +56,16 @@ Standards: PS.DS.1, PS.DS.2, PS.DS.3
 3. Boxplots, outliers, and resistance: boxplots, 1.5·IQR rule, influence of outliers, cumulative frequency graphs (PS.DS.1a, 2c–d)
 4. Comparing distributions (PS.DS.3a–b)
 
-### Unit 3 — Categorical Data & Probability (8 lessons)
+### Unit 3 — Categorical Data & Probability (5 lessons)
 Standards: PS.DS.4, PS.P.1, AFDA.DA.3
 
-1. Displaying categorical data: bar graphs & two-way tables (PS.DS.4a–d)
-2. Probability basics: theoretical probability, complements (PS.P.1a; AFDA.DA.3a, e)
-3. Venn diagrams, tree diagrams, two-way-table probabilities (PS.P.1b; AFDA.DA.3c)
-4. Addition & multiplication rules; mutually exclusive vs. independent (PS.P.1a, c; AFDA.DA.3f)
-5. Conditional probability and independence (PS.P.1d; AFDA.DA.3b)
-6. Simulations and probability-based decisions (AFDA.DA.3d)
-7. Counting techniques: Fundamental Counting Principle, permutations, combinations (AFDA.DA.3g–i; A2.ST.3a–c, e)
-8. Probability with counting: applications (AFDA.DA.3a, g–i; A2.ST.3d)
+*Consolidated 2026-11-09 from a launch and eight lessons to five (see `unit_lesson_breakdown.md`).*
+
+1. Displaying and analyzing categorical data: bar graphs, two-way tables, marginal and conditional frequencies (PS.DS.4a–d)
+2. Probability models: theoretical probability, complements, Venn diagrams, trees, two-way tables (PS.P.1a, b; AFDA.DA.3a, c, e)
+3. Addition & multiplication rules; mutually exclusive vs. independent (PS.P.1a, c; AFDA.DA.3e, f)
+4. Conditional probability, independence, and simulation-based decisions (PS.P.1d; AFDA.DA.3b, c, d)
+5. Counting and probability with counting: FCP, permutations, combinations (AFDA.DA.3a, g–i; A2.ST.3a–e)
 
 ### Unit 4 — Random Variables & the Normal Distribution (7 lessons)
 Standards: PS.P.2, PS.P.3, AFDA.DA.4

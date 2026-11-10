@@ -1,0 +1,11 @@
+# Rubric for saar-u03-l01-hw item q2 (unit03/lesson01/homework).
+id: q2
+points: 2
+task: "What percent of all 300 adoptions were dogs? Give the percent and say what it means for this shelter."
+criteria:
+  - id: value
+    points: 1
+    full: "Gives 55% (165 of 300)."
+  - id: context
+    points: 1
+    full: "Says what it means here: of all the pets adopted from the shelter last year, 55% were dogs."

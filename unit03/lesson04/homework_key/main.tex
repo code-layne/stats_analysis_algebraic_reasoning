@@ -1,24 +1,137 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Homework (Answer Key)
-\documentclass[10pt]{article}
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Homework (Answer Key)
+% This is the lesson's SCORED (1 to 5) individual practice, the LAST component in the packet,
+% assigned at Close & Assign and done OUTSIDE class. Packet is the form for this lesson.
+% THIRD CONTEXT: notes = study app and passing; Guided Practice = spam filter; here = free throws.
+% TWO PAGES MAX. 12 points, 2 per item. Three rubric boxes (items 4, 5, 6).
+% Items 1 and 2 are the deliberate CONTRAST PAIR (the same 286, over 800 and over 414). Item 3 is
+% the spiral (Lesson 3.3, multiplication rule). Item 4 is the justification (independence test).
+% Item 5 is the interpretation (Law of Large Numbers). Item 6 is the crux head-on.
+% THE DATA — a REAL pre-run simulation (Python random.Random(3357)): 800 Riley trips at 0.6 per
+%   shot, 200 Sam trips at 0.8 per shot, two shots a trip. Riley 286 both, 514 not (800); Sam 128
+%   both, 72 not (200); both 414, not 586. P(B|R) = .3575; P(R|B) = 286/414 = .6908;
+%   P(B|S) = .64; P(B) = .414. The running line is Sam's: 0.80 after 20 trips, 0.64 after 200.
+% PAGE LOCKSTEP: the key differs only in -key for -boxes and the header; every \gradedblank line
+% and work block is byte-identical.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{saar-u03-l04-hw}
+\gradingcourse{stats_analysis_algebraic_reasoning}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Handwriting room inside every \begin{work} block. Moves the blank and the key together.
+\setlength{\workrowsep}{8pt}
 
 \begin{document}
 
-\pageheader{Unit 3, Lesson 3.4}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
+\pageheader{Unit 3, Lesson 3.4}{Homework\strut --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
+% Authored identically in homework/ and homework_key/.
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} It is scored 1 to 5 and due at the start of the first
+class after two study halls. It is assigned today and done on your own, outside class --- flip
+back to the \emph{Keep in Mind} box on the cover and to row~4 of your notes.
+\end{remindbox}
+
+\vspace{0.06in}
+
+\boxguard[20]
+\begin{scenariobox}[The Last Two Free Throws]{cerulean}
+\small
+Coach Okafor must choose who shoots two free throws when a close game is on the line. Riley gets
+fouled the most, so she takes most of those trips. A spreadsheet simulated $1{,}000$ late-game
+trips of two shots each, using each player's free-throw rate: Riley $60\%$, Sam $80\%$.
+
+\vspace{4pt}
+\noindent\begin{minipage}[c]{0.5\linewidth}\centering
+\begin{tikzpicture}[x=0.036cm, y=2.5cm]
+  \foreach \v in {0.2,0.4,0.6,0.8,1.0} { \draw[linegray, densely dashed] (0,\v) -- (205,\v); }
+  \draw[thick, ->] (0,0) -- (212,0);
+  \draw[thick] (0,0) -- (0,1.05);
+  \foreach \v in {0,50,...,200} { \draw (\v,0.02) -- (\v,-0.02) node[below, font=\scriptsize] {\v}; }
+  \foreach \v in {0,0.2,0.4,0.6,0.8,1.0} { \draw (1.5,\v) -- (-1.5,\v) node[left, font=\scriptsize] {\v}; }
+  \node[font=\scriptsize\itshape] at (105,-0.3) {Sam's simulated trips so far};
+  \node[font=\scriptsize\itshape, rotate=90] at (-30,0.5) {proportion made both};
+  \draw[cerulean, thick, line join=round] plot coordinates {(1,1.000) (2,1.000) (3,1.000) (4,1.000) (5,1.000) (6,1.000) (7,1.000) (8,1.000) (9,0.889) (10,0.900) (11,0.818) (12,0.833) (13,0.846) (14,0.857) (15,0.867) (16,0.875) (17,0.824) (18,0.833) (19,0.842) (20,0.800) (25,0.720) (30,0.733) (35,0.714) (40,0.725) (45,0.756) (50,0.740) (55,0.745) (60,0.733) (65,0.708) (70,0.700) (75,0.693) (80,0.688) (85,0.659) (90,0.656) (95,0.653) (100,0.660) (105,0.648) (110,0.627) (115,0.626) (120,0.625) (125,0.632) (130,0.638) (135,0.630) (140,0.629) (145,0.634) (150,0.640) (155,0.639) (160,0.631) (165,0.636) (170,0.641) (175,0.640) (180,0.639) (185,0.632) (190,0.637) (195,0.641) (200,0.640)};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.47\linewidth}\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Made both} & \textbf{Did not} & \textbf{Total} \\
+\midrule
+\textbf{Riley} & $286$ & $514$ & $800$ \\
+\textbf{Sam} & $128$ & $72$ & $200$ \\
+\textbf{Total} & $414$ & $586$ & $1{,}000$ \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{scenariobox}
+
+\vspace{0.06in}
+
 \boxguard
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Reading the Simulation}
+Round probabilities to two decimals. Show your work outside the boxes.
+\begin{enumerate}[leftmargin=1.6em, itemsep=7pt, topsep=3pt]
+
+  \item Find $P(\text{Made both} \mid \text{Riley})$.
+        \begin{work}
+          P &= 286 / 800 \approx 0.36
+        \end{work}
+        \par\vspace{3pt}
+        $P(\text{Made both} \mid \text{Riley})$: \blankbox{\gradedblank[id=q1, type=short, points=2, answer={0.36}, check=numeric, tolerance=0.01]{2.4cm}{13.5pt}}
+
+  \item Find $P(\text{Riley} \mid \text{Made both})$. The numerator is the same as in item~1.
+        \begin{work}
+          P &= 286 / 414 \approx 0.69
+        \end{work}
+        \par\vspace{3pt}
+        $P(\text{Riley} \mid \text{Made both})$: \blankbox{\gradedblank[id=q2, type=short, points=2, answer={0.69}, check=numeric, tolerance=0.01]{2.4cm}{13.5pt}}
+
+  \item \emph{Back to Lesson 3.3.} Treat each player's two shots as independent. Use the
+        multiplication rule to find each player's actual chance of making both.
+        \begin{work}
+          \text{Sam: } P &= (0.8)(0.8) = 0.64 \\
+          \text{Riley: } P &= (0.6)(0.6) = 0.36
+        \end{work}
+        \par\vspace{3pt}
+        Sam: \blankbox{\gradedblank[id=q3a, type=short, points=1, answer={0.64}, check=numeric, tolerance=0.005]{2.4cm}{13.5pt}} \qquad
+        Riley: \blankbox{\gradedblank[id=q3b, type=short, points=1, answer={0.36}, check=numeric, tolerance=0.005]{2.4cm}{13.5pt}}
+
+\end{enumerate}
 \end{notesbox}
+
+\boxguard[30]
+\begin{notesbox}{Reading the Simulation, continued}
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=1pt, start=4]
+
+  \item Is making both \emph{independent} of who shoots? Compare
+        $P(\text{Made both} \mid \text{Sam})$ with $P(\text{Made both})$. What does it mean here?
+        \gradedresponse{\gradedblank[id=q4, type=rubric, points=2, display={Not independent. $P(\text{Made both} \mid \text{Sam}) = 128/200 = 0.64$, but $P(\text{Made both}) = 414/1000 \approx 0.41$. They differ, so the chance of making both depends on who shoots.}]{\linewidth}{2in}}
+
+  \item Sam's line read $0.80$ after $20$ trips and $0.64$ after $200$. Which value should the
+        coach trust? Explain using the Law of Large Numbers.
+        \gradedresponse{\gradedblank[id=q5, type=rubric, points=2, display={Trust 0.64. By the Law of Large Numbers, the relative frequency gets closer to the actual probability as trials repeat. 20 trips still swing; 200 settle, and 0.64 matches item 3.}]{\linewidth}{2in}}
+
+  \item An assistant says, \emph{``Most trips where we made both were Riley's, so give her the
+        ball.''} Which probabilities answer the coach's question? Who should shoot? Justify.
+        \gradedresponse{\gradedblank[id=q6, type=rubric, points=2, display={He used $P(\text{Riley} \mid \text{Made both}) \approx 0.69$, high only because Riley takes most trips. The question needs $P(\text{Made both} \mid \text{player})$: Riley 0.36, Sam 0.64. Sam should shoot.}]{\linewidth}{2in}}
+
+\end{enumerate}
+\end{notesbox}
+
+\boxguard[5]
+\begin{spiralbox}
+\small\textbf{Next: Lesson 3.5, Counting and Probability with Counting.} How many ways can Coach
+Okafor line up five starters? We count outcomes, then use the counts to find probabilities.
+\end{spiralbox}
 
 \end{document}

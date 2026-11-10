@@ -1,6 +1,18 @@
-%! Conditional Probability and Independence — Unit 3, Lesson 3.5 — Slides (Beamer)
+%! Counting and Probability with Counting — Unit 3, Lesson 3.5 — Slides (Beamer)
+% GRADUAL RELEASE deck, 5/45/5/5: title → targets → warm-up → hook (dark, UNRESOLVED) → I DO
+% divider (dark) → one frame per notes row, two for the crux row (flagged \sectionlabel[redacc]{})
+% → Guided Practice (a LIVE surface, un-answered) → spoken debrief with the cold check → You do:
+% THE HOMEWORK, assigned (not started in class) → close (dark). Standards: AFDA.DA.3a, g, h, i;
+% A2.ST.3a-e.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
+
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+\newcommand{\Pnr}[2]{{}_{#1}P_{#2}}
+\newcommand{\Cnr}[2]{{}_{#1}C_{#2}}
+% A pre-made calculator screen, input left, output right.
+\newcommand{\calcline}[2]{\noindent#1\hfill#2\par}
+\newcommand{\calcscreen}[2]{\fcolorbox{charcoal}{frost}{\begin{minipage}{#1}\ttfamily\small #2\end{minipage}}}
 
 \begin{document}
 
@@ -11,79 +23,286 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.5}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Conditional Probability and Independence}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Counting and Probability with Counting}\\[1.2cm]
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3~$\cdot$~AFDA.DA.3a, g--i; A2.ST.3a--e}
   \end{minipage}
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~9 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → close & assign.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% LEARNING TARGETS (spoiler-free)
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 3.5}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item use the \textbf{Fundamental Counting Principle} and \textbf{factorial} notation.
+    \item calculate a \textbf{permutation} $\Pnr{n}{r}$ when order matters, and verify it with a calculator.
+    \item calculate a \textbf{combination} $\Cnr{n}{r}$ and explain why dividing by $r!$ removes the repeats.
+    \item decide permutation or combination by checking whether order matters.
+    \item find a probability as favorable over total using combinations, and predict from it.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    one application together $\to$ practice.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one playlist we work as a class} $\to$
+    debrief $\to$ \textbf{the homework, assigned today and done outside class}.
   \end{block}
 \end{frame}
 
-% WARM-UP
+% ── WARM-UP ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
-  \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items.
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{products and fractions $\cdot$ cancel first}
+  \vspace{0.3cm}
+  \begin{center}
+    \begin{minipage}{0.86\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{10pt}
+        \item Evaluate: \quad $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1$ \qquad $10 \cdot 9 \cdot 8$
+              \qquad $3 \cdot 2 \cdot 1$
+        \item Cancel first, then multiply: \quad $\dfrac{7 \cdot 6 \cdot 5}{3 \cdot 2 \cdot 1}$
+              \qquad $\dfrac{10 \cdot 9 \cdot 8}{3 \cdot 2 \cdot 1}$
+        \item Simplify: \quad $\dfrac{5}{12} \cdot \dfrac{4}{11} \cdot \dfrac{3}{10}$ \qquad
+              $\dfrac{10}{220}$. What do you notice?
+      \end{enumerate}
+    \end{minipage}
+  \end{center}
+  \vspace{0.3cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- every one of these numbers comes back today.}
+  \end{center}
 \end{frame}
 
-% ACTIVITY LAUNCH
+% ── HOOK — leave it UNRESOLVED; problem 10 (row 4) settles it ────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small TRUE OR FALSE?}\\[0.6cm]
+    {\color{white}\bfseries\large Picking 3 of 10 students for a committee and picking a
+    president, vice president, and treasurer from 10 students give the same number of
+    possibilities.}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Vote, and write one line of why.}\\[0.4cm]
+    {\color{frostmid}\small We vote again at problem 10.}
+  \end{center}
+\end{frame}
+}
+
+% ── I DO — direct instruction begins ─────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by
+    row --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Four terms go in the vocabulary box today. Write each one the
+    moment we use it.}
+  \end{minipage}
+\end{frame}
+}
+
+% ── ROW 1. COUNTING PRINCIPLE AND FACTORIALS ─────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \ceruleanheader{Multiply the choices}
+  \sectionlabel{notes row 1 $\cdot$ Fundamental Counting Principle and factorials $\cdot$ problems 1--4}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=1cm, y=0.5cm, font=\scriptsize,
+          choice/.style={draw=cerulean, fill=frost, rounded corners=2pt, inner sep=3pt, minimum width=1.5cm}]
+        \node[choice, minimum width=1cm] (s) at (0,0) {Start};
+        \node[choice] (a) at (2.4,2.3)  {Bake sale};
+        \node[choice] (b) at (2.4,0)    {Car wash};
+        \node[choice] (c) at (2.4,-2.3) {Dance};
+        \foreach \n in {a,b,c} \draw[thick, slate] (s.east) -- (\n.west);
+        \foreach \n/\y/\t in {a/3/Fri, a/1.6/Sat, b/0.7/Fri, b/-0.7/Sat, c/-1.6/Fri, c/-3/Sat} {
+          \draw[thick, goldacc] (\n.east) -- (4.8,\y);
+          \node[anchor=west, inner sep=2pt] at (4.8,\y) {\t}; }
+      \end{tikzpicture}
+      \end{center}
+      \begin{center}
+        $3$ fundraisers $\times$ $2$ days $=$ \redink{6} plans
+      \end{center}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Problem 1: $3 \cdot 2 \cdot 4 = \mathbf{24}$ plans.
+        \item Problem 2: repeats allowed, $10 \cdot 10 \cdot 10 = \mathbf{1000}$ codes.
+        \item \textbf{Factorial:} $n! = n(n-1)\cdots(2)(1)$, and $0! = 1$.
+        \item Problem 3: $5! = \mathbf{120}$ lineups.
+        \item Problem 4: $\dfrac{10!}{7!} = 10 \cdot 9 \cdot 8 = \mathbf{720}$.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 2. PERMUTATIONS ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Permutations: order matters}
+  \sectionlabel{notes row 2 $\cdot$ problems 5--6}
+  \begin{block}{An arrangement of $r$ of $n$ objects, no repetition, when order matters}
+    \[ \Pnr{n}{r} = \dfrac{n!}{(n-r)!} \]
+  \end{block}
+  \begin{columns}[t]
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Problem 5, chair then secretary from 8:
+              $\Pnr{8}{2} = \dfrac{8!}{6!} = 8 \cdot 7 = \mathbf{56}$.
+        \item Problem 6, 4 speaking slots from 6:
+              $\Pnr{6}{4} = \dfrac{6!}{2!} = \mathbf{360}$ ordered lineups.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{center}
+        {\small\textbf{Verify: the calculator screen}}\\[4pt]
+        \calcscreen{0.8\textwidth}{\calcline{8 nPr 2}{56}\calcline{6 nPr 4}{360}}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 3. COMBINATIONS ──────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Combinations: order does not matter}
+  \sectionlabel{notes row 3 $\cdot$ problems 7--8}
+  \begin{columns}[t]
+    \begin{column}{0.56\textwidth}
+      {\small A selection of $r$ of $n$ objects, no repetition, when order does not matter.}
+      \[ \Cnr{n}{r} = \dfrac{\Pnr{n}{r}}{r!} = \dfrac{n!}{r!\,(n-r)!} \]
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item ABC, ACB, BAC, BCA, CAB, CBA: \textbf{$3! = 6$ orderings, 1 committee.}
+        \item Problem 7: $\Cnr{7}{3} = \dfrac{7 \cdot 6 \cdot 5}{3 \cdot 2 \cdot 1} = \mathbf{35}$.
+        \item Problem 8: each committee appears $6$ times, so \redink{divide by $3!$}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \begin{center}
+        {\small\textbf{Verify: the calculator screen}}\\[4pt]
+        \calcscreen{0.86\textwidth}{\calcline{7 nPr 3}{210}\calcline{210/3!}{35}\calcline{7 nCr 3}{35}}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── ROW 4. THE CRUX — same numbers, the question decides ─────────────────────
+\begin{frame}[t, plain]
+  \ceruleanheader{Same $n$, same $r$. The question decides.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 9--10 $\cdot$ the whole point of today}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{With roles: president, VP, treasurer}
+        Swap two people: \textbf{a different outcome}.\\[4pt]
+        Permutation: $\Pnr{10}{3} = 10 \cdot 9 \cdot 8 =$ \redink{720}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Without roles: a committee of 3}
+        Swap two people: \textbf{the same committee}.\\[4pt]
+        Combination: $\Cnr{10}{3} = \dfrac{720}{3!} =$ \redink{120}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \begin{center}
+    \textbf{Vote again before we count problem 10.} The claim is \redink{false}.
+  \end{center}
+  \begin{block}{Swap two people}
+    If the outcome changes, order matters: permutation. If it does not change, order does not
+    matter: combination.
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
+  \ceruleanheader{Why 6 times? And the word \emph{choose}}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 11--12 $\cdot$ the trap}
+  \vspace{4pt}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Problem 11}
+        Each committee of 3 can hold the 3 offices in $3! = 6$ ways, so
+        $720 = 6 \cdot 120$.
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Problem 12: flag and pledge, 2 of 10}
+        Ty says, ``Choose means combination.'' \redink{No:} the two jobs are different, so
+        order matters: $\Pnr{10}{2} = 90$, not $\Cnr{10}{2} = 45$.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \begin{center}
+    {\small\color{slate} The word in the question is not the test. The swap is.}
+  \end{center}
 \end{frame}
 
-% QUICKNOTES SUMMARY
+% ── WE DO — a LIVE surface: task and data only, no answers ───────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
+  \ceruleanheader{Guided Practice: Priya's Playlist}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 13--16 $\cdot$ you hold the pen}
+  \begin{center}
+    12 songs: \textbf{5 by Luna Vale}, 7 by other artists. The app picks \textbf{3 of the 12}
+    at random; only \emph{which} 3 matters.
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item[13.] Does order matter in a mix? How many different 3-song mixes can the app make?
+    \item[14.] How many of those mixes are all Luna Vale songs?
+    \item[15.] Find $P(\text{all 3 are Luna Vale})$ as a simplified fraction and a decimal.
+    \item[16.] Priya makes a new mix on each of 110 days. Predict how many are all Luna Vale.
+          Is one of those mixes common or rare?
+  \end{itemize}
+  \begin{block}{The frame}
+    $P(\text{event}) = \dfrac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}$
+  \end{block}
 \end{frame}
 
-% APPLICATION
+% ── DEBRIEF ──────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, then the interpret-in-context question and the "what if" that
-  % demands a justification. This is the lesson's only in-class practice.
+  \ceruleanheader{Debrief: check order before you count}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Problem 15: top and bottom are \textbf{both combinations}. What goes wrong if they are not?
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Eight runners race. One question: how many ways to award gold, silver, and bronze? Another:
+    how many ways can 3 of the 8 advance to the finals? \textbf{Same number? Which is larger,
+    and by what factor? How do you know?}
+  \end{block}
 \end{frame}
 
-% CLOSE & ASSIGN
+% ── YOU DO — the homework is the individual practice, assigned today ─────────
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
-  % TODO: name the assignment and say plainly which form it takes today — the packet's
-  % Check Your Understanding pages OR the equivalent DeltaMath set. Give the due date and
-  % how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{You do: the homework}
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own, outside class $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Locker codes and a fantasy-team draft.}
+    \item Codes with repeats and without.
+    \item The same 15 players and 3 picks, asked with roles and without.
+    \item A claim that the two answers must match.
+    \item The chance of an all-rookie team, a prediction, and a look back at Lesson 3.4.
+  \end{itemize}
+  \begin{block}{The packet pages. Scored 1 to 5, due at the start of the first class after two study halls.}
+    Do item 4 first if you are short on time --- it is the one that shows whether today landed.
+    Write each final answer in its box. Notes rows 2--4 and the \emph{Keep in Mind} box are your reference.
+  \end{block}
 \end{frame}
+
+% ── CLOSE ────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Check order before you count. Swap two: if the outcome changes,
+    it is a permutation; if not, a combination. The same numbers give different answers ---
+    the question decides.}\\[0.9cm]
+    {\color{frostmid}\small Next: the Unit 3 review --- every tool from this unit, then the
+    test.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}
