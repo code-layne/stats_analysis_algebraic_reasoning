@@ -1,16 +1,18 @@
-%! Conditional Probability and Independence — Unit 3, Lesson 3.5 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Counting and Probability with Counting — Unit 3, Lesson 3.5 — Lesson Plan
+% GRADUAL-RELEASE plan, Unit 2-on timing 5 / 45 / 5 / 5: warm-up / guided notes and practice /
+% spoken debrief / close and ASSIGN the homework (not started in class). The guided notes carry
+% the release ROW BY ROW in one Main Ideas / Notes table: I do / we do in rows 1-4 (problems
+% 1-12, ~25 min) -> we do the Guided Practice row (problems 13-16, ~20 min). Teacher-facing.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 3: Categorical Data and Probability \quad}
-\newcommand{\LessonNumberName}{Lesson 3.5: Conditional Probability and Independence}
+\newcommand{\LessonNumberName}{Lesson 3.5: Counting and Probability with Counting}
+\newcommand{\Pnr}[2]{{}_{#1}P_{#2}}
+\newcommand{\Cnr}[2]{{}_{#1}C_{#2}}
 
 \begin{document}
 \begin{center}
@@ -20,170 +22,346 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will count outcomes with the Fundamental Counting
+    Principle and factorials; calculate permutations and combinations by formula and verify them
+    with a calculator; decide which count a situation calls for by checking whether order
+    matters, and justify that choice; and find a probability as favorable over total using
+    combinations, then predict from it in context.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} AFDA.DA.3a, g, h, i; A2.ST.3a, b, c, d, e \quad$\cdot$\quad folds in the
+    old Lessons 3.7 and 3.8 \quad$\cdot$\quad the last lesson before the Unit~3 review and test
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} There is no group
+    activity. The notes name the vocabulary as they teach it and deliver the instruction
+    \textbf{row by row in one Main Ideas / Notes table} (four rows, problems 1--12: you read
+    the definition, mark up the display, and work problems 1, 3, 5, 7, 9; the class works the
+    rest); the Guided Practice row (problems 13--16) is worked together with students holding
+    the pen. \textbf{The homework is the individual practice} --- assigned at Close \& Assign
+    and done outside class. The debrief is a \emph{spoken} cold check and one board item; there
+    is no exit ticket.
+    \\[2pt]
+    \textbf{Conventions on the page:} permutations and combinations count \emph{without
+    repetition}, as the standard states; only the Fundamental Counting Principle problems (2 and
+    homework item~1a) allow a choice to repeat. Notation is $\Pnr{n}{r}$ and $\Cnr{n}{r}$; the
+    calculator screens print \texttt{nPr} and \texttt{nCr}.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can use the \textbf{Fundamental Counting Principle} and \textbf{factorial} notation
+        to count outcomes. \hfill \textit{supports AFDA.DA.3h--i}
+  \item I can calculate a \textbf{permutation} when order matters and verify it with a
+        calculator. \hfill \textit{AFDA.DA.3h; A2.ST.3b, e}
+  \item I can calculate a \textbf{combination} when order does not matter, verify it with a
+        calculator, and explain why dividing by $r!$ works.
+        \hfill \textit{AFDA.DA.3i; A2.ST.3c, e}
+  \item I can compare permutations and combinations and choose by checking whether order
+        matters. \hfill \textit{AFDA.DA.3g; A2.ST.3a}
+  \item I can find a probability as favorable over total using combinations and predict from
+        it. \hfill \textit{AFDA.DA.3a; A2.ST.3d}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} using the wrong count because order was not checked ---
+        ``both pick $3$ of $10$, so they are the same.'' \textbf{The rule that replaces it:}
+        swap two people. If the outcome changes, order matters (permutation); if not, it does
+        not (combination). The same $n$ and $r$ give $720$ or $120$: \emph{the question
+        decides.}
+  \item \textbf{Second misconception:} the word \emph{choose} means combination. Problem 12
+        says \emph{choose} and has roles; the swap is the test, not the verb.
+  \item Each group of $r$ appears $r!$ times among the permutations, which is why
+        $\Cnr{n}{r} = \Pnr{n}{r} / r!$.
+  \item A probability with counting uses the same kind of count on top and bottom. Prediction
+        is an expected count (AFDA.DA.3a), not a guarantee.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Fundamental Counting Principle & If one decision can be made $n$ ways and another $m$ ways, the
+       two together can be made $nm$ ways. \\
+Factorial & $n! = n(n-1)(n-2)\cdots(2)(1)$, with $0! = 1$. \\
+Permutation & An arrangement of $r$ objects from $n$, no repetition, when order matters:
+       \TallMath{\Pnr{n}{r} = \dfrac{n!}{(n-r)!}} \\
+Combination & A selection of $r$ objects from $n$, no repetition, when order does not matter:
+       \TallMath{\Cnr{n}{r} = \dfrac{n!}{r!\,(n-r)!}} \\
+Theoretical probability & $P(E) = \dfrac{\text{favorable outcomes}}{\text{total possible
+       outcomes}}$ when outcomes are equally likely (Lesson~3.2). \\
+\end{tabularx}
 \end{skillbox}
-
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
 
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Evaluate products, cancel, multiply and simplify fractions --- silent &
+  Debrief item~2 aloud; leave $\frac{10 \cdot 9 \cdot 8}{3 \cdot 2 \cdot 1} = 120$ on the board
+  uninterpreted \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; work rows 1--4
+  (problems 1--12) with the pen in their hand; then the Guided Practice row, \emph{Priya's
+  Playlist} (13--16), together & \textbf{I do / we do, row by row}: read the definition, mark
+  up the display, work problems 1, 3, 5, 7, 9; the class works the rest (25) $\to$ \textbf{we
+  do} Guided Practice 13--16 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put problem~15 back on the
+  board; ask the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~4 as the first item &
+  Announce the homework and its form, preview the Unit~3 review and test \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$; $10 \cdot 9 \cdot 8 = 720$;
+            $3 \cdot 2 \cdot 1 = 6$. \textbf{Seeds:} problems 3, 4, and 9, and the $6$ of
+            problem 11.
+      \item \textbf{2.} Cancelling gives $35$ and $120$. \textbf{Seeds:} problems 7 and 10.
+      \item \textbf{3.} $\frac{5}{12} \cdot \frac{4}{11} \cdot \frac{3}{10} = \frac{60}{1320} =
+            \frac{1}{22}$ and $\frac{10}{220} = \frac{1}{22}$. \textbf{Seeds:} problem 15, and
+            reaches back to the Lesson~3.3 multiplication rule.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~2 aloud} on its right-hand fraction, and leave it on the
+            board. Do not say what $120$ counts; problem~10 will.
+      \item Item~3's noticing is the tell for arithmetic: students who multiplied everything
+            out and could not simplify need cancelling modeled at problem~7.
+      \item No calculators on the warm-up; the calculator arrives in row~2 as a pre-made
+            screen.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``Picking $3$ of $10$ students for a committee and picking a president, vice president,
+and treasurer from $10$ students give the same number of possibilities.''} Students circle
+\emph{True} or \emph{False} and write a reason \emph{before} anyone speaks; then take the hand
+vote and write the split on the board. Many rooms vote \emph{True}: both pick three people from
+ten. \textbf{Do not settle it.} Say only that the class votes again at problem~10, in the last
+instruction row. Rows 2 and~3 deliberately use other numbers ($8$, $6$, $7$) so that the hook's
+$10$ and $3$ do not appear until row~4.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}. The notes are
+\textbf{one Main Ideas / Notes table}: four instruction rows (problems 1--12), then the Guided
+Practice row (13--16). \textbf{The rhythm in every row is the same}: read the definition aloud,
+mark up the display, work the first problem of the grid yourself, then hand the rest to the
+room. The vocabulary box on page~1 is filled \emph{as each term is named}.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Counting Principle (problems 1--4).} Trace the pre-drawn tree: three fundraisers,
+two days each, six paths, so $3 \times 2$. Name the \emph{Fundamental Counting Principle}.
+Work problem~1 ($24$ plans) yourself; the class does 2 ($1000$ codes --- repeats allowed,
+which is why this principle and not a permutation). Name \emph{factorial}; work problem~3
+($5! = 120$), the class does 4 ($10!/7! = 720$, the warm-up's product). Six minutes.
+
+\emph{Row 2, Permutations (problems 5--6).} Read the definition and formula, point to the two
+slots ($8$ then $7$), work problem~5 by formula and check it against the top line of the screen
+($56$). The class does 6 ($360$ ordered lineups), checking the second line. The screen is
+verification, not the method. Six minutes.
+
+\emph{Row 3, Combinations (problems 7--8).} Students fill the display: one committee, $3! = 6$
+orderings. Read the formula; work problem~7 ($\Cnr{7}{3} = 35$, the warm-up's cancellation)
+and read the screen down: $210$, $210/3!$, $35$. The class does 8, the reason for dividing by
+$r!$. Six minutes.
+
+\emph{Row 4, Which Count? (problems 9--12) --- the crux.} The hook's numbers return, side by
+side. Students label the two panels. Read the boxed sentence. Work problem~9 live: swap two
+officers, the outcome changes, $\Pnr{10}{3} = 720$. \textbf{Re-take the hook vote before
+anyone counts problem~10}, then count: $\Cnr{10}{3} = 120$. \textbf{Problem~10 is the crux}.
+Problem~11 says why the ratio is exactly $3! = 6$. \textbf{Problem~12 is the trap}: Ty's
+\emph{choose} with two different jobs is $90$, not $45$. Seven minutes.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Priya's Playlist} (problems
+13--16) --- a fresh context, and the probability half of the lesson. \textbf{Students hold the
+pen; you hold the questions.} Drive the calculator keystrokes aloud here if students have
+them. Problem~13 re-asks the crux on new ground: \emph{does order matter in a mix?} It does
+not, so $\Cnr{12}{3} = 220$. Problem~14: $\Cnr{5}{3} = 10$. Problem~15: $\frac{10}{220} =
+\frac{1}{22} \approx 0.045$, the warm-up's fraction. Problem~16: $110 \cdot \frac{1}{22} = 5$
+days, a prediction and not a promise.
+
+Circulate during Guided Practice and demand the reason, not the number:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 13:} ``Swap two songs in the mix. Is it a different mix?''
+  \item \textbf{Problem 14:} ``Why $5$ on top of the combination and not $12$?'' (Only Luna
+        Vale's songs are favorable.)
+  \item \textbf{Problem 15:} ``Which count is on top? Which is on the bottom? Are they the same
+        kind?''
+  \item \textbf{Problem 16:} ``Does $5$ mean exactly $5$ days?'' (About $5$; it is a
+        prediction.)
+\end{itemize}
+While circulating, pick the one paper to put up in the debrief --- a problem~15 with the
+counts labeled favorable and total. \textbf{This circulation is your formative read.}
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- it lives on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: problem~15.} Put up the paper you picked. Ask what goes
+        wrong if the top is a combination and the bottom a permutation
+        ($\frac{10}{1320}$ is too small by a factor of $6$). Make a student say the sentence:
+        \emph{check order before you count.}
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Eight runners race. One
+question: how many ways to award gold, silver, and bronze? Another: how many ways can $3$ of
+the $8$ advance to the finals? Same number? Which is larger, and by what factor?''} Hands down,
+thirty seconds of think time, then cold-call three students. Correct answer: \textbf{no}. The
+medals have roles, so $\Pnr{8}{3} = 336$; advancing has none, so $\Cnr{8}{3} = 56$. The medals
+count is larger by a factor of $3! = 6$. \emph{This replaces the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} said \emph{no}, named
+order or roles, and gave the factor $6$; \textbf{(b)} said \emph{no} but gave no reason beyond
+the numbers; \textbf{(c)} said \emph{the same, both are $3$ of $8$} --- order not checked.
+\textbf{If pile (c) runs past a third of the room, open the Unit~3 review by re-running row~4
+(problems 9--10)}, and say so plainly.
+
+\textbf{Five minutes: the board item and the cold check only.}
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored 1 to 5, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{locker codes and a fantasy-team draft}: \textbf{1} codes with repeats
+($10{,}000$) and without ($5{,}040$) --- the core procedure; \textbf{2} and \textbf{3} are the
+\textbf{contrast pair}, the same $15$ players and $3$ picks: ranked spots, permutation $2{,}730$;
+bench spots alike, combination $455$; \textbf{4} Devon's ``the answers must be the same'' ---
+\emph{the crux head-on}, and the justification (rubric); \textbf{5} the probability of an
+all-rookie team, $\frac{20}{455} = \frac{4}{91} \approx 0.044$, and the interpretation (about
+$4$ of $91$ teams; rubric); \textbf{6} \emph{the spiral item}, reaching back to Lesson~3.4: two
+players drawn without replacement, $\frac{6}{15}$ against $\frac{5}{14}$, so the events are
+dependent.
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points --- 2
+per item, scored 1 to 5 by the grading report. \textbf{Item~4 is where the misconception shows.}
+
+\textbf{Form: Packet.} The packet pages are the form for this lesson, every final answer in a
+graded box. You may switch form at Close \& Assign if you choose; announce it aloud then.
+
+\textbf{Preview of the next class.} The Unit~3 review: every tool from 3.1--3.5, then the
+Unit~3 test. Item~4 is test-style --- say so.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 3 core idea:} probability describes chance with
+numbers, and those numbers depend on correctly counting and classifying what can happen.
+\textit{Standards covered:} AFDA.DA.3a (make predictions from theoretical probability),
+AFDA.DA.3g (compare permutations and combinations), AFDA.DA.3h and 3i (calculate them without
+repetition), A2.ST.3a--c (compare, calculate), A2.ST.3d (use them in contextual problems),
+A2.ST.3e (calculate and verify with technology). \textit{Spirals forward to:} the Unit~3
+review and test. \textit{Reaches back to:} Lesson~3.2's theoretical probability, Lesson~3.3's
+multiplication rule, and Lesson~3.4's conditional probability and dependent events.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{Order not checked} (the hook, problems 9--10 and~13, HW~2--4 --- the target
+        misconception). Probe: \emph{``Swap two people. Is it a different outcome? Then which
+        count is it?''}
+  \item \textbf{``Choose means combination''} (problem~12, HW~2). Probe: \emph{``Do the two
+        chosen people have the same job?''}
+  \item \textbf{Permutation when repeats are allowed} (problem~2, HW~1). Probe: \emph{``After
+        one digit is used, how many digits can the next one be?''}
+  \item \textbf{Leaving off $r!$ in the bottom} (problems 7 and~10, HW~3). Probe: \emph{``How
+        many times did you count this one committee?''}
+  \item \textbf{Mixed counts in a fraction} (problem~15, HW~5). Probe: \emph{``Are your top
+        and bottom the same kind of count?''}
+  \item \textbf{Reading a prediction as a guarantee} (problem~16, HW~5). Probe: \emph{``Could
+        it be $4$ days? Could it be $7$?''}
+  \item \textbf{Treating a draw without replacement as unchanged} (HW~6). Probe: \emph{``How
+        many rookies are left, and out of how many players?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me a situation at this school where order matters, and one
+where it does not.''} \quad \emph{``Why can a combination never be larger than the permutation
+with the same numbers?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{The homework is assigned here and done outside class --- it is not started in class.}
+Hand the launch: six items on locker codes and a fantasy-team draft, on the \textbf{packet
+pages}, scored 1 to 5, due at the start of the first class after two study halls. Point out that
+the \emph{Keep in Mind} box on the cover and rows 2--4 of the notes are the pages to flip back
+to. \textbf{Tell students to do item~4 first if they are short on time}, and that items 2 and~3
+are a pair: read both before answering either. Then close on what changed: \emph{``You walked
+in able to multiply and cancel. You walk out able to count outcomes, and knowing that the same
+two numbers give different answers when the question changes: check order before you count.''}
+\textbf{Preview:} the Unit~3 review, then the test.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, no calculator. Every number returns: $120$ at problem~3, $720$ at problems 4
+and~9, $6$ at problems 8 and~11, $35$ at problem~7, $120$ again at problem~10, and $\frac{1}{22}$
+at problem~15. Say so, so students keep the page. \textbf{Do not interpret} the fractions in
+item~2: the answer to ``what does $120$ count?'' is the reveal at problem~10. Item~3's two equal
+results connect the multiplication rule to today's combinations; say only that the class
+will see that fraction again.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief and 5 to
+assign the homework.} It is one table, and every row runs the same way: you read the
+definition, mark up the display, and work the first problem of the grid (1, 3, 5, 7, 9); the
+class works the rest with the pen in their hand. Rows 1--3 must move --- six minutes each.
+
+\textbf{Spend the time in row~4, \emph{Which Count?}}, which carries the misconception.
+Work problem~9 live, then \textbf{re-take the hook vote before problem~10 is counted.} The trap
+(problem~12) comes after the crux on purpose: students who have just learned the swap test are
+exactly the ones tempted to go back to reading the verb.
+
+\textbf{Guided Practice (13--16) is where the pen changes hands.} Problem~13 is the order check
+in a new context; 14--15 are favorable over total, and 16 is the prediction (AFDA.DA.3a). A
+student who uses permutations on both top and bottom ($\frac{60}{1320}$) gets the same
+probability; that is correct, and worth saying, but today's habit is combinations when order
+does not matter. Mixing them is the error. If time is short, protect 13 and 15.
+
+\textbf{Scope.} The standard says permutations and combinations \emph{without repetition}, so
+no permutation or combination on these pages allows a repeat; problem~2 is a Counting Principle
+problem, and it says repeats are allowed. Circular arrangements, identical objects, and ``at
+least one'' counts are left out.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored 1 to 5 from 12 points (2 per item), due at the start of the first class after two
+study halls; assigned at the close, not started in class.} The packet form is the default for
+this lesson: every final answer is in a box. Items 1--3 and~6 are short boxes, scored by value
+or word (items 1--3 at 1 point per box; item~6 at $0.5 + 0.5 + 1$). Items 4 and~5b are rubric
+boxes (\texttt{rubrics/}): item~4, 1 point for naming order or roles, 1 for the factor $3! =
+6$; item~5b, 1 point for about $4$ of $91$ in context, unusual but possible. Item~5a takes
+$0.044$ within $0.001$.
+
+\textbf{Item~4 is the one to read first.} Sort it into three piles --- named order and the
+factor (ready); named order only (ready, needs the reason for $6$); agreed with Devon or
+compared only the numbers (the misconception survived). If more than a third land in the last
+pile, open the Unit~3 review with problems 9--10 before anything else. Items 2 and~3 are a
+diagnostic pair: the same count on both means order was not checked.
 \end{teachernote}
 \end{document}

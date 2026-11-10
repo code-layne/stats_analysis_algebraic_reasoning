@@ -1,16 +1,15 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Lesson Plan
+% GRADUAL-RELEASE plan, timing 5 / 45 / 5 / 5: warm-up / guided notes and practice / spoken debrief
+% / close and ASSIGN the homework. I do / we do in rows 1-4 (problems 1-10, ~25 min) -> we do the
+% Guided Practice row (problems 11-14, ~20 min). Teacher-facing.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 3: Categorical Data and Probability \quad}
-\newcommand{\LessonNumberName}{Lesson 3.4: Addition and Multiplication Rules}
+\newcommand{\LessonNumberName}{Lesson 3.4: Conditional Probability, Independence, and Simulation}
 
 \begin{document}
 \begin{center}
@@ -20,170 +19,305 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will find conditional probabilities from a two-way table
+    and by formula, test two events for independence by comparing $P(A \mid B)$ with $P(A)$, read a
+    pre-run simulation, and justify a decision with the conditional probability that actually
+    answers the question.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.P.1d \quad$\cdot$\quad AFDA.DA.3b, AFDA.DA.3d \quad$\cdot$\quad
+    AFDA.DA.3c (simulation as a probability model only) \quad$\cdot$\quad carries forward
+    Lesson~3.3's multiplication rule \quad$\cdot$\quad folds in the former Lessons 3.5 and 3.6
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} One Main Ideas / Notes
+    table: four instruction rows (problems 1--10; you work 1, 3, 5, and 7, the class works the
+    rest), then the Guided Practice row (11--14) with students holding the pen. \textbf{The
+    homework is the individual practice}, assigned at Close \& Assign and done outside class. The
+    debrief is a spoken cold check and one board item; there is no exit ticket.
+    \\[2pt]
+    \textbf{Conventions on the page:} the simulations are real runs shown as pre-made figures; no
+    student runs one. Probabilities are decimals, rounded to two places in row~4 and the homework.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can find a \textbf{conditional probability} from a two-way table by restricting to the
+        ``given'' row or column. \hfill \textit{PS.P.1d}
+  \item I can use $P(B \mid A) = P(A \text{ and } B)/P(A)$ on a Venn diagram, and I know it is $0$
+        for mutually exclusive events. \hfill \textit{AFDA.DA.3b}
+  \item I can test whether two events are \textbf{independent} by comparing $P(A \mid B)$ with
+        $P(A)$. \hfill \textit{PS.P.1d}
+  \item I can read a \textbf{simulation}, explain the \textbf{Law of Large Numbers}, and justify a
+        decision. \hfill \textit{AFDA.DA.3c, 3d}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} $P(A \mid B) = P(B \mid A)$, swapping the condition ---
+        ``most who passed used the app, so an app user will probably pass.'' \textbf{The rule that
+        replaces it:} name the group the question is about, and put that group after the bar.
+  \item \textbf{Second misconception:} dividing by the grand total, or by the wrong row or
+        column's total. ``Given'' changes the whole.
+  \item Dependent does not mean likely. In the simulation the app and passing are associated
+        ($0.41$ for app users, about $0.16$ without), and an app user still probably does not pass.
+  \item A short run can say almost anything. The Law of Large Numbers is why a long simulation
+        can be used as a probability model.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Conditional probability & The probability of an event given that another happened, $P(A \mid B)$.
+       ``Given $B$'' restricts to the $B$ group. \TallMath{P(B \mid A) = \frac{P(A \text{ and } B)}{P(A)}} \\
+Independent (the test) & Knowing $B$ does not change the probability of $A$: $P(A \mid B) = P(A)$.
+       If the two differ, the events are dependent (associated). \\
+Simulation & Using a random model, such as a spreadsheet or calculator, to imitate a process many
+       times and record the results. \\
+Law of Large Numbers & As a process repeats more and more, the relative frequency of an event
+       gets closer to its actual probability. \\
+Mutually exclusive & Cannot both happen, so $P(A \text{ and } B) = 0$ and $P(B \mid A) = 0$. One
+       printed line in row~2, nothing more (Lesson~3.3 taught the term). \\
+\end{tabularx}
 \end{skillbox}
-
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
 
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Read the coding-course table, two percents of a part, compare decimals --- silent &
+  Debrief item~2 aloud; write ``$84$ of $120$'' and ``$84$ of $100$'' on the board and leave them
+  up all period \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; work rows 1--4
+  (problems 1--10) with the pen in their hand; then the Guided Practice row, \emph{Spam Filter}
+  (11--14), together & \textbf{I do / we do, row by row}: read the sentences, mark up the display,
+  work problems 1, 3, 5, 7; the class works the rest (25) $\to$ \textbf{we do} Guided Practice
+  11--14 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put problem~14 back on the board
+  ($0.90$ vs.\ $0.45$); ask the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~6 as the first item &
+  Announce the homework and its form (packet), preview Lesson~3.5 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} Read the table: $84$, $120$, $100$. \textbf{Seeds:} row~1 reopens this
+            exact table.
+      \item \textbf{2.} $84$ of $120$ is $70\%$; $84$ of $100$ is $84\%$. \textbf{Seeds:} problems
+            1 and~2 --- the same part over two different wholes, which is the swap in miniature.
+      \item \textbf{3.} $0.70 > 0.50$; $0.60 = 0.6$; $0.41 < 0.8$. \textbf{Seeds:} the comparison in
+            row~3's test (problems 5 and~6) and row~4's $0.41$ against $0.80$.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Debrief item~2 aloud.} Ask: same $84$, so why two percents? (Different wholes.)
+            Leave both fractions on the board; row~1 points back to them.
+      \item Item~3's last comparison is the tell: a student who says $0.41 > 0.8$ is comparing
+            digit counts, and will misread row~4.
+      \item Item~1 is reading only. Do not let it expand.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board: \textit{``Most
+students who passed the course used our app, so a student who uses the app will probably pass.''}
+\textbf{Ask: do you buy it?} Students circle \emph{Agree}, \emph{Disagree}, or \emph{Can't tell yet}
+and write a reason \emph{before} anyone speaks; then take the hand vote and write the split on the
+board. Most rooms agree. \textbf{Do not settle it.} Rows 1--3 use review sessions and class sections
+on purpose, so no one computes the poster's numbers early. Say only that the class votes again at
+problem~10, in the \emph{Simulate and Decide} row.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} One Main Ideas / Notes table: four instruction rows (problems
+1--10), then the Guided Practice row (11--14). \textbf{The rhythm in every row is the same}: read
+the printed sentences aloud, mark up the display, work the first problem of the grid yourself, then
+hand the rest to the room. The vocabulary box on page~1 is filled \emph{as each term is named}.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Two-Way Tables (problems 1--2).} The warm-up's table. Name \emph{conditional
+probability}, fill the two ``whole'' boxes ($120$, $100$), and put your hand over everything outside
+the App row. Work problem~1 ($84/120 = 0.70$). The class does 2 ($84/100 = 0.84$); ask which total
+they used. Five minutes.
+
+\emph{Row 2, The Formula (problems 3--4).} The same students as probabilities. Work problem~3 on
+the Venn diagram ($0.42/0.60 = 0.70$) and point out that it matches problem~1. The class does 4
+($0.08/0.40 = 0.20$). Read the mutually exclusive line and ask aloud for
+$P(\text{Afternoon} \mid \text{Morning})$; it gets no more time than that. Five minutes.
+
+\emph{Row 3, The Test (problems 5--6).} Name \emph{independent} and read the test. Work problem~5
+($0.70$ against $0.50$: dependent). The class does 6 ($0.60$ and $0.60$: independent), the first
+time ``equal'' has decided anything. Six minutes.
+
+\emph{Row 4, Simulate and Decide (problems 7--10) --- the crux.} Name \emph{simulation}; tell the
+class the figures are a finished spreadsheet run. Work problem~7: trace the line from $0.2$ after
+$5$ users, up to about $0.57$ after $30$, then flat near $0.41$, and name the \emph{Law of Large
+Numbers}. The class does 8 ($250/607 \approx 0.41$). \textbf{Problem~9 is the trap:} the same $250$
+over $314$ gives $0.80$, so ask whether it is the same answer. Read the boxed sentence, then
+\textbf{problem~10 is the crux: re-take the hook vote before anyone writes.} Dana's question names
+app users, so $P(\text{Pass} \mid \text{App}) \approx 0.41$ answers it; the poster quoted the $0.80$.
+Nine minutes.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Spam Filter} (problems 11--14), a fresh
+context with a table and no simulation. \textbf{Students hold the pen; you hold the questions.}
+Problem~11 is $90/100 = 0.90$ and problem~12 is $90/200 = 0.45$: make students say each in words.
+Problem~13 is the test ($0.90$ against $0.20$: dependent, so the filter is doing something).
+\textbf{Problem~14 is the crux transferred}, and it comes last: take a hand count on Theo before
+anyone answers. His question starts from a flagged email, so $0.45$ answers it, and $55\%$ of
+flagged emails are real mail.
+
+Circulate during Guided Practice and demand the reason, not the number:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problems 11--12:} ``Point to the group you restricted to. What is the whole?''
+  \item \textbf{Problem 13:} ``What two numbers did you compare? What would equal have meant?''
+  \item \textbf{Problem 14:} ``What does Theo know about the email in front of him? So what goes
+        after the bar?'' A student who answers $0.90$ has not left the hook vote.
+\end{itemize}
+While circulating, pick one paper to put up in the debrief: a problem~14 that named
+$P(\text{Spam} \mid \text{Flagged})$. \textbf{This circulation is your formative read.}
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- it lives on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: problem~14.} Put up the paper you picked, $0.90$ beside $0.45$,
+        and make a student say the sentence: \emph{the question starts from a flagged email, so
+        flagged goes after the bar.} Point back at the warm-up's $84$ of $120$ and $84$ of $100$.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Most students on the honor
+roll eat breakfast. Jay says a student who eats breakfast will probably make the honor roll. What
+did he do?''} Thirty seconds of think time, then cold-call three students. Correct answer: he
+\textbf{swapped the condition}. He knows $P(\text{Breakfast} \mid \text{Honor roll})$ is high; his
+claim needs $P(\text{Honor roll} \mid \text{Breakfast})$, which he has not found. \emph{This replaces
+the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} named both conditionals in
+``given'' language; \textbf{(b)} said he has it backwards but could not say which group goes after
+the bar; \textbf{(c)} agreed with Jay. \textbf{If pile (c) runs past a third of the room, open
+Lesson~3.5 by re-running problems 9--10.}
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored 1 to 5, assigned today, due after two study halls]{goldbox}
+Six items on a \textbf{free-throw simulation and a coach's decision} ($1{,}000$ simulated late-game
+trips; Riley takes $800$, Sam $200$). \textbf{1} and \textbf{2} are the \textbf{contrast pair}: the
+same $286$ over two wholes, $P(\text{Made both} \mid \text{Riley}) \approx 0.36$ and
+$P(\text{Riley} \mid \text{Made both}) \approx 0.69$; \textbf{3} is \emph{the spiral item}, Lesson~3.3's
+multiplication rule ($0.64$ and $0.36$); \textbf{4} is the justification, the independence test
+($0.64$ against about $0.41$); \textbf{5} is the interpretation, the Law of Large Numbers ($0.80$
+after $20$ trips, $0.64$ after $200$); \textbf{6} is \emph{the crux head-on}, the assistant's swap and
+the decision (Sam should shoot).
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points, 2 per item,
+which the grading report turns into the score of 1 to 5. Items 1--3 are boxed values; items 4--6 are
+rubric boxes (see \texttt{rubrics/}).
+
+\textbf{Form: Packet.} Every final answer goes in its box on the packet pages. The teacher may
+switch the form at Close \& Assign; if so, say so aloud and name what is turned in, which must
+include item~6.
+
+\textbf{Preview of the next class.} Lesson~3.5, Counting and Probability with Counting.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 3 core idea:} organize categorical information, then
+use probability rules to make decisions. \textit{Standards covered:} PS.P.1d (conditional
+probabilities to determine association or independence), AFDA.DA.3b (conditional probability,
+including mutually exclusive events), AFDA.DA.3c (simulation as a probability model), AFDA.DA.3d
+(interpret simulation results to make and justify decisions). \textit{Reaches back to:} Lesson~3.1's
+two-way tables and Lesson~3.3's addition and multiplication rules. \textit{Spirals forward to:}
+Lesson~3.5's counting, then the Unit~3 review and test.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{Swapping the condition} (the hook, problems 9, 10, 12, 14; HW~2, 6 --- the target
+        misconception). Probe: \emph{``Who is the question about? Put that group after the bar.''}
+  \item \textbf{Dividing by the grand total} (problems 1, 2, 8; HW~1). Probe: \emph{``Cover
+        everyone who is not in the given group. How many are left?''}
+  \item \textbf{Comparing the wrong pair in the test} (problems 5, 6, 13; HW~4): comparing
+        $P(A \mid B)$ with $P(B \mid A)$. Probe: \emph{``The test asks whether knowing changes it.
+        What is the chance before you know anything?''}
+  \item \textbf{Dependent read as ``probably''} (problem~10). Probe: \emph{``The app raises the
+        chance. Raises it to what?''}
+  \item \textbf{Trusting the early part of the line} (problem~7; HW~5). Probe: \emph{``How many
+        users is that based on? What did the line do next?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me two events at this school where the two conditionals are very
+different.''} \quad \emph{``What would the table look like if App and Morning were not independent?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{The homework is assigned here and done outside class --- it is not started in class.} Hand
+the launch: six items on the free-throw simulation, \textbf{packet form}, scored 1 to 5, due at the
+start of the first class after two study halls. \textbf{Tell students to do item~6 first if they are
+short on time}, and that items 1 and~2 are a pair: read both before answering either. Then close on
+what changed: \emph{``You walked in able to read a table. You walk out knowing that `given' changes
+the whole, and that the first thing to ask about any probability claim is: given what?''}
+\textbf{Preview:} Lesson~3.5, Counting and Probability with Counting.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% Teacher-only prose lives HERE, never in a _key.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. The table is row~1's, so row~1 can move fast. \textbf{Item~2 is the one
+to read while collecting}: the same $84$ gives $70\%$ and $84\%$, and a student who can say why has
+the idea before it has a name. Leave both fractions on the board; the debrief points back at them.
+Note any student who wrote $0.41 > 0.8$ and check on them at problems 8 and~9.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{Pace it 25 / 20, then 5 for the debrief and 5 to assign the homework.} You work 1, 3, 5, and
+7. Rows 1--3 must move, because \textbf{the time belongs in row~4}. Rows 1--3 deliberately avoid
+passing, so that the poster's two numbers appear for the first time side by side at problems 8
+and~9. \textbf{Re-take the vote at problem~10 before anyone writes}; if students compute first, the
+vote is empty. Keep the verdict honest: the app and passing \emph{are} associated ($64/393 \approx
+0.16$ without the app, against $0.41$ with it), so the poster is wrong about ``probably,'' not about
+the app being worth anything. The notes do not claim the app causes passing, and a sharp student may
+ask; say that a simulation built from past rates cannot settle cause.
+
+\textbf{About the figures.} Both are one real run: a spreadsheet-style model of $1{,}000$ students with
+$P(\text{App}) = 0.60$, $P(\text{Pass} \mid \text{App}) = 0.40$, $P(\text{Pass} \mid \text{No app}) =
+0.15$. Those inputs are not printed, so the students read the output rather than the recipe. Students
+do not run a simulation in this lesson. If time is short in Guided Practice, protect 12 and~14;
+problem~13 can be said aloud.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored 1 to 5 from 12 points (2 per item), due at the start of the first class after two
+study halls; assigned at the close, not started in class.} Items 1--3 are checked from their boxes
+(two decimals, small tolerance). Items 4--6 follow their rubrics. \textbf{Item~6 is the one to read
+first.} Sort it into three piles: named the swap and compared $0.36$ with $0.64$ (ready); chose Sam
+without naming the swap (needs the language); chose Riley (the misconception survived). If more than
+a third land in the last pile, open Lesson~3.5 with problems 9--10. Items 1 and~2 are a diagnostic
+pair: a student who gives the same value for both has not restricted. \textbf{The form is Packet for
+this lesson}; the teacher may switch it at Close \& Assign. The simulation is a real run: Riley
+$0.6$ a shot for $800$ trips, Sam $0.8$ a shot for $200$, two shots a trip.
 \end{teachernote}
 \end{document}

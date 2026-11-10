@@ -1,0 +1,11 @@
+# Rubric for saar-u03-l05-hw item q4 (unit03/lesson05/homework).
+id: q4
+points: 2
+task: "Devon says items 2 and 3 both pick 3 of 15 players, so the answers must be the same (item 2: starter, backup, reserve = 2,730; item 3: three alike bench spots = 455). Say what Devon did not check, and explain why item 2's answer is exactly 6 times item 3's."
+criteria:
+  - id: order
+    points: 1
+    full: "States that Devon did not check whether order matters: the ranked spots are roles (a swap changes the outcome), the bench spots are not."
+  - id: factor
+    points: 1
+    full: "Explains the factor: each group of 3 can fill the 3 ranked spots in 3! = 6 ways, so the permutation count is 6 times the combination count."

@@ -1,0 +1,11 @@
+# Rubric for saar-u03-l01-hw item q6 (unit03/lesson01/homework).
+id: q6
+points: 2
+task: "Which display, A (side-by-side counts) or B (each age group as its own 100%), should the shelter use to compare how likely each age group is to choose a cat? Justify the choice."
+criteria:
+  - id: choice
+    points: 1
+    full: "Chooses Display B."
+  - id: reason
+    points: 1
+    full: "Explains that B puts groups of different sizes on one common scale (percent of each group), while A shows counts that depend on how big each group is."

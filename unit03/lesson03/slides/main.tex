@@ -1,89 +1,262 @@
-%! Venn Diagrams, Tree Diagrams, and Two-Way Tables — Unit 3, Lesson 3.3 — Slides (Beamer)
+%! Addition and Multiplication Rules — Unit 3, Lesson 3.3 — Slides (Beamer)
+% GRADUAL RELEASE deck (5/45/5/5): title, targets, warm-up, hook (dark, UNRESOLVED), I DO divider,
+% notes rows (crux flagged redacc), Guided Practice (LIVE, un-answered), debrief, You do
+% (assigned, not started), close. Standards: PS.P.1a, c; AFDA.DA.3e, f.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{saar-beamer}   % provides \ceruleanheader{} and \sectionlabel[color]{}
 
+\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
+\newcommand{\venn}[6]{%
+  \begin{tikzpicture}[x=1cm, y=1cm]
+    \draw[thick, charcoal] (0,0) rectangle (7,3);
+    \fill[cerulean, fill opacity=0.18] (#1,1.45) circle[radius=1.15];
+    \fill[goldacc, fill opacity=0.25] (#2,1.45) circle[radius=1.15];
+    \draw[thick, cerulean] (#1,1.45) circle[radius=1.15];
+    \draw[thick, goldacc] (#2,1.45) circle[radius=1.15];
+    #3
+    \node[font=\bfseries] at (6.4,0.4) {#4};
+    \node[font=\small\bfseries] at (0.5,2.7) {#5};
+    \node[font=\small\bfseries] at (6.5,2.7) {#6};
+  \end{tikzpicture}}
+
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
 \setbeamercolor{background canvas}{bg=cerulean}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Venn Diagrams, Tree Diagrams, and Two-Way Tables}\\[1.2cm]
-    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Addition and Multiplication Rules}\\[1.2cm]
+    {\color{frostmid}\small Statistical Analysis \& Algebraic Reasoning~$\cdot$~Unit 3~$\cdot$~PS.P.1a, c~$\cdot$~AFDA.DA.3e, f}
   \end{minipage}
 \end{frame}
 }
 
-% The deck follows the EFFL flow (~9 frames):
-%   learning targets (SPOILER-FREE) → warm-up → activity launch → 3-4 debrief frames
-%   (formalize in "red ink") → QuickNotes summary → application → close & assign.
-% Everything before the debrief frames stays vocabulary-free (the spoiler rule).
-\newcommand{\redink}[1]{{\color{redacc}\bfseries #1}}
-
-% LEARNING TARGETS (spoiler-free)
 \begin{frame}[t, plain]
-  \ceruleanheader{Today: experience first, formalize later}
-  \sectionlabel{Learning targets}
+  \ceruleanheader{Today's targets}
+  \sectionlabel{Lesson 3.3}
   By the end of today, I can\ldots
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item TODO: plain-language target (no formal vocabulary).
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item use the \textbf{addition rule} on a Venn diagram, subtracting the overlap.
+    \item find ``at least one'' with the complement rule.
+    \item use the \textbf{multiplication rule} on a tree for \textbf{independent} and
+          \textbf{dependent events}.
+    \item classify two events by computing --- and explain why mutually exclusive is not
+          independent.
   \end{itemize}
   \begin{block}{How today works}
-    Warm-up $\to$ \textbf{TODO activity} with your group $\to$ we name what you found $\to$
-    one application together $\to$ practice.
+    Warm-up $\to$ \textbf{notes together} $\to$ \textbf{one context we work as a class} $\to$
+    debrief $\to$ \textbf{the homework, assigned today and done outside class}.
   \end{block}
 \end{frame}
 
-% WARM-UP
 \begin{frame}[t, plain]
-  \ceruleanheader{Warm-Up: things you already know}
-  \sectionlabel{5 minutes --- alone, then check with a neighbor}
-  % TODO: the warm-up items.
+  \ceruleanheader{Warm-Up --- 5 minutes, silent}
+  \sectionlabel{back to Lesson 3.2 $\cdot$ the concert raffle}
+  \vspace{0.3cm}
+  \begin{enumerate}\setlength{\itemsep}{7pt}
+    \item Compute: $0.6 + 0.5 - 0.3$, \quad $0.6 \cdot 0.5$, \quad $1 - 0.2$.
+    \item Multiply: $\frac{3}{10} \cdot \frac{3}{10}$ \quad and \quad
+          $\frac{3}{10} \cdot \frac{2}{9}$.
+    \item Read the raffle Venn on your page. Why is the $S$ count plus the $E$ count more than 40?
+  \end{enumerate}
+  \vspace{0.4cm}
+  \begin{center}
+    {\color{cerulean}\bfseries Keep the page --- the notes open with this Venn.}
+  \end{center}
 \end{frame}
 
-% ACTIVITY LAUNCH
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.2cm}
+  \begin{center}
+    {\color{frostmid}\bfseries\small ONE WINNING TICKET. SOLD TO A NINTH GRADER, OR SOLD TO A TWELFTH GRADER. NEVER BOTH.}\\[0.8cm]
+    {\color{white}\bfseries\Large ``They can't happen together, so they have nothing to do with each other. They must be independent.''}\\[0.8cm]
+    {\color{goldacc}\bfseries\large Independent, dependent, or can't tell?}\\[0.5cm]
+    {\color{frostmid}\small Vote, and write why. We vote again at problem 10.}
+  \end{center}
+\end{frame}
+}
+
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.8cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small GUIDED NOTES \ \textbullet\ \ I DO}\\[0.7cm]
+    {\color{white}\bfseries\Large Open to your Guided Notes page. We work the table row by row
+    --- fill each term as we name it, not before.}\\[0.9cm]
+    {\color{frostmid}\small Four terms go in the vocabulary box today.}
+  \end{minipage}
+\end{frame}
+}
+
 \begin{frame}[t, plain]
-  \ceruleanheader{Experience \& Formalize: TODO Activity Title}
-  \sectionlabel[goldacc]{Groups of 3--4 $\cdot$ 22 minutes}
-  % TODO: the data context + scenarios, and a block:
-  \begin{block}{Your job}
-    Use what you already know. For \emph{every} answer, be ready to show me
-    \textbf{where you see it in the data}.
+  \ceruleanheader{Subtract the overlap}
+  \sectionlabel{notes row 1 $\cdot$ Addition Rule $\cdot$ problems 1--2}
+  \begin{center}
+    $P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)$\\[6pt]
+    \venn{2.75}{4.25}{\node[font=\Large\bfseries] at (2.1,1.45) {12};
+      \node[font=\Large\bfseries] at (3.5,1.45) {12};
+      \node[font=\Large\bfseries] at (4.9,1.45) {8};}{8}{$S$}{$E$}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Problem 1: $.6 + .5 - .3 = \mathbf{.8}$; counting, $32$ of $40$.
+    \item Problem 2: Jamal's $1.1$ \redink{cannot be a probability}: the 12 overlap tickets
+          were counted twice.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \ceruleanheader{Overlap of zero}
+  \sectionlabel{notes row 2 $\cdot$ Mutually Exclusive $\cdot$ problems 3--4}
+  \begin{center}
+    \venn{1.9}{5.1}{\node[font=\Large\bfseries] at (1.9,1.45) {8};
+      \node[font=\Large\bfseries] at (5.1,1.45) {10};}{22}{$N$}{$T$}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{3pt}
+    \item Mutually exclusive: $P(A \text{ and } B) = 0$, so $P(A \text{ or } B) = P(A) + P(B)$.
+    \item Problem 3: $.2 + .25 = \mathbf{.45}$.
+    \item Problem 4: $P(\text{at least one}) = 1 - P(\text{none}) = 1 - .2 = \mathbf{.8}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \ceruleanheader{Ticket put back: the branches stay the same}
+  \sectionlabel{notes row 3 $\cdot$ Trees $\cdot$ problems 5--6}
+  \vspace{4pt}
+  \textbf{Bowl:} 10 tickets, 3 gold and 7 white. Two draws.
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item \textbf{Independent:} one event does not change the other's probability.
+    \item Problem 5: $\frac{3}{10} \cdot \frac{3}{10} = \mathbf{\frac{9}{100}}$.
+    \item Problem 6: Ana's $\frac{3}{10} + \frac{3}{10}$ counts (gold, gold) twice.
+          \redink{$1 - \frac{7}{10} \cdot \frac{7}{10} = \frac{51}{100}$}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t, plain]
+  \ceruleanheader{Ticket kept out: the branches change}
+  \sectionlabel{notes row 3 $\cdot$ Trees $\cdot$ problems 7--8}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{6pt}
+    \item After a gold is kept out: $\frac{2}{9}$ gold, $\frac{7}{9}$ white. After a white:
+          $\frac{3}{9}$ gold, $\frac{6}{9}$ white.
+    \item Problem 7: $\frac{3}{10} \cdot \frac{2}{9} = \frac{6}{90} = \mathbf{\frac{1}{15}}$.
+    \item Problem 8: second gold after first gold is $\frac{3}{10}$ put back and $\frac{2}{9}$
+          kept out.
+  \end{itemize}
+  \begin{block}{Multiplication rule}
+    Independent: $P(A) \cdot P(B)$. \quad Dependent: the second factor is $B$'s probability
+    \emph{after} $A$ happened.
   \end{block}
 \end{frame}
 
-% DEBRIEF (repeat this frame 3-4 times; formal terms in \redink{})
 \begin{frame}[t, plain]
-  \ceruleanheader{Debrief: naming what you found}
-  \sectionlabel[redacc]{TODO}
-  % TODO: ``student phrase'' $\to$ \redink{formal term} moves.
+  \ceruleanheader{Compute, then name}
+  \sectionlabel{notes row 4 $\cdot$ Four Words $\cdot$ problem 9}
+  \begin{columns}[t]
+    \begin{column}{0.55\textwidth}
+      \small
+      \renewcommand{\arraystretch}{1.35}
+      \begin{tabular}{@{} l l @{}}
+      \textbf{Mutually exclusive} & $P(A \text{ and } B) = 0$ \\
+      \textbf{Complementary} & also $P(A) + P(B) = 1$ \\
+      \textbf{Independent} & $P(A \text{ and } B) = P(A)P(B)$ \\
+      \textbf{Dependent} & $P(A \text{ and } B) \neq P(A)P(B)$ \\
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.41\textwidth}
+      \begin{block}{Problem 9: $S$ and $E$}
+        $P(S \text{ and } E) = .3$\\
+        $P(S)P(E) = (.6)(.5) = .3$\\
+        Equal: \redink{independent}, with an overlap.
+      \end{block}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% QUICKNOTES SUMMARY
 \begin{frame}[t, plain]
-  \ceruleanheader{QuickNotes: TODO topic}
-  \sectionlabel{Fill the box in your packet}
-  % TODO: the worked example the QuickNotes box records.
+  \ceruleanheader{Can't happen together. So: dependent.}
+  \sectionlabel[redacc]{notes row 4 $\cdot$ problems 10--11 $\cdot$ the whole point of today}
+  \vspace{4pt}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{Problem 10 --- vote again, then compute.}
+    \item $P(N \text{ and } T) = \mathbf{0}$, \quad $P(N)P(T) = (.2)(.25) = \mathbf{.05}$.
+          \redink{Not equal: dependent.}
+    \item Once you know $N$ happened, the chance of $T$ drops from $.25$ to $0$.
+    \item Problem 11: $S$ and $A$: $.6 + .4 = 1$, overlap $0$, product $.24$. Complementary and
+          dependent.
+  \end{itemize}
+  \begin{block}{Mutually exclusive is not independent}
+    When two events that each have some chance cannot happen together, knowing one happened
+    tells you the other did not.
+  \end{block}
 \end{frame}
 
-% APPLICATION
 \begin{frame}[t, plain]
-  \ceruleanheader{Application: TODO title}
-  \sectionlabel[goldacc]{We work this one together --- you hold the pen}
-  % TODO: the problem, then the interpret-in-context question and the "what if" that
-  % demands a justification. This is the lesson's only in-class practice.
+  \ceruleanheader{Guided Practice: Rain and the Bus}
+  \sectionlabel[goldacc]{We do $\cdot$ problems 12--15 $\cdot$ you hold the pen}
+  \begin{columns}[c]
+    \begin{column}{0.42\textwidth}
+      \scalebox{0.8}{\venn{2.75}{4.25}{\node[font=\bfseries] at (2.1,1.45) {.25};
+        \node[font=\bfseries] at (3.5,1.45) {.15};
+        \node[font=\bfseries] at (4.9,1.45) {.05};}{.55}{$R$}{$L$}}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item[12.] Find $P(R \text{ or } L)$. What does it mean for Leah?
+        \item[13.] Compute $P(R \text{ and } L)$ and $P(R)P(L)$. Independent or dependent?
+        \item[14.] Two independent mornings: late both? Late at least once?
+        \item[15.] $P(\text{early}) = .1$. Theo says late and early are independent. Answer him.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% CLOSE & ASSIGN
 \begin{frame}[t, plain]
-  \ceruleanheader{Practice \& what's next}
-  \sectionlabel[goldacc]{Check Your Understanding --- this one is scored}
-  % TODO: name the assignment and say plainly which form it takes today — the packet's
-  % Check Your Understanding pages OR the equivalent DeltaMath set. Give the due date and
-  % how it is scored; close with a one-line preview of the next lesson.
+  \ceruleanheader{Debrief: say it with two numbers}
+  \sectionlabel{5 minutes $\cdot$ pens down, papers up --- we say these aloud}
+  \vspace{4pt}
+  \begin{enumerate}\setlength{\itemsep}{5pt}
+    \item Problem 15, back on the board. Say the sentence: \emph{they can't happen together, so
+          knowing one tells you the other did not.}
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{block}{Cold check --- hands down, thirty seconds}
+    Flip one coin once. Event $H$: heads. Event $T$: tails. \textbf{Independent or dependent?
+    Give me the two numbers.}
+  \end{block}
 \end{frame}
+
+\begin{frame}[t, plain]
+  \ceruleanheader{You do: the homework}
+  \sectionlabel[goldacc]{Assigned today $\cdot$ on your own, outside class $\cdot$ due after two study halls}
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item \textbf{An arcade prize wheel and a capsule tray.}
+    \item The addition rule, and what the number means.
+    \item Two picks, with and without replacement.
+    \item Two pairs of events to classify, and a claim to answer with numbers.
+  \end{itemize}
+  \begin{block}{Packet pages. Write each final answer in its box. Scored 1 to 5, due at the start of the first class after two study halls.}
+    Do item 6 first if you are short on time. Row 4 of your notes and the \emph{Keep in Mind}
+    box are your reference.
+  \end{block}
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=cerulean}
+\begin{frame}[plain]
+  \vspace{1.5cm}\hspace{0.8cm}%
+  \begin{minipage}{0.86\textwidth}
+    {\color{goldacc}\bfseries\small BEFORE YOU GO}\\[0.7cm]
+    {\color{white}\bfseries\Large Add and subtract the overlap. Multiply along the branches.
+    And compute before you name: mutually exclusive is not independent.}\\[0.9cm]
+    {\color{frostmid}\small Next: Lesson 3.4, Conditional Probability, Independence, and
+    Simulation.}
+  \end{minipage}
+\end{frame}
+}
 
 \end{document}

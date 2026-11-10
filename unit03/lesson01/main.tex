@@ -1,16 +1,18 @@
-%! Displaying Categorical Data — Unit 3, Lesson 3.1 — Lesson Plan
-% EFFL plan (experience first, formalize later). Teacher-facing — the spoiler rule does NOT
-% apply here: use the formal vocabulary and the lettered standard codes freely.
-% This course HAS `fixedskillbox` (unlike AP Statistics): use it where a tabularx must stay
-% intact on one page, and plain `skillbox` + \boxguard everywhere else.
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Lesson Plan
+% GRADUAL-RELEASE plan, Unit 2-on timing 5 / 45 / 5 / 5: warm-up / guided notes and practice /
+% spoken debrief / close and ASSIGN the homework (not started in class). One Main Ideas / Notes
+% table: I do / we do in rows 1-4 (problems 1-11, ~25 min) -> we do the Guided Practice row
+% (problems 12-15, ~20 min). THE HOMEWORK IS THE INDIVIDUAL PRACTICE. Teacher-facing. Breakable
+% boxes are `skillbox` with a \boxguard ahead; the two tabularx boxes are `fixedskillbox`.
+% Unit 3 condensed 2026-11-09: this lesson folds in the old unit launch and old Lesson 3.1.
 \documentclass[10pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\UnitNumberName}{Unit 3: Categorical Data and Probability \quad}
-\newcommand{\LessonNumberName}{Lesson 3.1: Displaying Categorical Data}
+\newcommand{\LessonNumberName}{Lesson 3.1: Displaying and Analyzing Categorical Data}
 
 \begin{document}
 \begin{center}
@@ -20,170 +22,369 @@
 
 \begin{tcolorbox}[colback=frost, colframe=cerulean, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- what students can do, interpret, and \emph{justify}
-    by the end.
+    \textbf{Primary Objective:} Students will read bar graphs of one categorical variable as
+    frequencies and relative frequencies; compare groups with side-by-side and segmented bar
+    graphs; generate a two-way table from a summary and read its joint counts and marginal
+    frequencies; calculate and interpret marginal and conditional relative frequencies in
+    context; and justify, with conditional percents, which of two groups of different sizes is
+    more likely to fall in a category.
     \\[2pt]
-    % CITE THE STANDARD CODES. This is a standards-driven course; the codes appear here and
-    % again on the Close & Preview / Connections line.
-    \textbf{Standards:} TODO (e.g.\ PS.DS.1a, PS.DS.1c)
+    \textbf{Standards:} PS.DS.4a, PS.DS.4b, PS.DS.4c, PS.DS.4d \quad$\cdot$\quad the first lesson
+    of Unit~3 (there is no separate launch lesson: the warm-up and the hook open the unit)
     \\[2pt]
-    \textbf{Lesson model:} \emph{Experience first, formalize later.} Students work the activity
-    in small groups using only prior knowledge; the teacher circulates with questions, cues, and
-    prompts (not answers); the debrief attaches the formal vocabulary to what the groups already
-    found; the application uses it once together, in context. No separate direct-instruction
-    block, no tiered instruction, no exit ticket.
+    \textbf{Lesson model:} \emph{Gradual release --- I do, we do, you do.} There is no group
+    activity. The notes name the vocabulary as they teach it and deliver the instruction
+    \textbf{row by row in one Main Ideas / Notes table} (four rows, problems 1--11: you read the
+    definition, mark up the display, and work the first problem of each grid; the class works the
+    rest); the Guided Practice row (problems 12--15) is worked together with students holding the
+    pen. \textbf{The homework is the individual practice} --- assigned at Close \& Assign and
+    done outside class, not started in class. The debrief is a \emph{spoken} cold check and one
+    board item; there is no exit ticket.
+    \\[2pt]
+    \textbf{Conventions on the page:} percents are exact except where a problem says about;
+    charts and the library's table are pre-made spreadsheet output to read, so nobody draws a
+    graph.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.4}
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-% Fill in the \item text ONLY. Two tabularx cells, one itemize each — do not re-nest or
-% re-balance the environments (that is the classic source of a stray \end{itemize}).
+\boxguard
+\begin{skillbox}[Learning Targets \& Key Understandings]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X|X@{}}
 \textbf{Learning targets (student language)} & \textbf{Key understandings (the ``why'')} \\[2pt]
 \hline
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: ``I can \dots'' target, traceable to a lettered Knowledge \& Skill (cite the code).
+  \item I can read a bar graph of one categorical variable in context, as a frequency or a
+        \textbf{relative frequency}. \hfill \textit{PS.DS.4a}
+  \item I can compare groups with \textbf{side-by-side} and \textbf{segmented} bar graphs.
+        \hfill \textit{PS.DS.4b}
+  \item I can build a \textbf{two-way table} from a summary and read its joint counts and
+        \textbf{marginal frequencies}. \hfill \textit{PS.DS.4c}
+  \item I can calculate and interpret marginal and \textbf{conditional relative frequencies},
+        and name the whole each percent is taken of. \hfill \textit{PS.DS.4d}
+  \item I can compare groups of different sizes with conditional percents, not raw counts, and
+        explain why. \hfill \textit{PS.DS.4d}
 \end{itemize}
 &
 \vspace{-6pt}
 \begin{itemize}[leftmargin=1.1em, nosep, after=\vspace{2pt}]
-  \item TODO: the why --- and state the lesson's \textbf{target misconception} explicitly.
+  \item \textbf{Target misconception:} comparing raw \emph{counts} across groups of different
+        sizes --- ``more ninth graders ride, so ninth graders are more likely to ride.''
+        \textbf{The rule that replaces it:} counts say how many; conditional percents say how
+        likely. To compare groups of different sizes, compare conditional percents.
+  \item \textbf{Second misconception:} reading the wrong denominator (a row percent for a column
+        percent). $54/94$ is a percent of bus riders, not of ninth graders. \textbf{The test:} in
+        ``Of the [group], what percent \ldots?'' the words after \emph{of} name the whole.
+  \item A two-way table summarizes two categorical variables at once, and its Totals are the
+        wholes that percents are built on. Graphs and tables are two views of one set of counts
+        (PS.DS.4).
+  \item A relative frequency is the idea Lesson~3.2 turns into a probability; a conditional
+        relative frequency is the idea Lesson~3.4 names conditional probability.
 \end{itemize}
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson. The debrief attaches these; they must
-    % NOT appear on the cover, in the warm-up, or in the pre-debrief slides (spoiler rule).
+\boxguard[24]
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems --- taught directly in the guided notes}]{greenbox}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{3.4cm} X @{}}
+Relative frequency & A category's count divided by the total, as a fraction, decimal, or
+       percent. \\
+Side-by-side / segmented bars & Side-by-side bars stand the groups next to each other within each
+       category; segmented bars stack each group's categories into one bar. \\
+Two-way table & A table that records two categorical variables at once, one in the rows and one
+       in the columns. Each inside cell is a joint count. \\
+Marginal frequency & A count in the Total row or Total column: one variable alone. A
+       \emph{marginal relative frequency} divides that Total by the whole table. \\
+Conditional relative frequency & An inside count divided by the total of one group (one row or
+       one column): the percent \emph{of that group}. \\
+\end{tabularx}
 \end{skillbox}
 
-% fixedskillbox never splits, so the thumbnail and its caption stay together.
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{frost}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            % TODO: the ~3 warm-up items and the SEED each plants (which formal idea it sets up
-            % WITHOUT naming it), plus what to debrief aloud. Resist naming the vocabulary here.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only unless you keep a source
-            % PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
+% fixedskillbox never splits, so the phase table stays intact on one page.
+% THE PHASE TABLE IS A CONTRACT: 5 / 45 / 5 / 5 — I do ~25 of the 45, Guided Practice ~20.
 \begin{fixedskillbox}[Lesson at a Glance --- \MeetingLength]{frost}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{}l c X X@{}}
 \textbf{Phase} & \textbf{Min} & \textbf{Students} & \textbf{Teacher} \\
 \hline
-Warm-Up & 5 & TODO & Circulate; debrief item~3 aloud \\
-Experience \& Formalize: Activity & 22 & TODO activity title, scenarios 1--2, groups of 3--4 & Circulate; questions, cues, prompts --- \emph{not answers}; choose work to display \\
-Debrief: Formalize & 14 & Share findings; record QuickNotes & Name each idea on the groups' work (in a second color); fill QuickNotes together \\
-Application & 10 & TODO application title, worked together; compute, interpret, justify & Lead it; students hold the pen, you hold the questions \\
-Close \& Assign & 4 & Record the assignment; preview next lesson & Name what changed today; choose packet CYU or DeltaMath \\
+Warm-Up & 5 & Percents of a number, fractions as percents, a simple table --- silent & Debrief
+  item~2's last question aloud; write \emph{larger top number, smaller percent} on the board and
+  leave it up all period \\
+Guided Notes \& Practice & 45 & Fill the vocabulary box as each term is named; work rows 1--4
+  (problems 1--11) with the pen in their hand; then the Guided Practice row, \emph{Streaming
+  Choices} (12--15), together & \textbf{I do / we do, row by row}: read the definition, mark up
+  the display, work problems 1, 3, 6, 8; the class works the rest (25) $\to$ \textbf{we do}
+  Guided Practice 12--15 (20) \\
+Debrief & 5 & Pens down --- answer aloud, nothing to fill in & Put problem~15 back on the board
+  ($40\%$ vs.\ $45\%$); ask the cold check \\
+Close \& Assign & 5 & Write down the homework, the due date, and item~5 as the first item &
+  Announce the homework and its form (packet), preview Lesson~3.2 \\
+\end{tabularx}
+\end{fixedskillbox}
+
+\begin{fixedskillbox}[Warm-Up --- Activate Prior Knowledge (5 min)]{frost}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{The three items and what each seeds}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{1.} $47\%$ of $200$, $45\%$ of $120$, $50\%$ of $80$ give $94$, $54$, $40$.
+            \textbf{Spirals} to percent work from earlier courses --- and those are row~1's bus
+            bar and row~2's two bus bars.
+      \item \textbf{2.} $94/200$, $54/120$, $40/80$ are $47\%$, $45\%$, $50\%$. \textbf{Seeds:}
+            problems 8 and~9, and the crux: $54/120$ has the larger top number and the smaller
+            percent.
+      \item \textbf{3.} The one-variable table: $80$ by car, $26/200 = 13\%$ walk.
+            \textbf{Seeds:} row~1's two bar graphs, which are this table drawn.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+    \textbf{Running it}
+    \begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=2pt]
+      \item \textbf{Say what Unit~3 is:} data sorted into groups, and the chances those data
+            give us. That sentence and the hook are the whole unit launch.
+      \item \textbf{Debrief item~2's last question aloud} and write \emph{larger top number,
+            smaller percent} on the board. Leave it up all period; row~4 points back to it.
+      \item Item~2 is the tell. A student who says the larger top number must be the larger
+            percent has walked in with today's misconception --- note who, and cold-call them
+            at problem~9.
+    \end{itemize}
+\end{minipage}
 \end{tabularx}
 \end{fixedskillbox}
 
 \boxguard
-\begin{skillbox}[Experience \& Formalize --- The Activity: \emph{TODO Title}]{frost}
-\textbf{Launch (2 min).} TODO: the launch script --- the data context, the scenarios, and the
-charge: \emph{``Use what you already know. For every answer, be ready to show me where you see
-it in the data.''}
-
-\begin{multicols}{2}
-\textbf{What students do.} TODO: the arc of the two scenarios --- what scenario~1 builds, what
-scenario~2 varies, and which item is the \textbf{crux question} (the target misconception).
-
-\columnbreak
-\textbf{What the teacher does.} Circulate. Listen before speaking. When a group stalls, give a
-\emph{question, cue, or prompt}, not an answer:
-\begin{itemize}[leftmargin=1.1em, nosep]
-  \item TODO: item ref: ``TODO prompt.''
-\end{itemize}
-While circulating, pick the group work to display in the debrief.
-\end{multicols}
+\begin{skillbox}[Hook --- before anyone sits down]{frost}
+The hook is on \textbf{page 1 of the notes}, under the vocabulary box, and on the board:
+\textit{``$54$ ninth graders ride the bus and only $40$ twelfth graders do, so ninth graders are
+more likely to ride the bus.''} \textbf{Ask: do you agree?} Students circle \emph{Agree},
+\emph{Disagree}, or \emph{Can't tell yet} and write one line of reason \emph{before} anyone
+speaks; then take the hand vote and write the split on the board. Most rooms agree. \textbf{Do
+not settle it.} Say only that the answer is problem~9, in the \emph{Which Whole?} row, and that
+they will vote again there. Rows 1--3 stay in counts on purpose: the bus bars keep favoring the
+ninth graders until the percents arrive. This is also the opening of the unit, so say why it
+matters: Unit~3 ends at chance, and chance is built on the right percent.
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Debrief --- Formalize (what goes on the board, in a second color)]{frost}
-Work through the displayed student work in order, and \textbf{attach each formal name to something
-a group already wrote}. Students record each line in their QuickNotes as you go.
+\begin{skillbox}[Guided Notes \& Practice --- I do, then we do (45 min)]{frost}
+\textbf{This is the whole lesson.} There is no group activity, and there is no independent
+practice set on this page: \textbf{the homework is the individual practice}, assigned at the
+close and done outside class. The notes are \textbf{one Main Ideas / Notes table}: four
+instruction rows (problems 1--11), then the Guided Practice row (12--15). \textbf{The rhythm in
+every row is the same}: read the definition aloud, mark up the display, work the first problem of
+the grid yourself, then hand the rest to the room. The vocabulary box on page~1 is filled
+\emph{as each term is named}. The only blanks are the twelve cells of the table in problem~5;
+every other answer is written in a problem's own space.
+\begin{multicols}{2}
+\textbf{I do / we do, row by row (about 25 min).}
+
+\emph{Row 1, Bar Graphs (problems 1--2).} The warm-up's table, drawn twice. Name
+\emph{frequency} and \emph{relative frequency}, label the two graphs, and show that the shape is
+the same and only the axis changed. Work problem~1 yourself ($94$ students). The class does 2
+($80/200 = 40\%$, and the right-hand bar confirms it). Five minutes.
+
+\emph{Row 2, Two Kinds of Bars (problems 3--4).} The same survey split by grade. Work problem~3
+yourself (Car, a gap of $16$). \textbf{Problem~4 is a reading trap}: the numbers beside the
+segmented bars are running totals, so the twelfth graders' Car segment is $72 - 40 = 32$, not
+$72$. Say aloud that both graphs are in counts and that the bars are different heights because
+the grades are different sizes; do not go further. Six minutes.
+
+\emph{Row 3, Two-Way Tables (problems 5--7).} Read the summary aloud, then build the table with
+the class (problem~5); the Walk column is the subtraction the summary leaves out. Name \emph{joint
+count} and \emph{marginal frequency} on the finished table and work problem~6 yourself ($8$, a
+joint count). The class does 7 ($80$, a marginal frequency). Six minutes.
+
+\emph{Row 4, Which Whole? (problems 8--11) --- the crux.} Read the two definitions and the bold
+sentence aloud. Work problem~8 live ($94/200 = 47\%$). Then \textbf{re-take the hook vote at
+problem~9 before anyone divides}. Then compute: $54/120 = 45\%$ of ninth graders, $40/80 = 50\%$
+of twelfth graders. \textbf{Problem~9 is the crux}: the group with the larger count has the
+smaller rate. Turn the page to the $100\%$ bars and land the boxed sentence word by word.
+\textbf{Problem~10 is the trap}: Dani's $54/94$ is a percent of bus riders ($57\%$ of them are
+ninth graders), not of ninth graders ($45\%$ of them ride). Problem~11 is the counterweight:
+different counts, the same $40\%$. Eight minutes.
+
+\columnbreak
+\textbf{We do (about 20 min).} The Guided Practice row, \emph{Streaming Choices} (problems
+12--15) --- a fresh context from the Fairview Community Library, given as a pre-made spreadsheet.
+\textbf{Students hold the pen; you hold the questions.} Problem~12 is a marginal relative
+frequency ($49/250 = 19.6\%$); problem~13 a conditional one ($25/100 = 25\%$). \textbf{Problem~14
+is the trap transferred}: Ty's $25/49$ is a percent of Pulse fans. \textbf{Problem~15 is the crux
+transferred}, and it comes last: take a hand count on the flyer before anyone divides; then
+$60/150 = 40\%$ against $45/100 = 45\%$.
+
+Circulate during Guided Practice and demand the reason, not the word:
+\begin{itemize}[leftmargin=1.1em, nosep]
+  \item \textbf{Problem 12:} ``What is your whole? Point to it in the table.'' (Cell E4.)
+  \item \textbf{Problem 13:} ``Read me the words after \emph{of}.'' (The patrons under $30$:
+        cell E2.)
+  \item \textbf{Problem 14:} ``What does the $49$ count?'' (Pulse fans of every age.)
+  \item \textbf{Problem 15:} ``The count is bigger. So what would decide it?'' A student who
+        sides with the flyer has not left the hook vote.
+\end{itemize}
+While circulating, pick the one paper to put up in the debrief --- a problem~15 that found both
+percents and said the flyer compared counts. \textbf{This circulation is your formative read}
+--- the homework is not started in class.
+\end{multicols}
+\end{skillbox}
+
+\boxguard[24]
+\begin{skillbox}[Debrief --- whole class, spoken (5 min)]{frost}
+Pens down, papers up. \textbf{This debrief is spoken} --- there is no box at the end of the
+notes to fill in, so it lives entirely on the board and in the room.
 \begin{multicols}{2}
 \begin{enumerate}[leftmargin=1.3em, nosep, itemsep=3pt]
-  \item TODO: red-ink move --- ``student phrase'' $\to$ \emph{formal term / notation}.
+  \item \textbf{The one board item: problem~15.} Put up the paper you picked ($40\%$ of patrons
+        $30$ and over; $45\%$ of patrons under $30$) and make a student say the sentence:
+        \emph{counts say how many; conditional percents say how likely.} Point back at the
+        warm-up's line on the board: \emph{larger top number, smaller percent}.
 \end{enumerate}
 \columnbreak
-\textbf{QuickNotes.} TODO: the walkthrough of the packet's QuickNotes box --- a summary of what
-the groups discovered, not a new lecture.
+\textbf{Check for understanding --- ask it cold, whole class.} \emph{``Thirty of $60$ juniors and
+$40$ of $100$ seniors signed up for a field trip. Morgan says seniors are more likely to sign
+up. Is she right? Give both percents.''} Hands down, thirty seconds of think time, then cold-call
+three students. Correct answer: \textbf{no} --- $30/60 = 50\%$ of juniors and $40/100 = 40\%$ of
+seniors signed up, so juniors are more likely even though fewer of them signed up. \emph{This
+replaces the exit ticket.}
 
-\textbf{Why this order.} TODO --- including any example the teacher poses cold (the special case
-the activity does not carry).
+\textbf{Formative read.} Sort the answers into three piles: \textbf{(a)} said \emph{no} and gave
+both conditional percents; \textbf{(b)} said \emph{no} but used the wrong whole (for example,
+$30/70$); \textbf{(c)} agreed with Morgan --- counts only. \textbf{If pile (c) runs past a third
+of the room, open Lesson~3.2 by re-running row~4 (problems 9--10)}, and say so plainly.
+
+\textbf{Five minutes: item~1 and the cold check only.} Anything else waits for the next warm-up.
 \end{multicols}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Application --- \emph{TODO Title} (worked together, 10 min)]{frost}
-TODO: the one problem worked together --- the first place the just-named vocabulary is \emph{used},
-and the lesson's only in-class practice. It carries the whole arc: state the question in context,
-compute in the packet's \texttt{work} block, \textbf{interpret the result in context}, then the
-``what if we change a number?'' part and the \textbf{justification} it demands.
-\textbf{Run it with the students holding the pen and you holding the questions:} TODO the three
-questions you ask.
+\begin{skillbox}[Homework --- scored 1 to 5, assigned today, due after two study halls]{goldbox}
+Six items on \textbf{pet adoptions at the Maple Street Animal Shelter} ($300$ adoptions, dog or
+cat, by adopter age): \textbf{1} complete the two-way table from the summary (the core procedure);
+\textbf{2} the percent of all adoptions that were dogs, and what it means (\emph{the interpret
+item}, $55\%$); \textbf{3} and \textbf{4} are the \textbf{contrast pair}: the same count of $30$
+over two different wholes --- of adopters $55$ and over, $60\%$ took a cat; of cats, $22.2\%$
+went to adopters $55$ and over; \textbf{5} the director's claim built on counts --- \emph{the
+crux head-on and a justification} ($40\%$ vs.\ $60\%$); \textbf{6} which of two pre-drawn displays
+compares the age groups --- \emph{the spiral item}, reaching back to Lesson~2.4's common scale,
+and a second justification.
 
-\textbf{This is the formative check.} There is no exit ticket --- read the Interpret and What-if
-responses over shoulders as you circulate and sort them into TODO categories to decide how the
-next lesson opens.
+\textbf{Assigned at Close \& Assign and done outside class.} \textbf{Scoring:} 12 points --- 2
+per item, which the grading report turns into the score of 1 to 5. \textbf{Item~5 is where the
+misconception shows}: a student who agrees with the director is still comparing counts.
+\textbf{Items 3--4 carry the second check}: the denominator box tells you which whole each student
+used.
+
+\textbf{The form for this lesson: Packet.} The packet pages are authored and are the default, and
+they are written so every answer lands in a scanned box. You may switch the form at Close \&
+Assign; if you do, say so aloud and keep item~5 among whatever is turned in.
+
+\textbf{Preview of the next lesson.} Lesson~3.2, Probability Models: a relative frequency is the
+first step toward a probability.
+
+\textbf{Connections \& Big Ideas.} \textit{Unit 3 core idea:} data sorted into groups give chances,
+and every chance is a part over a whole. \textit{Standards covered:} PS.DS.4a (bar graphs of one
+categorical variable), PS.DS.4b (side-by-side and segmented bar graphs comparing groups),
+PS.DS.4c (generate and interpret a two-way table), PS.DS.4d (marginal, relative, and conditional
+frequencies in context). \textit{Spirals forward to:} Lessons 3.2 (probability models) and 3.4
+(conditional probability and independence). \textit{Reaches back to:} Lesson~2.4's rule that
+groups are compared on a common scale, and prior-course percent work.
 \end{skillbox}
 
 \boxguard
 \begin{skillbox}[Watch For (while circulating)]{redbox}
 \begin{itemize}[leftmargin=1.2em, nosep]
-  \item TODO: misconception, keyed to an item number.
+  \item \textbf{Comparing raw counts across groups of different sizes} (the hook, problems 9, 11,
+        and~15; HW~5 --- the target misconception). Probe: \emph{``How many ninth graders did we
+        ask? How many twelfth graders? So what would a fair comparison use?''}
+  \item \textbf{The wrong whole} (problems 10 and~14; HW~3--4 --- the second misconception):
+        $54/94$ reported as a percent of ninth graders. Probe: \emph{``Read me the words after
+        \emph{of}. Where is that total in the table?''}
+  \item \textbf{A running total read as a segment} (problem~4): $72$ for the twelfth graders' Car
+        riders. Probe: \emph{``Where does the Car segment start, and where does it stop?''}
+  \item \textbf{A joint count called a marginal frequency} (problems 6--7): Probe: \emph{``Is that
+        number inside the table or in a Total?''}
+  \item \textbf{A percent with no group} (problems 2, 12, 13; HW~2): ``$40\%$ come by car.''
+        Probe: \emph{``Forty percent of whom?''}
+  \item \textbf{Picking the count display} (HW~6): Probe: \emph{``If the shelter had twice as many
+        adopters in one age group, what would happen to that bar?''}
 \end{itemize}
-Cold-call prompts: TODO.
+Cold-call prompts: \emph{``Give me a group at this school where a bigger count could hide a
+smaller percent.''} \quad \emph{``When is a raw count the number you actually want?''}
 \end{skillbox}
 
 \boxguard
-\begin{skillbox}[Homework --- Check Your Understanding (assigned, scored)]{goldbox}
-TODO: the assignment --- $\sim$6 CYU-style items in new contexts, spanning this lesson's lettered
-skills and spiraling one earlier idea, each ending in an interpretation or a justification. This
-is the lesson's practice set and it \emph{is} scored (the cover's score column carries a blank
-for it). TODO: how it is scored and when it is due.
-
-\textbf{Packet or DeltaMath --- decide this lesson.} The packet set is authored either way. If
-DeltaMath carries adequate content for TODO (this lesson's skills), assign the DeltaMath set
-instead and tell students to keep the packet pages as their worked reference; otherwise assign
-the packet pages. Say which one aloud at Close \& Assign so it is unambiguous.
+\begin{skillbox}[Close \& Assign (5 min)]{goldbox}
+\textbf{The homework is assigned here and done outside class --- it is not started in class.}
+Hand the launch: six items on pet adoptions, \textbf{the packet pages}, scored 1 to 5, due at the
+start of the first class after two study halls. Point out that the \emph{Keep in Mind} box on the
+cover and rows 3--4 of the notes are the pages to flip back to. \textbf{Tell students to do item~5
+first if they are short on time} --- it shows whether row~4 landed --- and that items 3 and~4 are
+a pair: read both before answering either. Then close on what changed: \emph{``You walked in
+reading counts. You walk out asking, of whom? Counts say how many; conditional percents say how
+likely.''} \textbf{Preview:} Lesson~3.2, Probability Models --- the relative frequency you found
+today is the first step toward a probability.
 \end{skillbox}
 
-\boxguard
-\begin{skillbox}[Close \& Preview]{goldbox}
-\textbf{Assign the practice} (name packet or DeltaMath) and name what changed today rather than
-closing on the assignment alone.
-\textbf{Connections:} TODO --- the lettered standard codes this lesson covered, and where they go next.
-\textbf{Preview:} TODO next lesson.
-\end{skillbox}
-
-% ── Teacher notes — one per component, in packet order ──
-% TEACHERNOTES: teacher prose lives HERE, never in a _key. A note in a key is the one block
-% with no counterpart in the blank, so it makes the key run longer and costs the student
-% packet a blank page.
+% ── Teacher notes — one per component, in packet order (three) ──────────────
+% Teacher-only prose lives HERE, never in a _key. No note for the debrief — it is fully
+% specified in its own box above.
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing + what each item seeds; what to cut if it runs long.
+Five minutes, silent, timed. This is the first page of Unit~3, so open with one sentence: the
+unit is about data sorted into groups and the chances those data give us. The old unit launch is
+folded into this warm-up and the hook; there is no separate launch day. Items 1 and~3 should be
+quick. \textbf{Item~2's last question is the one to read}: students who write that the larger
+top number is the larger percent have walked in with the target misconception --- note two of
+them and cold-call them at problem~9. The warm-up prints no grade sizes in context, on purpose,
+so the hook stays open. Write \emph{larger top number, smaller percent} on the board and
+\textbf{leave it up all period}; the debrief points back at it.
 \end{teachernote}
 
-\begin{teachernote}[Experience \& Formalize]
-    % TODO — \textbf{Activity.} pacing split across the two scenarios; the early-finisher move.
-    % \textbf{Debrief.} the must-land moments; what to cut if time is short.
-    % \textbf{Application.} the questions to ask while the students hold the pen; where the
-    % \texttt{work} block is; how to sort the formative responses.
+\begin{teachernote}[Guided Notes \& Practice]
+\textbf{This one document is the lesson --- pace it 25 / 20, then 5 for the debrief and 5 to
+assign the homework.} It is one table, and every row runs the same way: you read the definition,
+mark up the display, and work the first problem of the grid (1, 3, 6, 8); the class works the
+rest with the pen in their hand. Rows 1 and~2 must move --- five and six minutes. All four rows
+are one survey, so students are reading one data set four ways, not learning four data sets.
+
+\textbf{Spend the time in row~4, \emph{Which Whole?}}, which carries the misconception. Rows 1--3
+are in counts on purpose. \textbf{Re-take the hook vote at problem~9 before anyone divides.} If
+students divide first, the vote is empty; if they commit and \emph{then} find $45\%$ against
+$50\%$, the rule arrives as the answer to a question they already have. The $100\%$ bars are
+printed after problem~9, at the top of the next page, so the picture confirms the computation
+rather than replacing it. \textbf{Problem~10 (the wrong whole) is not a side trip}: it is the
+second way the same mistake appears, and Guided Practice~14 and homework items 3--4 ask for it
+again. Problem~11 keeps the rule honest: sometimes the counts differ and the likelihood does not.
+
+\textbf{Guided Practice (12--15) is where the pen changes hands.} \emph{Streaming Choices} is a
+fresh context given as a spreadsheet, so students must find each whole in the table themselves.
+Problem~15, last, is the crux transferred: take a hand count on the flyer before anyone divides.
+If time is short, protect 14 and 15 --- problem~12 can be said aloud. Creating graphs in software
+is not worked here; the charts are pre-made output, and homework item~6 is the last place
+students read one in this lesson.
+
+\textbf{There is no independent practice set on this page, and that is deliberate --- the
+homework is the individual practice}, assigned at the close and done outside class. Your
+formative read is the Guided Practice circulation plus the cold check; if the counts-only pile is
+more than a third of the room, \textbf{open Lesson~3.2 by re-running problems 9--10}, and say so
+plainly.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO: the CYU items and what each targets; the scoring approach; whether DeltaMath
-    % covers this lesson's skills; which item to go over at the start of the next lesson.
+\textbf{Scored 1 to 5 from 12 points (2 per item), due at the start of the first class after two
+study halls; assigned at the close, not started in class.} Items 1, 3, and~4 are scored from their
+boxes: item~1 at $\tfrac12$ per box, items 3 and~4 at 1 for the denominator and 1 for the percent.
+Items 2, 5, and~6 are rubric items (see \texttt{rubrics/}). \textbf{Item~5 is the one to read
+first.} Sort it into three piles --- found both percents and named the different group sizes
+(ready); found both percents but gave no reason (ready, needs the language); agreed with the
+director or used the wrong whole (the misconception survived). If more than a third land in the
+last pile, open Lesson~3.2 with problems 9--10 before anything else. Items 3 and~4 are a
+diagnostic pair: the same $30$ over two wholes, so a student with the same denominator in both has
+not yet asked \emph{of whom?}
+
+\textbf{Packet is the form for this lesson.} You may switch form at Close \& Assign; the student
+pages do not change if you do. Open the next class by putting two anonymous item~5 answers from
+different piles side by side on the board.
 \end{teachernote}
 \end{document}
