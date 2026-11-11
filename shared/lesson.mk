@@ -322,7 +322,10 @@ clean:
 #       packet is ignored: the packet build personalizes every graded component.
 #
 # A lesson packet has NO separate name sheet: the lesson cover carries the name
-# (2026-10-28). Only tests and quizzes get math-shared's tear-off name sheet
+# (2026-10-28). A lesson with NO graded component in its packet (a DeltaMath-only
+# homework, 2026-11-11) still gets roster packets: each student's copy is the
+# plain student packet with her named cover, so nothing is personalized but the
+# name and no manifest is built. Only tests and quizzes get math-shared's tear-off name sheet
 # (shared/unit.mk). A lesson with graded components and no cover/main.tex is an
 # error. The roster PDFs carry names, so they stay under target/, which is never
 # committed; math-shared's check_names.py fails the build if a roster name
@@ -382,7 +385,7 @@ roster-packets: grading-need-roster
 	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)$(if $(SECTION), for section $(SECTION))"; exit 1; }
 	@test -f cover/main.tex || { echo "!  $(UNIT)/$(LESSON) has no cover/main.tex: a lesson packet prints the name on its cover"; exit 1; }
 	@graded="$(PACKET_GRADED)"; \
-	test -n "$$graded" || { echo "!  $(UNIT)/$(LESSON) has no graded component in its packet"; exit 1; }; \
+	test -n "$$graded" || echo "   no graded component in the packet: named covers only"; \
 	$(if $(COMP),echo "   COMP=$(COMP) ignored: the packet personalizes every graded component";) \
 	for c in $$graded; do \
 	  echo "   graded component: $$c"; \
@@ -393,7 +396,7 @@ roster-packets: grading-need-roster
 	@mkdir -p $(COMPILED_DIR)
 	@if [ $(words $(ROSTER_PACKETS)) -eq 1 ]; then cp $(ROSTER_PACKETS) $(ROSTER_OUT); \
 	 else pdfunite $(ROSTER_PACKETS) $(ROSTER_OUT); fi
-	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order; graded: $(PACKET_GRADED))"
+	@echo "✓  Roster packets → target/compiled/$(UNIT)/$(LESSON)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order; graded: $(or $(strip $(PACKET_GRADED)),none))"
 
 # Every student's copy of ONE graded component (COMP), from her tracking id
 # alone, into $(GR_STUDENTS)/<id>.pdf; then math-shared's check that no roster
