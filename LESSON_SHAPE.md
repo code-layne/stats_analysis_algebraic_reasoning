@@ -296,7 +296,9 @@ printed on the Name line of the lesson cover, which `make -C unitNN/lessonYY ros
 ROSTER=… [SECTION=…]` preprints; there is no separate name sheet (2026-10-28). Every graded
 component in the packet is her personalized copy and starts on a fresh sheet, so she tears the
 graded sheets out and turns them in without her name; the output is
-`target/compiled/unitNN/lessonYY_roster.pdf`. For a quiz or test, `make -C unitNN roster-packets
+`target/compiled/unitNN/lessonYY_roster.pdf`. A lesson with **no graded component** in its packet
+(a DeltaMath-only homework, Unit 3) still gets roster packets (2026-11-11): each copy is the plain
+student packet behind her named cover, and no manifest is built. For a quiz or test, `make -C unitNN roster-packets
 COMP=tests/actual_test` (or `COMP=quiz01/actual_quiz`) puts math-shared's tear-off name sheet and
 its blank back in front of her copy. Both build each graded component's manifest first, and fail
 if any roster name reaches a graded page. From the root: `make roster-packets
