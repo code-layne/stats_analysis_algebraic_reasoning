@@ -1,8 +1,0 @@
-# Rubric for saar-u03-l05-hw item q5b (unit03/lesson05/homework).
-id: q5b
-points: 1
-task: "P(all 3 drawn players are rookies) = 4/91, about 0.044. If 91 teams were drawn this way, predict how many would be all rookies, and say what that means about an all-rookie team."
-criteria:
-  - id: prediction
-    points: 1
-    full: "Predicts about 4 of the 91 teams and says in context that an all-rookie team is unusual but possible (a prediction, not a guarantee)."
