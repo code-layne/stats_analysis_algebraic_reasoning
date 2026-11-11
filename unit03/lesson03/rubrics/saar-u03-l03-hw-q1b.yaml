@@ -1,8 +1,0 @@
-# Rubric for saar-u03-l03-hw item q1b (unit03/lesson03/homework).
-id: q1b
-points: 1
-task: "What does P(B or S) = 0.55 tell you about spins of this wheel?"
-criteria:
-  - id: interpret
-    points: 1
-    full: "In the long run, about 55% of spins land on a blue slice, a star slice, or a blue star slice (at least one of the two)."
