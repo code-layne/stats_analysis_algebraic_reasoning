@@ -517,6 +517,12 @@ key is in the unit key packet. It lives in `unitXX/review/study_guide/` with a s
 10pt, worked examples in ordinary `\[ \]` displays. Build: `make -C unitXX/tests all && make -C unitXX/test_keys all` **before** the unit
 packet, so the `sample_test` prefab exists when `unit.mk` merges it.
 
+**The unit test cheat sheet** (added 2026-11-05, `unit02/review/cheat_sheet/` is the pattern) is a
+half-sheet reference for students to hold during the test: formulas, procedures, and the study
+guide's moves, with no data and nothing to fill in. No key, no name line, no `grading`, merged into
+no packet; the `review/Makefile` builds it. One letter page prints two copies with a cut line, and
+the build fails if a copy outgrows its half.
+
 **The unit cover pair** — `unit_cover/` (student packet) and `unit_cover_key/` (key packet); both
 wrappers `\input` one shared **`unit_cover/body.tex`** so page 1 cannot drift — edit the cover
 there, never in a wrapper. Page 1: banner, overview, lesson table, big ideas — student-facing, no
