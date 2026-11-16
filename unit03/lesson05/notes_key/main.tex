@@ -1,0 +1,235 @@
+%! Counting and Probability with Counting — Unit 3, Lesson 3.5 — Guided Notes & Practice (Answer Key)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Problems run 1..16; 4 pages at 12pt.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 5, 7, 9).
+%   WE DO  : the class works the rest; the last row, Guided Practice (13-16), is worked
+%            together on a playlist, students holding the pen.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TRAP: problem 12 ("choose" with roles: the word is not the test; 90, not 45).
+% THE CRUX: problem 10 (row 4): the hook's same n and r asked with roles and without roles,
+%   vote re-taken after problem 9 and before problem 10 is counted; 720 vs 120. Problem 11
+%   lands why the factor is 3! = 6.
+% HOOK NUMBERS (10 and 3) ARE KEPT OUT of rows 2 and 3 so the hook stays open until row 4.
+% THE NUMBERS (checked in Python):
+%   Row 1: 3*2 = 6; 3*2*4 = 24; 10^3 = 1000; 5! = 120; 10!/7! = 720
+%   Row 2: 8P2 = 56; 6P4 = 360.  Row 3: 7P3 = 210; 210/3! = 35 = 7C3
+%   Row 4: 10P3 = 720; 10C3 = 120; 720/120 = 6 = 3!; 10P2 = 90 (10C2 = 45)
+%   Guided Practice: 12C3 = 220; 5C3 = 10; P = 10/220 = 1/22 = 0.045 (0.04545...); 110*(1/22) = 5
+% PAGE LOCKSTEP: generate the key with templates/lesson/mkkey.py. KEEP EVERY \pcell ON ONE LINE.
+% TABLE MECHANICS: inside a cell `\\` ends the row; use \par. Figures and each grid row get
+% their own sub-row.
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Counting notation.
+\newcommand{\Pnr}[2]{{}_{#1}P_{#2}}
+\newcommand{\Cnr}[2]{{}_{#1}C_{#2}}
+% A pre-made calculator screen: \calcline{input}{output}, input left, output right.
+\newcommand{\calcline}[2]{\noindent#1\par\noindent\hfill#2\par}
+\newcommand{\calcscreen}[2]{\fcolorbox{charcoal}{frost}{\begin{minipage}[c]{#1}\setlength{\parskip}{0pt}\ttfamily\small #2\end{minipage}}}
+% Vocabulary rows: FIXED-HEIGHT, term label and open writing space (unit01/lesson02).
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.5}{Guided Notes \& Practice --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
+
+\vspace{0.15in}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\vtermans{Fundamental Counting Principle}{If one decision can be made $n$ ways and another $m$ ways, together they can be made $nm$ ways.}
+\vtermans{Factorial}{$n! = n(n-1)(n-2)\cdots(2)(1)$, the product of the whole numbers from $n$ down to $1$; $0! = 1$.}
+\vtermans{Permutation}{An arrangement of $r$ of $n$ objects, no repetition, when order matters.}
+\vtermans{Combination}{A selection of $r$ of $n$ objects, no repetition, when order does not matter.}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+Claim: \emph{Picking $3$ of $10$ students for a committee and picking a president, vice
+president, and treasurer from $10$ students give the same number of possibilities.}
+
+\vspace{3pt}
+\textbf{Is the claim true?} Circle one: \quad True \qquad False \quad --- and say why. We vote
+again at problem~10.
+\par\ansline{Answers vary --- many students circle True: both pick 3 people from 10.}
+\ansline{We do not settle it yet: problem 10 decides.}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: Fundamental Counting Principle and factorials ─────────────────────
+\mainidea[Multiply the choices]{Counting Principle} &
+The \textbf{Fundamental Counting Principle}: if one decision can be made $n$ ways and another
+can be made $m$ ways, the two decisions together can be made $nm$ ways. Fairview High's student
+council must pick a fundraiser and a day.
+\\
+& {\centering
+\begin{tikzpicture}[x=1cm, y=0.62cm, font=\footnotesize,
+    choice/.style={draw=cerulean, fill=frost, rounded corners=2pt, inner sep=3pt, minimum width=1.7cm},
+    leaf/.style={inner sep=2pt, anchor=west}]
+  \node[choice, minimum width=1.2cm] (s) at (0,0) {Start};
+  \node[choice] (a) at (3,2.3)  {Bake sale};
+  \node[choice] (b) at (3,0)    {Car wash};
+  \node[choice] (c) at (3,-2.3) {Dance};
+  \foreach \n in {a,b,c} \draw[thick, slate] (s.east) -- (\n.west);
+  \foreach \n/\y/\t in {a/3/Fri, a/1.6/Sat, b/0.7/Fri, b/-0.7/Sat, c/-1.6/Fri, c/-3/Sat} {
+    \draw[thick, goldacc] (\n.east) -- (6,\y);
+    \node[leaf] at (6,\y) {\t}; }
+  \node[font=\footnotesize\bfseries] at (3,3.6) {$3$ fundraisers};
+  \node[font=\footnotesize\bfseries] at (6.3,3.6) {$2$ days each};
+\end{tikzpicture}\par\vspace{5pt}
+Every path is one plan: \quad $3 \times 2 =$ \labelbox{1.4cm}{6} plans\par}
+\\
+& \notesprompt{Multiply the number of ways for each decision.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{The council also picks one of $4$ ticket prices. How many plans now?}{2.1cm}{$3 \cdot 2 \cdot 4 = 24$ plans} & \pcell{2}{The supply closet has a $3$-digit keypad, digits $0$--$9$, repeats allowed. How many codes?}{2.1cm}{$10 \cdot 10 \cdot 10 = 1000$ codes} \\ \hline
+\end{probgrid}
+\\
+& The \textbf{factorial} of a whole number is $n! = n(n-1)(n-2)\cdots(2)(1)$, and $0! = 1$.
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Five officers line up for the yearbook photo. How many lineups? Write it as a factorial.}{2.1cm}{$5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$ lineups} & \pcell{4}{Evaluate $\dfrac{10!}{7!}$ by cancelling.}{2.1cm}{$10 \cdot 9 \cdot 8 = 720$} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: permutations ──────────────────────────────────────────────────────
+\mainidea[Permutations:]{Order Matters} &
+A \textbf{permutation} is an arrangement of $r$ objects taken from $n$ objects, with no
+repetition, when order matters. The formula is $\Pnr{n}{r} = \dfrac{n!}{(n-r)!}$.
+\\
+& {\centering
+\begin{minipage}[c]{0.56\linewidth}\centering
+\begin{tikzpicture}[font=\footnotesize]
+  \draw[thick, cerulean, fill=frost] (0,0) rectangle (2.2,1.2);
+  \draw[thick, cerulean, fill=frost] (3.1,0) rectangle (5.3,1.2);
+  \node at (1.1,0.85) {\textbf{Chair}};
+  \node at (4.2,0.85) {\textbf{Secretary}};
+  \node[font=\Large\bfseries] at (1.1,0.35) {$8$};
+  \node[font=\Large\bfseries] at (4.2,0.35) {$7$};
+  \node[font=\Large] at (2.65,0.6) {$\times$};
+  \node[font=\scriptsize\itshape, align=center] at (2.65,-0.45) {Once the chair is filled, only $7$ members remain.};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.4\linewidth}\centering
+{\footnotesize\textbf{Calculator screen}}\par\vspace{3pt}
+\calcscreen{0.86\linewidth}{\calcline{8 nPr 2}{56}\calcline{6 nPr 4}{360}}
+\end{minipage}\par}
+\\
+& \notesprompt{Use the formula, then verify with the screen.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Eight council members run for chair and secretary. Find $\Pnr{8}{2}$ with the formula. Does it match the screen?}{2.2cm}{$\dfrac{8!}{6!} = 8 \cdot 7 = 56$ ways. Yes, it matches.} & \pcell{6}{Six students fill $4$ speaking slots at the assembly, in order. Find $\Pnr{6}{4}$ with the formula. What does $360$ count?}{2.2cm}{$\dfrac{6!}{2!} = 6 \cdot 5 \cdot 4 \cdot 3 = 360$. It counts the possible ordered speaker lineups.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: combinations ──────────────────────────────────────────────────────
+\mainidea[Combinations:]{Order Does Not Matter} &
+A \textbf{combination} is a selection of $r$ objects from $n$ objects, with no repetition, when
+order does not matter. Each group of $r$ shows up $r!$ times among the permutations, so divide
+by $r!$.\par\vspace{2pt}{\centering $\Cnr{n}{r} = \dfrac{\Pnr{n}{r}}{r!} = \dfrac{n!}{r!\,(n-r)!}$\par}
+\\
+& {\centering
+\begin{minipage}[c]{0.56\linewidth}\centering
+\begin{tikzpicture}[font=\footnotesize,
+    chip/.style={draw=cerulean, fill=frost, rounded corners=2pt, minimum width=1.2cm, minimum height=0.55cm, inner sep=1pt}]
+  \foreach \t [count=\i from 0] in {A B C, A C B, B A C, B C A, C A B, C B A} {
+    \pgfmathsetmacro{\px}{mod(\i,2)*1.45}
+    \pgfmathsetmacro{\py}{-floor(\i/2)*0.75}
+    \node[chip] at (\px,\py) {\t}; }
+  \draw[thick, ->] (2.2,-0.75) -- (2.75,-0.75);
+  \node[draw=goldacc, fill=goldbg, rounded corners=3pt, align=center, inner sep=4pt] at (3.65,-0.75) {one\\committee:\\Ana, Ben, Cal};
+\end{tikzpicture}\par\vspace{5pt}
+\labelbox{1.0cm}{6} orderings, \labelbox{1.0cm}{1} committee
+\end{minipage}\hfill
+\begin{minipage}[c]{0.4\linewidth}\centering
+{\footnotesize\textbf{Calculator screen}}\par\vspace{3pt}
+\calcscreen{0.86\linewidth}{\calcline{7 nPr 3}{210}\calcline{210/3!}{35}\calcline{7 nCr 3}{35}}
+\end{minipage}\par}
+\\
+& \notesprompt{Seven council members volunteer for a $3$-person dance committee.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Find $\Cnr{7}{3}$ with the formula, cancelling first. Does it match the screen?}{2.2cm}{$\dfrac{7!}{3!\,4!} = \dfrac{7 \cdot 6 \cdot 5}{3 \cdot 2 \cdot 1} = 35$ committees. Yes.} & \pcell{8}{In the $210$ ordered lists, how many times does each committee appear? Why divide by $3!$?}{2.2cm}{Each appears $3! = 6$ times. Dividing by $3!$ leaves each committee counted once.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — same numbers, the question decides ─────────────────────
+\mainidea[Does order matter?]{Which Count?} &
+Back to the hook: the same $n = 10$ and the same $r = 3$, asked two ways.
+\\
+& {\centering
+\begin{tikzpicture}[font=\footnotesize,
+    role/.style={draw=cerulean, fill=frost, rounded corners=2pt, minimum width=1.55cm, minimum height=0.8cm, inner sep=1pt, align=center},
+    seat/.style={draw=plumacc, fill=plumbg, circle, minimum size=0.8cm, inner sep=0pt}]
+  \node[font=\footnotesize\bfseries] at (2.25,2.05) {With roles};
+  \node[role] at (0.6,1.2) {President};
+  \node[role] at (2.25,1.2) {Vice\\president};
+  \node[role] at (3.9,1.2) {Treasurer};
+  \node[font=\scriptsize\itshape, align=center] at (2.25,0.25) {Swap two people:\\a different outcome.};
+  \draw[dashed, slate] (5.2,2.3) -- (5.2,-0.3);
+  \node[font=\footnotesize\bfseries] at (8.1,2.05) {Without roles};
+  \node[draw=plumacc, rounded corners=8pt, minimum width=4.2cm, minimum height=1.05cm] at (8.1,1.2) {};
+  \node[seat] at (6.9,1.2) {};
+  \node[seat] at (8.1,1.2) {};
+  \node[seat] at (9.3,1.2) {};
+  \node[font=\scriptsize\itshape, align=center] at (8.1,0.25) {Swap two people:\\the same committee.};
+\end{tikzpicture}\par\vspace{4pt}
+\labelbox{3.2cm}{permutation}\hspace{2.5cm}\labelbox{3.2cm}{combination}\par}
+\\
+& \fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Same $n$, same $r$: the question decides. Swap two people. If the outcome changes,
+order matters (permutation). If it does not change, order does not matter (combination).}}}
+\\
+& \begin{probgrid}{|Y|Y|}
+\pcell{9}{President, vice president, and treasurer from $10$ students: does a swap change the outcome? Name the count and find it.}{2.4cm}{Yes: permutation. $\Pnr{10}{3} = 10 \cdot 9 \cdot 8 = 720$ ways to fill the offices.} & \pcell{10}{\textbf{Vote again:} the claim is \; True \; False. Now name and find the count for a committee of $3$ from $10$.}{2.4cm}{False. A swap changes nothing: combination. $\Cnr{10}{3} = 720 / 3! = 120$ committees.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{11}{Why is problem~9's answer exactly $6$ times problem~10's?}{2.4cm}{Each committee of $3$ can hold the $3$ offices in $3! = 6$ ways, so $720 = 6 \cdot 120$.} & \pcell{12}{The council will choose $2$ of its $10$ members, one to carry the flag and one to read the pledge. Ty says, \emph{``Choose means combination.''} Is he right? Count.}{2.4cm}{No. The roles differ, so order matters: $\Pnr{10}{2} = 90$ ways, not $\Cnr{10}{2} = 45$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — probability with counting, a fresh context ──────
+\mainidea[Guided practice]{Probability with Counting} &
+Priya's playlist has $12$ songs: $5$ by Luna Vale and $7$ by other artists. For a quick mix, the
+app picks $3$ of the $12$ songs at random; only \emph{which} $3$ songs matters.
+\\
+& {\centering
+\begin{tikzpicture}[x=1cm, y=1cm, font=\scriptsize]
+  \foreach \i in {0,...,4} {
+    \draw[thick, goldacc, fill=goldbg, rounded corners=2pt] (\i*1.02,0) rectangle ++(0.92,0.75);
+    \node[align=center] at (\i*1.02+0.46,0.375) {Luna\\Vale}; }
+  \foreach \i in {5,...,11} {
+    \draw[thick, slate, fill=graybg, rounded corners=2pt] (\i*1.02,0) rectangle ++(0.92,0.75);
+    \node[align=center] at (\i*1.02+0.46,0.375) {other}; }
+\end{tikzpicture}\par\vspace{5pt}
+$P(\text{event}) = \dfrac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}$\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{13}{Does order matter in a mix? How many different $3$-song mixes can the app make?}{2.4cm}{No: combination. $\Cnr{12}{3} = 220$ mixes} & \pcell{14}{How many of those mixes are all Luna Vale songs?}{2.4cm}{$\Cnr{5}{3} = 10$ mixes} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{15}{Find $P(\text{all } 3 \text{ are Luna Vale})$ as a simplified fraction and a decimal.}{2.4cm}{$\dfrac{10}{220} = \dfrac{1}{22} \approx 0.045$} & \pcell{16}{Priya makes a new mix on each of $110$ days. Predict how many are all Luna Vale. Is one of those mixes common or rare?}{2.4cm}{$110 \cdot \dfrac{1}{22} = 5$ days. Rare: about $1$ mix in $22$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice,
+% assigned at Close & Assign and done outside class.
+
+\end{document}

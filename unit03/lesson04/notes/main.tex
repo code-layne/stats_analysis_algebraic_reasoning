@@ -1,0 +1,229 @@
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Guided Notes & Practice
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): vocabulary box,
+% hook, ONE two-column guidednotes table. Problems 1..14. 4 pages at 12pt — a ceiling.
+%   I DO   : the teacher reads the definition, marks up the display, works 1, 3, 5, 7.
+%   WE DO  : the class works the rest of each grid; Guided Practice (11-14) worked together.
+%   YOU DO : nothing on this page — ../homework/ IS the individual practice.
+% THE TARGET MISCONCEPTION: P(A|B) = P(B|A), swapping the condition.
+% THE TRAP: problem 9 (the same count, 250, over the other total: 0.80, not 0.41).
+% THE CRUX: problem 10 (row 4): the hook vote re-taken; which conditional answers the question;
+%   a decision justified with it. Problem 14 is the crux transferred.
+% THE DATA
+%   Rows 1-3, 200 students: App&Review 84, App&NoReview 36 (App 120); NoApp&Review 16,
+%     NoApp&NoReview 64 (NoApp 80); Review 100, NoReview 100.
+%     P(Review|App) = 84/120 = .70; P(App|Review) = 84/100 = .84; P(Review) = .50; P(App) = .60.
+%     Venn: App only .18, both .42, Review only .08, neither .32. .42/.60 = .70; .08/.40 = .20.
+%     Section table: Morning 45 app, 30 no (75); Afternoon 75 app, 50 no (125); App 120, No 80.
+%     P(App|Morning) = 45/75 = .60 = P(App) -> independent.
+%   Row 4, a REAL pre-run simulation (Python random.Random(705); 1,000 students; P(App) = .60,
+%     P(Pass|App) = .40, P(Pass|NoApp) = .15): App&Pass 250, App&NoPass 357 (607); NoApp&Pass 64,
+%     NoApp&NoPass 329 (393); Pass 314, NoPass 686. 250/607 = .4119; 250/314 = .7962. The running
+%     line is that run: 0.2 after 5 app users, 0.57 after 30, 0.412 after 607.
+%   Guided Practice, 1,000 emails: Spam&Flagged 90, Spam&Not 10 (100); NotSpam&Flagged 110,
+%     NotSpam&Not 790 (900); Flagged 200, Not 800. P(F|S) = .90; P(S|F) = .45; P(F) = .20.
+% PAGE LOCKSTEP with notes_key/: the key differs only in -key for -boxes, the header, \vterm ->
+% \vtermans, \blank -> \ans, \writelines{2} -> two \ansline, and the answer argument of every
+% \pcell and \labelbox. KEEP EVERY \pcell ON ONE SOURCE LINE.
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Vocabulary rows: FIXED-HEIGHT, term label + open writing space; the key fills the same height.
+% Copied from unit01/lesson02/notes/main.tex. Keep key definitions to two lines.
+\newcommand{\termrowheight}{2.3cm}
+\newlength{\termrowinset}\setlength{\termrowinset}{7pt}
+\newcommand{\vterm}[1]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}%
+  \end{minipage}\par}
+\newcommand{\vtermans}[2]{%
+  \par\noindent\begin{minipage}[t][\termrowheight][t]{\linewidth}%
+    \vspace*{\termrowinset}%
+    \textbf{\textcolor{cerulean}{#1:}}\quad\ans{#2}%
+  \end{minipage}\par}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.4}{Guided Notes \& Practice}
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind.
+
+\vspace{0.15in}
+
+\boxguard[16]
+\begin{vocabbox}
+\small
+Fill in each term \textbf{as we name it} in the notes below.
+\vterm{Conditional probability}
+\vterm{Independent}
+\vterm{Simulation}
+\vterm{Law of Large Numbers}
+\end{vocabbox}
+
+\boxguard[12]
+\begin{hookbox}
+\small
+A poster for a study app says: \emph{``Most students who passed the course used our app, so a
+student who uses the app will probably pass.''}
+
+\vspace{3pt}
+\textbf{Do you buy the claim?} Circle one: \quad Agree \qquad Disagree \qquad Can't tell yet \quad
+--- and say why. We vote again at problem~10.
+\par\writelines{2}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: conditional probability from a two-way table (PS.P.1d) ────────────
+\mainidea[Given means restrict]{Two-Way Tables} &
+A \textbf{conditional probability} $P(A \mid B)$ is the probability of $A$ \emph{given} that $B$
+happened. \textbf{The word after the bar picks the group:} restrict to the $B$ row or column, let
+its total be the new whole, and find the part that is $A$.
+\\
+& {\centering
+{\footnotesize\textbf{$200$ students in a tough summer coding course}}\par\vspace{4pt}
+{\normalsize\renewcommand{\arraystretch}{1.25}%
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Review} & \textbf{No review} & \textbf{Total} \\
+\midrule
+\textbf{App} & $84$ & $36$ & $120$ \\
+\textbf{No app} & $16$ & $64$ & $80$ \\
+\textbf{Total} & $100$ & $100$ & $200$ \\
+\bottomrule
+\end{tabular}}\par\vspace{6pt}
+Given \emph{App}, the whole is \labelbox{1.3cm}{}\quad Given \emph{Review}, the whole is \labelbox{1.3cm}{}\par}
+\\
+& \notesprompt{Restrict first, then divide. Give a decimal.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Find $P(\text{Review} \mid \text{App})$. Say it in words.}{2.2cm}{} & \pcell{2}{Find $P(\text{App} \mid \text{Review})$. Which total did you divide by?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the formula on a Venn diagram (AFDA.DA.3b) ────────────────────────
+\mainidea[Same idea, in probabilities]{The Formula} &
+In probabilities, restricting to $A$ means dividing by $P(A)$:
+\[ P(B \mid A) = \frac{P(A \text{ and } B)}{P(A)} \]
+If $A$ and $B$ are \textbf{mutually exclusive}, $P(A \text{ and } B) = 0$, so $P(B \mid A) = 0$: a
+student in the morning section is not in the afternoon section, so
+$P(\text{Afternoon} \mid \text{Morning}) = 0$.
+\\
+& {\centering
+\begin{tikzpicture}[scale=0.85]
+  \draw[thick, rounded corners=2pt] (-3.7,-1.75) rectangle (3.7,1.75);
+  \fill[cerulean, opacity=0.18] (-0.75,0) circle (1.4);
+  \fill[goldacc, opacity=0.22] (0.75,0) circle (1.4);
+  \draw[thick] (-0.75,0) circle (1.4);
+  \draw[thick] (0.75,0) circle (1.4);
+  \node[font=\footnotesize\bfseries] at (-2.2,1.4) {App};
+  \node[font=\footnotesize\bfseries] at (2.3,1.4) {Review};
+  \node at (-1.3,-0.05) {$0.18$};
+  \node at (0,-0.05) {$0.42$};
+  \node at (1.3,-0.05) {$0.08$};
+  \node at (3.05,-1.35) {$0.32$};
+\end{tikzpicture}\par}
+\\
+& \notesprompt{Use the formula with the numbers on the Venn diagram.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Find $P(\text{Review} \mid \text{App})$ by the formula. Does it match problem~1?}{2.2cm}{} & \pcell{4}{Find $P(\text{Review} \mid \text{No app})$. (First find $P(\text{No app})$.)}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: the independence test (PS.P.1d) ───────────────────────────────────
+\mainidea[Independent or dependent?]{The Test} &
+Events $A$ and $B$ are \textbf{independent} when knowing $B$ does not change the probability of
+$A$. \textbf{The test:} compare $P(A \mid B)$ with $P(A)$. Equal means independent; different means
+dependent (the events are associated).
+\\
+& {\centering
+{\footnotesize\textbf{The same $200$ students, by class section}}\par\vspace{4pt}
+{\normalsize\renewcommand{\arraystretch}{1.25}%
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{App} & \textbf{No app} & \textbf{Total} \\
+\midrule
+\textbf{Morning} & $45$ & $30$ & $75$ \\
+\textbf{Afternoon} & $75$ & $50$ & $125$ \\
+\textbf{Total} & $120$ & $80$ & $200$ \\
+\bottomrule
+\end{tabular}}\par}
+\\
+& \notesprompt{Compute both, compare them, and say what it means here.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Row~1's table: are \emph{Review} and \emph{App} independent? Compare $P(\text{Review} \mid \text{App})$ with $P(\text{Review})$.}{2.4cm}{} & \pcell{6}{Are \emph{App} and \emph{Morning} independent? Compare $P(\text{App} \mid \text{Morning})$ with $P(\text{App})$.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: simulation and decision — THE CRUX (AFDA.DA.3c, 3d) ───────────────
+\mainidea[Which one answers it?]{Simulate and Decide} &
+A \textbf{simulation} uses a random model to imitate a process many times. The \textbf{Law of Large
+Numbers} says that as the process repeats, the relative frequency settles toward the actual
+probability. Back to the hook: a spreadsheet used last year's rates for this course to simulate
+$1{,}000$ students.
+\\
+& {\centering
+{\footnotesize\textbf{Spreadsheet output: passing rate among simulated app users, as the run went on}}\par\vspace{3pt}
+\begin{tikzpicture}[x=0.0165cm, y=2.9cm]
+  \foreach \v in {0.2,0.4,0.6,0.8,1.0} { \draw[linegray, densely dashed] (0,\v) -- (620,\v); }
+  \draw[thick, ->] (0,0) -- (640,0);
+  \draw[thick] (0,0) -- (0,1.05);
+  \foreach \v in {0,100,...,600} { \draw (\v,0.02) -- (\v,-0.02) node[below, font=\scriptsize] {\v}; }
+  \foreach \v in {0,0.2,0.4,0.6,0.8,1.0} { \draw (5,\v) -- (-5,\v) node[left, font=\scriptsize] {\v}; }
+  \node[font=\scriptsize\itshape] at (310,-0.27) {simulated app users so far};
+  \node[font=\scriptsize\itshape, rotate=90] at (-85,0.5) {proportion who passed};
+  \draw[cerulean, thick, line join=round] plot coordinates {(1,0.000) (2,0.000) (3,0.000) (4,0.250) (5,0.200) (6,0.167) (7,0.286) (8,0.250) (9,0.222) (10,0.300) (11,0.273) (12,0.250) (13,0.308) (14,0.357) (15,0.400) (16,0.375) (17,0.412) (18,0.444) (19,0.474) (20,0.500) (21,0.524) (22,0.500) (23,0.522) (24,0.500) (25,0.520) (26,0.538) (27,0.556) (28,0.571) (29,0.586) (30,0.567) (35,0.543) (40,0.500) (45,0.533) (50,0.540) (55,0.527) (60,0.483) (65,0.477) (70,0.471) (75,0.480) (80,0.475) (85,0.471) (90,0.467) (95,0.474) (100,0.470) (110,0.455) (120,0.442) (130,0.431) (140,0.436) (150,0.427) (160,0.444) (170,0.441) (180,0.422) (190,0.416) (200,0.415) (210,0.414) (220,0.423) (230,0.422) (240,0.417) (250,0.412) (260,0.408) (270,0.400) (280,0.400) (290,0.403) (300,0.407) (310,0.406) (320,0.412) (330,0.421) (340,0.429) (350,0.434) (360,0.433) (370,0.441) (380,0.437) (390,0.433) (400,0.440) (410,0.439) (420,0.440) (430,0.440) (440,0.434) (450,0.436) (460,0.430) (470,0.428) (480,0.423) (490,0.424) (500,0.426) (510,0.422) (520,0.421) (530,0.423) (540,0.422) (550,0.416) (560,0.414) (570,0.414) (580,0.414) (590,0.414) (600,0.412) (607,0.412)};
+\end{tikzpicture}\par}
+\\
+& {\centering
+{\footnotesize\textbf{Spreadsheet summary of all $1{,}000$ simulated students}}\par\vspace{4pt}
+{\normalsize\renewcommand{\arraystretch}{1.25}%
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Passed} & \textbf{Did not pass} & \textbf{Total} \\
+\midrule
+\textbf{App} & $250$ & $357$ & $607$ \\
+\textbf{No app} & $64$ & $329$ & $393$ \\
+\textbf{Total} & $314$ & $686$ & $1{,}000$ \\
+\bottomrule
+\end{tabular}}\par\vspace{5pt}
+\fcolorbox{cerulean}{frost}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{$P(A \mid B)$ and $P(B \mid A)$ are different numbers. Before you decide, name the group the
+question is about: that group goes after the bar.}}}\par}
+\\
+& \begin{probgrid}{|Y|Y|}
+\pcell{7}{Read the graph. About where does the line settle? How does the graph show the Law of Large Numbers?}{2.2cm}{} & \pcell{8}{From the table, find $P(\text{Pass} \mid \text{App})$. Round to two decimals.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Find $P(\text{App} \mid \text{Pass})$. Round to two decimals. Is it the same as problem~8?}{2.6cm}{} & \pcell{10}{\textbf{Vote again.} Dana plans to buy the app and skip review, sure she will pass. Which probability answers her question? What should she do?}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 5: GUIDED PRACTICE — we do, together, a fresh context ────────────────
+\mainidea[Guided practice]{Spam Filter} &
+An email service checked $1{,}000$ emails: was each one actually spam, and did the filter flag it?
+\\
+& {\centering
+{\normalsize\renewcommand{\arraystretch}{1.25}%
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Flagged} & \textbf{Not flagged} & \textbf{Total} \\
+\midrule
+\textbf{Actually spam} & $90$ & $10$ & $100$ \\
+\textbf{Not spam} & $110$ & $790$ & $900$ \\
+\textbf{Total} & $200$ & $800$ & $1{,}000$ \\
+\bottomrule
+\end{tabular}}\par}
+\\
+& \notesprompt{We work these together.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Find $P(\text{Flagged} \mid \text{Spam})$. Say it in words.}{2.2cm}{} & \pcell{12}{Find $P(\text{Spam} \mid \text{Flagged})$. Say it in words.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Are \emph{Flagged} and \emph{Spam} independent? Compare $P(\text{Flagged} \mid \text{Spam})$ with $P(\text{Flagged})$.}{2.6cm}{} & \pcell{14}{Theo says, \emph{``It catches 90\% of spam, so a flagged email is almost surely spam. Delete them unread.''} Which probability answers him? Should he?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT GUIDED PRACTICE ─────────────────────────────────────────
+% There is deliberately no "you do" here: ../homework/ is the individual practice.
+
+\end{document}

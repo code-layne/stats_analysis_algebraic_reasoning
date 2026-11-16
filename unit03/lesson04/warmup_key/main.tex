@@ -1,24 +1,89 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Warm-Up (Answer Key)
-\documentclass[10pt]{article}
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Warm-Up (Answer Key)
+% ONE PAGE, blank and key. Three items at 12pt: read a two-way table, percent of a part, compare
+% decimals. The table is the one row 1 of the notes reopens; item 2's two percents are problems
+% 1 and 2 of the notes; item 3's decimals are the comparisons of rows 3 and 4.
+% THE DATA — 200 students in a summer coding course:
+%   App & Review 84, App & No review 36 (App 120); No app & Review 16, No app & No review 64
+%   (No app 80); Review 100, No review 100. 84/120 = 70%; 84/100 = 84%.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for a fill-in cluster. Defined per document; the key inherits it.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the key together.
+\setlength{\workrowsep}{22pt}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.4}{Warm-Up --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Warm-Up], never in a key.
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. NO teachernote here —
+% teacher prose lives in the lesson plan.
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-% Carry over every \boxguard and every \begin{work} block unchanged — a work block is the
-% same bytes in both files, so this key cannot drift longer than its blank.
-% \ans{} IS TEXT MODE: never inside $...$, and wrap \sqrt/\dfrac/\hat/\bar in $...$ inside it.
 \boxguard
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- A Summer Coding Course}
+\normalsize
+Last summer $200$ students took a tough coding course. The table shows who used the study app
+and who went to the review session.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Went to review} & \textbf{No review} & \textbf{Total} \\
+\midrule
+\textbf{Used the app} & $84$ & $36$ & $120$ \\
+\textbf{No app} & $16$ & $64$ & $80$ \\
+\textbf{Total} & $100$ & $100$ & $200$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=20pt, topsep=8pt]
+
+  \item Read the table. How many students\ldots
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.2}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} @{}}
+        used the app \emph{and} went to review? & \ans{84} \\
+        used the app in all? & \ans{120} \\
+        went to review in all? & \ans{100} \\
+        \end{tabularx}
+
+  \item Percent of a part. Show the division, then give the percent.
+
+        \vspace{4pt}
+        (a) What percent of the $120$ app users went to review?
+        \begin{work}
+          84 \div 120 &= 0.70 = 70\%
+        \end{work}
+
+        \vspace{10pt}
+        (b) What percent of the $100$ students who went to review used the app?
+        \begin{work}
+          84 \div 100 &= 0.84 = 84\%
+        \end{work}
+
+  \item Compare the decimals. Write $<$, $>$, or $=$ in each blank.
+        \wordbank{$<$ \;\textbullet\; $>$ \;\textbullet\; $=$}
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{2.0}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        $0.70$ \; \ans{$>$} \; $0.50$ &
+        $0.60$ \; \ans{$=$} \; $0.6$ &
+        $0.41$ \; \ans{$<$} \; $0.8$ \\
+        \end{tabularx}
+
+        \vspace{6pt}
+        How do you know which of $0.41$ and $0.8$ is greater?
+        \par\ansline{Write 0.8 as 0.80: 80 hundredths is more than 41 hundredths.}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

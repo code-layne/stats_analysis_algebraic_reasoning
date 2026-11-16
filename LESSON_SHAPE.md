@@ -204,9 +204,22 @@ two numbered sections and a Guided Practice, **none of** `activity/`, `experienc
     divide by n — never assign them in a course that teaches s), no 1.5 × IQR fence, and no
     cumulative relative frequency graph. More turned-in items shrink the DeltaMath share, never
     the 12.
-  Nothing about the student pages changes with the choice: the plan's Homework box and teacher
-  note and the deck's closing frame say which form the assignment takes; the cover row and the
-  homework's `remindbox` never change.
+  - **DeltaMath only** (user decision 2026-11-11; **Unit 3** — 3.1–3.5) — the whole assignment
+    is a DeltaMath set and **nothing is on paper**: the lesson has **no `homework/` or
+    `homework_key/` directory and no `rubrics/`**, so the packet is cover + warm-up + notes,
+    **8 printed pages** (cover 1 + verso, warm-up 1 + verso, notes 4). The DeltaMath assignment is
+    titled **`Lesson N.M: Lesson Title`**, made for the course's class in the **SAAR** folder,
+    created *Hidden* and posted by the teacher with its due date. Scored 1 to 5 from the DeltaMath
+    percent (5 × percent, rounded half up, never below 1 for an assignment completed), still due
+    at the start of the first class after two study halls. The written crux check that the
+    turned-in items carried moves to the spoken cold check and the next lesson's warm-up debrief —
+    the plan says so. In this form, and only in it, the **cover's row 3 changes**: it reads
+    *Homework (DeltaMath)*, names the assignment and its topics, and says how it is scored and
+    due; the plan's Homework box and teacher note and the deck's *You do* frame name the
+    assignment and its exact topics.
+  For packet, Desmos, and DeltaMath + justifications, nothing about the student pages changes
+  with the choice: the plan's Homework box and teacher note and the deck's closing frame say
+  which form the assignment takes; the cover row and the homework's `remindbox` never change.
 - **Homework is due at the start of the first class after two study halls** — never "due next
   class" (user decision 2026-09-06, the same convention as the AP Statistics course). Write it that
   way on the homework's `remindbox`, the cover row, the plan's Homework box and teacher note, and
@@ -283,7 +296,9 @@ printed on the Name line of the lesson cover, which `make -C unitNN/lessonYY ros
 ROSTER=… [SECTION=…]` preprints; there is no separate name sheet (2026-10-28). Every graded
 component in the packet is her personalized copy and starts on a fresh sheet, so she tears the
 graded sheets out and turns them in without her name; the output is
-`target/compiled/unitNN/lessonYY_roster.pdf`. For a quiz or test, `make -C unitNN roster-packets
+`target/compiled/unitNN/lessonYY_roster.pdf`. A lesson with **no graded component** in its packet
+(a DeltaMath-only homework, Unit 3) still gets roster packets (2026-11-11): each copy is the plain
+student packet behind her named cover, and no manifest is built. For a quiz or test, `make -C unitNN roster-packets
 COMP=tests/actual_test` (or `COMP=quiz01/actual_quiz`) puts math-shared's tear-off name sheet and
 its blank back in front of her copy. Both build each graded component's manifest first, and fail
 if any roster name reaches a graded page. From the root: `make roster-packets
@@ -298,7 +313,9 @@ notes and the **confirmed course map** (approved 2026-08-05): 8 units, 58 conten
 review — that sits outside the eight-content-lesson cap), **66 lesson directories** in all;
 semester split after Unit 4 (S1 *data and chance*, S2 *models and decisions*); projects with real
 data in Units 1, 5, 6, and 8 (lessons 1.8, 5.7, 6.8, 8.6). Units are standard clusters; lessons
-are groups of a standard's lettered Knowledge & Skills. **AFDA.AF.3 (linear programming) is
+are groups of a standard's lettered Knowledge & Skills. **Consolidations since the map (user
+decisions): Unit 2 to four lessons, no launch (2026-09-29); Unit 3 to five lessons, no launch, at
+the 10-page packet budget (2026-11-09).** **AFDA.AF.3 (linear programming) is
 excluded; there is no trigonometry.** `spec/unit_lesson_breakdown.md` is the per-lesson index and
 status table (it still describes the EFFL component set — two redesigns stale; fix it on the next
 run that touches it).

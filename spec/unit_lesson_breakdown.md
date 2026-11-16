@@ -9,9 +9,9 @@ confirmed course map) and the scaffolded `\LessonNumberName` titles in
 | | |
 |---|---|
 | Units | 8 |
-| Content lessons | 55 (≤ 8 per unit; Unit 2 consolidated to 4) |
-| Unit-launch lessons (Lesson 0) | 7 (none in Unit 2) |
-| Lesson directories total | 62 |
+| Content lessons | 52 (≤ 8 per unit; Unit 2 consolidated to 4, Unit 3 to 5) |
+| Unit-launch lessons (Lesson 0) | 6 (none in Units 2 or 3) |
+| Lesson directories total | 58 |
 | Assessments | 8 unit tests (practice + actual, each with key) + 8 sample tests — **Unit 1 authored** |
 | Semester split | after Unit 4 — S1 *data and chance*, S2 *models and decisions* |
 | Projects | Units 1, 5, 6, 8 (Lesson 1.8, 5.7, 6.8, 8.6 capstone) |
@@ -74,19 +74,20 @@ cut to 4pp notes 2026-10-16** (16 and 12 problems) so their packets are 10 pages
 compact length — `LESSON_SHAPE.md` §1, *The packet budget*.
 
 ### Unit 3 — Categorical Data and Probability
-Standards: PS.DS.4, PS.P.1, AFDA.DA.3 · 8 content lessons
+Standards: PS.DS.4, PS.P.1, AFDA.DA.3 · 5 content lessons, no launch
 
-| # | Title | Standards | Status |
-|---|---|---|---|
-| 3.0 | Unit Launch: Categorical Data and Probability | — | ⬜ |
-| 3.1 | Displaying Categorical Data | PS.DS.4a–d | ⬜ |
-| 3.2 | Probability Basics | PS.P.1a; AFDA.DA.3a, e | ⬜ |
-| 3.3 | Venn Diagrams, Tree Diagrams, and Two-Way Tables | PS.P.1b; AFDA.DA.3c | ⬜ |
-| 3.4 | Addition and Multiplication Rules | PS.P.1a, c; AFDA.DA.3f | ⬜ |
-| 3.5 | Conditional Probability and Independence | PS.P.1d; AFDA.DA.3b | ⬜ |
-| 3.6 | Simulations and Decisions | AFDA.DA.3d | ⬜ |
-| 3.7 | Counting Techniques | AFDA.DA.3g–i; A2.ST.3a–c, e | ⬜ |
-| 3.8 | Probability with Counting | AFDA.DA.3a, g–i; A2.ST.3d | ⬜ |
+**Consolidated 2026-11-09 (user decision)** from a launch and eight lessons to five on the
+5 / 45 / 5 / 5 period, each a 10-page packet (notes 4 pages, homework 2). Every lettered
+standard is still covered. **All five authored, built, and gated 2026-11-09**; the unit's tests,
+study guide, and cover pair are not yet authored.
+
+| # | Title | Folds in (old map) | Content | Standards | Status |
+|---|---|---|---|---|---|
+| 3.1 | Displaying and Analyzing Categorical Data | 3.0, 3.1 | bar graphs; side-by-side and segmented bars; two-way tables; marginal, relative, conditional frequencies; counts vs. rates | PS.DS.4a–d | ✅ |
+| 3.2 | Probability Models | 3.2, 3.3 | sample space, theoretical probability and prediction; complements; trees and two-way tables; Venn diagrams | PS.P.1a, b; AFDA.DA.3a, c, e | ✅ |
+| 3.3 | Addition and Multiplication Rules | 3.4 | addition rule; mutually exclusive events; multiplication on trees; classifying event pairs | PS.P.1a, c; AFDA.DA.3e, f | ✅ |
+| 3.4 | Conditional Probability, Independence, and Simulation | 3.5, 3.6 | conditional probability from tables and the formula; independence test; reading a simulation and deciding | PS.P.1d; AFDA.DA.3b, c, d | ✅ |
+| 3.5 | Counting and Probability with Counting | 3.7, 3.8 | FCP and factorials; permutations; combinations; does order matter; probability with counting in the Guided Practice | AFDA.DA.3a, g–i; A2.ST.3a–e | ✅ |
 
 ### Unit 4 — Random Variables and the Normal Distribution
 Standards: PS.P.2, PS.P.3, AFDA.DA.4 · 7 content lessons

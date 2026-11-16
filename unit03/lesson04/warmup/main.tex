@@ -1,29 +1,89 @@
-%! Addition and Multiplication Rules — Unit 3, Lesson 3.4 — Warm-Up
-\documentclass[10pt]{article}
+%! Conditional Probability, Independence, and Simulation — Unit 3, Lesson 3.4 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt: read a two-way table, percent of a part, compare
+% decimals. The table is the one row 1 of the notes reopens; item 2's two percents are problems
+% 1 and 2 of the notes; item 3's decimals are the comparisons of rows 3 and 4.
+% THE DATA — 200 students in a summer coding course:
+%   App & Review 84, App & No review 36 (App 120); No app & Review 16, No app & No review 64
+%   (No app 80); Review 100, No review 100. 84/120 = 70%; 84/100 = 84%.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Word bank strip for a fill-in cluster. Defined per document; the key inherits it.
+\newcommand{\wordbank}[1]{\par\vspace{2pt}\noindent\fcolorbox{goldacc}{goldbg}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small\textbf{Word bank:} #1}}\par\vspace{4pt}}
+% Handwriting room inside every \begin{work} block. Moves the blank and the key together.
+\setlength{\workrowsep}{22pt}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.4}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% If this is the HOMEWORK: it is this course's Check Your Understanding set — ~6 items in new
-% contexts spanning the lesson's lettered skills, each ending in an interpretation or a
-% justification, plus one spiral item and a closing \begin{spiralbox} preview. It IS scored.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
-% the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
-% _key: the blank reserves its exact height, the key prints it. That is the work rule, and it
-% is what keeps this component the same number of pages as its key.
 \boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Spiral Review --- A Summer Coding Course}
+\normalsize
+Last summer $200$ students took a tough coding course. The table shows who used the study app
+and who went to the review session.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l c c c}
+\toprule
+ & \textbf{Went to review} & \textbf{No review} & \textbf{Total} \\
+\midrule
+\textbf{Used the app} & $84$ & $36$ & $120$ \\
+\textbf{No app} & $16$ & $64$ & $80$ \\
+\textbf{Total} & $100$ & $100$ & $200$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=20pt, topsep=8pt]
+
+  \item Read the table. How many students\ldots
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.2}
+        \begin{tabularx}{\linewidth}{@{} X p{2.6cm} @{}}
+        used the app \emph{and} went to review? & \blank{2.2cm} \\
+        used the app in all? & \blank{2.2cm} \\
+        went to review in all? & \blank{2.2cm} \\
+        \end{tabularx}
+
+  \item Percent of a part. Show the division, then give the percent.
+
+        \vspace{4pt}
+        (a) What percent of the $120$ app users went to review?
+        \begin{work}
+          84 \div 120 &= 0.70 = 70\%
+        \end{work}
+
+        \vspace{10pt}
+        (b) What percent of the $100$ students who went to review used the app?
+        \begin{work}
+          84 \div 100 &= 0.84 = 84\%
+        \end{work}
+
+  \item Compare the decimals. Write $<$, $>$, or $=$ in each blank.
+        \wordbank{$<$ \;\textbullet\; $>$ \;\textbullet\; $=$}
+
+        \vspace{2pt}
+        \renewcommand{\arraystretch}{2.0}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        $0.70$ \; \blank{1.2cm} \; $0.50$ &
+        $0.60$ \; \blank{1.2cm} \; $0.6$ &
+        $0.41$ \; \blank{1.2cm} \; $0.8$ \\
+        \end{tabularx}
+
+        \vspace{6pt}
+        How do you know which of $0.41$ and $0.8$ is greater?
+        \par\writeline
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

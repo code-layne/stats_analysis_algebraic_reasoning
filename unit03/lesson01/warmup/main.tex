@@ -1,5 +1,13 @@
-%! Displaying Categorical Data — Unit 3, Lesson 3.1 — Warm-Up
-\documentclass[10pt]{article}
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Warm-Up
+% ONE PAGE, blank and key. Three items at 12pt. It also opens the unit (the first lesson of
+% Unit 3, no separate launch lesson): one printed line says what the unit is about.
+% THE NUMBERS ARE THE NOTES': item 1 gives 94, 54, 40 (row 1's bus bar, row 2's two bus bars);
+% item 2 gives 47%, 45%, 50% (problems 8 and 9) and seeds the crux with bare fractions: the larger
+% numerator is the smaller percent. Item 3 is row 1's one-variable data as a frequency table.
+% The grade sizes are deliberately NOT printed with a context here: the hook stays open.
+% Checked: 47% of 200 = 94; 45% of 120 = 54; 50% of 80 = 40; 94/200 = 47%; 54/120 = 45%;
+% 40/80 = 50%; 26/200 = 13%.
+\documentclass[12pt]{article}
 \usepackage{saar-article}
 \usepackage{saar-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
@@ -8,22 +16,66 @@
 
 \pageheader{Unit 3, Lesson 3.1}{Warm-Up}
 % NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
+% cover this component is stapled behind.
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-% If this is the HOMEWORK: it is this course's Check Your Understanding set — ~6 items in new
-% contexts spanning the lesson's lettered skills, each ending in an interpretation or a
-% justification, plus one spiral item and a closing \begin{spiralbox} preview. It IS scored.
-% \boxguard before every breakable box — and in the _key too. Raise it (\boxguard[30]) when
-% the box opens with an unbreakable TikZ figure or tabularx.
-% Multi-step solutions go in a \begin{work} block authored BYTE-IDENTICALLY here and in the
-% _key: the blank reserves its exact height, the key prints it. That is the work rule, and it
-% is what keeps this component the same number of pages as its key.
 \boxguard
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Unit 3 Starts Here --- Percents and a Table}
+\normalsize
+Unit~3 is about data sorted into groups and the chances those data give us. Today's tools are
+ones you already own. Every number below comes back in the notes.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=22pt, topsep=10pt]
+
+  \item Find each amount.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        \toprule
+        $47\%$ of $200$ & $45\%$ of $120$ & $50\%$ of $80$ \\
+        \midrule
+        \blank{2.6cm} & \blank{2.6cm} & \blank{2.6cm} \\
+        \bottomrule
+        \end{tabularx}
+
+  \item Write each fraction as a percent.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{2.6}
+        \begin{tabularx}{\linewidth}{@{} Y Y Y @{}}
+        \toprule
+        \TallMath{\dfrac{94}{200}} & \TallMath{\dfrac{54}{120}} & \TallMath{\dfrac{40}{80}} \\
+        \midrule
+        \blank{2.6cm} & \blank{2.6cm} & \blank{2.6cm} \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{8pt}
+        Look at $\dfrac{54}{120}$ and $\dfrac{40}{80}$. Which one has the larger top number? Which
+        one is the larger percent?
+        \par\writelines{2}
+
+  \item Oakdale High asked $200$ students how they get to school.
+
+        \vspace{4pt}
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabularx}{\linewidth}{@{} X Y Y Y Y @{}}
+        \toprule
+        \textbf{How they get there} & \textbf{Bus} & \textbf{Car} & \textbf{Walk} & \textbf{Total} \\
+        \midrule
+        \textbf{Students} & $94$ & $80$ & $26$ & $200$ \\
+        \bottomrule
+        \end{tabularx}
+
+        \vspace{10pt}
+        How many students come by car? \blank{2.6cm}
+
+        \vspace{12pt}
+        What percent of the $200$ students walk? \blank{2.6cm}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}
