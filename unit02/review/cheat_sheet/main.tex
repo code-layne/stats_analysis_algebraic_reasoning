@@ -1,0 +1,102 @@
+%! Unit 2: Describing One Variable — Unit Test Cheat Sheet (Lessons 2.1–2.4)
+% Half-sheet reference students may hold during the Unit 2 test: formulas, procedures, and the
+% moves from the study guide, with no worked data and nothing to fill in. Not graded, no key, no
+% name line, merged into no packet. One letter page prints TWO identical half-sheets; cut on
+% the dashed line. Built by unit02/review/Makefile alongside the study guide.
+\documentclass[10pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-boxes}
+\usetikzlibrary{calc}
+\pagestyle{empty}
+
+% Each half-sheet is 8.5in x 5.5in, less a 0.35in margin all round.
+\newlength{\sheetwd}\setlength{\sheetwd}{7.8in}
+\newlength{\sheetmaxht}\setlength{\sheetmaxht}{4.8in}
+\newsavebox{\sheet}
+
+\newcommand{\sheethead}[1]{%
+  \par\addvspace{8pt}\noindent
+  {\color{cerulean}\sffamily\bfseries #1}\par\nopagebreak
+  \vspace{-7pt}\noindent{\color{cerulean}\rule{\linewidth}{0.6pt}}\par\nopagebreak\vspace{-1pt}}
+
+\newcommand{\sheetitem}[1]{\par\noindent\hangindent=0.9em\hangafter=1 #1\par}
+
+\begin{document}
+
+\begin{lrbox}{\sheet}%
+\begin{minipage}[t]{\sheetwd}
+\setlength{\parskip}{3.5pt}
+\small
+\noindent\colorbox{cerulean}{\parbox{\dimexpr\linewidth-2\fboxsep}{%
+  \color{white}\textbf{\CourseHeaderName \hfill Unit 2 Test Cheat Sheet}}}
+
+\vspace{1pt}
+\begin{minipage}[t]{0.485\linewidth}
+\sheethead{Center and spread}
+\sheetitem{\textbf{Mean:} $\bar{x} = \sum x \,/\, n$ \quad \textbf{Range:} max $-$ min}
+\sheetitem{\textbf{Median:} middle of the \emph{ordered} data; for even $n$, the mean of the
+  middle two. \textbf{Mode:} most common value.}
+\sheetitem{\textbf{$Q_1$, $Q_3$:} medians of the lower and upper halves. For odd $n$, leave
+  the median out of both halves.}
+\sheetitem{\textbf{IQR} $= Q_3 - Q_1$, the spread of the middle half.}
+\sheetitem{\textbf{Five-number summary:} min, $Q_1$, median, $Q_3$, max.}
+
+\sheethead{Standard deviation}
+\sheetitem{\textbf{1.} Deviations: $x - \bar{x}$. They always add to $0$.}
+\sheetitem{\textbf{2.} Square each one, then add them up.}
+\sheetitem{\textbf{3.} Variance: $s^2 = \dfrac{\sum (x - \bar{x})^2}{n - 1}$, in square units.}
+\sheetitem{\textbf{4.} Standard deviation: $s = \sqrt{s^2}$, back in the original units.}
+\sheetitem{\textbf{Say it:} A typical value is about $s$ [units] from the mean of $\bar{x}$
+  [units].}
+\sheetitem{$s$ measures \textbf{spread, not size}. Add $c$ to every value: the mean changes by
+  $c$, and $s$ stays the same.}
+
+\sheethead{Outliers}
+\sheetitem{\textbf{Fences:} $Q_1 - 1.5 \times \text{IQR}$ \ and \ $Q_3 + 1.5 \times \text{IQR}$}
+\sheetitem{Beyond a fence is an outlier. The fence decides, not the eye.}
+\sheetitem{\textbf{Modified boxplot:} each outlier is its own dot; the whisker stops at the most
+  extreme value that is \emph{not} an outlier.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\linewidth}
+\sheethead{Describe a distribution}
+\sheetitem{\textbf{Shape, unusual features, center, spread}, in context, with units.}
+\sheetitem{\textbf{The tail names the skew.} Tail toward larger values: skewed \emph{right}.
+  Tail toward smaller values: skewed \emph{left}. The mean is pulled toward the tail.}
+
+\sheethead{Which summary to report}
+\sheetitem{Roughly symmetric, no outliers: \textbf{mean and SD}.}
+\sheetitem{Strong skew or outliers: \textbf{median and IQR}. They are \emph{resistant}, barely
+  moved by an extreme value. Mean and SD are pulled by it.}
+
+\sheethead{Read a display}
+\sheetitem{\textbf{Stemplot:} read the values with the key.}
+\sheetitem{\textbf{Histogram:} bar height is a count. A value on a boundary goes in the bin to
+  its right.}
+\sheetitem{\textbf{Boxplot:} each of the four sections holds about $25\%$ of the data.}
+\sheetitem{\textbf{Cumulative graph:} across from $25\%$, $50\%$, $75\%$, then down, gives $Q_1$,
+  median, $Q_3$.}
+\sheetitem{\textbf{Percentile:} the $p$th percentile has $p\%$ of the data at or below it.}
+
+\sheethead{Compare two groups}
+\sheetitem{\textbf{Shape, outliers, center, spread}, on one common scale, in context.}
+\sheetitem{Give each feature a comparative word: \emph{greater than, less than, about the same
+  as}.}
+\sheetitem{When the centers match, \textbf{the spread decides}.}
+\sheetitem{\textbf{Consistent} means less spread: a smaller IQR or SD.}
+\end{minipage}
+\end{minipage}%
+\end{lrbox}
+
+% Fail the build rather than let a half-sheet run across the cut line.
+\newlength{\sheetht}\setlength{\sheetht}{\dimexpr\ht\sheet+\dp\sheet\relax}
+\typeout{Cheat sheet height: \the\sheetht\space (limit \the\sheetmaxht)}
+\ifdim\sheetht>\sheetmaxht \errmessage{Cheat sheet is taller than a half page}\fi
+
+\null
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north, inner sep=0pt] at ($(current page.north)+(0,-0.35in)$) {\usebox{\sheet}};
+  \node[anchor=north, inner sep=0pt] at ($(current page.center)+(0,-0.35in)$) {\usebox{\sheet}};
+  \draw[linegray, dashed] (current page.west) -- (current page.east);
+\end{tikzpicture}
+
+\end{document}
