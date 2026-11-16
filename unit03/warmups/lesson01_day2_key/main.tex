@@ -1,0 +1,70 @@
+%! Displaying and Analyzing Categorical Data — Unit 3, Lesson 3.1 — Warm-Up, Day 2 (Answer Key)
+% STANDALONE re-entry warm-up for the second day of 3.1, when the class stopped after row 1
+% (Bar Graphs, problems 1-2). Merged into no packet — see ../Makefile. HALF PAGE (top half of one sheet), blank and key.
+% Three items on FRESH data (Oakdale juniors' lunch line), so students read the displays rather
+% than recall yesterday's bus/car/walk answers. Day 2 resumes at row 2 (Two Kinds of Bars).
+%   1. Name the two graphs (frequency / relative frequency) and read a count off the left one;
+%      "how many more" seeds problem 3 (the gap between two counts).
+%   2. Relative frequency as fraction and percent, said in context — problem 2 again.
+%   3. Percent back to a count, which seeds problem 4 (reading a count off a bar).
+% THE HOOK STAYS OPEN: one group only, no comparison of two groups of different sizes.
+% THE DATA (80 juniors): Pizza 32 (40%), Sandwich 20 (25%), Salad 12 (15%), Hot meal 16 (20%).
+%   Sum 80, 100%. Pizza - Salad = 20. 12/80 = 15%. 20% of 80 = 16.
+% PAGE LOCKSTEP: the key differs only by saar-key, the header, \blank -> \ans,
+% \labelbox{..}{} -> \labelbox{..}{answer}, \par\writeline -> \par\ansline; no work blocks (half page).
+\documentclass[12pt]{article}
+\usepackage{saar-article}
+\usepackage{saar-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.1}{Warm-Up --- Day 2 --- Answer Key}
+% NAMESTRIP: no \namedateperiod — the 3.1 packet cover already carries the name.
+
+\boxguard[30]
+\begin{notesbox}{Spiral Review --- Two Bar Graphs, One Survey}
+\normalsize
+Oakdale High asked $80$ juniors which lunch line they use. Both graphs show the same answers.
+
+\vspace{2pt}
+{\centering
+\begin{tikzpicture}[x=1cm, y=0.05cm]
+  % frequency panel
+  \foreach \v in {10,20,30,40} { \draw[linegray] (0,\v) -- (5.6,\v); }
+  \foreach \v in {0,10,...,40} { \node[left, font=\scriptsize] at (0,\v) {\v}; }
+  \draw[thick] (0,0) -- (0,43);
+  \draw[thick] (0,0) -- (5.6,0);
+  \foreach \i/\n/\c/\lab in {0/32/cerulean/Pizza, 1/20/frostmid/Sandwich, 2/12/goldbg/Salad, 3/16/frost/Hot meal} {
+    \fill[\c, draw=charcoal] ({0.35+\i*1.35},0) rectangle ({1.15+\i*1.35},\n);
+    \node[above, font=\scriptsize\bfseries] at ({0.75+\i*1.35},\n) {\n};
+    \node[below, font=\scriptsize] at ({0.75+\i*1.35},0) {\lab};
+  }
+  \node[rotate=90, font=\scriptsize\itshape] at (-0.8,21) {juniors};
+  % relative frequency panel (same bars; 10% of 80 = 8 juniors)
+  \begin{scope}[xshift=7.6cm]
+  \foreach \p in {10,20,...,50} { \draw[linegray] (0,{\p*0.8}) -- (5.6,{\p*0.8}); }
+  \foreach \p in {0,10,...,50} { \node[left, font=\scriptsize] at (0,{\p*0.8}) {\p\%}; }
+  \draw[thick] (0,0) -- (0,43);
+  \draw[thick] (0,0) -- (5.6,0);
+  \foreach \i/\n/\c/\lab in {0/32/cerulean/Pizza, 1/20/frostmid/Sandwich, 2/12/goldbg/Salad, 3/16/frost/Hot meal} {
+    \fill[\c, draw=charcoal] ({0.35+\i*1.35},0) rectangle ({1.15+\i*1.35},\n);
+    \node[below, font=\scriptsize] at ({0.75+\i*1.35},0) {\lab};
+  }
+  \node[rotate=90, font=\scriptsize\itshape] at (-0.95,21) {percent};
+  \end{scope}
+\end{tikzpicture}\par\vspace{3pt}
+Left: \labelbox{2.4cm}{frequency} bar graph\quad Right: \labelbox{4.0cm}{relative frequency} bar graph\par}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=8pt, topsep=6pt]
+
+  \item Name each graph in the boxes. \par Sandwich line: \ans{20} juniors. \quad Pizza minus Salad: \ans{20} juniors.
+
+  \item Relative frequency of Salad as a fraction and a percent: \ans{12/80 = 15\%}
+        \par\vspace{3pt}What does it mean in context?\par\ansline{15\% of the 80 surveyed juniors use the Salad line.}
+
+  \item The right graph shows $20\%$ for Hot meal. How many juniors is that? \ans{16 juniors}
+
+\end{enumerate}
+\end{notesbox}
+
+\end{document}
